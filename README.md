@@ -1,7 +1,6 @@
 # Resume
 
-> A Vue.js project
-## [Download Node.js](nodejs.org)
+> A Vue.js project [Download Node.js first](nodejs.org)
 
 ## Build Setup
 
