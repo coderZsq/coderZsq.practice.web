@@ -1,6 +1,7 @@
 # Resume
 
 > A Vue.js project
+## [Download Node.js](nodejs.org)
 
 ## Build Setup
 
@@ -19,3 +20,6 @@ npm run build --report
 ```
 
 For detailed explanation on how things work, checkout the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
+
+## Display
+![](http://upload-images.jianshu.io/upload_images/1229762-b011850b16106300.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
