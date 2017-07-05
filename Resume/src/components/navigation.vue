@@ -3,15 +3,15 @@
   <div class="nav">
     <div class="content">
       <div class="title">
-        XXXXX
+        Castie!
       </div>
       <div class="items">
-        <span>XXXXX</span>
-        <span>XXXXX</span>
-        <span>XXXXX</span>
-        <span>XXXXX</span>
-        <span>XXXXX</span>
-        <span>XXXXX</span>
+        <span>Home</span>
+        <span>Project</span>
+        <span>Blog</span>
+        <span>GitHub</span>
+        <span>Experience</span>
+        <span>Contact</span>
       </div>
     </div>
   </div>
@@ -60,7 +60,7 @@ export default {}
 }
 
 .nav .content .items span {
-  width: 112px;
+  width: 108px;
   text-align: center;
   line-height: 50px;
   display: inline-block;
