@@ -8,25 +8,7 @@
   </div>
   <div class="even">
     <div class="content">
-      <div class="subtitle">
-
-      </div>
-      <div class="projects">
-        <div class="projects-block">
-          <div class="project1">
-
-          </div>
-          <div class="project2">
-
-          </div>
-          <div class="project3">
-
-          </div>
-          <div class="project4">
-
-          </div>
-        </div>
-      </div>
+      <projects></projects>
     </div>
   </div>
   <div class="odd">
@@ -55,6 +37,7 @@
 <script>
 import navigation from './navigation'
 import home from './home'
+import projects from './projects'
 export default {
   data() {
     return {
@@ -63,7 +46,8 @@ export default {
   },
   components: {
     navigation,
-    home
+    home,
+    projects
   }
 }
 </script>
@@ -78,7 +62,7 @@ export default {
 .odd {
   width: 100%;
   height: 600px;
-  background-color: white;
+  background-color: #fff;
 }
 
 .content {
@@ -86,41 +70,5 @@ export default {
   width: 1000px;
   height: inherit;
   /*border: 1px solid gray;*/
-}
-
-.subtitle {
-  margin-top: 50px;
-  /*background-color: rgba(230, 230, 230, 1);*/
-  width: 300px;
-  height: 60px;
-  display: inline-block;
-}
-
-.projects {
-  /*background-color: rgba(240, 240, 240, 1);*/
-  height: inherit;
-  width: 700px;
-  float: right;
-  display: inline-block;
-  position: relative;
-}
-
-.projects .projects-block {
-  position: absolute;
-  width: 680px;
-  height: 500px;
-  top: calc(50% - 250px);
-  left: calc(50% - 340px);
-  /*background-color: rgba(230, 230, 230, 1);*/
-}
-
-.projects .projects-block .project1,
-.projects .projects-block .project2,
-.projects .projects-block .project3,
-.projects .projects-block .project4 {
-  /*background-color: pink;*/
-  width: 340px;
-  height: 250px;
-  float: left;
 }
 </style>

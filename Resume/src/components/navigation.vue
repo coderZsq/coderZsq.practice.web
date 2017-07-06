@@ -7,7 +7,7 @@
       </div>
       <div class="items">
         <span>Home</span>
-        <span>Project</span>
+        <span>Projects</span>
         <span>Blog</span>
         <span>GitHub</span>
         <span>Experience</span>

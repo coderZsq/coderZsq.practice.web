@@ -38,7 +38,7 @@
         <p>Shuangquan Zhu is a professional developer who focuses on iOS now. He has strong knowledge of Objective-C, Swift and Javascript. With these skills, he created quite a few quickly developer tools. He also leads the J1 iOS team to promote the project
           process.
         </p>
-        <p>He crazy loves playing basketball with friends in spare time, He also loves traveling, writing and Listening music. He is always willing to try new things, and keeping to learn from them.</p>
+        <p>He crazy loves playing basketball with friends in spare time, He also loves traveling, writing and listening music. He is always willing to try new things, and keeping to learn from them.</p>
       </div>
     </div>
     <div class="left">
