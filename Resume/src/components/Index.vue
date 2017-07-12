@@ -18,7 +18,9 @@
   </div>
   <div class="even">
     <div class="content">
-
+      <div class="subtitle">
+        <h1>Article</h1>
+      </div>
     </div>
   </div>
   <div class="odd">
@@ -72,5 +74,15 @@ export default {
   width: 1000px;
   height: inherit;
   /*border: 1px solid gray;*/
+}
+
+.subtitle {
+  margin-top: 50px;
+  width: 300px;
+  height: 60px;
+  line-height: 60px;
+  text-align: center;
+  display: inline-block;
+  color: #444;
 }
 </style>

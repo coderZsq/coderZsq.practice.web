@@ -9,7 +9,7 @@
         language="Objective-C" star="113"></target>
       <target name="coderZsq.target.swift" description="Learn the advanced path of Swift Including Hybrid, RxSwift, Animations, SpriteKit, SceneKit, CoreData, LLDB, iOS, watchOS, tvOS etc." href="https://github.com/coderZsq/coderZsq.target.swift" color="#ffac45"
         language="Swift" star="4"></target>
-      <target name="coderZsq.display.js" description="Through Vue.js to build a personal resume, hope that most companies to discuss cooperation." href="https://github.com/coderZsq/coderZsq.display.js" color="#f1e05a" language="JavaScript" star="0"></target>
+      <target name="coderZsq.display.js" description="Through Vue.js to build a personal resume, hope that most companies to discuss cooperation." href="https://github.com/coderZsq/coderZsq.display.js" color="#2C3E50" language="Vue" star="0"></target>
       <target name="coderZsq.github.io" description="Through Hexo to build a personal blog, hoping to leave a good memory moments with you." href="https://github.com/coderZsq/coderZsq.github.io" color="#563D7C" language="CSS" star="1"></target>
     </div>
   </div>
