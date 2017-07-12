@@ -13,7 +13,7 @@
   </div>
   <div class="odd">
     <div class="content">
-
+      <github></github>
     </div>
   </div>
   <div class="even">
@@ -38,6 +38,7 @@
 import navigation from './navigation'
 import home from './home'
 import projects from './projects'
+import github from './github'
 export default {
   data() {
     return {
@@ -47,7 +48,8 @@ export default {
   components: {
     navigation,
     home,
-    projects
+    projects,
+    github
   }
 }
 </script>
@@ -56,7 +58,7 @@ export default {
 .even {
   width: 100%;
   height: 600px;
-  background-color: #f8f8f8;
+  background-color: #fafafa;
 }
 
 .odd {

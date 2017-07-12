@@ -8,8 +8,8 @@
       <div class="items">
         <span>Home</span>
         <span>Projects</span>
-        <span>Blog</span>
         <span>GitHub</span>
+        <span>Article</span>
         <span>Experience</span>
         <span>Contact</span>
       </div>
