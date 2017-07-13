@@ -9,7 +9,7 @@
         <span>Home</span>
         <span>Projects</span>
         <span>GitHub</span>
-        <span>Article</span>
+        <span>Articles</span>
         <span>Experience</span>
         <span>Contact</span>
       </div>

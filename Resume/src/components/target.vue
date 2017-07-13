@@ -41,8 +41,7 @@ export default {
   },
   mounted: function() {
     this.setDotColor();
-  },
-
+  }
 }
 </script>
 

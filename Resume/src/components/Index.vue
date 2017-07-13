@@ -18,9 +18,7 @@
   </div>
   <div class="even">
     <div class="content">
-      <div class="subtitle">
-        <h1>Article</h1>
-      </div>
+      <articles></articles>
     </div>
   </div>
   <div class="odd">
@@ -41,6 +39,7 @@ import navigation from './navigation'
 import home from './home'
 import projects from './projects'
 import github from './github'
+import articles from './articles'
 export default {
   data() {
     return {
@@ -51,7 +50,8 @@ export default {
     navigation,
     home,
     projects,
-    github
+    github,
+    articles
   }
 }
 </script>
@@ -74,15 +74,5 @@ export default {
   width: 1000px;
   height: inherit;
   /*border: 1px solid gray;*/
-}
-
-.subtitle {
-  margin-top: 50px;
-  width: 300px;
-  height: 60px;
-  line-height: 60px;
-  text-align: center;
-  display: inline-block;
-  color: #444;
 }
 </style>
