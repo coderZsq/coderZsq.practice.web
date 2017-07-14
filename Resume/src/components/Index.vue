@@ -16,7 +16,7 @@
       <github></github>
     </div>
   </div>
-  <div class="even">
+  <div class="articles">
     <div class="content">
       <articles></articles>
     </div>
@@ -67,6 +67,12 @@ export default {
   width: 100%;
   height: 600px;
   background-color: #fff;
+}
+
+.articles {
+  width: 100%;
+  height: 1130px;
+  background-color: #fafafa;
 }
 
 .content {

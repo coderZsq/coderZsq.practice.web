@@ -83,6 +83,9 @@ export default {
         }, {
           name: "H5 简历一定要设计的美美的",
           href: "http://www.jianshu.com/p/b3389f66f539"
+        }, {
+          name: "H5 前端使用Vue代替JQuery",
+          href: "http://www.jianshu.com/p/85d95723edfb"
         }]
       }, {
         name: "Developer Column",
@@ -153,7 +156,7 @@ export default {
 }
 
 .articles {
-  height: 600px;
+  height: 1200px;
   width: 700px;
   float: right;
   display: inline-block;
@@ -163,8 +166,7 @@ export default {
 .articles .articles-block {
   position: absolute;
   width: 700px;
-  height: 500px;
-  top: calc(50% - 250px);
-  overflow: scroll;
+  height: 1100px;
+  top: calc(50% - 550px);
 }
 </style>
