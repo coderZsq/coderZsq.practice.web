@@ -23,7 +23,7 @@
   </div>
   <div class="odd">
     <div class="content">
-
+      <experience></experience>
     </div>
   </div>
   <div class="even">
@@ -40,6 +40,7 @@ import home from './home'
 import projects from './projects'
 import github from './github'
 import articles from './articles'
+import experience from './experience'
 export default {
   data() {
     return {
@@ -51,7 +52,8 @@ export default {
     home,
     projects,
     github,
-    articles
+    articles,
+    experience
   }
 }
 </script>
