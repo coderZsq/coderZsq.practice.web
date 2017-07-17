@@ -17,16 +17,16 @@
       <div class="row social">
         <div class="indent"></div>
         <div class="github">
-          <img src="../assets/github.png" alt="">
+          <a href="https://github.com/coderzsq"><img src="../assets/github.png" alt=""></a>
         </div>
         <div class="jianshu">
-          <img src="../assets/blog.png" alt="">
+          <a href="http://www.jianshu.com/u/9d7fad1a4693"><img src="../assets/blog.png" alt=""></a>
         </div>
         <div class="wechat">
-          <img src="../assets/wechat.png" alt="">
+          <a href="http://upload-images.jianshu.io/upload_images/1229762-453920a3f4eedcd8.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240"><img src="../assets/wechat.png" alt=""></a>
         </div>
         <div class="home">
-          <img src="../assets/home.png" alt="">
+          <a href="http://coderzsq.github.io/"><img src="../assets/home.png" alt=""></a>
         </div>
       </div>
     </div>
