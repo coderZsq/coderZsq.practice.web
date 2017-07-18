@@ -26,9 +26,9 @@
       <experience></experience>
     </div>
   </div>
-  <div class="even">
+  <div class="contact">
     <div class="content">
-
+      <contact></contact>
     </div>
   </div>
 </div>
@@ -41,6 +41,7 @@ import projects from './projects'
 import github from './github'
 import articles from './articles'
 import experience from './experience'
+import contact from './contact'
 export default {
   data() {
     return {
@@ -53,7 +54,8 @@ export default {
     projects,
     github,
     articles,
-    experience
+    experience,
+    contact
   }
 }
 </script>
@@ -77,10 +79,15 @@ export default {
   background-color: #fafafa;
 }
 
+.contact {
+  width: 100%;
+  height: 320px;
+  background-color: #fafafa;
+}
+
 .content {
   margin: 0 auto;
   width: 1000px;
   height: inherit;
-  /*border: 1px solid gray;*/
 }
 </style>

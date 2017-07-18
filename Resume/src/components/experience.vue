@@ -38,7 +38,6 @@ export default {
 }
 
 .experience {
-  height: 600px;
   width: 700px;
   float: right;
   display: inline-block;
@@ -49,6 +48,6 @@ export default {
   position: absolute;
   width: 700px;
   height: 500px;
-  top: calc(50% - 360px);
+  top: calc(50% - 62px);
 }
 </style>

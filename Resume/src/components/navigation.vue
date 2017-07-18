@@ -6,12 +6,12 @@
         Castie!
       </div>
       <div class="items">
-        <span @click="goHome"><a>Home</a></span>
-        <span @click="goProjects"><a>Projects</a></span>
-        <span @click="goGitHub"><a>GitHub</a></span>
-        <span @click="goArticles"><a>Articles</a></span>
-        <span @click="goExperience"><a>Experience</a></span>
-        <span @click="goContact"><a>Contact</a></span>
+        <span @click="scrollTo(0, 0)"><a>Home</a></span>
+        <span @click="scrollTo(0, 600)"><a>Projects</a></span>
+        <span @click="scrollTo(0, 1200)"><a>GitHub</a></span>
+        <span @click="scrollTo(0, 1800)"><a>Articles</a></span>
+        <span @click="scrollTo(0, 2930)"><a>Experience</a></span>
+        <span @click="scrollTo(0, 3530)"><a>Contact</a></span>
       </div>
     </div>
   </div>
@@ -29,23 +29,8 @@ export default {
     }
   },
   methods: {
-    goHome: function() {
-      window.scrollTo(0, 0);
-    },
-    goProjects: function() {
-      window.scrollTo(0, 600);
-    },
-    goGitHub: function() {
-      window.scrollTo(0, 1200);
-    },
-    goArticles: function() {
-      window.scrollTo(0, 1800);
-    },
-    goExperience: function() {
-      window.scrollTo(0, 2930);
-    },
-    goContact: function() {
-      window.scrollTo(0, 3530);
+    scrollTo: function(x, y) {
+      window.scrollTo(x, y);
     }
   }
 }
