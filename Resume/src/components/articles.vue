@@ -41,6 +41,9 @@ export default {
         }, {
           name: "iOS 执行.py脚本生成UI层结构",
           href: "http://www.jianshu.com/p/d15379908582"
+        }, {
+          name: "iOS 移动端面向文档开发",
+          href: "http://www.jianshu.com/p/b35d06cf189a"
         }]
       }, {
         name: "SQExtension Column",
