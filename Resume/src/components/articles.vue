@@ -90,7 +90,7 @@ export default {
           name: "H5 前端使用Vue代替JQuery",
           href: "http://www.jianshu.com/p/85d95723edfb"
         }, {
-          name: "H5 Vue项目的启动与编译",
+          name: "H5 Vue项目速转.htm静态网页",
           href: "http://www.jianshu.com/p/f1fd09628b43"
         }]
       }, {
