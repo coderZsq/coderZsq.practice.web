@@ -1,4 +1,4 @@
-# Learn Advanced path of JavaScript
+## Learn the advanced path of JavaScript
 
 ### vue-resume
 > 通过vue构建的个人简历, 有兴趣可微信私聊.
