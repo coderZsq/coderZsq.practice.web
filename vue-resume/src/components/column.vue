@@ -21,7 +21,7 @@ export default {
     }
   },
   props: {
-    articles: Object,
+    articles: Array,
     name: String
   }
 }

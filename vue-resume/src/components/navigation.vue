@@ -76,6 +76,7 @@ export default {
   line-height: 50px;
   display: inline-block;
   color: white;
+  cursor: pointer;
 }
 
 .nav a,
