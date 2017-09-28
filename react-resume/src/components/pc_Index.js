@@ -4,7 +4,8 @@ import styles from './pc_Index.css';
 import PCNavigation from './pc_navigation';
 import PCHome from './pc_home';
 
-class PCIndex extends Component {
+@CSSModules(styles)
+export default class PCIndex extends Component {
 
     render() {
         return (
@@ -39,5 +40,3 @@ class PCIndex extends Component {
         )
     }
 }
-
-export default CSSModules(PCIndex, styles);

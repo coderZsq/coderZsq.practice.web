@@ -2,7 +2,8 @@ import React, {Component} from 'react';
 import CSSModules from 'react-css-modules';
 import styles from './mobile_navigation.css';
 
-class MobileNavigation extends Component {
+@CSSModules(styles)
+export default class MobileNavigation extends Component {
     render() {
         return (
             <div>
@@ -16,5 +17,3 @@ class MobileNavigation extends Component {
         )
     }
 }
-
-export default CSSModules(MobileNavigation, styles);

@@ -2,7 +2,8 @@ import React, {Component} from 'react';
 import CSSModules from 'react-css-modules';
 import styles from './pc_navigation.css';
 
-class PCNavigation extends Component {
+@CSSModules(styles)
+export default class PCNavigation extends Component {
     render() {
         return (
             <div>
@@ -38,5 +39,3 @@ class PCNavigation extends Component {
         )
     }
 }
-
-export default CSSModules(PCNavigation, styles);

@@ -151,6 +151,7 @@ module.exports = {
             options: {
 
               compact: true,
+              "plugins":["transform-decorators-legacy"]
             },
           },
           // The notation here is somewhat confusing.

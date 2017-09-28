@@ -2,7 +2,8 @@ import React, {Component} from 'react';
 import CSSModules from 'react-css-modules';
 import styles from './pc_home.css';
 
-class PCHome extends Component {
+@CSSModules(styles, {allowMultiple: true})
+export default class PCHome extends Component {
 
     render() {
         return (
@@ -76,5 +77,3 @@ class PCHome extends Component {
         )
     }
 }
-
-export default CSSModules(PCHome, styles, {allowMultiple: true});
