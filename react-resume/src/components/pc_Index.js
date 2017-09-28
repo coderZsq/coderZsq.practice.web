@@ -5,6 +5,9 @@ import PCNavigation from './pc_navigation';
 import PCHome from './pc_home';
 import PCProducts from './pc_projects';
 import PCGithub from './pc_github';
+import PCArticles from './pc_articles';
+import PCExperience from './pc_experience';
+import PCContact from './pc_contact';
 
 @CSSModules(styles)
 export default class PCIndex extends Component {
@@ -30,14 +33,17 @@ export default class PCIndex extends Component {
                 </div>
                 <div styleName="articles">
                     <div styleName="content">
+                        <PCArticles/>
                     </div>
                 </div>
                 <div styleName="odd">
                     <div styleName="content">
+                        <PCExperience/>
                     </div>
                 </div>
                 <div styleName="contact">
                     <div styleName="content">
+                        <PCContact/>
                     </div>
                 </div>
             </div>

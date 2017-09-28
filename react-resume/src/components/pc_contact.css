@@ -1,0 +1,62 @@
+.subtitle {
+    margin-top: 50px;
+    width: 300px;
+    height: 60px;
+    line-height: 60px;
+    text-align: center;
+    display: inline-block;
+    color: #444;
+}
+
+.contact {
+    height: 320px;
+    width: 700px;
+    float: right;
+    display: inline-block;
+    position: relative;
+}
+
+.contact .contact-block {
+    position: absolute;
+    width: 700px;
+    height: 220px;
+    top: calc(50% - 110px);
+}
+
+.contact .contact-block .wechat {
+    position: absolute;
+    top: 0px;
+    left: 40px;
+    width: 190px;
+    height: 200px;
+}
+
+.contact .contact-block .wechat img {
+    padding-top: 20px;
+    width: 150px;
+    height: 140px;
+    padding-left: 20px;
+}
+
+.contact .contact-block .wechat p {
+    padding-left: 20px;
+    text-align: center;
+    width: 150px;
+}
+
+.contact .contact-block .other {
+    width: 500px;
+    height: 160px;
+    position: absolute;
+    top: 25px;
+    left: 250px;
+}
+
+.contact .contact-block .other h3 {
+    height: 32px;
+    font-size: 18px;
+}
+
+.contact .contact-block .other p {
+    padding-bottom: 5px;
+}
