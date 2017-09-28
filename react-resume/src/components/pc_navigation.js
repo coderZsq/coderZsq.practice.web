@@ -4,6 +4,11 @@ import styles from './pc_navigation.css';
 
 @CSSModules(styles)
 export default class PCNavigation extends Component {
+
+    scrollTo(x, y) {
+        window.scrollTo(x, y);
+    }
+
     render() {
         return (
             <div>
@@ -13,22 +18,22 @@ export default class PCNavigation extends Component {
                             Castie!
                         </div>
                         <div styleName="items">
-                            <span>
+                            <span onClick={this.scrollTo.bind(this, 0, 0)}>
                                 <a>Home</a>
                             </span>
-                            <span>
+                            <span onClick={this.scrollTo.bind(this, 0, 600)}>
                                 <a>Projects</a>
                             </span>
-                            <span>
+                            <span onClick={this.scrollTo.bind(this, 0, 1200)}>
                                 <a>GitHub</a>
                             </span>
-                            <span>
+                            <span onClick={this.scrollTo.bind(this, 0, 1800)}>
                                 <a>Articles</a>
                             </span>
-                            <span>
+                            <span onClick={this.scrollTo.bind(this, 0, 2930)}>
                                 <a>Experience</a>
                             </span>
-                            <span>
+                            <span onClick={this.scrollTo.bind(this, 0, 3530)}>
                                 <a>Contact</a>
                             </span>
                         </div>
