@@ -1,5 +1,9 @@
 ## Learn the advanced path of JavaScript
 
+### react-resume
+> 从vue-resume迁移, 通过react构建的个人简历.
+- [Web 将项目快速迁移至React](http://www.jianshu.com/p/1803bfac1527)
+
 ### vue-resume
 > 通过vue构建的个人简历, 有兴趣可微信私聊.
 - [Web 是时候用前端写个简历了!](http://www.jianshu.com/p/d1497da0f9ab)
