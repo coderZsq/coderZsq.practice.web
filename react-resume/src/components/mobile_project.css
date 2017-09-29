@@ -1,0 +1,69 @@
+.project {
+    background-color: #f8f8f8;
+    width: 100%;
+    height: 100px;
+    position: relative;
+}
+
+.icon {
+    position: absolute;
+    background-color: #f8f8f8;
+    top: 20px;
+    left: 20px;
+    width: 80px;
+    height: 80px;
+    border-radius: 20px;
+}
+
+.icon img {
+    width: 60px;
+    height: 60px;
+}
+
+.get {
+    position: absolute;
+    right: 20px;
+    top: 40px;
+    width: 55px;
+    height: 20px;
+    line-height: 20px;
+    text-align: center;
+    border-radius: 12px;
+    background-color: #3385ff;
+    color: #fff;
+    font-size: 16px;
+}
+
+.get a, .get a:link, .get a:visited, .get a:hover {
+    text-decoration: none;
+    color: #fff;
+}
+
+.title {
+    position: absolute;
+    width: 200px;
+    height: 120px;
+    left: 100px;
+}
+
+.title h3 {
+    color: #555;
+    margin-top: 14px;
+    height: 30px;
+    line-height: 30px;
+}
+
+.title p {
+    color: #999;
+    width: 190px;
+    font-size: 14px;
+}
+
+.desc {
+    position: absolute;
+    width: 300px;
+    height: 80px;
+    left: 20px;
+    top: 115px;
+    font-size: 17px;
+}

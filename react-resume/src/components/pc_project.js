@@ -17,7 +17,7 @@ export default class PCProduct extends Component {
                     </div>
                     <div styleName="title">
                         <h2>{this.props.name}</h2>
-                        <p>{this.props.description}}</p>
+                        <p>{this.props.description}</p>
                     </div>
                     <div styleName="desc">
                         <ul>

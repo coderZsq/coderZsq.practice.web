@@ -1,0 +1,26 @@
+.career {
+    width: 100%;
+}
+
+.career-block {
+    height: 60px;
+    width: inherit;
+    position: relative;
+    background-color: #f8f8f8;
+}
+
+.career-block p {
+    color: #666;
+    font-size: 17px;
+    text-indent: 20px;
+}
+
+.career-block a, .career-block a:link, .rcareer-blockow a:visited {
+    text-decoration: none;
+    color: #3385ff;
+}
+
+.career-block a:hover {
+    text-decoration: none;
+    color: #3385ff;
+}

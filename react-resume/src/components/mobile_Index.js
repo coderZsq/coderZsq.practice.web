@@ -1,12 +1,18 @@
 import React, {Component} from 'react';
-import MobileNavigation from './mobile_navigation';
+import MobileHome from './mobile_home';
+import MobileProjects from './mobile_projects';
+import MobileExperience from './mobile_experience';
+import MobileContact from './mobile_contact';
 
 export default class MobileIndex extends Component {
 
     render() {
         return (
             <div>
-                <MobileNavigation/>
+                <MobileHome/>
+                <MobileProjects/>
+                <MobileExperience/>
+                <MobileContact/>
             </div>
         )
     }
