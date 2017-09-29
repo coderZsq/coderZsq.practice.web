@@ -17,17 +17,6 @@ export default class MobileHome extends Component {
                     </p>
                     <p>He crazy loves playing basketball with friends in spare time, He also loves traveling, writing and listening music. He is always willing to try new things, and keeping to learn from them.</p>
                 </div>
-                <div styleName="education">
-                    <h2>Education</h2>
-                    <dl>
-                        <dd>Business Management - 2016</dd>
-                        <dt>East China University of Science and Technology</dt>
-                    </dl>
-                    <dl>
-                        <dd>Customs and International Freight - 2013</dd>
-                        <dt>Shanghai Maritime Academy</dt>
-                    </dl>
-                </div>
             </div>
         )
     }
