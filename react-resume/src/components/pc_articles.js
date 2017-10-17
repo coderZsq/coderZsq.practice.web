@@ -37,6 +37,9 @@ export default class PCArticles extends Component {
                         }, {
                             name: "iOS 移动端面向文档开发",
                             href: "http://www.jianshu.com/p/b35d06cf189a"
+                        }, {
+                            name: "iOS 移动端生成工具开发",
+                            href: "http://www.jianshu.com/p/cb36b36f90dd"
                         }
                     ]
                 }, {
@@ -72,27 +75,39 @@ export default class PCArticles extends Component {
                         }
                     ]
                 }, {
-                    name: "Resume Column",
+                    name: "Web Column",
                     articles: [
                         {
-                            name: "H5 是时候用前端写个简历了!",
+                            name: "Web 是时候用前端写个简历了!",
                             href: "http://www.jianshu.com/p/d1497da0f9ab"
                         }, {
-                            name: "H5 前端项目要从基本布局开始",
+                            name: "Web 前端项目要从基本布局开始",
                             href: "http://www.jianshu.com/p/5c4788c0389d"
                         }, {
-                            name: "H5 简历一定要设计的美美的",
+                            name: "Web 简历一定要设计的美美的",
                             href: "http://www.jianshu.com/p/b3389f66f539"
                         }, {
-                            name: "H5 前端使用Vue代替JQuery",
+                            name: "Web 前端使用Vue代替JQuery",
                             href: "http://www.jianshu.com/p/85d95723edfb"
                         }, {
-                            name: "H5 Vue项目速转.htm静态网页",
+                            name: "Web Vue项目速转.htm静态网页",
                             href: "http://www.jianshu.com/p/f1fd09628b43"
+                        }, {
+                            name: "Web 使用gulp构建前端项目",
+                            href: "http://www.jianshu.com/p/ff54340f05a3"
+                        }, {
+                            name: "Web 使用webpack构建前端项目",
+                            href: "http://www.jianshu.com/p/ab873869b3dd"
+                        }, {
+                            name: "Web 将项目快速迁移至React",
+                            href: "http://www.jianshu.com/p/1803bfac1527"
+                        }, {
+                            name: "Web PC项目快速适配移动端",
+                            href: "http://www.jianshu.com/p/404ddf018a84"
                         }
                     ]
                 }, {
-                    name: "Developer Column",
+                    name: "iOS Column",
                     articles: [
                         {
                             name: "iOS 核心动画的应用及内存泄漏",
