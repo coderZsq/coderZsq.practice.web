@@ -12,8 +12,3 @@
 - [Web 简历一定要设计的美美的](http://www.jianshu.com/p/b3389f66f539)
 - [Web 使用Vue代替陈旧的jQuery](http://www.jianshu.com/p/85d95723edfb)
 - [Web Vue项目速转.htm静态网页](http://www.jianshu.com/p/f1fd09628b43)
-
-### webpack-boilerplate
-> 通过webpack构建前端项目的通用配置.
-- [Web 使用gulp构建前端项目](http://www.jianshu.com/p/ff54340f05a3)
-- [Web 使用webpack构建前端项目](http://www.jianshu.com/p/ab873869b3dd)
