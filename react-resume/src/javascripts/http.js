@@ -5,10 +5,7 @@ export function GET(url) {
         methos: 'GET'
     };
     return new Promise((resolve, reject) => {
-        fetch(url, fetchOptions)
-        .then(response => response.json())
-        .then(response => resolve(response.data))
-        .catch((error) => {
+        fetch(url, fetchOptions).then(response => response.json()).then(response => resolve(response.data)).catch((error) => {
             reject(error);
         })
     });
