@@ -64,7 +64,7 @@ export default class PCHome extends Component {
                             {data.profileCareer}
                         </div>
                         <div styleName="row location">
-                            {data.profileLocation}
+                            Location: {data.profileLocation}
                         </div>
                         <div styleName="row social">
                             <div styleName="indent"></div>
