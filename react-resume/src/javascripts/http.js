@@ -13,5 +13,6 @@ export function GET(url) {
 
 export const URL = {
     fetchProfile: `${host}/portal/fetch_profile.do`,
-    fetchProjects: `${host}/portal/fetch_projects.do`
+    fetchProjects: `${host}/portal/fetch_projects.do`,
+    fetchGitHub: `${host}/portal/fetch_github.do`
 }
