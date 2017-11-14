@@ -2,28 +2,47 @@ import React, {Component} from 'react';
 import CSSModules from 'react-css-modules';
 import styles from './mobile_experience.css';
 import MobileCareer from './mobile_career';
+import {GET, URL} from '../javascripts/http';
 
 @CSSModules(styles)
 export default class MobileExperience extends Component {
 
+    constructor() {
+        super();
+        this.state = {
+            careerList: [],
+            profileEducationList: []
+        }
+    }
+
+    componentWillMount() {
+        GET(URL.fetchExperience).then((data) => {
+            this.setState({careerList: data.careerList})
+        })
+        GET(URL.fetchProfile).then((data) => {
+            this.setState({profileEducationList: data.profileEducationList})
+        })
+    }
+
     render() {
+        const data = this.state;
+        let careerList = data.careerList.map((careerVo, index) => (<MobileCareer key={index} time={careerVo.time} job={careerVo.job} corp={careerVo.corp} href={careerVo.href}/>))
+        let profileEducationList = data.profileEducationList.map((educationVo, index) => (
+            <dl key={index}>
+                <dd>{educationVo.major}
+                    - {educationVo.year}</dd>
+                <dt>{educationVo.school}</dt>
+            </dl>
+        ))
         return (
             <div>
                 <div styleName="subtitle">
                     <h2>Experience</h2>
                 </div>
-                <MobileCareer time="Jul. 2015 ~ Now" job="Software Engineer" corp="J1 Crop" href="https://www.j1.com" />
-                <MobileCareer time="Aug. 2013 ~ Feb. 2015" job="Freight Operator" corp="TVL Group" href="http://www.tvlgroups.com/En/ugC_AboutUs.asp" />
+                {careerList}
                 <div styleName="education">
                     <h2>Education</h2>
-                    <dl>
-                        <dd>Business Management - 2016</dd>
-                        <dt>East China University of Science and Technology</dt>
-                    </dl>
-                    <dl>
-                        <dd>Customs and International Freight - 2013</dd>
-                        <dt>Shanghai Maritime Academy</dt>
-                    </dl>
+                    {profileEducationList}
                 </div>
             </div>
         )

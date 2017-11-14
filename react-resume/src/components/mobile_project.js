@@ -6,7 +6,6 @@ import styles from './mobile_project.css';
 export default class MobileProject extends Component {
 
     render() {
-        console.log(this.props.href);
         return (
             <div styleName="project">
                 <div styleName="icon">
