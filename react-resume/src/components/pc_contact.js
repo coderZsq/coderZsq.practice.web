@@ -1,11 +1,32 @@
 import React, {Component} from 'react';
 import CSSModules from 'react-css-modules';
 import styles from './pc_contact.css';
+import {GET, URL} from '../javascripts/http';
 
 @CSSModules(styles)
 export default class PCContact extends Component {
 
+    constructor() {
+        super();
+        this.state = {
+            data: {
+                wechatUrl: '',
+                wechat: '',
+                mobile: '',
+                email: '',
+                qq: ''
+            }
+        }
+    }
+
+    componentWillMount() {
+        GET(URL.fetchContact).then((data) => {
+            this.setState({data: data})
+        })
+    }
+
     render() {
+        const {data} = this.state;
         return (
             <div>
                 <div styleName="subtitle">
@@ -14,14 +35,14 @@ export default class PCContact extends Component {
                 <div styleName="contact">
                     <div styleName="contact-block">
                         <div styleName="wechat">
-                            <img src="http://upload-images.jianshu.io/upload_images/1229762-453920a3f4eedcd8.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""/>
-                            <p>Wechat: Aquas008</p>
+                            <img src={data.wechatUrl} alt=""/>
+                            <p>Wechat: {data.wechat}</p>
                         </div>
                         <div styleName="other">
                             <h3>Other contact info:</h3>
-                            <p>Mobile: +086 13701777868</p>
-                            <p>Email: a13701777868@sina.com / a13701777868@gmail.com</p>
-                            <p>QQ: 120709684</p>
+                            <p>Mobile: {data.mobile}</p>
+                            <p>Email: {data.email}</p>
+                            <p>QQ: {data.mobile}</p>
                             <p>Please feel free contact for appointment</p>
                             <p>@copyright Castie!</p>
                         </div>
