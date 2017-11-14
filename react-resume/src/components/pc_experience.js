@@ -2,11 +2,31 @@ import React, {Component} from 'react';
 import CSSModules from 'react-css-modules';
 import styles from './pc_experience.css';
 import PCCareer from './pc_career';
+import {GET, URL} from '../javascripts/http';
 
 @CSSModules(styles)
 export default class PCExperience extends Component {
 
+    constructor() {
+        super();
+        this.state = {
+            data: {
+                careerList: []
+            }
+        }
+    }
+
+    componentWillMount() {
+        GET(URL.fetchExperience).then((data) => {
+            this.setState({data: data})
+        })
+    }
+
     render() {
+        const {data} = this.state;
+        let careerList = data.careerList.map((careerVo, index) => (
+            <PCCareer key={index} time={careerVo.time} job={careerVo.job} corp={careerVo.corp} href={careerVo.href} desc1={careerVo.desc1} desc2={careerVo.desc2} desc3={careerVo.desc3}/>
+        ))
         return (
             <div>
                 <div styleName="subtitle">
@@ -14,8 +34,7 @@ export default class PCExperience extends Component {
                 </div>
                 <div styleName="experience">
                     <div styleName="experience-block">
-                        <PCCareer time="Jul. 2015 ~ Now" job="Software Engineer" corp="J1 Crop" href="https://www.j1.com" desc1="iOS application development" desc2="Web application development" desc3="New employee skill training & judgement"/>
-                        <PCCareer time="Aug. 2013 ~ Feb. 2015" job="Freight Operator" corp="TVL Group" href="http://www.tvlgroups.com/En/ugC_AboutUs.asp" desc1="Freight export operation" desc2="Freight import operation" desc3="Freight sales connection & quotation"/>
+                        {careerList}
                     </div>
                 </div>
             </div>

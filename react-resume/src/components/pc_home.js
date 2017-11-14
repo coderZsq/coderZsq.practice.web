@@ -33,6 +33,7 @@ export default class PCHome extends Component {
 
     render() {
         const {data} = this.state;
+        let profileLocation = data.profileLocation.length ? `Location: ${data.profileLocation}` : ''
         let profileSummaryDescription = data.profileSummaryDescription.split('\\n').map((description, index) => (
             <p key={index}>{description}</p>
         ))
@@ -64,7 +65,7 @@ export default class PCHome extends Component {
                             {data.profileCareer}
                         </div>
                         <div styleName="row location">
-                            Location: {data.profileLocation}
+                            {profileLocation}
                         </div>
                         <div styleName="row social">
                             <div styleName="indent"></div>

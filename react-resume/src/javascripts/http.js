@@ -15,5 +15,6 @@ export const URL = {
     fetchProfile: `${host}/portal/fetch_profile.do`,
     fetchProjects: `${host}/portal/fetch_projects.do`,
     fetchGitHub: `${host}/portal/fetch_github.do`,
-    fetchArticles: `${host}/portal/fetch_articles.do`
+    fetchArticles: `${host}/portal/fetch_articles.do`,
+    fetchExperience: `${host}/portal/fetch_experience.do`
 }
