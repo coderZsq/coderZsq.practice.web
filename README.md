@@ -4,6 +4,7 @@
 > 从vue-resume迁移, 通过react构建的个人简历.
 - [Web 将项目快速迁移至React](http://www.jianshu.com/p/1803bfac1527)
 - [Web PC项目快速适配移动端](http://www.jianshu.com/p/404ddf018a84)
+- [Web 使用fetch请求后端服务](http://www.jianshu.com/p/7da519d391d1)
 
 ### vue-resume
 > 通过vue构建的个人简历, 有兴趣可微信私聊.
