@@ -9,16 +9,14 @@
 }
 
 .articles {
-    height: 1200px;
+    padding-top: 50px;
+    padding-bottom: 30px;
+    overflow: hidden;
     width: 700px;
     float: right;
     display: inline-block;
-    position: relative;
 }
 
 .articles .articles-block {
-    position: absolute;
-    width: 700px;
-    height: 1100px;
-    top: calc(50% - 550px);
+    width: inherit;
 }

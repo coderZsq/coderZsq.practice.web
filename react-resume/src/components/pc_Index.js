@@ -31,7 +31,7 @@ export default class PCIndex extends Component {
                         <PCGithub/>
                     </div>
                 </div>
-                <div styleName="articles">
+                <div styleName="even">
                     <div styleName="content">
                         <PCArticles/>
                     </div>
@@ -41,7 +41,7 @@ export default class PCIndex extends Component {
                         <PCExperience/>
                     </div>
                 </div>
-                <div styleName="contact">
+                <div styleName="even">
                     <div styleName="content">
                         <PCContact/>
                     </div>

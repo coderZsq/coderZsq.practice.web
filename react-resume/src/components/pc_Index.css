@@ -1,29 +1,16 @@
 .even {
     width: 100%;
-    height: 600px;
+    overflow: hidden;
     background-color: #fafafa;
 }
 
 .odd {
     width: 100%;
-    height: 600px;
+    overflow: hidden;
     background-color: #fff;
-}
-
-.articles {
-    width: 100%;
-    height: 1130px;
-    background-color: #fafafa;
-}
-
-.contact {
-    width: 100%;
-    height: 320px;
-    background-color: #fafafa;
 }
 
 .content {
     margin: 0 auto;
     width: 1000px;
-    height: inherit;
 }

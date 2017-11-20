@@ -9,16 +9,14 @@
 }
 
 .projects {
-    height: 600px;
+    padding-top: 50px;
+    padding-bottom: 30px;
+    overflow: hidden;
     width: 700px;
     float: right;
     display: inline-block;
-    position: relative;
 }
 
 .projects .projects-block {
-    position: absolute;
-    width: 700px;
-    height: 500px;
-    top: calc(50% - 250px);
+    width: inherit;
 }

@@ -9,6 +9,9 @@
 }
 
 .experience {
+    padding-top: 50px;
+    padding-bottom: 30px;
+    overflow: hidden;
     width: 700px;
     float: right;
     display: inline-block;
@@ -16,8 +19,5 @@
 }
 
 .experience .experience-block {
-    position: absolute;
-    width: 700px;
-    height: 500px;
-    top: calc(50% - 62px);
+    width: inherit;
 }
