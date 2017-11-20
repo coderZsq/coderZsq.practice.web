@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import CSSModules from 'react-css-modules';
 import styles from './pc_products.css';
 import PCProduct from './pc_project';
-import {GET, URL} from '../javascripts/http';
+import {GET, URL} from '../utils/http';
 
 @CSSModules(styles)
 export default class PCProducts extends Component {

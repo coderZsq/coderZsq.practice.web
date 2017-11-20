@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import CSSModules from 'react-css-modules';
 import styles from './pc_articles.css';
 import PCColumn from './pc_column';
-import {GET, URL} from '../javascripts/http';
+import {GET, URL} from '../utils/http';
 
 @CSSModules(styles)
 export default class PCArticles extends Component {

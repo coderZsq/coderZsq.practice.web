@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import CSSModules from 'react-css-modules';
 import styles from './mobile_contact.css';
-import {GET, URL} from '../javascripts/http';
+import {GET, URL} from '../utils/http';
 
 @CSSModules(styles)
 export default class MobileContact extends Component {
