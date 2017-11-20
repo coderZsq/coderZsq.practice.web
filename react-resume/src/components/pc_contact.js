@@ -42,7 +42,7 @@ export default class PCContact extends Component {
                             <h3>Other contact info:</h3>
                             <p>Mobile: {data.mobile}</p>
                             <p>Email: {data.email}</p>
-                            <p>QQ: {data.mobile}</p>
+                            <p>QQ: {data.qq}</p>
                             <p>Please feel free contact for appointment</p>
                             <p>@copyright Castie!</p>
                         </div>
