@@ -3,7 +3,7 @@ import CSSModules from 'react-css-modules';
 import styles from './pc_Index.css';
 import PCNavigation from './pc_navigation';
 import PCHome from './pc_home';
-import PCProducts from './pc_projects';
+import PCProjects from './pc_projects';
 import PCGithub from './pc_github';
 import PCArticles from './pc_articles';
 import PCExperience from './pc_experience';
@@ -16,32 +16,32 @@ export default class PCIndex extends Component {
         return (
             <div>
                 <PCNavigation/>
-                <div styleName="odd">
+                <div id="home" styleName="odd">
                     <div styleName="content">
                         <PCHome/>
                     </div>
                 </div>
-                <div styleName="even">
+                <div id="projects" styleName="even">
                     <div styleName="content">
-                        <PCProducts/>
+                        <PCProjects/>
                     </div>
                 </div>
-                <div styleName="odd">
+                <div id="github" styleName="odd">
                     <div styleName="content">
                         <PCGithub/>
                     </div>
                 </div>
-                <div styleName="even">
+                <div id="articles" styleName="even">
                     <div styleName="content">
                         <PCArticles/>
                     </div>
                 </div>
-                <div styleName="odd">
+                <div id="experience" styleName="odd">
                     <div styleName="content">
                         <PCExperience/>
                     </div>
                 </div>
-                <div styleName="even">
+                <div id="contact" styleName="even">
                     <div styleName="content">
                         <PCContact/>
                     </div>
