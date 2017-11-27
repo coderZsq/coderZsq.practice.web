@@ -19,8 +19,12 @@
     border-radius: 12px;
 }
 
+.user .user-block .icon, .user .user-block .icon img:hover {
+    box-shadow: 1px 1px 15px #ccc;
+}
+
 .user .user-block .icon {
-    padding-bottom: 10px;
+    margin-bottom: 20px;
 }
 
 .user .user-block .row {
@@ -33,6 +37,10 @@
     background-color: #f8f8f8;
     border-bottom-right-radius: 12px;
     border-bottom-left-radius: 12px;
+}
+
+.user .user-block .row:hover {
+    box-shadow: 1px 1px 3px #ccc;
 }
 
 .user .user-block .name {
@@ -92,8 +100,11 @@
     height: 280px;
     left: calc(50% - 340px);
     top: 50px;
-    border-top-left-radius: 12px;
-    border-top-right-radius: 12px;
+    border-radius: 12px;
+}
+
+.introduction .main .main-block:hover {
+    box-shadow: 1px 1px 7px #ccc;
 }
 
 .introduction .main .main-block h1 {
@@ -128,6 +139,10 @@
     border-bottom-left-radius: 12px;
 }
 
+.introduction .left .left-block:hover {
+    box-shadow: 1px 1px 7px #ccc;
+}
+
 .introduction .left .left-block h2 {
     color: #444;
     height: 50px;
@@ -158,6 +173,10 @@
     position: absolute;
     border-bottom-right-radius: 12px;
     border-bottom-left-radius: 12px;
+}
+
+.introduction .right .right-block:hover {
+    box-shadow: 1px 1px 7px #ccc;
 }
 
 .introduction .right .right-block h2 {
