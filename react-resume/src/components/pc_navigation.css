@@ -22,6 +22,7 @@
     display: inline-block;
     text-indent: 40px;
     color: white;
+    user-select: none;
 }
 
 .nav .content .items {
@@ -38,6 +39,7 @@
     display: inline-block;
     color: white;
     cursor: pointer;
+    user-select: none;
 }
 
 .nav a, .nav a:link, .nav a:visited {

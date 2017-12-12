@@ -6,6 +6,7 @@
     text-align: center;
     display: inline-block;
     color: #444;
+    user-select: none;
 }
 
 .experience {
@@ -16,6 +17,7 @@
     float: right;
     display: inline-block;
     position: relative;
+    user-select: none;
 }
 
 .experience .experience-block {

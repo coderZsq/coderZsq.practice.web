@@ -6,6 +6,7 @@
     text-align: center;
     display: inline-block;
     color: #444;
+    user-select: none;
 }
 
 .github {
@@ -15,6 +16,7 @@
     width: 700px;
     float: right;
     display: inline-block;
+    user-select: none;
 }
 
 .github .github-block {
