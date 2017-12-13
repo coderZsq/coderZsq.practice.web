@@ -40,7 +40,7 @@ export default class MobileContact extends Component {
                         <h4>Other contact info:</h4>
                         <p>Mobile: {data.mobile}</p>
                         <p>QQ: {data.qq}</p>
-                        <p>@copyright Castie!</p>
+                        <p>Copyright © {new Date().getFullYear()} Castie!.</p>
                     </div>
                 </div>
             </div>

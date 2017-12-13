@@ -44,7 +44,7 @@ export default class PCContact extends Component {
                             <p>Email: {data.email}</p>
                             <p>QQ: {data.qq}</p>
                             <p>Please feel free contact for appointment</p>
-                            <p>@copyright Castie!</p>
+                            <p>Copyright © {new Date().getFullYear()} Castie!. All rights reserved.</p>
                         </div>
                     </div>
                 </div>

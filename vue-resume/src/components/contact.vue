@@ -11,11 +11,11 @@
       </div>
       <div class="other">
         <h3>Other contact info:</h3>
-        <p>Mobile: +086 13701777868</p>
+        <p>Mobile: +86 13701777868</p>
         <p>Email: a13701777868@sina.com / a13701777868@gmail.com</p>
         <p>QQ: 120709684</p>
         <p>Please feel free contact for appointment</p>
-        <p>@copyright Castie!</p>
+        <p>Copyright © 2017 Castie!. All rights reserved.</p>
       </div>
     </div>
   </div>
