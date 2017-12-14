@@ -25,6 +25,13 @@
     user-select: none;
 }
 
+.nav .content .title span {
+    padding-left: 10px;
+    font-size: 15px;
+    color: #ccc;
+    text-shadow: 5px 2px 6px #000;
+}
+
 .nav .content .items {
     line-height: 50px;
     height: 50px;

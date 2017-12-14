@@ -1,0 +1,17 @@
+.even {
+    width: 100%;
+    overflow: hidden;
+    background-color: #fafafa;
+}
+
+.odd {
+    width: 100%;
+    overflow: hidden;
+    background-color: #fff;
+}
+
+.content {
+    margin: 0 auto;
+    width: 1000px;
+    min-height: 320px;
+}
