@@ -15,3 +15,7 @@
     width: 1000px;
     min-height: 320px;
 }
+
+iframe {
+    display: none;
+}

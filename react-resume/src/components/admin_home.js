@@ -14,7 +14,9 @@ export default class AdminHome extends Component {
                 profileName: '',
                 profileCareer: '',
                 profileLocation: '',
-                profileSocialList: []
+                profileSocialList: [],
+                profileInterestList: [],
+                profileEducationList: []
             },
             profile_social: ''
         }
@@ -40,6 +42,9 @@ export default class AdminHome extends Component {
         for (var index = 0, length = data.profileSocialList.length; index < length; index++) {
             refs[`src_${index}`].value = data.profileSocialList[index].src;
             refs[`href_${index}`].value = data.profileSocialList[index].href;
+        }
+        for (var index = 0, length = data.profileInterestList.length; index < length; index++) {
+            refs[`interest_${index}`].value = data.profileInterestList[index].interest;
         }
     }
 
@@ -67,7 +72,29 @@ export default class AdminHome extends Component {
                 </div>
             )
         })
+        let profile_interest = data.profileInterestList.map((interestVo, index) => {
+            let interest = `interest_${index}`;
+            return (
+                <div key={index}>
+                    <div styleName="form-line">
+                        <span>interest:</span>
+                        <input type="text" ref={interest} autoComplete="off"/>
+                    </div>
+                </div>
+            )
+        })
+        let profileEducationList = data.profileEducationList.map((educationVo, index) => {
+            return (
+                <div key={index}>
+                    <div styleName="form-line">
+                        <span>interest:</span>
+                        <input type="text" autoComplete="off"/>
+                    </div>
+                </div>
+            )
+        }
 
+        )
         return (
             <div>
                 <div styleName="user">
@@ -127,6 +154,9 @@ export default class AdminHome extends Component {
                     </div>
                     <div styleName="profile_social-block">
                         {profile_social}
+                    </div>
+                    <div styleName="profile_interest-block">
+                        {profile_interest}
                     </div>
                 </div>
             </div>

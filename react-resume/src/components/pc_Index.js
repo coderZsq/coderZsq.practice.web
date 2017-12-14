@@ -46,6 +46,7 @@ export default class PCIndex extends Component {
                         <PCContact/>
                     </div>
                 </div>
+                <iframe frameBorder="no" border="0" marginWidth="0" marginHeight="0" width="0" height="0" src="//music.163.com/outchain/player?type=2&id=528283&auto=1&height=32"></iframe>
             </div>
         )
     }

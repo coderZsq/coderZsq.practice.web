@@ -91,7 +91,7 @@
     user-select: none;
 }
 
-.profile .profile-block, .profile .profile_social-block {
+.profile .profile-block, .profile .profile_social-block, .profile .profile_interest-block {
     width: 680px;
     margin-left: 10px;
     margin-right: 10px;
@@ -101,11 +101,11 @@
     background-color: #f8f8f8;
 }
 
-.profile .profile-block:hover, .profile .profile_social-block:hover {
+.profile .profile-block:hover, .profile .profile_social-block:hover, .profile .profile_interest-block:hover {
     box-shadow: 1px 1px 7px #ccc;
 }
 
-.profile .profile_social-block .form-line, .profile .profile-block .form-line {
+.profile .profile_social-block .form-line, .profile .profile-block .form-line, .profile .profile_interest-block .form-line {
     padding-top: 10px;
     padding-left: 30px;
     height: 30px;
@@ -135,6 +135,19 @@
 .profile .profile_social-block .form-line input {
     height: 25px;
     line-height: 25px;
-    width: 248px;
+    width: 247.5px;
+    font-size: 14px;
+}
+
+.profile .profile_interest-block .form-line span {
+    display: inline-block;
+    width: 80px;
+    text-align: center;
+}
+
+.profile .profile_interest-block .form-line input {
+    height: 25px;
+    line-height: 25px;
+    width: 518px;
     font-size: 14px;
 }
