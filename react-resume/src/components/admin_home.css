@@ -91,7 +91,7 @@
     user-select: none;
 }
 
-.profile .profile-block, .profile .profile_social-block, .profile .profile_interest-block {
+.profile .profile-block, .profile .profile_social-block, .profile .profile_interest-block, .profile .profile_education-block {
     width: 680px;
     margin-left: 10px;
     margin-right: 10px;
@@ -101,11 +101,11 @@
     background-color: #f8f8f8;
 }
 
-.profile .profile-block:hover, .profile .profile_social-block:hover, .profile .profile_interest-block:hover {
+.profile .profile-block:hover, .profile .profile_social-block:hover, .profile .profile_interest-block:hover, .profile .profile_education-block:hover {
     box-shadow: 1px 1px 7px #ccc;
 }
 
-.profile .profile_social-block .form-line, .profile .profile-block .form-line, .profile .profile_interest-block .form-line {
+.profile .profile_social-block .form-line, .profile .profile-block .form-line, .profile .profile_interest-block .form-line, .profile .profile_education-block .form-line {
     padding-top: 10px;
     padding-left: 30px;
     height: 30px;
@@ -150,4 +150,53 @@
     line-height: 25px;
     width: 518px;
     font-size: 14px;
+}
+
+.profile .profile_education-block .form-line span {
+    display: inline-block;
+    width: 60px;
+    text-align: center;
+}
+
+.profile .profile_education-block .form-line input {
+    height: 25px;
+    line-height: 25px;
+    width: 180px;
+    font-size: 14px;
+}
+
+.profile .profile_education-block .form-line input.year {
+    width: 49px;
+}
+
+.profile input {
+    text-indent: 8px;
+}
+
+.profile .options {
+    padding-top: 10px;
+    margin-left: 40px;
+    margin-right: 50px;
+    height: 30px;
+    line-height: 30px;
+}
+
+.profile .options button {
+    float: right;
+    color: #4F98F5;
+    outline: none;
+    font-size: 13px;
+    font-weight: bold;
+    margin-top: 3px;
+    margin-left: 10px;
+    border-radius: 8px;
+    width: 60px;
+    height: 25px;
+}
+
+.profile .options .table {
+    color: #444;
+    font-size: 16px;
+    font-weight: bold;
+    text-shadow: 5px 2px 6px #ddd;
 }

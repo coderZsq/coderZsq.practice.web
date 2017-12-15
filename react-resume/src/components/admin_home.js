@@ -39,12 +39,17 @@ export default class AdminHome extends Component {
         refs.profile_summary_description.value = data.profileSummaryDescription;
         refs.profile_interest_title.value = data.profileInterestTitle;
         refs.profile_education_title.value = data.profileEducationTitle;
-        for (var index = 0, length = data.profileSocialList.length; index < length; index++) {
+        for (let index = 0, length = data.profileSocialList.length; index < length; index++) {
             refs[`src_${index}`].value = data.profileSocialList[index].src;
             refs[`href_${index}`].value = data.profileSocialList[index].href;
         }
-        for (var index = 0, length = data.profileInterestList.length; index < length; index++) {
+        for (let index = 0, length = data.profileInterestList.length; index < length; index++) {
             refs[`interest_${index}`].value = data.profileInterestList[index].interest;
+        }
+        for (let index = 0, length = data.profileEducationList.length; index < length; index++) {
+            refs[`major_${index}`].value = data.profileEducationList[index].major;
+            refs[`school_${index}`].value = data.profileEducationList[index].school;
+            refs[`year_${index}`].value = data.profileEducationList[index].year;
         }
     }
 
@@ -83,18 +88,23 @@ export default class AdminHome extends Component {
                 </div>
             )
         })
-        let profileEducationList = data.profileEducationList.map((educationVo, index) => {
+        let profile_education = data.profileEducationList.map((educationVo, index) => {
+            let major = `major_${index}`;
+            let school = `school_${index}`;
+            let year = `year_${index}`;
             return (
                 <div key={index}>
                     <div styleName="form-line">
-                        <span>interest:</span>
-                        <input type="text" autoComplete="off"/>
+                        <span>major:</span>
+                        <input type="text" ref={major} autoComplete="off"/>
+                        <span>school:</span>
+                        <input type="text" ref={school} autoComplete="off"/>
+                        <span>year:</span>
+                        <input type="text" ref={year} styleName="year" autoComplete="off"/>
                     </div>
                 </div>
             )
-        }
-
-        )
+        })
         return (
             <div>
                 <div styleName="user">
@@ -119,6 +129,11 @@ export default class AdminHome extends Component {
                 </div>
                 <div styleName="profile">
                     <div styleName="profile-block">
+                        <div styleName="options">
+                            <span styleName="table">table: resume_profile</span>
+                            <button>done</button>
+                            <button>edit</button>
+                        </div>
                         <div styleName="form-line">
                             <span>profile_image:</span>
                             <input type="text" ref="profile_image" autoComplete="off"/>
@@ -153,10 +168,28 @@ export default class AdminHome extends Component {
                         </div>
                     </div>
                     <div styleName="profile_social-block">
+                        <div styleName="options">
+                            <span styleName="table">table: resume_profile</span>
+                            <button>done</button>
+                            <button>edit</button>
+                        </div>
                         {profile_social}
                     </div>
                     <div styleName="profile_interest-block">
+                        <div styleName="options">
+                            <span styleName="table">table: resume_profile</span>
+                            <button>done</button>
+                            <button>edit</button>
+                        </div>
                         {profile_interest}
+                    </div>
+                    <div styleName="profile_education-block">
+                        <div styleName="options">
+                            <span styleName="table">table: resume_profile</span>
+                            <button>done</button>
+                            <button>edit</button>
+                        </div>
+                        {profile_education}
                     </div>
                 </div>
             </div>
