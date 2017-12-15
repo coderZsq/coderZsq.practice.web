@@ -9,16 +9,13 @@ export default class AdminHome extends Component {
     constructor() {
         super();
         this.state = {
-            data: {
-                profileImage: '',
-                profileName: '',
-                profileCareer: '',
-                profileLocation: '',
-                profileSocialList: [],
-                profileInterestList: [],
-                profileEducationList: []
-            },
-            profile_social: ''
+            profileImage: '',
+            profileName: '',
+            profileCareer: '',
+            profileLocation: '',
+            profileSocialList: [],
+            profileInterestList: [],
+            profileEducationList: []
         }
     }
 
@@ -28,14 +25,14 @@ export default class AdminHome extends Component {
 
     fetchProfile() {
         GET(URL.fetchProfile).then((data) => {
-            this.setState({data: data})
+            this.setState(data)
             this.refsFillBack(data);
         })
     }
 
     updateProfile(key, value) {
         let formData = new FormData();
-        formData.append(key, value);  
+        formData.append(key, value);
         POST(URL.updateProfile, formData).then((data) => {
             alert("update success");
             this.fetchProfile();
@@ -66,20 +63,29 @@ export default class AdminHome extends Component {
         }
     }
 
-    buttonClick(input) {
+    updateProfileBind(input) {
         this.updateProfile(input.id, input.value);
     }
 
+    insertSocialBind() {
+        this.state.profileSocialList.push({src: '', href: ''});
+        this.setState({profileSocialList: this.state.profileSocialList});
+    }
+
+    deleteSocialBind(index) {
+        
+    }
+
     render() {
-        const {data} = this.state;
+        const data = this.state;
         let profileLocation = data.profileLocation.length
             ? `Location: ${data.profileLocation}`
-            : ''
+            : '';
         let profileSocialList = data.profileSocialList.map((socialVo, index) => (
             <div key={index}>
                 <a href={socialVo.href}><img src={socialVo.src} alt=""/></a>
             </div>
-        ))
+        ));
         let profile_social = data.profileSocialList.map((socialVo, index) => {
             let src = `src_${index}`;
             let href = `href_${index}`;
@@ -91,11 +97,11 @@ export default class AdminHome extends Component {
                         <span>href:</span>
                         <input type="text" ref={href} autoComplete="off"/>
                         <button>done</button>
-                        <button>delete</button>
+                        <button onClick={this.deleteSocialBind.bind(this, index)}>delete</button>
                     </div>
                 </div>
             )
-        })
+        });
         let profile_interest = data.profileInterestList.map((interestVo, index) => {
             let interest = `interest_${index}`;
             return (
@@ -108,7 +114,7 @@ export default class AdminHome extends Component {
                     </div>
                 </div>
             )
-        })
+        });
         let profile_education = data.profileEducationList.map((educationVo, index) => {
             let major = `major_${index}`;
             let school = `school_${index}`;
@@ -127,7 +133,7 @@ export default class AdminHome extends Component {
                     </div>
                 </div>
             )
-        })
+        });
         return (
             <div>
                 <div styleName="user">
@@ -158,48 +164,48 @@ export default class AdminHome extends Component {
                         <div styleName="form-line">
                             <span>profile_image:</span>
                             <input type="text" ref="profile_image" id="profile_image" autoComplete="off"/>
-                            <button onClick={this.buttonClick.bind(this,this.refs.profile_image)}>done</button>
+                            <button onClick={this.updateProfileBind.bind(this, this.refs.profile_image)}>done</button>
                         </div>
                         <div styleName="form-line">
                             <span>profile_name:</span>
                             <input type="text" ref="profile_name" id="profile_name" autoComplete="off"/>
-                            <button onClick={this.buttonClick.bind(this,this.refs.profile_name)}>done</button>
+                            <button onClick={this.updateProfileBind.bind(this, this.refs.profile_name)}>done</button>
                         </div>
                         <div styleName="form-line">
                             <span>profile_career:</span>
                             <input type="text" ref="profile_career" id="profile_career" autoComplete="off"/>
-                            <button onClick={this.buttonClick.bind(this,this.refs.profile_career)}>done</button>
+                            <button onClick={this.updateProfileBind.bind(this, this.refs.profile_career)}>done</button>
                         </div>
                         <div styleName="form-line">
                             <span>profile_location:</span>
                             <input type="text" ref="profile_location" id="profile_location" autoComplete="off"/>
-                            <button onClick={this.buttonClick.bind(this,this.refs.profile_location)}>done</button>
+                            <button onClick={this.updateProfileBind.bind(this, this.refs.profile_location)}>done</button>
                         </div>
                         <div styleName="form-line">
                             <span>profile_summary_title:</span>
                             <input type="text" ref="profile_summary_title" id="profile_summary_title" autoComplete="off"/>
-                            <button onClick={this.buttonClick.bind(this,this.refs.profile_summary_title)}>done</button>
+                            <button onClick={this.updateProfileBind.bind(this, this.refs.profile_summary_title)}>done</button>
                         </div>
                         <div styleName="form-line">
                             <span>profile_summary_description:</span>
                             <input type="text" ref="profile_summary_description" id="profile_summary_description" autoComplete="off"/>
-                            <button onClick={this.buttonClick.bind(this,this.refs.profile_summary_description)}>done</button>
+                            <button onClick={this.updateProfileBind.bind(this, this.refs.profile_summary_description)}>done</button>
                         </div>
                         <div styleName="form-line">
                             <span>profile_interest_title:</span>
                             <input type="text" ref="profile_interest_title" id="profile_interest_title" autoComplete="off"/>
-                            <button onClick={this.buttonClick.bind(this,this.refs.profile_interest_title)}>done</button>
+                            <button onClick={this.updateProfileBind.bind(this, this.refs.profile_interest_title)}>done</button>
                         </div>
                         <div styleName="form-line">
                             <span>profile_education_title:</span>
                             <input type="text" ref="profile_education_title" id="profile_education_title" autoComplete="off"/>
-                            <button onClick={this.buttonClick.bind(this,this.refs.profile_education_title)}>done</button>
+                            <button onClick={this.updateProfileBind.bind(this, this.refs.profile_education_title)}>done</button>
                         </div>
                     </div>
                     <div styleName="profile_social-block">
                         <div styleName="options">
                             <span styleName="table">table: resume_profile_social</span>
-                            <button>add</button>
+                            <button onClick={this.insertSocialBind.bind(this)}>add</button>
                         </div>
                         {profile_social}
                     </div>
