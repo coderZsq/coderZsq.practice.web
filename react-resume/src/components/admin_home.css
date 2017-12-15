@@ -116,52 +116,58 @@
 .profile .profile-block .form-line span {
     display: inline-block;
     width: 200px;
-    text-align: center;
+    text-align: left;
 }
 
 .profile .profile-block .form-line input {
     height: 25px;
     line-height: 25px;
-    width: 400px;
+    width: 350px;
     font-size: 14px;
 }
 
 .profile .profile_social-block .form-line span {
     display: inline-block;
-    width: 50px;
-    text-align: center;
+    width: 40px;
+    text-align: left;
 }
 
 .profile .profile_social-block .form-line input {
     height: 25px;
+    margin-right: 10px;
     line-height: 25px;
-    width: 247.5px;
+    width: 186.5px;
     font-size: 14px;
 }
 
 .profile .profile_interest-block .form-line span {
     display: inline-block;
-    width: 80px;
-    text-align: center;
+    width: 70px;
+    text-align: left;
 }
 
 .profile .profile_interest-block .form-line input {
     height: 25px;
     line-height: 25px;
-    width: 518px;
+    width: 406.5px;
     font-size: 14px;
 }
 
 .profile .profile_education-block .form-line span {
     display: inline-block;
-    width: 60px;
-    text-align: center;
+    width: 50px;
+    text-align: left;
+}
+
+.profile .profile_education-block .form-line span.year {
+    width: 40px;
 }
 
 .profile .profile_education-block .form-line input {
+    margin-right: 10px;
     height: 25px;
     line-height: 25px;
-    width: 180px;
+    width: 123.5px;
     font-size: 14px;
 }
 
@@ -175,15 +181,14 @@
 
 .profile .options {
     padding-top: 10px;
-    margin-left: 40px;
-    margin-right: 50px;
+    margin-left: 28px;
+    margin-right: 29px;
     height: 30px;
     line-height: 30px;
 }
 
-.profile .options button {
-    float: right;
-    color: #4F98F5;
+.profile button {
+    color: #555;
     outline: none;
     font-size: 13px;
     font-weight: bold;
@@ -192,6 +197,10 @@
     border-radius: 8px;
     width: 60px;
     height: 25px;
+}
+
+.profile .options button {
+    float: right;
 }
 
 .profile .options .table {

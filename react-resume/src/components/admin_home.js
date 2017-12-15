@@ -73,6 +73,8 @@ export default class AdminHome extends Component {
                         <input type="text" ref={src} autoComplete="off"/>
                         <span>href:</span>
                         <input type="text" ref={href} autoComplete="off"/>
+                        <button>done</button>
+                        <button>delete</button>
                     </div>
                 </div>
             )
@@ -84,6 +86,8 @@ export default class AdminHome extends Component {
                     <div styleName="form-line">
                         <span>interest:</span>
                         <input type="text" ref={interest} autoComplete="off"/>
+                        <button>done</button>
+                        <button>delete</button>
                     </div>
                 </div>
             )
@@ -99,8 +103,10 @@ export default class AdminHome extends Component {
                         <input type="text" ref={major} autoComplete="off"/>
                         <span>school:</span>
                         <input type="text" ref={school} autoComplete="off"/>
-                        <span>year:</span>
+                        <span styleName="year">year:</span>
                         <input type="text" ref={year} styleName="year" autoComplete="off"/>
+                        <button>done</button>
+                        <button>delete</button>
                     </div>
                 </div>
             )
@@ -131,63 +137,66 @@ export default class AdminHome extends Component {
                     <div styleName="profile-block">
                         <div styleName="options">
                             <span styleName="table">table: resume_profile</span>
-                            <button>done</button>
-                            <button>edit</button>
                         </div>
                         <div styleName="form-line">
                             <span>profile_image:</span>
                             <input type="text" ref="profile_image" autoComplete="off"/>
+                            <button>done</button>
                         </div>
                         <div styleName="form-line">
                             <span>profile_name:</span>
                             <input type="text" ref="profile_name" autoComplete="off"/>
+                            <button>done</button>
                         </div>
                         <div styleName="form-line">
                             <span>profile_career:</span>
                             <input type="text" ref="profile_career" autoComplete="off"/>
+                            <button>done</button>
                         </div>
                         <div styleName="form-line">
                             <span>profile_location:</span>
                             <input type="text" ref="profile_location" autoComplete="off"/>
+                            <button>done</button>
                         </div>
                         <div styleName="form-line">
                             <span>profile_summary_title:</span>
                             <input type="text" ref="profile_summary_title" autoComplete="off"/>
+                            <button>done</button>
                         </div>
                         <div styleName="form-line">
                             <span>profile_summary_description:</span>
                             <input type="text" ref="profile_summary_description" autoComplete="off"/>
+                            <button>done</button>
                         </div>
                         <div styleName="form-line">
                             <span>profile_interest_title:</span>
                             <input type="text" ref="profile_interest_title" autoComplete="off"/>
+                            <button>done</button>
                         </div>
                         <div styleName="form-line">
                             <span>profile_education_title:</span>
                             <input type="text" ref="profile_education_title" autoComplete="off"/>
+                            <button>done</button>
                         </div>
                     </div>
                     <div styleName="profile_social-block">
                         <div styleName="options">
-                            <span styleName="table">table: resume_profile</span>
-                            <button>done</button>
-                            <button>edit</button>
+                            <span styleName="table">table: resume_profile_social</span>
+                            <button>add</button>
                         </div>
                         {profile_social}
                     </div>
                     <div styleName="profile_interest-block">
                         <div styleName="options">
-                            <span styleName="table">table: resume_profile</span>
-                            <button>done</button>
-                            <button>edit</button>
+                            <span styleName="table">table: resume_profile_interest</span>
+                            <button>add</button>
                         </div>
                         {profile_interest}
                     </div>
                     <div styleName="profile_education-block">
                         <div styleName="options">
-                            <span styleName="table">table: resume_profile</span>
-                            <button>done</button>
-                            <button>edit</button>
+                            <span styleName="table">table: resume_profile_education</span>
+                            <button>add</button>
                         </div>
                         {profile_education}
                     </div>
