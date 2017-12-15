@@ -23,9 +23,20 @@ export default class AdminHome extends Component {
     }
 
     componentWillMount() {
+        this.fetchProfile();
+    }
+
+    fetchProfile() {
         GET(URL.fetchProfile).then((data) => {
             this.setState({data: data})
             this.refsFillBack(data);
+        })
+    }
+
+    updateProfile(key, value) {
+        GET(URL.updateProfile + `?${key}=${value}`).then((data) => {
+            alert("update success");
+            this.fetchProfile();
         })
     }
 
@@ -51,6 +62,10 @@ export default class AdminHome extends Component {
             refs[`school_${index}`].value = data.profileEducationList[index].school;
             refs[`year_${index}`].value = data.profileEducationList[index].year;
         }
+    }
+
+    buttonClick(input) {
+        this.updateProfile(input.id, input.value);
     }
 
     render() {
@@ -140,43 +155,43 @@ export default class AdminHome extends Component {
                         </div>
                         <div styleName="form-line">
                             <span>profile_image:</span>
-                            <input type="text" ref="profile_image" autoComplete="off"/>
-                            <button>done</button>
+                            <input type="text" ref="profile_image" id="profile_image" autoComplete="off"/>
+                            <button onClick={this.buttonClick.bind(this,this.refs.profile_image)}>done</button>
                         </div>
                         <div styleName="form-line">
                             <span>profile_name:</span>
-                            <input type="text" ref="profile_name" autoComplete="off"/>
-                            <button>done</button>
+                            <input type="text" ref="profile_name" id="profile_name" autoComplete="off"/>
+                            <button onClick={this.buttonClick.bind(this,this.refs.profile_name)}>done</button>
                         </div>
                         <div styleName="form-line">
                             <span>profile_career:</span>
-                            <input type="text" ref="profile_career" autoComplete="off"/>
-                            <button>done</button>
+                            <input type="text" ref="profile_career" id="profile_career" autoComplete="off"/>
+                            <button onClick={this.buttonClick.bind(this,this.refs.profile_career)}>done</button>
                         </div>
                         <div styleName="form-line">
                             <span>profile_location:</span>
-                            <input type="text" ref="profile_location" autoComplete="off"/>
-                            <button>done</button>
+                            <input type="text" ref="profile_location" id="profile_location" autoComplete="off"/>
+                            <button onClick={this.buttonClick.bind(this,this.refs.profile_location)}>done</button>
                         </div>
                         <div styleName="form-line">
                             <span>profile_summary_title:</span>
-                            <input type="text" ref="profile_summary_title" autoComplete="off"/>
-                            <button>done</button>
+                            <input type="text" ref="profile_summary_title" id="profile_summary_title" autoComplete="off"/>
+                            <button onClick={this.buttonClick.bind(this,this.refs.profile_summary_title)}>done</button>
                         </div>
                         <div styleName="form-line">
                             <span>profile_summary_description:</span>
-                            <input type="text" ref="profile_summary_description" autoComplete="off"/>
-                            <button>done</button>
+                            <input type="text" ref="profile_summary_description" id="profile_summary_description" autoComplete="off"/>
+                            <button onClick={this.buttonClick.bind(this,this.refs.profile_summary_description)}>done</button>
                         </div>
                         <div styleName="form-line">
                             <span>profile_interest_title:</span>
-                            <input type="text" ref="profile_interest_title" autoComplete="off"/>
-                            <button>done</button>
+                            <input type="text" ref="profile_interest_title" id="profile_interest_title" autoComplete="off"/>
+                            <button onClick={this.buttonClick.bind(this,this.refs.profile_interest_title)}>done</button>
                         </div>
                         <div styleName="form-line">
                             <span>profile_education_title:</span>
-                            <input type="text" ref="profile_education_title" autoComplete="off"/>
-                            <button>done</button>
+                            <input type="text" ref="profile_education_title" id="profile_education_title" autoComplete="off"/>
+                            <button onClick={this.buttonClick.bind(this,this.refs.profile_education_title)}>done</button>
                         </div>
                     </div>
                     <div styleName="profile_social-block">

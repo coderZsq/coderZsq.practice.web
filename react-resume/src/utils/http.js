@@ -17,5 +17,7 @@ export const URL = {
     fetchGitHub: `${host}/portal/fetch_github.do`,
     fetchArticles: `${host}/portal/fetch_articles.do`,
     fetchExperience: `${host}/portal/fetch_experience.do`,
-    fetchContact: `${host}/portal/fetch_contact.do`
+    fetchContact: `${host}/portal/fetch_contact.do`,
+
+    updateProfile: `${host}/backend/update_profile.do`
 }
