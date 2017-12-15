@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import CSSModules from 'react-css-modules';
 import styles from './admin_home.css';
-import {GET, URL} from '../utils/http';
+import {GET, POST, URL} from '../utils/http';
 
 @CSSModules(styles, {allowMultiple: true})
 export default class AdminHome extends Component {
@@ -34,7 +34,9 @@ export default class AdminHome extends Component {
     }
 
     updateProfile(key, value) {
-        GET(URL.updateProfile + `?${key}=${value}`).then((data) => {
+        let formData = new FormData();
+        formData.append(key, value);  
+        POST(URL.updateProfile, formData).then((data) => {
             alert("update success");
             this.fetchProfile();
         })
