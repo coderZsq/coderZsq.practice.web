@@ -9,7 +9,7 @@ export default class PCColumn extends Component {
 
         const rows = this.props.articles.map((article, index) => (
             <div styleName="row" key={index}>
-                <a href={article.href}>{article.name}</a>
+                <a target="_blank"  href={article.href}>{article.name}</a>
             </div>
         ))
 

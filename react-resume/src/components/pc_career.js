@@ -11,7 +11,7 @@ export default class PCCareer extends Component {
                 <div styleName="career-block">
                     <h2>{this.props.time}</h2>
                     <p>{this.props.job},&nbsp;
-                        <a href={this.props.href}>{this.props.corp}</a>,&nbsp;Shanghai</p>
+                        <a target="_blank"  href={this.props.href}>{this.props.corp}</a>,&nbsp;Shanghai</p>
                     <ul>
                         <li>{this.props.desc1}</li>
                         <li>{this.props.desc2}</li>

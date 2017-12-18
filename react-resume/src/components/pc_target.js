@@ -20,7 +20,7 @@ export default class PCTarget extends Component {
                     <h2>{this.props.name}</h2>
                     <p>{this.props.description}</p>
                     <div styleName="download">
-                        <a href={this.props.href}>Clone or download</a>
+                        <a target="_blank"  href={this.props.href}>Clone or download</a>
                     </div>
                     <div styleName="comment">
                         <div styleName="dot" ref="dot"></div>

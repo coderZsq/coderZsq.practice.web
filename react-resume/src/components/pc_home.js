@@ -39,7 +39,7 @@ export default class PCHome extends Component {
         ))
         let profileSocialList = data.profileSocialList.map((socialVo, index) => (
             <div key={index}>
-                <a href={socialVo.href}><img src={socialVo.src} alt=""/></a>
+                <a target="_blank"  href={socialVo.href}><img src={socialVo.src} alt=""  /></a>
             </div>
         ))
         let profileInterestList = data.profileInterestList.map((interestVo, index) => (

@@ -10,10 +10,10 @@ export default class PCProduct extends Component {
             <div styleName="project">
                 <div styleName="project-block">
                     <div styleName="icon">
-                        <a href={this.props.href}><img src={this.props.src} alt=""/></a>
+                        <a target="_blank"  href={this.props.href}><img src={this.props.src} alt=""/></a>
                     </div>
                     <div styleName="download">
-                        <a href={this.props.href}>Download</a>
+                        <a target="_blank"  href={this.props.href}>Download</a>
                     </div>
                     <div styleName="title">
                         <h2>{this.props.name}</h2>
