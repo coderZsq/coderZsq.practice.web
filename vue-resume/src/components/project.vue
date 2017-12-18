@@ -2,10 +2,10 @@
 <div class="project">
   <div class="project-block">
     <div class="icon">
-      <a :href="href"><img :src="src" alt=""></a>
+      <a target="_blank" :href="href"><img :src="src" alt=""></a>
     </div>
     <div class="download">
-      <a :href="href">Download</a>
+      <a target="_blank" :href="href">Download</a>
     </div>
     <div class="title">
       <h2>{{name}}</h2>

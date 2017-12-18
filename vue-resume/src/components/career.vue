@@ -2,7 +2,7 @@
 <div class="career">
   <div class="career-block">
     <h2>{{time}}</h2>
-    <p>{{job}}, <a :href="href">{{corp}}</a>, Shanghai</p>
+    <p>{{job}}, <a target="_blank" :href="href">{{corp}}</a>, Shanghai</p>
     <ul>
       <li>{{desc1}}</li>
       <li>{{desc2}}</li>

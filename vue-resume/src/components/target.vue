@@ -4,7 +4,7 @@
     <h2>{{name}}</h2>
     <p>{{description}}</p>
     <div class="download">
-      <a :href="href">Clone or download</a>
+      <a target="_blank" :href="href">Clone or download</a>
     </div>
     <div class="comment">
       <div class="dot" ref="dot"></div>

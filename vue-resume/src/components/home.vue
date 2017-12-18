@@ -17,16 +17,16 @@
       <div class="row social">
         <div class="indent"></div>
         <div>
-          <a href="https://github.com/coderzsq"><img src="http://upload-images.jianshu.io/upload_images/1229762-877e3e5c2260bcf1.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></a>
+          <a target="_blank" href="https://github.com/coderzsq"><img src="http://upload-images.jianshu.io/upload_images/1229762-877e3e5c2260bcf1.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></a>
         </div>
         <div>
-          <a href="http://www.jianshu.com/u/9d7fad1a4693"><img src="http://upload-images.jianshu.io/upload_images/1229762-f6525252f3e8387b.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></a>
+          <a target="_blank" href="http://www.jianshu.com/u/9d7fad1a4693"><img src="http://upload-images.jianshu.io/upload_images/1229762-f6525252f3e8387b.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></a>
         </div>
         <div>
-          <a href="http://upload-images.jianshu.io/upload_images/1229762-453920a3f4eedcd8.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240"><img src="http://upload-images.jianshu.io/upload_images/1229762-a69614a97de93f36.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></a>
+          <a target="_blank" href="http://upload-images.jianshu.io/upload_images/1229762-453920a3f4eedcd8.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240"><img src="http://upload-images.jianshu.io/upload_images/1229762-a69614a97de93f36.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></a>
         </div>
         <div>
-          <a href="http://coderzsq.github.io/"><img src="http://upload-images.jianshu.io/upload_images/1229762-91b0949aec719aab.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></a>
+          <a target="_blank" href="http://coderzsq.github.io/"><img src="http://upload-images.jianshu.io/upload_images/1229762-91b0949aec719aab.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></a>
         </div>
       </div>
     </div>

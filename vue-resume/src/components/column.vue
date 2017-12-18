@@ -3,7 +3,7 @@
   <div class="column-block">
     <div class="column-list">
       <div class="row" v-for="article in articles">
-        <a :href="article.href">{{article.name}}</a>
+        <a target="_blank" :href="article.href">{{article.name}}</a>
       </div>
     </div>
     <div class="column-title">
