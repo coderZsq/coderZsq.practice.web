@@ -117,6 +117,9 @@ export default {
       }, {
         name: "Developer Column",
         articles: [{
+          name: "Web 将博客迁移至GitHubPages",
+          href: "https://coderzsq.github.io/2017/12/Web-%E5%B0%86%E5%8D%9A%E5%AE%A2%E8%BF%81%E7%A7%BB%E8%87%B3GitHubPages/"
+        }, {
           name: "iOS 关于组件化Router设计的争辩",
           href: "https://coderzsq.github.io/2017/11/iOS-%E5%85%B3%E4%BA%8E%E7%BB%84%E4%BB%B6%E5%8C%96Router%E8%AE%BE%E8%AE%A1%E7%9A%84%E4%BA%89%E8%BE%A9/"
         }, {
