@@ -47,6 +47,10 @@ export default {
   background-color: #fff;
 }
 
+.column-block:hover {
+  box-shadow: 1px 1px 15px #ddd;
+}
+
 .column-title {
   position: absolute;
   bottom: 0px;
@@ -62,9 +66,8 @@ export default {
   font-size: 20px;
 }
 
-
 .column-list {
-  height: 460px;
+  height: 450px;
   overflow: scroll;
 }
 
@@ -78,6 +81,10 @@ export default {
   background-color: #f8f8f8;
   border-bottom-right-radius: 12px;
   border-bottom-left-radius: 12px;
+}
+
+.row:hover {
+  box-shadow: 1px 1px 3px #ccc;
 }
 
 .row a,

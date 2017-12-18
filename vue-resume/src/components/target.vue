@@ -59,10 +59,13 @@ export default {
 .target-block {
   height: inherit;
   width: inherit;
-  border-top-left-radius: 12px;
-  border-top-right-radius: 12px;
+  border-radius: 12px;
   position: relative;
   background-color: #f8f8f8;
+}
+
+.target-block:hover {
+  box-shadow: 1px 1px 15px #ddd;
 }
 
 .target .target-block h2 {

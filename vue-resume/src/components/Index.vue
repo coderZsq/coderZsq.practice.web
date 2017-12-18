@@ -2,31 +2,31 @@
 <div>
   <navigation></navigation>
   <div class="odd">
-    <div class="content">
+    <div id="home" class="content">
       <home></home>
     </div>
   </div>
-  <div class="even">
+  <div id="projects" class="even">
     <div class="content">
       <projects></projects>
     </div>
   </div>
-  <div class="odd">
+  <div id="github" class="odd">
     <div class="content">
       <github></github>
     </div>
   </div>
-  <div class="articles">
+  <div id="articles" class="even">
     <div class="content">
       <articles></articles>
     </div>
   </div>
-  <div class="odd">
+  <div id="experience" class="odd">
     <div class="content">
       <experience></experience>
     </div>
   </div>
-  <div class="contact">
+  <div id="contact" class="even">
     <div class="content">
       <contact></contact>
     </div>
@@ -63,31 +63,19 @@ export default {
 <style scoped>
 .even {
   width: 100%;
-  height: 600px;
+  overflow: hidden;
   background-color: #fafafa;
 }
 
 .odd {
   width: 100%;
-  height: 600px;
+  overflow: hidden;
   background-color: #fff;
-}
-
-.articles {
-  width: 100%;
-  height: 1130px;
-  background-color: #fafafa;
-}
-
-.contact {
-  width: 100%;
-  height: 320px;
-  background-color: #fafafa;
 }
 
 .content {
   margin: 0 auto;
   width: 1000px;
-  height: inherit;
+  min-height: 320px;
 }
 </style>

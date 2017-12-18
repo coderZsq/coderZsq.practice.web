@@ -6,12 +6,12 @@
         Castie!
       </div>
       <div class="items">
-        <span @click="scrollTo(0, 0)"><a>Home</a></span>
-        <span @click="scrollTo(0, 600)"><a>Projects</a></span>
-        <span @click="scrollTo(0, 1200)"><a>GitHub</a></span>
-        <span @click="scrollTo(0, 1800)"><a>Articles</a></span>
-        <span @click="scrollTo(0, 2930)"><a>Experience</a></span>
-        <span @click="scrollTo(0, 3530)"><a>Contact</a></span>
+        <span @click="scrollTo('home')"><a>Home</a></span>
+        <span @click="scrollTo('projects')"><a>Projects</a></span>
+        <span @click="scrollTo('github')"><a>GitHub</a></span>
+        <span @click="scrollTo('articles')"><a>Articles</a></span>
+        <span @click="scrollTo('experience')"><a>Experience</a></span>
+        <span @click="scrollTo('contact')"><a>Contact</a></span>
       </div>
     </div>
   </div>
@@ -29,8 +29,25 @@ export default {
     }
   },
   methods: {
-    scrollTo: function(x, y) {
-      window.scrollTo(x, y);
+    $h: function(id) {
+      return document.getElementById(id).offsetHeight;
+    },
+    scrollTo: function(param) {
+      let offset;
+      if (param === "home") {
+        offset = 0;
+      } else if (param === "projects") {
+        offset = this.$h("home");
+      } else if (param === "github") {
+        offset = this.$h("projects") + this.$h("home");
+      } else if (param === "articles") {
+        offset = this.$h("github") + this.$h("projects") + this.$h("home");
+      } else if (param === "experience") {
+        offset = this.$h("articles") + this.$h("github") + this.$h("projects") + this.$h("home");
+      } else if (param === "contact") {
+        offset = this.$h("experience") + this.$h("articles") + this.$h("github") + this.$h("projects") + this.$h("home");
+      }
+      window.scrollTo(0, offset);
     }
   }
 }
@@ -61,13 +78,16 @@ export default {
   display: inline-block;
   text-indent: 40px;
   color: white;
+  user-select: none;
 }
 
 .nav .content .items {
   line-height: 50px;
+  height: 50px;
   width: 700px;
   display: inline-block;
   float: right;
+  user-select: none;
 }
 
 .nav .content .items span {
@@ -77,6 +97,7 @@ export default {
   display: inline-block;
   color: white;
   cursor: pointer;
+  user-select: none;
 }
 
 .nav a,
@@ -85,7 +106,6 @@ export default {
   text-decoration: none;
   color: #fff;
 }
-
 
 .nav a:hover {
   color: #aaa;

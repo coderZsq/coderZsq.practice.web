@@ -35,6 +35,7 @@ export default {}
   text-align: center;
   display: inline-block;
   color: #444;
+  user-select: none;
 }
 
 .contact {
@@ -43,6 +44,7 @@ export default {}
   float: right;
   display: inline-block;
   position: relative;
+  user-select: none;
 }
 
 .contact .contact-block {

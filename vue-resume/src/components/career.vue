@@ -51,6 +51,10 @@ export default {
   background-color: #f8f8f8;
 }
 
+.career-block:hover {
+  box-shadow: 1px 1px 7px #ccc;
+}
+
 .career-block h2 {
   color: #444;
   position: absolute;

@@ -35,19 +35,21 @@ export default {
   text-align: center;
   display: inline-block;
   color: #444;
+  user-select: none;
 }
 
 .experience {
+  padding-top: 50px;
+  padding-bottom: 30px;
+  overflow: hidden;
   width: 700px;
   float: right;
   display: inline-block;
   position: relative;
+  user-select: none;
 }
 
 .experience .experience-block {
-  position: absolute;
-  width: 700px;
-  height: 500px;
-  top: calc(50% - 62px);
+  width: inherit;
 }
 </style>

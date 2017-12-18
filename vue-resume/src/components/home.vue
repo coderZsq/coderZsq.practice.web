@@ -3,7 +3,7 @@
   <div class="user">
     <div class="user-block">
       <div class="icon">
-        <img src="http://upload-images.jianshu.io/upload_images/1229762-23e162b9bd6b9c39.JPG?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="">
+        <img src="https://avatars2.githubusercontent.com/u/19483268?s=400&u=97869a443baab2820618a8a575cee677b80849c7&v=4" alt="">
       </div>
       <div class="row name">
         Shuangquan Zhu
@@ -86,6 +86,7 @@ export default {}
   width: 300px;
   height: 500px;
   top: calc(50% - 250px);
+  user-select: none;
 }
 
 .user .user-block .icon,
@@ -96,8 +97,13 @@ export default {}
   border-radius: 12px;
 }
 
+.user .user-block .icon,
+.user .user-block .icon img:hover {
+  box-shadow: 1px 1px 15px #ccc;
+}
+
 .user .user-block .icon {
-  padding-bottom: 10px;
+  margin-bottom: 20px;
 }
 
 .user .user-block .row {
@@ -110,6 +116,10 @@ export default {}
   background-color: #f8f8f8;
   border-bottom-right-radius: 12px;
   border-bottom-left-radius: 12px;
+}
+
+.user .user-block .row:hover {
+  box-shadow: 1px 1px 3px #ccc;
 }
 
 .user .user-block .name {
@@ -154,6 +164,7 @@ export default {}
   height: 600px;
   display: inline-block;
   float: right;
+  user-select: none;
 }
 
 .introduction .main {
@@ -169,8 +180,11 @@ export default {}
   height: 280px;
   left: calc(50% - 340px);
   top: 50px;
-  border-top-left-radius: 12px;
-  border-top-right-radius: 12px;
+  border-radius: 12px;
+}
+
+.introduction .main .main-block:hover {
+  box-shadow: 1px 1px 7px #ccc;
 }
 
 .introduction .main .main-block h1 {
@@ -205,6 +219,10 @@ export default {}
   border-bottom-left-radius: 12px;
 }
 
+.introduction .left .left-block:hover {
+  box-shadow: 1px 1px 7px #ccc;
+}
+
 .introduction .left .left-block h2 {
   color: #444;
   height: 50px;
@@ -235,6 +253,10 @@ export default {}
   position: absolute;
   border-bottom-right-radius: 12px;
   border-bottom-left-radius: 12px;
+}
+
+.introduction .right .right-block:hover {
+  box-shadow: 1px 1px 7px #ccc;
 }
 
 .introduction .right .right-block h2 {

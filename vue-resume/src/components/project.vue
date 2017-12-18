@@ -56,10 +56,13 @@ export default {
 .project-block {
   height: inherit;
   width: inherit;
-  border-top-left-radius: 12px;
-  border-top-right-radius: 12px;
+  border-radius: 12px;
   position: relative;
   display: inline-block;
+}
+
+.project-block:hover {
+  box-shadow: 1px 1px 15px #ddd;
 }
 
 .icon {
