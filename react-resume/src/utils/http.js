@@ -32,5 +32,8 @@ export const URL = {
     fetchExperience: `${host}/portal/fetch_experience.do`,
     fetchContact: `${host}/portal/fetch_contact.do`,
 
-    updateProfile: `${host}/backend/update_profile.do`
+    updateProfile: `${host}/backend/update_profile.do`,
+    updateProfileSocial: `${host}/backend/update_profile_social.do`,
+    insertProfileSocial: `${host}/backend/insert_profile_social.do`,
+    deleteProfileSocial: `${host}/backend/delete_profile_social.do`
 }

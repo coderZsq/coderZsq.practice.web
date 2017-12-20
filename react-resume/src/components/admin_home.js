@@ -39,6 +39,36 @@ export default class AdminHome extends Component {
         })
     }
 
+    updateProfileSocial(src, href, id) {
+        let formData = new FormData();
+        formData.append('src', src);
+        formData.append('href', href);
+        formData.append('id', id);
+        POST(URL.updateProfileSocial, formData).then((data) => {
+            alert(data);
+            this.fetchProfile();
+        })
+    }
+
+    insertProfileSocial(src, href) {
+        let formData = new FormData();
+        formData.append('src', src);
+        formData.append('href', href);
+        POST(URL.insertProfileSocial, formData).then((data) => {
+            alert(data);
+            this.fetchProfile();
+        })
+    }
+
+    deleteProfileSocial(id) {
+        let formData = new FormData();
+        formData.append('id', id);
+        POST(URL.deleteProfileSocial, formData).then((data) => {
+            alert(data);
+            this.fetchProfile();
+        })
+    }
+
     refsFillBack(data) {
         let refs = this.refs;
         refs.profile_image.value = data.profileImage;
@@ -72,8 +102,22 @@ export default class AdminHome extends Component {
         this.setState({profileSocialList: this.state.profileSocialList});
     }
 
-    deleteSocialBind(index) {
-        
+    updateSocialBind(src, href, id) {
+        let refs = this.refs;
+        if (id) {
+            this.updateProfileSocial(refs[src].value, refs[href].value, id);
+        } else {
+            this.insertProfileSocial(refs[src].value, refs[href].value);
+        }
+    }
+
+    deleteSocialBind(id) {
+        if (id) {
+            this.deleteProfileSocial(id);
+        } else {
+            this.state.profileSocialList.pop();
+            this.setState({profileSocialList: this.state.profileSocialList});
+        }
     }
 
     render() {
@@ -83,7 +127,7 @@ export default class AdminHome extends Component {
             : '';
         let profileSocialList = data.profileSocialList.map((socialVo, index) => (
             <div key={index}>
-                <a href={socialVo.href}><img src={socialVo.src} alt=""/></a>
+                <a target="_blank" href={socialVo.href}><img src={socialVo.src} alt=""/></a>
             </div>
         ));
         let profile_social = data.profileSocialList.map((socialVo, index) => {
@@ -96,8 +140,8 @@ export default class AdminHome extends Component {
                         <input type="text" ref={src} autoComplete="off"/>
                         <span>href:</span>
                         <input type="text" ref={href} autoComplete="off"/>
-                        <button>done</button>
-                        <button onClick={this.deleteSocialBind.bind(this, index)}>delete</button>
+                        <button onClick={this.updateSocialBind.bind(this, src, href, socialVo.id)}>update</button>
+                        <button onClick={this.deleteSocialBind.bind(this, socialVo.id)}>delete</button>
                     </div>
                 </div>
             )
@@ -109,7 +153,7 @@ export default class AdminHome extends Component {
                     <div styleName="form-line">
                         <span>interest:</span>
                         <input type="text" ref={interest} autoComplete="off"/>
-                        <button>done</button>
+                        <button>update</button>
                         <button>delete</button>
                     </div>
                 </div>
@@ -128,7 +172,7 @@ export default class AdminHome extends Component {
                         <input type="text" ref={school} autoComplete="off"/>
                         <span styleName="year">year:</span>
                         <input type="text" ref={year} styleName="year" autoComplete="off"/>
-                        <button>done</button>
+                        <button>update</button>
                         <button>delete</button>
                     </div>
                 </div>
@@ -164,62 +208,62 @@ export default class AdminHome extends Component {
                         <div styleName="form-line">
                             <span>profile_image:</span>
                             <input type="text" ref="profile_image" id="profile_image" autoComplete="off"/>
-                            <button onClick={this.updateProfileBind.bind(this, this.refs.profile_image)}>done</button>
+                            <button onClick={this.updateProfileBind.bind(this, this.refs.profile_image)}>update</button>
                         </div>
                         <div styleName="form-line">
                             <span>profile_name:</span>
                             <input type="text" ref="profile_name" id="profile_name" autoComplete="off"/>
-                            <button onClick={this.updateProfileBind.bind(this, this.refs.profile_name)}>done</button>
+                            <button onClick={this.updateProfileBind.bind(this, this.refs.profile_name)}>update</button>
                         </div>
                         <div styleName="form-line">
                             <span>profile_career:</span>
                             <input type="text" ref="profile_career" id="profile_career" autoComplete="off"/>
-                            <button onClick={this.updateProfileBind.bind(this, this.refs.profile_career)}>done</button>
+                            <button onClick={this.updateProfileBind.bind(this, this.refs.profile_career)}>update</button>
                         </div>
                         <div styleName="form-line">
                             <span>profile_location:</span>
                             <input type="text" ref="profile_location" id="profile_location" autoComplete="off"/>
-                            <button onClick={this.updateProfileBind.bind(this, this.refs.profile_location)}>done</button>
+                            <button onClick={this.updateProfileBind.bind(this, this.refs.profile_location)}>update</button>
                         </div>
                         <div styleName="form-line">
                             <span>profile_summary_title:</span>
                             <input type="text" ref="profile_summary_title" id="profile_summary_title" autoComplete="off"/>
-                            <button onClick={this.updateProfileBind.bind(this, this.refs.profile_summary_title)}>done</button>
+                            <button onClick={this.updateProfileBind.bind(this, this.refs.profile_summary_title)}>update</button>
                         </div>
                         <div styleName="form-line">
                             <span>profile_summary_description:</span>
                             <input type="text" ref="profile_summary_description" id="profile_summary_description" autoComplete="off"/>
-                            <button onClick={this.updateProfileBind.bind(this, this.refs.profile_summary_description)}>done</button>
+                            <button onClick={this.updateProfileBind.bind(this, this.refs.profile_summary_description)}>update</button>
                         </div>
                         <div styleName="form-line">
                             <span>profile_interest_title:</span>
                             <input type="text" ref="profile_interest_title" id="profile_interest_title" autoComplete="off"/>
-                            <button onClick={this.updateProfileBind.bind(this, this.refs.profile_interest_title)}>done</button>
+                            <button onClick={this.updateProfileBind.bind(this, this.refs.profile_interest_title)}>update</button>
                         </div>
                         <div styleName="form-line">
                             <span>profile_education_title:</span>
                             <input type="text" ref="profile_education_title" id="profile_education_title" autoComplete="off"/>
-                            <button onClick={this.updateProfileBind.bind(this, this.refs.profile_education_title)}>done</button>
+                            <button onClick={this.updateProfileBind.bind(this, this.refs.profile_education_title)}>update</button>
                         </div>
                     </div>
                     <div styleName="profile_social-block">
                         <div styleName="options">
                             <span styleName="table">table: resume_profile_social</span>
-                            <button onClick={this.insertSocialBind.bind(this)}>add</button>
+                            <button onClick={this.insertSocialBind.bind(this)}>insert</button>
                         </div>
                         {profile_social}
                     </div>
                     <div styleName="profile_interest-block">
                         <div styleName="options">
                             <span styleName="table">table: resume_profile_interest</span>
-                            <button>add</button>
+                            <button>insert</button>
                         </div>
                         {profile_interest}
                     </div>
                     <div styleName="profile_education-block">
                         <div styleName="options">
                             <span styleName="table">table: resume_profile_education</span>
-                            <button>add</button>
+                            <button>insert</button>
                         </div>
                         {profile_education}
                     </div>
