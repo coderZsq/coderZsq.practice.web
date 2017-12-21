@@ -34,7 +34,7 @@ export default class AdminHome extends Component {
         let formData = new FormData();
         formData.append(key, value);
         POST(URL.updateProfile, formData).then((data) => {
-            alert("update success");
+            alert(data);
             this.fetchProfile();
         })
     }
@@ -69,6 +69,66 @@ export default class AdminHome extends Component {
         })
     }
 
+    updateProfileInterest(interest, id) {
+        let formData = new FormData();
+        formData.append('interest', interest);
+        formData.append('id', id);
+        POST(URL.updateProfileInterest, formData).then((data) => {
+            alert(data);
+            this.fetchProfile();
+        })
+    }
+
+    insertProfileInterest(interest) {
+        let formData = new FormData();
+        formData.append('interest', interest);
+        POST(URL.insertProfileInterest, formData).then((data) => {
+            alert(data);
+            this.fetchProfile();
+        })
+    }
+
+    deleteProfileInterest(id) {
+        let formData = new FormData();
+        formData.append('id', id);
+        POST(URL.deleteProfileInterest, formData).then((data) => {
+            alert(data);
+            this.fetchProfile();
+        })
+    }
+
+    updateProfileEducation(major, school, year, id) {
+        let formData = new FormData();
+        formData.append('major', major);
+        formData.append('school', school);
+        formData.append('year', year);
+        formData.append('id', id);
+        POST(URL.updateProfileEducation, formData).then((data) => {
+            alert(data);
+            this.fetchProfile();
+        })
+    }
+
+    insertProfileEducation(major, school, year) {
+        let formData = new FormData();
+        formData.append('major', major);
+        formData.append('school', school);
+        formData.append('year', year);
+        POST(URL.insertProfileEducation, formData).then((data) => {
+            alert(data);
+            this.fetchProfile();
+        })
+    }
+
+    deleteProfileEducation(id) {
+        let formData = new FormData();
+        formData.append('id', id);
+        POST(URL.deleteProfileEducation, formData).then((data) => {
+            alert(data);
+            this.fetchProfile();
+        })
+    }
+
     refsFillBack(data) {
         let refs = this.refs;
         refs.profile_image.value = data.profileImage;
@@ -98,8 +158,12 @@ export default class AdminHome extends Component {
     }
 
     insertSocialBind() {
-        this.state.profileSocialList.push({src: '', href: ''});
-        this.setState({profileSocialList: this.state.profileSocialList});
+        let list = this.state.profileSocialList;
+        let length = list.length;
+        if (list[length - 1].src.length) {
+            list.push({src: '', href: ''});
+            this.setState({profileSocialList: list});
+        }
     }
 
     updateSocialBind(src, href, id) {
@@ -112,11 +176,83 @@ export default class AdminHome extends Component {
     }
 
     deleteSocialBind(id) {
+        let list = this.state.profileSocialList;
+        let length = list.length;
         if (id) {
-            this.deleteProfileSocial(id);
+            if (list[length - 1].src.length && length > 4) {
+                this.deleteProfileSocial(id);
+            } else {
+                alert('delete error: resume_profile_social must above 4 counts');
+            }
         } else {
-            this.state.profileSocialList.pop();
-            this.setState({profileSocialList: this.state.profileSocialList});
+            list.pop();
+            this.setState({profileSocialList: list});
+        }
+    }
+
+    insertInterestBind() {
+        let list = this.state.profileInterestList;
+        let length = list.length;
+        if (list[length - 1].interest.length) {
+            list.push({interest: ''});
+            this.setState({profileInterestList: list});
+        }
+    }
+
+    updateInterestBind(interest, id) {
+        let refs = this.refs;
+        if (id) {
+            this.updateProfileInterest(refs[interest].value, id);
+        } else {
+            this.insertProfileInterest(refs[interest].value);
+        }
+    }
+
+    deleteInterestBind(id) {
+        let list = this.state.profileInterestList;
+        let length = list.length;
+        if (id) {
+            if (list[length - 1].interest.length && length > 4) {
+                this.deleteProfileInterest(id);
+            } else {
+                alert('delete error: resume_profile_interest must above 4 counts');
+            }
+        } else {
+            list.pop();
+            this.setState({profileInterestList: list});
+        }
+    }
+
+    insertEducationBind() {
+        let list = this.state.profileEducationList;
+        let length = list.length;
+        if (list[length - 1].major.length) {
+            list.push({major: '', school: '', year: ''});
+            this.setState({profileEducationList: list});
+        }
+    }
+
+    updateEducationBind(major, school, year, id) {
+        let refs = this.refs;
+        if (id) {
+            this.updateProfileEducation(refs[major].value, refs[school].value, refs[year].value, id);
+        } else {
+            this.insertProfileEducation(refs[major].value, refs[school].value, refs[year].value);
+        }
+    }
+
+    deleteEducationBind(id) {
+        let list = this.state.profileEducationList;
+        let length = list.length;
+        if (id) {
+            if (list[length - 1].major.length && length > 2) {
+                this.deleteProfileEducation(id);
+            } else {
+                alert('delete error: resume_profile_education must above 2 counts');
+            }
+        } else {
+            list.pop();
+            this.setState({profileEducationList: list});
         }
     }
 
@@ -153,8 +289,8 @@ export default class AdminHome extends Component {
                     <div styleName="form-line">
                         <span>interest:</span>
                         <input type="text" ref={interest} autoComplete="off"/>
-                        <button>update</button>
-                        <button>delete</button>
+                        <button onClick={this.updateInterestBind.bind(this, interest, interestVo.id)}>update</button>
+                        <button onClick={this.deleteInterestBind.bind(this, interestVo.id)}>delete</button>
                     </div>
                 </div>
             )
@@ -172,8 +308,8 @@ export default class AdminHome extends Component {
                         <input type="text" ref={school} autoComplete="off"/>
                         <span styleName="year">year:</span>
                         <input type="text" ref={year} styleName="year" autoComplete="off"/>
-                        <button>update</button>
-                        <button>delete</button>
+                        <button onClick={this.updateEducationBind.bind(this, major, school, year, educationVo.id)}>update</button>
+                        <button onClick={this.deleteEducationBind.bind(this, educationVo.id)}>delete</button>
                     </div>
                 </div>
             )
@@ -256,14 +392,14 @@ export default class AdminHome extends Component {
                     <div styleName="profile_interest-block">
                         <div styleName="options">
                             <span styleName="table">table: resume_profile_interest</span>
-                            <button>insert</button>
+                            <button onClick={this.insertInterestBind.bind(this)}>insert</button>
                         </div>
                         {profile_interest}
                     </div>
                     <div styleName="profile_education-block">
                         <div styleName="options">
                             <span styleName="table">table: resume_profile_education</span>
-                            <button>insert</button>
+                            <button onClick={this.insertEducationBind.bind(this)}>insert</button>
                         </div>
                         {profile_education}
                     </div>

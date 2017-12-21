@@ -35,5 +35,11 @@ export const URL = {
     updateProfile: `${host}/backend/update_profile.do`,
     updateProfileSocial: `${host}/backend/update_profile_social.do`,
     insertProfileSocial: `${host}/backend/insert_profile_social.do`,
-    deleteProfileSocial: `${host}/backend/delete_profile_social.do`
+    deleteProfileSocial: `${host}/backend/delete_profile_social.do`,
+    updateProfileInterest:`${host}/backend/update_profile_interest.do`,
+    insertProfileInterest: `${host}/backend/insert_profile_interest.do`,
+    deleteProfileInterest: `${host}/backend/delete_profile_interest.do`,
+    updateProfileEducation: `${host}/backend/update_profile_education.do`,
+    insertProfileEducation: `${host}/backend/insert_profile_education.do`,
+    deleteProfileEducation: `${host}/backend/delete_profile_education.do`
 }
