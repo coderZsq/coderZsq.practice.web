@@ -20,7 +20,7 @@
           <a target="_blank" href="https://github.com/coderzsq"><img src="http://upload-images.jianshu.io/upload_images/1229762-877e3e5c2260bcf1.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></a>
         </div>
         <div>
-          <a target="_blank" href="http://www.jianshu.com/u/9d7fad1a4693"><img src="http://upload-images.jianshu.io/upload_images/1229762-f6525252f3e8387b.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></a>
+          <a target="_blank" href="https://juejin.im/user/57e735dfa22b9d00614eecb8/posts"><img src="http://upload-images.jianshu.io/upload_images/1229762-f6525252f3e8387b.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></a>
         </div>
         <div>
           <a target="_blank" href="http://upload-images.jianshu.io/upload_images/1229762-453920a3f4eedcd8.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240"><img src="http://upload-images.jianshu.io/upload_images/1229762-a69614a97de93f36.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></a>
@@ -35,8 +35,7 @@
     <div class="main">
       <div class="main-block">
         <h1>Summary</h1>
-        <p>Shuangquan Zhu is a professional developer who focuses on iOS now. He has strong knowledge of Objective-C, Swift and Javascript. With these skills, he created quite a few quickly developer tools. He also leads the J1 iOS team to promote the project
-          process.
+        <p>Shuangquan Zhu is a professional developer who focuses on iOS now. He has strong knowledge of Objective-C, C++ and Swift. With these skills, he created quite a few quickly developer tools. He also leads the J1 iOS team to promote the project process.
         </p>
         <p>He crazy loves playing basketball with friends in spare time, He also loves traveling, writing and listening music. He is always willing to try new things, and keeping to learn from them.</p>
       </div>

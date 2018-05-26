@@ -117,6 +117,30 @@ export default {
       }, {
         name: "Developer Column",
         articles: [{
+          name: "Swift 进阶 | 看得见的算法",
+          href: "https://coderzsq.github.io/2018/05/Swift-%E8%BF%9B%E9%98%B6-%E7%9C%8B%E5%BE%97%E8%A7%81%E7%9A%84%E7%AE%97%E6%B3%95/"
+        }, {
+          name: "STL 一部数据结构的使用宝典",
+          href: "https://coderzsq.github.io/2018/05/STL-%E4%B8%80%E9%83%A8%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E7%9A%84%E4%BD%BF%E7%94%A8%E5%AE%9D%E5%85%B8/"
+        }, {
+          name: "C++ 一把卍解OC底层的斩魄刀",
+          href: "https://coderzsq.github.io/2018/04/C++-%E4%B8%80%E6%8A%8A%E5%8D%8D%E8%A7%A3OC%E5%BA%95%E5%B1%82%E7%9A%84%E6%96%A9%E9%AD%84%E5%88%80/"
+        }, {
+          name: "Swift 第二梯队iOS面试败北感悟",
+          href: "https://coderzsq.github.io/2018/04/Swift-%E7%AC%AC%E4%BA%8C%E6%A2%AF%E9%98%9FiOS%E9%9D%A2%E8%AF%95%E8%B4%A5%E5%8C%97%E6%84%9F%E6%82%9F/"
+        }, {
+          name: "C++ 一把剖析OC底层的军刀",
+          href: "https://coderzsq.github.io/2018/03/C++-%E4%B8%80%E6%8A%8A%E5%89%96%E6%9E%90OC%E5%BA%95%E5%B1%82%E7%9A%84%E5%86%9B%E5%88%80/"
+        }, {
+          name: "C++ 一把窥探OC底层的利刃",
+          href: "https://coderzsq.github.io/2018/03/C++-%E4%B8%80%E6%8A%8A%E7%AA%A5%E6%8E%A2OC%E5%BA%95%E5%B1%82%E7%9A%84%E5%88%A9%E5%88%83/"
+        }, {
+          name: "Swift 排序算法的简单取舍",
+          href: "https://coderzsq.github.io/2018/02/Swift-%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95%E7%9A%84%E7%AE%80%E5%8D%95%E5%8F%96%E8%88%8D/"
+        }, {
+          name: "Swift 数据结构与算法初探",
+          href: "https://coderzsq.github.io/2018/01/Swift-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95%E5%88%9D%E6%8E%A2/"
+        }, {
           name: "Web 将博客迁移至GitHubPages",
           href: "https://coderzsq.github.io/2017/12/Web-%E5%B0%86%E5%8D%9A%E5%AE%A2%E8%BF%81%E7%A7%BB%E8%87%B3GitHubPages/"
         }, {

@@ -6,11 +6,12 @@
   <div class="github">
     <div class="github-block">
       <target name="coderZsq.project.oc" description="A lightweight and efficient application development tool set for iOS, and accelerating the developing speed." href="https://github.com/coderZsq/coderZsq.project.oc" color="#438eff" language="Objective-C"
-          star="195"></target>
-      <target name="coderZsq.target.swift" description="For advanced Swift development technology pre-research & ideas & practice. ( Focus areas: App )" href="https://github.com/coderZsq/coderZsq.target.swift" color="#ffac45" language="Swift" star="19"></target>
-      <target name="coderZsq.webpack.js" description="For advanced JavaScript development technology pre-research & ideas & practice. ( Focus areas: Web )" href="https://github.com/coderZsq/coderZsq.webpack.js" color="#EFDF70" language="JavaScript" star="2"></target>
+          star="254"></target>
+      <target name="coderZsq.target.swift" description="For advanced Swift development technology pre-research & ideas & practice. ( Focus areas: Native )" href="https://github.com/coderZsq/coderZsq.target.swift" color="#ffac45" language="Swift" star="41"></target>
+      <target name="coderZsq.webpack.js" description="For advanced JavaScript development technology pre-research & ideas & practice. ( Focus areas: Web )" href="https://github.com/coderZsq/coderZsq.webpack.js" color="#EFDF70" language="JavaScript" star="5"></target>
       <target name="coderZsq.maven.java" description="For advanced Java development technology pre-research & ideas & practice. ( Focus areas: Server )" href="https://github.com/coderZsq/coderZsq.maven.java" color="#A8732F" language="Java" star="0"></target>
-      <target name="coderZsq.github.io" description="Technology blog, learn some new technologies and new knowledge, and write insights into the text." href="https://github.com/coderZsq/coderZsq.github.io" color="#D35636" language="HTML" star="0"></target>
+      <target name="coderZsq.learning.py" description="For advanced Python development technology pre-research & ideas & practice. ( Focus areas: Data )" href="https://github.com/coderZsq/coderZsq.learning.py" color="#4372A1" language="Python" star="0"></target>
+      <target name="coderZsq.github.io" description="Technology blog, learn some new technologies and new knowledge, and write insights into the text." href="https://github.com/coderZsq/coderZsq.github.io" color="#D35636" language="HTML" star="3"></target>
     </div>
   </div>
 </div>

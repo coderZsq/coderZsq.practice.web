@@ -6,7 +6,7 @@
   <div class="projects">
     <div class="projects-block">
       <project src="http://upload-images.jianshu.io/upload_images/1229762-e41470fb14d50dd0.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" href="https://itunes.apple.com/us/app/%E5%81%A5%E4%B8%80%E7%BD%91-%E5%8D%8E%E6%B6%A6%E6%97%97%E4%B8%8B%E7%BD%91%E4%B8%8A%E8%8D%AF%E5%BA%97/id910027998?mt=8"
-          name="J1 Mall" description="China Resources's online pharmacy" text1="Developed by J1 iOS team" text2="Developing version 4.1.0" text3="Enterprise main project"></project>
+          name="J1 Mall" description="China Resources's online pharmacy" text1="Developed by J1 iOS team" text2="Developing version 4.2.5" text3="Enterprise main project"></project>
       <project src="http://upload-images.jianshu.io/upload_images/1229762-895d58180c1893e9.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" href="https://itunes.apple.com/us/app/%E5%81%A5%E4%B8%80%E5%81%A5%E5%BA%B7/id994784918?mt=8" name="J1 Health"
           description="Professional patient consultation platform" text1="Developed by J1 iOS team" text2="Developing version 3.1.0" text3="Enterprise self-operated project"></project>
       <project src="http://upload-images.jianshu.io/upload_images/1229762-2aa0ac79354150f4.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" href="https://itunes.apple.com/cn/app/hua-run-tong/id1175972491?mt=8" name="HuaRun Tong" description="China Resources Integrated business platform"
