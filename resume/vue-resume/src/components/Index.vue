@@ -70,7 +70,7 @@ export default {
 .odd {
   width: 100%;
   overflow: hidden;
-  background-color: #fff;
+  background-color: #fff; 
 }
 
 .content {
