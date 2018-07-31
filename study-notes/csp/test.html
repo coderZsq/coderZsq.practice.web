@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!--<meta http-equiv="Content-Security-Policy-Report-Only" content="script-src 'self'; form-action 'self'; report-uri /report">-->
+    <meta http-equiv="Content-Security-Policy" content="connect-src 'self'; form-action 'self';">
+    <title>Document</title>
+</head>
+
+<body>
+    <div>This is content</div>
+    <form action="http://baidu.com">
+        <button type="submit">click me</button>
+    </form>
+    <img src="https://avatars3.githubusercontent.com/u/19483268?s=400&u=19f941d342c17233ffc1bc90837e0c57764c168c&v=4" alt="">
+    <script>
+        console.log('inline.js')
+        fetch('http://baidu.com')
+    </script>
+    <script src="/test.js"></script>
+    <script src="https://cdn.bootcss.com/jquery/3.3.1/core.js"></script>
+</body>
+
+</html>
