@@ -1,0 +1,71 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background:slategrey;
+    color: white;
+}
+
+.container {
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+h1 {
+    text-align: center;
+}
+
+.task-list {
+    margin: 5px 0;
+}
+
+input, .task-item button {
+    border-radius: 3px;
+    padding: 10px; 
+}
+
+input[type=text], input[type=date] {
+    border: 0;
+    display: block;
+    width: 100%;
+}
+
+button {
+    display: inline-block;
+    border: 0;
+}
+
+.add-task {
+    line-height: 42px;
+}
+
+.add-task input[type=text] {
+    float: left;
+    width: 84%;
+    margin-right: 1%;
+    line-height: 15px;
+}
+
+.add-task [type=submit] {
+    width: 15%;
+    height: 42px;
+    border-radius: 3px;
+    cursor: pointer;
+    background:silver;
+}
+
+.task-item {
+    padding: 10px;
+    background: #ffffff;
+    color: #333;
+    margin-bottom: 2px;
+    border-radius: 3px;
+    box-shadow: 0 2px 3px rgba(0, 0, 0, .4);
+    cursor: pointer;
+    transition: background .2s;
+}
+
+.task-item:hover {
+    background: #ddd;
+}
