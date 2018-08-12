@@ -2,6 +2,8 @@
     'use strict';
 
     let $form_add_task = $('.add-task'),
+        $body = $('body'),
+        $window = $(window),
         $task_delete_trigger,
         $task_detail_trigger,
         $task_detail = $('.task-detail'),
@@ -16,8 +18,126 @@
         $msg_content = $msg.find('.msg-content');
 
     init();
+
     $form_add_task.on('submit', on_add_task_form_submit);
     $task_detail_mask.on('click', hide_task_detail);
+
+    function pop(arg) {
+        if (!arg) {
+            console.error('pop title is required');
+        }
+
+        let conf = {}, 
+            $box, 
+            $mask, 
+            $title, 
+            $content,
+            $confirm,
+            $cancel,
+            dfd,
+            confirmed,
+            timer;
+
+        dfd = $.Deferred();
+        
+        if (typeof arg === 'string') {
+            conf.title = arg;
+        } else {
+            conf = $.extend(conf, arg);
+        }
+
+        $box = 
+        $('<div>' +
+            '<div class="pop-title">' + conf.title + '</div>' + 
+            '<div class="pop-content">' + 
+            '<div><button style="margin-right: 5px;" class="primary confirm">Confirm</button><button class="cancel">Cancel</button></div>' +
+            '</div >' +
+        '</div>')
+        .css({
+            color:'#444',
+            width:  300,
+            height: 'auto',
+            padding: '15px 10px',
+            background: '#fff',
+            position: 'fixed',
+            'border-radius': 3,
+            'box_shadow': '0 1px 2px rgba(0,0,0,.5)'
+        })
+
+        $title = $box.find('.pop-title').css({
+            padding: '5px 10px',
+            'font-weight': 900,
+            'font-size': 20,
+            'text-align': 'center'
+        })
+
+        $content = $box.find('.pop-content').css({
+            padding: '5px 10px', 
+            'text-align': 'center'
+        })
+
+        $confirm = $content.find('button.confirm')
+        $cancel = $content.find('button.cancel')
+
+        $mask = $('<div></div>')
+        .css({
+            position: 'fixed',
+            background: 'rgba(0,0,0,.5)',
+            top: 0,
+            bottom: 0,
+            left: 0,
+            right: 0
+        })
+
+        timer = setInterval(function(){
+            if (confirmed !== undefined) {
+                dfd.resolve(confirmed);
+                clearInterval(timer);
+                dismiss_pop();
+            }
+        }, 50);
+
+        $confirm.on('click', on_confirmed);
+        $cancel.on('click', on_cancel);
+        $mask.on('click', on_cancel);
+
+        function on_cancel() {
+            confirmed = false;
+        }
+
+        function on_confirmed() {
+            confirmed = true;
+        }
+
+        function dismiss_pop() {
+            $mask.remove();
+            $box.remove();
+        }
+
+        function adjust_box_position() {
+            let window_width = $window.width(),
+                window_height = $window.height(),
+                box_width = $box.width(),
+                box_height = $box.height(),
+                move_x,
+                move_y;                          
+            move_x = (window_width - box_width) / 2;
+            move_y = (window_height - box_height) / 2 - 20;
+            $box.css({
+                left: move_x,
+                top: move_y
+            })
+        }
+
+        $window.on('resize', function() {
+            adjust_box_position();
+        })
+
+        $mask.appendTo($body);
+        $box.appendTo($body);
+        $window.resize();
+        return dfd.promise();
+    }
 
     function listen_msg_event() {
         $msg_content.on('click', function () {
@@ -129,8 +249,10 @@
             let $this = $(this);
             let $item = $this.parent().parent();
             let index = $item.data('index');
-            let tmp = confirm('Confirm Delete?')
-            tmp ? delete_task(index) : null;
+            pop('Confirm Delete?')
+            .then(function(r) {
+                r ? delete_task(index) : null;
+            })
         })
     }
 

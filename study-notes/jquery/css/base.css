@@ -83,6 +83,7 @@ button {
     line-height: 15px;
 }
 
+button.primary,
 [type=submit] {
     background:#46b1e4;
 }
@@ -140,6 +141,7 @@ button {
 
 .task-detail {
     background: #fff;
+    overflow: auto;
     color: #333;
     width: 50%;
     height: 100%;
