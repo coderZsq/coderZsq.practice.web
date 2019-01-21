@@ -28,4 +28,20 @@ server.get('/createroom', function(req, res) {
     res.send({'result': isRepeat});
 });
 
+server.get('/closeroom', function(req, res) {
+    var room = req.query;
+    var count = rooms.length;
+    var index = 0;
+    for (var i = 0; i < count; i++) {
+        var r = rooms[i];
+        if (r.roomName === room.roomName) {
+            index = i;
+            break;
+        }
+    }
+    rooms.splice(index, 1);
+    console.log(rooms);
+    res.send(rooms);
+});
+
 server.listen(8080);
