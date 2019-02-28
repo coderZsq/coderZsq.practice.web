@@ -1,26 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="43ba2986-10aa-41f7-927f-cd4b4fc6c6d4" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/../html/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../html/01_初识表格.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../html/02_表格属性.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../html/03_表格表头标签.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../html/04_表格结构标签.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../html/05_表格标题标签.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../html/06_表格合并.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../html/07_合并单元格复习.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../html/08_初识表单.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../html/09_表单控件集合.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../html/10_label标签.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../html/11_文本域.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../html/12_下拉菜单.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../html/13_表单域.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../html/14_html5新语义标签.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../html/15_新增表单type类型.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../html/16_HTML5新增表单属性.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../html/17_表单综合案例.html" afterDir="false" />
-    </list>
+    <list default="true" id="43ba2986-10aa-41f7-927f-cd4b4fc6c6d4" name="Default Changelist" comment="" />
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
     <ignored path="$PROJECT_DIR$/tmp/" />
@@ -31,17 +12,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/01_混乱的结构和样式.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="230">
-              <caret line="10" column="7" lean-forward="true" selection-start-line="10" selection-start-column="7" selection-end-line="10" selection-end-column="7" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <leaf />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -60,7 +31,7 @@
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" fullScreen="true">
+  <component name="ProjectFrameBounds" extendedState="6" fullScreen="true">
     <option name="width" value="834" />
     <option name="height" value="1050" />
   </component>
@@ -113,19 +84,18 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1551343557502</updated>
-      <workItem from="1551343558775" duration="188000" />
+      <workItem from="1551343558775" duration="449000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="188000" />
+    <option name="totallyTimeSpent" value="449000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="0" width="834" height="1050" extended-state="0" />
-    <editor active="true" />
+    <frame x="0" y="0" width="1680" height="1050" extended-state="6" />
     <layout>
       <window_info id="Favorites" side_tool="true" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.31488314" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.15430982" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Docker" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" />
