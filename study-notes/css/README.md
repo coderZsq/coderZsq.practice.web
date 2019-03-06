@@ -1,19 +1,3 @@
----
-# 课程目标:
-> 1. 学会使用CSS选择器
-> 2. 熟记CSS样式和外观属性
-> 3. 熟练掌握CSS各种选择器
-> 4. 熟练掌握CSS各种选择器
-> 5. 熟练掌握CSS三种显示模式
-> 6. 熟练掌握CSS背景属性
-> 7. 熟练掌握CSS三大特性
-> 8. 熟练掌握CSS盒子模型
-> 9. 熟练掌握CSS浮动
-> 10.熟练掌握CSS定位
-> 11.熟练掌握CSS高级技巧强化CSS
-typora-copy-images-to: media
----
-
 # CSS的发展历程
 
 从HTML被发明开始，样式就以各种形式存在。不同的浏览器结合它们各自的样式语言为用户提供页面效果的控制。最初的HTML只包含很少的显示属性。
@@ -3492,6 +3476,63 @@ order: 1;
 
 此知识点重在理解，要明确找出主轴、侧轴、方向，各属性对应的属性值
 
+## 浏览器前缀
+
+| 浏览器前缀    | 浏览器                                    |
+| -------- | -------------------------------------- |
+| -webkit- | Google Chrome, Safari, Android Browser |
+| -moz-    | Firefox                                |
+| -o-      | Opera                                  |
+| -ms-     | Internet Explorer, Edge                |
+| -khtml-  | Konqueror                              |
+
+
+
+后面我们会有 常用的解决H5和C3 的兼容解决文件， 我们这里暂且不涉及。
+
+## 背景渐变
+
+在线性渐变过程中，颜色沿着一条直线过渡：从左侧到右侧、从右侧到左侧、从顶部到底部、从底部到顶部或着沿任何任意轴。如果你曾使用过制作图件，比如说Photoshop，你对线性渐变并不会陌生。
+
+兼容性问题很严重，我们这里之讲解线性渐变
+
+语法格式： 
+
+~~~css
+background:-webkit-linear-gradient(渐变的起始位置， 起始颜色， 结束颜色)；
+~~~
+
+~~~css
+background:-webkit-linear-gradient(渐变的起始位置， 颜色 位置， 颜色位置....)；
+~~~
+
+
+
+## CSS W3C 统一验证工具
+
+CssStats 是一个在线的 CSS 代码分析工具
+
+```
+网址是：  http://www.cssstats.com/
+```
+
+
+
+如果你想要更全面的，这个神奇，你值得拥有：
+
+W3C 统一验证工具：    http://validator.w3.org/unicorn/  ☆☆☆☆☆
+
+因为它可以检测本地文件哦！！
+
+## CSS 压缩
+
+通过上面的检测没有错误，为了提高加载速度和节约空间（相对来说，css量很少的情况下，几乎没啥区别），可以通过css压缩工具把css进行压缩。
+
+ w3c css压缩   http://tool.chinaz.com/Tools/CssFormat.aspx   网速比较慢
+
+ 还可以去站长之家进行快速压缩。
+
+ http://tool.chinaz.com/Tools/CssFormat.aspx  
 
 
 
