@@ -9,6 +9,9 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "jquery": "1.12.2"
+    "jquery": "^3.3.1",
+    "jquery-datetimepicker": "^2.5.20",
+    "normalize.css": "^8.0.0",
+    "store": "^2.0.12"
   }
 }
