@@ -5,8 +5,7 @@
 
     function Snake(options) {
         options = options || {};
-        this.width = options.width || 20;
-        this.height = options.height || 20;
+        Parent.call(this, options);
         this.direction = options.direction || 'right';
         this.body = [
             {x: 3, y: 2, color: 'red'},
@@ -14,6 +13,10 @@
             {x: 1, y: 2, color: 'blue'}
         ];
     }
+
+
+    Snake.prototype = new Parent();
+    Snake.prototype.constructor = Snake;
 
 
     Snake.prototype.render = function (map) {
@@ -65,14 +68,27 @@
         let headY = head.y * this.height;
         if (headX === food.x && headY === food.y) {
             let last = this.body[this.body.length - 1];
-            this.body.push({
-                x: last.x,
-                y: last.y,
-                color: last.color
-            });
+            // this.body.push({
+            //     x: last.x,
+            //     y: last.y,
+            //     color: last.color
+            // });
+            let obj = {};
+            extend(last, obj);
+            this.body.push(obj);
             food.render(map);
         }
     };
+
+
+    function extend(parent, child) {
+        for (let key in parent) {
+            if (child[key]) {
+                continue;
+            }
+            child[key] = parent[key];
+        }
+    }
 
 
     window.Snake = Snake;

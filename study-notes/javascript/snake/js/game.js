@@ -20,19 +20,14 @@
 
    function bindKey() {
        document.addEventListener('keydown', function (e) {
-           switch (e.keyCode) {
-               case 37:
-                   this.snake.direction = 'left';
-                   break;
-               case 38:
-                   this.snake.direction = 'top';
-                   break;
-               case 39:
-                   this.snake.direction = 'right';
-                   break;
-               case 40:
-                   this.snake.direction = 'bottom';
-                   break;
+           if (e.key === 'ArrowLeft') {
+               this.snake.direction = 'left';
+           } else if (e.key === 'ArrowUp') {
+               this.snake.direction = 'top';
+           } else if (e.key === 'ArrowRight') {
+               this.snake.direction = 'right';
+           } else if (e.key === 'ArrowDown') {
+               this.snake.direction = 'bottom';
            }
        }.bind(that), false);
    }

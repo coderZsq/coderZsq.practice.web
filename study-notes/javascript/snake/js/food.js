@@ -7,10 +7,13 @@
         options = options || {};
         this.x = options.x || 0;
         this.y = options.y || 0;
-        this.width = options.width || 20;
-        this.height = options.height || 20;
+        Parent.call(this, options);
         this.color = options.color || 'green';
     }
+
+
+    Food.prototype = new Parent();
+    Food.prototype.constructor = Food;
 
 
     Food.prototype.render = function (map) {
