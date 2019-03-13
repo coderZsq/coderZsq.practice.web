@@ -385,7 +385,341 @@
     }
 
 
-    window.test = test27;
+    function test28() {
+        $(function () {
+            $('#btn').click(function () {
+                let aObj = $('<a href="https://www.google.com">Google</a>')
+                // $('div:eq(1)').append(aObj);
+                // $('div:eq(1)').prepend(aObj);
+                // $('div:eq(1)').after(aObj);
+                $('div:eq(1)').before(aObj);
+            });
+        });
+    }
+
+
+    function test29() {
+        $(function () {
+           $('#btn').click(function () {
+               let dv = $('#dv *');
+               $('#dv').append($('#dv1>img'));
+               // $('#dv1').append(dv);
+               dv.appendTo($('#dv1'));
+           });
+        });
+    }
+
+
+    function test30() {
+        $(function () {
+            $('#btn').click(function () {
+                $('#dv').html('<p>tag - p</p>')
+            });
+        });
+    }
+
+
+    function test31() {
+        $(function () {
+           $('#btn').click(function () {
+               // $('#dv').html('');
+               // $('#dv').empty();
+               $('#dv').remove();
+           });
+           $('#btn1').click(function () {
+              let obj = $('#dv *').clone();
+              obj.css('fontSize', '6px');
+              $('#dv2').append(obj);
+           });
+        });
+    }
+
+
+    function test32() {
+        $(function () {
+           $('#btn').click(function () {
+               console.log($(this).val());
+               console.log($('#txt').val());
+               console.log($('#rad').val());
+               console.log($('#ck').val());
+               console.log($('#sm').val());
+               console.log($('#tt').val());
+               console.log($('#tt').text());
+               $(this).val('input - button');
+               $('#txt').val('input - text');
+               $('#rad').val('input - radio');
+               $('#ck').val('input - checkbox');
+               $('#sm').val('input - submit');
+               $('#se').val(4);
+           });
+        });
+    }
+
+
+    function test33() {
+        $(function () {
+           $('#btn').click(function () {
+               let aObj= $('<a></a>');
+               aObj.attr('title', 'Castie!');
+               aObj.attr('href', 'https://github.com/coderZsq');
+               aObj.text('coderZsq - GitHub');
+               $('#dv2').append(aObj);
+               console.log(aObj.attr('href'));
+           });
+        });
+    }
+
+
+    function test34() {
+        $(function () {
+            $('#btn').click(function () {
+                $('#dv :checkbox').prop('checked', true);
+            });
+            $('#btn1').click(function () {
+                $('#dv :checkbox').prop('checked', false);
+            });
+        });
+    }
+
+
+    function test35() {
+        $(function () {
+            $('#btn').click(function () {
+                // let width = parseInt($('#dv').css('width'));
+                // let height = parseInt($('#dv').css('height'));
+                // console.log(width + '\n' + height);
+                let width = $('#dv').width() * 2;
+                let height = $('#dv').height() * 2;
+                $('#dv').width(width);
+                $('#dv').height(height);
+            });
+        });
+    }
+
+
+    function test36() {
+        $(function () {
+            $('#btn').click(function () {
+                $('#dv').css({
+                    'position': 'absolute',
+                    'left': '100px',
+                    'top': '50px'
+                });
+                console.log($('#dv').offset().left);
+                console.log($('#dv').offset().top);
+            });
+            $('#btn1').click(function () {
+                $('#dv').offset({
+                    'left': 200,
+                    'top': 200
+                });
+            });
+        });
+    }
+
+
+    function test37() {
+        $(function () {
+           $(document).click(function () {
+               console.log($(this).scrollLeft() + '\n' + $(this).scrollTop());
+           });
+        });
+    }
+
+
+    function test38() {
+        $(window).scroll(function () {
+            console.log($(this).scrollLeft() + '\n' + $(this).scrollTop());
+        });
+    }
+
+
+    function test39() {
+        // $('#btn').bind('click', function () {
+        //    
+        // });
+        $('#btn').bind({
+            'click': function () {
+                console.log('click');
+            },
+            'mouseover': function () {
+                console.log('mouseover');
+            },
+            'mouseout': function () {
+                console.log('mouseout');
+            }
+        })
+    }
+
+
+    function test40() {
+        $(function () {
+           let i = 0;
+           $('#btn').bind('mouseover mouseout', function () {
+              i++;
+              console.log(i);
+           });
+        });
+    }
+
+
+    function test41() {
+        $('#btn').bind('click', function () {
+           $('<p>tag - p</p>').appendTo($('#dv'));
+           $('#dv').delegate('p', 'click', function () {
+              alert(1);
+           });
+        });
+    }
+
+
+    function test42() {
+        $('#btn').on('click', function () {
+           $('#dv').append($('<p>tag - p</p>'));
+           $('#dv').on('click', 'p', function () {
+               alert(1);
+           });
+        });
+    }
+
+
+    function test43() {
+        $('#btn').on('click', function () {
+           alert(1);
+        });
+        $('#btn1').on('click', function () {
+           $('#btn').off('click');
+        });
+    }
+
+
+    function test44() {
+        $('#btn').bind('click', function () {
+           alert(1);
+        });
+        $('#btn1').bind('click', function () {
+           $('#btn').unbind('click');
+        });
+    }
+
+
+    function test45() {
+        $('#btn').click(function () {
+           $('#dv').delegate('p', 'click', function () {
+                alert(1);
+           });
+        });
+        $('#btn1').click(function () {
+           $('#dv').undelegate('p', 'click');
+        });
+    }
+
+
+    function test46() {
+        // $('#dv>p').click(function () {
+        //     alert(1);
+        // });
+        $('#dv').delegate('p', 'click', function () {
+            alert(1);
+        });
+        $('#dv').click(function () {
+            alert(2);
+        });
+        $('#btn1').click(function () {
+            $('#dv').off('click'); //解绑父级
+            $('#dv').off('click', '**'); //解绑子级
+            $('#dv').off(); //解绑父子级
+        });
+    }
+
+
+    function test47() {
+        $('#btn').click(function () {
+            $(this).css('backgroundColor', 'red');
+        });
+        $('#btn1').click(function () {
+            // $('#btn').click();
+            // $('#btn').trigger('click');
+            $('#btn').triggerHandler('click');
+        });
+    }
+
+
+    function test48() {
+        $('#btn').click(function () {
+            // $('#txt').focus();
+            // $('#txt').trigger('focus');
+            $('#txt').triggerHandler('focus'); //不触发浏览器默认行为
+            $('#sp').text('focus - span');
+        });
+    }
+
+
+    function test49() {
+        $('#dv').on('click', 'input', function (event) {
+            // console.log(arguments[0]);
+            console.log(event);
+            console.log(event.delegateTarget);
+            console.log(event.currentTarget);
+            console.log(event.target);
+        });
+    }
+
+
+    function test50() {
+        $(document).keydown(function (e) {
+            let key = e.key;
+            if (key === 'a') {
+                $('#dv').css('backgroundColor', 'red');
+            } else if (key === 'b') {
+                $('#dv').css('backgroundColor', 'yellow');
+            }
+        });
+    }
+
+
+    function test51() {
+        $('#dv2').click(function () {
+            alert('dv2 >' + $(this).attr('id'));
+        });
+        $('#dv22').click(function () {
+            alert('dv22 >' + $(this).attr('id'));
+            $('body').css('backgroundColor', 'black');
+        });
+        $('#dv222').click(function () {
+            alert('dv222 >' + $(this).attr('id'));
+            return false;
+        });
+    }
+
+
+    function test52() {
+        $('#uu2>li').each(function (index, element) {
+            // console.log(arguments.length);
+            $(element).css('opacity', (index + 1) / 10);
+        });
+    }
+
+
+    function test53() {
+        let xy = $.noConflict();
+        xy('#btn').click(function () {
+            alert(1);
+        });
+    }
+
+
+    function test54() {
+        $.fn.changeBackgroundColor = function (color) {
+            $(this).css('backgroundColor', color);
+        };
+        $('input[type=button]').click(function () {
+            $('.cls').changeBackgroundColor('skyblue');
+        });
+    }
+
+
+    window.test = test54;
 })();
 
 test();
