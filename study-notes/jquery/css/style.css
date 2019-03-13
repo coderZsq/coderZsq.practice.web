@@ -4,6 +4,11 @@ div {
     background-color: pink;
 }
 
+img {
+    width: 95px;
+    height: 95px;
+}
+
 .cls {
     background-color: green;
 }
