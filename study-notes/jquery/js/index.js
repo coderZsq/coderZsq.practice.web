@@ -107,7 +107,177 @@
     }
 
 
-    window.test = test4;
+    function test5() {
+        $(function () {
+           $('#btn').click(function () {
+               $('#dv').text('innerText, textContent').css('backgroundColor', 'yellow');
+           });
+        });
+    }
+
+
+    function test6() {
+        $(function () {
+           $('#btn').click(function () {
+               $('p').text('tag - p');
+           });
+        });
+    }
+
+
+    function test7() {
+        $(function () {
+           $('#btn').click(function () {
+               $('p.cls').css('backgroundColor', 'yellow');
+           });
+        });
+    }
+
+
+    function test8() {
+        $(function () {
+           $('#btn').click(function () {
+               $('div, p.cls, span').css('backgroundColor', 'yellow');
+           });
+        });
+    }
+
+
+    function test9() {
+        $(function () {
+            $('#btn').click(function () {
+                // $('#dv p').css('backgroundColor', 'red');
+                $('#dv>p').css('backgroundColor', 'red');
+            });
+        });
+    }
+
+
+    function test10() {
+        $(function () {
+            $('#btn').click(function () {
+                $('#txt').val('placeholder');
+                console.log($('#txt').val());
+            });
+        });
+    }
+
+
+    function test11() {
+        $(function () {
+            $('#uu>li').mouseover(function () {
+                $(this).css('backgroundColor', 'red');
+            }).mouseout(function () {
+                $(this).css('backgroundColor', '');
+            });
+        });
+    }
+
+
+    function test12() {
+        $(function () {
+           $('#btn').click(function () {
+               $('#dv *').css('backgroundColor', 'yellow');
+           });
+        });
+    }
+
+
+    function test13() {
+        $(function () {
+           $('#btn').click(function () {
+               $('#uu>li:even').css('backgroundColor', 'yellow');
+               $('#uu>li:odd').css('backgroundColor', 'red');
+           });
+        });
+    }
+
+
+    function test14() {
+        $(function () {
+           $('#btn').click(function () {
+               $('#uu>li:gt(0)').css('backgroundColor', 'skyblue');
+               // $('#uu>li:eq(1)').css('backgroundColor', 'skyblue');
+               // $('#uu>li:lt(2)').css('backgroundColor', 'skyblue');
+           });
+        });
+    }
+
+
+    function test15() {
+        $(function () {
+           $('#btn').click(function () {
+               // $('#dv').addClass('cls').addClass('cls2');
+               $('#dv').addClass('cls cls2');
+           });
+        });
+    }
+
+
+    function test16() {
+        $(function () {
+           $('#btn').click(function () {
+               // $('span').removeClass('cls');
+               $('span').removeClass();
+           });
+        });
+    }
+
+
+    function test17() {
+        $(function () {
+            $('#btn').click(function () {
+                // if ($('body').hasClass('cls')) {
+                //     $('body').removeClass('cls');
+                //     $(this).val('Off');
+                // } else {
+                //     $('body').addClass('cls');
+                //     $(this).val('On');
+                // }
+                $('body').toggleClass('cls');
+            });
+        });
+    }
+
+
+    function test18() {
+        $(function () {
+            $('#btn').click(function () {
+                console.log($('#dv').html());
+                $('#dv').html('<p>p</p>').css('backgroundColor', 'red');
+            });
+        });
+    }
+
+
+    function test19() {
+        $(function () {
+           $('#uu>li').mouseover(function () {
+               $(this).css('backgroundColor', 'red').siblings('li').css('backgroundColor', '');
+           }).click(function () {
+               $(this).css('fontSize', '50px').css('color', 'green');
+           });
+        });
+    }
+
+
+    function test20() {
+        $(function () {
+           $('#btn').click(function () {
+               $(this).val('alter');
+           }).mouseover(function () {
+               $(this).css({
+                  'width': '200px',
+                  'height': '100px'
+               });
+           }).mouseout(function () {
+               $(this).css('backgroundColor', 'green');
+           });
+        });
+    }
+
+
+    window.test = test20;
 })();
 
 test();
