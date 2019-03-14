@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>PHP</title>
+    <title></title>
     <style type="text/css">
         th, td {
             border-left: 1px solid red;
@@ -16,6 +16,7 @@
 </head>
 <body>
     <?php
+//        sleep(3);
         $arr = array();
         $arr[0] = array("name"=>"name1", "author"=>"author1", "category"=>"category1", "desc"=>"desc1");
         $arr[1] = array("name"=>"name2", "author"=>"author2", "category"=>"category2", "desc"=>"desc2");
@@ -23,8 +24,8 @@
         $arr[3] = array("name"=>"name4", "author"=>"author4", "category"=>"category4", "desc"=>"desc4");
     ?>
     <div>
-        <form action="index2.php" method="post">
-            Number: 
+        <form action="./02.php" method="post">
+            Number:
             <input type="text" name="code">
             <input type="submit" value="Query">
         </form>
