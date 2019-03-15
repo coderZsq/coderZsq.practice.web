@@ -6,7 +6,7 @@
 </head>
 <body>
     <div>
-        <form action="./04.php" method="post" target="myframe">
+        <form action="00 iframe-s.php" method="post" target="myframe">
             username: <input type="text" name="username"><span id="info"></span><br>
             password: <input type="text" name="password">
             <input type="submit" value="login">

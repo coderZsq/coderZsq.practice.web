@@ -2,9 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6b5d94dc-5de3-4f3a-9ec1-51e79a736ebd" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/../php/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../php/page.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ajax/principle/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../ajax/principle/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ajax/principle/jquery.js" beforeDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -20,8 +19,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/js/index.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="842">
-              <caret line="719" selection-start-line="719" selection-end-line="719" />
+            <state relative-caret-position="243">
+              <caret line="692" column="5" lean-forward="true" selection-start-line="692" selection-start-column="5" selection-end-line="692" selection-end-column="5" />
             </state>
           </provider>
         </entry>
@@ -143,11 +142,12 @@
       <workItem from="1552443977434" duration="20016000" />
       <workItem from="1552527693083" duration="27000" />
       <workItem from="1552532855563" duration="12000" />
+      <workItem from="1552619867377" duration="13000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="22762000" />
+    <option name="totallyTimeSpent" value="22775000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -160,6 +160,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1680" height="1027" extended-state="0" />
+    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" weight="0.17600964" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -219,8 +220,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/js/index.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="842">
-          <caret line="719" selection-start-line="719" selection-end-line="719" />
+        <state relative-caret-position="243">
+          <caret line="692" column="5" lean-forward="true" selection-start-line="692" selection-start-column="5" selection-end-line="692" selection-end-column="5" />
         </state>
       </provider>
     </entry>

@@ -24,7 +24,7 @@
         $arr[3] = array("name"=>"name4", "author"=>"author4", "category"=>"category4", "desc"=>"desc4");
     ?>
     <div>
-        <form action="./02.php" method="post">
+        <form action="00 api.php" method="post">
             Number:
             <input type="text" name="code">
             <input type="submit" value="Query">
