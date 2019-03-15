@@ -23,7 +23,7 @@
             btn2.onclick = function () {
                 ajax('10 ajax-2.php', 'post', 'username=lisi&password=123', 'json', function (data) {
                     let div2 = document.getElementById('info2');
-                    div2.innerHTML = data;
+                    div2.innerHTML = data.username + '===' + data.password;
                 });
             };
         };

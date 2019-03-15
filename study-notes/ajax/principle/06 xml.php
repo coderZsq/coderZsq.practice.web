@@ -1,10 +1,10 @@
 <?php
-    header('Content-Type:text/xml;charset=utf-8');
-    $arr = array();
-    $arr[0] = array('name'=>'name1', 'author'=>'author1', 'desc'=>'desc1');
-    $arr[1] = array('name'=>'name2', 'author'=>'author2', 'desc'=>'desc2');
-    $arr[2] = array('name'=>'name3', 'author'=>'author3', 'desc'=>'desc3');
-    $arr[3] = array('name'=>'name4', 'author'=>'author4', 'desc'=>'desc4');
+header('Content-Type:text/xml;charset=utf-8');
+$arr = array();
+$arr[0] = array('name'=>'name1', 'author'=>'author1', 'desc'=>'desc1');
+$arr[1] = array('name'=>'name2', 'author'=>'author2', 'desc'=>'desc2');
+$arr[2] = array('name'=>'name3', 'author'=>'author3', 'desc'=>'desc3');
+$arr[3] = array('name'=>'name4', 'author'=>'author4', 'desc'=>'desc4');
 ?>
 
 <booklist>

@@ -12,7 +12,7 @@ function ajax(url, type, param, dataType, callback) {
     let data = null;
     if (type === 'post') {
         data = param;
-        xhr.setRequestHeader('ContentType', 'application/x-www-form-urlencoded');
+        xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
     }
     xhr.send(data);
     xhr.onreadystatechange = function () {
