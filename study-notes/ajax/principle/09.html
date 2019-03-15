@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <input type="button" value="click" id="btn">
+    <script type="text/javascript">
+        // console.log(1);
+        // setTimeout(function () {
+        //     console.log(2);
+        // }, 0);
+        // let sum = 0
+        // for (let i = 0; i < 100000000; i++) {
+        //     sum += i;
+        // }
+        // console.log(sum);
+        // console.log(3);
+        window.onload = function () {
+            let btn = document.getElementById('btn');
+            console.log(1);
+            btn.onclick = function () {
+                console.log(this.value);
+            };
+            console.log(3);
+        };
+    </script>
+</body>
+</html>
