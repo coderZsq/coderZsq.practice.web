@@ -1572,4 +1572,726 @@ BFC就是页面上的一个隔离的独立容器，容器里面的子元素不�
 
 个人建议： 现在互联网发展很快， 连微软公司都抛弃了ie浏览器，转而支持 edge这样的高版本浏览器，我们很多情况下没有必要再时刻想着低版本浏览器了，而是一开始就构建完整的效果，根据实际情况，修补低版本浏览器问题。
 
+# 购物网站宣传页面
+
+<img src="media/demo.png" />
+
+案例目的：
+
+1. 复习---复习前面学过的HTML5+CSS3
+2. 综合---综合运用jquery完成案例
+3. 拓展---可以做宣传页面或者个人简历
+
+
+
+## fullpage 全屏插件
+
+全屏滚动效果，原生js也很好实现，主要是用 mousewheel  鼠标滚轮滚动事件， 来判断上滚动还是下滚动，之后设置每次滚动的高度为屏幕的高度即可。但是，虽然效果简单，但是兼容性很差，要做很多兼容处理及比较麻烦啦！（了解一下，有兴趣的同学可以研究一下）
+
+fullPage.js 是一个基于 jQuery 的插件，它能够帮你很方便、很轻松的制作出全屏网站。
+
+github 官网     https://github.com/alvarotrigo/fullPage.js  
+
+中文演示地址   http://www.dowebok.com/demo/2014/77/    
+
+
+
+主要功能有：
+
+支持鼠标滚动
+
+支持前进后退和键盘控制
+
+多个回调函数
+
+支持手机、平板触摸事件
+
+支持 CSS3 动画
+
+支持窗口缩放
+
+窗口缩放时自动调整
+
+可设置滚动宽度、背景颜色、滚动速度、循环选项、回调、文本对齐方式等等
+
+## 引用文件
+
+~~~html
+<link rel="stylesheet" href="css/jquery.fullPage.css">
+<script src="js/jquery.min.js"></script>
+ <!-- jquery.easings.min.js 是必须的，用于 easing 参数，也可以使用完整的 jQuery UI 代替 -->
+<script src="js/jquery.easings.min.js"></script>
+ <script src="js/jquery.fullPage.js"></script>
+~~~
+
+
+
+## HTML 结构
+
+~~~HTML
+<div id="fullpage">
+    <div class="section">第一屏</div>
+    <div class="section">第二屏</div>
+    <div class="section">
+        <div class="slide">第三屏的第一屏</div>
+        <div class="slide">第三屏的第二屏</div>
+        <div class="slide">第三屏的第三屏</div>
+        <div class="slide">第三屏的第四屏</div>
+    </div>
+    <div class="section">第四屏</div>
+</div>
+~~~
+
+<img src="media/full.png" />
+
+## JavaScript入口函数
+
+~~~javascript
+$(function(){
+    $('#fullpage').fullpage();
+});
+~~~
+
+
+
+## fullpage 详细参数
+
+| 选项                                | 类型   | 默认值         | 说明                                   |
+| --------------------------------- | ---- | ----------- | ------------------------------------ |
+|                                   |      |             |                                      |
+| verticalCentered                  | 字符串  | true        | 内容是否垂直居中                             |
+| resize                            | 布尔值  | false       | 字体是否随着窗口缩放而缩放                        |
+| sectionColor                      | 函数   | 无           | 设置背景颜色                               |
+| anchors                           | 数组   | 无           | 定义锚链接                                |
+| scrollingSpeed                    | 整数   | 700         | 滚动速度，单位为毫秒                           |
+| easing                            | 字符串  | easeInQuart | 滚动动画方式                               |
+| menu                              | 布尔值  | false       | 绑定菜单，设定的相关属性与 anchors 的值对应后，菜单可以控制滚动 |
+| navigation                        | 布尔值  | false       | 是否显示项目导航                             |
+| navigationPosition                | 字符串  | right       | 项目导航的位置，可选 left 或 right              |
+|                                   |      |             |                                      |
+| navigationTooltips                | 数组   | 空           | 项目导航的 tip                            |
+| slidesNavigation                  | 布尔值  | false       | 是否显示左右滑块的项目导航                        |
+| slidesNavPosition                 | 字符串  | bottom      | 左右滑块的项目导航的位置，可选 top 或 bottom         |
+| controlArrowColor                 | 字符串  | #fff        | 左右滑块的箭头的背景颜色                         |
+| loopBottom                        | 布尔值  | false       | 滚动到最底部后是否滚回顶部                        |
+| loopTop                           | 布尔值  | false       | 滚动到最顶部后是否滚底部                         |
+| loopHorizontal                    | 布尔值  | true        | 左右滑块是否循环滑动                           |
+| autoScrolling                     | 布尔值  | true        | 是否使用插件的滚动方式，如果选择 false，则会出现浏览器自带的滚动条 |
+| scrollOverflow                    | 布尔值  | false       | 内容超过满屏后是否显示滚动条                       |
+| css3                              | 布尔值  | false       | 是否使用 CSS3 transforms 滚动              |
+| paddingTop                        | 字符串  | 0           | 与顶部的距离                               |
+| paddingBottom                     | 字符串  | 0           | 与底部距离                                |
+| fixedElements                     | 字符串  | 无           |                                      |
+| normalScrollElements              |      | 无           |                                      |
+| keyboardScrolling                 | 布尔值  | true        | 是否使用键盘方向键导航                          |
+| touchSensitivity                  | 整数   | 5           |                                      |
+| continuousVertical                | 布尔值  | false       | 是否循环滚动，与 loopTop 及 loopBottom 不兼容    |
+| animateAnchor                     | 布尔值  | true        |                                      |
+| normalScrollElementTouchThreshold | 整数   | 5           |                                      |
+
+### fullPage.js 方法
+
+注意方法的使用时需要添加：
+
+$.fn.fullpage   比如
+
+~~~javascript
+$.fn.fullpage.moveTo(1);
+~~~
+| 名称                     | 说明                      |
+| ---------------------- | ----------------------- |
+| moveSectionUp()        | 向上滚动                    |
+| moveSectionDown()      | 向下滚动                    |
+| moveTo(section, slide) | 滚动到                     |
+| moveSlideRight()       | slide 向右滚动              |
+| moveSlideLeft()        | slide 向左滚动              |
+| setAutoScrolling()     | 设置页面滚动方式，设置为 true 时自动滚动 |
+| setAllowScrolling()    | 添加或删除鼠标滚轮/触控板控制         |
+| setKeyboardScrolling() | 添加或删除键盘方向键控制            |
+| setScrollingSpeed()    | 定义以毫秒为单位的滚动速度           |
+
+
+
+### 回调函数
+
+| 名称             | 说明                                       |
+| -------------- | ---------------------------------------- |
+| afterLoad      | 滚动到某一屏后的回调函数，接收 anchorLink 和 index 两个参数，anchorLink 是锚链接的名称，index 是序号，从1开始计算 |
+| onLeave        | 滚动前的回调函数，接收 index、nextIndex 和 direction 3个参数：index 是离开的“页面”的序号，从1开始计算；nextIndex 是滚动到的“页面”的序号，从1开始计算；direction 判断往上滚动还是往下滚动，值是 up 或 down。 |
+| afterRender    | 页面结构生成后的回调函数，或者说页面初始化完成后的回调函数            |
+| afterSlideLoad | 滚动到某一水平滑块后的回调函数，与 afterLoad 类似，接收 anchorLink、index、slideIndex、direction 4个参数 |
+| onSlideLeave   | 某一水平滑块滚动前的回调函数，与 onLeave 类似，接收 anchorLink、index、slideIndex、direction 4个参数 |
+
+
+
+##  jQuery Easing.js 插件
+
+介绍：easing是jquery的一个插件，使用它可以创建更加绚丽的动画效果。
+
+环境：因为easing是jQuery的插件，所以必须是在引入jquery之后再引入它
+
+如果只想要简单的写法就用 
+
+```javascript	
+$(".car").animate({"left": "150%"},  4000, "easeInElastic", function() {});
+```
+
+
+
+~~~javascript
+easing:格式为json,{duration:持续时间,easing:过渡效果,complete:成功后的回调函数}
+~~~
+
+~~~javascript
+$(element).animate({ 
+    height:500, 
+    width:600 
+    },{ 
+    easing: 'easeInOutQuad', 
+    duration: 500, 
+    complete: function(){} 
+}); 
+~~~
+
+
+
+1. linear
+2. swing
+3. easeInQuad
+4. easeOutQuad
+5. easeInOutQuad
+6. easeInCubic
+7. easeOutCubic
+8. easeInOutCubic
+9. easeInQuart
+10. easeOutQuart
+11. easeInOutQuart
+12. easeInQuint
+13. easeOutQuint
+14. easeInOutQuint
+15. easeInExpo
+16. easeOutExpo
+17. easeInOutExpo
+18. easeInSine
+19. easeOutSine
+20. easeInOutSine
+21. easeInCirc
+22. easeOutCirc
+23. easeInOutCirc
+24. easeInElastic
+25. easeOutElastic
+26. easeInOutElastic
+27. easeInBack
+28. easeOutBack
+29. easeInOutBack
+30. easeInBounce
+31. easeOutBounce
+32. easeInOutBounce
+
+<img src="media/esse.png"/>
+
+https://matthewlein.com/experiments/easing.html
+
+
+
+##  动画复习
+
+
+
+# 兼容处理（理解）
+
+1. 在不支持HTML5新标签的浏览器里，会将这些新的标签解析成行内元素(inline)对待，所以我们只需要将其转换成块元素(block)即可使用，但是在IE9版本以下，并不能正常解析这些新标签，但是却可以识别通过document.createElement('tagName')创建的自定义标签，于是我们的解决方案就是将HTML5的新标签全部通过document.createElement('tagName')来创建一遍，这样IE低版本也能正常解析HTML5新标签了。
+
+2. 处理方式：在实际开发中我们更多采用的是通过检测IE浏览器的版本来加载三方的一个JS库来解决兼容问题（测试在IE下面的兼容性：ieTester软件的使用）
+
+ <script src="../js/html5shiv.min.js"></script>
+
+
+
+ 我们解决的问题， 主要是针对于ie低版本的，也就是只有低版本ie才执行才对。
+
+~~~html
+<!--[if lt IE 9]>
+
+　　 <script src="js/respond.js"></script>
+     
+ 　　<script src="js/html5shiv.min.js"></script>
+
+<![endif]—>
+~~~
+
+respond.js  目的是为了解决 ie低版本的CSS3媒体查询  media query
+
+条件注释 了解
+
+~~~html
+<!--[if !IE]><!--> 除IE外都可识别 <!--<![endif]-->
+<!--[if IE]> 所有的IE可识别 <![endif]-->
+<!--[if IE 6]> 仅IE6可识别 <![endif]-->
+<!--[if lte IE 6]> IE6以及IE6以下版本可识别 <![endif]-->
+<!--[if gte IE 6]> IE6以及IE6以上版本可识别 <![endif]-->
+<!--[if IE 7]> 仅IE7可识别 <![endif]-->
+<!--[if lt IE 7]> IE7以下版本可识别 <![endif]-->
+<!--[if gt IE 7]> IE7以上版本可识别 <![endif]-->
+<!--[if IE 8]> 仅IE8可识别 <![endif]-->
+<!--[if IE 9]> 仅IE9可识别 <![endif]-->
+~~~
+
+
+
+<img src="media/html.jpg" />
+
+# 360度3D 旋转插件
+
+使用方法：
+
+1. 引用js文件包
+
+   ~~~html
+   <script src="js/jquery.min.js"></script>
+
+   <script src="js/circlr.min.js"></script>
+   ~~~
+
+   2.书写结构：
+
+~~~html
+<div class="container">
+        <div id="circlr">
+             <img data-src="picture/1.png" />
+             <img data-src="picture/2.png" /> 
+             <img data-src="picture/3.png" />  
+             ...
+            <div id="loader"></div>
+        </div>
+ </div>
+~~~
+
+注意， 是 自定义属性  data-src 里面写路径    2.  loader 是 加载项  
+
+3. 书写css
+
+   ~~~css
+   #circlr {
+     cursor: move;
+     margin: 0 auto;
+     min-height: 100px;
+     position: relative;
+   }
+   #circlr #loader {
+     background: url(../images/loader.gif) center center no-repeat;
+     bottom: 0;
+     display: none;
+     left: 0;
+     position: absolute;
+     right: 0;
+     top: 0;
+   }
+
+   ~~~
+
+   ​
+
+4.调用文件对象
+
+~~~javascript
+<script type="text/javascript">
+	var crl = circlr('circlr', {
+	  scroll : true,
+	  loader : 'loader'
+	});
+</script>
+~~~
+
+<img src="media/car.png" />
+
+# 视差滚动插件
+
+视差滚动（Parallax Scrolling）指网页滚动过程中，多层次的元素进行不同程度的移动，视觉上形成立体运动效果的网页展示技术
+
+主要核心就是前景和背景以不同的速度移动，从而创造出3D效果。 这种效果可以给网站一个很好的补充。
+
+## 特性
+
+视差滚动效果酷炫，适合于个性展示的场合。
+
+视差滚动徐徐展开，适合于娓娓道来，讲故事的场合。
+
+视差滚动容易迷航，需要具备较强的导航功能。
+
+## 原理
+
+传统的网页的文字、图片、背景都是一起按照相同方向相同速度滚动的，而视差滚动则是在滚动的时候，内容和多层次的背景实现或不同速度，或不同方向的运动。
+
+有的时候也可以加上一些透明度、大小的动画来优化显示。 
+
+利用background-attachment属性实现。
+
+**background-attachment: fixed || scroll || local**
+
+## Stellar.js是什么？
+
+[stellar.js]是一个 jQuery插件，能很容易地给网站添加视差滚动效果。 尽管已经停止了维护，但它非常稳定，与最新版本的jQuery兼容，很多开发者也在使用它。 这个插件在jQuery插件库里很流行。
+
+http://markdalgleish.com/projects/stellar.js/   官网
+
+### 引用 js包 
+
+```javascript
+<script src="path/to/jquery/jquery.min.js"></script>
+<script src="path/to/jquery.stellar.min.js"></script>
+```
+
+### 引用html
+
+```html
+<div class="content" id="content1">
+    <p>TEXT HERE</p>
+</div>
+<div class="content" id="content2">
+    <p>TEXT HERE</p>
+</div>
+<div class="content" id="content3" data-stellar-background-ratio="0.5">
+    <p>TEXT HERE</p>
+</div>
+<div class="content" id="content4" data-stellar-background-ratio="0.5">
+    <p>TEXT HERE</p>
+</div>
+<div class="content" id="content5" data-stellar-background-ratio="0.5">
+    <p>TEXT HERE</p>
+</div>
+<div class="content" id="content6" data-stellar-background-ratio="0.5">
+    <p>TEXT HERE</p>
+</div> 
+```
+
+### 引入CSS
+
+~~~CSS
+body {
+    font-size: 20px;
+    color: white;
+    text-shadow: 0 1px 0 black, 0 0 5px black;
+}
+p {
+    padding: 0 0.5em;
+    margin: 0;
+}
+.content {
+    background-attachment: fixed;
+    height: 400px;
+}
+#content1 {
+    background-image: url("xxx.jpg");
+}
+#content2 {
+    background-image: url("xxx.jpg");
+}
+#content3 {
+    background-image: url("xxx.jpg");
+}
+#content4 {
+   background-image: url("xxx.jpg");
+}
+#content5 {
+   background-image: url("xxx.jpg");");
+}
+#content6 {
+    background-image: url("xxx.jpg");
+}
+~~~
+
+### js调用函数
+
+~~~javascript
+$.stellar({
+    horizontalScrolling: false,
+    responsive: true
+});
+~~~
+
+
+
+### 详细参数
+
+| 名称                                      | 说明                                       |
+| --------------------------------------- | ---------------------------------------- |
+| horizontalScrolling 和 verticalScrolling | 该配置项用来设置视差效果的方向。horizontalScrolling设置水平方向，verticalScro设置垂直方向， 为布尔值，默认为true |
+| responsive                              | 该配置项用来制定load或者resize时间触发时是否刷新页面，其值为布尔值，默认为false |
+| hideDistantElements                     | 该配置项用来设置移出视线的元素是否隐藏，其值为布尔值，若不想隐藏则设置为false` |
+| data-stellar-ratio="2"                  | 定义了此元素针对页面滚动的速度比率，比如，0.5为页面滚动的50%，2为页面滚动的200%，所以数值越大，你可以看到页面元素滚动速度越快。 |
+| data-stellar-background-ratio           | 该配置项用在单个元素中，其值为一个正数，用来改变被设置元素的影响速度。 例如 值为0.3时，则表示背景的滚动速度为正常滚动速度的0.3倍。如果值为小数时最好在样式表中设置 |
+
+  
+
+# QQ TIM 案例
+
+<img src="media/shicha.png" />
+
+
+
+
+## 1 网络状态
+
+我们可以通过window.navigator.onLine来检测，用户当前的网络状况，返回一个布尔值， 但是不同浏览器会存在差异
+
+所以HTML5 给我们提供了2个事件  online  和 offline  
+
+online用户网络连接时被调用
+
+offline用户网络断开时被调用
+
+他们监听的对象都是window
+
+
+
+## 2 全屏
+
+HTML5规范允许用户自定义网页上任一元素全屏显示。
+
+1、Node.requestFullScreen() 开启全屏显示
+
+2、Node.cancelFullScreen() 关闭全屏显示
+
+由于其兼容性原因，不同浏览器需要添加前缀如：
+
+webkit内核浏览器：webkitRequestFullScreen、webkitCancelFullScreen，如chrome浏览器。
+
+Gecko内核浏览器：mozRequestFullScreen、mozCancelFullScreen，如火狐浏览器。
+
+  ms  微软  msRequestFullscreen  
+
+3、document.fullScreen检测当前是否处于全屏
+
+不同浏览器需要添加前缀
+
+document.webkitIsFullScreen、document.mozFullScreen
+
+全屏伪类选择器  也有兼容性问题 需要添加前缀思密达
+
+:full-screen 、:-webkit-full-screen {}、:moz-full-screen {}
+
+
+
+## 3 文件读取
+
+我们想：  可以吧上传的文件，内容显示到页面？  或者 上传完毕图片显示缩略图到页面上。。。
+
+
+
+通过FileReader对象我们可以读取本地存储的文件，使用 [File ](https://developer.mozilla.org/zh-CN/docs/DOM/File)对象来指定所要读取的文件或数据。其中File对象可以是来自用户在一个 [ ](https://developer.mozilla.org/zh-CN/docs/HTML/Element/input)元素上选择文件后返回的[FileList ](https://developer.mozilla.org/zh-CN/docs/DOM/FileList)对象，也可以来自由拖放操作生成的  [DataTransfer](https://developer.mozilla.org/zh-CN/DragDrop/DataTransfer)
+
+### 3.1 Files对象
+
+由于HTML5中我们可以通过为表单元素添加multiple属性，因此我们通过<input>上传文件后得到的是一个Files对象（伪数组形式）。
+
+
+
+### 3.2FileReader对象
+
+HTML5新增内建对象，可以读取本地文件内容。
+
+var reader = new FileReader; 可以实例化一个对象
+
+实例方法
+
+1、[readAsDataURL](#readAsDataURL())() 以DataURL形式读取文件
+
+事件监听
+
+onload 当文读取完成时调用
+
+属性
+
+result 文件读取结果
+
+
+
+[参考资料](#toc)
+
+https://developer.mozilla.org/zh-CN/docs/Web/API/FileReader
+
+## 4 地理定位
+
+在HTML规范中，增加了获取用户地理信息的API，这样使得我们可以基于用户位置开发互联网应用，即基于位置服务 (Location Base Service)
+
+### 4.1 API详解
+
+1、获取当前地理信息
+
+navigator.geolocation.getCurrentPosition(successCallback, errorCallback) 
+
+2、重复获取当前地理信息
+
+navigator. geolocation.watchPosition(successCallback, errorCallback)
+
+当成功获取地理信息后，会调用succssCallback，并返回一个包含位置信息的对象position。
+
+position.coords.latitude 纬度
+
+position.coords.longitude经度
+
+position.coords.accuracy精度
+
+position.coords.altitude海拔高度
+
+当获取地理信息失败后，会调用errorCallback，并返回错误信息error
+
+
+
+http://www.w3school.com.cn/html5/html_5_geolocation.asp
+
+
+
+
+
+### 4.2 应用
+
+在现实开发中，通过调用第三方API（如百度地图）来实现地理定位信息，这些API都是基于用户当前位置的，并将用位置位置（经/纬度）当做参数传递，就可以实现相应的功能。
+
+
+
+http://lbsyun.baidu.com/   百度地图api
+
+
+
+## 5 拖拽
+
+在 HTML5 中，拖放是标准的一部分，任何元素都能够拖放。
+
+### 5.1 拖拽和释放
+
+拖拽：Drag
+
+释放：Drop
+
+拖拽指的是鼠标点击源对象后一直移动对象不松手，一但松手即释放了
+
+### 5.2 设置元素为可拖放
+
+draggable 属性：就是标签元素要设置draggable=true，否则不会有效果 
+
+注意：  链接和图片默认是可拖动的，不需要 draggable 属性。
+
+###  5.2 拖拽API的相关事件
+
+**被拖动的源对象可以触发的事件：**
+
+(1)ondragstart：源对象开始被拖动
+
+(2)ondrag：源对象被拖动过程中(鼠标可能在移动也可能未移动)
+
+(3)ondragend：源对象被拖动结束
+
+  **拖动源对象可以进入到上方的目标对象可以触发的事件：**
+
+(1)ondragenter：目标对象被源对象拖动着进入
+
+(2)ondragover：目标对象被源对象拖动着悬停在上方
+
+(3)ondragleave：源对象拖动着离开了目标对象
+
+(4)ondrop：源对象拖动着在目标对象上方释放/松手
+
+拖拽API总共就是7个函数！！
+
+### 5.3 DataTransfer
+
+在进行拖放操作时，`DataTransfer` 对象用来保存被拖动的数据。它可以保存一项或多项数据、一种或者多种数据类型
+
+## 6 Web存储
+
+随着互联网的快速发展，基于网页的应用越来越普遍，同时也变的越来越复杂，为了满足各种各样的需求，会经常性在本地存储大量的数据，HTML5规范提出了相关解决方案。
+
+### 6.1 特性
+
+1、设置、读取方便、页面刷新不丢失数据
+
+2、容量较大，sessionStorage约5M、localStorage约20M
+
+4、只能存储字符串，可以将对象JSON.stringify() 编码后存储
+
+### 6.2 window.sessionStorage
+
+1、生命周期为关闭浏览器窗口
+
+2、在同一个窗口(页面)下数据可以共享
+
+### 6.3 window.localStorage
+
+1、永久生效，除非手动删除 关闭页面也会存在
+
+2、可以多窗口（页面）共享（同一浏览器可以共享）
+
+### 6.4 方法详解
+
+setItem(key, value) 设置存储内容
+
+getItem(key) 读取存储内容
+
+removeItem(key) 删除键值为key的存储内容
+
+clear() 清空所有存储内容
+
+### 6.5 其它
+
+WebSQL、IndexDB
+
+## 7 应用缓存
+
+HTML5中我们可以轻松的构建一个离线（无网络状态）应用，只需要创建一个cache manifest文件。
+
+### 7.1 优势
+
+1、可配置需要缓存的资源
+
+2、网络无连接应用仍可用
+
+3、本地读取缓存资源，提升访问速度，增强用户体验
+
+4、减少请求，缓解服务器负担
+
+### 7.2 缓存清单
+
+一个普通文本文件，其中列出了浏览器应缓存以供离线访问的资源，推荐使用.appcache为后缀名
+
+例如我们创建了一个名为demo.appcache的文件，然后在需要应用缓存在页面的根元素(html)添加属性manifest="demo.appcache"，路径要保证正确。
+
+### 7.3 manifest文件格式*
+
+1、顶行写CACHE MANIFEST
+
+2、CACHE: 换行 指定我们需要缓存的静态资源，如.css、image、js等
+
+3、NETWORK: 换行 指定需要在线访问的资源，可使用通配符
+
+4、FALLBACK: 换行 当被缓存的文件找不到时的备用资源
+
+
+
+### 7.4 其它
+
+1、CACHE: 可以省略，这种情况下将需要缓存的资源写在CACHE MANIFEST
+
+2、可以指定多个CACHE: NETWORK: FALLBACK:，无顺序限制
+
+3、#表示注释，只有当demo.appcache文件内容发生改变时或者手动清除缓存后，才会重新缓存。
+
+4、chrome 可以通过chrome://appcache-internals/工具和离线（offline）模式来调试管理应用缓存
+
+## 8 多媒体
+
+方法：load()、play()、pause()
+
+属性：currentSrc、currentTime、duration
+
+事件：oncanplay，  ontimeupdate，onended 等
+
+[**参考文档**](http://www.w3school.com.cn/tags/html_ref_audio_video_dom.asp)
+
+http://www.w3school.com.cn/tags/html_ref_audio_video_dom.asp
+
+
+
+
 
