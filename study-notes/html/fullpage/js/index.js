@@ -75,7 +75,7 @@ $(function () {
                    $('.mouse-05-a').animate({
                         'opacity': 1
                    });
-                   $('.t1f-05').animate({
+                   $('.t1f-05').show().animate({
                        'bottom': 70
                    }, 1000, function (keyframes, options) {
                        $('.order-05').animate({
@@ -83,6 +83,51 @@ $(function () {
                        }, 390, function () {
                             $('.words-05').addClass('words-05-a');
                        });
+                   });
+               });
+           }
+           if (index === 5 && nextIndex === 6) {
+               $('.t1f-05').animate({
+                   'bottom': -(k - 500),
+                   'left': '40%',
+                   'width': 65
+               }, 1500, function () {
+                   $(this).hide();
+               });
+               $('.box-06').animate({
+                   'left': '38%'
+               }, 1500, function () {
+                   $(this).animate({
+                        'bottom': 40
+                   }, 500, function () {
+                       $(this).hide();
+                       $('.section6').animate({
+                           'backgroundPositionX': '100%'
+                       }, 4000, function () {
+                           $('.boy').animate({
+                               'height': 305,
+                               'bottom': 116
+                           }, 1000, function () {
+                               $(this).animate({
+                                   'right': 500
+                               }, 500, function () {
+                                   $('.door').animate({
+                                       'opacity': 1
+                                   }, 200, function () {
+                                       $('.girl').show().animate({
+                                           'right': 350,
+                                           'height': 306
+                                       }, 500, function () {
+                                           $('.pop-07').show();
+                                       });
+                                   });
+                               });
+                           });
+                       });
+                       $('.words-06-a').show().animate({
+                           'left': '30%'
+                       }, 2000, 'easeInOutElastic');
+                       $('.pop-06').show();
                    });
                });
            }
