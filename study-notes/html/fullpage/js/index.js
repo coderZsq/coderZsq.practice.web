@@ -1,13 +1,16 @@
 $(function () {
    let k = $(window).height();
-   let flag = false;
+   $('.next').click(function () {
+        $.fn.fullpage.moveSectionDown();
+   });
    $('#fullpage').fullpage({
        navigation: true,
        // navigationPosition: 'left'
        // loopBottom: true
        scrollSpeed: 1200,
        afterLoad: function (anchorLink, index) {
-           if (index === 2 && flag === false) {
+           if (index === 2) {
+                $('.next').fadeOut();
                 $('.search').show().animate({
                     'right': 370
                 }, 1500, 'easeOutBack', function () {
@@ -19,21 +22,22 @@ $(function () {
                             'height': 30,
                             'right': 250,
                             'bottom': 452
-                        }, 1000, function () {
-                            flag = true;
-                        });
+                        }, 1000);
                         $('.goods-02').show().animate({
                             'height': 218
                         }, 1000);
                         $('.words-02').animate({
                             'opacity': 1
-                        }, 500);
+                        }, 500, function () {
+                            $('.next').fadeIn();
+                        });
                     });
                 });
            }
        },
        onLeave: function (index, nextIndex, direction) {
-           if (index === 2 && nextIndex === 3 && flag === true) {
+           $('.next').fadeOut();
+           if (index === 2 && nextIndex === 3) {
                $('.shirt-02').show().animate({
                    'bottom': -(k - 250),
                    'width': 207,
@@ -44,7 +48,9 @@ $(function () {
                    }, 500, function () {
                        $('.btn-01-a').animate({
                             'opacity': 1
-                       }, 500);
+                       }, 500, function () {
+                           $('.next').fadeIn();
+                       });
                    });
                });
                $('.cover').show();
@@ -63,8 +69,9 @@ $(function () {
                        $('.note').show();
                        $('.note-img, .words-04-a').animate({
                            'opacity': 1
-                       }, 1000);
-
+                       }, 1000, function () {
+                           $('.next').fadeIn();
+                       });
                    });
                });
            }
@@ -81,7 +88,8 @@ $(function () {
                        $('.order-05').animate({
                            'bottom': 390
                        }, 390, function () {
-                            $('.words-05').addClass('words-05-a');
+                           $('.words-05').addClass('words-05-a');
+                           $('.next').fadeIn();
                        });
                    });
                });
@@ -119,6 +127,7 @@ $(function () {
                                            'height': 306
                                        }, 500, function () {
                                            $('.pop-07').show();
+                                           $('.next').fadeIn();
                                        });
                                    });
                                });
@@ -131,6 +140,40 @@ $(function () {
                    });
                });
            }
+           if (index === 6 && nextIndex === 7) {
+               setTimeout(function () {
+                   $('.star').animate({
+                       'width': 120
+                   }, 500, function () {
+                       $('.good-07').show();
+                       $('.next').fadeIn();
+                   });
+               }, 2000);
+           }
+           // $('.beginShoping').mouseenter(function (event) {
+           //     $('.btn-08-a').show();
+           // }).mouseleave(function () {
+           //     $('.btn-08-a').hide();
+           // });
+           $('.beginShoping').hover(function () {
+                $('.btn-08-a').toggle();
+           });
+           $(document).mousemove(function (event) {
+                let x = event.pageX - $('.hand-08').width() / 2;
+                let y = event.pageY + 10;
+                let minY = k - 449;
+                if (y < minY) {
+                    y = minY
+                }
+                $('.hand-08').css({
+                   'left': x,
+                   'top': y
+                });
+           });
+           $('.again').click(function () {
+              $.fn.fullpage.moveTo(1);
+              $('img, .move').attr('style', '');
+           });
        }
    });
 });

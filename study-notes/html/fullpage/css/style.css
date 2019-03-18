@@ -1,5 +1,19 @@
+html, body, section {
+    min-height: 600px;
+    min-width: 1000px;
+}
+
+
 #fp-nav ul li a span {
     background: #f40 !important;
+}
+
+
+.next {
+    position: fixed;
+    bottom: 120px;
+    right: 10%;
+    z-index: 999;
 }
 
 
@@ -401,8 +415,61 @@
 }
 
 
+.star {
+    position: absolute;
+    left: 50%;
+    bottom: 439px;
+    margin-left: -295px;
+    width: 0;
+    height: 20px;
+    background: url("../images/star.png") no-repeat;
+    background-size: 97px;
+}
+
+
+.good-07 {
+    position: absolute;
+    bottom: 382px;
+    left: 50%;
+    margin-left: -289px;
+    display: none;
+}
+
+
 .section8 {
     background: url("../images/ksgw.png");
+}
+
+
+.beginShoping {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 365px;
+}
+
+
+.btn-08-a {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: none;
+}
+
+
+.again {
+    position: absolute;
+    bottom: 403px;
+    left: 50%;
+    margin-left: 240px;
+    cursor: pointer;
+}
+
+
+.hand-08 {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
 }
 
 
@@ -413,6 +480,20 @@
     z-index: 999;
 }
 
+
+.next_updown {
+    animation: next .6s linear infinite;
+}
+
+
+@keyframes next {
+    50% {
+        bottom: 100px;
+    }
+    100% {
+        bottom: 120px;
+    }
+}
 
 .updown {
     animation: fly 3s linear infinite;
