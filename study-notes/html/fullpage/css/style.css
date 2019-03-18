@@ -257,8 +257,8 @@ html, body, section {
 .section5 {
     background: #d04759 url("../images/t1yisqfa4exxa3gmkg-2000-1500.png");
     /*overflow: hidden;*/
-    perspective: 500;
-    -webkit-perspective: 500;
+    perspective: 500px;
+    -webkit-perspective: 500px;
     z-index: 1;
 }
 
