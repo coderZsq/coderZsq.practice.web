@@ -12,7 +12,7 @@
     max-width: 640px;
     height: 40px;
     position: fixed;
-    background: #e92322;
+    background: rgba(233, 35, 34, 0);
     z-index: 999;
 }
 
@@ -79,12 +79,16 @@
 
 
 .jd_bannerImg {
-    width: 800%;
+    width: 1000%;
+    /*position: absolute;*/
+    position: relative;
+    /*transform: translateX(-10%);*/
+    left: -100%;
 }
 
 
 .jd_bannerImg > li {
-    width: 12.5%;
+    width: 10%;
     float: left;
 }
 
