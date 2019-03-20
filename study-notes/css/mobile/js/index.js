@@ -65,17 +65,79 @@ function bannerEffect() {
             lis[i].style.width = bannerWidth + 'px';
         }
         imgBox.style.left = -index * bannerWidth + 'px';
-    }
-    setInterval(function () {
-        index++;
-        imgBox.style.transition = 'left 0.5s ease-in-out';
-        imgBox.style.left = (-index * bannerWidth) + 'px';
-        setTimeout(function () {
-            if (index === count - 1) {
-                index = 1;
-                imgBox.style.transition = 'none';
-                imgBox.style.left = (-index * bannerWidth) + 'px';
+    };
+    let setIndicator = function(index) {
+        let indicators = banner.querySelector('ul:last-of-type').querySelectorAll('li');
+        for (let i = 0; i < indicators.length; i++) {
+            indicators[i].classList.remove('active');
+        }
+        indicators[index - 1].classList.add('active');
+    };
+    let timerId;
+    let startTime = function() {
+        timerId = setInterval(function () {
+            index++;
+            imgBox.style.transition = 'left 0.5s ease-in-out';
+            imgBox.style.left = (-index * bannerWidth) + 'px';
+            setTimeout(function () {
+                if (index === count - 1) {
+                    index = 1;
+                    imgBox.style.transition = 'none';
+                    imgBox.style.left = (-index * bannerWidth) + 'px';
+                }
+            }, 500);
+        }, 2000);
+    };
+    startTime();
+    let startX, moveX, distanceX;
+    let isEnd = true;
+    imgBox.addEventListener('touchstart', function (e) {
+        clearInterval(timerId);
+        startX = e.targetTouches[0].clientX;
+    });
+    imgBox.addEventListener('touchmove', function (e) {
+        if (isEnd === true) {
+            moveX = e.targetTouches[0].clientX;
+            distanceX = moveX - startX;
+            imgBox.style.transition = 'none';
+            imgBox.style.left = (-index * bannerWidth + distanceX) + 'px';
+        }
+    });
+    imgBox.addEventListener("touchend",function(e){
+        isEnd = false;
+        if (Math.abs(distanceX) > 100) {
+            if(distanceX > 0){
+                index--;
             }
-        }, 500);
-    }, 2000);
+            else{
+                index++;
+            }
+            imgBox.style.transition = "left 0.5s ease-in-out";
+            imgBox.style.left = -index * bannerWidth + "px";
+        }
+        else if (Math.abs(distanceX) > 0) {
+            imgBox.style.transition ="left 0.5s ease-in-out";
+            imgBox.style.left = -index * bannerWidth + "px";
+        }
+        startX = 0;
+        moveX = 0;
+        distanceX = 0;
+    });
+    imgBox.addEventListener('webkitTransitionEnd', function () {
+        if (index === count - 1) {
+            index = 1;
+            imgBox.style.transition = 'none';
+            imgBox.style.left = -index * bannerWidth + 'px';
+        } else if (index === 0) {
+            index = count - 2;
+            imgBox.style.transition = 'none';
+            imgBox.style.left = -index * bannerWidth + 'px';
+        }
+        setIndicator(index);
+        setTimeout(function(){
+            isEnd=true;
+            clearInterval(timerId);
+            startTime();
+        },500);
+    });
 }
