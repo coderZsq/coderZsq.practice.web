@@ -37,11 +37,63 @@ window.onload = function () {
             currentY += distanceY;
         }
     });
-    common.tap(ulBox, function (e) {
+    for (let i = 0; i < lis.length; i++) {
+        lis[i].index = i;
+    }
+    // common.tap(ulBox, function (e) {
+    //     for (let i = 0; i < lis.length; i++) {
+    //         lis[i].classList.remove('active');
+    //     }
+    //     let li = e.target.parentNode;
+    //     let liHeight=li.offsetHeight;
+    //     li.classList.add('active');
+    //     let index = li.index;
+    //     if (-index * liHeight < minTop) {
+    //         ulBox.style.top = minTop + 'px';
+    //         currentY = minTop;
+    //     } else {
+    //         ulBox.style.transition = 'top .5s';
+    //         ulBox.style.top = -index * liHeight + 'px';
+    //         currentY = -index * liHeight;
+    //     }
+    // });
+    // $(ulBox).on('tap', function (e) {
+    //     for (let i = 0; i < lis.length; i++) {
+    //         lis[i].classList.remove('active');
+    //     }
+    //     let li = e.target.parentNode;
+    //     let liHeight=li.offsetHeight;
+    //     li.classList.add('active');
+    //     let index = li.index;
+    //     if (-index * liHeight < minTop) {
+    //         ulBox.style.top = minTop + 'px';
+    //         currentY = minTop;
+    //     } else {
+    //         ulBox.style.transition = 'top .5s';
+    //         ulBox.style.top = -index * liHeight + 'px';
+    //         currentY = -index * liHeight;
+    //     }
+    // });
+    if ('addEventListener' in document) {
+        document.addEventListener('DOMContentLoaded', function () {
+            FastClick.attach(document.body);
+        }, false);
+    }
+    ulBox.addEventListener('click', function (e) {
         for (let i = 0; i < lis.length; i++) {
             lis[i].classList.remove('active');
         }
         let li = e.target.parentNode;
+        let liHeight=li.offsetHeight;
         li.classList.add('active');
+        let index = li.index;
+        if (-index * liHeight < minTop) {
+            ulBox.style.top = minTop + 'px';
+            currentY = minTop;
+        } else {
+            ulBox.style.transition = 'top .5s';
+            ulBox.style.top = -index * liHeight + 'px';
+            currentY = -index * liHeight;
+        }
     });
 };

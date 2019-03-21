@@ -9,6 +9,9 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "fastclick": "^1.0.6",
+    "iscroll": "^5.2.0",
+    "swipe": "^1.7.7",
     "zepto": "^1.2.0"
   }
 }
