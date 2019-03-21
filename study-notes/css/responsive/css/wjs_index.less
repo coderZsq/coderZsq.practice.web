@@ -1,0 +1,47 @@
+@baseColor: #e92322;
+
+.wjs_header {
+  height: 50px;
+  line-height: 50px;
+  border-bottom: 1px solid #ccc;
+  .row {
+    height: 100%;
+    text-align: center;
+    > div:nth-of-type(-n+3) {
+      border-right: 1px solid #ccc;
+      > .wjs_code {
+        position: relative;
+        display: block;
+        > img {
+          display: none;
+          position: absolute;
+          top: 49px;
+          left: 50%;
+          transform: translateX(-50%);
+          border: 1px solid #ccc;
+          border-top: none;
+        }
+        &:hover {
+          > img {
+            display: block;
+          }
+        }
+      }
+    }
+    > div:nth-last-of-type(1) {
+      > .btn-danger {
+        background-color: @baseColor;
+        border-color: @baseColor;
+      }
+      > .btn {
+        padding: 3px 15px;
+      }
+      > .btn-link {
+        color: #333;
+        &:hover {
+          text-decoration: none;
+        }
+      }
+    }
+  }
+}

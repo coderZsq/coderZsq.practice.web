@@ -1,0 +1,172 @@
+body {
+    font-family: 'Microsoft YaHei', sans-serif;
+    font-size: 14px;
+    color: #333;
+}
+
+
+a {
+    text-decoration: none;
+    color: #333;
+}
+
+
+a:hover {
+    text-decoration: none;
+    color: #333;
+}
+
+
+.m_l10 {
+    margin-left: 10px;
+}
+
+
+.m_r10 {
+    margin-right: 10px;
+}
+
+
+@font-face {
+    font-family: 'wjs';
+    src: url("../fonts/MiFie-Web-Font.eot");
+    src: url("../fonts/MiFie-Web-Font.eot") format('embedded-opentype'),
+         url("../fonts/MiFie-Web-Font.woff") format('woff'),
+         url("../fonts/MiFie-Web-Font.ttf") format("truetype"),
+         url("../fonts/MiFie-Web-Font.svg") format('svg');
+}
+
+
+.wjs_icon {
+    font-family: wjs, sans-serif;
+}
+
+
+.wjs_icon_phone::before {
+    content: '\e908';
+}
+
+
+.wjs_icon_tel::before {
+    content: '\e909';
+    font-size: 14px;
+}
+
+
+.wjs_icon_logo::before {
+    content: '\e920';
+}
+
+.wjs_icon_text::before{
+    content: "\e93e";
+}
+
+
+.wjs_icon_new01::before{
+    content: "\e90e";
+}
+
+
+.wjs_icon_new02::before{
+    content: "\e90f";
+}
+
+
+.wjs_icon_new03::before{
+    content: "\e910";
+}
+
+
+.wjs_icon_new04::before{
+    content: "\e911";
+}
+
+
+.wjs_icon_partner01::before{
+    content:"\e946";
+}
+
+
+.wjs_icon_partner02::before{
+    content: "\e92f";
+}
+
+
+.wjs_icon_partner03::before{
+    content: "\e92e";
+}
+
+
+.wjs_icon_partner04::before{
+    content: "\e92a";
+}
+
+
+.wjs_icon_partner05::before{
+    content: "\e929";
+}
+
+
+.wjs_icon_partner06::before{
+    content: "\e931";
+}
+
+
+.wjs_icon_partner07::before{
+    content: "\e92c";
+}
+
+
+.wjs_icon_partner08::before{
+    content: "\e92b";
+}
+
+
+.wjs_icon_partner09::before{
+    content: "\e92d";
+}
+
+
+.wjs_iconn_E903::before{
+    content: "\e903";
+}
+
+
+.wjs_icon_E906::before{
+    content: "\e906";
+}
+
+
+.wjs_icon_E905::before{
+    content: "\e905";
+}
+
+
+.wjs_icon_E907::before{
+    content: "\e907";
+}
+
+
+.wjs_icon_E901::before{
+    content: "\e901";
+}
+
+
+.wjs_icon_E900::before{
+    content: "\e900";
+}
+
+
+.wjs_icon_E904::before{
+    content: "\e904";
+}
+
+
+.wjs_icon_E902::before{
+    content: "\e902";
+}
+
+
+.wjs_icon_E906::before{
+    content: "\e906";
+}
