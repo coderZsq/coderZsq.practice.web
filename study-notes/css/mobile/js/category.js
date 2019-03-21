@@ -3,6 +3,7 @@ window.onload = function () {
     let leftHeight = ct_cLeft.offsetHeight;
     let ulBox = ct_cLeft.querySelector('ul:first-of-type');
     let ulBoxHeight = ulBox.offsetHeight;
+    let lis = ulBox.querySelectorAll('li');
     let maxTop = 0;
     let minTop = leftHeight - ulBoxHeight;
     let maxBounceTop = maxTop + 100;
@@ -24,6 +25,23 @@ window.onload = function () {
         ulBox.style.top = (currentY +  distanceY) + 'px';
     });
     ulBox.addEventListener('touchend', function () {
-        currentY += distanceY;
+        if (currentY + distanceY < minTop) {
+            currentY = minTop;
+            ulBox.style.transition = 'top 0.5s';
+            ulBox.style.top = minTop + 'px';
+        } else if (currentY + distanceY > maxTop) {
+            currentY = maxTop;
+            ulBox.style.transition = 'top 0.5s';
+            ulBox.style.top = maxTop + 'px';
+        } else  {
+            currentY += distanceY;
+        }
+    });
+    common.tap(ulBox, function (e) {
+        for (let i = 0; i < lis.length; i++) {
+            lis[i].classList.remove('active');
+        }
+        let li = e.target.parentNode;
+        li.classList.add('active');
     });
 };
