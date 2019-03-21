@@ -96,4 +96,8 @@ window.onload = function () {
             currentY = -index * liHeight;
         }
     });
+    let scroll = new IScroll('.ct_hotCategory', {
+            mouseWheel: true,
+            scrollbars: true
+    });
 };
