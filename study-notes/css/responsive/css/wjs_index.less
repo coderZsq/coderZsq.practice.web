@@ -146,6 +146,10 @@
   clear: both;
   background-color: #eee;
   padding: 20px;
+  .tabs_parent {
+    width: 100%;
+    overflow: hidden;
+  }
   .nav-tabs {
     > li {
       margin-bottom: 0;
@@ -200,6 +204,7 @@
       text-align: center;
       padding-top: 30px;
       > .wjs_tip {
+        width: 100%;
         position: absolute;
         left: 50%;
         top: 20px;
@@ -242,5 +247,134 @@
         box-shadow: 0 1px 1px #ddd inset;
       }
     }
+    &.active {
+      background-color: @baseColor;
+      > .wjs_pRight {
+        > b, sub, p {
+          color: #fff;
+        }
+      }
+      > .wjs_pLeft {
+        color: #fff;
+        position: relative;
+        &::before {
+          content: '\e915';
+          font-family: 'wjs';
+          position: absolute;
+          left: 0;
+          top: -5px;
+          font-size: 25px;
+        }
+      }
+    }
+  }
+}
+
+.wjs_news {
+  padding: 20px;
+  height: 580px;
+  .wjs_nTitle {
+    line-height: 50px;
+    font-size: 25px;
+    border-bottom: 1px solid #ccc;
+    text-align: center;
+    position: relative;
+    &::before {
+      content: '';
+      width: 8px;
+      height: 8px;
+      border-radius: 4px;
+      border: 1px solid #ccc;
+      position: absolute;
+      bottom: -4px;
+      right: -8px;
+    }
+  }
+  .wjs_newsLine {
+    width: 1px;
+    height: 100%;
+    position: absolute;
+    border-left: 1px dashed @baseColor;
+    left: 45px;
+    top: 0;
+  }
+  .nav-tabs {
+    border-bottom: none;
+    position: relative;
+    //&::before {
+    //  content: '';
+    //  width: 1px;
+    //  height: 100%;
+    //  position: absolute;
+    //  border-left: 1px dashed @baseColor;
+    //  left: 0;
+    //  top: 0;
+    //}
+    > li {
+      margin-bottom: 60px;
+      > a {
+        background-color: #ccc;
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+        border: none;
+      }
+      > a:hover {
+        border: none;
+        background-color: @baseColor;
+      }
+      &.active {
+        > a, a:hover, a:focus {
+          border: none;
+          background-color: @baseColor;
+        }
+      }
+      .wjs_icon {
+        font-size: 30px;
+        color: #fff;
+      }
+    }
+    li:last-of-type {
+      margin-bottom: 0;
+    }
+    @media screen and (min-width:768px) and (max-width:992px) {
+      > li {
+        margin: 20px 30px;
+      }
+    }
+    @media screen and (max-width:768px) {
+      > li {
+        margin: 20px 0;
+        width: 25%;
+      }
+    }
+  }
+  .wjs_newslist {
+    list-style: none;
+    > li {
+      line-height: 60px;
+    }
+  }
+}
+
+
+.wjs_partner {
+  background-color: #eee;
+  padding: 20px;
+  text-align: center;
+  h3 {
+    width: 100%;
+    text-align: center;
+  }
+  ul {
+    list-style: none;
+    display: inline-block;
+    > li {
+      float: left;
+      margin-left: 20px;
+    }
+  }
+  .wjs_icon {
+    font-size: 80px;
   }
 }

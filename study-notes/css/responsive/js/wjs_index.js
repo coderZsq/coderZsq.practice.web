@@ -1,4 +1,5 @@
 $(function () {
+    $('[data-toggle="tooltip"]').tooltip();
     let items = $('.carousel-inner .item');
     $(window).on('resize', function () {
        let width = $(window).width();
@@ -30,5 +31,16 @@ $(function () {
         else if (endX-startX < 0) {
             carousel.carousel('next');
         }
+    });
+    let ul = $('.wjs_product .nav-tabs');
+    let lis = ul.find('li');
+    let totalWidth = 0;
+    lis.each(function (index, value) {
+       totalWidth = totalWidth + $(value).innerWidth();
+    });
+    ul.width(totalWidth);
+    let myScroll = new IScroll('.tab_parent', {
+        scrollX: true,
+        scrollY: false
     });
 });
