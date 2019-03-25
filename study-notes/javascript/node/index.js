@@ -27,14 +27,20 @@ http.createServer((req,res) => {
         req.on('end',() => {
             let obj = querystring.parse(pdata);
             let result = scoreData[obj.code];
-            let html = template(__dirname + '/view/result.art', {
-                chinese: result.chinese,
-                math: result.math,
-                english: result.english,
-                summary: result.summary
-            });
+            let html = template(path.join(__dirname + 'view','result.art'), result);
             res.end(html);
         });
+    } else if (req.url.startsWith('/all') && req.method === 'GET') {
+        let arr = [];
+        for (let key in scoreData) {
+            if (scoreData.hasOwnProperty(key)) {
+                arr.push(scoreData[key]);
+            }
+        }
+        let content = template(path.join(__dirname,'view','list.art'),{
+            list : arr
+        });
+        res.end(content);
     }
 }).listen(3000,()=>{
     console.log('running....');
