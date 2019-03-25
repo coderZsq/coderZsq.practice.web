@@ -1,16 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="1bd1308b-da4c-4e39-a430-4d31b0514c95" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/css/wjs_index.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/wjs_index.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/css/wjs_index.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/css/wjs_index.css.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/css/wjs_index.less" beforeDir="false" afterPath="$PROJECT_DIR$/css/wjs_index.less" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/wjs_index.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/wjs_index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-    </list>
+    <list default="true" id="1bd1308b-da4c-4e39-a430-4d31b0514c95" name="Default Changelist" comment="" />
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
     <ignored path="$PROJECT_DIR$/tmp/" />
@@ -53,8 +44,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/css/wjs_index.less">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="172">
-              <caret line="274" column="12" selection-start-line="274" selection-start-column="12" selection-end-line="274" selection-end-column="12" />
+            <state relative-caret-position="303">
+              <caret line="352" column="21" lean-forward="true" selection-start-line="352" selection-start-column="21" selection-end-line="352" selection-end-column="21" />
             </state>
           </provider>
         </entry>
@@ -174,12 +165,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1553153815784</updated>
-      <workItem from="1553153818148" duration="22887000" />
+      <workItem from="1553153818148" duration="23133000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="22887000" />
+    <option name="totallyTimeSpent" value="23133000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1680" height="1050" extended-state="0" />
@@ -407,8 +398,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/css/wjs_index.less">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="172">
-          <caret line="274" column="12" selection-start-line="274" selection-start-column="12" selection-end-line="274" selection-end-column="12" />
+        <state relative-caret-position="303">
+          <caret line="352" column="21" lean-forward="true" selection-start-line="352" selection-start-column="21" selection-end-line="352" selection-end-column="21" />
         </state>
       </provider>
     </entry>
