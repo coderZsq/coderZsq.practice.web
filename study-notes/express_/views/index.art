@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>图书管理系统</title>
-    <link rel="stylesheet" href="/www/style.css">
+    <link rel="stylesheet" href="/www/css/style.css">
 </head>
 <body>
 <div class="title">图书管理系统<a href="/toAddBook">添加图书</a></div>
@@ -26,8 +26,8 @@
                 <td>{{$value.name}}</td>
                 <td>{{$value.author}}</td>
                 <td>{{$value.category}}</td>
-                <td>{{$value.desc}}</td>
-                <td><a href="/toEditBook?id={{$value.id}}">修改</a>|<a href="#">删除</a></td>
+                <td>{{$value.description}}</td>
+                <td><a href="/toEditBook?id={{$value.id}}">修改</a>|<a href="/deleteBook?id={{$value.id}}">删除</a></td>
             </tr>
             {{/each}}
         </tbody>

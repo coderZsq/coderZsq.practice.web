@@ -1,5 +1,6 @@
 const express = require('express');
-const router = require('./router.js');
+// const router = require('./router.js');
+const router = require('./router-restful')
 const template = require('art-template');
 const bodyParser = require('body-parser');
 const app = express();

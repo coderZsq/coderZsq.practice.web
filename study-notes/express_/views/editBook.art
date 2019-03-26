@@ -11,7 +11,7 @@
     名称: <input type="text" name="name" value="{{name}}"><br>
     作者: <input type="text" name="author" value="{{author}}"><br>
     分类: <input type="text" name="category" value="{{category}}"><br>
-    描述: <input type="text" name="desc" value="{{desc}}"><br>
+    描述: <input type="text" name="description" value="{{description}}"><br>
     <input type="submit" value="提交">
 </form>
 </body>

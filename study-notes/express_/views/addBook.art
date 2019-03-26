@@ -10,7 +10,7 @@
     名称: <input type="text" name="name"><br>
     作者: <input type="text" name="author"><br>
     分类: <input type="text" name="category"><br>
-    描述: <input type="text" name="desc"><br>
+    描述: <input type="text" name="description"><br>
     <input type="submit" value="提交">
 </form>
 </body>

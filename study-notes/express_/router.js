@@ -8,5 +8,6 @@ router.get('/toAddBook', service.toAddBook);
 router.post('/addBook', service.addBook);
 router.get('/toEditBook', service.toEditBook);
 router.post('/editBook', service.editBook);
+router.get('/deleteBook', service.deleteBook);
 
 module.exports = router;

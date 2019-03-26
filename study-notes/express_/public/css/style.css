@@ -20,3 +20,10 @@
     height: 40px;
     line-height: 40px;
 }
+.form {
+    display: none;
+    position: absolute;
+    left: 50%;
+    top: 100px;
+    margin-left: -110px;
+}

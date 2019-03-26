@@ -13,6 +13,7 @@
     "art-template": "^4.13.2",
     "body-parser": "^1.18.3",
     "express": "^4.16.4",
-    "express-art-template": "^1.0.1"
+    "express-art-template": "^1.0.1",
+    "mysql": "github:mysqljs/mysql"
   }
 }
