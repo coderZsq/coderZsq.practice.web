@@ -7,10 +7,10 @@ import SearchContainer from './components/tabbar/SearchContainer.vue';
 
 let router = new VueRouter({
   routes: [
-    {path: '/home', components: HomeContainer},
-    {path: '/member', components: MemberContainer},
-    {path: '/shopcar', components: ShopcarContainer},
-    {path: '/search', components: SearchContainer}
+    {path: '/home', component: HomeContainer},
+    {path: '/member', component: MemberContainer},
+    {path: '/shopcar', component: ShopcarContainer},
+    {path: '/search', component: SearchContainer}
   ],
   linkActiveClass: 'mui-active'
 });
