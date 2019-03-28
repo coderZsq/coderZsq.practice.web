@@ -1,13 +1,17 @@
 <template>
-  <div>
-    <h1>这是 App 组件</h1>
-  </div>
+    <div class="app-container">
+        <mt-header fixed title="Castie! Notes"></mt-header>
+    </div>
 </template>
 
 <script>
-
+    export default {
+        name: "App"
+    }
 </script>
 
-<style lang="sass" scoped>
-
+<style scoped>
+    .app-container {
+        padding-top: 40px;
+    }
 </style>
