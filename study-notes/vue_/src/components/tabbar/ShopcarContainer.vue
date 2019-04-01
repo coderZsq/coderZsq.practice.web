@@ -4,7 +4,7 @@
             <div class="mui-card" v-for="(item, i) in goodslist" :key="item.id">
                 <div class="mui-card-content">
                     <div class="mui-card-content-inner">
-                        <mt-switch v-model="$store.getters.getGoodsSelected[item.id]"></mt-switch>
+                        <mt-switch v-model="$store.getters.getGoodsSelected[item.id]" @change="selectedChanged(item.id, $store.getters.getGoodsSelected[item.id])"></mt-switch>
                         <img :src="item.thumb_path">
                         <div class="info">
                             <h1>{{item.title}}</h1>
@@ -23,7 +23,7 @@
                 <div class="mui-card-content-inner jiesuan">
                     <div class="left">
                         <p>总计 (不含运费)</p>
-                        <p>已勾选商品 <span class="red">0</span> 件, 总价 <span class="red">¥0</span></p>
+                        <p>已勾选商品 <span class="red">{{$store.getters.getGoodsCountAndAmount.count}}</span> 件, 总价 <span class="red">¥{{$store.getters.getGoodsCountAndAmount.amount}}</span></p>
                     </div>
                     <mt-button type="danger">去结算</mt-button>
                 </div>
@@ -63,6 +63,9 @@
             remove(id, index) {
                 this.goodslist.splice(index, 1);
                 this.$store.commit('removeFromCar', id);
+            },
+            selectedChanged(id, val) {
+                this.$store.commit('updateGoodsSelected', {id, selected: val});
             }
         },
         components: {
