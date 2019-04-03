@@ -3,6 +3,9 @@ import {HashRouter, Route, Link} from "react-router-dom";
 import {Layout, Menu} from 'antd';
 const {Header, Content, Footer} = Layout;
 import styles from './css/app.scss';
+import HomeContainer from './components/home/HomeContainer.jsx';
+import MovieContainer from './components/movie/MovieContainer.jsx';
+import AboutContainer from './components/about/AboutContainer.jsx';
 
 
 export default class App extends React.Component {
@@ -15,7 +18,7 @@ export default class App extends React.Component {
 
     render() {
         return <HashRouter>
-            <Layout className="layout">
+            <Layout className="layout" style={{height: '100%'}}>
                 <Header>
                     <div className={styles.logo} />
                     <Menu
@@ -35,15 +38,11 @@ export default class App extends React.Component {
                         </Menu.Item>
                     </Menu>
                 </Header>
-
-                {/* 中间的 内容区域 */}
                 <Content style={{ backgroundColor: '#fff', flex: 1 }}>
-                    {/*<Route path="/home" component={HomeContainer}></Route>*/}
-                    {/*<Route path="/movie" component={MovieContainer}></Route>*/}
-                    {/*<Route path="/about" component={AboutContainer}></Route>*/}
+                    <Route path="/home" component={HomeContainer}/>
+                    <Route path="/movie" component={MovieContainer}/>
+                    <Route path="/about" component={AboutContainer}/>
                 </Content>
-
-                {/* Footer 底部区域 */}
                 <Footer style={{ textAlign: 'center' }}>
                     Castie! ©2019
                 </Footer>
