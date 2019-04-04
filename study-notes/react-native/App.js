@@ -8,6 +8,12 @@
 
 import React, {Component} from 'react';
 import {Platform, StyleSheet, Text, View} from 'react-native';
+import TabNavigator from 'react-native-tab-navigator';
+import Home from './components/tabbars/Home';
+import Search from './components/tabbars/Search';
+import ShopCar from './components/tabbars/ShopCar';
+import Me from './components/tabbars/Me';
+import Icon from 'react-native-vector-icons/FontAwesome';
 
 const instructions = Platform.select({
   ios: 'Press Cmd+R to reload,\n' + 'Cmd+D or shake for dev menu',
@@ -18,12 +24,56 @@ const instructions = Platform.select({
 
 type Props = {};
 export default class App extends Component<Props> {
+
+  constructor(props) {
+    super(props);
+    this.state = {
+        selectedTab: 'home'
+    };
+  }
+
   render() {
     return (
       <View style={styles.container}>
-        <Text style={styles.welcome}>Welcome to React Native!</Text>
-        <Text style={styles.instructions}>To get started, edit App.js</Text>
-        <Text style={styles.instructions}>{instructions}</Text>
+        <TabNavigator>
+          <TabNavigator.Item
+              selected={this.state.selectedTab === 'home'}
+              title="主页"
+              renderIcon={() => <Icon name="home" size={25} color="black"/>}
+              renderSelectedIcon={() => <Icon name="home" size={25} color="#0079ff"/>}
+              onPress={() => this.setState({selectedTab: 'home'})}
+          >
+            <Home/>
+          </TabNavigator.Item>
+          <TabNavigator.Item
+              selected={this.state.selectedTab === 'search'}
+              title="搜索"
+              renderIcon={() => <Icon name="search" size={25} color="black"/>}
+              renderSelectedIcon={() => <Icon name="search" size={25} color="#0079ff"/>}
+              onPress={() => this.setState({selectedTab: 'search'})}
+          >
+            <Search/>
+          </TabNavigator.Item>
+          <TabNavigator.Item
+              selected={this.state.selectedTab === 'shopcar'}
+              title="购物车"
+              badgeText="0"
+              renderIcon={() => <Icon name="shopping-cart" size={25} color="black"/>}
+              renderSelectedIcon={() => <Icon name="shopping-cart" size={25} color="#0079ff"/>}
+              onPress={() => this.setState({selectedTab: 'shopcar'})}
+          >
+            <ShopCar/>
+          </TabNavigator.Item>
+          <TabNavigator.Item
+              selected={this.state.selectedTab === 'me'}
+              title="我"
+              renderIcon={() => <Icon name="user" size={25} color="black"/>}
+              renderSelectedIcon={() => <Icon name="user-o" size={25} color="#0079ff"/>}
+              onPress={() => this.setState({selectedTab: 'me'})}
+          >
+            <Me/>
+          </TabNavigator.Item>
+        </TabNavigator>
       </View>
     );
   }
@@ -31,19 +81,6 @@ export default class App extends Component<Props> {
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: '#F5FCFF',
-  },
-  welcome: {
-    fontSize: 20,
-    textAlign: 'center',
-    margin: 10,
-  },
-  instructions: {
-    textAlign: 'center',
-    color: '#333333',
-    marginBottom: 5,
-  },
+    flex: 1
+  }
 });

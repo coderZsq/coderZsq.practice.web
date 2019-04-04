@@ -2,16 +2,11 @@ import React, {Component} from 'react';
 import {View, Text} from 'react-native';
 
 
-export default class HomePage extends Component {
-
-    constructor(props) {
-        super(props);
-        this.state = {}
-    }
+export default class Search extends Component {
 
     render(): React.ReactNode {
         return <View>
-            <Text>123</Text>
+            <Text>这是Search组件</Text>
         </View>;
     }
 }
