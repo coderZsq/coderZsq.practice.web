@@ -9,6 +9,7 @@ environment:
 
 dependencies:
   angular: ^5.2.0
+  angular_forms: ^2.0.0
   angular_components: ^0.11.0
 
 dev_dependencies:

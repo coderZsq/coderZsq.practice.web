@@ -2,84 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="55019ab8-2abe-43a9-9467-5f4aa8c9fd9c" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/../react/.babelrc" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../react/.idea/encodings.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../react/.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../react/.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../react/.idea/react_.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../react/.idea/vcs.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../react/.idea/watcherTasks.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../react/.idea/workspace.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../react/package-lock.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../react/package.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../react/src/App.jsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../react/src/components/about/AboutContainer.jsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../react/src/components/home/HomeContainer.jsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../react/src/components/movie/MovieContainer.jsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../react/src/components/movie/MovieDetail.jsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../react/src/components/movie/MovieItem.jsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../react/src/components/movie/MovieList.jsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../react/src/components/test_data/coming_soon.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../react/src/components/test_data/in_theaters.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../react/src/components/test_data/top250.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../react/src/css/.sass-cache/e048e96dfdce56b3fd45997d9aa42be019a6dc53/app.scssc" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../react/src/css/.sass-cache/e048e96dfdce56b3fd45997d9aa42be019a6dc53/movie_item.scssc" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../react/src/css/app.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../react/src/css/app.css.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../react/src/css/app.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../react/src/css/movie_item.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../react/src/css/movie_item.css.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../react/src/css/movie_item.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../react/src/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../react/src/main.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../react/webpack.config.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../react/webpack.pub.config.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../react/yarn.lock" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../vue/.babelrc" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../vue/.idea/encodings.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../vue/.idea/jsLibraryMappings.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../vue/.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../vue/.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../vue/.idea/vcs.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../vue/.idea/vue_.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../vue/.idea/watcherTasks.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../vue/.idea/workspace.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../vue/package-lock.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../vue/package.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../vue/src/App.vue" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../vue/src/components/goods/GoodsComment.vue" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../vue/src/components/goods/GoodsDesc.vue" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../vue/src/components/goods/GoodsInfo.vue" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../vue/src/components/goods/GoodsList.vue" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../vue/src/components/news/NewsInfo.vue" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../vue/src/components/news/NewsList.vue" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../vue/src/components/photos/PhotoInfo.vue" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../vue/src/components/photos/PhotoList.vue" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../vue/src/components/subcomponents/comment.vue" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../vue/src/components/subcomponents/goodsinfo_numbox.vue" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../vue/src/components/subcomponents/shopcar_numbox.vue" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../vue/src/components/subcomponents/swiper.vue" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../vue/src/components/tabbar/HomeContainer.vue" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../vue/src/components/tabbar/MemberContainer.vue" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../vue/src/components/tabbar/SearchContainer.vue" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../vue/src/components/tabbar/ShopcarContainer.vue" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../vue/src/images/menu1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../vue/src/images/menu2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../vue/src/images/menu3.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../vue/src/images/menu4.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../vue/src/images/menu5.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../vue/src/images/menu6.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../vue/src/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../vue/src/lib/mui/css/icons-extra.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../vue/src/lib/mui/css/mui.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../vue/src/lib/mui/css/mui.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../vue/src/lib/mui/fonts/mui-icons-extra.ttf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../vue/src/lib/mui/fonts/mui.ttf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../vue/src/lib/mui/js/mui.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../vue/src/lib/mui/js/mui.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../vue/src/main.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../vue/src/router.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../vue/webpack.config.js" beforeDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/hero.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/app_component.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/app_component.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pubspec.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/pubspec.yaml" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -92,11 +18,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/pubspec.yaml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="418">
-              <caret line="19" column="14" selection-start-line="19" selection-start-column="14" selection-end-line="19" selection-end-column="14" />
+            <state relative-caret-position="154">
+              <caret line="7" column="20" selection-start-line="7" selection-start-column="20" selection-end-line="7" selection-end-column="20" />
             </state>
           </provider>
         </entry>
@@ -104,51 +30,11 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/lib/app_component.dart">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="198">
-              <caret line="9" column="1" selection-start-line="9" selection-start-column="1" selection-end-line="9" selection-end-column="1" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/test/app_test.dart">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="242">
-              <caret line="11" column="18" lean-forward="true" selection-start-line="11" selection-start-column="18" selection-end-line="11" selection-end-column="18" />
-              <folding>
-                <element signature="e#0#67#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/README.md">
-          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-            <state split_layout="SPLIT">
-              <first_editor />
-              <second_editor />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/web/main.dart">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="132">
-              <caret line="6" lean-forward="true" selection-start-line="6" selection-end-line="6" />
+            <state relative-caret-position="418">
+              <caret line="19" column="19" selection-start-line="19" selection-start-column="19" selection-end-line="19" selection-end-column="19" />
               <folding>
                 <element signature="e#0#38#0" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/web/index.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="242">
-              <caret line="11" column="22" lean-forward="true" selection-start-line="11" selection-start-column="22" selection-end-line="11" selection-end-column="22" />
             </state>
           </provider>
         </entry>
@@ -162,7 +48,47 @@
           </provider>
         </entry>
       </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/lib/hero.dart">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="88">
+              <caret line="4" column="27" selection-start-line="4" selection-start-column="27" selection-end-line="4" selection-end-column="27" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/test/app_test.dart">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="396">
+              <caret line="18" column="32" lean-forward="true" selection-start-line="18" selection-start-column="32" selection-end-line="18" selection-end-column="32" />
+              <folding>
+                <element signature="e#0#67#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/web/main.dart">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="66">
+              <caret line="3" column="13" lean-forward="true" selection-start-line="3" selection-start-column="13" selection-end-line="3" selection-end-column="13" />
+              <folding>
+                <element signature="e#0#38#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
     </leaf>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Dart File" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
@@ -170,20 +96,23 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/lib/app_component.dart" />
         <option value="$PROJECT_DIR$/test/app_test.dart" />
-        <option value="$PROJECT_DIR$/web/main.dart" />
         <option value="$PROJECT_DIR$/web/index.html" />
         <option value="$PROJECT_DIR$/web/styles.css" />
+        <option value="$PROJECT_DIR$/lib/hero.dart" />
+        <option value="$PROJECT_DIR$/web/main.dart" />
         <option value="$PROJECT_DIR$/pubspec.yaml" />
+        <option value="$PROJECT_DIR$/lib/app_component.dart" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" fullScreen="true">
+  <component name="ProjectFrameBounds" extendedState="6" fullScreen="true">
     <option name="width" value="1680" />
     <option name="height" value="1050" />
   </component>
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
@@ -195,6 +124,16 @@
             <path>
               <item name="angular_" type="b2602c69:ProjectViewProjectNode" />
               <item name="angular_" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="angular_" type="b2602c69:ProjectViewProjectNode" />
+              <item name="angular_" type="462c0819:PsiDirectoryNode" />
+              <item name="lib" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="angular_" type="b2602c69:ProjectViewProjectNode" />
+              <item name="angular_" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="angular_" type="b2602c69:ProjectViewProjectNode" />
@@ -259,18 +198,17 @@
       <option name="presentableId" value="Default" />
       <updated>1554384234777</updated>
       <workItem from="1554384235980" duration="1652000" />
-      <workItem from="1554388129653" duration="288000" />
+      <workItem from="1554388129653" duration="1957000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1940000" />
+    <option name="totallyTimeSpent" value="3609000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="0" width="1680" height="1050" extended-state="0" />
-    <editor active="true" />
+    <frame x="630" y="0" width="1050" height="1050" extended-state="6" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.18746233" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.3022352" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info active="true" anchor="bottom" id="Dart Dev Server" visible="true" weight="0.32959184" />
@@ -298,13 +236,6 @@
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/lib/app_component.css" />
     <entry file="file://$PROJECT_DIR$/lib/src/todo_list/todo_list_component.dart" />
-    <entry file="file://$PROJECT_DIR$/lib/app_component.dart">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="198">
-          <caret line="9" column="1" selection-start-line="9" selection-start-column="1" selection-end-line="9" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/README.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
@@ -313,10 +244,17 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/test/app_test.dart">
+    <entry file="file://$PROJECT_DIR$/web/index.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="242">
-          <caret line="11" column="18" lean-forward="true" selection-start-line="11" selection-start-column="18" selection-end-line="11" selection-end-column="18" />
+          <caret line="11" column="22" lean-forward="true" selection-start-line="11" selection-start-column="22" selection-end-line="11" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/app_test.dart">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="396">
+          <caret line="18" column="32" lean-forward="true" selection-start-line="18" selection-start-column="32" selection-end-line="18" selection-end-column="32" />
           <folding>
             <element signature="e#0#67#0" expanded="true" />
           </folding>
@@ -330,27 +268,37 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/pubspec.yaml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="418">
-          <caret line="19" column="14" selection-start-line="19" selection-start-column="14" selection-end-line="19" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="242">
-          <caret line="11" column="22" lean-forward="true" selection-start-line="11" selection-start-column="22" selection-end-line="11" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/web/main.dart">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="132">
-          <caret line="6" lean-forward="true" selection-start-line="6" selection-end-line="6" />
+        <state relative-caret-position="66">
+          <caret line="3" column="13" lean-forward="true" selection-start-line="3" selection-start-column="13" selection-end-line="3" selection-end-column="13" />
           <folding>
             <element signature="e#0#38#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/hero.dart">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="88">
+          <caret line="4" column="27" selection-start-line="4" selection-start-column="27" selection-end-line="4" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/app_component.dart">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="418">
+          <caret line="19" column="19" selection-start-line="19" selection-start-column="19" selection-end-line="19" selection-end-column="19" />
+          <folding>
+            <element signature="e#0#38#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pubspec.yaml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="154">
+          <caret line="7" column="20" selection-start-line="7" selection-start-column="20" selection-end-line="7" selection-end-column="20" />
         </state>
       </provider>
     </entry>
