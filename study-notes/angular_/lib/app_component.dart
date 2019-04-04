@@ -1,23 +1,17 @@
 import 'package:angular/angular.dart';
-import 'package:angular_forms/angular_forms.dart';
-import 'hero.dart';
-
+import 'src/hero_service.dart';
+import 'src/hero_list_component.dart';
+import 'package:angular_/';
 
 @Component(
   selector: 'my-app',
   template: '''
     <h1>{{title}}</h1>
-    <h2>{{hero.name}}</h2>
-    <div><label>id: </label>{{hero.id}}</div>
-    <div>
-      <label>name: </label>
-      <input [(ngModel)]="hero.name" placeholder="name">
-    </div>
+    <my-heroes></my-heroes>
   ''',
-  directives: [formDirectives],
+  directives: [HeroListComponent],
+  providers: [ClassProvider(HeroService)],
 )
-
 class AppComponent {
   final title = 'Tour of Heroes';
-  Hero hero = Hero(1, 'Windstrom');
 }
