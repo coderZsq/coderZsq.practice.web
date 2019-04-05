@@ -1,24 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="55019ab8-2abe-43a9-9467-5f4aa8c9fd9c" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/lib/in_memory_data_service.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/src/hero_search_component.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/src/hero_search_component.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/src/hero_search_component.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/src/hero_search_service.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/src/dashboard_component.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/dashboard_component.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/src/dashboard_component.html" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/dashboard_component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/src/hero.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/hero.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/src/hero_component.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/hero_component.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/src/hero_component.html" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/hero_component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/src/hero_list_component.css" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/hero_list_component.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/src/hero_list_component.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/hero_list_component.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/src/hero_list_component.html" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/hero_list_component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/src/hero_service.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/hero_service.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/main.dart" beforeDir="false" afterPath="$PROJECT_DIR$/web/main.dart" afterDir="false" />
-    </list>
+    <list default="true" id="55019ab8-2abe-43a9-9467-5f4aa8c9fd9c" name="Default Changelist" comment="" />
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
     <ignored path="$PROJECT_DIR$/tmp/" />
@@ -96,8 +79,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/lib/src/dashboard_component.dart">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="242">
-              <caret line="11" column="52" selection-start-line="11" selection-start-column="52" selection-end-line="11" selection-end-column="52" />
+            <state relative-caret-position="440">
+              <caret line="20" column="18" selection-start-line="20" selection-start-column="18" selection-end-line="20" selection-end-column="18" />
               <folding>
                 <element signature="e#0#38#0" expanded="true" />
               </folding>
@@ -285,12 +268,12 @@
       <updated>1554384234777</updated>
       <workItem from="1554384235980" duration="1652000" />
       <workItem from="1554388129653" duration="8916000" />
-      <workItem from="1554424612536" duration="8255000" />
+      <workItem from="1554424612536" duration="8316000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="18823000" />
+    <option name="totallyTimeSpent" value="18884000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -302,10 +285,10 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="646" y="0" width="1034" height="1050" extended-state="6" />
+    <frame x="0" y="0" width="1680" height="1050" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.3070089" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.18746233" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -588,8 +571,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/lib/src/dashboard_component.dart">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="242">
-          <caret line="11" column="52" selection-start-line="11" selection-start-column="52" selection-end-line="11" selection-end-column="52" />
+        <state relative-caret-position="440">
+          <caret line="20" column="18" selection-start-line="20" selection-start-column="18" selection-end-line="20" selection-end-column="18" />
           <folding>
             <element signature="e#0#38#0" expanded="true" />
           </folding>
