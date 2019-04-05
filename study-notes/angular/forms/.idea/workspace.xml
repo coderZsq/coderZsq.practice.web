@@ -2,13 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8120dbfa-36f7-45dc-95b4-3ad2e02df5ae" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Dart_Packages.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Dart_SDK.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/src/hero.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/src/hero_form_component.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/src/hero_form_component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../user-input/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../user-input/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../resume/vue-resume/src/components/articles.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../../../resume/vue-resume/src/components/articles.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../resume/vue-resume/src/components/github.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../../../resume/vue-resume/src/components/github.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../resume/vue-resume/src/components/projects.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../../../resume/vue-resume/src/components/projects.vue" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -65,11 +61,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/lib/src/hero_form_component.dart">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="525">
-              <caret line="33" column="24" selection-start-line="33" selection-start-column="24" selection-end-line="33" selection-end-column="24" />
+            <state relative-caret-position="236">
+              <caret line="23" column="37" selection-start-line="23" selection-start-column="37" selection-end-line="23" selection-end-column="37" />
               <folding>
                 <element signature="e#0#38#0" expanded="true" />
               </folding>
@@ -77,7 +73,7 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/lib/src/hero_form_component.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="513">
@@ -193,15 +189,15 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1554469321641</updated>
-      <workItem from="1554469323433" duration="4518000" />
+      <workItem from="1554469323433" duration="4844000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="4518000" />
+    <option name="totallyTimeSpent" value="4844000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="763" y="0" width="917" height="1050" extended-state="6" />
+    <frame x="0" y="0" width="1680" height="1050" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Favorites" order="0" side_tool="true" />
@@ -271,16 +267,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/lib/src/hero_form_component.dart">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="525">
-          <caret line="33" column="24" selection-start-line="33" selection-start-column="24" selection-end-line="33" selection-end-column="24" />
-          <folding>
-            <element signature="e#0#38#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/lib/src/hero_form_component.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="513">
@@ -289,6 +275,16 @@
             <element signature="e#233#239#0" expanded="true" />
             <element signature="e#1026#1032#0" expanded="true" />
             <element signature="e#1713#1719#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/src/hero_form_component.dart">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="236">
+          <caret line="23" column="37" selection-start-line="23" selection-start-column="37" selection-end-line="23" selection-end-column="37" />
+          <folding>
+            <element signature="e#0#38#0" expanded="true" />
           </folding>
         </state>
       </provider>
