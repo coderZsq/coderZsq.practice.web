@@ -1,0 +1,16 @@
+<div id="heroForm">
+    <form (ngSubmit)="onSubmit(heroForm)" #heroForm="ngForm">
+        <div class="form-group">
+            <label for="name">Name
+                <input class="form-control"
+                       ngControl="name"
+                       required
+                       [(ngModel)]="hero.name">
+            </label>
+        </div>
+        <button type="submit" [disabled]="!heroForm.form.valid">Submit</button>
+    </form>
+    <div [hidden]="!heroForm.form.valid">
+        {{submitMessage}}
+    </div>
+</div>
