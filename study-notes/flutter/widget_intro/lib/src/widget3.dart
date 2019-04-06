@@ -40,7 +40,7 @@ class TutorialHome extends StatelessWidget {
               onCartChanged: (product, inCart) {
                 print('$product - $inCart');
               }
-          );
+          ),
       ),
       floatingActionButton: FloatingActionButton(
           tooltip: 'Add',
