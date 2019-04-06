@@ -12,7 +12,7 @@ import 'hero_service.dart';
   directives: [coreDirectives],
 )
 class HeroListComponent {
-//  final List<Hero> heroes = mockHeroes;
+//  final List<Hero> heroes = mockHero es;
   final List<Hero> heroes;
 
   HeroListComponent(HeroService heroService) : heroes = heroService.getAll();
