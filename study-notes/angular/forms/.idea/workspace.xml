@@ -1,11 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="8120dbfa-36f7-45dc-95b4-3ad2e02df5ae" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/../../../resume/vue-resume/src/components/articles.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../../../resume/vue-resume/src/components/articles.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../resume/vue-resume/src/components/github.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../../../resume/vue-resume/src/components/github.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../resume/vue-resume/src/components/projects.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../../../resume/vue-resume/src/components/projects.vue" afterDir="false" />
-    </list>
+    <list default="true" id="8120dbfa-36f7-45dc-95b4-3ad2e02df5ae" name="Default Changelist" comment="" />
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
     <ignored path="$PROJECT_DIR$/tmp/" />
