@@ -1,3 +1,6 @@
-import 'src/widget8.dart';
+import 'package:flutter/material.dart';
+import 'src/design1.dart';
 
-void main() => run();
+void main() {
+  runApp(MyApp());
+}
