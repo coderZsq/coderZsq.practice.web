@@ -1,262 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="30d1b6cd-ab24-4d66-a695-ea566666aefd" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/03-使用别人的功能.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/js/echarts.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../css/mobile/.idea/encodings.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../css/mobile/.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../css/mobile/.idea/mobile.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../css/mobile/.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../css/mobile/.idea/vcs.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../css/mobile/.idea/workspace.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../css/mobile/category.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../css/mobile/css/base.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../css/mobile/css/category.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../css/mobile/css/index.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../css/mobile/images/618-icon.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../css/mobile/images/banner_1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../css/mobile/images/big.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../css/mobile/images/cart-icon.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../css/mobile/images/center-icon.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../css/mobile/images/header-bg.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../css/mobile/images/icon-login.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../css/mobile/images/icon-right.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../css/mobile/images/index-icon.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../css/mobile/images/jd-sprites.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../css/mobile/images/nav_1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../css/mobile/images/nav_2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../css/mobile/images/nav_3.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../css/mobile/images/nav_4.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../css/mobile/images/nav_5.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../css/mobile/images/nav_6.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../css/mobile/images/nav_7.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../css/mobile/images/nav_8.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../css/mobile/images/nv-fy.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../css/mobile/images/seckill-icon.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../css/mobile/images/small.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../css/mobile/images/sort-icon.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../css/mobile/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../css/mobile/js/$index.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../css/mobile/js/category.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../css/mobile/js/common.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../css/mobile/js/index.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../css/mobile/package-lock.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../css/mobile/package.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../css/mobile/uploads/banner_1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../css/mobile/uploads/banner_1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../css/mobile/uploads/buy-logo.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../css/mobile/uploads/buy-pro1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../css/mobile/uploads/cp1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../css/mobile/uploads/cp2.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../css/mobile/uploads/cp3.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../css/mobile/uploads/cp4.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../css/mobile/uploads/cp5.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../css/mobile/uploads/cp6.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../css/mobile/uploads/delete_down.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../css/mobile/uploads/delete_up.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../css/mobile/uploads/detail01.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../css/mobile/uploads/detail02.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../css/mobile/uploads/focus-icon.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../css/mobile/uploads/header-bg.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../css/mobile/uploads/icon-updown-arrow.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../css/mobile/uploads/l1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../css/mobile/uploads/l2.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../css/mobile/uploads/l3.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../css/mobile/uploads/l4.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../css/mobile/uploads/l5.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../css/mobile/uploads/l6.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../css/mobile/uploads/l7.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../css/mobile/uploads/l8.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../css/mobile/uploads/nav0.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../css/mobile/uploads/nav1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../css/mobile/uploads/nav2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../css/mobile/uploads/nav3.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../css/mobile/uploads/nav4.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../css/mobile/uploads/nav5.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../css/mobile/uploads/nav6.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../css/mobile/uploads/nav7.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../css/mobile/uploads/none.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../css/mobile/uploads/nv-fy.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../css/mobile/uploads/safe_icon.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../css/mobile/uploads/scroll-to-top-icon.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../css/mobile/uploads/seckill-icon.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../css/mobile/uploads/seckill_1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../css/mobile/uploads/shop-icon.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../css/mobile/uploads/sprits_btm_new.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../css/responsive/.idea/encodings.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../css/responsive/.idea/jsLibraryMappings.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../css/responsive/.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../css/responsive/.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../css/responsive/.idea/responsive.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../css/responsive/.idea/vcs.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../css/responsive/.idea/watcherTasks.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../css/responsive/.idea/workspace.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../css/responsive/css/base.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../css/responsive/css/wjs_index.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../css/responsive/css/wjs_index.css.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../css/responsive/css/wjs_index.less" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../css/responsive/fonts/MiFie-Web-Font.eot" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../css/responsive/fonts/MiFie-Web-Font.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../css/responsive/fonts/MiFie-Web-Font.ttf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../css/responsive/fonts/MiFie-Web-Font.woff" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../css/responsive/images/code.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../css/responsive/images/slide_01_2000x410.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../css/responsive/images/slide_01_640x340.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../css/responsive/images/slide_02_2000x410.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../css/responsive/images/slide_02_640x340.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../css/responsive/images/slide_03_2000x410.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../css/responsive/images/slide_03_640x340.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../css/responsive/images/slide_04_2000x410.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../css/responsive/images/slide_04_640x340.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../css/responsive/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../css/responsive/js/wjs_index.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../css/responsive/lib/html5shiv.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../css/responsive/lib/respond.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../css/responsive/package-lock.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../css/responsive/package.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../html/fullpage/.idea/demo.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../html/fullpage/.idea/encodings.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../html/fullpage/.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../html/fullpage/.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../html/fullpage/.idea/vcs.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../html/fullpage/.idea/workspace.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../html/fullpage/css/base.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../html/fullpage/css/jquery.fullPage.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../html/fullpage/css/style.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../html/fullpage/images/88.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../html/fullpage/images/again.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../html/fullpage/images/box.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../html/fullpage/images/btn-01-a.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../html/fullpage/images/btn-01.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../html/fullpage/images/btn-08-a.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../html/fullpage/images/btn-08.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../html/fullpage/images/car-06.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../html/fullpage/images/car.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../html/fullpage/images/card-05.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../html/fullpage/images/cloud-06.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../html/fullpage/images/cloud.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../html/fullpage/images/door.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../html/fullpage/images/good-07.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../html/fullpage/images/goods-441-218.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../html/fullpage/images/hand-05.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../html/fullpage/images/hand-08.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../html/fullpage/images/img-01-a.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../html/fullpage/images/img-01.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../html/fullpage/images/ksgw.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../html/fullpage/images/loader.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../html/fullpage/images/main.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../html/fullpage/images/man.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../html/fullpage/images/mouse-05-a.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../html/fullpage/images/mouse-05.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../html/fullpage/images/next.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../html/fullpage/images/order-05.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../html/fullpage/images/search-02-1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../html/fullpage/images/search-words.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../html/fullpage/images/search.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../html/fullpage/images/shirt-02-207-166.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../html/fullpage/images/star.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../html/fullpage/images/t1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../html/fullpage/images/t10.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../html/fullpage/images/t12pksfedaxxx51i3j-389-156.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../html/fullpage/images/t1dvj.fn0gxxb0_fua-2500-600.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../html/fullpage/images/t1f.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../html/fullpage/images/t1fpyqfltdxxaiulhh-990-600.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../html/fullpage/images/t1hkqrfa8fxxc9v57_-10-10.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../html/fullpage/images/t1iakufbxxxxctz4tl-824-274.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../html/fullpage/images/t1iresfnxaxxca6rfn-2000-600.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../html/fullpage/images/t1itqrfarexxc9v57_-10-10.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../html/fullpage/images/t1kzyqffnexxbcrepj-139-173.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../html/fullpage/images/t1ldiffkjfxxxzhxzd-101-101.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../html/fullpage/images/t1lg0.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../html/fullpage/images/t1mswrfxrcxxcfez7j-389-160.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../html/fullpage/images/t1nrgqfalfxxbhn6zx-878-71.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../html/fullpage/images/t1sqosfx8bxxa9wx_i-173-47.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../html/fullpage/images/t1ulasfmldxxbheta4-105-34.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../html/fullpage/images/t1wf1tfctaxxa3gmkg-2000-1500.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../html/fullpage/images/t1wforfkxcxxbl8tyr-93-56.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../html/fullpage/images/t1wsqsfgnaxxxmjxp6-470-50.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../html/fullpage/images/t1xccqfflgxxxild.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../html/fullpage/images/t1yisqfa4exxa3gmkg-2000-1500.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../html/fullpage/images/t1zdgpfi8exxca6rfn-2000-600.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../html/fullpage/images/t1znypfhxdxxcubi7j-389-160.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../html/fullpage/images/upgrade.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../html/fullpage/images/women.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../html/fullpage/images/words-01-361-25.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../html/fullpage/images/words-02.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../html/fullpage/images/words-04-a.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../html/fullpage/images/words-04.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../html/fullpage/images/words-05.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../html/fullpage/images/words-06-a.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../html/fullpage/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../html/fullpage/js/index.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../html/fullpage/js/jquery-ui.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../html/fullpage/js/jquery.easing.1.3.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../html/fullpage/js/jquery.fullPage.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../html/fullpage/js/jquery.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../html/fullpage2/.idea/encodings.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../html/fullpage2/.idea/fullpage2.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../html/fullpage2/.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../html/fullpage2/.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../html/fullpage2/.idea/vcs.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../html/fullpage2/.idea/workspace.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../html/fullpage2/css/base.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../html/fullpage2/css/jquery.fullPage.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../html/fullpage2/css/style.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../html/fullpage2/images/ad1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../html/fullpage2/images/ad2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../html/fullpage2/images/additional_btn.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../html/fullpage2/images/additional_logo.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../html/fullpage2/images/banner_dark_2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../html/fullpage2/images/boss1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../html/fullpage2/images/boss2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../html/fullpage2/images/btn.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../html/fullpage2/images/dot.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../html/fullpage2/images/dot_on.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../html/fullpage2/images/download.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../html/fullpage2/images/download_1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../html/fullpage2/images/layer_main_gradient.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../html/fullpage2/images/layer_main_line.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../html/fullpage2/images/layer_main_num43.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../html/fullpage2/images/layer_main_pointer.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../html/fullpage2/images/lh_down.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../html/fullpage2/images/lh_up.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../html/fullpage2/images/night1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../html/fullpage2/images/night2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../html/fullpage2/images/p2pop1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../html/fullpage2/images/p2pop2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../html/fullpage2/images/p2pop3.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../html/fullpage2/images/p2pop4.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../html/fullpage2/images/p2t1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../html/fullpage2/images/p3ui_shadow.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../html/fullpage2/images/p3ui_tab.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../html/fullpage2/images/qb7_btn.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../html/fullpage2/images/scrolling.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../html/fullpage2/images/skin.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../html/fullpage2/images/skin.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../html/fullpage2/images/subbtn.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../html/fullpage2/images/title1_1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../html/fullpage2/images/title1_2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../html/fullpage2/images/title1_2_1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../html/fullpage2/images/title2_1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../html/fullpage2/images/title2_3.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../html/fullpage2/images/title3.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../html/fullpage2/images/translation1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../html/fullpage2/images/translation2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../html/fullpage2/images/uiicon1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../html/fullpage2/images/uiicon2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../html/fullpage2/images/uiicon3.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../html/fullpage2/images/video1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../html/fullpage2/images/video2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../html/fullpage2/images/wechat_layer1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../html/fullpage2/images/wechat_layer2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../html/fullpage2/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../html/fullpage2/js/index.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../html/fullpage2/js/jquery.easing.1.3.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../html/fullpage2/js/jquery.fullPage.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../html/fullpage2/js/jquery.min.js" beforeDir="false" />
-    </list>
+    <list default="true" id="30d1b6cd-ab24-4d66-a695-ea566666aefd" name="Default Changelist" comment="" />
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
     <ignored path="$PROJECT_DIR$/tmp/" />
@@ -291,7 +36,11 @@
       </file>
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/01-动画效果.html">
-          <provider selected="true" editor-type-id="text-editor" />
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="88">
+              <caret line="4" column="19" lean-forward="true" selection-start-line="4" selection-start-column="19" selection-end-line="4" selection-end-column="19" />
+            </state>
+          </provider>
         </entry>
       </file>
     </leaf>
@@ -317,7 +66,7 @@
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="670" />
+    <option name="x" value="122" />
     <option name="y" value="23" />
     <option name="width" value="1151" />
     <option name="height" value="1027" />
@@ -374,15 +123,15 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1557589843766</updated>
-      <workItem from="1557589846126" duration="1879000" />
+      <workItem from="1557589846126" duration="1943000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1879000" />
+    <option name="totallyTimeSpent" value="1943000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="670" y="23" width="1151" height="1027" extended-state="0" />
+    <frame x="122" y="23" width="1151" height="1027" extended-state="0" />
     <layout>
       <window_info id="Favorites" side_tool="true" />
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.19734514" />
@@ -446,7 +195,11 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/01-动画效果.html">
-      <provider selected="true" editor-type-id="text-editor" />
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="88">
+          <caret line="4" column="19" lean-forward="true" selection-start-line="4" selection-start-column="19" selection-end-line="4" selection-end-column="19" />
+        </state>
+      </provider>
     </entry>
   </component>
 </project>
