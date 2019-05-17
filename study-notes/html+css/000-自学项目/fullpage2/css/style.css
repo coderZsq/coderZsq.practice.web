@@ -1,0 +1,172 @@
+#bg {
+    width: 1000px;
+    height: 1000px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    /*background: pink;*/
+    transition: all 2s;
+}
+
+
+.rotate {
+    transform: translate(-50%, -50%) rotateZ(-60deg) !important;
+}
+
+
+.row1 .orb1,
+.row1 .orb2 {
+    position: absolute;
+    width: 60px;
+    height: 60px;
+    top: 50%;
+    left: 50%;
+    margin-top: -280px;
+    margin-left: -30px;
+}
+
+
+.row1 .orb2 {
+    margin-top: -280px;
+    margin-left: 500px;
+}
+
+
+.row1 div,
+.row2 div,
+.row3 div {
+    background-image: -webkit-linear-gradient(top, #fff, #dedede);
+    border-radius: 50%;
+}
+
+
+.row2 .orb1,
+.row2 .orb2,
+.row2 .orb3 {
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    top: 50%;
+    left: 50%;
+    margin-top: -280px;
+    margin-left: -500px;
+}
+
+
+.row2 .orb2 {
+    margin-top: -180px;
+    margin-left: 500px;
+}
+
+.row2 .orb3 {
+    margin-top: 50px;
+    margin-left: 0;
+}
+
+
+.row3 .orb1,
+.row3 .orb2 {
+    position: absolute;
+    width: 500px;
+    height: 500px;
+    top: 50%;
+    left: 50%;
+    margin-top: 0;
+    margin-left: 0;
+}
+
+
+.section1 {
+    perspective: 1000px;
+}
+
+
+.comein .p1 {
+    transform: translate(-50%, -50%) translateZ(0px) rotateY(0deg);
+}
+
+
+.p1 {
+    position: absolute;
+    top: 45%;
+    left: 50%;
+    transform: translate(-50%, -50%) translateZ(500px) rotateY(-180deg);
+    width: 880px;
+    height: 320px;
+    background: url("../images/skin.gif") no-repeat;
+    transition: all 1s;
+}
+
+
+.section2 {
+    perspective: 1000px;
+}
+
+
+.p2 {
+    width: 316px;
+    height: 360px;
+    text-align: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%) translateZ(-6000px) scale(0.1);
+    transition: all 1s;
+}
+
+
+.section3 {
+    perspective: 1000px;
+}
+
+
+.p3 {
+    position: absolute;
+    width: 1440px;
+    height: 760px;
+    top: 50%;
+    left: 50%;
+    margin-left: -270px;
+    margin-top: -284px;
+    background-color: pink;
+    border: 1px solid #ccc;
+    transform: translateZ(1200px) rotateX(120deg);
+    transition: all 1s;
+}
+
+
+.title3 {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-left: -412px;
+    margin-top: -10px;
+    transform: translateZ(1200px) rotateY(-60deg);
+    transition: all 2s;
+}
+
+
+.row1 div {
+    animation: orbmove 80s linear infinite;
+}
+
+
+.row2 div {
+    animation: orbmove 60s linear infinite;
+}
+
+
+.row3 div {
+    animation: orbmove 80s linear infinite;
+}
+
+
+@keyframes orbmove {
+    from {
+        transform: translateX(0px) rotate(0deg);
+    }
+    to {
+        transform: translateX(-2000px) rotate(-3600deg);
+    }
+}
