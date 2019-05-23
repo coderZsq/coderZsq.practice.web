@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        strong {
+            font-weight: normal;
+            text-decoration: underline;
+        }
+
+        strong:hover {
+            cursor: pointer;
+        }
+
+        .image::before {
+            content: url("bd_logo.png");
+        }
+
+        /*.image {*/
+        /*background: url("bd_logo.png");*/
+        /*display: inline-block;*/
+        /*width: 560px;*/
+        /*height: 280px;*/
+        /*}*/
+    </style>
+</head>
+<body>
+
+<a href="http://www.baidu.com">百度(a)</a> <br>
+
+<strong onclick="window.open('http://www.baidu.com')">百度(strong)</strong> <br>
+
+<img src="bd_logo.png" alt=""> <br>
+
+<strong class="image"></strong>
+
+</body>
+</html>

@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<!-- 需要设置iframe的name属性值（不能用id属性值），才能实现在某个iframe中打开新的页面 -->
+<iframe name="frame1" src="http://www.baidu.com" frameborder="1"></iframe><br>
+
+<iframe name="frame2" src="http://www.taobao.com" frameborder="1"></iframe><br>
+
+
+<a href="http://www.qq.com" target="frame1">腾讯网(frame1)</a>
+
+<a href="http://www.qq.com" target="frame2">腾讯网(frame2)</a>
+
+</body>
+</html>
