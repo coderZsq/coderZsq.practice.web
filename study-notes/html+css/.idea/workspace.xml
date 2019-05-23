@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8a493456-ed3e-4a82-b94d-8c33040a8e86" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/18-初识CSS/05-@import.html" beforeDir="false" afterPath="$PROJECT_DIR$/18-初识CSS/05-@import.html" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -16,71 +16,25 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/018-初识CSS/03-page_01.html">
+        <entry file="file://$PROJECT_DIR$/18-初识CSS/04-导入多个外部样式表.html">
           <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/018-初识CSS/03-page_02.html">
+        <entry file="file://$PROJECT_DIR$/18-初识CSS/03-外部样式表.html">
           <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/018-初识CSS/03-page_03.html">
-          <provider selected="true" editor-type-id="text-editor" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/018-初识CSS/03-外部样式表.html">
-          <provider selected="true" editor-type-id="text-editor" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/018-初识CSS/04-导入多个外部样式表.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="264">
-              <caret line="12" column="7" lean-forward="true" selection-start-line="12" selection-start-column="7" selection-end-line="12" selection-end-column="7" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/018-初识CSS/css/page2.css">
-          <provider selected="true" editor-type-id="text-editor" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/018-初识CSS/css/page.css">
+        <entry file="file://$PROJECT_DIR$/18-初识CSS/03-page_03.html">
           <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/018-初识CSS/css/page3.css">
+        <entry file="file://$PROJECT_DIR$/18-初识CSS/05-@import.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="66">
-              <caret line="3" column="20" lean-forward="true" selection-start-line="3" selection-start-column="20" selection-end-line="3" selection-end-column="20" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/018-初识CSS/01-内联样式.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="220">
-              <caret line="10" column="12" lean-forward="true" selection-start-line="10" selection-start-column="12" selection-end-line="10" selection-end-column="12" />
-              <folding>
-                <element signature="n#style#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/018-初识CSS/02-文档样式表.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="264">
-              <caret line="12" column="23" lean-forward="true" selection-start-line="12" selection-start-column="23" selection-end-line="12" selection-end-column="23" />
+            <state relative-caret-position="528">
+              <caret line="24" lean-forward="true" selection-start-line="24" selection-end-line="24" />
             </state>
           </provider>
         </entry>
@@ -132,6 +86,7 @@
         <option value="$PROJECT_DIR$/015-图片链接/01-图片链接.html" />
         <option value="$PROJECT_DIR$/016-URL/01-URL.html" />
         <option value="$PROJECT_DIR$/017-标签语义化/01-标签语义化.html" />
+        <option value="$PROJECT_DIR$/18-初识CSS/05-@import.html" />
       </list>
     </option>
   </component>
@@ -159,7 +114,13 @@
             <path>
               <item name="html+css" type="b2602c69:ProjectViewProjectNode" />
               <item name="html+css" type="462c0819:PsiDirectoryNode" />
-              <item name="018-初识CSS" type="462c0819:PsiDirectoryNode" />
+              <item name="18-初识CSS" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="html+css" type="b2602c69:ProjectViewProjectNode" />
+              <item name="html+css" type="462c0819:PsiDirectoryNode" />
+              <item name="18-初识CSS" type="462c0819:PsiDirectoryNode" />
+              <item name="css" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -207,12 +168,12 @@
       <workItem from="1558083023809" duration="148000" />
       <workItem from="1558083565393" duration="1258000" />
       <workItem from="1558101078246" duration="1380000" />
-      <workItem from="1558592539153" duration="6271000" />
+      <workItem from="1558592539153" duration="6673000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="9057000" />
+    <option name="totallyTimeSpent" value="9459000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1680" height="1027" extended-state="0" />
@@ -260,22 +221,6 @@
     <option name="version" value="1" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$USER_HOME$/Downloads/day02资料/代码/06-常用图片格式.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="132">
-          <caret line="6" selection-start-line="6" selection-end-line="23" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/08-常用图片格式/01-常用图片格式.html" />
-    <entry file="file://$USER_HOME$/Downloads/day02资料/代码/07-像素.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="396">
-          <caret line="18" selection-start-line="9" selection-start-column="6" selection-end-line="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/09-像素/01-像素.html" />
     <entry file="file://$PROJECT_DIR$/009-像素/01-像素.html">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -544,6 +489,22 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="66">
           <caret line="3" column="20" lean-forward="true" selection-start-line="3" selection-start-column="20" selection-end-line="3" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/18-初识CSS/04-导入多个外部样式表.html">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/18-初识CSS/03-外部样式表.html">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/18-初识CSS/03-page_03.html">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/18-初识CSS/05-@import.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="528">
+          <caret line="24" lean-forward="true" selection-start-line="24" selection-end-line="24" />
         </state>
       </provider>
     </entry>
