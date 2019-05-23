@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>04-text-indent</title>
+    <style>
+        p {
+            width: 400px;
+            background-color: #f00;
+            text-indent: 2em; /* 2 * 40px = 80px*/
+            font-size: 40px;
+        }
+
+        /*
+        绝对单位
+        px
+
+        相对单位
+        em：相对于font-size进行计算
+
+        2em 相当于 font-size * 2
+
+        1em 相当于 font-size * 1
+        */
+
+        div {
+            font-size: 40px;
+            background-color: #00f;
+            width: 5em; /* 5 * 40px = 200px*/
+            height: 10em; /* 10 * 40px = 400px*/
+        }
+        
+        span {
+            text-indent: 20px;
+            background-color: #f00;
+        }
+    </style>
+</head>
+<body>
+
+<span>我是span</span>
+
+<div></div>
+
+<p>我是内容的内容我是内容的内容我是内容的内容我是div的内容我是div的内容我是div的内容我是div的内容我是div的内容我是div的内容我是div的内容我是div的内容我是div的内容我是div的内容我是div的内容我是div的内容我是div的内容</p>
+
+</body>
+</html>

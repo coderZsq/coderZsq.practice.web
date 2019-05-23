@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>05-text-align-注意点</title>
+    <style>
+        div {
+            width: 200px;
+            text-align: right;
+            background-color: #f00;
+        }
+
+        span {
+            text-align: center;
+            background-color: #ff0;
+        }
+
+        p {
+            background-color: #f67;
+        }
+
+
+        strong {
+            background-color: #6a7;
+        }
+    </style>
+</head>
+<body>
+
+<!--
+有些元素，宽度默认是占据整个父元素，比如div、p、h1~h6等等
+有些元素，宽度默认是包裹内容，宽度等于内容的总宽度，比如span、strong、a
+-->
+
+<div>我是div</div>
+
+<span>我是span</span>
+
+<p>我是p</p>
+
+<strong>我是strong</strong>
+
+</body>
+</html>
