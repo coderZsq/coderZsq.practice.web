@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>04-Emmet</title>
+    <style>
+        div {
+            
+        }
+    </style>
+</head>
+<body>
+
+<!-- div+div>p>span+em -->
+<div></div>
+<div>
+    <p><span></span><em></em></p>
+</div>
+
+<!-- ul>li*5 -->
+<ul>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+</ul>
+
+<!-- div+div>p>span+em^h1 -->
+<div></div>
+<div>
+    <p><span></span><em></em></p>
+    <h1></h1>
+</div>
+
+
+<!-- div+(div>p>span)+em -->
+<div></div>
+<div>
+    <p><span></span></p>
+</div>
+<em></em>
+
+<!-- dl>(dt+dd)*3 -->
+<dl>
+    <dt></dt>
+    <dd></dd>
+    <dt></dt>
+    <dd></dd>
+    <dt></dt>
+    <dd></dd>
+</dl>
+
+<!-- ul>li.item$$*5 -->
+<ul>
+    <li class="item01"></li>
+    <li class="item02"></li>
+    <li class="item03"></li>
+    <li class="item04"></li>
+    <li class="item05"></li>
+</ul>
+
+<!-- ul>li.item$@4*5 -->
+<ul>
+    <li class="item4"></li>
+    <li class="item5"></li>
+    <li class="item6"></li>
+    <li class="item7"></li>
+    <li class="item8"></li>
+</ul>
+
+<!-- ul>li.item$@-*5 -->
+<ul>
+    <li class="item5"></li>
+    <li class="item4"></li>
+    <li class="item3"></li>
+    <li class="item2"></li>
+    <li class="item1"></li>
+</ul>
+
+<!-- ul>li.item$@-9*5 -->
+<ul>
+    <li class="item13"></li>
+    <li class="item12"></li>
+    <li class="item11"></li>
+    <li class="item10"></li>
+    <li class="item9"></li>
+</ul>
+
+<!-- ul>li.item$@4test*5 -->
+<ul>
+    <li class="item4test"></li>
+    <li class="item5test"></li>
+    <li class="item6test"></li>
+    <li class="item7test"></li>
+    <li class="item8test"></li>
+</ul>
+
+<!-- p>{点击}+a{这里}+{继续} -->
+<p>点击<a href="">这里</a>继续</p>
+
+</body>
+</html>
