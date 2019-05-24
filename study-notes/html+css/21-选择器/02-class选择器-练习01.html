@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>02-class选择器-练习01</title>
+    <style>
+        pre {
+            background-color: black;
+            width: 350px;
+            /* 在pre的上下左右都添加20px的内边距 */
+            padding: 20px;
+            /*height: 400px;*/
+        }
+
+        span {
+            font-size: 25px;
+        }
+
+        /* 属性名 */
+        .name {
+            color: yellow;
+        }
+
+        /* 数字 */
+        .number {
+            color: mediumpurple;
+        }
+
+        /* 普通文本 */
+        .normal {
+            color: white;
+        }
+
+        /* 注释 */
+        .comment {
+            color: green;
+        }
+
+        /* 选择器 */
+        .selector {
+            color: skyblue;
+        }
+    </style>
+</head>
+<body>
+
+<pre>
+<code>
+<span class="comment">/* box style */</span>
+<span class="selector">.box</span> <span class="normal">{</span>
+    <span class="name">margin</span><span class="normal">:</span> <span class="number">0 0 30</span><span class="normal">px</span> <span class="number">0</span><span class="normal">;</span>
+    <span class="name">padding</span><span class="normal">:</span> <span class="number">15</span><span class="normal">px;</span>
+    <span class="name">color</span><span class="normal">: red;</span>
+    <span class="name">background-color</span><span class="normal">: #007799;</span>
+    <span class="name">box-shadow</span><span class="normal">: none;</span>
+<span class="normal">}</span>
+</code>
+</pre>
+
+<!--
+使用class选择器来修改这个项目的好处：
+1、方便项目维护（需求的更改）
+2、保证了样式和结构分离
+3、能够统一修改局部的某一类元素，而不会影响其他元素
+-->
+
+</body>
+</html>

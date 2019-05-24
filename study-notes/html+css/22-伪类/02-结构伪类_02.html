@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>02-结构伪类_02</title>
+    <style>
+        /* span元素 并且它是父元素中的第2n个子元素 */
+        /* n代表任意正整数和0，比如0、1、2、3、4、5、6.... */
+        /* 2n的值可能是2、4、6、8、10、12.... */
+        /*span:nth-child(2n) {
+            color: red;
+        }*/
+
+        /* 3n的值可能是3、6、9、12... */
+        /*span:nth-child(3n) {
+            color: red;
+        }*/
+
+        /* even : 偶数 */
+        /*span:nth-child(even) {
+            color: red;
+        }*/
+
+        /* 2n+1的值可能是1、3、5、7、9... 奇数 */
+        /*span:nth-child(2n + 1) {
+            color: red;
+        }*/
+        /* odd : 奇数 */
+        span:nth-child(odd) {
+            color: red;
+        }
+
+        /* 4n+1的可能值是1、5、9、13、17... */
+        p:nth-child(4n + 1) {
+            background-color: red;
+        }
+
+        /* 4n+2的可能值是2、6、10、14、18... */
+        p:nth-child(4n + 2) {
+            background-color: yellow;
+        }
+
+        p:nth-child(4n + 3) {
+            background-color: green;
+        }
+
+        p:nth-child(4n + 4) {
+            background-color: purple;
+        }
+    </style>
+</head>
+<body>
+
+<div>
+    <span>span1</span>
+    <span>span2</span>
+    <span>span3</span>
+    <span>span4</span>
+    <span>span5</span>
+    <span>span6</span>
+</div>
+
+</body>
+</html>

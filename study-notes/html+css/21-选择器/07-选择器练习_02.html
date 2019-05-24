@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>07-选择器练习_02</title>
+    <style>
+        /*div.box>p>strong>span[title="one"]>span>strong#cat~em {*/
+            /*color: red;*/
+        /*}*/
+
+        /*div.box span[title="one"] strong#cat~em {*/
+            /*color: red;*/
+        /*}*/
+
+        /*.box [title="one"] #cat~em {*/
+            /*color: red;*/
+        /*}*/
+
+        #cat~em {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+
+<div><em>em0</em></div>
+<div class="box">
+    <div><p>paper</p></div>
+    <p><span>span</span> <strong>            <span title="one">                <strong id="dog">strong-dog</strong>                <span>
+                    <em>em1</em>                    <strong id="cat">strong-cat</strong>                    <em>em2</em>                    <em>em3</em>                    <em>em4</em>                </span>            </span>
+    </strong></p></div>
+
+
+</body>
+</html>

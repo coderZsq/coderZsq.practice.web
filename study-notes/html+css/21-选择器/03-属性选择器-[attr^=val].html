@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>03-属性选择器-[attr^=val]</title>
+    <style>
+        [href^="mailto:"] {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+
+<a href="http://www.baidu.com">百度</a>
+<a href="http://www.163.com" >网易</a>
+
+<a href="mailto:123456@qq.com" >发邮件1</a>
+
+<a href="mailto:666@qq.com" >发邮件2</a>
+
+</body>
+</html>

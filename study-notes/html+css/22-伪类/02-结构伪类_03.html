@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>02-结构伪类_03</title>
+    <style>
+        /* an + b */
+        /* a=-1, b=2*/
+        /* -n + 2的可能值是2、1 */
+        span:nth-child(-n + 2) {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+
+<div>
+    <span>span1</span>
+    <span>span2</span>
+    <span>span3</span>
+    <span>span4</span>
+    <span>span5</span>
+</div>
+
+</body>
+</html>

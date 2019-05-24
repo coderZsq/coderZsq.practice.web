@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>03-属性选择器-[attr竖线=val]</title>
+    <style>
+        [lang|="zh"] {
+            color: red;
+        }
+
+        [lang|="en"] {
+            color: yellow;
+        }
+    </style>
+</head>
+<body>
+
+<!--
+语言代码：zh（汉语）、en（英语）、ja（日语）
+-->
+
+<div lang="zh">我是div</div>
+<div lang="en-US">我是div</div>
+<div lang="en-GB">我是div</div>
+<div lang="zh-TW">我是div</div>
+<div lang="zh-HK">我是div</div>
+
+</body>
+</html>

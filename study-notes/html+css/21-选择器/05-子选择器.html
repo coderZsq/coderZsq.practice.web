@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>05-子选择器</title>
+    <style>
+        .name>div>#title>p>[title] {
+            color: red;
+        }
+
+        div+p strong>span span {
+
+        }
+    </style>
+</head>
+<body>
+
+<div>
+
+</div>
+<p>
+    <strong>
+        <span>span1
+            <span>
+                <span>
+                    <span>span2</span>
+                </span>
+            </span>
+        </span>
+    </strong>
+</p>
+
+<div class="name">
+    <div>
+        <div id="title">
+            <p>
+                <span title="312312">3242343</span>
+            </p>
+        </div>
+    </div>
+</div>
+
+
+
+<div>
+    <span>span4</span>
+    <span>span4</span>
+    <p>
+        <span>span4</span>
+        <span>span4</span>
+    </p>
+</div>
+
+</body>
+</html>

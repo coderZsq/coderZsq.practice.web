@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>02-class选择器-练习03</title>
+    <style>
+        /* 按钮(button) */
+        .btn {
+            font-weight: normal;
+            color: #fff;
+            font-size: 18px;
+            /* 内边距 */
+            padding-left: 20px;
+            padding-right: 20px;
+            padding-top: 10px;
+            padding-bottom: 10px;
+            /*
+            设置鼠标样式（鼠标移动到元素上时显示的样子）
+             cursor: pointer是一只小手的样式
+             */
+            cursor: pointer;
+        }
+
+        /* 按照颜色分类 */
+        /* 危险 */
+        .danger {
+            background-color: #D73D32;
+        }
+
+        /* 警告 */
+        .warning {
+            background-color: #F6C12A;
+        }
+
+        /* 普通 */
+        .normal {
+            background-color: #53A93F;
+        }
+
+        /* 取消 */
+        .cancel {
+            background-color: #57B5E3;
+        }
+
+        /* 按钮角度分类 */
+        /* 圆角 */
+        .round {
+            /* 圆角半径 */
+            border-radius: 5px;
+        }
+
+        /* 按照大小分类 */
+        .big {
+            font-size: 25px;
+        }
+
+        .small {
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+
+<br>
+<br>
+<br>
+<br>
+<br>
+
+<!--
+项目中有4种类型的按钮
+1.危险（danger）
+2.警告（warning）
+3.普通（normal）
+4.取消（cancel）
+
+这些按钮可能是直角，也可能是圆角
+
+这些按钮可能是大按钮（文字大），也可能是小按钮（文字小）
+-->
+
+<strong class="btn normal round">确定</strong>
+<strong class="btn warning big">重置</strong>
+<strong class="btn cancel">取消</strong>
+<strong class="btn danger small">删除</strong>
+<strong class="btn danger">关闭</strong>
+
+</body>
+</html>

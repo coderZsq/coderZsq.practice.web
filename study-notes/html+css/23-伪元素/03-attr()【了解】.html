@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>03-attr()【了解】</title>
+    <style>
+        /*div::before {
+            content: attr(class);
+        }*/
+
+        a[href^="http"]::after {
+            content: "[ " attr(href) " ]";
+        }
+    </style>
+</head>
+<body>
+
+
+<a href="http://www.baidu.com">百度</a><br>
+<a href="http://www.jd.com">京东</a><br>
+<a href="http://www.taobao.com">淘宝</a>
+
+<a href="#">呵呵</a>
+<a>哈哈</a>
+
+<!--<div class="abc">我是div</div>-->
+
+</body>
+</html>
