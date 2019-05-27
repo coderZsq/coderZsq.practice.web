@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>06-单元格的合并</title>
+    <style>
+        td {
+            border: 1px solid #000;
+        }
+
+        table {
+            border-collapse: collapse;
+        }
+    </style>
+</head>
+<body>
+
+<table>
+    <tr>
+        <td>td01</td>
+        <td>td02</td>
+        <td>td03</td>
+        <td>td04</td>
+        <td>td05</td>
+    </tr>
+    <tr>
+        <td>td01</td>
+        <td>td02</td>
+        <td colspan="2" rowspan="3">td03</td>
+        <td>td05</td>
+    </tr>
+    <tr>
+        <td>td01</td>
+        <td>td02</td>
+        <td>td05</td>
+    </tr>
+    <tr>
+        <td>td01</td>
+        <td>td02</td>
+        <td>td05</td>
+    </tr>
+</table>
+
+</body>
+</html>

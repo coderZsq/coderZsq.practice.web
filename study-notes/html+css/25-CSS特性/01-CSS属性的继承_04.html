@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>01-CSS属性的继承_04</title>
+    <style>
+        .div1 {
+            font-size: 50px;
+        }
+
+        .div2 {
+            /* 字面值-指定值 50% */
+            font-size: 50%; /* 计算值：50px * 50% = 25px */
+        }
+
+        .div3 {
+            font-size: inherit; /* 继承父元素的计算值 25px */
+            /*font-size: 50%; !* 25px * 50% = 12.5px *!*/
+        }
+    </style>
+</head>
+<body>
+
+<div class="div1">div1
+    <div class="div2">div2
+        <div class="div3">div3</div>
+    </div>
+</div>
+
+</body>
+</html>

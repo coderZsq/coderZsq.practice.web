@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>02-CSS属性的优先级_02</title>
+    <style>
+        /*
+         1.针对性越强的选择器，优先级越高
+         内联样式 > id > class、属性、伪类 > 标签（元素） > 通用（*）
+
+         2.如果优先级一样，就参考就近原则（离元素近的优先级高）
+         */
+
+        .word {
+            color: #f00;
+        }
+    </style>
+    <link rel="stylesheet" href="css/test.css">
+</head>
+<body>
+
+<div class="word" title="wo">我是div</div>
+
+</body>
+</html>

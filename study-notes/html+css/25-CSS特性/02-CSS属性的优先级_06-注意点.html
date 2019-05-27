@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>02-CSS属性的优先级_06-注意点.html</title>
+    <style>
+        p {
+            color: red !important;
+        }
+    </style>
+</head>
+<body>
+
+<p>
+    我是p
+    <div>我是div</div>
+</p>
+
+<!--
+p标签不能嵌套div标签，反过来，div可以嵌套p标签
+
+<p>
+    我是p
+    <div>我是div</div>
+</p>
+上述代码会自动生成以下代码
+<p>我是p</p>
+<div>我是div</div>
+<p></p>
+-->
+
+</body>
+</html>

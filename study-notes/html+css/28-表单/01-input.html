@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>01-input</title>
+</head>
+<body>
+
+<!--
+input的value属性用途
+1.设置按钮的文字
+2.设置checkbox、radio被勾选时，发送给服务器的值
+3.设置文本输入框的默认值
+-->
+
+<!--
+假设服务器那边规定phone是手机，password是密码，code是验证码
+但是前端页面这边密码的name写成了pwd，那么后果是：服务器接收不到密码值
+-->
+
+<!--
+文件上传的必要条件
+1.method="post"
+2.enctype="multipart/form-data"
+3.input要有name值
+<form action="http://www.baidu.com" method="post" enctype="multipart/form-data">
+-->
+
+<form action="http://www.baidu.com" method="get">
+    <div>
+        <label for="phone">手机：</label>
+        <input id="phone" type="text" name="phone" value="666">
+        <!-- id和name值不一定要一致，name值是由服务器（后台）决定的 -->
+    </div>
+
+    <div>
+        <label for="pwd">密码：</label>
+        <input id="pwd" type="password" name="pwd">
+    </div>
+
+    <div>
+        <label for="code">验证码：</label>
+        <input id="code" type="text" name="code">
+        <input type="button" value="获取验证码">
+    </div>
+
+    <div>
+        <label for="photo">照片：</label>
+        <input id="photo" type="file" name="photo">
+    </div>
+
+    <div>
+        <!--
+        radio的name和value值都是由服务器决定的
+        同一种类型的radio，name值要保持一致，才能实现单选功能
+         -->
+        性别：
+        男<input type="radio" name="sex" value="1">
+        女<input type="radio" name="sex" value="2">
+    </div>
+
+    <div>
+        <!--
+        checkbox的name和value值都是由服务器决定的
+        同一种类型的checkbox，name值要保持一致
+         -->
+        兴趣：
+        篮球<input type="checkbox" name="hobby" value="1">
+        足球<input type="checkbox" name="hobby" value="2">
+        跑步<input type="checkbox" name="hobby" value="3">
+        <!--电影：
+        《电影1》<input type="checkbox" name="movie" value="1">
+        《电影2》<input type="checkbox" name="movie" value="2">
+        《电影3》<input type="checkbox" name="movie" value="3">-->
+    </div>
+
+    <div>
+        <input type="reset" value="重置">
+        <input type="submit" value="注册">
+    </div>
+</form>
+
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>02-CSS属性的优先级_07-经验</title>
+    <style>
+        #box {
+            background-color: #ff0;
+        }
+
+        div {
+            width: 100px;
+            height: 100px;
+            background-color: #f00;
+        }
+
+        span {
+            width: 100px;
+            height: 100px;
+            background-color: #0f0;
+            background: #00f;
+        }
+
+        input {
+            caret-color: red;
+        }
+
+        /* 2个id选择器，1个类选择器，2个元素选择器 */
+
+    </style>
+</head>
+<body>
+
+<div id="box">我是div</div>
+<span>我是span</span>
+
+<input type="text">
+
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>02-CSS属性的优先级_04-复杂选择器</title>
+    <style>
+        /*
+         1.针对性越强的选择器，优先级越高
+         !important > 内联样式 > id > class、属性、伪类 > 标签（元素）、伪元素 > 通用（*）
+
+         2.如果优先级一样，就参考就近原则（离元素近的优先级高）
+         */
+
+        /*
+        id : 1
+        class : 0
+         */
+        div#box {
+            color: #f00;
+        }
+
+        /*
+        id : 1
+        class : 1
+         */
+        .word#box {
+            color: #0f0;
+        }
+
+        /*div.word#box {
+            color: #ff0;
+        }
+
+        .word#box {
+            color: #00f;
+        }
+
+        div#box {
+            color: #0f0;
+        }*/
+    </style>
+</head>
+<body>
+
+<div id="box" class="word">我是div</div>
+
+</body>
+</html>

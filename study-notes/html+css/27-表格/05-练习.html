@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>05-练习</title>
+    <style>
+        .movie-list {
+            /* 0px可以简写为0 */
+            /* 设置单元格之间的间距 */
+            border-spacing: 0; /* 0px */
+        }
+
+        .movie-list caption {
+            font-weight: 700;
+            font-size: 20px;
+            margin-bottom: 10px;
+        }
+
+        .movie-list .title {
+            font-weight: 600;
+        }
+
+        .movie-list td {
+            width: 100px;
+            height: 50px;
+            text-align: center;
+        }
+
+        /*.movie-list tr:not(.title) td:nth-of-type(4) {
+            color: #f00;
+        }*/
+        .movie-list .price {
+            color: #f00;
+        }
+
+        /* 偶数行的背景色 */
+        .movie-list tr:nth-of-type(even) {
+            background-color: #fff;
+        }
+
+        /* 奇数行的背景色 */
+        .movie-list tr:nth-of-type(odd) {
+            background-color: #f9f9f9;
+        }
+
+        .movie-list .buy-btn {
+            background-color: #f00;
+            color: #fff;
+            border: none;
+            border-radius: 10px;
+            /* 去除聚焦时的外轮廓 */
+            outline: none;
+            padding-top: 3px;
+            padding-bottom: 3px;
+        }
+
+        .movie-list .buy-btn:hover {
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+<table align="center" class="movie-list">
+    <caption>欢迎光临万达影城</caption>
+
+    <tr class="title">
+        <td>放映时间</td>
+        <td>语言版本</td>
+        <td>放映厅</td>
+        <td>售价（元）</td>
+        <td>选座购票</td>
+    </tr>
+    <tr>
+        <td>13:15</td>
+        <td>国语3D</td>
+        <td>2号厅</td>
+        <td class="price">￥48</td>
+        <td><input type="button" value="选座购票" class="buy-btn"></td>
+    </tr>
+    <tr>
+        <td>13:15</td>
+        <td>国语3D</td>
+        <td>2号厅</td>
+        <td class="price">￥48</td>
+        <td><input type="button" value="选座购票" class="buy-btn"></td>
+    </tr>
+    <tr>
+        <td>13:15</td>
+        <td>国语3D</td>
+        <td>2号厅</td>
+        <td class="price">￥48</td>
+        <td><input type="button" value="选座购票" class="buy-btn"></td>
+    </tr>
+    <tr>
+        <td>13:15</td>
+        <td>国语3D</td>
+        <td>2号厅</td>
+        <td class="price">￥48</td>
+        <td><input type="button" value="选座购票" class="buy-btn"></td>
+    </tr>
+</table>
+
+</body>
+</html>

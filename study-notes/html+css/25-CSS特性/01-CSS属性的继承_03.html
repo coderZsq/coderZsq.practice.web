@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>01-CSS属性的继承_03</title>
+    <style>
+        div {
+            color: #0f0;
+            width: 100px;
+            height: 100px;
+            background-color: #00f;
+            border: 2px solid #ff0;
+        }
+
+        p {
+            background-color: #f00;
+            /* 强制继承父元素的border属性 */
+            border: inherit;
+        }
+    </style>
+</head>
+<body>
+
+<div>
+    <p>我是p</p>
+</div>
+
+</body>
+</html>

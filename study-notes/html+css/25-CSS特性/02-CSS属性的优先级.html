@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>02-CSS属性的优先级</title>
+    <style>
+        /*
+        针对性越强的选择器，优先级越高
+         内联样式 > id > class > 标签（元素） > 通用（*）
+         */
+
+        .title {
+            color: #0f0;
+        }
+
+        #box {
+            color: #f00;
+        }
+
+        div {
+            color: #00f;
+        }
+
+        * {
+            color: #ff0;
+        }
+    </style>
+</head>
+<body>
+
+<div id="box" class="title" style="color: #0ff;">我是div</div>
+
+</body>
+</html>
