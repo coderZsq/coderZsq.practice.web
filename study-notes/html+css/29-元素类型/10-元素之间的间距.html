@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>10-元素之间的间距</title>
+    <style>
+        span:nth-of-type(odd) {
+            background-color: #f00;
+        }
+
+        span:nth-of-type(even) {
+            background-color: #0f0;
+        }
+        
+        /*div:nth-of-type(1) {
+            background-color: #f00;
+        }
+
+        div:nth-of-type(2) {
+            background-color: #0f0;
+        }*/
+        
+        strong {
+            background-color: #ff0;
+            display: inline-block;
+            width: 100px;
+            height: 30px;
+        }
+
+        span, strong {
+            font-size: 14px;
+        }
+
+        div {
+            font-size: 0;
+        }
+    </style>
+</head>
+<body>
+
+<!--<div>div1</div>
+<div>div2</div>-->
+
+<!--<div>
+    <span>span1</span><span>span2</span><span>span3</span><span>span4</span><img src="images/test.jpg" alt=""><strong>strong</strong>
+</div>-->
+
+<!--<div>
+    <span>span1</span>&lt;!&ndash;
+ &ndash;&gt;<span>span2</span>&lt;!&ndash;
+ &ndash;&gt;<span>span3</span>&lt;!&ndash;
+ &ndash;&gt;<span>span4</span>&lt;!&ndash;
+ &ndash;&gt;<img src="images/test.jpg" alt="">&lt;!&ndash;
+ &ndash;&gt;<strong>strong</strong>
+</div>-->
+
+<div>
+    <span>span1</span>
+    <span>span2</span>
+    <span>span3</span>
+    <span>span4</span>
+    <img src="images/test.jpg" alt="">
+    <strong>strong</strong>
+</div>
+
+</body>
+</html>

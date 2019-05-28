@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>04-hidden</title>
+    <base target="_blank">
+</head>
+<body>
+
+<!--
+API
+1> Application Programming Interface，应用编程接口
+2> 服务器提供给前端的功能（比如可以发送哪些请求、请求地址是啥、请求参数是啥、请求方式是啥）
+
+API文档
+
+-->
+
+<form action="https://www.baidu.com/">
+    姓名：<input type="text" name="name"><br>
+    简介：<input type="text" name="intro"><br>
+    城市：<input type="text" name="city"><br>
+    <!-- type=hidden，经常用来传输用户的唯一标识 -->
+    <input type="hidden" name="id" value="100">
+    <button type="submit">保存</button>
+</form>
+
+<br><br>
+
+<form action="http://www.kugou.com/yy/html/search.html">
+    <input type="text" name="searchKeyWord" placeholder="请输入搜索关键词">
+    <input type="hidden" name="searchType" value="mv">
+    <button type="submit">酷狗MV</button>
+</form>
+
+<form action="http://zmck.api6.cc/car/usedcar/assess.html" method="get">
+    车况：
+    <select name="carstatus" id="">
+        <option value="1">优秀</option>
+        <option value="2">一般</option>
+        <option value="3">较差</option>
+    </select>
+    <button type="submit">提交</button>
+</form>
+
+<!--<form action="http://www.kugou.com/yy/html/search.html?searchType=mv">
+    <input type="text" name="searchKeyWord" placeholder="请输入搜索关键词">
+    <button type="submit">酷狗搜索</button>
+</form>-->
+
+<!--<form action="服务器的请求地址">
+    <label for=""></label>
+    <input type="text" name="">
+    <input type="checkbox" name="" value="1">
+    <input type="radio" name="" value="1">
+
+    <textarea name="" id="" cols="30" rows="10"></textarea>
+
+    <select name="" id="">
+        <option value="1"></option>
+    </select>
+</form>-->
+
+</body>
+</html>

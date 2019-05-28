@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>03-练习</title>
+    <base target="_blank">
+</head>
+<body>
+
+<form action="https://www.baidu.com/s">
+    <input type="text" name="wd" placeholder="请输入搜索关键词">
+    <button type="submit">百度一下</button>
+</form>
+
+<form action="http://www.kugou.com/yy/html/search.html">
+    <input type="text" name="searchKeyWord" placeholder="请输入搜索关键词">
+    <select name="searchType">
+        <option value="song">单曲</option>
+        <option value="special">歌单</option>
+        <option value="mv">MV</option>
+    </select>
+    <button type="submit">酷狗搜索</button>
+</form>
+
+<!--
+1.accept-charset="GB2312"
+1> 客户端会使用GB2312的编码方式，先将请求URL（数据）进行编码，然后再发送请求给服务器
+2> 服务器也会使用GB2312的解码方式，解析客户端发送过来的请求数据
+3> 如果不填写accept-charset，默认跟随meta元素charset属性的值
+
+2.accept-charset的属性值最终由服务器（后台）决定
+ -->
+<form action="https://sou.autohome.com.cn/zonghe" accept-charset="GB2312">
+    <input type="text" name="q" placeholder="请输入搜索关键词">
+    <button type="submit">汽车之家</button>
+</form>
+
+</body>
+</html>

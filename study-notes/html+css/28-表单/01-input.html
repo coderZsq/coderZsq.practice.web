@@ -3,6 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <title>01-input</title>
+    <style>
+        /*input:not([type="text"]):not([type="password"]):focus {
+            outline: none;
+        }*/
+
+        textarea {
+            /* 禁止缩放 */
+            resize: none;
+            width: 100px;
+            height: 50px;
+        }
+
+        fieldset {
+            width: 400px;
+            margin-bottom: 20px;
+        }
+    </style>
 </head>
 <body>
 
@@ -27,56 +44,81 @@ input的value属性用途
 -->
 
 <form action="http://www.baidu.com" method="get">
-    <div>
-        <label for="phone">手机：</label>
-        <input id="phone" type="text" name="phone" value="666">
-        <!-- id和name值不一定要一致，name值是由服务器（后台）决定的 -->
-    </div>
+    <fieldset>
+        <legend>必填信息</legend>
+
+        <div>
+            <label for="phone">手机：</label>
+            <input id="phone" type="text"
+                   name="phone" value="666"
+                   maxlength="11" placeholder="请输入手机"
+                   autofocus>
+            <!-- id和name值不一定要一致，name值是由服务器（后台）决定的 -->
+        </div>
+
+        <div>
+            <label for="pwd">密码：</label>
+            <input id="pwd" type="password" name="pwd" placeholder="请输入密码">
+        </div>
+
+        <div>
+            <label for="code">验证码：</label>
+            <input id="code" type="text" name="code" placeholder="请输入验证码">
+            <input type="button" value="获取验证码" tabindex="-1">
+        </div>
+    </fieldset>
+
+
+    <fieldset>
+        <legend>选填信息</legend>
+        <div>
+            <label for="photo">照片：</label>
+            <input id="photo" type="file" name="photo" tabindex="-1">
+        </div>
+
+        <div>
+            <!--
+            radio的name和value值都是由服务器决定的
+            同一种类型的radio，name值要保持一致，才能实现单选功能
+             -->
+            性别：
+            男<input type="radio" name="sex" value="1" title="男" checked tabindex="-1">
+            女<input type="radio" name="sex" value="2" title="女" tabindex="-1">
+        </div>
+
+        <div>
+            <!--
+            checkbox的name和value值都是由服务器决定的
+            同一种类型的checkbox，name值要保持一致
+             -->
+            兴趣：
+            篮球<input type="checkbox" name="hobby" value="1" title="篮球" tabindex="-1">
+            足球<input type="checkbox" name="hobby" value="2" title="足球" checked tabindex="-1">
+            跑步<input type="checkbox" name="hobby" value="3" title="跑步" tabindex="-1">
+            <!--电影：
+            《电影1》<input type="checkbox" name="movie" value="1">
+            《电影2》<input type="checkbox" name="movie" value="2">
+            《电影3》<input type="checkbox" name="movie" value="3">-->
+        </div>
+
+        <div>
+            学历：
+            <select name="edu" title="学历">
+                <option value="1">小学</option>
+                <option value="2">初中</option>
+                <option value="3" selected>高中</option>
+            </select>
+        </div>
+
+        <div>
+            <label for="intro">简介：</label>
+            <textarea name="intro" id="intro"></textarea>
+        </div>
+    </fieldset>
 
     <div>
-        <label for="pwd">密码：</label>
-        <input id="pwd" type="password" name="pwd">
-    </div>
-
-    <div>
-        <label for="code">验证码：</label>
-        <input id="code" type="text" name="code">
-        <input type="button" value="获取验证码">
-    </div>
-
-    <div>
-        <label for="photo">照片：</label>
-        <input id="photo" type="file" name="photo">
-    </div>
-
-    <div>
-        <!--
-        radio的name和value值都是由服务器决定的
-        同一种类型的radio，name值要保持一致，才能实现单选功能
-         -->
-        性别：
-        男<input type="radio" name="sex" value="1">
-        女<input type="radio" name="sex" value="2">
-    </div>
-
-    <div>
-        <!--
-        checkbox的name和value值都是由服务器决定的
-        同一种类型的checkbox，name值要保持一致
-         -->
-        兴趣：
-        篮球<input type="checkbox" name="hobby" value="1">
-        足球<input type="checkbox" name="hobby" value="2">
-        跑步<input type="checkbox" name="hobby" value="3">
-        <!--电影：
-        《电影1》<input type="checkbox" name="movie" value="1">
-        《电影2》<input type="checkbox" name="movie" value="2">
-        《电影3》<input type="checkbox" name="movie" value="3">-->
-    </div>
-
-    <div>
-        <input type="reset" value="重置">
-        <input type="submit" value="注册">
+        <input type="reset" value="重置" tabindex="-1">
+        <input type="submit" value="注册" tabindex="-1">
     </div>
 </form>
 

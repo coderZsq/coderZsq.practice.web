@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>06-inline-block练习</title>
+    <style>
+        .page {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .page li {
+            display: inline-block;
+            width: 30px;
+            height: 30px;
+            /* 行高跟高度一样：保证文字垂直居中 */
+            line-height: 30px;
+            margin-right: 10px;
+            text-align: center;
+            font-size: 14px;
+        }
+
+        .page .pre, .page .next {
+            width: 70px;
+        }
+
+        .page li a {
+            background-color: #fff;
+            display: block;
+            height: 30px;
+            text-decoration: none;
+            border: 1px solid #ddd;
+            color: #00f;
+            /*text-align: center;
+            font-size: 12px;*/
+        }
+
+        .page li a:active {
+            color: #f00;
+        }
+
+        .page li a:hover {
+            background-color: #f2f8ff;
+            border: 1px solid #38f;
+        }
+
+        .page li strong {
+            background-color: #fff;
+            display: block;
+            height: 30px;
+            /*text-align: center;
+            font-size: 12px;*/
+        }
+    </style>
+</head>
+<body>
+
+<ul class="page">
+    <li class="pre"><a href="#66">&lt; 上一页</a></li>
+    <li><a href="#666">1</a></li>
+    <li><a href="#666">2</a></li>
+    <li><strong>3</strong></li>
+    <li><a href="#666">4</a></li>
+    <li><a href="#666">5</a></li>
+    <li><a href="#666">6</a></li>
+    <li class="next"><a href="#666">下一页 &gt;</a></li>
+</ul>
+
+</body>
+</html>

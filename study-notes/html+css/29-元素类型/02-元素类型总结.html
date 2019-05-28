@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>01-元素类型</title>
+    <style>
+        div {
+            background-color: #f00;
+            width: 100px;
+        }
+        
+        
+        span, strong {
+            background-color: #0f0;
+            width: 100px;
+            height: 100px;
+            font-size: 30px;
+        }
+
+        img {
+            width: 50px;
+            height: 50px;
+        }
+
+        iframe {
+            /*width: 100px;*/
+            /*height: 100px;*/
+        }
+        
+    </style>
+</head>
+<body>
+
+<!-- 块级非替换元素 -->
+<div>123 <img src="images/test.jpg" alt=""></div>
+<br>
+
+<span>spanspanspanspan</span>
+<strong>strong</strong>
+<img src="images/test.jpg" alt="">
+<iframe src="http://www.baidu.com" frameborder="1"></iframe>
+<div>666</div>
+
+<!--
+判断对错：
+1、所有的非替换元素，都不能随意设置宽高？ 错，块级非替换元素都是可以随意设置宽高的
+2、所有的行内级元素，都不能随意设置宽高？ 错，行内级替换元素都是可以随意设置宽高的
+
+总结：
+1、块级替换元素：几乎没有这样的元素
+
+2、块级非替换元素：div、p、h1~h6、table、form等
+1> 独占父元素的一行
+2> 可以随意设置宽高
+3> 高度默认由内容决定
+
+3、行内级替换元素：img、iframe、input等
+1> 可以跟其他行内级元素在父元素的同一行显示
+2> 可以随意设置宽高
+
+4、行内级非替换元素：span、a、strong等
+1> 可以跟其他行内级元素在父元素的同一行显示
+2> 不可以随意设置宽高（设置宽高没有任何效果）
+3> 宽高默认由内容决定
+-->
+
+
+</body>
+</html>
