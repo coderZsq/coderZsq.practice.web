@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="8a493456-ed3e-4a82-b94d-8c33040a8e86" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/28-表单/01-input.html" beforeDir="false" afterPath="$PROJECT_DIR$/28-表单/01-input.html" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -43,11 +42,43 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/28-表单/04-hidden.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="195">
-              <caret line="26" lean-forward="true" selection-start-line="26" selection-end-line="26" />
+            <state relative-caret-position="449">
+              <caret line="48" column="10" lean-forward="true" selection-start-line="48" selection-start-column="10" selection-end-line="48" selection-end-column="10" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/29-元素类型/01-元素类型.html">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/29-元素类型/02-元素类型总结.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-123">
+              <caret line="26" column="26" lean-forward="true" selection-start-line="26" selection-start-column="26" selection-end-line="26" selection-end-column="26" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/00-自学项目/fullpage/js/index.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="308">
+              <caret line="14" column="28" lean-forward="true" selection-start-line="14" selection-start-column="28" selection-end-line="14" selection-end-column="28" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/29-元素类型/04-display-练习.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="208">
+              <caret line="12" column="23" selection-start-line="12" selection-start-column="23" selection-end-line="12" selection-end-column="23" />
             </state>
           </provider>
         </entry>
@@ -62,36 +93,12 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/14-伪链接/01-伪链接.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="242">
-              <caret line="11" column="13" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/07-img/01-img.html">
-          <provider selected="true" editor-type-id="text-editor" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/07-img/02-img.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="242">
               <caret line="11" column="28" selection-start-line="11" selection-start-column="28" selection-end-line="11" selection-end-column="28" />
             </state>
           </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/25-CSS特性/02-CSS属性的优先级_03.html">
-          <provider selected="true" editor-type-id="text-editor" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/25-CSS特性/02-CSS属性的优先级_02.html">
-          <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
     </leaf>
@@ -143,6 +150,7 @@
         <option value="$PROJECT_DIR$/017-标签语义化/01-标签语义化.html" />
         <option value="$PROJECT_DIR$/18-初识CSS/05-@import.html" />
         <option value="$PROJECT_DIR$/20-CSS属性-字体/03-@font-face.html" />
+        <option value="$PROJECT_DIR$/29-元素类型/04-display-练习.html" />
       </list>
     </option>
   </component>
@@ -164,11 +172,6 @@
             <path>
               <item name="html+css" type="b2602c69:ProjectViewProjectNode" />
               <item name="html+css" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="html+css" type="b2602c69:ProjectViewProjectNode" />
-              <item name="html+css" type="462c0819:PsiDirectoryNode" />
-              <item name="28-表单" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="html+css" type="b2602c69:ProjectViewProjectNode" />
@@ -226,12 +229,12 @@
       <workItem from="1558674529399" duration="7779000" />
       <workItem from="1558942718529" duration="1657000" />
       <workItem from="1558946406073" duration="1531000" />
-      <workItem from="1559008535257" duration="4595000" />
+      <workItem from="1559008535257" duration="6961000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="27525000" />
+    <option name="totallyTimeSpent" value="29891000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1680" height="1050" extended-state="0" />
@@ -279,12 +282,6 @@
     <option name="version" value="1" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/016-URL/01-URL.html" />
-    <entry file="file://$PROJECT_DIR$/007-img/02-img.html" />
-    <entry file="file://$PROJECT_DIR$/007-img/01-img.html" />
-    <entry file="file://$PROJECT_DIR$/006-br/01-br.html" />
-    <entry file="file://$USER_HOME$/Downloads/day02资料/代码/15-标签语义化.html" />
-    <entry file="file://$PROJECT_DIR$/017-标签语义化/01-标签语义化.html" />
     <entry file="file://$PROJECT_DIR$/013-锚点链接/01-锚点链接.html" />
     <entry file="file://$PROJECT_DIR$/013-锚点链接/02-锚点链接.html" />
     <entry file="file://$PROJECT_DIR$/018-初识CSS/07-结构-样式分离.html" />
@@ -459,8 +456,42 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/28-表单/04-hidden.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="26" lean-forward="true" selection-start-line="26" selection-end-line="26" />
+        <state relative-caret-position="449">
+          <caret line="48" column="10" lean-forward="true" selection-start-line="48" selection-start-column="10" selection-end-line="48" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/29-元素类型/01-元素类型.html">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/00-自学项目/mobile/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="264">
+          <caret line="12" column="29" lean-forward="true" selection-start-line="12" selection-start-column="29" selection-end-line="12" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/00-自学项目/fullpage2/js/index.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/29-元素类型/02-元素类型总结.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-123">
+          <caret line="26" column="26" lean-forward="true" selection-start-line="26" selection-start-column="26" selection-end-line="26" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/00-自学项目/fullpage/js/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="308">
+          <caret line="14" column="28" lean-forward="true" selection-start-line="14" selection-start-column="28" selection-end-line="14" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/29-元素类型/04-display-练习.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="208">
+          <caret line="12" column="23" selection-start-line="12" selection-start-column="23" selection-end-line="12" selection-end-column="23" />
         </state>
       </provider>
     </entry>
