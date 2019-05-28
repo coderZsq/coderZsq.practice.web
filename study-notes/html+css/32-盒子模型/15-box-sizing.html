@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>15-box-sizing</title>
+    <style>
+        /** {
+            box-sizing: border-box;
+        }*/
+
+        div {
+            width: 150px;
+            height: 150px;
+            background-color: #f00;
+            padding: 10px;
+            border: 5px solid #ff0;
+
+            /* box-sizing：用来控制width、height的含义
+             1.content-box：width、height不包括padding和border
+
+             2.border-box：width、height包括padding和border
+             */
+            /*box-sizing: border-box;*/
+        }
+    </style>
+</head>
+<body>
+
+<div>我是div</div>
+
+</body>
+</html>

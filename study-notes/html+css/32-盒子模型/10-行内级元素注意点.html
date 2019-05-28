@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>10-行内级元素注意点</title>
+    <style>
+        /*
+        行内级非替换元素
+        1.不支持width、height、margin-top、margin-bottom
+        */
+        span {
+            background-color: #f00;
+            margin-top: 40px;
+            margin-bottom: 50px;
+            margin-left: 40px;
+        }
+
+        /*
+        行内级替换元素、inline-block元素、块级元素
+        1.支持width、height、margin-top、margin-bottom
+        */
+        img {
+            width: 100px;
+            height: 100px;
+            margin-top: 40px;
+            margin-bottom: 50px;
+        }
+
+        div {
+            background-color: #0f0;
+            width: 100px;
+            padding-top: 40px;
+            padding-bottom: 40px;
+        }
+    </style>
+</head>
+<body>
+
+<span>54354</span>
+<br>666
+<img src="images/2.gif" alt="">
+
+<div>1111</div>
+777
+
+</body>
+</html>

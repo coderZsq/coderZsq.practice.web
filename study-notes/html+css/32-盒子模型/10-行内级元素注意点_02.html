@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>10-行内级元素注意点</title>
+    <style>
+        /*
+        行内级非替换元素
+        1.不支持width、height、margin-top、margin-bottom
+        2.pading-top、padding-bottom、border-top、border-bottom的效果比较特殊
+        */
+        span {
+            background-color: #f00;
+            border: 10px solid yellow;
+            /*padding-top: 10px;
+            padding-bottom: 10px;
+            padding-left: 20px;
+            padding-right: 20px;*/
+        }
+
+        /*
+        行内级替换元素、inline-block元素、块级元素
+        1.支持width、height、margin-top、margin-bottom
+        2.支持pading-top、padding-bottom
+        */
+        div {
+            background-color: #0f0;
+            width: 100px;
+            border: 5px solid yellow;
+            /*padding-top: 40px;
+            padding-bottom: 40px;*/
+        }
+    </style>
+</head>
+<body>
+
+<span>54354</span> 888<br>
+6666
+<div>1111</div>
+7777
+
+</body>
+</html>

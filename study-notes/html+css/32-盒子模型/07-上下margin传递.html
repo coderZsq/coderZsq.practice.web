@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>07-上下margin传递</title>
+    <style>
+        .div1 {
+            width: 200px;
+            height: 200px;
+            background-color: #f00;
+            /*padding-top: 40px;*/
+            /*padding-top: 1px;*/
+            /*border: 1px solid #000;*/
+        }
+
+        .div2 {
+            width: 100px;
+            height: 100px;
+            background-color: #0f0;
+            margin-top: 40px;
+        }
+    </style>
+</head>
+<body>
+
+<!--
+解决上下margin传递问题
+1.给父元素或者子元素设置display: inline-block
+2.给父元素padding-top或者padding-bottom
+3.给父元素设置border
+-->
+
+<div class="div1">
+    <div class="div2"></div>
+</div>
+
+</body>
+</html>

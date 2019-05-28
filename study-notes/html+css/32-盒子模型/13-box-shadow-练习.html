@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>13-box-shadow-练习</title>
+    <style>
+        body {
+            padding-left: 100px;
+            padding-top: 50px;
+        }
+
+        .box {
+            width: 400px;
+            height: 500px;
+            border: 1px solid #d7d8d9;
+            transition: all .3s;
+            /*transform: rotate();*/
+        }
+
+        .box:hover {
+            box-shadow: 0 0 25px rgba(0, 193, 222, .5);
+            border-color: #00c1de;
+        }
+        
+        .box:hover .title {
+            background-color: #00c1de;
+            color: #fff;
+        }
+        
+        .title {
+            background-color: #d7d8d9;
+            height: 150px;
+            line-height: 150px;
+            margin: 0;
+            text-align: center;
+            font-size: 30px;
+            /*transition: all 1s;*/
+        }
+    </style>
+</head>
+<body>
+
+<div class="box">
+    <h3 class="title">更多设置</h3>
+</div>
+
+</body>
+</html>

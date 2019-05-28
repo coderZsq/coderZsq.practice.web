@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>17-水平居中</title>
+    <style>
+        span {
+            background-color: #0f0;
+        }
+
+        img {
+            width: 50px;
+            height: 50px;
+        }
+
+        strong {
+            display: inline-block;
+            width: 50px;
+            height: 50px;
+            background-color: #ff0;
+            text-align: right;
+        }
+
+        div {
+            background-color: #f00;
+            width: 200px;
+            height: 100px;
+            /* 让元素的内容在元素里面水平居中 */
+            text-align: center;
+        }
+
+        /*
+        1.行内级元素、inline-block元素想要在父元素中水平居中：
+        请给父元素设置text-align: center;
+
+        2.块级元素想要在父元素中水平居中：
+        请给这个块级元素自己设置
+        1> margin-left: auto;
+        2> margin-right: auto;
+        */
+
+        p {
+            background-color: #ff0;
+            width: 50px;
+            height: 50px;
+            /*margin-left: auto;
+            margin-right: auto;*/
+            margin: 40px auto;
+        }
+    </style>
+</head>
+<body>
+
+<!--<div>
+    <span>我是span</span>
+</div>-->
+
+<!--<div>
+    <img src="images/2.gif" alt="">
+</div>-->
+
+<div>
+    <strong><span>1</span></strong>
+</div>
+
+<!--<div>
+    <p></p>
+</div>-->
+
+</body>
+</html>
