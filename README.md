@@ -3,7 +3,7 @@
 ### resume
 > Practice a **web version** of resume, please **feel free** to connect me!
 
-##### Get Started
+#### Get Started
 
 - This part of project is base on the server, So you need to clone [resume for server](https://github.com/coderZsq/coderZsq.practice.server/tree/master/resume) 
 - Then, you need a [node](https://nodejs.org/en/) server environment
@@ -18,12 +18,12 @@ $ cd react-resume
 $ npm start
 ```
 
-##### Content
+#### Content
 
 - **vue-resume:** **Static web pages** implemented using **vue** and deployed to **github-pages**.
 - **react-resume:** **Responsive web pages** implemented using **react** and interact with the server.
 
-##### Display
+#### Display
 
 <img src="./resume/contents/img1.png">
 <img src="./resume/contents/img2.png">
@@ -31,7 +31,7 @@ $ npm start
 
 Now you can open the [website](https://coderzsq.github.io/coderZsq.practice.web/#/) directly to experience and contact me!
 
-##### Artical
+#### Artical
 
 - [Web 是时候用前端写个简历了! / 2017 / 07](https://coderzsq.github.io/2017/07/Web-%E6%98%AF%E6%97%B6%E5%80%99%E7%94%A8%E5%89%8D%E7%AB%AF%E5%86%99%E4%B8%AA%E7%AE%80%E5%8E%86%E4%BA%86!/)
 - [Web 前端项目要从基本布局开始 / 2017 / 07](https://coderzsq.github.io/2017/07/Web-%E5%89%8D%E7%AB%AF%E9%A1%B9%E7%9B%AE%E8%A6%81%E4%BB%8E%E5%9F%BA%E6%9C%AC%E5%B8%83%E5%B1%80%E5%BC%80%E5%A7%8B/)

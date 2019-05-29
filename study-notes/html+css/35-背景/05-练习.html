@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>05-练习</title>
+    <style>
+        /*div {
+            text-align: center;
+            width: 400px;
+            height: 50px;
+            background-color: #0ff;
+        }*/
+
+        div {
+            margin-bottom: 50px;
+        }
+
+        .baidu {
+            /*width: 400px;*/
+            height: 50px;
+            background-color: #3E98F0;
+            background-image: url("images/bg-news-logo.png");
+            background-size: auto 30px;
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+
+        .car {
+            background-image: url("images/car.png");
+            background-repeat: no-repeat;
+            background-color: #0f0;
+            background-position: center top;
+            width: 100px;
+            text-align: center;
+            /* padding不会影响背景图片的位置 */
+            padding-top: 20px;
+        }
+        
+        .jd {
+            background-color: #aaa;
+            background-image: url("images/jd-icon.png");
+            background-repeat: no-repeat;
+            height: 50px;
+            line-height: 50px;
+            background-size: auto 40px;
+            background-position: left;
+            padding-left: 45px;
+        }
+
+        /*.slider {
+            width: 100px;
+            height: 32px;
+            background-image: url("images/btn-left.png"), url("images/btn-right.png");
+            background-repeat: no-repeat;
+            !*background-repeat: no-repeat, no-repeat;*!
+            background-size: auto 32px;
+            !*background-size: auto 32px, auto 32px;*!
+            background-position: left, right;
+            !*background-position: left center, right center;*!
+            padding: 0 17px;
+        }*/
+
+        .slider {
+            width: 100px;
+            height: 32px;
+            padding: 0 17px;
+            /*background-image: url("images/btn-left.png"), url("images/btn-right.png");
+            background-repeat: no-repeat, no-repeat;
+            background-size: auto 32px, auto 32px;
+            background-position: left center, right center;*/
+
+            /*background: url("images/btn-left.png") no-repeat left center/auto 32px,
+                        url("images/btn-right.png") no-repeat right center/auto 32px;*/
+
+            background: url("images/btn-left.png") left,
+                        url("images/btn-right.png") right;
+            background-repeat: no-repeat;
+            background-size: auto 32px;
+        }
+
+        .slider button {
+            border: none;
+            outline: none;
+            color: #fff;
+            display: block;
+            width: 100%;
+            height: 100%;
+            background-color: transparent;
+            background-image: url("images/btn-center.png");
+            background-size: auto 32px;
+            background-repeat: repeat-x;
+        }
+    </style>
+</head>
+<body>
+
+<div class="baidu"></div>
+
+<div class="car">微型车</div>
+
+<div class="jd">天天低价，天天低价</div>
+
+<div class="slider">
+    <button type="button">按钮</button>
+</div>
+
+<!--<div>
+    <img src="images/bg-news-logo.png" alt="">
+</div>-->
+
+</body>
+</html>

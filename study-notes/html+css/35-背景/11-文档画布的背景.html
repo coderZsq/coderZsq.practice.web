@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>11-文档画布的背景</title>
+    <style>
+        body {
+            background-color: #f00;
+        }
+
+        div {
+            background-color: #ff0;
+            width: 100px;
+        }
+
+        div::first-line {
+            background-color: #0f0;
+        }
+
+        div:hover {
+            /*cursor: pointer;*/
+            cursor: url("images/heart.gif") 10 10, pointer;
+        }
+
+        span {
+            /*cursor: none;*/
+        }
+    </style>
+</head>
+<body>
+
+<div>我是div我是div我是div我是div我是div我是div我是div我是div</div>
+
+<input type="text">
+
+<span>123123</span>
+
+</body>
+</html>
