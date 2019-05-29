@@ -1,7 +1,7 @@
 ## Find inspiration in practice
 
 ### resume
-> Practice a `web version` of resume, please `feel free` to connect me!
+> Practice a **web version** of resume, please **feel free** to connect me!
 
 ##### Get Started
 
@@ -20,8 +20,8 @@ $ npm start
 
 ##### Content
 
-- `vue-resume` >>> `Static web pages` implemented using `vue` and deployed to `github-pages`.
-- `react-resume` >>> `Responsive web pages` implemented using `react` and interact with the server.
+- **vue-resume:** **Static web pages** implemented using **vue** and deployed to **github-pages**.
+- **react-resume:** **Responsive web pages** implemented using **react** and interact with the server.
 
 ##### Display
 
