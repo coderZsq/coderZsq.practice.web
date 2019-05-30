@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>08-子绝父相</title>
+    <style>
+        .car {
+            background-color: #ff0;
+            width: 50px;
+            height: 50px;
+        }
+        
+        .number {
+            background-color: #f00;
+            position: absolute;
+            top: -5px;
+            right: 0;
+        }
+
+        .buy-car {
+            background-color: #0f0;
+            width: 70px;
+            height: 70px;
+
+            /* 让.buy-car元素成为定位元素 */
+            position: relative;
+
+            margin-top: 180px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="buy-car">
+    <div class="car">车子</div>
+    <div class="number">数字</div>
+</div>
+
+</body>
+</html>

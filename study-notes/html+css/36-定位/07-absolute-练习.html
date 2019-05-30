@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>07-absolute-练习</title>
+    <style>
+        /* 电影 */
+        .movie {
+            position: relative;
+            width: 267px;
+            cursor: pointer;
+        }
+
+        .movie .imax, .movie .buy {
+            position: absolute;
+        }
+
+        .movie .imax {
+            left: -5px;
+            top: 10px;
+            height: 20px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+        }
+
+        .movie .buy {
+            color: #fff;
+            background-color: #f00;
+            text-decoration: none;
+            border-radius: 20px;
+            text-align: center;
+            padding: 2px 10px;
+            right: 10px;
+            bottom: 15px;
+        }
+
+        /* 蒙版、遮盖 */
+        .card {
+            width: 300px;
+            position: relative;
+        }
+
+        .card:hover .cover {
+            display: block;
+        }
+
+        .card .cover {
+            display: none;
+            background-color: rgba(0, 0, 0, 0.5);
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        .card .cover .download {
+            text-decoration: none;
+            color: #fff;
+            border: 1px solid #fff;
+            position: absolute;
+            width: 70px;
+            height: 25px;
+            text-align: center;
+            top: 200px;
+            /* 在父元素中水平居中 */
+            margin-left: -35px;
+            left: 50%;
+        }
+
+        /* 下载APP */
+        .download-app {
+            position: relative;
+            color: #000;
+            text-decoration: none;
+            width: 100px;
+            height: 25px;
+            line-height: 25px;
+            display: inline-block;
+            text-align: center;
+            margin-left: 100px;
+            /*background-color: #ff0;*/
+        }
+
+        .download-app:hover .code {
+            display: inline;
+        }
+
+        .download-app .code {
+            display: none;
+            border: 1px solid #ddd;
+            position: absolute;
+            top: 100%; /* 100% * 父元素的高度 */
+            left: -73px;
+            margin-left: 50%; /* 50% * 父元素的宽度 */
+            z-index: 10;
+        }
+    </style>
+</head>
+<body>
+
+<!-- 下载APP -->
+<a href="#" class="download-app">
+    下载APP
+    <div>
+        <img src="images/code.png" alt="" class="code">
+    </div>
+</a>
+
+<!-- 电影 -->
+<div class="movie">
+    <img src="images/movie.jpg" alt="">
+    <img class="imax" src="images/imax.png" alt="">
+    <a href="#" class="buy">预售</a>
+</div>
+
+<!-- 蒙版、遮盖 -->
+<div class="card">
+    <!-- 图片 -->
+    <img src="images/cover.jpg" alt="">
+
+    <!-- 遮盖 -->
+    <div class="cover">
+        <a href="#" class="download">下载</a>
+    </div>
+</div>
+
+
+<br><br><br><br><br><br>
+<br><br><br><br><br><br>
+<br><br><br><br><br><br>
+<br><br><br><br><br><br>
+<br><br><br><br><br><br>
+<br><br><br><br><br><br>
+
+</body>
+</html>

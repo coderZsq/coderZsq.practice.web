@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>02-float-rule_01</title>
+    <style>
+        p {
+            width: 400px;
+            height: 400px;
+            border: 1px solid #000;
+            /*line-height: 40px;*/
+        }
+        
+        span {
+            background-color: #0f0;
+            /*height: 20px;*/
+            /*line-height: 20px;*/
+            float: left;
+            display: inline-block;
+            height: 40px;
+        }
+
+        strong {
+            background-color: #f00;
+        }
+    </style>
+</head>
+<body>
+
+<!--
+浮动元素不能与行内级内容层叠，行内级内容将会被浮动元素推出
+比如行内级元素、inline-block元素、块级元素的文字内容
+-->
+
+<p>
+    我是中国人。我是中国人。我是中国人。我是中国人。
+    我是中国人。我是中国人<img src="images/imax.png">。我是<span>中国</span><strong>人。我是中国人</strong>。
+    我是中国人。我是中国人。我是中国人。我是中国人。
+    我是中国人。我是中国人。我是中国人。我是中国人。
+    我是中国人。我是中国人。我是中国人。我是中国人。
+    我是中国人。我是中国人。我是中国人。我是中国人。
+    我是中国人。我是中国人。我是中国人。我是中国人。
+</p>
+
+</body>
+</html>

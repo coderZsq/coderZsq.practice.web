@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>07-清浮动_06</title>
+    <style>
+        .container {
+            width: 300px;
+            border: 1px solid #000;
+        }
+
+        .box1, .box2 {
+            width: 100px;
+            height: 100px;
+        }
+
+        .box1 {
+            background-color: #ff0;
+            float: left;
+        }
+
+        .box2 {
+            background-color: #f0f;
+            float: right;
+        }
+
+        .footer {
+            /*height: 0;*/
+            /*background-color: #0f0;*/
+            clear: both;
+        }
+    </style>
+</head>
+<body>
+
+<!-- 在父元素最后增加一个空的块级子元素，并且让它设置clear: both -->
+
+<div class="container">
+    <div class="box1"></div>
+    <div class="box2"></div>
+    <div class="footer"></div>
+</div>
+<strong>123123213</strong>
+
+</body>
+</html>

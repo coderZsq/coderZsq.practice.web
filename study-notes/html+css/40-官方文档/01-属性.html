@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>01-属性</title>
+    <style>
+        div {
+            text-align: right;
+            background: no-repeat  #000;
+            font: 20px Consolas;
+            style: d1 d3 d4 d2;
+            text-decoration: underline  line-through overline;
+            font-family: "微软雅黑", Arial, Colsolas, "宋体";
+            style: d1 d2 d2 d2 d2;
+        }
+
+        div::before {
+            content: "[" attr(href) "]" "43243";
+            margin: 10px 20px 30px 40px;
+            transition: all 1s;
+        }
+    </style>
+</head>
+<body>
+
+font-family
+字体名称#
+
+font-family: 字体名称,字体名称,字体名称
+
+style
+d1 d2
+
+content
+<string>+
+
+font-family
+字体名称 [, 字体名称]*
+
+style
+d1 || d2*
+
+my
+a  b  |  c  ||  d  &&  e  f
+
+
+text-decoration
+none | [ underline || overline || line-through || blink ] | inherit
+
+none | ABC | inherit
+ABC = [ underline || overline || line-through || blink ]
+
+font
+'font-size' 'font-family'
+
+style
+d1 && d2 && d3 && d4
+
+background
+'background-color' || 'background-image' || 'background-repeat' || 'background-attachment' || 'background-position'
+
+text-align
+left | right | center | justify | inherit
+</body>
+</html>

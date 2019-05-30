@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>10-z-index</title>
+    <style>
+        .div1, .div2 {
+            width: 300px;
+            height: 300px;
+        }
+
+        .div1 {
+            background-color: #f00;
+        }
+
+        .div2 {
+            background-color: #0f0;
+        }
+
+        .div111, .div222 {
+            width: 100px;
+            height: 100px;
+            position: absolute;
+        }
+
+        .div111 {
+            background-color: #ff0;
+            z-index: 201;
+            top: 100px;
+        }
+
+        .div222 {
+            background-color: #0ff;
+            left: 50px;
+            top: -150px;
+            z-index: 100;
+        }
+
+        .div2 {
+            position: relative;
+            z-index: 201;
+        }
+</style>
+</head>
+<body>
+
+<div class="div1">
+    <div class="div11">
+        <div class="div111"></div> <!-- 201 -->
+    </div>
+</div>
+
+<div class="div2"> <!-- 201 -->
+    <div class="div22">
+        <div class="div222"></div> <!-- 100 -->
+    </div>
+</div>
+
+</body>
+</html>

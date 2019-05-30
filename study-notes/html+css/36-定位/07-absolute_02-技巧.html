@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>07-absolute_02-技巧</title>
+    <style>
+        .box {
+            position: relative;
+            width: 400px;
+            height: 400px;
+            background-color: #f00;
+        }
+        
+        /*.child {
+            position: absolute;
+            background-color: #0f0;
+            !* 可以保证.child和.box宽高一致 *!
+            left: 0;
+            right: 0;
+            top: 0;
+            bottom: 0;
+            margin: 0;
+        }*/
+
+        .child {
+            position: absolute;
+            background-color: #0f0;
+            width: 50px;
+            height: 50px;
+
+            /*!* 水平居中 *!
+            margin-left: auto;
+            margin-right: auto;
+            left: 0;
+            right: 0;
+
+            !* 垂直居中 *!
+            margin-top: auto;
+            margin-bottom: auto;
+            top: 0;
+            bottom: 0;*/
+
+            /* 水平-垂直居中 */
+            margin: auto;
+            left: 0;
+            top: 0;
+            right: 0;
+            bottom: 0;
+        }
+    </style>
+</head>
+<body>
+
+<!--
+box的宽度 = m-left + left + m-right + right + width
+box的高度 = m-top + top + m-bottom + bottom + height
+box的宽度 = 0 + 0 + 0 + 0 + width
+box的高度 = 0 + 0 + 0 + 0 + height
+
+
+400px = auto + 0 + auto + 0 + 50px
+
+400px = auto + 0 + auto + 0 + 40px
+-->
+
+<div class="box">
+    <div class="child"></div>
+</div>
+
+</body>
+</html>

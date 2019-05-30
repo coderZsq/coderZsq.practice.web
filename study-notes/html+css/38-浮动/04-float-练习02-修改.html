@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>04-float-练习02-修改</title>
+    <link rel="stylesheet" href="css/clear-fix.css">
+    <style>
+        /* 重置样式 - CSS Reset */
+        ul, li, h2 {
+            margin: 0;
+            padding: 0;
+        }
+
+        li {
+            list-style: none;
+        }
+
+        a {
+            color: #000;
+            text-decoration: none;
+        }
+
+        /* 练习相关样式 */
+        a:hover {
+            color: #35b5ff;
+        }
+
+        .container {
+            width: 700px;
+            border: 1px solid #000;
+            margin: 0 auto;
+        }
+
+        .container h2 {
+            float: left;
+            font-size: 30px;
+            line-height: 30px;
+            font-weight: 400;
+        }
+
+        .container ul {
+            float: left;
+            margin-top: 10px;
+            margin-left: 20px;
+        }
+
+        .container li {
+            float: left;
+            font-size: 16px;
+            margin-right: 15px;
+        }
+
+        .container li::after {
+            /*
+            1> ::before和::after的content属性不能缺少
+            2> ::before和::after的display默认是inline，可以把::before和::after当做是span元素
+            3> 可以使用::before和::after来使用取代子元素
+            4> 由于::before和::after是CSS样式，所以可有可无的内容才使用::before和::after
+             */
+            content: "";
+            display: none;
+            background-color: #35b5ff;
+            height: 2px;
+            width: 15px;
+            margin: 2px auto 0;
+            border-radius: 5px;
+        }
+
+        .container li:hover::after {
+            display: block;
+        }
+
+        .container .rank {
+            float: right;
+            line-height: 30px;
+            font-size: 13px;
+            /*background: url("images/ico_6b3106e.png") no-repeat 0 -146px;
+            background-color: #f00;*/
+        }
+
+        .container .rank::before {
+            content: "";
+            float: left;
+            margin-top: 8px;
+            margin-right: 5px;
+            width: 15px;
+            height: 15px;
+            background: url("images/ico_6b3106e.png") no-repeat 0 -146px;
+        }
+
+        .container .rank:hover::before {
+            /*background: url("images/ico_6b3106e.png") no-repeat -20px -146px;*/
+            background-position: -20px -146px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container clear-fix">
+    <h2><a href="#">剧集 &gt;</a></h2>
+    <ul>
+        <li>
+            <a href="#">最新</a>
+        </li>
+        <li>
+            <a href="#">大陆剧</a>
+        </li>
+        <li>
+            <a href="#">英美剧</a>
+        </li>
+        <li>
+            <a href="#">港台剧</a>
+        </li>
+    </ul>
+    <a href="#" class="rank">剧集排行</a>
+</div>
+
+</body>
+</html>

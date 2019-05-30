@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>02-float-rule_01-练习</title>
+    <style>
+        .container {
+            width: 400px;
+            height: 400px;
+            border: 1px solid #000;
+            padding: 5px;
+        }
+        
+        img {
+            float: left;
+            margin-right: 15px;
+        }
+    </style>
+</head>
+<body>
+
+<!--
+浮动元素不能与行内级内容层叠，行内级内容将会被浮动元素推出
+比如行内级元素、inline-block元素、块级元素的文字内容
+-->
+
+<div class="container">
+    <img src="images/musk.jpg" alt="">
+    埃隆·马斯克本科毕业于宾夕法尼亚大学，获经济学和物理学双学位。[4] 1995年至2000年，埃隆·马斯克与合伙人先后创办了三家公司，分别是在线内容出版软件“Zip2”、电子支付“X.com”、国际贸易支付工具“PayPal”。[5] 2002年6月，埃隆·马斯克投资1亿美元创办美国太空探索技术公司，出任首席执行官兼首席技术官。[4] 2004年，埃隆·马斯克向特斯拉汽车公司投资630万美元，出任该公司董事长。[6] 2006年，埃隆·马斯克投资1000万美元与合伙人联合创办了光伏发电企业太阳城公司。
+</div>
+
+</body>
+</html>

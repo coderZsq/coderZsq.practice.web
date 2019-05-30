@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>07-absolute</title>
+    <style>
+        .d1 {
+            width: 500px;
+            height: 500px;
+            background-color: #f00;
+        }
+
+        .d2 {
+            width: 350px;
+            height: 350px;
+            background-color: #0f0;
+            position: relative;
+        }
+
+        .d3 {
+            width: 200px;
+            height: 200px;
+            background-color: #00f;
+        }
+
+        .d4 {
+            width: 100px;
+            height: 100px;
+            background-color: #ff0;
+            position: absolute;
+            right: 0;
+            bottom: 0;
+        }
+
+        /*
+        relative : 参照元素自己原来的位置，不脱标
+        fixed : 参照视口，脱标
+        absolute : 参照最邻近的定位祖先元素（如果找不到这样的祖先元素，那就参照视口），脱标
+        */
+    </style>
+</head>
+<body>
+
+<!--
+d1\d2\d3都是d4的祖先元素
+
+定位元素：
+1.position不为static的元素
+2.position必须为relative、fixed、absolute的其中一值
+ -->
+<div class="d1">
+    <div class="d2">
+        <div class="d3">
+            <div class="d4"></div>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

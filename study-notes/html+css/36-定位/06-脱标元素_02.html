@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>06-脱标元素_02</title>
+    <style>
+        .parent {
+            width: 200px;
+            border: 1px solid #000;
+        }
+
+        .parent div {
+            width: 100px;
+            height: 100px;
+        }
+
+        .parent .child1 {
+            background-color: #f00;
+            position: fixed;
+            top: 150px;
+        }
+
+        .parent .child2 {
+            background-color: #0f0;
+        }
+    </style>
+</head>
+<body>
+
+<div class="parent">
+    <div class="child1">
+        <span style="position: fixed">123</span>
+        <strong>strong</strong>
+        <p>ppp</p>
+    </div>
+    <div class="child2"></div>
+    123
+</div>
+
+</body>
+</html>

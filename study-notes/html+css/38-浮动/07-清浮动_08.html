@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>07-清浮动_08</title>
+    <style>
+        .container {
+            width: 300px;
+            border: 1px solid #000;
+        }
+
+        /* 适用于现在流行的所有浏览器 */
+        /*.container::after {
+            content: "";
+            display: block;
+            clear: both;
+        }*/
+
+        /* 为了适配以前的旧浏览器，还需要这么写 */
+        .container::after {
+            content: "";
+            display: block;
+            clear: both;
+            height: 0;
+            visibility: hidden;
+        }
+
+        .container {
+            *zoom: 1;
+        }
+
+        .box1, .box2 {
+            width: 100px;
+            height: 100px;
+        }
+
+        .box1 {
+            background-color: #ff0;
+            float: left;
+        }
+
+        .box2 {
+            background-color: #f0f;
+            float: right;
+        }
+    </style>
+</head>
+<body>
+
+<!--
+最好的解决方案：
+1.不要带有副作用（不要去修改元素的类型）
+2.要有扩展性
+3.纯CSS实现（不违反结构与样式分离的原则）
+-->
+
+<div class="container">
+    <div class="box1"></div>
+    <div class="box2"></div>
+</div>
+<strong>123123213</strong>
+
+</body>
+</html>

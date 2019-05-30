@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>05-before-after</title>
+    <style>
+        .buy-car {
+            width: 75px;
+            height: 75px;
+            background-color: #f00;
+            margin: 100px auto;
+            position: relative;
+        }
+        
+        /* 车子 - 伪元素 */
+        .buy-car::before {
+            content: "";
+            width: 50px;
+            height: 50px;
+            background-color: #ff0;
+            position: absolute;
+            left: 0;
+            bottom: 0;
+        }
+        
+        /* 数字 */
+        .buy-car::after {
+            content: "";
+            width: 50px;
+            height: 50px;
+            background-color: #f0f;
+            position: absolute;
+            right: 0;
+            top: 0;
+        }
+    </style>
+</head>
+<body>
+
+<div class="buy-car"></div>
+
+</body>
+</html>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>02-float-rule_02-其他</title><style>
+    .parent {
+        width: 900px;
+        border: 1px solid #000;
+        height: 600px;
+        margin: 0 auto;
+    }
+
+    .child {
+        width: 300px;
+    }
+
+    .first {
+        height: 100px;
+        background: red;
+        float: left;
+    }
+
+    .second {
+        height: 70px;
+        background: yellow;
+        float: right;
+    }
+
+    .third {
+        height: 85px;
+        background: mediumpurple;
+        float: left;
+    }
+
+    .fourth {
+        height: 100px;
+        background: lightgreen;
+        float: right;
+    }
+
+    .fifth {
+        height: 90px;
+        background: skyblue;
+        float: left;
+    }
+</style>
+</head>
+<body>
+
+<!--
+浮动元素之间不能层叠
+如果一个元素浮动，另一个浮动元素已经在那个位置了，后浮动的元素将紧贴着前一个浮动元素
+如果水平方向剩余的空间不够显示浮动元素，浮动元素将向下移动，直到有充足的空间为止
+-->
+
+<div class="parent">
+    <div class="child first">111-left</div>
+    <div class="child second">222-right</div>
+    <div class="child third">333-left</div>
+    <div class="child fourth">444-right</div>
+    <div class="child fifth">555-left</div>
+</div>
+
+
+</body>
+</html>

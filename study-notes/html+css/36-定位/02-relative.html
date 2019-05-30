@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>02-relative</title>
+    <style>
+        div {
+            width: 100px;
+            height: 100px;
+        }
+
+        .div1 {
+            background-color: #f00;
+            /*margin-bottom: 30px;*/
+        }
+
+        .div2 {
+            background-color: #0f0;
+            /* 让.div2可以进行相对定位
+            1.设置position: relative;
+            2.相对定位的参照对象：元素自己原来的位置
+            3.通过left、right、top、bottom对元素进行精确的定位
+            4.进行相对定位的元素还在标准流当中（原来占据的空间还在）
+            */
+            margin-top: 50px;
+            position: relative;
+            left: 50px;
+            top: 50px;
+
+            /*left: -30px;
+            top: -40px;*/
+
+            /*right: 10px;
+            bottom: 40px;*/
+
+            /*right: -10px;
+            bottom: -10px;*/
+
+            /*left: -10px;
+            top: -40px;*/
+        }
+
+        .div3 {
+            background-color: #00f;
+        }
+    </style>
+</head>
+<body>
+
+<div class="div1">div1</div>
+<div class="div2">div2</div>
+<div class="div3">div3</div>
+
+</body>
+</html>

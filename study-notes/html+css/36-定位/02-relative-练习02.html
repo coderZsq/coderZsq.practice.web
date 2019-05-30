@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>02-relative-练习02</title>
+    <style>
+        body {
+            margin: 0;
+        }
+
+        div {
+            /* 超出元素边界范围的内容直接消失 */
+            overflow: hidden;
+            min-width: 1100px;
+        }
+
+        img {
+            position: relative;
+            /* 图片宽度的一半 - div宽度的一半
+             1920*0.5 - 1280*0.5 = (1920-1280)*0.5 = 320
+             */
+
+            /* 包含块（containing block）一般都是父元素 */
+            /*left: -50%; !* 50% * 包含块的宽度 = 50% * 1280 = 640px *!*!
+
+            !*
+            希望图片向左移动的距离：
+            = 图片宽度*0.5 – div宽度*0.5
+            = 960px – div宽度*0.5
+
+            最终的方案：
+            1.往左边移动图片宽度的一半
+            1> margin-left: -960px
+            2> left: -960px
+
+            2.往右边移动div元素宽度的一半
+            1> left: 50%
+            2> margin-left: 50%
+            *!
+            !*margin-left: -960px;
+            left: 50%;*/
+            margin-left: 50%;
+            left: -960px;
+        }
+
+        /*div {
+            width: 400px;
+            background-color: #ff0;
+            text-align: center;
+        }
+
+        img {
+            width: 200px;
+        }*/
+    </style>
+</head>
+<body>
+
+<div>
+    <img src="images/mhxy.jpg" alt="">
+</div>
+
+</body>
+</html>
