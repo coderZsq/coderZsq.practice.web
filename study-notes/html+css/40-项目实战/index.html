@@ -1,6 +1,6 @@
 <!DOCTYPE html>
-<html lang="zh">
-<head>
+<html>
+<head lang="zh">
     <meta charset="UTF-8">
     <title>网易严选 - 以严谨的态度，为中国消费者甄选天下优品</title>
     <link rel="icon" href="images/favicon.ico">
@@ -10,23 +10,11 @@
 </head>
 <body>
 
-<!--<header></header>
-
-<article>
-    <section></section>
-    <section></section>
-    <section></section>
-    <section></section>
-    <section></section>
-</article>
-
-<footer></footer>-->
-
-<div id="header">
-    <div class="site-nav">
+<header>
+    <nav class="site-nav">
         <div class="row">
             <div class="left">
-                <a href="#" class="slogan">好的生活，没那么贵</a>
+                <a href="#" class="slogan item">好的生活，没那么贵</a>
                 <div class="notice-list">
                     <ul>
                         <li><a href="#">【福利】领1000元APP新人礼></a></li>
@@ -40,37 +28,34 @@
             <div class="right">
                 <a href="#" class="item login">登录</a>
                 <a href="#" class="item">注册</a>
-                <i class="divider"></i>
+                <span class="divider"></span>
                 <a href="#" class="item">我的订单</a>
-                <i class="divider"></i>
+                <span class="divider"></span>
                 <a href="#" class="item">严选会员</a>
-                <i class="divider"></i>
+                <span class="divider"></span>
                 <a href="#" class="item">企业采购</a>
-                <i class="divider"></i>
+                <span class="divider"></span>
                 <a href="#" class="item service">客户服务</a>
-                <i class="divider"></i>
+                <span class="divider"></span>
                 <a href="#" class="item download-app">下载APP</a>
             </div>
         </div>
-    </div>
-
-    <div class="func-nav">
+    </nav>
+    <nav class="func-nav">
         <div class="row">
             <h1 class="logo cmp"><a href="#">网易严选</a></h1>
-
+            <a class="buy-car" href="#">
+                <i class="car cmp"></i>
+                <i class="count cmp">0</i>
+            </a>
             <div class="search">
                 <input type="text">
-                <span class="placeholder">男士羽绒服牛仔裤冬靴一套仅739元</span>
+                <span class="keyword">男士羽绒服牛仔裤冬靴一套仅739元</span>
                 <i class="button cmp"></i>
             </div>
 
-            <a href="#" class="buy-car">
-                <i class="car cmp"></i>
-                <i class="count cmp">9</i>
-            </a>
-
             <ul class="tab-nav">
-                <li class="item active"><a href="#">首页</a></li>
+                <li class="active item"><a href="#">首页</a></li>
                 <li class="item"><a href="#">居家</a></li>
                 <li class="item"><a href="#">餐厨</a></li>
                 <li class="item"><a href="#">配件</a></li>
@@ -86,17 +71,17 @@
                 <li class="item"><a href="#">甄选家</a></li>
             </ul>
         </div>
-    </div>
-</div>
+    </nav>
+</header>
 
-<div id="main">
-    <div class="slider">
+<article>
+    <section class="slider">
         <ul class="image-list">
-            <li><a href="#"><img src="images/slider_05.jpg" alt=""></a></li>
-            <li><a href="#"><img src="images/slider_04.jpg" alt=""></a></li>
-            <li><a href="#"><img src="images/slider_03.jpg" alt=""></a></li>
-            <li><a href="#"><img src="images/slider_02.jpg" alt=""></a></li>
             <li><a href="#"><img src="images/slider_01.jpg" alt=""></a></li>
+            <li><a href="#"><img src="images/slider_02.jpg" alt=""></a></li>
+            <li><a href="#"><img src="images/slider_03.jpg" alt=""></a></li>
+            <li><a href="#"><img src="images/slider_04.jpg" alt=""></a></li>
+            <li><a href="#"><img src="images/slider_05.jpg" alt=""></a></li>
         </ul>
 
         <ul class="page-list">
@@ -107,56 +92,57 @@
             <li><button></button></li>
         </ul>
 
-        <button class="pre arrow-btn"></button>
-        <button class="next arrow-btn"></button>
-    </div>
+        <button class="pre slide-arrow"></button>
+        <button class="next slide-arrow"></button>
+    </section>
 
-    <div class="brand row">
+    <section class="brand row">
         <div class="header clear-fix">
             <div class="left">
                 <h2 class="title"><a href="#">品牌制造商</a></h2>
                 <span class="subtitle">工厂直达消费者，剔除品牌溢价</span>
             </div>
             <div class="right">
-                <a href="#" class="more">更多制造商 &gt;</a>
+                <a href="#" class="more">更多制造商 ></a>
             </div>
         </div>
-
         <div class="content clear-fix">
-            <a class="item large img-scale" href="#">
+            <a class="product large img-scale" href="#">
                 <h3 class="name">Adidas制造商</h3>
                 <p class="price">35元起</p>
                 <img src="images/brand_01.jpg" alt="Adidas制造商">
             </a>
-            <a class="item large img-scale" href="#">
-                <h3 class="name">Adidas制造商</h3>
-                <p class="price">35元起</p>
-                <img src="images/brand_02.jpg" alt="Adidas制造商">
+
+            <a class="product large second img-scale" href="#">
+                <h3 class="name">UGG制造商</h3>
+                <p class="price">129元起</p>
+                <img src="images/brand_02.jpg" alt="UGG制造商">
             </a>
-            <a class="item small img-scale" href="#">
-                <h3 class="name">Adidas制造商</h3>
-                <p class="price">35元起</p>
-                <img src="images/brand_03.jpg" alt="Adidas制造商">
+
+            <a class="product small img-scale" href="#">
+                <h3 class="name">新秀丽制造商</h3>
+                <p class="price">49元起</p>
+                <img src="images/brand_03.jpg" alt="UGG制造商">
             </a>
-            <a class="item small last img-scale" href="#">
-                <h3 class="name">Adidas制造商</h3>
-                <p class="price">35元起</p>
-                <img src="images/brand_04.jpg" alt="Adidas制造商">
+
+            <a class="product small last img-scale" href="#">
+                <h3 class="name">MUJI制造商</h3>
+                <p class="price">12.9元起</p>
+                <img src="images/brand_04.jpg" alt="UGG制造商">
             </a>
         </div>
-    </div>
+    </section>
 
-    <div class="new-products row">
+    <section class="new-products row">
         <div class="header clear-fix">
             <div class="left">
                 <h2 class="title"><a href="#">新品首发</a></h2>
                 <span class="subtitle">周一周四上新，为你寻觅世间好物</span>
             </div>
             <div class="right">
-                <a href="#" class="more">更多新品 &gt;</a>
+                <a href="#" class="more">更多新品 ></a>
             </div>
         </div>
-
         <div class="content clear-fix">
             <div class="product">
                 <a href="#" class="image">
@@ -165,593 +151,640 @@
                     <img class="cover" src="images/new-products_01_02.jpg" alt="24寸 纯PC“铝框”（非全铝）拉杆箱">
                 </a>
                 <div class="info">
-                    <p class="attrs">
-                        <span class="attr hot">爆品</span>
-                        <span class="attr">加价购</span>
-                        <span class="attr special">APP特惠</span>
+                    <p class="tags">
+                        <span class="tag hot">爆品</span>
+                        <span class="tag">加价购</span>
                     </p>
-                    <h3 class="name one-line">
-                        <a href="#">24寸 纯PC“铝框”（非全铝）拉杆箱</a>
-                    </h3>
+                    <h3 class="name one-line"><a href="#">24寸 纯PC“铝框”（非全铝）拉杆箱</a></h3>
                     <p class="price">
-                        <span class="price-value">￥389</span>
-                        <a href="#" class="brand-name">新秀丽制造商</a>
+                        <span class="price-detail">￥389</span>
+                        <a href="#" class="brand">新秀丽制造商</a>
                     </p>
                 </div>
             </div>
             <div class="product">
                 <a href="#" class="image">
-                    <img src="images/new-products_02.png" alt="24寸 纯PC“铝框”（非全铝）拉杆箱">
-                    <img class="cover" src="images/new-products_02_02.jpg" alt="24寸 纯PC“铝框”（非全铝）拉杆箱">
+                    <img src="images/new-products_02.png" alt="头层牛皮长款拉链钱包">
+                    <img class="cover" src="images/new-products_02_02.jpg" alt="头层牛皮长款拉链钱包">
                 </a>
                 <div class="info">
-                    <p class="attrs">
-                        <span class="attr">加价购</span>
+                    <p class="tags">
+                        <span class="tag">加价购</span>
                     </p>
-                    <h3 class="name one-line">
-                        <a href="#">24寸 纯PC“铝框”（非全铝）拉杆箱</a>
-                    </h3>
+                    <h3 class="name one-line"><a href="#">头层牛皮长款拉链钱包</a></h3>
                     <p class="price">
-                        <span class="price-value">￥389</span>
-                        <a href="#" class="brand-name">新秀丽制造商</a>
+                        <span class="price-detail">￥269</span>
+                        <a href="#" class="brand">Coach制造商</a>
                     </p>
                 </div>
             </div>
             <div class="product">
                 <a href="#" class="image">
-                    <img src="images/new-products_03.png" alt="24寸 纯PC“铝框”（非全铝）拉杆箱">
+                    <img src="images/new-products_03.png" alt="日本制造 手作味淋料酒">
                     <span class="tag">日本制造</span>
-                    <img class="cover" src="images/new-products_03_02.jpg" alt="24寸 纯PC“铝框”（非全铝）拉杆箱">
+                    <img class="cover" src="images/new-products_03_02.jpg" alt="日本制造 手作味淋料酒">
                 </a>
                 <div class="info">
-                    <p class="attrs">
-                        <span class="attr hot">爆品</span>
-                        <span class="attr">加价购</span>
-                        <span class="attr special">APP特惠</span>
+                    <p class="tags">
+                        <span class="tag hot">爆品</span>
+                        <span class="tag">加价购</span>
+                        <span class="tag attr">APP特惠</span>
                     </p>
-                    <h3 class="name one-line">
-                        <a href="#">24寸 纯PC“铝框”（非全铝）拉杆箱</a>
-                    </h3>
+                    <h3 class="name one-line"><a href="#">日本制造 手作味淋料酒</a></h3>
                     <p class="price">
-                        <span class="price-value">￥389</span>
+                        <span class="price-detail">￥35</span>
                     </p>
                 </div>
             </div>
             <div class="product">
                 <a href="#" class="image">
-                    <img src="images/new-products_04.png" alt="24寸 纯PC“铝框”（非全铝）拉杆箱">
+                    <img src="images/new-products_04.png" alt="Deary 亲子木马银手链">
                     <span class="tag">6色可选</span>
-                    <img class="cover" src="images/new-products_04_02.jpg" alt="24寸 纯PC“铝框”（非全铝）拉杆箱">
+                    <img class="cover" src="images/new-products_04_02.jpg" alt="Deary 亲子木马银手链">
                 </a>
                 <div class="info">
-                    <p class="attrs"></p>
-                    <h3 class="name one-line">
-                        <a href="#">24寸 纯PC“铝框”（非全铝）拉杆箱</a>
-                    </h3>
+                    <p class="tags"></p>
+                    <h3 class="name one-line"><a href="#">Deary 亲子木马银手链</a></h3>
                     <p class="price">
-                        <span class="price-value">￥389</span>
+                        <span class="price-detail">￥129</span>
                     </p>
                 </div>
             </div>
         </div>
 
-        <button class="arrow-btn pre"></button>
-        <button class="arrow-btn next"></button>
-    </div>
+        <button class="pre slide-arrow"></button>
+        <button class="next slide-arrow"></button>
+    </section>
 
-    <div class="popular">
+    <section class="popular">
         <div class="row">
             <div class="header clear-fix">
                 <div class="left">
                     <h2 class="title"><a href="#">人气推荐</a></h2>
                     <div class="rank">
-                        <a class="active" href="#">编辑推荐</a>
-                        <a href="#">热销总榜</a>
+                        <a class="active item" href="#">编辑推荐</a>
+                        <a class="item" href="#">热销总榜</a>
                     </div>
                 </div>
                 <div class="right">
-                    <a href="#" class="more">更多推荐 &gt;</a>
+                    <a href="#" class="more">更多推荐 ></a>
                 </div>
             </div>
-
             <div class="content clear-fix">
-                <div class="product large img-scale">
-                    <a href="#" class="image">
+                <div class="product img-scale">
+                    <a class="image" href="#">
                         <img src="images/popular_01.png" alt="男式咖啡碳+5℃升级保暖内衣">
                         <span class="tag">2色可选</span>
                     </a>
                     <div class="info">
-                        <p class="attrs">
-                            <span class="attr hot">爆品</span>
+                        <p class="tags">
+                            <span class="tag hot">爆品</span>
                         </p>
-                        <h3 class="name one-line">
-                            <a href="#">男式咖啡碳+5℃升级保暖内衣</a>
-                        </h3>
+                        <h3 class="name one-line"><a href="#">男式咖啡碳+5℃升级保暖内衣</a></h3>
                         <p class="price">
-                            <span class="price-value">￥169</span>
+                            <span class="price-detail">￥169</span>
                         </p>
                     </div>
                 </div>
+
                 <div class="product img-scale">
-                    <a href="#" class="image">
+                    <a class="image" href="#">
                         <img src="images/popular_02.png" alt="升级款柔软保暖羽绒被">
                     </a>
                     <div class="info">
-                        <p class="attrs">
-                            <span class="attr hot">爆品</span>
-                            <span class="attr">限时购</span>
-                            <span class="attr">加价购</span>
+                        <p class="tags">
+                            <span class="tag hot">爆品</span>
+                            <span class="tag">限时购</span>
+                            <span class="tag">加价购</span>
                         </p>
-
-                        <h3 class="name one-line">
-                            <a href="#">升级款柔软保暖羽绒被</a>
-                        </h3>
+                        <h3 class="name one-line"><a href="#">升级款柔软保暖羽绒被</a></h3>
                         <p class="price">
-                            <span class="price-value">￥524.3</span>
+                            <span class="price-detail">￥524.3</span>
                         </p>
                     </div>
                 </div>
+
                 <div class="product img-scale">
-                    <a href="#" class="image">
-                        <img src="images/popular_03.png" alt="升级款柔软保暖羽绒被">
+                    <a class="image" href="#">
+                        <img src="images/popular_03.png" alt="女式色拉姆保暖内衣套装">
+                        <span class="tag">2色可选</span>
                     </a>
                     <div class="info">
-                        <p class="attrs">
-                            <span class="attr hot">爆品</span>
-                            <span class="attr">限时购</span>
-                            <span class="attr">加价购</span>
-                        </p>
-
-                        <h3 class="name one-line">
-                            <a href="#">升级款柔软保暖羽绒被</a>
-                        </h3>
+                        <p class="tags"></p>
+                        <h3 class="name one-line"><a href="#">女式色拉姆保暖内衣套装</a></h3>
                         <p class="price">
-                            <span class="price-value">￥524.3</span>
+                            <span class="price-detail">￥289</span>
                         </p>
                     </div>
                 </div>
+
                 <div class="product img-scale">
-                    <a href="#" class="image">
-                        <img src="images/popular_04.png" alt="升级款柔软保暖羽绒被">
+                    <a class="image" href="#">
+                        <img src="images/popular_04.png" alt="休闲复古男式慢跑鞋">
+                        <span class="tag">2色可选</span>
                     </a>
                     <div class="info">
-                        <p class="attrs">
-                            <span class="attr hot">爆品</span>
-                            <span class="attr">限时购</span>
-                            <span class="attr">加价购</span>
-                        </p>
-
-                        <h3 class="name one-line">
-                            <a href="#">升级款柔软保暖羽绒被</a>
-                        </h3>
+                        <p class="tags"></p>
+                        <h3 class="name one-line"><a href="#">休闲复古男式慢跑鞋</a></h3>
                         <p class="price">
-                            <span class="price-value">￥524.3</span>
+                            <span class="price-detail">￥289</span>
                         </p>
                     </div>
                 </div>
-                <div class="product img-scale">
-                    <a href="#" class="image">
-                        <img src="images/popular_05.png" alt="升级款柔软保暖羽绒被">
+
+                <div class="product last-line img-scale">
+                    <a class="image" href="#">
+                        <img src="images/popular_05.png" alt="20寸 纯PC“铝框”（非全铝）登机箱">
                         <span class="tag">9色可选</span>
                     </a>
                     <div class="info">
-                        <p class="attrs">
-                            <span class="attr hot">爆品</span>
-                            <span class="attr">限时购</span>
-                            <span class="attr">加价购</span>
+                        <p class="tags">
+                            <span class="tag hot">爆品</span>
+                            <span class="tag">加价购</span>
                         </p>
-
-                        <h3 class="name one-line">
-                            <a href="#">升级款柔软保暖羽绒被</a>
-                        </h3>
+                        <h3 class="name one-line"><a href="#">20寸 纯PC“铝框”（非全铝）登机箱</a></h3>
                         <p class="price">
-                            <span class="price-value">￥524.3</span>
+                            <span class="price-detail">￥349</span>
                         </p>
                     </div>
                 </div>
-                <div class="product img-scale">
-                    <a href="#" class="image">
-                        <img src="images/popular_06.png" alt="升级款柔软保暖羽绒被">
+
+                <div class="product last-line img-scale">
+                    <a class="image" href="#">
+                        <img src="images/popular_06.png" alt="日式和风声波式电动牙刷（可单买刷头）">
                     </a>
                     <div class="info">
-                        <p class="attrs">
-                            <span class="attr hot">爆品</span>
-                            <span class="attr">限时购</span>
-                            <span class="attr">加价购</span>
+                        <p class="tags">
+                            <span class="tag hot">爆品</span>
+                            <span class="tag">加价购</span>
                         </p>
-
-                        <h3 class="name one-line">
-                            <a href="#">升级款柔软保暖羽绒被</a>
-                        </h3>
+                        <h3 class="name one-line"><a href="#">日式和风声波式电动牙刷（可单买刷头）</a></h3>
                         <p class="price">
-                            <span class="price-value">￥524.3</span>
+                            <span class="price-detail">￥129</span>
                         </p>
                     </div>
                 </div>
-                <div class="product img-scale">
-                    <a href="#" class="image">
-                        <img src="images/popular_07.png" alt="升级款柔软保暖羽绒被">
+
+                <div class="product last-line img-scale">
+                    <a class="image" href="#">
+                        <img src="images/popular_07.png" alt="网易智造N520除螨吸尘器">
                     </a>
                     <div class="info">
-                        <p class="attrs">
-                            <span class="attr hot">爆品</span>
-                            <span class="attr">限时购</span>
-                            <span class="attr">加价购</span>
+                        <p class="tags">
+                            <span class="tag hot">爆品</span>
+                            <span class="tag">加价购</span>
                         </p>
-
-                        <h3 class="name one-line">
-                            <a href="#">升级款柔软保暖羽绒被</a>
-                        </h3>
+                        <h3 class="name one-line"><a href="#">网易智造N520除螨吸尘器</a></h3>
                         <p class="price">
-                            <span class="price-value">￥524.3</span>
+                            <span class="price-detail">￥499</span>
                         </p>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
+    </section>
 
-    <div class="limit row">
-        <div class="header clear-fix">
-            <div class="left">
-                <h2 class="title"><a href="#">限时购</a></h2>
+    <section class="general">
+        <section class="limit row">
+            <div class="header clear-fix">
+                <div class="left">
+                    <h2 class="title"><a href="#">限时购</a></h2>
+                </div>
+                <div class="right">
+                    <a href="#" class="more">更多抢购 ></a>
+                </div>
             </div>
-            <div class="right">
-                <a href="#" class="more">更多抢购 &gt;</a>
-            </div>
-        </div>
 
-        <div class="content clear-fix">
-            <a href="#" class="time">
-                <p class="title">14点到场</p>
-                <span class="divider"></span>
-                <p class="subtitle">距离结束还剩</p>
-                <p class="time-detail">
-                    <span class="detail hour">02</span>
-                    <span class="colon">:</span>
-                    <span class="detail minute">34</span>
-                    <span class="colon">:</span>
-                    <span class="detail second">18</span>
-                </p>
-                <span class="view-all">查看全部 &gt;</span>
+            <div class="content clear-fix">
+                <a class="time-remind" href="#">
+                    <p class="expire">14点到场</p>
+                    <p class="line"></p>
+                    <p class="left-time">距离结束还剩</p>
+                    <p class="time">
+                        <span class="item">02</span>
+                        <span class="colon">:</span>
+                        <span class="item">34</span>
+                        <span class="colon">:</span>
+                        <span class="item">18</span>
+                    </p>
+                    <p class="more">查看全部 ></p>
+                </a>
+
+                <div class="limit-product img-scale">
+                    <a class="image" href="#">
+                        <img src="images/limit_01.png" alt="男式中帮反绒休闲鞋">
+                    </a>
+                    <div class="info">
+                        <h3 class="name one-line"><a href="#">男式中帮反绒休闲鞋</a></h3>
+                        <p class="desc one-line">9cm中帮，温暖绒面感</p>
+                        <p class="count">
+                            <span class="progress">
+                                <span class="progress-value" style="width: 80%"></span>
+                            </span>
+                            <span class="left-count">还剩938件</span>
+                        </p>
+                        <p class="price">
+                            <span class="now">
+                                <span class="title">限时价</span>
+                                <span class="yuan">¥</span>
+                                <span class="value">229</span>
+                            </span>
+                            <span class="old">
+                                <span class="title">原价&nbsp;</span>
+                                <span class="value">¥329</span>
+                            </span>
+                        </p>
+                        <a class="buy" href="#">立即抢购</a>
+                    </div>
+                </div>
+
+                <div class="limit-product img-scale">
+                    <a class="image" href="#">
+                        <img src="images/limit_02.png" alt="女式抓绒立领拉链卫衣">
+                    </a>
+                    <div class="info">
+                        <h3 class="name one-line"><a href="#">女式抓绒立领拉链卫衣</a></h3>
+                        <p class="desc one-line">做一枚雪花小甜心，软糯很温暖</p>
+                        <p class="count">
+                            <span class="progress">
+                                <span class="progress-value" style="width: 70%"></span>
+                            </span>
+                            <span class="left-count">还剩347件</span>
+                        </p>
+                        <p class="price">
+                            <span class="now">
+                                <span class="title">限时价</span>
+                                <span class="yuan">¥</span>
+                                <span class="value">99</span>
+                            </span>
+                            <span class="old">
+                                <span class="title">原价&nbsp;</span>
+                                <span class="value">¥149</span>
+                            </span>
+                        </p>
+                        <a class="buy" href="#">立即抢购</a>
+                    </div>
+                </div>
+
+                <div class="limit-product img-scale last-line">
+                    <a class="image" href="#">
+                        <img src="images/limit_03.png" alt="网易智造插线板收纳盒">
+                    </a>
+                    <div class="info">
+                        <h3 class="name one-line"><a href="#">网易智造插线板收纳盒</a></h3>
+                        <p class="desc one-line">操作便捷 高效散热 安全护盾 时尚百搭</p>
+                        <p class="count">
+                            <span class="progress">
+                                <span class="progress-value" style="width: 40%"></span>
+                            </span>
+                            <span class="left-count">还剩410件</span>
+                        </p>
+                        <p class="price">
+                            <span class="now">
+                                <span class="title">限时价</span>
+                                <span class="yuan">¥</span>
+                                <span class="value">37</span>
+                            </span>
+                            <span class="old">
+                                <span class="title">原价&nbsp;</span>
+                                <span class="value">¥49</span>
+                            </span>
+                        </p>
+                        <a class="buy" href="#">立即抢购</a>
+                    </div>
+                </div>
+
+                <div class="limit-product img-scale last-line">
+                    <a class="image" href="#">
+                        <img src="images/limit_04.png" alt="密吸式马桶圈垫">
+                    </a>
+                    <div class="info">
+                        <h3 class="name one-line"><a href="#">密吸式马桶圈垫</a></h3>
+                        <p class="desc one-line">全涤长绒毛，方便拆卸隔水隔脏</p>
+                        <p class="count">
+                            <span class="progress">
+                                <span class="progress-value" style="width: 90%"></span>
+                            </span>
+                            <span class="left-count">还剩1500件</span>
+                        </p>
+                        <p class="price">
+                            <span class="now">
+                                <span class="title">限时价</span>
+                                <span class="yuan">¥</span>
+                                <span class="value">14.9</span>
+                            </span>
+                            <span class="old">
+                                <span class="title">原价&nbsp;</span>
+                                <span class="value">¥19</span>
+                            </span>
+                        </p>
+                        <a class="buy" href="#">立即抢购</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="welfare row">
+            <div class="header clear-fix">
+                <div class="left">
+                    <h2 class="title"><a href="#">福利社</a></h2>
+                </div>
+                <div class="right">
+                    <a href="#" class="more">更多优惠 ></a>
+                </div>
+            </div>
+
+            <div class="content clear-fix">
+                <a href="#" class="item"><img src="images/welfare_01.png" alt=""/></a>
+                <a href="#" class="item"><img src="images/welfare_02.png" alt=""/></a>
+                <a href="#" class="item small">
+                    <img src="images/welfare_03.png" alt=""/>
+                    <img class="cover" src="images/welfare_03_02.png" alt=""/>
+                </a>
+                <a href="#" class="item small">
+                    <img src="images/welfare_04.png" alt=""/>
+                    <img class="cover" src="images/welfare_04_02.png" alt=""/>
+                </a>
+            </div>
+        </section>
+
+        <section class="topic row">
+            <div class="header clear-fix">
+                <div class="left">
+                    <h2 class="title"><a href="#">居家</a></h2>
+                </div>
+                <div class="right">
+                    <a href="#" class="more">查看更多 ></a>
+                    <ul class="category-list">
+                        <li class="item"><a href="#">床品件套</a></li>
+                        <li class="item"><a href="#">被枕</a></li>
+                        <li class="item"><a href="#">家具</a></li>
+                        <li class="item"><a href="#">收纳</a></li>
+                        <li class="item"><a href="#">布艺软装</a></li>
+                        <li class="item"><a href="#">家饰</a></li>
+                        <li class="item"><a href="#">宠物</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <a href="#" class="banner">
+                <img src="images/topic-jujia.jpg" alt=""/>
+            </a>
+            
+            <div class="content clear-fix">
+                <div class="product img-scale">
+                    <a href="#" class="image">
+                        <img src="images/topic-jujia_01.png" alt="3D透气高端弹簧床垫">
+                    </a>
+                    <div class="info">
+                        <p class="tags"></p>
+                        <h3 class="name one-line"><a href="#">3D透气高端弹簧床垫</a></h3>
+                        <p class="price">
+                            <span class="price-detail">￥3899</span>
+                        </p>
+                    </div>
+                </div>
+
+                <div class="product img-scale">
+                    <a href="#" class="image">
+                        <img src="images/topic-jujia_02.png" alt="日式和风懒人沙发">
+                        <span class="tag">4色可选</span>
+                    </a>
+                    <div class="info">
+                        <p class="tags">
+                            <span class="tag hot">爆品</span>
+                        </p>
+                        <h3 class="name one-line"><a href="#">日式和风懒人沙发</a></h3>
+                        <p class="price">
+                            <span class="price-detail">￥599</span>
+                        </p>
+                    </div>
+                </div>
+
+                <div class="product img-scale">
+                    <a href="#" class="image">
+                        <img src="images/topic-jujia_03.jpg" alt="冬眠暖绒四件套">
+                        <span class="tag">5色可选</span>
+                    </a>
+                    <div class="info">
+                        <p class="tags">
+                            <span class="tag">满赠</span>
+                        </p>
+                        <h3 class="name one-line"><a href="#">冬眠暖绒四件套</a></h3>
+                        <p class="price">
+                            <span class="price-detail">￥499</span>
+                        </p>
+                    </div>
+                </div>
+
+                <div class="product img-scale">
+                    <a href="#" class="image">
+                        <img src="images/topic-jujia_04.png" alt="站立办公升降台 轻便版">
+                    </a>
+                    <div class="info">
+                        <p class="tags"></p>
+                        <h3 class="name one-line"><a href="#">站立办公升降台 轻便版</a></h3>
+                        <p class="price">
+                            <span class="price-detail">￥799</span>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="topic row">
+            <div class="header clear-fix">
+                <div class="left">
+                    <h2 class="title"><a href="#">餐厨</a></h2>
+                </div>
+                <div class="right">
+                    <a href="#" class="more">查看更多 ></a>
+                    <ul class="category-list">
+                        <li class="item"><a href="#">咖啡具</a></li>
+                        <li class="item"><a href="#">水具酒具</a></li>
+                        <li class="item"><a href="#">锅具</a></li>
+                        <li class="item"><a href="#">餐具</a></li>
+                        <li class="item"><a href="#">功能厨具</a></li>
+                        <li class="item"><a href="#">茶具</a></li>
+                        <li class="item"><a href="#">清洁保鲜</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <a href="#" class="banner">
+                <img src="images/topic-canchu.jpg" alt=""/>
             </a>
 
-            <div class="item">
-                <span class="progress-bar">
-                    <span class="value" style="width: 30%;"></span>
-                </span>
-            </div>
-            <div class="item">
-                <span class="progress-bar">
-                    <span class="value" style="width: 50%;"></span>
-                </span>
-            </div>
-            <div class="item last-line">
-                <span class="progress-bar">
-                    <span class="value" style="width:80%;"></span>
-                </span>
-            </div>
-            <div class="item last-line">
-                <span class="progress-bar">
-                    <span class="value" style="width: 100%;"></span>
-                </span>
-            </div>
-        </div>
-    </div>
+            <div class="content clear-fix">
+                <div class="product img-scale">
+                    <a href="#" class="image">
+                        <img src="images/topic-canchu_01.png" alt="6件装 石趣功夫茶具套装">
+                    </a>
+                    <div class="info">
+                        <p class="tags">
+                            <span class="tag">N元任选</span>
+                        </p>
+                        <h3 class="name one-line"><a href="#">6件装 石趣功夫茶具套装</a></h3>
+                        <p class="price">
+                            <span class="price-detail">￥189</span>
+                        </p>
+                    </div>
+                </div>
 
-    <div class="topic row">
-        <div class="header clear-fix">
-            <div class="left">
-                <h2 class="title"><a href="#">居家</a></h2>
-            </div>
-            <div class="right">
-                <a href="#" class="more">查看更多 &gt;</a>
+                <div class="product img-scale">
+                    <a href="#" class="image">
+                        <img src="images/topic-canchu_02.png" alt="黑凤梨 100年传世珐琅锅 马卡龙系列">
+                        <span class="tag">黑凤梨</span>
+                    </a>
+                    <div class="info">
+                        <p class="tags">
+                            <span class="tag hot">加价购</span>
+                        </p>
+                        <h3 class="name one-line"><a href="#">黑凤梨 100年传世珐琅锅 马卡龙系列</a></h3>
+                        <p class="price">
+                            <span class="price-detail">￥359</span>
+                        </p>
+                    </div>
+                </div>
 
-                <ul class="category-list">
-                    <li><a href="#">功能厨具</a></li>
-                    <li><a href="#">功能厨具</a></li>
-                    <li><a href="#">功能厨具</a></li>
-                    <li><a href="#">功能厨具</a></li>
-                    <li><a href="#">功能厨具</a></li>
-                    <li><a href="#">功能厨具</a></li>
-                    <li><a href="#">功能厨具</a></li>
-                </ul>
-            </div>
-        </div>
+                <div class="product img-scale">
+                    <a href="#" class="image">
+                        <img src="images/topic-canchu_03.png" alt="冬眠暖绒四件套">
+                    </a>
+                    <div class="info">
+                        <p class="tags"></p>
+                        <h3 class="name one-line"><a href="#">双底面淘米洗菜篮</a></h3>
+                        <p class="price">
+                            <span class="price-detail">￥29.9</span>
+                        </p>
+                    </div>
+                </div>
 
-        <a href="#" class="banner">
-            <img src="images/topic-jujia.jpg" alt="">
-        </a>
-
-        <div class="content clear-fix">
-            <div class="product">
-                <a href="#" class="image">
-                    <img src="images/topic-jujia_01.png" alt="24寸 纯PC“铝框”（非全铝）拉杆箱">
-                    <span class="tag">2色可选</span>
-                </a>
-                <div class="info">
-                    <p class="attrs">
-                        <span class="attr hot">爆品</span>
-                        <span class="attr">加价购</span>
-                        <span class="attr special">APP特惠</span>
-                    </p>
-                    <h3 class="name one-line">
-                        <a href="#">24寸 纯PC“铝框”（非全铝）拉杆箱</a>
-                    </h3>
-                    <p class="price">
-                        <span class="price-value">￥389</span>
-                    </p>
+                <div class="product img-scale">
+                    <a href="#" class="image">
+                        <img src="images/topic-canchu_04.png" alt="玻璃内胆保温壶">
+                        <span class="tag">3色可选</span>
+                    </a>
+                    <div class="info">
+                        <p class="tags"></p>
+                        <h3 class="name one-line"><a href="#">玻璃内胆保温壶</a></h3>
+                        <p class="price">
+                            <span class="price-detail">￥119</span>
+                        </p>
+                    </div>
                 </div>
             </div>
-            <div class="product">
-                <a href="#" class="image">
-                    <img src="images/new-products_01.png" alt="24寸 纯PC“铝框”（非全铝）拉杆箱">
-                    <span class="tag">2色可选</span>
-                </a>
-                <div class="info">
-                    <p class="attrs">
-                        <span class="attr hot">爆品</span>
-                        <span class="attr">加价购</span>
-                        <span class="attr special">APP特惠</span>
-                    </p>
-                    <h3 class="name one-line">
-                        <a href="#">24寸 纯PC“铝框”（非全铝）拉杆箱</a>
-                    </h3>
-                    <p class="price">
-                        <span class="price-value">￥389</span>
-                    </p>
-                </div>
-            </div>
-            <div class="product">
-                <a href="#" class="image">
-                    <img src="images/new-products_01.png" alt="24寸 纯PC“铝框”（非全铝）拉杆箱">
-                    <span class="tag">2色可选</span>
-                </a>
-                <div class="info">
-                    <p class="attrs">
-                        <span class="attr hot">爆品</span>
-                        <span class="attr">加价购</span>
-                        <span class="attr special">APP特惠</span>
-                    </p>
-                    <h3 class="name one-line">
-                        <a href="#">24寸 纯PC“铝框”（非全铝）拉杆箱</a>
-                    </h3>
-                    <p class="price">
-                        <span class="price-value">￥389</span>
-                    </p>
-                </div>
-            </div>
-            <div class="product">
-                <a href="#" class="image">
-                    <img src="images/new-products_01.png" alt="24寸 纯PC“铝框”（非全铝）拉杆箱">
-                    <span class="tag">2色可选</span>
-                </a>
-                <div class="info">
-                    <p class="attrs">
-                        <span class="attr hot">爆品</span>
-                        <span class="attr">加价购</span>
-                        <span class="attr special">APP特惠</span>
-                    </p>
-                    <h3 class="name one-line">
-                        <a href="#">24寸 纯PC“铝框”（非全铝）拉杆箱</a>
-                    </h3>
-                    <p class="price">
-                        <span class="price-value">￥389</span>
-                    </p>
-                </div>
-            </div>
-        </div>
-    </div>
+        </section>
 
-    <div class="topic row">
-        <div class="header clear-fix">
-            <div class="left">
-                <h2 class="title"><a href="#">餐厨</a></h2>
-            </div>
-            <div class="right">
-                <a href="#" class="more">查看更多 &gt;</a>
-
-                <ul class="category-list">
-                    <li><a href="#">功能厨具</a></li>
-                    <li><a href="#">功能厨具</a></li>
-                    <li><a href="#">功能厨具</a></li>
-                    <li><a href="#">功能厨具</a></li>
-                    <li><a href="#">功能厨具</a></li>
-                    <li><a href="#">功能厨具</a></li>
-                    <li><a href="#">功能厨具</a></li>
-                </ul>
-            </div>
-        </div>
-
-        <a href="#" class="banner">
-            <img src="images/topic-canchu.jpg" alt="">
-        </a>
-
-        <div class="content clear-fix">
-            <div class="product">
-                <a href="#" class="image">
-                    <img src="images/topic-jujia_01.png" alt="24寸 纯PC“铝框”（非全铝）拉杆箱">
-                    <span class="tag">2色可选</span>
-                </a>
-                <div class="info">
-                    <p class="attrs">
-                        <span class="attr hot">爆品</span>
-                        <span class="attr">加价购</span>
-                        <span class="attr special">APP特惠</span>
-                    </p>
-                    <h3 class="name one-line">
-                        <a href="#">24寸 纯PC“铝框”（非全铝）拉杆箱</a>
-                    </h3>
-                    <p class="price">
-                        <span class="price-value">￥389</span>
-                    </p>
+        <section class="topic row">
+            <div class="header clear-fix">
+                <div class="left">
+                    <h2 class="title"><a href="#">配件</a></h2>
+                </div>
+                <div class="right">
+                    <a href="#" class="more">查看更多 ></a>
+                    <ul class="category-list">
+                        <li class="item"><a href="#">行李箱</a></li>
+                        <li class="item"><a href="#">男士包袋</a></li>
+                        <li class="item"><a href="#">女士包袋</a></li>
+                        <li class="item"><a href="#">钱包及小皮件</a></li>
+                        <li class="item"><a href="#">男鞋</a></li>
+                        <li class="item"><a href="#">女鞋</a></li>
+                        <li class="item"><a href="#">拖鞋</a></li>
+                    </ul>
                 </div>
             </div>
-            <div class="product">
-                <a href="#" class="image">
-                    <img src="images/new-products_01.png" alt="24寸 纯PC“铝框”（非全铝）拉杆箱">
-                    <span class="tag">2色可选</span>
-                </a>
-                <div class="info">
-                    <p class="attrs">
-                        <span class="attr hot">爆品</span>
-                        <span class="attr">加价购</span>
-                        <span class="attr special">APP特惠</span>
-                    </p>
-                    <h3 class="name one-line">
-                        <a href="#">24寸 纯PC“铝框”（非全铝）拉杆箱</a>
-                    </h3>
-                    <p class="price">
-                        <span class="price-value">￥389</span>
-                    </p>
-                </div>
-            </div>
-            <div class="product">
-                <a href="#" class="image">
-                    <img src="images/new-products_01.png" alt="24寸 纯PC“铝框”（非全铝）拉杆箱">
-                    <span class="tag">2色可选</span>
-                </a>
-                <div class="info">
-                    <p class="attrs">
-                        <span class="attr hot">爆品</span>
-                        <span class="attr">加价购</span>
-                        <span class="attr special">APP特惠</span>
-                    </p>
-                    <h3 class="name one-line">
-                        <a href="#">24寸 纯PC“铝框”（非全铝）拉杆箱</a>
-                    </h3>
-                    <p class="price">
-                        <span class="price-value">￥389</span>
-                    </p>
-                </div>
-            </div>
-            <div class="product">
-                <a href="#" class="image">
-                    <img src="images/new-products_01.png" alt="24寸 纯PC“铝框”（非全铝）拉杆箱">
-                    <span class="tag">2色可选</span>
-                </a>
-                <div class="info">
-                    <p class="attrs">
-                        <span class="attr hot">爆品</span>
-                        <span class="attr">加价购</span>
-                        <span class="attr special">APP特惠</span>
-                    </p>
-                    <h3 class="name one-line">
-                        <a href="#">24寸 纯PC“铝框”（非全铝）拉杆箱</a>
-                    </h3>
-                    <p class="price">
-                        <span class="price-value">￥389</span>
-                    </p>
-                </div>
-            </div>
-        </div>
-    </div>
 
-    <div class="topic row">
-        <div class="header clear-fix">
-            <div class="left">
-                <h2 class="title"><a href="#">配件</a></h2>
-            </div>
-            <div class="right">
-                <a href="#" class="more">查看更多 &gt;</a>
+            <a href="#" class="banner">
+                <img src="images/topic-peijian.jpg" alt=""/>
+            </a>
 
-                <ul class="category-list">
-                    <li><a href="#">功能厨具</a></li>
-                    <li><a href="#">功能厨具</a></li>
-                    <li><a href="#">功能厨具</a></li>
-                    <li><a href="#">功能厨具</a></li>
-                    <li><a href="#">功能厨具</a></li>
-                    <li><a href="#">功能厨具</a></li>
-                    <li><a href="#">功能厨具</a></li>
-                </ul>
-            </div>
-        </div>
+            <div class="content clear-fix">
+                <div class="product img-scale">
+                    <a href="#" class="image">
+                        <img src="images/topic-peijian_01.png" alt="女款轻缓舒适健步鞋">
+                        <span class="tag">2色可选</span>
+                    </a>
+                    <div class="info">
+                        <p class="tags"></p>
+                        <h3 class="name one-line"><a href="#">女款轻缓舒适健步鞋</a></h3>
+                        <p class="price">
+                            <span class="price-detail">￥139</span>
+                        </p>
+                    </div>
+                </div>
 
-        <a href="#" class="banner">
-            <img src="images/topic-peijian.jpg" alt="">
-        </a>
+                <div class="product img-scale">
+                    <a href="#" class="image">
+                        <img src="images/topic-peijian_02.png" alt="多功能商务双肩包">
+                    </a>
+                    <div class="info">
+                        <p class="tags">
+                            <span class="tag hot">爆品</span>
+                            <span class="tag">加价购</span>
+                        </p>
+                        <h3 class="name one-line"><a href="#">多功能商务双肩包</a></h3>
+                        <p class="price">
+                            <span class="price-detail">￥369</span>
+                        </p>
+                    </div>
+                </div>
 
-        <div class="content clear-fix">
-            <div class="product">
-                <a href="#" class="image">
-                    <img src="images/topic-jujia_01.png" alt="24寸 纯PC“铝框”（非全铝）拉杆箱">
-                    <span class="tag">2色可选</span>
-                </a>
-                <div class="info">
-                    <p class="attrs">
-                        <span class="attr hot">爆品</span>
-                        <span class="attr">加价购</span>
-                        <span class="attr special">APP特惠</span>
-                    </p>
-                    <h3 class="name one-line">
-                        <a href="#">24寸 纯PC“铝框”（非全铝）拉杆箱</a>
-                    </h3>
-                    <p class="price">
-                        <span class="price-value">￥389</span>
-                    </p>
+                <div class="product img-scale">
+                    <a href="#" class="image">
+                        <img src="images/topic-peijian_03.png" alt="男式简约光面牛津鞋">
+                        <span class="tag">2色可选</span>
+                    </a>
+                    <div class="info">
+                        <p class="tags">
+                            <span class="tag">加价购</span>
+                        </p>
+                        <h3 class="name one-line"><a href="#">男式简约光面牛津鞋</a></h3>
+                        <p class="price">
+                            <span class="price-detail">￥399</span>
+                        </p>
+                    </div>
+                </div>
+
+                <div class="product img-scale">
+                    <a href="#" class="image">
+                        <img src="images/topic-peijian_04.png" alt="Jolly Doggie 新年生肖银项链">
+                    </a>
+                    <div class="info">
+                        <p class="tags">
+                            <span class="tag hot">送礼推荐</span>
+                        </p>
+                        <h3 class="name one-line"><a href="#">Jolly Doggie 新年生肖银项链</a></h3>
+                        <p class="price">
+                            <span class="price-detail">￥199</span>
+                        </p>
+                    </div>
                 </div>
             </div>
-            <div class="product">
-                <a href="#" class="image">
-                    <img src="images/new-products_01.png" alt="24寸 纯PC“铝框”（非全铝）拉杆箱">
-                    <span class="tag">2色可选</span>
-                </a>
-                <div class="info">
-                    <p class="attrs">
-                        <span class="attr hot">爆品</span>
-                        <span class="attr">加价购</span>
-                        <span class="attr special">APP特惠</span>
-                    </p>
-                    <h3 class="name one-line">
-                        <a href="#">24寸 纯PC“铝框”（非全铝）拉杆箱</a>
-                    </h3>
-                    <p class="price">
-                        <span class="price-value">￥389</span>
-                    </p>
-                </div>
-            </div>
-            <div class="product">
-                <a href="#" class="image">
-                    <img src="images/new-products_01.png" alt="24寸 纯PC“铝框”（非全铝）拉杆箱">
-                    <span class="tag">2色可选</span>
-                </a>
-                <div class="info">
-                    <p class="attrs">
-                        <span class="attr hot">爆品</span>
-                        <span class="attr">加价购</span>
-                        <span class="attr special">APP特惠</span>
-                    </p>
-                    <h3 class="name one-line">
-                        <a href="#">24寸 纯PC“铝框”（非全铝）拉杆箱</a>
-                    </h3>
-                    <p class="price">
-                        <span class="price-value">￥389</span>
-                    </p>
-                </div>
-            </div>
-            <div class="product">
-                <a href="#" class="image">
-                    <img src="images/new-products_01.png" alt="24寸 纯PC“铝框”（非全铝）拉杆箱">
-                    <span class="tag">2色可选</span>
-                </a>
-                <div class="info">
-                    <p class="attrs">
-                        <span class="attr hot">爆品</span>
-                        <span class="attr">加价购</span>
-                        <span class="attr special">APP特惠</span>
-                    </p>
-                    <h3 class="name one-line">
-                        <a href="#">24寸 纯PC“铝框”（非全铝）拉杆箱</a>
-                    </h3>
-                    <p class="price">
-                        <span class="price-value">￥389</span>
-                    </p>
-                </div>
-            </div>
-        </div>
-    </div>
+        </section>
 
-    <div class="comments">
+        <section class="expert row">
+            <div class="header clear-fix">
+                <div class="left">
+                    <h2 class="title">甄选家</h2>
+                    <span class="subtitle">我们在寻找，对生活有态度的你</span>
+                </div>
+            </div>
+            <div class="content clear-fix">
+                <a class="item" href="#">
+                    <img src="images/zhenxuanjia_01.jpg" alt=""/>
+                </a>
+                <a class="item" href="#">
+                    <img src="images/zhenxuanjia_02.jpg" alt=""/>
+                </a>
+                <a class="item last-line" href="#">
+                    <img src="images/zhenxuanjia_03.jpg" alt=""/>
+                </a>
+            </div>
+        </section>
+    </section>
+
+    <section class="comments">
         <div class="row">
             <div class="header clear-fix">
                 <div class="left">
@@ -759,47 +792,129 @@
                     <span class="subtitle">生活，没有统一标准</span>
                 </div>
             </div>
-
             <div class="content clear-fix">
                 <div class="item img-scale">
-                    <a href="#" class="image">
-                        <img src="images/comments_01.jpg" alt="">
+                    <a class="image" href="#">
+                        <img src="images/comments_01.jpg" alt=""/>
                     </a>
-
                     <div class="info">
-                        4535345345
+                        <p class="top clear-fix">
+                            <span class="username">小****</span>
+                            <span class="date">2017-12-30 12:48</span>
+                        </p>
+                        <div class="middle clear-fix">
+                            <h3 class="name one-line">女式鹿角可拆卸雪地靴</h3>
+                            <span class="price">￥399</span>
+                        </div>
+                        <p class="text">老妈一号飞机，下单到现在接收三天就到了，直接打网易客服特意跟客服沟通，然后催单加速发货，非常感谢客服，太人性化啦！东西质量不错，好评。</p>
                     </div>
                 </div>
-                <div class="item"></div>
-                <div class="item"></div>
+                <div class="item img-scale">
+                    <a class="image" href="#">
+                        <img src="images/comments_02.jpg" alt=""/>
+                    </a>
+                    <div class="info">
+                        <p class="top clear-fix">
+                            <span class="username">m****0</span>
+                            <span class="date">2017-12-24 14:55</span>
+                        </p>
+                        <div class="middle clear-fix">
+                            <h3 class="name one-line">毛毛虫儿童运动鞋</h3>
+                            <span class="price">￥129</span>
+                        </div>
+                        <p class="text">妹妹推荐的，质量非常棒，跟店里Nike的一样，但是价格实惠很多，下次还会光顾</p>
+                    </div>
+                </div>
+                <div class="item img-scale">
+                    <a class="image" href="#">
+                        <img src="images/comments_03.jpg" alt=""/>
+                    </a>
+                    <div class="info">
+                        <p class="top clear-fix">
+                            <span class="username">n****t</span>
+                            <span class="date">2017-12-24 14:54</span>
+                        </p>
+                        <div class="middle clear-fix">
+                            <h3 class="name one-line">磨砂感飞行员墨镜</h3>
+                            <span class="price">￥139</span>
+                        </div>
+                        <p class="text">非常好~价格便宜质量也好~</p>
+                    </div>
+                </div>
             </div>
 
-            <button class="arrow-btn pre"></button>
-            <button class="arrow-btn next"></button>
+            <button class="pre slide-arrow"></button>
+            <button class="next slide-arrow"></button>
         </div>
-    </div>
-</div>
+    </section>
+</article>
 
-<div id="footer">
-    <div class="footer1">
-        <div class="row">
-            <div class="col service">
-                <a href="#">在线客服</a>
+<footer>
+    <section class="footer1">
+        <div class="row clear-fix">
+            <div class="service item">
+                <h3 class="title">客户服务</h3>
+                <a href="#" class="button online">
+                    <span class="text">在线客服</span>
+                </a>
+                <a href="#" class="button feedback">
+                    <span class="text">用户反馈</span>
+                </a>
             </div>
-            <div class="col what"></div>
-            <div class="col download"></div>
-        </div>
-    </div>
-    <div class="footer2">
-        <div class="row">
-            <div class="col">
-                <img src="" alt="">
-                <span>30天无忧退换货</span>
+            <div class="what item">
+                <h3 class="title">何为严选</h3>
+                <p class="desc">网易原创生活类电商品牌，秉承网易一贯的严谨态度，我们深入世界各地，从源头全程严格把控商品生产环节，力求帮消费者甄选到优质的商品</p>
+                <div class="icons clear-fix">
+                    <span class="text">关注我们 :</span>
+                    <img class="icon" src="images/icon-yanxuan.png" alt=""/>
+                    <img class="icon" src="images/icon-wechat.png" alt=""/>
+                    <a class="icon" href="#"><img src="images/icon-weibo.png" alt=""/></a>
+                </div>
             </div>
-            <div class="col"></div>
-            <div class="col"></div>
+            <div class="download item">
+                <h3 class="title">扫码下载严选APP</h3>
+                <img src="images/code.png" alt=""/>
+                <p class="desc">下载领1000元新人礼包</p>
+            </div>
         </div>
-    </div>
+    </section>
+
+    <section class="footer2">
+        <div class="row">
+            <div class="ensure clear-fix">
+                <div class="item"><img src="images/return.png" alt="">30天无忧退换货</div>
+                <div class="item"><img src="images/free.png" alt="">满88元免邮费</div>
+                <div class="item"><img src="images/ensure.png" alt="">网易品质保证</div>
+            </div>
+            <div class="hr"></div>
+            <nav>
+                <ul>
+                    <li><a href="#">关于我们</a></li>
+                    <li><a href="#">帮助中心</a></li>
+                    <li><a href="#">售后服务</a></li>
+                    <li><a href="#">配送与验收</a></li>
+                    <li><a href="#">商务合作</a></li>
+                    <li><a href="#">企业采购</a></li>
+                    <li><a href="#">开放平台</a></li>
+                    <li><a href="#">搜索推荐</a></li>
+                    <li><a href="#">友情链接</a></li>
+                </ul>
+            </nav>
+            <p class="copyright">网易公司版权所有&nbsp;©&nbsp;1997-2017&nbsp;&nbsp;食品经营许可证：JY13301080111719</p>
+            <a href="#" class="police">
+                <img src="images/police.gif" alt=""/>
+            </a>
+        </div>
+    </section>
+</footer>
+
+<div class="toolbar">
+    <img class="ad" src="images/ad.gif" alt=""/>
+    <a class="item gift" href="#">新人有礼</a>
+    <a class="item download" href="#">下载APP</a>
+    <a class="item sub" href="#">订阅电子刊</a>
+    <a class="item service" href="#">在线客服</a>
+    <a class="item top" href="#">回顶部</a>
 </div>
 
 <script src="js/jquery-3.2.1.min.js"></script>
@@ -813,10 +928,9 @@
     }
 
     $(function() {
-        removeSpace('.slider .page-list',
-            '.product .attrs',
-            '.product .price',
-            '.limit .time-detail');
+        removeSpace('.page-list', '.tab-nav', '.tags',
+                '.time-remind .time', '.footer1 .service',
+                '.footer2 nav ul');
     });
 </script>
 </body>
