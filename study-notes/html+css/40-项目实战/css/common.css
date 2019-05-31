@@ -1,19 +1,6 @@
 @charset "UTF-8";
 
-html {
-    font-family: "Heiti SC", "Lucida Grande", "Hiragino Sans GB", "Hiragino Sans GB W3", verdana;
-    font-size: 12px;
-}
-
-/* 公共样式 */
-a {
-    color: #333;
-}
-
-a:hover {
-    color: #b4a078;
-}
-
+/* region 清浮动 */
 .clear-fix::after {
     content: "";
     display: block;
@@ -23,22 +10,72 @@ a:hover {
 }
 
 .clear-fix {
-    *zoom: 1;
+    zoom: 1;
 }
+/* endregion */
 
-.one-line {
-    overflow: hidden;
-    white-space: nowrap;
-    text-overflow: ellipsis;
-}
-
-/* 一行的容器 */
+/* region 每一行主要内容 */
 .row {
-    margin: 0 auto;
-    width: 1090px;
     position: relative;
+    width: 1090px;
+    margin: 0 auto;
+}
+/* endregion */
+
+/* region 每一行主要内容的头部信息 */
+.header {
+    margin-bottom: 20px;
 }
 
+.header .title {
+    float: left;
+    margin-right: 20px;
+    font-size: 28px;
+    font-weight: 700;
+    line-height: 1;
+}
+
+.header .subtitle {
+    float: left;
+    margin-top: 13px;
+    font-size: 14px;
+    line-height: 1;
+}
+
+.header .more {
+    float: right;
+    font-size: 14px;
+    line-height: 1;
+    margin-left: 30px;
+    margin-top: 14px;
+}
+/* endregion */
+
+/* region 图片缩放功能 */
+.img-scale img {
+    /* 让safari支持动画 */
+    -webkit-transition: -webkit-transform 1s;
+    transition: transform 1s;
+}
+
+.img-scale:hover img {
+    /* 让safari支持动画 */
+    -webkit-transform: scale(1.05);
+    transform: scale(1.05);
+}
+/* endregion */
+
+/* region 默认的a */
+a {
+    color: #333;
+}
+
+a:hover {
+    color: #b4a078;
+}
+/* endregion */
+
+/* region 区分左边\右边内容 */
 .left {
     float: left;
 }
@@ -46,151 +83,129 @@ a:hover {
 .right {
     float: right;
 }
+/* endregion */
 
-.cmp, .site-nav .service::after, .site-nav .download-app::before {
-    background: url("../images/component.png") no-repeat;
+/* region 用到component图片的类 */
+.cmp,
+.site-nav .download-app::before,
+.site-nav .service::after {
+    background: url("../images/component.png");
+}
+/* endregion */
+
+/* region 上一页\下一页按钮 */
+.arrow-btn {
+    position: absolute;
+    top: 200px;
+    width: 50px;
+    height: 50px;
+    border: none;
+    border-radius: 50%;
+    background: url("../images/icon-normal.png") #D0C4AF;
+    cursor: pointer;
 }
 
-article .header {
-    padding-bottom: 20px;
+.arrow-btn:hover {
+    background-color: #B19D79;
 }
 
-article .header .title {
-    font-size: 28px;
-    font-weight: 700;
-    line-height: 1;
-    float: left;
-    margin-right: 20px;
+.arrow-btn.pre {
+    background-position: 0 -4700px;
 }
 
-article .header .subtitle {
-    float: left;
-    padding-top: 13px;
-    font-size: 14px;
-    line-height: 1;
+.arrow-btn.next {
+    background-position: 0 -4880px;
 }
+/* endregion */
 
-article .header .more {
-    font-size: 14px;
-    line-height: 1;
-    margin-left: 30px;
-    padding-top: 14px;
-    float: right;
-}
-
-article .content .product {
-    float: left;
+/* region 只显示一行文字(多出部分用省略号显示) */
+.one-line {
+    /* 保证永远只显示一行文字(单词可以超出元素范围) */
+    white-space: nowrap;
+    /* 超出元素的内容隐藏掉 */
     overflow: hidden;
+    /* 隐藏掉的内容在尾部用省略号来显示 */
+    text-overflow: ellipsis;
+}
+/* endregion */
+
+/* region 产品 */
+.product {
+    float: left;
 }
 
-article .img-scale img {
-    -moz-transition: -moz-transform 1s;
-    -o-transition: -o-transform 1s;
-    -webkit-transition: -webkit-transform 1s;
-    transition: transform 1s;
+.product .image {
+    position: relative;
+    display: block;
+    overflow: hidden;
+    margin-bottom: 8px;
 }
 
-article .img-scale:hover img {
-    -moz-transform: scale(1.05);
-    -o-transform: scale(1.05);
-    -webkit-transform: scale(1.05);
-    transform: scale(1.05);
-}
-
-article .product .image .tag {
+.product .tag {
     position: absolute;
     top: 10px;
     left: 10px;
     height: 20px;
-    font-size: 12px;
-    color: #a7936e;
+    padding: 0 4px;
     border: 1px solid #b3a07d;
     border-radius: 5px;
-    padding: 0 4px;
+    font-size: 12px;
+    color: #a7936e;
     line-height: 20px;
     background-color: #f4f0ea;
 }
 
-article .product .info {
+.product .info {
+    padding-bottom: 10px;
     text-align: center;
 }
 
-article .product .info .tags {
+.product .attrs {
     height: 20px;
     margin-bottom: 3px;
+    line-height: 20px;
 }
 
-article .product .info .tag {
-    margin: 0 3px;
+.product .attr {
     display: inline-block;
     height: 20px;
-    line-height: 20px;
-    color: #fff;
+    margin: 0 3px;
     padding: 0 5px;
+    color: #fff;
     font-size: 12px;
     background-color: #e36844;
 }
 
-article .product .info .tag.hot {
+.product .attr.hot {
     background-color: #F28F2D;
 }
 
-article .product .info .tag.attr {
+.product .attr.special {
     color: #A94528;
     background-color: #F8BC59;
 }
 
-article .product .info .name {
-    padding: 0 10px;
+.product .name {
     height: 20px;
-    line-height: 20px;
+    padding: 0 10px;
     margin-bottom: 4px;
-    font-weight: 700;
+    line-height: 20px;
 }
 
-article .product .info .price {
-    padding-bottom: 10px;
+.product .price {
     font-size: 13px;
     line-height: 13px;
 }
 
-article .product .info .price-detail {
+.product .price-value {
     color: #d4282d;
-    vertical-align: middle;
 }
 
-article .product .info .price .brand {
+.product .brand-name {
     border-left: 1px solid #999;
     padding-left: 10px;
     margin-left: 7px;
     color: #999;
 }
+/* endregion */
 
-article .product .image {
-    position: relative;
-    overflow: hidden;
-    display: block;
-}
-
-button.slide-arrow {
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    position: absolute;
-    background: url("../images/icon-normal.png") no-repeat #D0C4AF;
-    top: 200px;
-    cursor: pointer;
-    border: none;
-}
-
-button.slide-arrow:hover {
-    background-color: #B19D79;
-}
-
-button.slide-arrow.pre {
-    background-position: 0 -4700px;
-}
-
-button.slide-arrow.next {
-    background-position: 0 -4880px;
-}

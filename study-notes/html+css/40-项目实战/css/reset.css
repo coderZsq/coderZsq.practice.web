@@ -8,32 +8,28 @@ table, tr, td, th {
     padding: 0;
 }
 
-table {
-    border-collapse: collapse;
-    border-spacing: 0;
-}
-
 i, em {
     font-style: normal;
-}
-
-h1, h2, h3, h4, h5, h6, strong, b {
-    font-weight: normal;
 }
 
 li {
     list-style: none;
 }
 
-img {
-    border: none;
-    vertical-align: top;
-}
-
 a {
     text-decoration: none;
 }
 
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
 button, input, textarea, select, a {
     outline: none;
+}
+
+img {
+    border: none;
+    vertical-align: top;
 }
