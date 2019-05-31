@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>块级元素</title>
+    <style>
+        input {
+            color: red;
+        }
+
+        :-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+            color: #000; opacity:1;
+        }
+
+        ::-moz-placeholder { /* Mozilla Firefox 19+ */
+            color: #000;opacity:1;
+        }
+
+        input:-ms-input-placeholder{
+            color: #000;opacity:1;
+        }
+
+        input::-webkit-input-placeholder{
+            color: #0f0;opacity:1;
+        }
+    </style>
+</head>
+<body>
+
+<input type="text" placeholder="请输入用户名">
+
+</body>
+</html>

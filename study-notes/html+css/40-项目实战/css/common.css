@@ -1,0 +1,211 @@
+@charset "UTF-8";
+
+/* region 清浮动 */
+.clear-fix::after {
+    content: "";
+    display: block;
+    clear: both;
+    visibility: hidden;
+    height: 0;
+}
+
+.clear-fix {
+    zoom: 1;
+}
+/* endregion */
+
+/* region 每一行主要内容 */
+.row {
+    position: relative;
+    width: 1090px;
+    margin: 0 auto;
+}
+/* endregion */
+
+/* region 每一行主要内容的头部信息 */
+.header {
+    margin-bottom: 20px;
+}
+
+.header .title {
+    float: left;
+    margin-right: 20px;
+    font-size: 28px;
+    font-weight: 700;
+    line-height: 1;
+}
+
+.header .subtitle {
+    float: left;
+    margin-top: 13px;
+    font-size: 14px;
+    line-height: 1;
+}
+
+.header .more {
+    float: right;
+    font-size: 14px;
+    line-height: 1;
+    margin-left: 30px;
+    margin-top: 14px;
+}
+/* endregion */
+
+/* region 图片缩放功能 */
+.img-scale img {
+    /* 让safari支持动画 */
+    -webkit-transition: -webkit-transform 1s;
+    transition: transform 1s;
+}
+
+.img-scale:hover img {
+    /* 让safari支持动画 */
+    -webkit-transform: scale(1.05);
+    transform: scale(1.05);
+}
+/* endregion */
+
+/* region 默认的a */
+a {
+    color: #333;
+}
+
+a:hover {
+    color: #b4a078;
+}
+/* endregion */
+
+/* region 区分左边\右边内容 */
+.left {
+    float: left;
+}
+
+.right {
+    float: right;
+}
+/* endregion */
+
+/* region 用到component图片的类 */
+.cmp,
+.site-nav .download-app::before,
+.site-nav .service::after {
+    background: url("../images/component.png");
+}
+/* endregion */
+
+/* region 上一页\下一页按钮 */
+.arrow-btn {
+    position: absolute;
+    top: 200px;
+    width: 50px;
+    height: 50px;
+    border: none;
+    border-radius: 50%;
+    background: url("../images/icon-normal.png") #D0C4AF;
+    cursor: pointer;
+}
+
+.arrow-btn:hover {
+    background-color: #B19D79;
+}
+
+.arrow-btn.pre {
+    background-position: 0 -4700px;
+}
+
+.arrow-btn.next {
+    background-position: 0 -4880px;
+}
+/* endregion */
+
+/* region 只显示一行文字(多出部分用省略号显示) */
+.one-line {
+    /* 保证永远只显示一行文字(单词可以超出元素范围) */
+    white-space: nowrap;
+    /* 超出元素的内容隐藏掉 */
+    overflow: hidden;
+    /* 隐藏掉的内容在尾部用省略号来显示 */
+    text-overflow: ellipsis;
+}
+/* endregion */
+
+/* region 产品 */
+.product {
+    float: left;
+}
+
+.product .image {
+    position: relative;
+    display: block;
+    overflow: hidden;
+    margin-bottom: 8px;
+}
+
+.product .tag {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    height: 20px;
+    padding: 0 4px;
+    border: 1px solid #b3a07d;
+    border-radius: 5px;
+    font-size: 12px;
+    color: #a7936e;
+    line-height: 20px;
+    background-color: #f4f0ea;
+}
+
+.product .info {
+    padding-bottom: 10px;
+    text-align: center;
+}
+
+.product .attrs {
+    height: 20px;
+    margin-bottom: 3px;
+    line-height: 20px;
+}
+
+.product .attr {
+    display: inline-block;
+    height: 20px;
+    margin: 0 3px;
+    padding: 0 5px;
+    color: #fff;
+    font-size: 12px;
+    background-color: #e36844;
+}
+
+.product .attr.hot {
+    background-color: #F28F2D;
+}
+
+.product .attr.special {
+    color: #A94528;
+    background-color: #F8BC59;
+}
+
+.product .name {
+    height: 20px;
+    padding: 0 10px;
+    margin-bottom: 4px;
+    line-height: 20px;
+}
+
+.product .price {
+    font-size: 13px;
+    line-height: 13px;
+}
+
+.product .price-value {
+    color: #d4282d;
+}
+
+.product .brand-name {
+    border-left: 1px solid #999;
+    padding-left: 10px;
+    margin-left: 7px;
+    color: #999;
+}
+/* endregion */
+

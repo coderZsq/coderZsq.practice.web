@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>vertical-align</title>
+    <style>
+        body {
+            font-family: "宋体";
+        }
+        
+        div {
+            margin: 0 auto;
+            border: 1px solid #000;
+            width: 700px;
+            height: 400px;
+        }
+
+        span {
+            background-color: #0f0;
+            font-size: 14px;
+            line-height: 30px;
+        }
+
+        strong  {
+            display: inline-block;
+            width: 50px;
+            height: 50px;
+            background-color: #0f0;
+            margin-top: 50px;
+        }
+
+        img {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+<!--
+text-align: 设置行内级盒子水平方向的布局
+vertical-align: 设置行内级盒子垂直方向的布局
+-->
+
+<div>
+    <img src="images/icon-wechat.png" alt="">
+    <span>span</span>
+    <strong></strong>
+</div>
+
+
+<!--
+1.每一个HTML元素都会产生一个盒子(box, 元素所需要的空间)
+1> 块级元素(比如div)产生一个块级盒子(block-level box)
+2> 行内级元素(比如span)产生一个行内级盒子(inline-level box)
+3> inline-block元素产生一个行内级盒子(inline-level box)
+
+2.多个行内级盒子可以在同一行显示
+
+3.vertical-align用来设置行内级盒子(inline-level box)垂直位置
+
+4.行内级盒子(inline-level box)高度
+1> 行内级非替换元素(比如span\strong\a): line-height的高度
+2> inline-block元素: margin-box的高度
+3> 行内级替换元素(比如img\input):  margin-box的高度
+-->
+
+</body>
+</html>

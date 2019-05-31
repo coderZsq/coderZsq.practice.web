@@ -1,0 +1,35 @@
+@charset "UTF-8";
+
+body, dl, dt, dd, ul, ol, li,
+h1, h2, h3, h4, h5, h6, pre, p,
+form, button, input, textarea, select,
+table, tr, td, th {
+    margin: 0;
+    padding: 0;
+}
+
+i, em {
+    font-style: normal;
+}
+
+li {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+button, input, textarea, select, a {
+    outline: none;
+}
+
+img {
+    border: none;
+    vertical-align: top;
+}
