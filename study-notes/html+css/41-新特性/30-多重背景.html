@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>30-多重背景</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        div{
+            width: 500px;
+            height: 500px;
+            border: 1px solid #000;
+            margin: 100px auto;
+
+            background-image: url("images/dog1.jpg"),
+            url("images/dog2.jpg"),
+            url("images/dog3.jpg"),
+        url("images/dog4.jpg"),
+            url("images/dog5.jpg");
+
+            /*background-repeat: no-repeat,no-repeat,no-repeat,no-repeat,no-repeat;*/
+
+            /*如果多张图片设置的属性一样就可以简写*/
+            background-repeat: no-repeat;
+
+            background-position: left top,right top,left bottom,right bottom,center center;
+
+            /*连写*/
+            /*background: url("images/dog1.jpg") no-repeat,
+            url("images/dog2.jpg") no-repeat right top,
+            url("images/dog3.jpg") no-repeat left bottom;*/
+        }
+    </style>
+</head>
+<body>
+<!--
+多重背景图片
+css3可以设置多张背景图片
+先设置的背景图片会挡住后设置的背景图片
+
+-->
+<div></div>
+</body>
+</html>

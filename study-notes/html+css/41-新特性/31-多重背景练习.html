@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>31-多重背景练习</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .box{
+            width: 600px;
+            height: 190px;
+            border: 1px solid #000;
+            margin: 100px auto;
+
+            /*多重背景图片*/
+            background-image: url("images/bg-sun.png"),
+        url(images/bg-plane.png),
+        url("images/bg-clouds.png");
+
+            /*背景平铺*/
+            background-repeat: no-repeat;
+            /*背景尺寸*/
+            background-size: 50px 50px,50px 50px,auto auto;
+            /*背景定位*/
+            background-position: 400px 30px,50px 150px,0 0;
+
+            /*添加动画*/
+            animation: move 3s linear infinite;
+        }
+        @keyframes move {
+            from{
+                background-position: 400px 30px,50px 150px,0 0;
+            }
+            to{
+                background-position: 400px 30px,150px -20px,-800px 0;
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="box"></div>
+</body>
+</html>

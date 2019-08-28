@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>13-形变练习</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .box{
+            width: 310px;
+            margin: 30px auto;
+            border: 1px solid #000;
+            perspective: 500px;
+            background-color: pink;
+        }
+        .box img{
+            transform-origin: left bottom;
+            transition: all 0.3s;
+        }
+        .box:hover img{
+            /*默认绕着Z轴旋转*/
+            transform: rotateX(70deg);
+        }
+    </style>
+</head>
+<body>
+<div class="box">
+    <img src="images/pk.png" alt="">
+</div>
+</body>
+</html>

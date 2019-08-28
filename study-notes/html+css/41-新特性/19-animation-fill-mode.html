@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>19-animation-fill-mode</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        ul{
+            width: 200px;
+            height: 200px;
+            border: 1px solid #000;
+            margin: 100px auto;
+            list-style: none;
+        }
+        ul li{
+            width: 100%;
+            height: 100%;
+            background-color: red;
+            animation-name: move;
+            animation-duration: 1s;
+            animation-delay: 2s;
+            /*规定动画播放完成或者播放前的状态*/
+            /*animation-fill-mode: forwards;*/
+            /*
+            backwards 动画在等待的时候保持第一针的位置
+            */
+            animation-fill-mode: backwards;
+            /*animation-fill-mode: both;*/
+        }
+        @keyframes move {
+            0%{
+                transform: rotate(30deg);
+            }
+            30%{
+                transform: rotate(60deg);
+            }
+            100%{
+                transform: rotate(80deg);
+            }
+        }
+    </style>
+</head>
+<body>
+<!--
+animation-fill-mode 属性规定动画在播放之前或之后，其动画效果是否可见。
+none	不改变默认行为。
+forwards	当动画完成后，保持最后一个属性值（在最后一个关键帧中定义）。
+backwards	在 animation-delay 所指定的一段时间内，在动画显示之前，应用开始属性值（在第一个关键帧中定义）。
+both	向前和向后填充模式都被应用。
+-->
+<ul>
+    <li></li>
+</ul>
+</body>
+</html>

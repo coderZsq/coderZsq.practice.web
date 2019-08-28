@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>16-翻转菜单</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .box {
+            width: 500px;
+            height: 500px;
+            border: 1px solid #000;
+            margin: 30px auto;
+        }
+
+        .box .header {
+            height: 44px;
+            background-color: #000;
+        }
+
+        .box .header span {
+            background-color: green;
+            width: 150px;
+            height: 100%;
+            float: left;
+            margin-left: 13px;
+            text-align: center;
+            line-height: 44px;
+        }
+
+        .box .header span ul {
+            width: 150px;
+            height: 44px;
+            list-style: none;
+
+            /*定位的元素会盖住没有定位的元素*/
+            position: relative;
+        }
+
+        .box .header span ul li {
+            width: 100%;
+            height: 100%;
+            background-color: pink;
+            transition: all 1s;
+            transform: rotateY(180deg);
+            /*不透明度*/
+            opacity: 0;
+        }
+
+        .box .header span:hover ul li {
+            /*transform: rotateY(0deg);*/
+            transform: none;
+            opacity: 1;
+        }
+        /*进入的动画*/
+        .box .header span:hover ul li:nth-child(1) {
+            transition-delay: 0ms;
+        }
+
+        .box .header span:hover ul li:nth-child(2) {
+            transition-delay: 200ms;
+        }
+
+        .box .header span:hover ul li:nth-child(3) {
+            transition-delay: 400ms;
+        }
+
+        .box .header span:hover ul li:nth-child(4) {
+            transition-delay: 600ms;
+        }
+
+        .box .header span:hover ul li:nth-child(5) {
+            transition-delay: 800ms;
+        }
+
+        /*出去的动画
+        鼠标移开
+        */
+        .box .header span ul li:nth-child(5) {
+            transition-delay: 0ms;
+        }
+
+        .box .header span ul li:nth-child(4) {
+            transition-delay: 200ms;
+        }
+
+        .box .header span ul li:nth-child(3) {
+            transition-delay: 400ms;
+        }
+
+        .box .header span ul li:nth-child(2) {
+            transition-delay: 600ms;
+        }
+
+        .box .header span ul li:nth-child(1) {
+            transition-delay: 800ms;
+        }
+    </style>
+</head>
+<body>
+<div class="box">
+    <div class="header">
+        <span>一级菜单
+            <ul>
+                <li>二级菜单</li>
+                <li>二级菜单</li>
+                <li>二级菜单</li>
+                <li>二级菜单</li>
+                <li>二级菜单</li>
+            </ul>
+        </span>
+        <span>一级菜单
+            <ul>
+                <li>二级菜单</li>
+                <li>二级菜单</li>
+                <li>二级菜单</li>
+                <li>二级菜单</li>
+                <li>二级菜单</li>
+            </ul>
+        </span>
+        <span>一级菜单
+            <ul>
+                <li>二级菜单</li>
+                <li>二级菜单</li>
+                <li>二级菜单</li>
+                <li>二级菜单</li>
+                <li>二级菜单</li>
+            </ul>
+        </span>
+    </div>
+    <p>我是MT我是MT我是MT我是MT我是MT我是MT我是MT我是MT我是MT我是MT我是MT我是MT我是MT我是MT我是MT我是MT我是MT我是MT我是MT我是MT我是MT我是MT我是MT我是MT我是MT我是MT我是MT我是MT我是MT我是MT我是MT我是MT我是MT我是MT我是MT我是MT</p>
+</div>
+</body>
+</html>

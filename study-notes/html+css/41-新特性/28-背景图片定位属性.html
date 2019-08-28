@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>28-背景定位属性</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        ul{
+            width: 800px;
+            height: 800px;
+            list-style: none;
+            border: 1px solid #000;
+            margin: 30px auto;
+        }
+        ul li{
+            width: 200px;
+            height: 200px;
+            border: 10px dashed #000000;
+            float: left;
+            margin: 10px;
+            padding: 10px;
+        }
+        ul li:nth-child(1){
+            background: url("images/dog.jpg") no-repeat;
+        }
+        ul li:nth-child(2){
+            background: url("images/dog.jpg") no-repeat;
+            /*默认*/
+            background-origin: padding-box;
+        }
+        ul li:nth-child(3){
+            background: url("images/dog.jpg") no-repeat;
+            /*设置背景图片从border开始定位*/
+            background-origin: border-box;
+        }
+        ul li:nth-child(4){
+            background: url("images/dog.jpg") no-repeat;
+            background-origin: content-box;
+        }
+    </style>
+</head>
+<body>
+<!--
+背景图片定位属性 是css3新增的属性
+背景图片定位属性是专门用来控制背景图片定位到哪里的
+
+取值:
+padding-box 默认 背景图片从padding开始定位
+border-box 背景图片从border开始定位
+-->
+<ul>
+    <li>默认</li>
+    <li>padding-box</li>
+    <li>border-box</li>
+    <li>content-box</li>
+</ul>
+</body>
+</html>

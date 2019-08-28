@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>12-形变中心点</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        ul{
+            width: 200px;
+            height: 200px;
+            border: 1px solid #000;
+            margin: 100px auto;
+            list-style: none;
+            position: relative;
+        }
+        ul li{
+            width: 100%;
+            height: 100%;
+            background-color: red;
+            position: absolute;
+            left: 0;
+            top: 0;
+
+            /*transform-origin: 水平方向 垂直方向;*/
+            /*transform-origin: 0px 0px;*/
+            /*transform-origin: 200px 0px;*/
+            /*transform-origin: 200px 200px;*/
+            /*transform-origin: 50% 50%;*/
+            /*transform-origin: left top;*/
+            /*transform-origin: right top;*/
+            transform-origin: right bottom;
+        }
+        ul li:nth-child(1){
+            transform: rotate(30deg);
+        }
+        ul li:nth-child(2){
+            transform: rotate(45deg);
+            background-color: yellow;
+        }
+        ul li:nth-child(3){
+            transform: rotate(60deg);
+            background-color: green;
+        }
+    </style>
+</head>
+<body>
+<!--
+默认绕着中心点来做形变
+
+transform-origin	允许你改变被转换元素的位置。
+1.接收具体的像素 100px 200px
+transform-origin: 0px 0px;
+transform-origin: 200px 0px;
+transform-origin: 200px 200px;
+2.接收一个百分比
+10%  20%
+transform-origin: 10% 10%;
+transform-origin: 50% 50%;
+3.可以是具体的方位名词 left top right bottom center
+
+-->
+<ul>
+    <li></li>
+    <li></li>
+    <li></li>
+</ul>
+</body>
+</html>

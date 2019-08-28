@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>04-marquee</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        marquee{
+            width: 200px;
+            height: 200px;
+            background-color: green;
+        }
+    </style>
+</head>
+<body>
+<!--
+direction:设置滚动方向 left(默认)/right/up/down
+scrollamount: 设置滚动速度,值越大就越快
+loop: 设置滚动次数,默认是-1(无限滚动),接受数字 例如 1 2
+behavior:设置滚动类型
+slide滚动到边界就停止,
+alternate 滚动到边界就弹回
+-->
+<marquee behavior="alternate" direction="">
+    hello word
+</marquee>
+<marquee behavior="slide" direction="right">
+    hello word
+</marquee>
+<marquee  direction="up">
+    hello word
+</marquee>
+<marquee  direction="down">
+    hello word
+</marquee>
+<marquee scrollamount="30">
+    hello word
+</marquee>
+<marquee scrollamount="30" loop="2">
+    hello word
+</marquee>
+</body>
+</html>

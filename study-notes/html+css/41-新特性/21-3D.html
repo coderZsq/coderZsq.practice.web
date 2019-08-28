@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>21-3D</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .box{
+            width: 300px;
+            height: 300px;
+            background-color:red;
+            margin: 100px auto;
+            /*overflow: hidden;*/
+            /*perspective: 500px;*/
+            border: 1px solid #000;
+
+            /*3D效果*/
+            transform-style: preserve-3d;
+            transform: rotateX(0deg) rotateY(0deg);
+            /*
+            默认元素是2D效果
+            2D 只有宽度和高度没有厚度
+            3D 有宽度有高度并且有厚度
+            */
+        }
+        .son{
+            width: 100px;
+            height: 100px;
+            background-color: yellow;
+            margin-left:100px;
+            margin-top: 100px;
+            transform: rotateY(80deg);
+        }
+    </style>
+</head>
+<body>
+<!--
+默认元素是2D效果
+transform-style(要给父元素设置) 属性规定如何在 3D 空间中呈现被嵌套的元素。
+flat	子元素将不保留其 3D 位置。
+preserve-3d	子元素将保留其 3D 位置。
+-->
+<div class="box">
+    <div class="son"></div>
+</div>
+</body>
+</html>

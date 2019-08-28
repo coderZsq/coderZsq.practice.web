@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>08-弹性效果</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .box{
+            height: 100px;
+            margin-top: 100px;
+            background-color: red;
+            text-align: center;
+            line-height: 100px;
+        }
+        .box span{
+            font-size: 50px;
+            transition: all 1s;
+        }
+        .box:hover span{
+            margin: 0 20px;
+        }
+    </style>
+</head>
+<body>
+<!--
+块级标签默认宽度和父元素的宽度一样
+-->
+<div class="box">
+    <span>泉</span>
+    <span>哥</span>
+    <span>带</span>
+    <span>你</span>
+    <span>秒</span>
+    <span>杀</span>
+    <span>H</span>
+    <span>5</span>
+</div>
+</body>
+</html>

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>10-2D转换</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        ul{
+            list-style: none;
+            width: 400px;
+            height: 500px;
+            border: 1px solid #000;
+            margin: 100px auto;
+        }
+        ul li{
+            width: 100px;
+            height: 50px;
+            background-color: red;
+            text-align: center;
+            margin: 0 auto;
+            margin-bottom: 50px;
+        }
+        ul li:nth-child(2){
+            /*平移*/
+            /*transform: translate(水平方向,垂直方向);*/
+            /*transform: translate(100px,0);*/
+            transform: translate(100px,-50px);
+        }
+        ul li:nth-child(3){
+            /*transform: scale(水平方向,垂直方向);*/
+            /*transform: scale(1.5,1.5);*/
+            /*transform: scale(0.5,0.5);*/
+            transform: scale(0.5);
+        }
+        ul li:nth-child(4){
+            /*旋转
+            单位deg 角度
+             默认顺势针旋转
+            */
+            transform: rotate(90deg);
+        }
+        ul li:nth-child(5){
+            /* 如果有多个属性用空格隔开 */
+            /*transform: translate(100px,0) scale(0.5) rotate(90deg);*/
+            /*
+            旋转 坐标系会发生改变
+            */
+            transform:rotate(90deg) translate(100px,0) scale(0.5);
+        }
+    </style>
+</head>
+<body>
+<!--
+2D转换
+1.平移
+transform: translate(水平方向,垂直方向);
+2.缩放
+transform: scale(水平方向,垂直方向);
+默认比例  1.0 代表不缩放
+如果比1.0大代表放大
+如果比1.0 小代表缩小
+如果垂直方向和水平方向的值一样
+transform: scale(0.5,0.5);
+可以简写成
+transform: scale(0.5);
+-->
+<ul>
+    <li>默认</li>
+    <li>平移</li>
+    <li>缩放</li>
+    <li>旋转</li>
+    <li>综合</li>
+</ul>
+</body>
+</html>

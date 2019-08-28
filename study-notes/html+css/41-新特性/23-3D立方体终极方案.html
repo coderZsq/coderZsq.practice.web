@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>23-3D立方体终极方案</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        ul{
+            width: 200px;
+            height: 200px;
+            border: 1px solid #000;
+            margin: 100px auto;
+            list-style: none;
+            text-align: center;
+            line-height: 200px;
+            font-size: 50px;
+            position: relative;
+
+            transform: rotateX(0deg) rotateY(0deg);
+
+            /*让子元素呈现3D效果*/
+            transform-style: preserve-3d;
+        }
+        ul li{
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+        ul li:nth-child(1){
+            background-color: red;
+            transform: rotateX(90deg) translateZ(100px);
+        }
+        ul li:nth-child(2){
+            background-color: yellow;
+            transform: rotateX(180deg) translateZ(100px);
+        }
+        ul li:nth-child(3){
+            background-color: blue;
+            transform: rotateX(270deg) translateZ(100px);
+        }
+        ul li:nth-child(4){
+            background-color: pink;
+            transform: rotateX(360deg) translateZ(100px);
+        }
+        ul li:nth-child(5){
+            background-color: skyblue;
+            transform: translateX(-100px) rotateY(90deg);
+        }
+        ul li:nth-child(6){
+            background-color: tomato;
+            transform: translateX(100px) rotateY(90deg);
+        }
+    </style>
+</head>
+<body>
+<ul>
+    <li>1</li>
+    <li>2</li>
+    <li>3</li>
+    <li>4</li>
+    <li>5</li>
+    <li>6</li>
+</ul>
+</body>
+</html>

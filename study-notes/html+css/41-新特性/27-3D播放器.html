@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>27-3D播放器</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        body{
+            overflow: hidden;
+
+            background: url("images/xzq.jpg") no-repeat;
+            /*
+            background-size 是css3新增的属性
+            专门用于调整背景图片尺寸的
+            */
+            background-size: cover;
+        }
+        ul{
+            list-style: none;
+            width: 200px;
+            height: 200px;
+            position: absolute;
+            left: 50%;
+            margin-left: -100px;
+            bottom: 100px;
+            /*border: 1px solid #000;*/
+            text-align: center;
+            line-height: 200px;
+            font-size: 50px;
+            transform: rotateX(-10deg) rotateY(0deg);
+            /*让子元素呈现3D效果*/
+            transform-style: preserve-3d;
+            /*background-color: green;*/
+            /*添加动画*/
+            animation: change 5s linear infinite;
+        }
+        ul:hover{
+            /*暂停动画*/
+            animation-play-state: paused;
+        }
+        ul:hover li img{
+            opacity: 0.5;
+        }
+        ul li{
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            left: 0;
+            top: 0;
+            background-color: #000;
+        }
+        ul li:hover img{
+            opacity: 1;
+        }
+        ul li:nth-child(1){
+            /*background-color: red;*/
+            transform: rotateY(60deg) translateZ(200px);
+        }
+        ul li:nth-child(2){
+            /*background-color: yellow;*/
+            transform: rotateY(120deg) translateZ(200px);
+        }
+        ul li:nth-child(3){
+            /*background-color: blue;*/
+            transform: rotateY(180deg) translateZ(200px);
+        }
+        ul li:nth-child(4){
+            /*background-color: orange;*/
+            transform: rotateY(240deg) translateZ(200px);
+        }
+        ul li:nth-child(5){
+            /*background-color: green;*/
+            transform: rotateY(300deg) translateZ(200px);
+        }
+        ul li:nth-child(6){
+            /*background-color: pink;*/
+            transform: rotateY(360deg) translateZ(200px);
+        }
+        ul li img{
+            width: 100%;
+            height: 100%;
+            border: 5px solid #fff;
+        }
+        @keyframes change {
+            /*
+            在动画中相同的属性会覆盖
+            在动画中编写代码固定的属性放在前面 变化的属性 放在后面
+            */
+            from{
+                transform:rotateX(-10deg) rotateY(0);
+            }
+            to{
+                transform:rotateX(-10deg) rotateY(360deg);
+            }
+        }
+        .heart{
+            position: absolute;
+            left: 100px;
+            bottom: 100px;
+            animation: move 5s linear infinite;
+        }
+        @keyframes move {
+            0%{
+                left: 100px;
+                bottom: 100px;
+                opacity: 1;
+            }
+            20%{
+                left: 300px;
+                bottom: 300px;
+                opacity: 0;
+            }
+            40%{
+                left: 500px;
+                bottom: 500px;
+                opacity: 1;
+            }
+            60%{
+                left: 800px;
+                bottom: 300px;
+                opacity: 0;
+            }
+            80%{
+                left: 1000px;
+                bottom: 100px;
+                opacity: 1;
+            }
+            100%{
+                left: 800px;
+                bottom: -200px;
+                opacity: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+<ul>
+    <li><img src="images/1.jpg" alt=""></li>
+    <li><img src="images/2.jpg" alt=""></li>
+    <li><img src="images/3.jpg" alt=""></li>
+    <li><img src="images/4.jpg" alt=""></li>
+    <li><img src="images/5.jpg" alt=""></li>
+    <li><img src="images/6.jpg" alt=""></li>
+</ul>
+<img src="images/heart.png" alt="" class="heart">
+
+<audio src="images/军哥的最爱.mp3" autoplay="autoplay" loop="loop"></audio>
+</body>
+</html>

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>06-过渡</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        ul{
+            width: 500px;
+            height: 400px;
+            border: 1px solid #000;
+            list-style: none;
+            margin: 0 auto;
+        }
+        ul li{
+            width: 100px;
+            height: 50px;
+            background-color: red;
+            margin-top: 20px;
+            /*谁发生改变就在谁身上设置*/
+            /*transition-property: all;*/
+            /*transition-duration: 1s;*/
+
+            /*transition: all 1s linear 2s;*/
+            /*transition: all 1s linear;*/
+            /*transition: all 1s;*/
+            transition: 1s;
+
+        }
+        ul li:nth-child(1){
+            transition-timing-function: linear;
+        }
+        ul li:nth-child(2){
+            transition-timing-function: ease;
+        }
+        ul li:nth-child(3){
+            transition-timing-function: ease-in;
+        }
+        ul li:nth-child(4){
+            transition-timing-function: ease-out;
+        }
+        ul li:nth-child(5){
+            transition-timing-function: ease-in-out;
+        }
+
+        ul:hover li{
+            margin-left: 400px;
+        }
+    </style>
+</head>
+<body>
+<!--
+过渡是css3新增的属性
+过渡的三要素
+1.有属性发生改变
+2.告诉系统那个属性发生改变
+transition-property	规定应用过渡的 CSS 属性的名称
+3.过渡时间
+
+
+1.transition-timing-function 属性规定过渡效果的速度曲线。
+linear	规定以相同速度开始至结束的过渡效果（等于 cubic-bezier(0,0,1,1)）。
+ease	规定慢速开始，然后变快，然后慢速结束的过渡效果（cubic-bezier(0.25,0.1,0.25,1)）。
+ease-in	规定以慢速开始的过渡效果（等于 cubic-bezier(0.42,0,1,1)）。
+ease-out	规定以慢速结束的过渡效果（等于 cubic-bezier(0,0,0.58,1)）。
+ease-in-out	规定以慢速开始和结束的过渡效果（等于 cubic-bezier(0.42,0,0.58,1)）
+
+
+2.简写
+transition: property duration timing-function delay;
+transition: 过渡属性的名称 过渡时长 过渡速度曲线  延迟
+简写可以省略 只有时间是不能省略的 其他的属性都可以省略 如果省略就用默认值,自己设置了就用你设置的值
+-->
+<ul>
+    <li>linear</li>
+    <li>ease</li>
+    <li>ease-in</li>
+    <li>ease-out</li>
+    <li>ease-in-out</li>
+</ul>
+</body>
+</html>

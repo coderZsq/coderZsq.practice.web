@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>11-形变中心点</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        ul{
+            width: 200px;
+            height: 200px;
+            list-style: none;
+            margin: 50px auto;
+        }
+        ul li{
+            width: 100%;
+            height: 100%;
+            border: 1px solid #000;
+            margin-bottom: 60px;
+            /*
+            透视效果
+            近大远小
+            要想让子元素有透视效果必须把perspective添加到父元素身上
+            值越大 透视效果越明显
+            */
+            perspective: 300px;
+        }
+        ul li img{
+            width: 100%;
+        }
+        ul li:nth-child(1) img{
+            /*默认绕着Z轴旋转*/
+            /*transform: rotate(45deg);*/
+            transform: rotateZ(45deg);
+        }
+        ul li:nth-child(2) img{
+            transform: rotateX(45deg);
+        }
+        ul li:nth-child(3) img{
+            transform: rotateY(70deg);
+        }
+    </style>
+</head>
+<body>
+<ul>
+    <li><img src="images/rotateZ.jpg" alt=""></li>
+    <li><img src="images/rotateX.jpg" alt=""></li>
+    <li><img src="images/rotateY.jpg" alt=""></li>
+</ul>
+</body>
+</html>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>14-阴影</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .box{
+            width: 200px;
+            height: 200px;
+            border: 1px solid #000;
+            margin: 100px auto;
+            text-align: center;
+            line-height: 200px;
+            font-size: 30px;
+            color: green;
+
+            /*box-shadow: 10px 10px 0px 10px red inset;*/
+            box-shadow: 10px 10px 2px;
+        }
+        p{
+            font-size: 30px;
+            width: 200px;
+            height: 200px;
+            border: 1px solid #000;
+            text-align: center;
+            line-height: 200px;
+            margin: 0 auto;
+            text-shadow: 10px 10px 10px;
+            color: blue;
+        }
+    </style>
+</head>
+<body>
+<!--
+1.标签阴影
+box-shadow 向标签添加阴影
+h-shadow	必需。水平阴影的位置。允许负值。	测试
+v-shadow	必需。垂直阴影的位置。允许负值。	测试
+blur	可选。模糊距离。	测试
+spread	可选。阴影的尺寸。	测试
+color	可选。阴影的颜色。请参阅 CSS 颜色值。	测试
+inset	可选。将外部阴影 (outset) 改为内部阴影。
+
+box-shadow: h-shadow v-shadow blur spread color inset;
+box-shadow: 水平方向   垂直方向  模糊度 阴影扩展 阴影颜色 内外阴影
+
+阴影颜色默认与文字颜色一样
+
+水平方向 和垂直方向必须传
+
+2.文字阴影
+text-shadow 属性向文本设置阴影。
+h-shadow	必需。水平阴影的位置。允许负值。	测试
+v-shadow	必需。垂直阴影的位置。允许负值。	测试
+blur	可选。模糊的距离。	测试
+color	可选。阴影的颜色。参阅 CSS 颜色值。
+阴影颜色默认与文字颜色一样
+-->
+<div class="box">
+    我是MT
+</div>
+<p>
+    我是MT
+</p>
+</body>
+</html>

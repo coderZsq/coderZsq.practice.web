@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>06-过渡</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .box{
+            width: 100px;
+            height: 50px;
+            background-color: yellow;
+
+            /*告诉系统那个属性发生改变,多个属性之间用逗号分隔*/
+            /*transition-property: margin-left,height,background-color;*/
+            /*系统会自动判断发生改变的属性*/
+            transition-property: all;
+
+            /*transition-property: height;*/
+            /*告诉系统过渡的时长*/
+            /*transition-duration: 1s,1s,1s;*/
+            /*如果每一个属性的时长都一样可以简写*/
+            transition-duration: 1s;
+
+            /*延迟执行动画*/
+            transition-delay: 2s;
+        }
+        .box:hover{
+            margin-left: 300px;
+            height: 200px;
+            background-color: red;
+        }
+    </style>
+</head>
+<body>
+<!--
+过渡是css3新增的属性
+过渡的三要素
+1.有属性发生改变
+2.告诉系统那个属性发生改变
+transition-property	规定应用过渡的 CSS 属性的名称
+3.过渡时间
+-->
+<div class="box"></div>
+</body>
+</html>

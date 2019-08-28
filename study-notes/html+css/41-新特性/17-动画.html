@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>17-动画</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .box{
+            width: 100px;
+            height: 50px;
+            background-color: yellow;
+
+            /*
+            告诉系统要做那个动画
+            动画的名称自己起
+            */
+            animation-name: move;
+            /*动画的时长*/
+            animation-duration: 1s;
+            /*动画的延迟时间*/
+            /*animation-delay: 2s;*/
+            /*规定动画执行的次数
+            infinite 动画执行无限次
+            */
+            /*animation-iteration-count: 2;*/
+            /*animation-iteration-count: infinite;*/
+            animation-iteration-count: 3;
+
+            /*规定动画是否反转
+            normal	默认值。动画应该正常播放。	测试
+            alternate	动画应该轮流反向播放
+            */
+            animation-direction: alternate;
+        }
+        @keyframes move {
+            /*在这里面描述动画执行的路径*/
+            from{
+                /*margin-left: 0;*/
+                margin-top: 0;
+            }
+            to{
+                /*margin-left: 300px;*/
+                margin-top: 400px;
+            }
+        }
+        .box:hover{
+            /*
+            动画是否暂停
+            paused	规定动画已暂停
+            running	规定动画正在播放。
+            */
+            animation-play-state: paused;
+        }
+    </style>
+</head>
+<body>
+<!--
+过渡和动画的区别
+过渡和动画都是动画
+过渡需要人为触发才能执行
+动画不需要人为触发就能执行
+
+动画三要素
+1.告诉系统要做那个动画
+2.实现这个动画
+3.动画的时长
+
+
+@keyframes	规定动画。	3
+animation	所有动画属性的简写属性，除了 animation-play-state 属性。	3
+animation-name	规定 @keyframes 动画的名称。	3
+animation-duration	规定动画完成一个周期所花费的秒或毫秒。默认是 0。	3
+animation-timing-function	规定动画的速度曲线。默认是 "ease"。	3
+animation-delay	规定动画何时开始。默认是 0。	3
+animation-iteration-count	规定动画被播放的次数。默认是 1。	3
+animation-direction	规定动画是否在下一周期逆向地播放。默认是 "normal"。	3
+animation-play-state	规定动画是否正在运行或暂停。默认是 "running"。	3
+animation-fill-mode	规定对象动画时间之外的状态。
+-->
+<div class="box"></div>
+</body>
+</html>

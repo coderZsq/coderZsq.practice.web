@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>32-云层效果</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        ul{
+            width: 100%;
+            height: 500px;
+            list-style: none;
+            margin-top: 100px;
+            border: 1px solid #000;
+            position: relative;
+            overflow: hidden;
+            background-color: skyblue;
+            /*
+            alternate 动画反转
+            */
+            animation: change 3s linear infinite alternate;
+        }
+        ul li{
+            position: absolute;
+            left: 0;
+            top: 0;
+            height: 100%;
+        }
+        ul li:nth-child(1){
+            background: url("images/cloud_one.png");
+            width: 200%;
+            /*background-color: red;*/
+            animation: one 5s linear infinite alternate;
+        }
+        ul li:nth-child(2){
+            width: 300%;
+            background: url("images/cloud_two.png");
+            animation: two 5s linear infinite alternate;
+        }
+        ul li:nth-child(3){
+            width: 400%;
+            background: url("images/cloud_three.png");
+            animation: three 5s linear infinite alternate;
+        }
+        @keyframes change {
+            from{
+                background-color: skyblue;
+            }
+            to{
+                background-color: #000;
+            }
+        }
+        /*@keyframes move {
+            from{
+                left: 0;
+            }
+            to{
+                left:-800px;
+            }
+        }*/
+        @keyframes one {
+            from{
+                left:0;
+            }
+            to{
+                left: -100%;
+            }
+        }
+        @keyframes two {
+            from{
+                left:0;
+            }
+            to{
+               left: -200%;
+            }
+        }
+        @keyframes three {
+            from{
+                left:0;
+            }
+            to{
+                left: -300%;
+            }
+        }
+    </style>
+</head>
+<body>
+<!--
+背景图片撑不起盒子的高度和宽度
+
+-->
+<ul>
+    <!--<li>-->
+        <!--&lt;!&ndash;<img src="images/cloud_one.png" alt="">&ndash;&gt;-->
+    <!--</li>-->
+    <!--<li><img src="images/cloud_two.png" alt=""></li>-->
+    <!--<li><img src="images/cloud_three.png" alt=""></li>-->
+    <li></li>
+    <li></li>
+    <li></li>
+</ul>
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>02-音频标签</title>
+</head>
+<body>
+<!--
+音频标签是html5新增的标签
+
+autoplay	autoplay	如果出现该属性，则音频在就绪后马上播放。
+controls	controls	如果出现该属性，则向用户显示控件，比如播放按钮。
+loop	loop	如果出现该属性，则每当音频结束时重新开始播放。
+preload	preload
+如果出现该属性，则音频在页面加载时进行加载，并预备播放。
+
+如果使用 "autoplay"，则忽略该属性。
+
+src	url	要播放的音频的 URL。
+
+-->
+<!--<audio src="video/王菲%20-%20传奇.mp3" autoplay="autoplay" controls="controls"></audio>-->
+<!--兼容写法-->
+<audio>
+    <source src="song.ogg" type="audio/ogg">
+    <source src="song.mp3" type="audio/mpeg">
+    你的浏览器不支持播放
+    Your browser does not support the audio tag.
+</audio>
+</body>
+</html>

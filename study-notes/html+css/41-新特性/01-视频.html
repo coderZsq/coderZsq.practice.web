@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>01-视频</title>
+</head>
+<body>
+<!--
+在html5中新增了一个视频播放标签 video
+不是所有的浏览器都支持video标签
+IE9+
+
+src 是视频的路径
+autoplay	autoplay	如果出现该属性，则视频在就绪后马上播放。
+controls	controls	如果出现该属性，则向用户显示控件，比如播放按钮。
+height	pixels	设置视频播放器的高度。
+loop	loop	如果出现该属性，则当媒介文件完成播放后再次开始播放。
+preload	preload
+如果出现该属性，则视频在页面加载时进行加载，并预备播放。
+
+如果使用 "autoplay"，则忽略该属性。
+
+src	url	要播放的视频的 URL。
+width	pixels	设置视频播放器的宽度。
+
+muted 静音
+-->
+<!--<video src="video/sb1.webm" controls="controls" loop="loop" preload="auto" ></video>-->
+
+<!--
+视频兼容写法
+因为5大浏览器没有统一的格式 所以要设置兼容
+-->
+<video controls>
+    <source src="video/sb1.webm" type="video/webm">
+    <source src="video/sb1.mp4" type="video/mp4">
+    <source src="video/sb1.ogg" type="video/ogg">
+    Your browser does not support the video tag.
+</video>
+</body>
+</html>

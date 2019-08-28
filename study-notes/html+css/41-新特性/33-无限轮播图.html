@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>33-无限轮播图</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .box{
+            width: 600px;
+            height: 200px;
+            border: 1px solid #000;
+            margin: 100px auto;
+            position: relative;
+            overflow: hidden;
+        }
+        .box ul{
+            list-style: none;
+            width: 2000px;
+            animation: move 2s linear infinite;
+            position: absolute;
+            left: 0;
+            top: 0;
+            background-color: #000;
+        }
+        .box ul:hover{
+            /*停止动画
+            给谁添加动画就让谁停止
+            */
+            animation-play-state: paused;
+        }
+        .box ul:hover li{
+            opacity:0.5;
+        }
+        .box ul li:hover{
+            opacity:1;
+        }
+        .box ul li{
+            float: left;
+        }
+        .box ul li img{
+            width: 300px;
+        }
+        @keyframes move {
+            from{
+                left: 0;
+            }
+            to{
+                left:-900px;
+            }
+        }
+    </style>
+</head>
+<body>
+<!--
+animation: name duration timing-function delay iteration-count direction;
+animation: 动画名称  动画时长 动画运动曲线 动画延迟 动画执行的次数 动画要不要往返;
+动画名称  动画时长 不能省略其他都可以省略
+
+-->
+<div class="box">
+    <ul>
+        <li><img src="images/cloud_one.png" alt=""></li>
+        <li><img src="images/cloud_two.png" alt=""></li>
+        <li><img src="images/cloud_three.png" alt=""></li>
+        <li><img src="images/cloud_one.png" alt=""></li>
+        <li><img src="images/cloud_two.png" alt=""></li>
+    </ul>
+    <ul>
+        <li><img src="images/cloud_one.png" alt=""></li>
+        <li><img src="images/cloud_two.png" alt=""></li>
+        <li><img src="images/cloud_three.png" alt=""></li>
+        <li><img src="images/cloud_one.png" alt=""></li>
+        <li><img src="images/cloud_two.png" alt=""></li>
+    </ul>
+    <ul>
+        <li><img src="images/cloud_one.png" alt=""></li>
+        <li><img src="images/cloud_two.png" alt=""></li>
+        <li><img src="images/cloud_three.png" alt=""></li>
+        <li><img src="images/cloud_one.png" alt=""></li>
+        <li><img src="images/cloud_two.png" alt=""></li>
+    </ul>
+</div>
+
+</body>
+</html>

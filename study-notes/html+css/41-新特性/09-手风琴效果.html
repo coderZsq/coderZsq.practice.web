@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>09-手风琴效果</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        ul{
+            width: 960px;
+            height: 300px;
+            list-style: none;
+            margin: 30px auto;
+            border: 1px solid #000;
+            /*超出范围就剪切*/
+            overflow: hidden;
+        }
+        ul li{
+            float: left;
+            width: 160px;
+            height: 300px;
+            transition: all 0.3s;
+        }
+
+        ul:hover li{
+            width: 100px;
+        }
+        ul li:hover{
+            width: 460px;
+        }
+        ul li img{
+            vertical-align: top;
+        }
+    </style>
+</head>
+<body>
+<!--
+ul>li*6>img[src=images/ad$.jpg]
+
+vertical-align 属性设置元素的垂直对齐方式
+
+默认子元素可以超出父元素
+-->
+<ul>
+    <li><img src="images/ad1.jpg" alt=""></li>
+    <li><img src="images/ad2.jpg" alt=""></li>
+    <li><img src="images/ad3.jpg" alt=""></li>
+    <li><img src="images/ad4.jpg" alt=""></li>
+    <li><img src="images/ad5.jpg" alt=""></li>
+    <li><img src="images/ad6.jpg" alt=""></li>
+</ul>
+</body>
+</html>

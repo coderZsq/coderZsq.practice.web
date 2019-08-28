@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>29-背景图片绘制属性</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        ul{
+            list-style: none;
+            width: 800px;
+            height: 800px;
+            border: 1px solid #000;
+            margin: 0 auto;
+        }
+        ul li{
+            width: 200px;
+            height: 200px;
+            border: 20px dashed #000;
+            margin: 10px;
+            padding: 20px;
+            float: left;
+        }
+        ul li:nth-child(1){
+            background:red url("images/dog.jpg") no-repeat;
+        }
+        ul li:nth-child(2){
+            background:red url("images/dog.jpg") no-repeat;
+            background-clip: padding-box;
+        }
+        ul li:nth-child(3){
+            background:red url("images/dog.jpg") no-repeat;
+            /*背景从边框开始绘制*/
+            background-clip: border-box;
+        }
+        ul li:nth-child(4){
+            background:red url("images/dog.jpg") no-repeat;
+            /*背景从边框开始绘制*/
+            background-clip: content-box;
+        }
+    </style>
+</head>
+<body>
+<!--
+背景绘制属性是专门用来设置背景绘制区域的 在区域之外的东西背景都不显示是
+padding-box 规定背景从padding开始绘制
+border-box(默认) 背景从border开始绘制
+content-box 背景从content开始绘制
+-->
+<ul>
+    <li>默认</li>
+    <li>padding-box</li>
+    <li>border-box</li>
+    <li>content-box</li>
+</ul>
+</body>
+</html>
