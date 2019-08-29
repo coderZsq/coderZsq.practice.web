@@ -1,11 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="6c3d14ff-dcb2-440d-831b-3fe7ef4f2032" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/41-新特性/27-3D播放器.html" beforeDir="false" afterPath="$PROJECT_DIR$/41-新特性/27-3D播放器.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/41-新特性/33-无限轮播图.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/41-新特性/images/军哥的最爱.mp3" beforeDir="false" />
-    </list>
+    <list default="true" id="6c3d14ff-dcb2-440d-831b-3fe7ef4f2032" name="Default Changelist" comment="" />
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
     <ignored path="$PROJECT_DIR$/tmp/" />
@@ -16,7 +12,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
+    <leaf />
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
@@ -114,11 +110,12 @@
       <workItem from="1566972890274" duration="4884000" />
       <workItem from="1566978674470" duration="5699000" />
       <workItem from="1567043737453" duration="3493000" />
+      <workItem from="1567059136258" duration="5000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="14130000" />
+    <option name="totallyTimeSpent" value="14135000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1680" height="1050" extended-state="0" />
@@ -352,13 +349,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/41-新特性/33-无限轮播图.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="462">
-          <caret line="21" column="44" selection-start-line="21" selection-start-column="44" selection-end-line="21" selection-end-column="44" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/41-新特性/33-无限轮播图.html" />
     <entry file="file://$PROJECT_DIR$/41-新特性/28-背景图片定位属性.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="339">
