@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+    #box {
+      width: 100px;
+      height: 100px;
+      background-color: red;
+      position: relative;
+      left: 0px;
+    }
+  </style>
+</head>
+<body>
+<button id="btn">缓动动画-向右走</button>
+<button id="btn1">缓动动画-向左走</button>
+<div id="box"></div>
+<div id="box1"></div>
+<script src="js/utils.js"></script>
+<script>
+  $('#btn').onclick = function () {
+    buffer($('#box'),{left: 300})
+  }
+</script>
+</body>
+</html>

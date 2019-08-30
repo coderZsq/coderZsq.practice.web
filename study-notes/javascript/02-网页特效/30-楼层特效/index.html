@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+    ul, ol {
+      list-style: none;
+    }
+    body, html {
+      width: 100%;
+      height: 100%;
+    }
+    #ol {
+      width: 80px;
+      border: 1px solid #ccc;
+      position: fixed;
+      left: 100px;
+      top: 150px;
+    }
+    #ol li {
+      height: 30px;
+      line-height: 30px;
+      text-align: center;
+      border-bottom: 1px solid #fff;
+      background-color: #e0e0e0;
+    }
+    #ol li.current {
+      background-color: orange;
+    }
+    #ul {
+      height: 500%;
+      text-align: center;
+    }
+    #ul li {
+      height: 20%;
+      background-color: red;
+    }
+  </style>
+</head>
+<body>
+<ul id="ul">
+  <li>第1层内容</li>
+  <li>第2层内容</li>
+  <li>第3层内容</li>
+  <li>第4层内容</li>
+  <li>第5层内容</li>
+</ul>
+<ol id="ol">
+  <li class="current">第1层</li>
+  <li>第2层</li>
+  <li>第3层</li>
+  <li>第4层</li>
+  <li>第5层</li>
+</ol>
+<script src="js/utils.js"></script>
+<script>
+  // 1.获取标签
+  var ulList = $('#ul li');
+  var olList = $('#ol li');
+
+  // document.documentElement.scrollTop = 0;
+  // window.scrollTo(0,0);
+
+  // 每次来执行跳转到首层
+  setTimeout(function () {
+    document.documentElement.scrollTop = 0;
+  },100);
+  // true 代表动画正在执行 false 代表动画没有执行
+  var flag = false;
+
+  // 2.上色
+  // var colorArr = ['red','green','yellow','orange','blue'];
+
+  each(ulList,function (ele,index) {
+    // ele.style.backgroundColor = colorArr[index];
+    var r = parseInt(Math.random() * 256);
+    var g = parseInt(Math.random() * 256);
+    var b = parseInt(Math.random() * 256);
+    ele.style.backgroundColor = 'rgb('+ r +','+ g +','+ b +')';
+  });
+
+  // 3.添加事件
+  each(olList,function (ele,index) {
+    ele.onclick = function () {
+      flag = true;
+
+      // 让滚动条滚动
+      // document.documentElement.scrollTop = client().height * index;
+
+      buffer(document.documentElement,{scrollTop: client().height * index},function () {
+        flag = false;
+      });
+
+      // 2.切换指示器
+      // 排他
+      each(olList,function (e) {
+        e.className = '';
+      });
+      this.className = 'current';
+    }
+  })
+
+  // 4.监听滚动事件
+  window.onscroll = function () {
+    if (flag) return;
+
+    // 在高清屏 的误差 + 2  1920
+    var scrollTop = scroll().top + 2;
+
+    each(ulList,function (ele,index) {
+      if (scrollTop >= ele.offsetTop){
+        // 条件成立
+        // 设置当前楼选中
+        each(olList,function (e) {
+          e.className = '';
+        });
+        olList[index].className = 'current';
+      }
+    })
+  }
+</script>
+</body>
+</html>

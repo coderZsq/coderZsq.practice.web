@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+    #box {
+      width: 300px;
+      height: 300px;
+      background-color: red;
+      /*position: relative;*/
+    }
+    #son {
+      /**
+        元素的百分比
+        1.默认情况(子元素没有绝对定位/固定定位) 百分比就是参照父元素
+        2.如果子元素有定位(绝对定位/固定定位) 百分比参照的是最近的右定位的祖先元素 如果祖先元素都没有定位参照body
+       */
+      width: 50%;
+      height: 100px;
+      background-color: yellow;
+      position: static;
+    }
+  </style>
+</head>
+<body>
+<div id="box">
+  <div id="son"></div>
+</div>
+</body>
+</html>

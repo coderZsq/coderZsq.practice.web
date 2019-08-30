@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+    #box {
+      width: 100px;
+      height: 200px;
+      background-color: red;
+      position: relative;
+      left: 100px;
+    }
+  </style>
+</head>
+<body>
+<button id="btn">缓动动画-向右走</button>
+<button id="btn1">缓动动画-向左走</button>
+<div id="box"></div>
+<div id="box1"></div>
+<script src="js/utils.js"></script>
+<script>
+  // var box = $('#box');
+
+  // console.log(parseInt(getStyleAttr(box, 'left')));
+  // console.log(getStyleAttr(box, 'width'));
+  // console.log(getStyleAttr(box, 'height'));
+  // console.log(getStyleAttr(box, 'background'));
+  // console.log(getStyleAttr(box, 'boxShadow'));
+
+  $('#btn').onclick = function () {
+    buffer($('#box'),'top',800);
+  };
+  function buffer(obj,attr,target) {
+    clearInterval(obj.timer);
+
+    obj.timer = setInterval(function () {
+      var beginX = parseFloat(getStyleAttr(obj,attr)) || 0;
+
+      var speed = (target - beginX) / 10;
+      // 判断方向
+      if (beginX <= target){
+        // 向右走
+        // 向上取整
+        speed = Math.ceil(speed);
+      } else {
+        // 向下取整
+        speed = Math.floor(speed);
+      }
+
+      beginX = beginX + speed;
+
+      if (Math.ceil(beginX) == target) {
+        clearInterval(obj.timer);
+        beginX = target;
+      }
+      console.log(speed,beginX, target);
+      obj.style[attr] = beginX + 'px';
+
+    },20);
+  }
+
+  // console.log($('#box').style['top']);
+
+  /**
+   * 获取标签的属性值
+   * @param obj 元素
+   * @param attr 属性
+   * @returns {string} 值
+   */
+  function getStyleAttr(obj, attr) {
+    if(obj.currentStyle){ // IE 和 opera
+      return obj.currentStyle[attr];
+    }else {
+      return window.getComputedStyle(obj, null)[attr];
+    }
+  }
+
+</script>
+</body>
+</html>

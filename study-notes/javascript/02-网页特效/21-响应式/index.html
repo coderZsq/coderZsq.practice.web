@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+  </style>
+</head>
+<body>
+<!--
+随着浏览器的宽度的改变而改变
+// 判断屏幕的宽度
+@media  {
+
+}
+// 2.js  onresize 当浏览器可视区域的尺寸发生改变的时候就调用
+
+应用：当屏幕的宽度>=960时，页面的背景颜色为红色；当屏幕的宽度>=640时，页面的背景颜色为蓝色；当屏幕的宽度<640时，页面的背景颜色为绿色？
+-->
+<script src="js/utils.js"></script>
+<script>
+  window.onresize = changeColor;
+
+  function changeColor() {
+    var width = client().width;
+    if (width >= 960) {
+      document.body.style.backgroundColor = 'red';
+    } else if (width >= 640) {
+      document.body.style.backgroundColor = 'blue';
+    } else {
+      document.body.style.backgroundColor = 'green';
+    }
+  }
+  changeColor();
+</script>
+</body>
+</html>

@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+    p {
+      width: 400px;
+      margin: 100px;
+    }
+    #share-text {
+      width: 200px;
+      background-color: deepskyblue;
+      position: absolute;
+      left: 0;
+      top: 0;
+      color: gold;
+      display: none;
+    }
+    #share-weibo {
+      width: 26px;
+      height: 26px;
+      background: url("images/share.gif") no-repeat;
+      position: absolute;
+      left: 0;
+      top: 0;
+      display: none;
+    }
+  </style>
+</head>
+<body>
+<p id="word1">在新闻发生的第一时间，李克强就批示有关部门，要“以小窥大”，进一步考虑如何通过简政放权、放管结合、优化服务，破除制约社会生产力发展和就业创业的不合理束缚，以主动服务的精神激发市场活力。而11月21日在上海召开的座谈会上，总理再次通过两家小食店的故事“以小窥大”，点题下一阶段政府职能转变和深化“放管服”改革工作</p>
+
+<span id="share-text">121313132</span>
+
+<p id="word2">李克强明确表示，简政放权、放管结合、优化服务，是供给侧改革的重要内容，是政府职能的重大转变，也是推进经济体制改革、处理好政府和市场关系的核心问题。他强调，要全面清理各种行业准入证、生产许可证和职业资格证，持续深化商事制度改革，加快推进“多证合一”“证照分离”，测试新浪微博分享,微信分享，以更大力度、更加扎实的举措，继续把“放管服”改革向纵深推进。而被总理一再提及的“梦花街19号馄饨铺”和“阿大葱油饼”两家小食店，正蕴含着他对政府职能转变和深化“放管服”改革的更高期待。</p>
+<span id="share-weibo"></span>
+<script>
+  // 1.获取标签
+  function $(selector) {
+    return document.querySelector(selector);
+  }
+
+  var word1 = $('#word1');
+  var word2 = $('#word2');
+
+  var share_text = $('#share-text');
+  var share_weibo = $('#share-weibo');
+  var selectedText = '';
+
+  // 2.监听抬起事件
+  word1.onmouseup = function (event) {
+    var eve = event || window.event;
+
+    // 1.获取选中的文字
+    var selectedText = '';
+    if(window.getSelection){
+      // 标准模式 获取选中的文字
+      // 如果一旦选中了文字 就会帮我们记录
+      selectedText = window.getSelection().toString();
+    }else{ // IE 系列
+      selectedText = document.selection.createRange().text;
+    }
+
+    if (selectedText !== ''){
+      // 如果有内容 就显示
+      share_text.innerHTML = selectedText;
+      share_text.style.display = 'block';
+      share_text.style.left = eve.clientX + 'px';
+      share_text.style.top = eve.clientY + 'px';
+    }
+    console.log(1);
+  };
+
+  word2.onmouseup = function (event) {
+    var eve = event || window.event;
+
+    // 1.获取选中的文字
+    if(window.getSelection){
+      // 标准模式 获取选中的文字
+      // 如果一旦选中了文字 就会帮我们记录
+      selectedText = window.getSelection().toString();
+    }else{ // IE 系列
+      selectedText = document.selection.createRange().text;
+    }
+
+    if (selectedText !== ''){
+      // 如果有内容 就显示
+      share_weibo.style.display = 'block';
+      share_weibo.style.left = eve.clientX + 'px';
+      share_weibo.style.top = eve.clientY + 'px';
+    }
+  };
+
+  // 当鼠标抬起的时候会调用
+  document.onmousedown = function (event) {
+    var eve = event || window.event;
+
+    // 点击了谁就返回谁
+    console.log(eve.target);
+    var id = eve.target.id;
+    if (id !== 'share-text'){
+      // 不是点击了面板
+      // 当点击了文字分享面板 不要隐藏
+      // 判断当前点击了谁
+      share_text.style.display = 'none';
+    }
+
+    // 点击微博
+    if (id === 'share-weibo'){
+      // 点击了微博
+      // 分享
+      var url = 'http://v.t.sina.com.cn/share/share.php?searchPic=false&title=' + selectedText + '&url=http://www.jianshu.com/u/ce8eba0dbfb6';
+      // https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=www.baidu.com&title=hah
+
+      // window.location.href = url;
+      /**
+       * window.open(URL,name,features,replace)
+       * URL	一个可选的字符串，声明了要在新窗口中显示的文档的 URL。如果省略了这个参数，或者它的值是空字符串，那么新窗口就不会显示任何文档。
+       name	一个可选的字符串，该字符串是一个由逗号分隔的特征列表，其中包括数字、字母和下划线，该字符声明了新窗口的名称。这个名称可以用作标记 <a> 和 <form> 的属性 target 的值。如果该参数指定了一个已经存在的窗口，那么 open() 方法就不再创建一个新窗口，而只是返回对指定窗口的引用。在这种情况下，features 将被忽略。
+       features	一个可选的字符串，声明了新窗口要显示的标准浏览器的特征。如果省略该参数，新窗口将具有所有标准特征。在窗口特征这个表格中，我们对该字符串的格式进行了详细的说明。
+       replace
+       一个可选的布尔值。规定了装载到窗口的 URL 是在窗口的浏览历史中创建一个新条目，还是替换浏览历史中的当前条目。支持下面的值：
+
+       true - URL 替换浏览历史中的当前条目。
+       false - URL 在浏览历史中创建新的条目。
+       */
+      window.open(url,'newWindow','left=200,top=300,width=300,height=300');
+    } else {
+      // 没有点击微博
+      // 隐藏微博
+      share_weibo.style.display = 'none';
+    }
+
+    // 清空上次选中的内容
+    window.getSelection ? window.getSelection().removeAllRanges() : document.selection.empty();
+  }
+</script>
+</body>
+</html>

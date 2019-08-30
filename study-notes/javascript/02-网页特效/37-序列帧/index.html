@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+    #box {
+      width: 600px;
+      height: 300px;
+      margin: 100px auto;
+      border: 1px solid #000;
+    }
+    #box ul {
+      width: 100%;
+      height: 100%;
+      list-style: none;
+    }
+    #box ul li {
+      float: left;
+      width: 100px;
+      height: 100px;
+      background: url("images/pic.jpg") no-repeat;
+      /*background-position: -100px 0;*/
+      position: relative;
+    }
+  </style>
+</head>
+<body>
+<div id="box">
+  <ul>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+  </ul>
+</div>
+<script src="js/utils.js"></script>
+<script>
+  /*
+  * 总列数 var count = 3
+    行号 =  parseInt( i / count)
+    列号 = i % count
+    x = 列号 * (盒子的宽度 + 间距)
+    y = 行号 * (盒子的高度 + 间距
+  * */
+  // 1.获取标签
+  var list = $('#box ul li');
+
+  var count = 6;
+  var row = 0;
+  var col = 0;
+
+  // 2.修改li的背景图片位置
+  each(list,function (e, index) {
+     row = parseInt(index / count);
+     col = index % count;
+
+     // e.col = col;
+
+    e.setAttribute('col',col+'');
+
+     // e.innerHTML = row + ',' + col;
+    e.style.backgroundPosition =  -100*col + 'px '+ -row*100 +'px';
+  })
+
+  // list[0].col = 0;
+  // list[1].col = 1;
+
+
+  // 3.做动画
+  function a0() {
+    // 先把盒子全部移动到左上角 做动画进入
+    each(list,function (e,index) {
+      e.style.left = '-600px';
+      e.style.top = '-300px';
+      e.style.opacity = 0;
+
+      setTimeout(function () {
+        // 做动画进入
+        buffer(e,{left:0, top:0,opacity:1});
+      },150 * index);
+    })
+  }
+
+  // a0();
+
+  function a1() {
+    // 先把盒子全部移动到左上角 做动画进入
+    each(list,function (e,index) {
+      e.style.top = '-300px';
+      e.style.opacity = 0;
+
+      setTimeout(function () {
+        // 做动画进入
+        buffer(e,{top:0,opacity:1});
+      },150 * index);
+    })
+  }
+  // a1();
+
+  function a2() {
+    // 先把盒子全部移动到左上角 做动画进入
+    each(list,function (e,index) {
+      // e.style.top = '-300px';
+      e.style.left = '600px';
+      e.style.opacity = 0;
+
+      var i = e.getAttribute('col');
+
+      setTimeout(function () {
+        // 做动画进入
+        buffer(e,{left:0,opacity:1});
+      },150 * i);
+    })
+  }
+  // a2();
+
+  function a3() {
+    // 先把盒子全部移动到左上角 做动画进入
+    each(list,function (e,index) {
+      e.style.top = '300px';
+      // e.style.left = '600px';
+      e.style.opacity = 0;
+
+      setTimeout(function () {
+        // 做动画进入
+        buffer(e,{top:0,opacity:1});
+      },150 * index);
+    })
+  }
+  a3();
+
+</script>
+</body>
+</html>

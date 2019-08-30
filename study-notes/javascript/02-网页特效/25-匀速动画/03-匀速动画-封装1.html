@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+    #box {
+      width: 100px;
+      height: 100px;
+      background-color: red;
+      position: relative;
+      left: 500px;
+      margin-bottom: 10px;
+    }
+  </style>
+</head>
+<body>
+<button id="btn">匀速动画</button>
+<div id="box"></div>
+<script>
+  // 1.获取标签
+  var btn = document.querySelector('#btn');
+  var box = document.querySelector('#box');
+
+  btn.onclick = function () {
+    linear(box,10,100);
+  };
+
+  function linear(obj,speed,target) {
+    clearInterval(obj.timer);
+
+    obj.timer = setInterval(function () {
+
+      var offsetX = obj.offsetLeft;
+      if (offsetX <= target) {
+        // 判断方向
+        // 初始值小于目标值
+        offsetX += speed;
+        if (offsetX >= target) {
+          clearInterval(obj.timer);
+          offsetX = target;
+        }
+      }else {
+        // 向左走
+        offsetX -= speed;
+        if (offsetX <= target){
+          clearInterval(obj.timer);
+          offsetX = target;
+        }
+      }
+      obj.style.left = offsetX + 'px';
+    },20);
+  }
+</script>
+</body>
+</html>

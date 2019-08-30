@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+    #box {
+      width: 100px;
+      height: 100px;
+      background-color: red;
+      position: relative;
+      left: 100px;
+      margin-bottom: 10px;
+    }
+    #box1 {
+      width: 200px;
+      height: 200px;
+      background-color: blue;
+      position: relative;
+      left: 0;
+    }
+  </style>
+</head>
+<body>
+<button id="btn">匀速动画</button>
+<div id="box"></div>
+<div id="box1"></div>
+<script>
+  // 1.获取标签
+  var btn = document.querySelector('#btn');
+  var box = document.querySelector('#box');
+  var box1 = document.querySelector('#box1');
+
+  // console.log(box.timer.name);
+  /*function fn() {
+    alert(1);
+  }
+
+  fn();*/
+
+
+  // var fn = function () {
+  //   alert(2);
+  // };
+  // fn();
+
+  // 2.添加事件
+  // var timer = null;
+  // var offsetX = 0;
+
+  btn.onclick = function () {
+    // clearInterval(timer);
+    //
+    // timer = setInterval(function () {
+    //   offsetX += 5;
+    //   if (offsetX >= 800){
+    //     clearInterval(timer);
+    //     offsetX = 800;
+    //   }
+    //   box.style.left = offsetX + 'px';
+    // },20);
+    linear(box,10,500);
+    linear(box1,30,800);
+  };
+
+  function linear(obj,speed,target) {
+    clearInterval(obj.timer);
+    obj.timer = setInterval(function () {
+      var offsetX = obj.offsetLeft;
+
+      offsetX += speed;
+      if (offsetX >= target){
+        clearInterval(obj.timer);
+        offsetX = target;
+      }
+      obj.style.left = offsetX + 'px';
+    },20);
+  }
+</script>
+</body>
+</html>

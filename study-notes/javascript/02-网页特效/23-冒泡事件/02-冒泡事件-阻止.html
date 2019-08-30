@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+    #father {
+      width: 300px;
+      height: 300px;
+      background-color: red;
+    }
+    #son {
+      width: 100px;
+      height: 100px;
+      background-color: yellow;
+    }
+  </style>
+</head>
+<body>
+<div id="father">
+  <div id="son"></div>
+</div>
+<script>
+  var son = document.getElementById('son');
+  var father = document.getElementById('father');
+  document.onclick = function () {
+    alert(3);
+  };
+  father.onclick = function () {
+    var eve = event || window.event;
+    if(eve.stopPropagation){
+      // w3c标准
+      eve.stopPropagation();
+    }else{
+      // IE系列 IE 678
+      eve.cancelBubble = true;
+    }
+    alert(2);
+  };
+  son.onclick = function (event) {
+    var eve = event || window.event;
+
+    // 阻止冒泡事件
+    // IE9+ 以及最新的浏览器
+    // eve.stopPropagation();
+
+    // IE9一下用这个
+    // eve.cancelBubble = true;
+    if(eve.stopPropagation){
+      // w3c标准
+      eve.stopPropagation();
+    }else{
+      // IE系列 IE 678
+      eve.cancelBubble = true;
+    }
+
+    alert(1);
+  }
+
+</script>
+</body>
+</html>

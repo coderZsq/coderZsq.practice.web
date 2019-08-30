@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+  </style>
+</head>
+<body>
+<script>
+  var a = {
+    score: 90,
+    arr: [1,2,3],
+    fn: function () {
+      alert(1);
+    }
+  };
+
+  // console.log(a.score);
+  // console.log(a['score']);
+  // var b = 'score';
+  // console.log(a[b]);
+
+  // console.log(a['arr']);
+  // a.fn();
+  var c = 'fn'
+  a[c]();
+
+  console.log(a.fn);
+</script>
+</body>
+</html>

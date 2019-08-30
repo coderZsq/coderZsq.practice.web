@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+    #back {
+      position: fixed;
+      right: 0;
+      bottom: 0;
+      display: none;
+    }
+    #back img {
+      width: 50px;
+      height: 50px;
+    }
+    p {
+      text-align: center;
+      line-height: 30px;
+    }
+  </style>
+</head>
+<body>
+<div id="back">
+  <img src="images/top.png" alt="">
+</div>
+<p>努力的人,应当像好色一样好学!!!!</p>
+<p>努力的人,应当像好色一样好学!!!!</p>
+<p>努力的人,应当像好色一样好学!!!!</p>
+<p>努力的人,应当像好色一样好学!!!!</p>
+<p>努力的人,应当像好色一样好学!!!!</p>
+<p>努力的人,应当像好色一样好学!!!!</p>
+<p>努力的人,应当像好色一样好学!!!!</p>
+<p>努力的人,应当像好色一样好学!!!!</p>
+<p>努力的人,应当像好色一样好学!!!!</p>
+<p>努力的人,应当像好色一样好学!!!!</p>
+<p>努力的人,应当像好色一样好学!!!!</p>
+<p>努力的人,应当像好色一样好学!!!!</p>
+<p>努力的人,应当像好色一样好学!!!!</p>
+<p>努力的人,应当像好色一样好学!!!!</p>
+<p>努力的人,应当像好色一样好学!!!!</p>
+<p>努力的人,应当像好色一样好学!!!!</p>
+<p>努力的人,应当像好色一样好学!!!!</p>
+<p>努力的人,应当像好色一样好学!!!!</p>
+<p>努力的人,应当像好色一样好学!!!!</p>
+<p>努力的人,应当像好色一样好学!!!!</p>
+<p>努力的人,应当像好色一样好学!!!!</p>
+<p>努力的人,应当像好色一样好学!!!!</p>
+<p>努力的人,应当像好色一样好学!!!!</p>
+<p>努力的人,应当像好色一样好学!!!!</p>
+<p>努力的人,应当像好色一样好学!!!!</p>
+<p>努力的人,应当像好色一样好学!!!!</p>
+<p>努力的人,应当像好色一样好学!!!!</p>
+<p>努力的人,应当像好色一样好学!!!!</p>
+<p>努力的人,应当像好色一样好学!!!!</p>
+<p>努力的人,应当像好色一样好学!!!!</p>
+<p>努力的人,应当像好色一样好学!!!!</p>
+<p>努力的人,应当像好色一样好学!!!!</p>
+<p>努力的人,应当像好色一样好学!!!!</p>
+<p>努力的人,应当像好色一样好学!!!!</p>
+<p>努力的人,应当像好色一样好学!!!!</p>
+<p>努力的人,应当像好色一样好学!!!!</p>
+<p>努力的人,应当像好色一样好学!!!!</p>
+<p>努力的人,应当像好色一样好学!!!!</p>
+<p>努力的人,应当像好色一样好学!!!!</p>
+<p>努力的人,应当像好色一样好学!!!!</p>
+<p>努力的人,应当像好色一样好学!!!!</p>
+<p>努力的人,应当像好色一样好学!!!!</p>
+<p>努力的人,应当像好色一样好学!!!!</p>
+<p>努力的人,应当像好色一样好学!!!!</p>
+<p>努力的人,应当像好色一样好学!!!!</p>
+<script src="js/utils.js"></script>
+<script>
+  // 1.获取标签
+  var back = document.querySelector('#back');
+
+  // 2.监听滚动
+  // begin 值会无限接近于end值
+  var beginX = 0;
+  var endX = 0;
+  window.onscroll = function () {
+    // if (scroll().top > 0){
+    //   // 显示
+    //   back.style.display = 'block';
+    // } else {
+    //   // 隐藏
+    //   back.style.display = 'none';
+    // }
+    scroll().top > 0 ? back.style.display = 'block' : back.style.display = 'none';
+
+    beginX = scroll().top;
+  };
+
+
+  // 3.监听返回按钮的点击
+  var timer = null;
+  back.onclick = function () {
+    // 回到顶部
+    clearInterval(timer);
+    timer = setInterval(function () {
+      beginX = beginX + (endX - beginX) / 10;
+   //   270         300  +      -30
+   //    243       270  + -27
+      //              243 + -24.3
+
+      if (Math.round(beginX) === 0){
+        // 无限接近目标值
+        beginX = 0;
+        clearInterval(timer);
+      }
+
+      // document.documentElement.scrollTop = beginX;
+      // 让滚动条滚动
+      window.scrollTo(0,beginX);
+
+      console.log(beginX);
+    },20);
+  }
+</script>
+</body>
+</html>

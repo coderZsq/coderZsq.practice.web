@@ -1,0 +1,5 @@
+左箭头 尺寸 width 20 height 34 位置 0, 0
+右箭头 尺寸 width 20 height 34 位置 -9px -45px
+
+灰色条 尺寸 width 24 height 5 位置 -24px -790px
+蓝色条 尺寸 width 24 height 5 位置 0 -770px

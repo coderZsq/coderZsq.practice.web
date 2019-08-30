@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+    #box {
+      width: 100px;
+      height: 100px;
+      background-color: red;
+      position: relative;
+      left: 0px;
+    }
+  </style>
+</head>
+<body>
+<button id="btn">缓动动画-向右走</button>
+<button id="btn1">缓动动画-向左走</button>
+<div id="box"></div>
+<div id="box1"></div>
+<script src="js/utils.js"></script>
+<script>
+
+  $('#btn').onclick = function () {
+    buffer($('#box'),{left: 500, top: 500, height: 300, width: 400});
+  };
+  function buffer(obj,data) {
+    clearInterval(obj.timer);
+    obj.timer = setInterval(function () {
+      // 定义一个标志
+      // 规定 true所有的值都到达目标值了  false 有一个值或者多个值没有到达目标值
+      var flag = true;
+      for (var k in data) {
+        var beginX = parseFloat(getStyleAttr(obj,k)) || 0;
+        var target = data[k];
+        var speed = (target - beginX) / 10;
+        // 判断方向
+        if (beginX <= target){
+          // 向右走
+          // 向上取整
+          speed = Math.ceil(speed);
+        } else {
+          // 向下取整
+          speed = Math.floor(speed);
+        }
+        beginX = beginX + speed;
+
+        // 让所有的值都到达目标值再清空定时器
+        if (Math.ceil(beginX) === target) {
+          beginX = target;
+        }else {
+          flag = false;
+        }
+        console.log(speed,beginX, target);
+        obj.style[k] = beginX + 'px';
+      }
+      if (flag){
+        // 所有值到达目标值了
+        clearInterval(obj.timer);
+      }
+    },20);
+  }
+
+  // console.log($('#box').style['top']);
+
+  /**
+   * 获取标签的属性值
+   * @param obj 元素
+   * @param attr 属性
+   * @returns {string} 值
+   */
+  function getStyleAttr(obj, attr) {
+    if(obj.currentStyle){ // IE 和 opera
+      return obj.currentStyle[attr];
+    }else {
+      return window.getComputedStyle(obj, null)[attr];
+    }
+  }
+
+</script>
+</body>
+</html>

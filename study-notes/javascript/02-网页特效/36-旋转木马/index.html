@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+    #box {
+      width: 1200px;
+      height: 500px;
+      /*border: 1px solid #000;*/
+      margin: 30px auto;
+      position: relative;
+    }
+    #box ul {
+      list-style: none;
+      width: 100%;
+      height: 100%;
+      position: relative;
+    }
+    #box ul li {
+      position: absolute;
+      left: 0;
+      top: 0;
+    }
+    #box ul li img {
+      width: 100%;
+    }
+    #box .ctl span {
+      width: 76px;
+      height: 112px;
+      position: absolute;
+      top: 50%;
+      margin-top: -56px;
+      z-index: 998;
+    }
+    #box .ctl {
+      /*兼容性
+      IE9+ 以及最新的浏览器opacity
+        默认 父元素opacity透明子元素跟着透明
+      在IE上特殊
+           如果子元素不定位(绝对定位/固定定位) 父元素opacity透明子元素跟着透明
+           子元素定位(绝对定位/固定定位) 参考定位的父元素
+      */
+      /* 0-1 */
+      opacity: 0;
+
+      /*IE9以下用filter
+      opacity filter 100倍的关系
+      */
+      filter: Alpha(Opacity=0);
+    }
+    #box .ctl .prev {
+      /*
+      背景图片撑不起盒子的宽度和高度
+      */
+      background: url("images/prev.png") no-repeat;
+      left: 0;
+
+      /*属性强制继承*/
+      opacity: inherit;
+      filter: inherit;
+    }
+    #box .ctl .next {
+      background: url("images/next.png") no-repeat;
+      right: 0;
+      /*属性强制继承*/
+      opacity: inherit;
+      filter: inherit;
+    }
+  </style>
+</head>
+<body>
+<div id="box">
+  <ul>
+    <li><img src="images/slidepic1.jpg" alt=""></li>
+    <li><img src="images/slidepic2.jpg" alt=""></li>
+    <li><img src="images/slidepic3.jpg" alt=""></li>
+    <li><img src="images/slidepic4.jpg" alt=""></li>
+    <li><img src="images/slidepic5.jpg" alt=""></li>
+  </ul>
+  <div class="ctl">
+    <span class="prev"></span>
+    <span class="next"></span>
+  </div>
+</div>
+<script src="js/utils.js"></script>
+<script>
+  // 1.获取标签
+  var box = $('#box');
+  var list = $('#box ul li');
+  var ctl = $('#box .ctl');
+
+  // 2.鼠标进入
+  box.onmouseover = function () {
+    // 左右按钮做动画
+    buffer(ctl,{opacity: 1});
+  }
+  box.onmouseout = function () {
+    buffer(ctl,{opacity: 0});
+  }
+
+  // 3.数据
+  // 位置信息
+  var dataArr = [
+    {   //  1
+      width:400,
+      top:20,
+      left:50,
+      opacity:0.2,
+      zIndex:2
+    },
+    {  // 2
+      width:600,
+      top:70,
+      left:0,
+      opacity:0.8,
+      zIndex:3
+    },
+    {   // 3
+      width:800,
+      top:100,
+      left:200,
+      opacity:1,
+      zIndex:4
+    },
+    {  // 4
+      width:600,
+      top:70,
+      left:600,
+      opacity:0.8,
+      zIndex:3
+    },
+    {   //5
+      width:400,
+      top:20,
+      left:750,
+      opacity:0.2,
+      zIndex:2
+    }
+  ];
+
+  // 刷新界面
+  function ref (){
+    each(dataArr,function (e,index) {
+      // list[index].style.left = e.left + 'px';
+      // list[index].style.top = e.top + 'px';
+      // list[index].style.width = e.width + 'px';
+      // list[index].style.opacity = e.opacity;
+      // list[index].style.zIndex = e.zIndex;
+      // var obj = {};
+      // obj.width = e.width;
+      // obj.zIndex = e.zindex;
+
+      buffer(list[index],e);
+    })
+  }
+  ref();
+
+  // 3.点击右边
+  $('#box .next').onclick = function () {
+    // 修改数据
+    // 删除数组中最后一个元素 放到第一个
+    var e =  dataArr.pop();
+    dataArr.unshift(e);
+
+    // 更新界面
+    ref();
+  }
+  // 点击左边
+  $('#box .prev').onclick = function () {
+    // 删除数组中第一个元素添加到最后一个
+    var e = dataArr.shift();
+    dataArr.push(e);
+
+    // 更新界面
+    ref();
+  }
+</script>
+</body>
+</html>

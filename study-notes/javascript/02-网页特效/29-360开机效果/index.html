@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      background-color: #000;
+    }
+    img {
+      vertical-align: top;
+    }
+    #box {
+      position: fixed;
+      right: 0;
+      bottom: 0;
+    }
+    #box .top {
+      position: relative;
+    }
+    #close {
+      width: 25px;
+      height: 25px;
+      position: absolute;
+      right: 0;
+      top: 0;
+      /*background-color: red;*/
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+<div id="box">
+  <div class="top">
+    <span id="close"></span>
+    <img src="images/top.jpg" alt="">
+  </div>
+  <div class="bottom">
+    <img src="images/bottom.jpg" alt="">
+  </div>
+</div>
+<script src="js/utils.js"></script>
+<script>
+  // 1.获取标签
+  var close = $('#close');
+
+  // 2.添加点击事件
+  close.onclick = function () {
+    buffer($('#box .bottom'),{height: 0},function () {
+      buffer($('#box'),{width: 0},function () {
+        // 移除按钮
+        $('#box .top').removeChild(close);
+      })
+    });
+  }
+</script>
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+    #box {
+      width: 100px;
+      height: 100px;
+      background-color: red;
+      position: relative;
+    }
+  </style>
+</head>
+<body>
+<button id="btn">缓动动画</button>
+<div id="box"></div>
+<div id="box1"></div>
+<script src="js/utils.js"></script>
+<script>
+  var timer = null;
+  var beginX = 0;
+  var endX = 800;
+  $('#btn').onclick = function () {
+    clearInterval(timer);
+
+    timer = setInterval(function () {
+      var speed = (endX - beginX) / 10;
+      beginX = beginX + speed;
+
+      if (Math.ceil(beginX) === endX) {
+        clearInterval(timer);
+        beginX = endX;
+      }
+      console.log(speed,beginX, endX);
+      $('#box').style.left = beginX + 'px';
+
+    },20);
+  }
+</script>
+</body>
+</html>

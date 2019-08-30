@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+    #box {
+      width: 900px;
+      height: 40px;
+      border: 1px solid #ccc;
+      margin: 100px auto;
+      overflow: hidden;
+    }
+    #box ul {
+      width: 910px;
+      height: 100%;
+      list-style: none;
+    }
+    #box ul li {
+      float: left;
+      width: 100px;
+      height: 100%;
+      text-align: center;
+      line-height: 40px;
+      border-right: 1px dashed #ccc;
+      background: url("images/_r1_c1.png") no-repeat;
+      /* Chrome 浏览器识别的最小字体是 12px
+       默认字体大小 16px
+       */
+      font-size: 14px;
+      position: relative;
+    }
+    #box ul li a {
+      text-decoration: none;
+      color: #666;
+      width: 100%;
+      height: 100%;
+      display: inline-block;
+    }
+    #box ul li span {
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      left: 0;
+      top: 40px;
+      background-color: skyblue;
+      z-index: -1;
+    }
+  </style>
+</head>
+<body>
+<div id="box">
+  <ul>
+    <li>
+      <a href="javascript:;">首页</a>
+      <audio src="source/a1.mp3"></audio>
+      <span></span>
+    </li>
+    <li>
+      <a href="javascript:;">新头条</a>
+      <audio src="source/a2.mp3"></audio>
+      <span></span>
+    </li>
+    <li><a href="javascript:;">电视剧</a>
+      <audio src="source/a3.mp3"></audio>
+      <span></span>
+    </li>
+    <li><a href="javascript:;">新电影</a>
+      <audio src="source/a4.mp3"></audio>
+      <span></span>
+    </li>
+    <li><a href="javascript:;">小游戏</a>
+      <audio src="source/a5.mp3"></audio>
+      <span></span>
+    </li>
+    <li><a href="javascript:;">小说汇</a>
+      <audio src="source/a6.mp3"></audio>
+      <span></span>
+    </li>
+    <li><a href="javascript:;">旅游假</a>
+      <audio src="source/a7.mp3"></audio>
+      <span></span>
+    </li>
+    <li>
+      <a href="javascript:;">正品购</a>
+      <audio src="source/a8.mp3"></audio>
+      <span></span>
+    </li>
+    <li>
+      <a href="javascript:;">今日团</a>
+      <audio src="source/a9.mp3"></audio>
+      <span></span>
+    </li>
+  </ul>
+
+</div>
+<script src="js/utils.js"></script>
+<script>
+  // 1.获取素有的li
+  var list = $('#box ul li');
+
+  // 2.遍历 添加事件
+  each(list,function (ele,index) {
+    ele.onmouseover = function () {
+      // 让span出来
+      var span = this.children[2];
+      buffer(span,{top: 0});
+
+      // 2.播放音乐
+      // play() 方法开始播放当前的音频或视频。
+      // Chrome 浏览器在66版本之后就不能自动播放音频和视频了 噪音污染
+      var audio = this.children[1]; // 10
+      audio.play();
+      // 每次进来从头播放
+      audio.currentTime = 0;
+    };
+
+    // 鼠标离开
+    ele.onmouseout = function () {
+      // 让span出来
+      var span = this.children[2];
+      buffer(span,{top: 40})
+    }
+  })
+
+  // 3.监听键盘事件
+  window.onkeydown = function (event) {
+    var eve = event || window.event;
+    // 获取键位的ASCII码值 以十进制
+    var index = eve.keyCode - 49;
+
+    // 索引判断
+    if (index < 0 || index > 8) return;
+
+    var li = list[index];
+    var span = li.children[2];
+    var audio = li.children[1];
+    audio.play();
+    audio.currentTime = 0;
+
+    buffer(span,{top:0},function () {
+      buffer(span,{top:40})
+    });
+  }
+</script>
+</body>
+</html>

@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+    #slider {
+      width: 310px;
+      height: 240px;
+      margin: 100px auto;
+      border: 1px solid #000;
+      background-color: red;
+      position: relative;
+    }
+
+    #slider ul {
+      width: 620px;
+      height: 220px;
+      list-style: none;
+      position: relative;
+    }
+
+    #slider ul li {
+      position: absolute;
+      left: 0;
+      top: 0;
+    }
+
+    /*按钮*/
+    #slider .ctl-btn .prev,
+    #slider .ctl-btn .next {
+      width: 20px;
+      height: 34px;
+      background: url("images/icon.png") no-repeat;
+      position: absolute;
+      top: 50%;
+      margin-top: -30px;
+      cursor: pointer;
+    }
+
+    #slider .ctl-btn .prev {
+      left: 0;
+    }
+
+    #slider .ctl-btn .next {
+      background-position: -9px -45px;
+      right: 0;
+    }
+    #slider .ctl {
+      text-align: center;
+      /*
+        那些属性会继承
+        以text- line color font 开头的属性会继承
+      */
+      font-size: 0;
+    }
+    /*指示器*/
+    #slider .ctl .ctl-icon {
+      width: 24px;
+      height: 5px;
+      background: url("images/icon.png") no-repeat -24px  -790px;
+      display: inline-block;
+      /*float: left;*/
+      margin: 5px;
+      cursor: pointer;
+    }
+    #slider .ctl .ctl-icon.current {
+      background-position: 0 -770px;
+    }
+  </style>
+</head>
+<body>
+<div id="slider">
+  <ul>
+    <li><img src="images/1.jpeg" alt=""></li>
+    <li><img src="images/2.jpeg" alt=""></li>
+    <li><img src="images/3.jpeg" alt=""></li>
+    <li><img src="images/4.jpeg" alt=""></li>
+    <li><img src="images/5.jpeg" alt=""></li>
+    <li><img src="images/6.jpeg" alt=""></li>
+  </ul>
+  <!--控制区域-->
+  <div class="ctl-btn">
+    <div class="prev"></div>
+    <div class="next"></div>
+  </div>
+  <div class="ctl">
+    <!--<span class="ctl-icon current"></span>-->
+    <!--<span class="ctl-icon"></span>-->
+    <!--<span class="ctl-icon"></span>-->
+    <!--<span class="ctl-icon"></span>-->
+    <!--<span class="ctl-icon"></span>-->
+    <!--<span class="ctl-icon"></span>-->
+  </div>
+</div>
+<script src="js/utils.js"></script>
+<script>
+  // 1.获取标签
+  var list = $('#slider ul li');
+
+  // 2.修改li的位置
+  each(list,function (ele,index) {
+
+    // 动态创建指示器
+    var span = document.createElement('span');
+    $('#slider .ctl').appendChild(span);
+
+    if (index !== 0){
+      // 不是第一张图片就修改位置
+      ele.style.left = ele.offsetWidth + 'px';
+      span.className = 'ctl-icon';
+    }else {
+      span.className = 'ctl-icon current';
+    }
+  })
+</script>
+</body>
+</html>
