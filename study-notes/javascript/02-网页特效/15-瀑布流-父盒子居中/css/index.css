@@ -1,0 +1,25 @@
+@charset "utf-8";
+* {
+  margin: 0;
+  padding: 0;
+}
+#main {
+  /*
+  1.子元素必须是块级
+  2.子元素设置了宽度并且子元素的宽度小于父元素
+  */
+  margin: 0 auto;
+}
+#main .box {
+  float: left;
+  padding-left: 15px;
+  padding-top: 15px;
+}
+#main .pic {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+#main .pic img {
+  width: 165px;
+}

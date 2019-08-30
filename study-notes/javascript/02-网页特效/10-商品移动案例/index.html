@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+    #slider {
+      width: 800px;
+      height: 180px;
+      border: 1px solid #ccc;
+      margin: 100px auto;
+      position: relative;
+      overflow: hidden;
+    }
+    #slider ul {
+      width: 2600px;
+      height: 130px;
+      list-style: none;
+      margin-top: 10px;
+      position: relative;
+    }
+    #slider ul li {
+      float: left;
+    }
+    #slider ul li img {
+      vertical-align: top;
+    }
+    .progress {
+      width: 100%;
+      height: 25px;
+      background-color: #ccc;
+      position: absolute;
+      left: 0;
+      bottom: 0;
+    }
+    .progress-btn {
+      width: 100px;
+      height: 100%;
+      background-color: red;
+      position: absolute;
+      left: 0;
+      top: 0;
+      border-radius: 15px;
+    }
+  </style>
+</head>
+<body>
+<div id="slider">
+  <ul>
+    <li><img src="images/img1.jpg" alt=""></li>
+    <li><img src="images/img2.jpg" alt=""></li>
+    <li><img src="images/img3.jpg" alt=""></li>
+    <li><img src="images/img4.jpg" alt=""></li>
+    <li><img src="images/img5.jpg" alt=""></li>
+    <li><img src="images/img6.jpg" alt=""></li>
+    <li><img src="images/img7.jpg" alt=""></li>
+    <li><img src="images/img8.jpg" alt=""></li>
+    <li><img src="images/img1.jpg" alt=""></li>
+    <li><img src="images/img2.jpg" alt=""></li>
+    <li><img src="images/img1.jpg" alt=""></li>
+    <li><img src="images/img2.jpg" alt=""></li>
+    <li><img src="images/img3.jpg" alt=""></li>
+    <li><img src="images/img4.jpg" alt=""></li>
+    <li><img src="images/img5.jpg" alt=""></li>
+    <li><img src="images/img6.jpg" alt=""></li>
+    <li><img src="images/img7.jpg" alt=""></li>
+    <li><img src="images/img8.jpg" alt=""></li>
+    <li><img src="images/img1.jpg" alt=""></li>
+    <li><img src="images/img2.jpg" alt=""></li>
+  </ul>
+  <div class="progress">
+    <span class="progress-btn"></span>
+  </div>
+</div>
+<script>
+  // 商品越多 进度条越短  商品越少 进度条越长
+  // 1.求出进度条的长度
+  // 滚动条的长度 / 盒子的长度 = 盒子的长度 / 内容的长度
+  // 滚动条长度 = ( 盒子的宽度 / 内容的宽度) * 盒子的宽度
+
+  var slider = document.querySelector('#slider');
+  var oul = document.querySelector('#slider ul');
+  var progress_btn = document.querySelector('#slider .progress-btn');
+  // 2.计算滚动条的长度
+  progress_btn.style.width = slider.offsetWidth / oul.offsetWidth * slider.offsetWidth + 'px';
+
+  // 3.滚动条移动
+  progress_btn.onmousedown = function (event) {
+    var eve = event || window.event;
+    var distanceX = eve.clientX - slider.offsetLeft - progress_btn.offsetLeft;
+
+    document.onmousemove = function (event) {
+      var eve = event || window.event;
+      var x = eve.clientX - slider.offsetLeft - distanceX;
+
+      if (x <= 0){
+        x = 0;
+      } else if (x >= slider.offsetWidth - progress_btn.offsetWidth - 2){
+        x = slider.offsetWidth - progress_btn.offsetWidth - 2;
+      }
+      progress_btn.style.left = x + 'px';
+
+      // 商品移动
+      // 进度条移动的距离 / 进度条移动的总距离 = 商品移动的距离 / 商品移动的总距离
+      // 进度条移动的距离 / (盒子的宽度 - 按钮的宽度) = 商品移动的距离 / (商品的宽度 - 盒子的宽度)
+      // 商品移动的距离 = 进度条移动的距离 / (盒子的宽度 - 按钮的宽度) * (商品的宽度 - 盒子的宽度)
+      oul.style.left = - x / (slider.offsetWidth - progress_btn.offsetWidth) * (oul.offsetWidth - slider.offsetWidth) + 'px';
+
+      return false;
+    }
+    return false;
+  }
+
+  document.onmouseup = function () {
+    document.onmousemove = null;
+  }
+
+</script>
+</body>
+</html>

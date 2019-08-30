@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+    ul li {
+      width: 200px;
+      height: 30px;
+      background-color: red;
+      margin-bottom: 10px;
+    }
+  </style>
+</head>
+<body>
+<ul>
+  <li>1</li>
+  <li>2</li>
+  <li>3</li>
+  <li>4</li>
+  <li>5</li>
+</ul>
+<script>
+  var list = document.querySelectorAll('ul li');
+
+  // for (var i = 0; i < list.length; i++) {
+  //   var li = list[i];
+  //   li.index = i;
+  //   li.onclick = function () {
+  //     alert(this.index);
+  //   }
+  // }
+  // for (var i = 0; i < list.length; i++) {
+  //   var li = list[i];
+  //   fn(li,i);
+  // }
+  // function fn(obj,index) {
+  //   li.onclick = function () {
+  //     alert(index);
+  //   }
+  // }
+  //
+
+  // fn(list[0],0);
+  // fn(list[1],1);
+  // fn(list[2],2);
+  // fn(list[3],3);
+
+  for (var i = 0; i < list.length; i++) {
+    // 匿名函数自调 闭包
+    (function (index) {
+      list[index].onclick = function () {
+        alert(index);
+      }
+    })(i);
+  }
+
+</script>
+</body>
+</html>

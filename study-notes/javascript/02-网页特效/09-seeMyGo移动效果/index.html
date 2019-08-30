@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>小码哥登录界面</title>
+  <!--导入外部css-->
+  <link href="css/index.css" rel="stylesheet">
+</head>
+<body>
+<!--面板-->
+<div id="panel">
+  <!--面板的头部-->
+  <div class="panel-header">
+    <h2>SeeMyGo教育系统</h2>
+  </div>
+  <!--面板的中间内容-->
+  <div class="panel-content">
+    <!--账号输入框-->
+    <div class="user-pwd">
+      <img src="images/icon_people.png">
+      <input placeholder="请输入用户名/手机号" name="user">
+    </div>
+    <!--密码输入框-->
+    <div class="user-pwd">
+      <img src="images/icon_password.png">
+      <input placeholder="请输入密码" type="password" name="pwd">
+    </div>
+    <!--默认的设置-->
+    <div class="setting">
+      <a href="#"><input type="checkbox"> 下次自动登录</a>
+      <a href="#" class="pull-right">忘记密码?</a>
+    </div>
+    <!--登录按钮-->
+    <button class="login-btn">登&nbsp;录</button>
+    <!--立即注册-->
+    <div class="reg">
+      还没账号?&nbsp;&nbsp;<a href="#">立即注册</a>
+    </div>
+  </div>
+  <!--面板的尾部-->
+  <div class="panel-footer">
+    <span>社交账号登录:  </span>
+    <img src="images/sina.png">
+    <img src="images/weixin.png">
+    <img src="images/qq.png">
+  </div>
+</div>
+<script>
+  // 1.获取标签
+  var panel_header = document.querySelector('.panel-header');
+  var panel = document.querySelector('#panel');
+
+  // 2.添加按下事件
+  panel_header.onmousedown = function (event) {
+    var eve = event || window.event;
+    var distanceX = eve.clientX - panel.offsetLeft;
+    var distanceY = eve.clientY - panel.offsetTop;
+
+    // 移动
+    document.onmousemove = function (event) {
+      var eve = event || window.event;
+
+      // eve.preventDefault()
+      panel.style.left = eve.clientX - distanceX + 'px';
+      panel.style.top = eve.clientY - distanceY + 'px';
+
+      return false;
+    };
+    return false
+  };
+
+  panel_header.onmouseup = function () {
+    document.onmousemove = null;
+  }
+</script>
+</body>
+</html>

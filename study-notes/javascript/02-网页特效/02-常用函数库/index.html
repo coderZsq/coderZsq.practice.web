@@ -15,50 +15,50 @@
 <script>
   // 1.each
   // 则把iteratee绑定到context对象上。每次调用iteratee都会传递三个参数：(element, index, list)
-  // _.each([1, 2, 3], function (ele,index,list) {
-  //   console.log(ele, index, list);
-  // });
-  // _.each([1, 2, 3],fn);
+  _.each([1, 2, 3], function (ele,index,list) {
+    console.log(ele, index, list);
+  });
+  _.each([1, 2, 3],fn);
 
   // alert(1);
 
-  // function fn(number) {
-  //   console.log(number);
-  // }
+  function fn(number) {
+    console.log(number);
+  }
 
-  // _.each({one: 1, two: 2, three: 3},function (value,key) {
-  //   console.log(value, key);
-  // })
+  _.each({one: 1, two: 2, three: 3},function (value,key) {
+    console.log(value, key);
+  })
 
   // map _.map(list, iteratee, [context])
-  // var arr = _.map([1, 2, 3], function (num) {
-  //    return num * 3;
-  //  });
-  //  console.log(arr);
+  var arr = _.map([1, 2, 3], function (num) {
+     return num * 3;
+  });
+  console.log(arr);
 
   // 3.max _.max(list, [iteratee], [context])
   // 返回list中的最大值。如果传递iteratee参数，iteratee将作为list中每个值的排序依据。如果list为空，将返回-Infinity，所以你可能需要事先用isEmpty检查 list 。
   var list = [1, 2, 3, 10, 90];
-  // console.log(_.max(list));
-  /*var stooges = [
+  console.log(_.max(list));
+  var stooges = [
       {name: 'moe', age: 40},
       {name: 'larry', age: 50},
       {name: 'curly', age: 60}
-    ];
+  ];
   var result = _.max(stooges, function (stooge) {
     return stooge.age;
   });
-  console.log(result);*/
+  console.log(result);
 
   // min _.min(list, [iteratee], [context])
   // 返回list中的最小值。如果传递iteratee参数，iteratee将作为list中每个值的排序依据。如果list为空，将返回Infinity，所以你可能需要事先用isEmpty检查 list 。
 
-  // console.log(_.min(list));
+  console.log(_.min(list));
 
   // random _.random(min, max) 可以取到边界
   // 返回一个min 和 max之间的随机整数。如果你只传递一个参数，那么将返回0和这个参数之间的整数。
 
-  // console.log(_.random(-10, 10));
+  console.log(_.random(-10, 10));
 
   // without _.without(array, *values)
   // 返回一个删除所有values值后的 array副本。（愚人码头注：使用===表达式做相等测试。）

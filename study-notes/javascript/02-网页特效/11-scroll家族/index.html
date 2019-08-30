@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+    #box {
+      width: 100px;
+      height: 100px;
+      padding: 10px;
+      border: 1px solid #000;
+      background-color: red;
+      overflow: scroll;
+    }
+    #box p {
+      width: 500px;
+      height: 30px;
+      background-color: yellow;
+    }
+  </style>
+</head>
+<body>
+<div id="box">
+  我是MT我是MT我是MT我是MT我是M我是MT我是MT我是MT我是MT我是M我是MT我是MT我是MT我是MT我是M我是MT我是MT我是MT我是MT我是M我是MT我是MT我是MT我是MT我是M我是MT我是MT我是MT我是MT我是M
+  <p></p>
+</div>
+<script>
+  var box = document.getElementById('box');
+  // scroll 家族
+  // width height
+  // 如果内容的宽度小于width + padding   scrollWidth = width + padding
+  // 如果内容的宽度大于width + padding  scrollWidth = 内容
+
+  // 如果内容的高度小于height + padding   scrollHeight = height + padding
+  // 如果内容的高度大于height + padding  scrollHeight = 内容
+  // console.log(box.scrollWidth, box.scrollHeight);
+
+  // top left
+  // top 内容被卷去的上边距离
+  // console.log(box.scrollTop, box.scrollLeft);
+
+  // onscroll 事件 当滚动的时候调用
+  box.onscroll = function () {
+    // console.log(1);
+    console.log(box.scrollTop, box.scrollLeft);
+  }
+  // scrollTop scrollLeft 可以读写
+  // scrollWidth scrollHeight 只读
+</script>
+</body>
+</html>

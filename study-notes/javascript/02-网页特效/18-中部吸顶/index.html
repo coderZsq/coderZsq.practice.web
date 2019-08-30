@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+    img {
+      vertical-align: top;
+      width: 100%;
+    }
+    section {
+      text-align: center;
+    }
+    section img {
+      width: 70%;
+    }
+    .fixed {
+      position: fixed;
+      left: 0;
+      top: 0;
+    }
+  </style>
+</head>
+<body>
+<header>
+  <img src="images/top.png" alt="">
+</header>
+<nav>
+  <img src="images/nav.png" alt="">
+</nav>
+
+<!--所有浏览器都支持section-->
+<section>
+  <img src="images/body01.png" alt="">
+  <img src="images/body02.png" alt="">
+</section>
+<script src="js/utils.js"></script>
+<script>
+  // 1.获取标签
+  var nav = document.querySelector('nav');
+  // 什么情况下吸顶 当滚动距离大于等于 nav的offsetTop
+  var offsetTop = nav.offsetTop;
+
+  // 2.添加滚动事件
+  window.onscroll = function () {
+
+    var scrollTop = scroll().top;
+
+    if (scrollTop >= offsetTop){
+      // 添加类名
+      nav.className = 'fixed';
+    } else {
+      nav.className = '';
+    }
+  }
+
+</script>
+</body>
+</html>

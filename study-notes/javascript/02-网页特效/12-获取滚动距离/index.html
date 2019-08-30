@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      height: 2000px;
+      /*
+      IE6计算盒子模型的模式 border-box
+      content-box w3c
+      */
+      /*box-sizing: border-box;*/
+    }
+  </style>
+</head>
+<body>
+<script>
+
+  // document.documentElement.scrollTop = 100;
+
+  window.onscroll = function () {
+
+    // console.log(document.documentElement.scrollTop);
+    // IE9
+    // console.log(window.pageYOffset, window.pageXOffset);
+    console.log(scroll().top);
+  };
+
+  // var obj = {
+  //   width: 100,
+  //   hegith: 200
+  // };
+  // console.log(obj.hegith);
+  // console.log(obj.width);
+
+  // 获取滚动距离
+  function scroll() {
+      if (window.pageXOffset || window.pageYOffset){
+        var obj = {
+          left: window.pageXOffset,
+          top: window.pageYOffset
+        };
+        return obj;
+      }else if (document.compatMode === 'CSS1Compat'){
+        // w3c标准
+        return {
+          left: document.documentElement.scrollLeft,
+          top: document.documentElement.scrollTop
+        }
+      }else {
+        // 怪异
+        return {
+          left: document.body.scrollLeft,
+          top: document.body.scrollTop
+        }
+      }
+  }
+  //
+  // 浏览器模式 w3c标准  怪异模式
+  // console.log(document.compatMode);
+
+  // console.log(scroll().top);
+</script>
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+    #box {
+      width: 100px;
+      height: 100px;
+      background-color: red;
+      padding: 10px;
+      /*border: 10px solid #ccc;*/
+      /*border-right: 1px solid #000;*/
+      /*border-bottom: 1px solid #000;*/
+      border-left: 1px solid #000;
+      border-top: 1px solid #000;
+    }
+  </style>
+</head>
+<body>
+<div id="box"></div>
+<script>
+  var box = document.getElementById('box');
+  // clientWidth = width + padding
+  // clientHeight = height + padding
+  // document.documentElement.clientWidth
+  // console.log(box.clientWidth, box.clientHeight);
+
+  // left top
+  // clientLeft 左边框的宽度
+  // clientTop 上边框的宽度
+  console.log(box.clientLeft, box.clientTop);
+
+  // client 家族是只读的
+  // 要想设置值通过 style.xx来设置
+</script>
+</body>
+</html>
