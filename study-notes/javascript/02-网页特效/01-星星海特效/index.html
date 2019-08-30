@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      background-color: #000;
+    }
+    .star {
+      background: url("images/star.png") no-repeat;
+      width: 30px;
+      height: 30px;
+      position: absolute;
+      left: 0;
+      top: 0;
+      background-size: 100% 100%;
+      animation: move 1s linear alternate infinite;
+      transition: all 1s;
+    }
+    .star:hover {
+      transform: rotate(180deg) scale(2) !important;
+    }
+    @keyframes move {
+      from {
+        opacity: 1;
+      }
+      to {
+        opacity: 0;
+      }
+    }
+  </style>
+</head>
+<body>
+<!--<span class="star"></span>-->
+<div id="main"></div>
+<script>
+  // 浏览器可视区域的宽度和高度
+  var screenW = document.documentElement.clientWidth;
+  var screenH = document.documentElement.clientHeight;
+
+  // alert(screenW + ',' + screenH);
+
+  var main = document.getElementById('main');
+
+  // 1.创建星星
+  for (var i = 0; i < 150; i++) {
+    // 1.创建
+    var span = document.createElement('span');
+    main.appendChild(span);
+    span.className = 'star';
+
+    // 2.位置随机
+    // 0-1 不能取到边界
+    // Math.random()
+    var x = Math.random() * (screenW - 30);
+    var y = Math.random() * (screenH - 30);
+    span.style.left = x + 'px';
+    span.style.top = y + 'px';
+
+    // 3.大小随机
+    var scale = Math.random() * 1.5;
+    span.style.transform = 'scale('+ scale + ')';
+
+    // 4.动画延迟
+    var del = Math.random();
+    span.style.animationDelay = del + 's';
+  }
+
+</script>
+</body>
+</html>

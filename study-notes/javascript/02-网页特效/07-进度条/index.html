@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+    #slider {
+      width: 800px;
+      height: 30px;
+      margin: 100px auto;
+    }
+    .slider_left {
+      width: 750px;
+      height: 30px;
+      background-color: #ccc;
+      float: left;
+      position: relative;
+      border-radius: 5px;
+    }
+    .slider_left .slider_btn{
+      width: 25px;
+      height: 50px;
+      background-color: red;
+      position: absolute;
+      left: 0;
+      top: -10px;
+      border-radius: 5px;
+    }
+    .slider_left .slider_value{
+      width: 0;
+      height: 100%;
+      background-color: red;
+      border-radius: 5px 0 0 5px;
+    }
+    .slider_right {
+      float: right;
+      line-height: 30px;
+      height: 30px;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+<div id="slider">
+  <div class="slider_left">
+    <!--按钮-->
+    <span class="slider_btn"></span>
+    <!--进度值-->
+    <div class="slider_value"></div>
+  </div>
+  <div class="slider_right">0%</div>
+</div>
+<script>
+  // 1.获取标签
+  function $(selector) {
+    return document.querySelector(selector);
+  }
+  // var slider_btn = document.querySelector('#slider .slider_btn');
+  var slider_btn = $('#slider .slider_btn');
+  var slider = $('#slider');
+  var slider_left = $('#slider .slider_left');
+
+  // 2.添加按下事件
+  slider_btn.onmousedown = function (event) {
+    var eve = event || window.event;
+    // 禁止系统默认事件
+    eve.preventDefault();
+
+    var distance = eve.clientX - slider.offsetLeft - slider_btn.offsetLeft;
+
+    document.onmousemove = function (event) {
+      var eve = event || window.event;
+
+      // 禁止系统默认事件
+      eve.preventDefault();
+
+      var x = eve.clientX - slider.offsetLeft - distance;
+
+      if (x <= 0){
+        x = 0;
+      } else if (x >= slider_left.offsetWidth - slider_btn.offsetWidth){
+        x = slider_left.offsetWidth - slider_btn.offsetWidth;
+      }
+
+      slider_btn.style.left = x + 'px';
+
+      // 进度值
+      $('.slider_value').style.width = x + 'px';
+
+      // 百分比
+      var scale = x / (slider_left.offsetWidth - slider_btn.offsetWidth) * 100;
+
+      scale = parseInt(scale);
+
+      $('.slider_right').innerHTML = scale + '%';
+
+      // 禁止系统默认事件
+      // return false;
+    }
+    // 禁止系统默认事件
+    // return false;
+  };
+
+  document.onmouseup = function () {
+    document.onmousemove = null;
+  }
+</script>
+</body>
+</html>

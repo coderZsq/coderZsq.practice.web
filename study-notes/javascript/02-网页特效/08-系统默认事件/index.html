@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+    div {
+      width: 100px;
+      height: 100px;
+      background-color: yellow;
+      margin-bottom: 10px;
+    }
+  </style>
+</head>
+<body>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+<!--<a href="#">百度</a>-->
+<a href="javascript:void(0)">百度1</a>
+<!--
+href
+# 代表返回顶部
+javascript:; 点击了什么都不做
+javascript:void(0); 点击了什么都不做
+-->
+<script>
+  var a = document.querySelector('a');
+  a.onclick = function (event) {
+    alert(1);
+
+    // 禁止系统默认事件
+    // event.preventDefault();
+    // return false;
+  }
+</script>
+</body>
+</html>

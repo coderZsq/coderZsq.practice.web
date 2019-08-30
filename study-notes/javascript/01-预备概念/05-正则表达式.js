@@ -157,3 +157,67 @@
     var str18 = 'abc';
     console.log(str18.match(reg18)); // ["abc"]
 })();
+
+(function () {
+    /*5.正则的常用的方法*/
+    var reg19 = /ab/g;
+    var str19 = 'abababab';
+    console.log(reg19.exec(str19)); // ["ab", index: 0, input: "abababab", groups: undefined]
+    console.log(reg19.exec(str19)); // ["ab", index: 2, input: "abababab", groups: undefined]
+    console.log(reg19.exec(str19)); // ["ab", index: 4, input: "abababab", groups: undefined]
+    console.log(reg19.exec(str19)); // ["ab", index: 6, input: "abababab", groups: undefined]
+    console.log(reg19.exec(str19)); // null
+    console.log(reg19.exec(str19)); // ["ab", index: 0, input: "abababab", groups: undefined]
+    /*exec：方法用来匹配对应的值
+    * 是通过设定游标来匹配的值，而且游标可以通过lastindex属性修改
+    * 而且可以轮回
+    * 如果表达式中有子表达式
+    * 我们可以通过\1来反向获取到第一个子表达式匹配到的内容
+    * \2获取到第二个子表达式的内容*/
+    var reg20 = /(\w)(\w)\1\2/g;
+    var str20 = 'abab';
+    console.log(str20.match(reg20));
+})();
+
+(function () {
+    var reg21 = /-/;
+    var str21 = 'abc-1234';
+    console.log(str21.split(reg21)); // ["abc", "1234"]
+})();
+
+(function () {
+    /*字符串的方法
+        replace：
+        * */
+    var str22 = 'aa';
+    /*如果只是字符串替换我们只是替换第一个符合需求的值*/
+   console.log(str22.replace('a', 'b')); // ba
+    var reg22 = /a/g;
+    /*我们设置正则表达式的时候，匹配到多少次就会有多少次替换
+    * 而且只替换对应的位置*/
+    console.log(str22.replace(reg22, 'b')); // bb
+    str22.reaplce(reg22,function ($,$1,$2) {
+       /*这个函数表示当匹配到对应的内容的时候
+       * 就去调用，匹配多少次就会调用多少次
+       * 第一个参数表示整体的匹配规则一般使用$表示
+       * $1:表示第二个参数：就是我们子表达式中匹配到的内容类似\1
+       * $2:表示第三个参数\2*/
+    });
+    /*有一个单词 the-last-name
+    * 我们需要把这个单词设置为小驼峰命名*/
+    var reg23 = /-(\w)/g;
+    var str23 ='the-last-name';
+    console.log(str23.replace(reg23, function ($, $1) {
+        console.log($);
+        console.log($1);
+        return $1.toUpperCase()
+
+    }));
+})();
+
+(function () {
+    /*设定一个需求：a后面必须是一个b*/
+    var reg24 = /a(?=b)/;
+    /*凡是正则表达式中的特殊符号我们必须转义*/
+    var reg25 = /\( \)/;
+})();

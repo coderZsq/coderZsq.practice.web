@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      background-color: pink;
+    }
+    #box {
+      width: 900px;
+      height: 63px;
+      margin: 100px auto;
+      background-color: #fff;
+      position: relative;
+    }
+    #box ul {
+      width: 100%;
+      list-style: none;
+      height: 100%;
+      /*标签如果不设置背景颜色 默认透明*/
+      background: url("images/doubleOne.png") no-repeat right center;
+      position: relative;
+    }
+    #box ul li {
+      float: left;
+      width: 88px;
+      height: 100%;
+      text-align: center;
+      line-height: 63px;
+    }
+    #t-mall {
+      background: url("images/tMall.png") no-repeat;
+      width: 88px;
+      height: 63px;
+      position: absolute;
+      left: 0;
+      top: 0;
+    }
+  </style>
+</head>
+<body>
+<div id="box">
+  <span id="t-mall"></span>
+  <ul>
+    <li>双11狂欢</li>
+    <li>服装会场</li>
+    <li>数码家电</li>
+    <li>家具建材</li>
+    <li>母婴童装</li>
+    <li>手机会场</li>
+    <li>美妆会场</li>
+    <li>进口会场</li>
+    <li>飞猪旅行</li>
+  </ul>
+</div>
+<script src="js/underscore.js"></script>
+<script>
+  // 1.获取标签
+  var list = document.querySelectorAll('#box ul li');
+  var tMall = document.querySelector('#t-mall');
+  var oul = document.querySelector('#box ul');
+
+  // 2.添加事件
+  var beginX = 0;
+  var endX = 0;
+  // 记录上一次点击的位置
+  var temp = 0;
+  _.each(list,function (ele,index) {
+    ele.onmouseover = function () {
+      // tMall.style.left = this.offsetLeft + 'px';
+      endX = this.offsetLeft;
+    };
+    // 离开
+
+    // 点击事件
+    ele.onclick = function () {
+      temp = this.offsetLeft;
+    }
+  });
+  oul.onmouseout = function () {
+    endX = temp;
+    console.log(1);
+  };
+
+  /**
+   * 缓动动画特点 begin 值会无限接近于end值
+   */
+  setInterval(function () {
+    beginX = beginX + (endX - beginX) / 10;
+    tMall.style.left = beginX + 'px';
+  },20)
+</script>
+</body>
+</html>
