@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+isPrototypeOf:判断一个对象是否是指定对象的原型对象
+
+instanceof:判断一个对象是否是指定构造函数的实例对象
+
+<script>
+    function Person() {
+
+    }
+
+    var obj1 = {
+        constructor : Person,
+        des:"人"
+    };
+
+    Person.prototype = obj1;
+
+    var p1 = new Person();
+
+    console.log(obj1.isPrototypeOf(p1)); //true
+</script>
+</body>
+</html>

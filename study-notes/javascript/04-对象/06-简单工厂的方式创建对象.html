@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+简单的工厂函数封装对象的创建过程
+
+<script>
+    // 01提供一个函数(工厂函数)封装对象的创建过程
+    function creatStudent() {
+        // 001创建对象
+        var stu1 = new Object();
+        // 002设置属性和方法
+        stu1.name = "张学友";
+        stu1.age = 50;
+        stu1.className = "暴雨梨花针";
+        stu1.showName = function () {
+            console.log(this.name);
+        }
+        // 003返回
+        return stu1;
+    };
+
+
+    var stu2 = creatStudent();
+    var stu3  = creatStudent();
+
+    console.log(stu2);
+    console.log(stu3);
+</script>
+
+封装:把相同的代码写在函数体中,不用的作为函数的参数
+<script>
+    // 01提供一个函数(工厂函数)封装对象的创建过程
+    function creatStudent(name,age,className) {
+        // 001创建对象
+        var stu1 = new Object();
+        // 002设置属性和方法
+        stu1.name = name;
+        stu1.age = age;
+        stu1.className = className;
+        stu1.showName = function () {
+            console.log(this.name);
+        }
+        // 003返回
+        return stu1;
+    };
+
+    var stu2 = creatStudent("zs",20,"暴雨梨花针班");
+    var stu3 = creatStudent("ls",34,"葵花宝典班");
+
+</script>
+
+存在的问题:创建不用类型的对象时,无法分辨
+<script>
+    function creatPerson(name,age) {
+        var obj = new Object();
+        obj.name = name;
+        obj.age = age;
+        obj.showName = function () {
+            console.log(this.name);
+        }
+        return obj;
+    };
+
+    function creatDog(name,age) {
+        var obj = new Object();
+        obj.name = name;
+        obj.age = age;
+        obj.showName = function () {
+            console.log(this.name);
+        }
+        return obj;
+    }
+
+    var obj2 = creatPerson("zs",20);
+    var obj3 = creatDog("小花",12);
+
+    console.log(typeof obj2); //object
+    console.log(typeof obj3);//object
+</script>
+
+工厂函数?
+类似于工厂生产产品一样,可以大批量的生成同一种类型的产品
+<script>
+    function creatPerson(name,age) {
+        // 原料:name + age + 对象
+        var obj = new Object();
+
+        // 加工产品
+        obj.name = name;
+        obj.age = age;
+        obj.showName = function () {
+            console.log(this.name);
+        }
+        // 出厂
+        return obj;
+    };
+</script>
+
+
+
+</body>
+
+
+</html>

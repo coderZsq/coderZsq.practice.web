@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+闭包的作用:
+    1.可以间接访问封闭空间私有数据
+    2.获取数据只能通过指定的接口
+    3.在设置数据的时候可以进行校验处理
+    4.延长变量的生命周期
+<script>
+    function foo() {
+        var age = 20;
+        return {
+            getAge : function () {
+                return age;
+            },
+            setAge : function (newAge) {
+//                if (typeof newAge == "undefined")
+                if (newAge == undefined) return;
+                // 校验处理
+                if (newAge < 0) {
+                    newAge = 0;
+                }
+                // 异常处理
+                age = newAge;
+            }
+        }
+    }
+
+    var obj = foo();
+    console.log(obj.getAge());
+    obj.setAge(18);
+    console.log(obj.getAge());
+    obj.setAge(-3);
+    console.log(obj.getAge());
+</script>
+</body>
+</html>

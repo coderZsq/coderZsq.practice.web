@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+原型链中属性的访问原则
+通过对象.属性访问属性的时候,首先查找自身,如果有就直接使用
+如果没有,就去对象的原型对象身上找,如果找到就直接使用
+如果没有,就去原型对象的原型对象上查找,如果有就直接使用
+如果没有,继续上面的操作先上查找
+直到Object的原型对象,如果还是没有,返回 undefined或者报错
+
+</body>
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+函数和对象的创建
+
+函数的创建方式
+1.声明函数
+2.函数表达式
+3.使用Function构造函数
+<script>
+    // 1.声明函数
+//    function 函数名(形参1,形参2..) {
+//        // 函数体
+//    }
+
+    // 2.匿名的函数表达式
+    var  a = function () {
+
+    };
+
+    // 3.命名的函数表达式
+    var  fun = function fun1() {
+
+    };
+
+    // 4.使用Function构造函数
+    var fun2 = new Function("console.log(\"demo\");");
+
+    fun2();
+//    var fun2 = function () {
+//
+//    }
+</script>
+
+对象的创建
+1.字面量的方式{}
+2.构造函数
+<script>
+    //1.字面量的方式
+    var obj = {
+        name : "zs",
+        age : 20
+    };
+
+    // 2.构造函数
+    var obj2 = new Object(); // Var obj2 = {};
+    obj2.name  ="ls";
+    console.log(obj2);
+
+    var date = new Date();
+    console.log(date);
+
+    // GMT:格林尼治时间
+</script>
+</body>
+</html>

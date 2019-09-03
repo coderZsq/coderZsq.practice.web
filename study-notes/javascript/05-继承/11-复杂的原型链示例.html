@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+动物(毛发,跑)->人(姓名,使用工具)->学生(学号,学习)->男学生(男, 玩游戏)
+
+
+<script>
+    // 1.提供4个构造函数
+    // 2.设置属性和方法(建议:属性设置在构造函数中,方法设置在原型对象上)
+    // 3.设置原型链继承
+    // 4.修正构造器属性
+
+    function Animal() {
+        this.color = "黑色"
+    }
+    Animal.prototype.run = function () {
+        console.log("run");
+
+    }
+
+   function Person() {
+      this.name = "默认的名字";
+   }
+   Person.prototype = new Animal();
+    Person.prototype.constructor = Person;
+   Person.prototype.useTool = function () {
+       console.log("使用工具");
+   }
+
+   function Student() {
+       this.num = "10086"
+   }
+   Student.prototype = new Person();
+   Student.prototype.constructor = Student;
+   Student.prototype.study = function () {
+       console.log("学习");
+   }
+
+   function Boy() {
+       this.sex = "男"
+   }
+   Boy.prototype = new Student();
+   Boy.prototype.constructor = Boy;
+   Boy.prototype.playGames = function () {
+       console.log("玩游戏");
+   }
+
+   var b1 = new Boy();
+    console.log(b1);
+</script>
+
+</body>
+</html>

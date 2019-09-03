@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div>第1个div</div>
+<div>第2个div</div>
+<div>第3个div</div>
+<div>第4个div</div>
+<div>第5个div</div>
+
+<p>第1个p</p>
+<p>第2个p</p>
+<p>第3个p</p>
+<p>第4个p</p>
+<p>第5个p</p>
+
+需要:找到所有的div,设置边框 "2px solid #fef"
+需要:找到所有的p,设置边框 "2px solid #fef"
+<script>
+
+    var $ = {
+        getElements :{
+            getElementsByTagName : function (eleName) {
+                return document.getElementsByTagName(eleName);
+            },
+            getElementsByClassName:function (className) {
+                return document.getElementsByClassName(className);
+            },
+            getElementById:function (id) {
+                return document.getElementById(id);
+            }
+        },
+
+        setStyle:{
+            setBorder:function (eles) {
+                for (var i = 0; i < eles.length; i++) {
+                    eles[i].style.border = "2px solid #fef";
+                }
+             }
+
+//             setSize:,
+//            setColor:,
+    }
+    };
+
+     var divs = $.getElements.getElementsByTagName("div");
+     $.setStyle.setBorder(divs);
+
+     var ps = $.getElements.getElementsByTagName("p");
+     $.setStyle.setBorder(ps);
+
+</script>
+</body>
+</html>

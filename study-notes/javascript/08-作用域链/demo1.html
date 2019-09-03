@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+var x,y = 1;
+var x;
+var y = 1
+
+
+var x= y = 1;
+y = 1;
+var x = y;
+
+<script>
+    (function(){
+        var x,y = 1;
+
+        console.log(y); //能够获取y的值吗?  1
+        console.log(x); //能够获取x的值吗?   undefined
+
+    })();
+
+
+
+
+</script>
+
+
+</body>
+</html>

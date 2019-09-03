@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+核心步骤:
+    1.提供一个发布者(信息的发布者)
+    2.提供观察者(发布者发布信息后需要采取行动的人)
+    3.注册观察者
+    4.发布者发布信息
+
+女神:(rose)
+
+男生1:jack
+男生2:tom
+
+结构:1个发布者,2个观察者,关注的是一个状态
+思考:多个发布者
+<script>
+
+    // 1.提供一个发布者(信息的发布者)
+    var publisher = {
+//        user:[],
+        addUser:function (fn) {
+            if (typeof fn != "function") {
+                throw "不支持!";
+            }
+            this.user.push(fn);
+        },
+        removeUser : function (fn) {
+            for (var i = 0; i < this.user.length; i++) {
+
+                if(this.user[i] == fn) {
+                    this.user.splice(i,1);
+                }
+            }
+        },
+        // 发布的状态(肚子饿了)
+        eat : function () {
+            for (var i = 0; i < this.user.length; i++) {
+                this.user[i]();
+            }
+        }
+    };
+
+    var rose ={};
+    var wml = {};
+
+    // 封装一个函数快速创建发布者
+    function makePublisher(obj) {
+        for (var k in publisher) {
+            // 只拷贝实例方法
+            if(publisher.hasOwnProperty(k) && (typeof publisher[k] == "function")) {
+                obj[k] = publisher[k];
+            }
+        }
+        obj.user = [];
+    }
+
+    makePublisher(rose);
+    makePublisher(wml);
+
+    // 2.提供观察者(发布者发布信息后需要采取行动的人)
+    var jack = {
+        eat_jack : function () {
+            console.log("邀请女神吃麻辣烫!-jack");
+        }
+    };
+    var tom = {
+        eat_tom : function () {
+            console.log("邀请女神吃火锅!-tom");
+        }
+    };
+
+    // 3.注册观察者
+//    rose.addUser(jack.eat_jack);
+//    rose.addUser(tom.eat_tom);
+
+    wml.addUser(tom.eat_tom);
+
+    // 4.发布者发布信息
+//    rose.eat();
+    wml.eat();
+
+
+</script>
+</body>
+</html>

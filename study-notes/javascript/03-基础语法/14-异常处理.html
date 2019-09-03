@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+异常处理
+1.正常情况下,正在运行的程序出现了错误或者异常,该代码后面的代码都无法执行
+有的时候,我们需要保证即使程序出现了错误或者异常,后面的代码还能执行,这个时候就可以用异常捕获结构
+
+2.异常捕获结构
+try {
+//  可能会出错的代码
+}
+catch(e){
+// 如果上面的代码出错了,就会执行catch这个代码块中代码
+}
+
+3.手动抛出异常
+throw 错误信息 :字符串 | 对象
+公司规范:(msg + code)
+1001  变量未定义
+
+4.异常捕获的完整结构
+try {
+//  可能会出错的代码
+}
+catch(e){
+// 如果上面的代码出错了,就会执行catch这个代码块中代码
+}
+finally {
+// 不管前面的代码是否出错,都会执行这个代码块中的代码
+// 在前端开发部会使用,多用于后端开发(Node.js),释放一些资源
+}
+
+
+<script>
+    function demo() {
+        console.log("demo");
+    }
+
+    try {
+        //  可能会出错的代码
+        var a = 10;
+        a();
+    }
+    catch (e) {
+        // 如果上面的代码出错了,就会执行catch这个代码块中代码
+        // 处理一些错误
+        console.log(e);
+    }
+
+    demo();
+</script>
+
+<script>
+    function demo() {
+        console.log("demo");
+    }
+
+    try {
+        //  可能会出错的代码
+        var a;
+        throw {
+            msg : "变量未定义",
+            code: 1001
+        }
+    }
+    catch (e) {
+        // 如果上面的代码出错了,就会执行catch这个代码块中代码
+        // 处理一些错误
+        console.log(e.msg);
+    }
+
+    demo();
+</script>
+
+<script>
+    function demo() {
+        console.log("demo");
+    }
+
+    try {
+        //  可能会出错的代码
+        var a;
+        throw {
+            msg : "变量未定义",
+            code: 1001
+        }
+    }
+    catch (e) {
+        // 如果上面的代码出错了,就会执行catch这个代码块中代码
+        // 处理一些错误
+        console.log(e.msg);
+    }
+    finally {
+        // 不管前面的代码是否出错,都会执行这个代码块中的代码
+        // 在前端开发部会使用,多用于后端开发(Node.js),释放一些资源
+    }
+//    var b = 30;
+//    console.log(b);
+    demo();
+</script>
+</body>
+</html>

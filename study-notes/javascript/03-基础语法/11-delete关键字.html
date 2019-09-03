@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+delete
+1.删除对象中的属性
+2.删除未使用var声明的变量
+
+注意点:
+1.它是有返回值的,是布尔类型.true表示删除成功;false删除失败
+2.不能删除使用var声明的变量
+3.但是可以删除直接定义在window上的属性
+
+<script>
+    // 1.删除对象中的属性
+    var obj = {name : "老王"};
+    console.log(delete obj.name); // true
+    //    console.log(obj);
+
+    // 2.删除未使用var声明的变量
+    // 不使用var声明一个变量,是一个全局变量,会成为window的属性
+
+    // b is not defined b 没有定义(不存在b)
+    // undefied 未定义
+
+    b = 20;
+    delete b;
+//    console.log(b); // 报错
+    console.log(window.b);//undefined
+
+    // 3.可以删除使用var声明的变量?不能
+    var a = 30;
+    console.log(delete a); //  false删除失败 (静默错误)
+    console.log(a); // 30
+    console.log(window.a); // 30
+
+
+</script>
+
+<script>
+    // 可以删除直接定义在window上的属性
+    window.c = 30;
+    console.log(delete window.c);
+    console.log(window.c);
+</script>
+</body>
+</html>

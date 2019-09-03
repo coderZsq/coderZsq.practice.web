@@ -1,0 +1,73 @@
+03-继承的实现(属性拷贝)
+    for..in遍历对象
+    问题:父对象和子对象有共享的问题(属性是引用类型的)
+
+04-继承的实现(原型式继承)
+    1.动态的设置原型对象的属性和方法
+    2.替换原型
+    3.子构造函数的原型对象 = 父构造函数的原型对象 Student.prototype = Person.prototype
+05-扩展内置对象
+    Array.prototype.des = "";
+
+06-安全的扩展内置对象
+    1.提供一个构造函数 MyArray()
+    2.设置原型对象 MyArray.prototype = new Array(); // 获取属性和方法
+
+07-安全的扩展内置对象(图解)
+08-原型链的结构
+    1.每一个对象都是由构造函数创建出来的
+    2.每一个构造函数都有原型对象,这个原型对象也是一个对象,那该原型对象也有构造函数,这个构造函数也有原型对象..
+    3.原型链的顶端是Object.prototype
+
+09-原型链中属性的搜索规则
+10-原型链继承
+    子构造函数的原型对象 = 父构造函数的一个实例
+Student.prototype = new Person();
+
+11-复杂的原型链示例
+12-原型链注意点
+
+13-上午知识点复习
+14-原型链继承的问题
+    1.无法传参给父构造函数
+    2.父构造函数的实例的实例属性会变成子构造函数实例的原型属性,共享的问题
+15-Object.create()方法
+    创建对象,并设置原型对象
+    ES5
+16-call和apply函数
+
+
+17-借用构造函数继承的基本写法
+18-组合继承的基本写法
+19-深拷贝和浅拷贝
+
+20-Array.isArray()
+    判断对象是否是一个数组
+    <script>
+        Object.prototype.toString.call(对象) == "[object Array]";
+    </script>
+
+21-通过深拷贝实现继承
+22-基本包装类型
+String Number Boolean
+
+23-基本包装类型注意点
+判断 == ===
+访问属性和调用方式的内部实现:
+    1.首先会创建一个对象
+    2.利用这个对象访问属性或者调用方法
+    3.返回结果后,销毁该对象
+<script>
+    var st1 = new String("demo");
+    var st2 = new String("demo");
+    var st3 = "demo";
+    console.log(st1 == st2); // false
+    console.log(st1 == st3); // true
+
+    st3.des = "des";
+    console.log(st3.des); // undefined
+</script>
+24-Number的使用注意
+    1.变量调用可以
+    2.表达式调用可以
+    3.数值调用不可以

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<script>
+    function foo() {
+        var name = "zs";
+        var age = 20;
+        return {
+            getName : function () {
+                return name;
+            },
+            getAge : function () {
+                return age;
+            },
+            setName : function (nameValue) {
+                if(nameValue == undefined) return;
+                name = nameValue;
+            },
+            setAge : function (ageValue) {
+                if (ageValue == undefined) return;
+                age = ageValue;
+            }
+        }
+    }
+
+</script>
+</body>
+</html>

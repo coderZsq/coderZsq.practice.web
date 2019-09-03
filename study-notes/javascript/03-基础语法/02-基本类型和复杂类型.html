@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+基本(简单)数据类型
+string 字符串 ---->string
+number 数值(小数和整数) number
+boolean 布尔类型 true |false boolean
+undefined 未定义 undefined
+null 空 object
+
+复杂(复合)数据类型
+Object 对象
+Date
+Math
+Array
+Function
+String 字符串对象
+Number
+Boolean
+
+
+判断数据类型?
+关键字:typeof
+语法: typeof 数据(变量)
+返回值:字符串
+
+<script>
+    var str = "测试的字符";
+    console.log(typeof str);
+
+    var bool = true;
+    console.log(typeof bool);
+
+    console.log(typeof null);
+    // instanceof:判断某个对象是否是指定构造函数的实例
+    console.log(null instanceof Object);
+
+    var obj = {name : 'zs'};
+    console.log(typeof obj); // object
+
+    var arr = [1,2,3];
+    console.log(typeof arr);// array | (object)
+    // typeof操作复杂数据类型都是object类型,函数除外
+    function f1() {
+
+    }
+
+    console.log(typeof f1);
+
+    var a;
+//    if (a == undefined) {
+//
+//    }
+//    if (typeof  a == "undefined"){
+//
+//    }
+</script>
+
+</body>
+</html>

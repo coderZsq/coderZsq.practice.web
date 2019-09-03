@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+1.访问原型对象的属性
+    对象.属性
+    构造函数.prototype.属性
+
+2.属性的访问(读取)原则
+就近原则,使用对象.属性访问属性的时候,首先会去找自己身上的属性(实例属性),如果有就直接使用
+如果没有,会去该对象构造函数原型对象找没有这个原型属性,如果有直接使用
+如果没有就返回undefiend或报错
+
+3.设置原型对象的属性
+    1.在设置对象属性的时候,没有该属性就是增加,有就是修改,不会影响原型属性
+    2.怎么设置原型对象?
+        01只能通过构造函数.prototype.属性去设置或者替换原型对象
+        02如果属性的是引用类型的数据,可以通过对象.引用对象.属性的方式修改
+ <script>
+     function Person() {
+
+     }
+     Person.prototype.des = "我是一个人";
+
+     var p1 = new Person();
+
+     console.log(p1.des);
+     console.log(Person.prototype.des);
+ </script>
+
+<script>
+    function Person(des) {
+        this.des = des;
+    }
+
+    Person.prototype.des = "人";
+    Person.prototype.logDes = "111";
+    var p1 = new Person("哈哈");
+
+    // 在设置对象属性的时候,如没有这个属性就是增加,如果有就是修改
+    // 不会影响原型属性
+    p1.logDes = "logDes";
+    Person.prototype.des = "222";
+
+    console.log(p1.des);
+    console.log(p1.age);
+
+</script>
+
+<script>
+    function Person(des) {
+        this.des = des;
+    }
+
+    Person.prototype.des = "人";
+    Person.prototype.dog = {name:"旺旺",age:20};
+
+    var p1 = new Person("哈哈");
+
+    p1.des = "好人";
+
+
+    // 有2个操作,先是访问dog,在设置name属性
+    p1.dog.name = "宝宝";
+
+    console.log(p1.dog.name);
+
+
+    console.log(p1.des);
+    console.log(p1.age);
+
+</script>
+</body>
+</html>

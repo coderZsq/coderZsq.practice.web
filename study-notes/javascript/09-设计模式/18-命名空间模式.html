@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+命名空间模式
+    把所有的变量写在一个对象中
+
+约定:命名空间的名字一般是项目名或者简写,一般大写
+
+<script>
+    // 1.全局变量
+     var a = 10;
+     // 2.对象
+    var obj = {
+        name : "zs"
+    }
+    // 3.函数
+     function demo() {
+
+     }
+
+     function Person() {
+
+     }
+
+</script>
+
+<script>
+    var MOMO = {};
+
+    MOMO.a = 10;
+    MOMO.obj = {
+        name : "zs"
+    }
+    // 3.函数
+    MOMO.demo = function () {
+
+    }
+
+    MOMO.Person = function () {
+
+    }
+
+    MOMO.demo();
+    console.log(MOMO.obj.name);
+
+</script>
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<script>
+    // 1.父构造函数
+    function Person() {
+
+    }
+
+    // 2.子构造函数
+    function Student() {
+
+    }
+    // 3.设置原型链继承
+    Student.prototype = new Person();
+
+    // 4.创建对象
+    var s1 = new Student();
+
+    console.log(Object.prototype.constructor == Object);
+    console.log(Object.prototype.__proto__);
+
+    console.log(Student.constructor == Function);
+
+    console.log(Function.prototype);
+</script>
+</body>
+</html>

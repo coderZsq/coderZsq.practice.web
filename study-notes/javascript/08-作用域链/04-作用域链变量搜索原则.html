@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+作用域链变量的搜索原则:
+
+1.在使用变量的时候,首先在当前作用域查找,如果找到就直接使用
+2.如果没有找到,就去上一级作用域中查找,如果找到就直接
+3.如果没找到,就继续之前的操作,直到0级作用域
+
+注意点:当前作用域用var声明的变量不会覆盖上一级作用域同名的变量
+<script>
+    var a = 30;
+    function demo() {
+        var a = 20;
+        console.log(a);
+    }
+
+    demo();
+</script>
+
+## 面试题
+<script>
+    var num = 10;
+    function f1(){
+        console.log(num);
+
+        var num = 66;
+
+        console.log(num);
+
+        function f2(){
+            var num = 99;
+            console.log(num);
+        }
+
+        var num = 1000;
+        f2();
+        console.log(num);
+    }
+
+    f1();
+    console.log(num);
+</script>
+
+<script>
+//    var num;
+//
+//    function f1(){
+//        var num;
+//        function f2(){
+//            var num;
+//            num = 99;
+//            console.log(num); // 3---->99
+//        }
+//        var num;
+//        console.log(num); // 1--->undefined
+//        num = 66;
+//        console.log(num);// 2---->66
+//
+//
+//
+//        num = 1000;
+//        f2();
+//        console.log(num); // 4--->1000
+//    }
+//     num = 10;
+//    f1();
+//    console.log(num); // 5--->10
+</script>
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+DOM操作:操作页面的元素 增加 | 删除 | 修改 | 查询
+
+需求:
+1.创建一个div
+2.设置div的内容和样式
+3.添加到页面中
+4.获取新创建的div
+5.删除div
+
+<script>
+    // 1.创建一个div
+    var div = document.createElement("div");
+    // 2.设置div的内容和样式
+    div.innerText = "测试的div";
+    div.style.height = "200px";
+    div.style.width = "300px";
+    div.style.background = "red";
+    div.style.border = "2px solid #123";
+
+    // 3.添加到页面中
+    document.body.appendChild(div);
+    // 4.获取新创建的div
+    var div1 = document.getElementsByTagName("div")[0];
+
+    // 5.删除div
+    document.body.removeChild(div1);
+</script>
+</body>
+</html>

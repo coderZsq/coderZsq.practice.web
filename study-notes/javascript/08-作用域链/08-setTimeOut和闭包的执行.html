@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+定时器
+setTimeout() 只会执行一次(延迟函数)
+setInterval() 每隔一定的时间执行一次
+
+参数:
+    第一个参数:回调函数(时间到了要执行的代码块)
+    第二个参数:时间间隔(毫秒) 1秒 = 1000毫秒
+<script>
+
+//    console.log(new Date());
+//    setTimeout(function () {
+//        console.log("只会执行1次",new Date());
+//    },1000);
+
+//    setInterval(function () {
+//        console.log("只会执行1次",new Date());
+//    },2000);
+</script>
+
+JS任务:
+    1.渲染任务
+    2.JS代码的主要任务
+    3.事件型任务(定时器任务,点击事件)
+
+JS是单线程
+    进程:正在运行的应用程序
+    线程:进程中执行任务的,同一时间只能执行一个
+    串形执行:按顺序一个一个的执行任务
+    多线程 :多条线程
+    并发执行:多条线程一起工作,感觉多个任务一起执行(假象)
+    多线程的原理: 1S -->1万个0.0001s
+
+<script>
+//    for (var i = 0; i < 10; i++) {
+//
+//        setTimeout(function () {
+//            console.log(i);
+//        },0);
+//    }
+
+</script>
+
+<script>
+//    for (var i = 0; i < 10; i++) {
+//
+//        (function (j) {
+//            setTimeout(function () {
+//                console.log(j);
+//            },0);
+//        })(i);
+//    }
+
+    for (var i = 0; i < 10; i++) {
+
+            setTimeout((function (j) {
+
+                return function () {
+                    console.log(j);
+                }
+            })(i),0);
+
+    }
+
+
+</script>
+</body>
+</html>

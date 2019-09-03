@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+原型链继承的问题
+1.无法传递参数给父构造函数
+2.继承过来的实例属性会成为原型属性,有共享的问题
+
+<script>
+    function Person(name) {
+        this.name = name;
+        this.friends = ["小明"]
+    }
+    function Student(num) {
+        this.num = num;
+    }
+
+    // 设置原型链继承
+    Student.prototype = new Person();
+    Student.prototype.constructor = Student;
+
+    var stu1 = new Student("20171223");
+
+    var stu2 = new Student("20171224");
+    stu1.friends.push("小红");
+
+    console.log(stu1);
+    console.log(stu2);
+</script>
+</body>
+</html>

@@ -1,0 +1,46 @@
+
+
+1.Object.prototype
+
+toString :返回对象的字符串描述形式
+    1.1 object类型的对象,返回[object Object]
+    1.2 函数 | 数组,返回函数或者数组的字符串形式
+    1.3  Number调用该方法可以传参(进制)
+
+valueOf
+    2.1 基本包装类型-->返回对应的基本数据的值
+    2.2 对象-->对象本身
+    2.3 日期 -->时间戳
+
+1秒 = 1000毫秒
+
+<script>
+    var date = new Date();
+    console.log(date.valueOf());
+</script>
+
+2.函数创建方式
+    2.1 函数声明
+    2.2 函数表达式
+    2.3 new 构造函数
+
+3.处理函数参数够长
+    3.1 +
+    3.2 ``
+    3.3　模板
+
+4.arguments :接受实参
+
+arguments.length : 实参的个数
+函数名.length :形参的个数
+
+实参 > 形参  超出的实参可以通过arguments获取
+实参 < 形参  依次赋值,没有赋值的为undefined
+
+5.callee caller
+callee: 返回函数自身
+caller : 返回调用函数的函数
+
+6.私有变量和私有函数 :定义在构造函数内部的变量和函数
+
+特权方法:可以访问私有变量和函数的实例方法

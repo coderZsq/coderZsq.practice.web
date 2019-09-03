@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+即时函数(马上就会执行的函数)
+即时函数的结构:
+    1.函数(函数参数 | 函数体 | 函数返回值)
+    2.用一个()包裹起来
+    3.用一个()执行函数
+
+即时函数的几种写法:
+<script>
+    (function () {
+        console.log("第一种写法");
+    })();
+
+    (function () {
+        console.log("第二种写法");
+    }());
+
+
+    +function () {
+        console.log("第三种写法");
+    }();
+
+    -function () {
+        console.log("第四种写法");
+    }();
+
+    !function () {
+        console.log("第五种写法");
+    }();
+
+</script>
+
+即时函数返回值
+<script>
+
+     var str1 = (function (str) {
+        return function () {
+            return str;
+        }
+    })("demoStr");
+
+</script>
+</body>
+</html>

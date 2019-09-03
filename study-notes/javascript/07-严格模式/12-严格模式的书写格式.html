@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+严格模式书写的注意点:
+
+1.单引号和双引号都可以
+2.分号可以省略
+3.区分大小写,必须是小写
+4.必须是10个字符
+
+注意点:写在当前作用域的顶端
+<script>
+//    "use strict"; //正确
+//    "Use strict";//错误
+//    "use Strict";//错误
+//    "Use Strict";//错误
+//    'use strict';//正确
+//    "use strict"   //正确
+//    " use strict"; //错误
+//    "use strict ";  //错误
+//    "use  strict"; //错误
+//    "usestrict"; //错误
+
+    a = 10;
+    console.log(a);
+
+//    "use strict";
+//    b = 20;
+//    console.log(b);
+
+</script>
+</body>
+</html>

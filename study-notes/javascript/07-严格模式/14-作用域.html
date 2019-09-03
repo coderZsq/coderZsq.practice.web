@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+1.作用域
+    一个变量有作用的范围
+2.块级作用域:在其他语言中,有块级作用域;JS中没有块级作用域
+
+3.JS中的作用域
+    3.1 script标签组成的全局作用域
+    3.2 JS中函数是唯一可以创建作用域的对象
+
+4.词法作用域和动态作用域
+词法作用域:变量声明了以后,它的作用域就已经确定了
+动态作用域:变量的作用域取决于当时的执行环境
+JS是词法作用域
+
+5.词法作用域的访问原则
+首先在当前作用域中查找,有就直接使用;没有去上一级作用域中查找,有就直接使用;
+没有就继续之前的操作,直到全局作用域,如果还没有,返回undefied 或者报错
+
+注意点:内层作用域可以访问外层作用域;反过来不行
+
+
+<script>
+    for (var i = 0; i < 10; i++) {
+
+        var c = 20;
+    }
+
+    if (true) {
+        var a = 10;
+    }
+
+    console.log(i); // 9 | (10)
+    console.log(c); // 20
+    console.log(a); // 10
+</script>
+
+<script>
+    var a = 20;
+    console.log(a);
+
+    function foo1() {
+        var a = 30;
+        console.log(a);
+    }
+
+    function foo2() {
+        var a = 40;
+       foo1();
+    }
+
+    foo1();
+    foo2();
+</script>
+
+
+<script>
+    var a = 20;
+    console.log(a);
+
+    function foo2() {
+        var a = 40;
+    }
+
+    function foo1() {
+        var b = 30;
+        console.log(a);
+    }
+
+
+    foo1();
+    foo2();
+</script>
+</body>
+</html>

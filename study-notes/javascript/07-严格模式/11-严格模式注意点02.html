@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+严格模式的注意点:
+1.必须使用var声明变量
+2.不能使用delete删除全局变量
+3.对象中的属性不能一样
+4.函数形参名必须唯一
+5.禁止使用八进制
+6.禁止使用with
+7.禁止使用 callee 和caller,一个指向函数自身,一个指向调用函数的函数
+8.禁止使用arguments和eval作为标识符
+9.if语句中不能声明函数
+10.修正了this的指向
+11.严格模式下,arguments的使用不一样
+
+<script>
+    "use strict";
+    // 1.在非严格模式下,不使用var也可以声明变量,这个变量会成为全局变量
+    // 在严格模式下,不使用var会直接报错
+//    var a = 10;
+//    b = 20;
+//    console.log(window.b);
+    // 2.在非严格模式下,可以使用delete删除全局变量(删除失败-->静默错误)
+    // 在严格模式下,不能使用delete删除全局变量
+//    console.log(a);
+//    delete a;
+//    console.log(a);
+
+    // 3.在非严格模式下,如果对象的属性名一样,后面会把前面的覆盖
+    // 在严格模式下,不支持
+//    var obj = {
+//        name : "zs",
+//        age : 20,
+//        name :"ls"
+//    }
+//    console.log(obj.name);
+
+    // 4.在非严格模式下,如果函数的形参名重复,后面的会覆盖前面
+    // 在严格模式下,直接报错
+//    function func(a,b,a) {
+////        a = 1;
+////        b = 2;
+////        a = 3;
+//        console.log(a + b + a); // 3 + 2 + 3
+//    }
+//
+//    func(1,2,3);
+
+    // 5.八进制 以0开头的
+//    var a = 013; // 1 * 8 + 3 = 11
+//    console.log(a);
+//    var b = 021; // 2 * 8 + 1 = 17
+//    console.log(b);
+
+//    var c = 018; // 1*8 + 8 = 16;
+//    console.log(c);
+
+    // 6.在严格模式下,不能使用with
+//    var obj = {name : 'zs'};
+//    with(obj) {
+//        name = ls;
+//    }
+
+    // 7.禁止使用 callee 和caller
+//    (function (n) {
+//    if(n == 1) {
+//        return 1;
+//    }
+//    return arguments.callee(n-1) + n;
+//    })(10);
+//    (function sum(n) {
+//        if(n == 1) {
+//            return 1;
+//        }
+//        return sum(n-1) + n;
+//    })(10);
+
+    // 8.禁止使用arguments和eval作为标识符(变量的名称)
+//    var arguments = "stringDemo";
+//    var eval = "demo";
+//    console.log(eval);
+
+    // 9.if语句中不能声明函数
+//    if(true) {
+//        function demo() {
+//            console.log("demo");
+//        }
+//    }
+
+    // 10.修正了this的指向,在严格模式下,this是指定的值,无论是什么值
+//    var obj = {
+//        name : "zs",
+//        showName : function () {
+//            console.log(this);
+//        }
+//    }
+//
+//    obj.showName(); // this-->obj
+//    var showName = obj.showName;
+//    showName(); // this -->window(非严格) | this-->undefined(严格)
+//
+//    obj.showName.call(null); // undefiend | null(正确)
+
+    // 11. 在非严格模式下,arguments和形参共享数据,修改了其中一个会影响另一个
+    // 在严格模式下,arguments和形参是独立的,互相不影响
+
+//    function foo(a) {
+//        console.log(a); // 10
+//        console.log(arguments[0]); // 10
+//
+//        a = 20;
+//        console.log(a); // 20
+//        console.log(arguments[0]); // 10
+//    }
+//
+//    foo(10);
+
+    function foo(a) {
+        console.log(a);
+        console.log(arguments[0]);
+
+        a = {age : 20};
+        console.log(a);
+        console.log(arguments[0]);
+    }
+
+    foo({name : "zs"});
+</script>
+</body>
+</html>

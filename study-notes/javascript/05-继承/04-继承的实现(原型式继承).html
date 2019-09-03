@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+原型式继承
+A
+<script>
+    function A() {
+    }
+    // 利用构造函数创建出来的对象可以使用原型对象的属性和方法
+    A.prototype.des = "des";
+
+    var a1 = new A;
+</script>
+
+B
+<script>
+    function A() {
+    }
+
+    A.prototype = {
+        des : "des",
+        constructor : A
+    }
+
+    var a1 = new A;
+</script>
+
+C
+<script>
+    function A() {
+        this.name = "moren";
+    }
+
+    A.prototype.des = "des";
+
+    function B() {
+
+    }
+
+    B.prototype = A.prototype;
+//    B.prototype.constructor = B;
+
+    var b1 = new B();
+    console.log(b1.des);
+//    console.log(b1.constructor);
+
+    var a = new A();
+    console.log(a.constructor);
+
+    // 问题:1.子构造函数创建的对象只能获取父构造函数的原型属性和方法,不能获取实例属性和方法
+    // 2.创建出来的对象的构造器属性默认指向父构造函数
+</script>
+</body>
+</html>

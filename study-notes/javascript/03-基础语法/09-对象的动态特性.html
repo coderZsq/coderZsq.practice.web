@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+对象的动态特性:已经定义好的对象,可以对它进行操作:增加 | 删除 | 修改
+
+访问对象的属性:
+1.点语法
+2.[]语法
+
+<script>
+    var obj = {
+        name : "张三"
+    };
+
+    // 01 增加属性
+    obj.age = 20;
+    console.log(obj);
+    // 02增加方法
+    obj.run = function () {
+        console.log("run");
+    };
+    obj.run();
+
+    // 03修改属性
+    obj.age = 10;
+    console.log(obj);
+    // 小结:通过点语法设置对象属性值的时候,如果之前没有这个属性,就是增加操作
+    // 如果已经存在这个属性就是修改
+
+    // 04删除
+    delete obj.name;
+    console.log(obj);
+
+
+</script>
+<script>
+
+
+    console.log("---------");
+    var obj = {
+        name : "张三"
+    };
+
+    // 01 增加属性
+    obj["age"] = 20;
+    console.log(obj);
+    // 02增加方法
+    obj["run"] = function () {
+        console.log("run");
+    };
+    obj["run"](); // 不建议
+
+    // 03修改属性
+    obj["age"] = 10;
+    console.log(obj);
+    // 小结:通过[]语法设置对象属性值的时候,如果之前没有这个属性,就是增加操作
+    // 如果已经存在这个属性就是修改
+
+    // 04删除
+    delete obj["name"];
+    console.log(obj);
+
+
+</script>
+</body>
+</html>

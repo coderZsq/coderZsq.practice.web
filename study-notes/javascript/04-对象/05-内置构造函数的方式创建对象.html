@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+内置的构造函数
+Object | Array | Date |Function..
+String |Number | Boolean(区别string,number,boolean)
+
+<script>
+    // 01创建一个空的对象
+    var stu1 = new Object(); // 等价于var stu1 = {};
+    // 02设置对象的属性和方法
+    stu1.name = "zs";
+    stu1.age = 20;
+    stu1.num = 110;
+    stu1.className = "葵花宝典班";
+    stu1.showName = function () {
+        console.log("姓名" + this.name);
+    };
+    console.log(stu1);
+
+    var stu2 = new Object();
+    stu2.name = "老王";
+    stu2.age = 50;
+    stu2.num = 119;
+    stu2.className = "暴雨梨花针";
+    stu2.showName = function () {
+        console.log("姓名" + this.name);
+    };
+
+    var stu3 = new Object();
+    stu3.name = "小宝宝";
+    stu3.age = 17;
+    stu3.num = 115;
+    stu3.className = "如何快速成为好媳妇";
+    stu3.showName = function () {
+        console.log("姓名" + this.name);
+    };
+
+    // 内置构造函数和字面量的方式都存在以下问题
+    // 1.复用性不好,创建的对象无法复用
+    // 2.创建多个同类的对象时,有大量重复的代码,代码的冗余度高
+
+    // 思考:在创建多个同类型的对象时,是否可以把创建对象的过程封装起来?->函数
+
+</script>
+</body>
+</html>

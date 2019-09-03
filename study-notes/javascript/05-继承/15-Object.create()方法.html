@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+Object.create()
+作用:创建对象,并设置原型对象
+兼容性:ES5
+<script>
+    var obj = {name :"zs"};
+    // 创建对象,并设置这个对象的原型对象是obj
+    var o = Object.create(obj);
+
+    console.log(o.name);
+</script>
+
+处理兼容性的问题
+<script>
+    var obj = {name :"zs"};
+
+    // 判断 Object.create是否是个函数
+    if(typeof Object.create == "function") {
+        var o = Object.create(obj);
+    } else {
+//        var o = {};
+//        o.__proto__ = obj;// 非标准的
+        function F() {
+
+        }
+        F.prototype = obj;
+        var o = new F();
+
+    }
+</script>
+
+函数封装
+<script>
+  function creatObj(obj) {
+      if (typeof Object.create == "function") {
+          return Object.create(obj);
+      } else {
+          function F() {
+
+          }
+          F.prototype = obj;
+          return new F();
+      }
+  }
+
+  var obj = {name : "zs"};
+  var o = creatObj(obj);
+  console.log(typeof o);
+</script>
+
+动态的添加方法
+<script>
+    var obj = {name :"zs"};
+    if(typeof Object.create == "function") {
+        var o = Object.create(obj);
+    } else {
+        Object.create = function (obj) {
+            function F() {
+
+            }
+            F.prototype = obj;
+            var o = new F();
+        }
+    }
+
+</script>
+
+</body>
+</html>

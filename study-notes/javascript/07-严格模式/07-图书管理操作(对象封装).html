@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<script>
+
+    // 1.提供一个构造函数
+    function BookListManager() {
+        this.bookList = null
+    }
+
+    // 2.设置原型对象
+    BookListManager.prototype = {
+        // 修正构造器属性
+        constructor : BookListManager,
+
+        init :function (books) {
+            //  容错性处理
+            this.bookList = books || [];
+        },
+
+        getBookByName : function (bookName) {
+        for (var i = 0; i < this.bookList.length; i++) {
+            var obj = this.bookList[i];
+            if (obj.name == bookName) {
+                return obj;
+            }
+        }
+        return null;
+    },
+        addBook : function (book) {
+            this.bookList.push(book);
+        },
+        setBookAuthor : function (bookName,authorName) {
+            // 4.1查询(在原型方法中调用原型方法要用this)
+            var book = this.getBookByName(bookName);
+            // 4.2修改
+            book.author = authorName;
+        },
+        removeBook :function (bookName) {
+        // 1.查询
+        var book = this.getBookByName(bookName);
+
+        // 2.获取索引
+        // indexOf:返回数组中元素的索引,如果没有返回-1
+        var index = this.bookList.indexOf(book);
+
+        // 3.判断有没有这本书
+        if (index == -1) {
+            throw "没有这本书";
+        }
+
+        this.bookList.splice(index,1);
+
+    }
+    };
+
+
+//    var bookListManager = new BookListManager();
+//    console.log(bookListManager.getBookByName("三国演义"));
+//    bookListManager.addBook({name :"悟空传",author : "今何在"});
+//    console.log(bookListManager.bookList);
+//
+//    bookListManager.setBookAuthor("悟空传","孙悟空");
+//    console.log(bookListManager.bookList);
+//
+//    bookListManager.removeBook("悟空传");
+//    console.log(bookListManager.bookList);
+
+//    var zs = new  BookListManager();
+//    zs.init([{name:"111",author:"2222"}]);
+
+//    console.log(zs.bookList);
+    var ls = new BookListManager();
+    ls.init();
+    ls.addBook([{name:"111",author:"2222"}]);
+    console.log(ls.bookList);
+
+</script>
+</body>
+</html>

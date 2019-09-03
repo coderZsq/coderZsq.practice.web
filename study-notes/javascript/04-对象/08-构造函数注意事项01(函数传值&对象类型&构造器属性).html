@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+函数传值
+函数也可以作为构造函数的参数
+<script>
+    function Person(name,age,logDes) {
+        this.name = name;
+        this.age = age;
+        this.logDes = logDes;
+    }
+
+    var p1 = new Person("zs",20,function () {
+        console.log(this.name);
+    });
+    var p2 = new Person("ls",34,function () {
+        console.log(this.age);
+    });
+
+    p1.logDes();
+    p2.logDes();
+
+</script>
+
+对象的类型
+<script>
+    function Person() {
+
+    }
+
+    function Dog() {
+
+    }
+
+    var p1 = new Person();
+    var d1 = new Dog();
+
+    //instanceof: 判断某个对象是否是指定的构造函数创建的
+    //  对象 instanceof 构造函数
+
+    console.log(p1 instanceof Person);//true
+    console.log(d1 instanceof Person);//false
+    console.log(p1 instanceof Dog);//fasle
+    console.log(d1 instanceof Dog);//true
+
+</script>
+
+构造器属性:(获取某个对象是由哪一个构造函数创建的)
+
+<script>
+    function Person() {
+
+    }
+
+    var p1 = new Person();
+
+    // 每一个对象都有constructor属性,这个属性指向创建该对象的构造函数
+    console.log(p1.constructor);
+
+
+</script>
+
+
+
+</body>
+</html>

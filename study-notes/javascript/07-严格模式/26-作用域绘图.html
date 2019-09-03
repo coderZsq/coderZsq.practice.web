@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+# 请画出下面代码的作用域链
+
+<script>
+    function f1() {
+
+        function f2() {
+
+        }
+
+
+    }
+
+    var a = 20;
+    function f3() {
+        function f4() {
+
+        }
+    }
+
+
+</script>
+
+<script>
+    function f1() {
+
+        function f2() {
+
+            function f5() {
+
+                var b = "demo";
+            }
+        }
+    }
+
+    var a = 20;
+    function f3() {
+        var c = "啊哈哈";
+        function f4() {
+            var d = "test";
+
+        }
+    }
+
+</script>
+</body>
+</html>

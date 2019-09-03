@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+原型链继承
+1.提供一个子构造函数和父构造函数
+2.设置子构造函数的原型对象是父构造函数的实例
+
+<script>
+    function Person() {
+        this.name = "moren";
+    }
+
+    Person.prototype.des = "des";
+    function Boy() {
+
+    }
+
+    // 实现了原型链继承
+    Boy.prototype = new Person();
+
+    var b1 = new Boy();
+    console.log(b1.des);
+    console.log(b1.name);
+</script>
+</body>
+</html>

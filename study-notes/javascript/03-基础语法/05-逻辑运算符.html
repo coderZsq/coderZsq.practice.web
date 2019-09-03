@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+逻辑运算符(短路运算符)
+逻辑非 !:取反
+    语法:!表达式1
+    结果:布尔类型
+逻辑或 ||
+    语法:表达式1 || 表达式2
+    结果:不是布尔类型
+    如果表达式1为真,返回表达式1
+    如果表达式1为假,返回表达式2
+
+逻辑与 &&
+    语法:表达式1 && 表达式2
+    结果:不是布尔类型
+    如果表达式1为真,返回表达式2
+    如果表达式1为假,返回表达式1
+
+<script>
+    console.log(0 || 0); // 0
+    console.log(0 || 1); // 1
+    console.log(1 || 0); // 1
+    console.log(1 || 1); // 1
+    console.log(2 || 3); // 2
+
+    console.log(0 && 0); // 0
+    console.log(0 && 1); // 0
+    console.log(1 && 0);  // 0
+    console.log(1 && 1); // 1
+    console.log(2 && 3); // 3
+</script>
+</body>
+</html>

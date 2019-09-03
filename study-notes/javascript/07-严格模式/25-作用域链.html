@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+作用域链
+1.函数可以创建作用域
+2.函数中可以声明一个函数
+3.函数的函数中也可以声明一个函数
+
+以上就形成一个链式的结构
+
+作用域的注意点:内层的作用域可以访问外层的作用域
+<script>
+    var a = 10;
+    function f1() {
+        var c = 20;
+       function f2() {
+
+           function f3() {
+
+
+           }
+       }
+    }
+</script>
+</body>
+</html>

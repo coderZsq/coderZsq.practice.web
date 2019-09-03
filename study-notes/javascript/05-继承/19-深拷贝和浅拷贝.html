@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+浅拷贝(地址拷贝,指针拷贝)
+
+<!--<script>-->
+    <!--var obj = {-->
+        <!--name :"zs",-->
+        <!--car :{-->
+            <!--type : "飞船"-->
+        <!--}-->
+    <!--};-->
+
+    <!--var o = {};-->
+
+    <!--for (var k in obj) {-->
+        <!--o[k] = obj[k];-->
+    <!--}-->
+
+    <!--o.car.type = "火箭";-->
+    <!--console.log(obj);-->
+<!--</script>-->
+
+深拷贝(内容拷贝)
+1.先提供一个函数,这个函数有2个参数,一个是目标对象,一个要拷贝属性的对象
+2. 需要判断第一参数是否有值,如果没有,赋值为空对象
+3.for..in遍历第2参数, 判断属性值的类型
+    1.如果是值类型(函数),直接赋值
+    2.如果是引用类型,再调用一次这个方法,拷贝这个属性存储的内容
+<script>
+    function deepCopy(obj,copyObj) {
+        obj = obj || {};
+        for (var k in copyObj) {
+
+            // 判断是否是实例属性
+            if(copyObj.hasOwnProperty(k)) {
+
+                if(typeof copyObj[k] == "object") { // function
+                    // 判断是否是数组
+                    obj[k] = Array.isArray(copyObj[k]) ? [] :{};
+                    // 引用类型
+                    deepCopy(obj[k],copyObj[k]); //调用函数
+                } else {
+                    //值类型
+                    obj[k] = copyObj[k];
+                }
+            }
+        }
+    }
+
+    var obj = {
+        name :"zs",
+        car :{
+            type : "飞船"
+        },
+        friends:["小明"],
+        showName :function () {
+            console.log(this.name);
+        }
+    };
+
+    var o = {};
+
+    deepCopy(o,obj);
+
+    console.log(o);
+
+    console.log(obj);
+
+</script>
+
+<script>
+//    function F() {
+//
+//    }
+//
+//    var o = {};
+//    console.log(o.des);
+//    console.log(typeof F); //function
+//    console.log(typeof o); // object
+</script>
+</body>
+</html>

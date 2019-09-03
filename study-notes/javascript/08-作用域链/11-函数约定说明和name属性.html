@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+约定:
+    1.函数声明
+    2.函数表达式
+    2.Function构造函数
+
+<script>
+//    function 函数名(形参1,形参2....) {
+//        // 函数体
+//    }
+
+    // 匿名的函数表达式
+    var sum = function () {
+
+    };
+
+    //  命名的函数表达式
+    var add = function func() {
+
+    }
+
+//    func.length
+    console.log(sum.name); // sum (跟浏览器实现有关 火狐-->空)
+
+    console.log(add.name); // func
+
+    add.name = "addDemo";
+//    addDemo();
+
+    // 函数的名字不能修改
+    console.log(add.name);
+</script>
+</body>
+</html>

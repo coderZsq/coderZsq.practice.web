@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+惰性函数:
+1.提供一个构造函数
+2.在构造函数内部声明一个私有的变量
+3.利用惰性函数定义实现构造函数的自我更新(直接返回 instance)
+4.把this赋值给instance
+5.通过this设置属性和方法
+
+问题:
+    1.构造器属性:创建出来的单例对象的构造器属性指向旧构造函数
+    2.原型对象:创建对象以后设置的原型对象和单例对象的原型对象不是同一个,创建对象后设置到原型对象上的属性和方法无法访问
+
+
+<script>
+    // 1.提供一个构造函数
+    function Person() {
+
+        // 2.在构造函数内部声明一个私有的变量
+        var instance;
+
+        // 3.利用惰性函数的定义更新构造函数
+        Person = function () {
+
+            console.log("之前已经创建过,直接返回");
+            return instance;
+        };
+
+        // 4.把this赋值给instance
+        instance = this;
+        // 5.通过 this设置属性和方法
+        this.name = "zs";
+
+        console.log("第一次创建");
+    }
+
+    Person.prototype.des = "des";
+    var p1 = new Person();
+
+    Person.prototype.hello = "hello";
+
+    var p2 = new Person();
+
+    console.log(p1.des);  // des
+    console.log(p1.hello); // undefined
+
+    console.log(p2.des);  // des
+    console.log(p2.hello); // undefined
+
+    //    console.log(p1 == p2); //true
+
+//    console.log(p1.constructor == p2.constructor); //true
+//    console.log(p1.constructor == Person); // false
+//    console.log(p2.constructor == Person);// false
+
+
+</script>
+</body>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+扩展内置对象
+<script>
+    // 需求:希望arry1有一个des属性描述这个数组,还有一个方法(logDes)
+    var arry1 = [1,2,3];
+    arry1.des = "我是一个数组";
+    arry1.logDes = function () {
+        console.log(this.des);
+    }
+    arry1.logDes();
+
+    // 需求:希望arry2有一个des属性描述这个数组,还有一个方法(logDes)
+    var arry2 = [3,4,5];
+    arry2.des = "我是一个数组";
+    arry2.logDes = function () {
+        console.log(this.des);
+    }
+    arry2.logDes();
+</script>
+
+<script>
+    // 需求:希望所有的数组都有一个des属性描述这个数组,还有一个方法(logDes)
+
+    Array.prototype.des = "我是一个数组";
+    Array.prototype.logDes = function () {
+        console.log(this.des);
+    };
+
+    var arry = [2,3,4];
+    arry.logDes();
+
+    // 上面的方式可以达到扩展内置对象的效果,但是不建议怎样使用
+    // 因为在公司开发中,一个项目可能有很多人一起开发,项目的代码可能会很多
+    // 如果每个人都这样扩展内置,导致项目日后难以维护,还会出现方法覆盖等安全问题
+
+    // 张三
+    Array.prototype.des = "哈哈,我是一个数组";
+    Array.prototype.logDes = function () {
+        console.log(this.des);
+    };
+
+    // 自己
+</script>
+</body>
+</html>

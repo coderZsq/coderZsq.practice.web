@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+对象的创建方式
+1.字面量的方式 {}
+2.内置的构造函数
+3.简单的工厂函数
+4.自定义构造函数
+
+字面量的方式
+存在的问题:在创建多个同类型的对象时,有大量重复的代码,代码的冗余度很高
+适合的场合:只需要创建较少的几个对象
+<script>
+    var stu1 = {
+        name :"zs",
+        age:20,
+        num:110,
+        className:"葵花宝典班",
+        study:function () {
+            console.log("学习");
+        }
+    };
+
+    var stu2 ={
+        name :"ls",
+        age:34,
+        num:119,
+        className:"暴雨梨花针班",
+        study:function () {
+        console.log("学习");
+        }
+    };
+
+    var stu3 ={
+        name :"ww",
+        age:44,
+        num:117,
+        className:"三分钟精通js班",
+        study:function () {
+            console.log("学习");
+        }
+    };
+</script>
+</body>
+</html>

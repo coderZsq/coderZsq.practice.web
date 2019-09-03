@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<script>
+    // 1.提供一个对象数组,数组中每一个元素都是一个对象(book对象)
+
+    var bookList = [
+        {
+            name : "西游记",
+            author : "吴承恩"
+        },
+        {
+            name : "三国演义",
+            author : "罗贯中"
+        },
+        {
+            name : "水浒传",
+            author : "施耐庵"
+        },
+        {
+            name : "红楼梦",
+            author : "曹雪芹"
+        }
+    ];
+
+    // 2.查询
+    for (var i = 0; i < bookList.length; i++) {
+        var obj = bookList[i];
+        if (obj.name == "三国演义") {
+            console.log(obj);
+            break;
+        }
+    }
+
+    // 3.增加
+    bookList.push({name:"封神榜",author:"不详"});
+    console.log(bookList);
+
+    // 4.修改
+    for (var i = 0; i < bookList.length; i++) {
+        var obj = bookList[i];
+        if (obj.name == "封神榜") {
+            obj.author = "姜子牙";
+            break;
+        }
+    }
+    console.log(bookList);
+
+    // 5.删除
+    for (var i = 0; i < bookList.length; i++) {
+        var obj = bookList[i];
+        if (obj.name == "封神榜") {
+            bookList.splice(i,1);
+            break;
+        }
+    }
+
+    console.log(bookList);
+
+</script>
+</body>
+</html>

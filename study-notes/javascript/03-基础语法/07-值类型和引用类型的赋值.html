@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+赋值:=
+内部实现:把右边存储的信息复制一份给左边的变量
+
+值类型的赋值:把右边存储的信息(具体的数据)复制一份给左边的变量
+特点:值类型赋值只是简单的数据复制,互相不影响,是独立的
+引用类型的赋值:把右边存储的信息(指向具体数据的地址)复制一份给左边的变量
+特点:共享同一份数据,修改其中一个对象属性的值,会影响另外一个
+<script>
+    var a= 10;
+    var b = a;
+    b = 8;
+    console.log(a); // 10
+
+    var obj = {
+        name:"zs"
+    };
+    var obj1 = obj;
+
+    obj1 = {age : 20}; // 切断了和之前对象的关系
+
+    obj1.name = "ls";
+    console.log(obj.name); // zs | ls
+    console.log(obj1.name); // ls
+</script>
+<script>
+
+
+    var obj = {
+        name:"zs"
+    };
+
+    var obj1 = obj;
+
+    obj1.name = "ls";
+
+    obj1 = {age : 20};
+
+    console.log(obj.name); // ls
+    console.log(obj1.name); // undefined
+</script>
+</body>
+</html>

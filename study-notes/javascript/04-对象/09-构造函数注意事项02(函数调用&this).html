@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+直接调用构造函数
+new :创建对象,返回对象
+构造函数:做一些初始化的设置
+
+<script>
+    function Person(name,age) {
+        this.name = name;
+        this.age = age;
+    }
+
+    var p1 = new Person("zs",20);
+
+    var p2 = Person("ls",34); // 可以这样,但是不建议这样做
+
+    console.log(p2);
+
+</script>
+
+<script>
+    function Person(name,age) {
+        if (this instanceof Person){
+            this.name = name;
+            this.age = age;
+        } else {
+            return new Person(name,age);
+        }
+    }
+    var p1 = new Person("zs",20);
+
+    var p2 = Person("ls",34); // 可以这样,但是不建议这样做
+
+</script>
+
+<script>
+    function Person(name,age) {
+        this.name = name;
+        this.age = age;
+        console.log(this);
+    }
+    var p1 = new Person("zs",20); // this-> 构造函数内部新创建的对象
+
+    var p2 = Person("ls",34); //this-->window
+</script>
+</body>
+</html>

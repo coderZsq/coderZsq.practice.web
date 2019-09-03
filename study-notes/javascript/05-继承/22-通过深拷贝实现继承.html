@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+完美的继承
+1.获取实例属性-->借用构造函数
+2.获取原型属性->深拷贝
+3.独立的,互相不影响
+<script>
+
+    //  Array.isArray兼容性处理
+    if(typeof Array.isArray != "function"){
+        Array.isArray = function (obj) {
+            return Object.prototype.toString.call(obj) == "[object Array]";
+        }
+    }
+
+    function deepCopy(obj,copyObj) {
+        obj = obj || {};
+        for (var k in copyObj) {
+
+            // 判断是否是实例属性
+            if(copyObj.hasOwnProperty(copyObj[k])) {
+
+                if(typeof copyObj[k] == "object") {
+
+                    // 判断是否是数组
+                    obj[k] = Array.isArray(copyObj[k]) ? [] :{};
+                    // 引用类型
+                    deepCopy(obj[k],copyObj[k]); //调用函数
+                } else {
+                    //值类型
+                    obj[k] = copyObj[k];
+                }
+            }
+        }
+    }
+    function Person(name) {
+        this.name = name
+    }
+
+    Person.prototype.des = "des";
+    Person.prototype.logDes = function () {
+        console.log(this.des);
+    }
+
+    function Student(num,name) {
+        this.num = num;
+        // 借用构造函数继承 | 经典继承 | 伪对象继承
+        Person.call(this,name);
+    }
+
+    // 深拷贝
+    deepCopy(Student.prototype,Person.prototype);
+
+    var stu1 = new Student("20171223",'zs');
+    var stu2 = new Student("20171224",'ls');
+
+    Student.prototype.des = "des--Stu";
+
+    var p = new Person("ls");
+
+    p.logDes();
+
+
+</script>
+</body>
+</html>

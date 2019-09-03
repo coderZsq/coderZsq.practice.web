@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+JS中实现继承的方式:
+1.属性拷贝(混入式继承)
+2.原型式继承
+3.原型链继承
+4.借用构造函数(经典继承 | 伪对象继承)
+5.组合继承
+6.使用特定的方法实现继承(Object.create())
+7.完全拷贝
+
+
+属性拷贝(混入式继承)
+<script>
+    var obj = {
+        name : "zs",
+        age : 20,
+        friends :["小明","小红"]
+    };
+    var o = {};
+
+    //  需求:o获取obj的属性
+    for(var k in obj) {
+        o[k] = obj[k];
+    }
+
+//    console.log(o);
+
+    o.friends.push("老王");
+
+//    console.log(obj);
+    // 问题:如果属性是一个引用类型的数据,子对象和父对象会共享同一份数据,修改其中一个会影响另外一个
+</script>
+
+函数拷贝属性
+<script>
+    var o = {};
+    var obj1 = {name :"zs"};
+    var obj2 = {age : 20};
+    var obj3 =  {friends :["小明"]};
+    // 第一个参数 :目标对象
+    // 后面参数:要拷贝属性的对象
+    // ES6开始支持的
+     Object.assign(o,obj1,obj2,obj3);
+    console.log(o);
+    o.friends.push("小红");
+    console.log(obj3);
+</script>
+</body>
+</html>

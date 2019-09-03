@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+安全的扩展内置对象
+1.提供一个构造函数(自定义)
+2.设置构造函数的原型对象是内置构造函数的实例
+
+<script>
+    // 1.提供一个构造函数
+    function MyArray() {
+
+    }
+    //2.设置构造函数的原型对象是内置构造函数的实例
+    MyArray.prototype = new Array(); // 获取原型属性和方法
+    MyArray.prototype.des = "des";
+    MyArray.prototype.logDes = function () {
+        console.log(this.des);
+    }
+    var myArray = new MyArray();
+
+    myArray.push("123");
+    console.log(myArray);
+
+    // 张三
+    // 1.提供一个构造函数
+    function OtherArray() {
+
+    }
+    //2.设置构造函数的原型对象是内置构造函数的实例
+    OtherArray.prototype = new Array(); // 获取原型属性和方法
+    OtherArray.prototype.des = "des";
+    OtherArray.prototype.logDes = function () {
+        console.log(this.des);
+    }
+    var OtherArray1 = new OtherArray();
+</script>
+</body>
+</html>

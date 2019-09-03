@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+严格模式的注意点
+1.必须使用var声明变量
+2.不能使用delete删除全局变量
+3.对象中属性不能同名
+4.函数形参名必须唯一
+5.禁止八进制
+6.禁止使用with
+7.禁止callee caller
+8.不能使用arguments和eval作为标识符
+9.if语句中不能声明函数
+10.修正了this的指向
+11.严格模式下,arguments的使用不一样
+
+
+作用域链
+1.函数可以创建作用域
+2.函数内部可以声明函数
+3.函数的函数内部也可以声明函数
+以上就形成一种链式的结构
+
+
+<!--<script>-->
+    <!--var obj =  {-->
+        <!--name : "zs",-->
+        <!--showName :function () {-->
+            <!--console.log(this.name);-->
+        <!--}-->
+    <!--}-->
+
+    <!--obj.showName();-->
+    <!--var showName = obj.showName;-->
+    <!--showName();-->
+    <!---->
+    <!--var obj1 = {};-->
+    <!--obj.showName.call(obj1);-->
+    <!---->
+<!--</script>-->
+<!--<script>-->
+    <!--"use strict";-->
+    <!--function eval() {-->
+
+    <!--}-->
+<!--</script>-->
+
+<!--<script>-->
+    <!---->
+    <!--function foo() {-->
+        <!--var a = 20;-->
+    <!--}-->
+    <!---->
+<!--</script>-->
+</body>
+</html>

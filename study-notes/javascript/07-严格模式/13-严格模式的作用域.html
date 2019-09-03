@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+严格模式的作用域:
+
+范围:
+1.script的顶部:只对当前的script标签有作用
+2.函数的顶部 :只对当前函数内部有作用
+<!--<script>-->
+    <!--var a = 10;-->
+
+    <!--function foo() {-->
+        <!--var b = 20;-->
+
+    <!--}-->
+
+
+<!--</script>-->
+
+<!--<script>-->
+<!--//    "use strict"; // test1 test2都有作用-->
+    <!--function test1() {-->
+<!--//        "use strict"; // test1有作用-->
+        <!--a = 10;-->
+        <!--console.log(a);-->
+    <!--}-->
+
+    <!--function test2() {-->
+        <!--"use strict"; // test2有作用-->
+        <!--b = 30;-->
+        <!--console.log(b);-->
+    <!--}-->
+
+    <!--test1();-->
+    <!--test2();-->
+<!--</script>-->
+
+<script>
+    "use strict";
+
+</script>
+
+<script>
+    a = 10;
+    console.log(a);
+</script>
+</body>
+</html>

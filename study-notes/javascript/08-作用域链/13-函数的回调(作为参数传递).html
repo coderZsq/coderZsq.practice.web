@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+函数的回调
+
+函数可以作为其他函数的参数
+<script>
+    function foo(callBack) {
+        callBack();
+    }
+
+    function demo() {
+        console.log("demo");
+    }
+//    foo(demo()); 错误的
+    foo(demo);
+
+</script>
+
+对象方法作为其他函数的参数
+<!--<script>-->
+    <!--var obj = {-->
+        <!--name : "zs",-->
+        <!--showName : function () {-->
+            <!--console.log(this.name);-->
+        <!--}-->
+    <!--}-->
+
+<!--//    obj.showName();-->
+
+    <!--function foo(callBack) {-->
+        <!--callBack();-->
+    <!--}-->
+
+    <!--foo(obj.showName);-->
+<!--</script>-->
+
+<!--<script>-->
+    <!--var obj = {-->
+        <!--name : "zs",-->
+        <!--showName : function () {-->
+            <!--console.log(this.name);-->
+        <!--}-->
+    <!--}-->
+
+
+    <!--function foo(callBack,callBackObj) {-->
+        <!--callBack.call(callBackObj);-->
+    <!--}-->
+
+    <!--foo(obj.showName,obj);-->
+<!--//    foo("showName",obj);-->
+<!--</script>-->
+
+
+<script>
+    var obj = {
+        name : "zs",
+        showName : function () {
+            console.log(this.name);
+        }
+    }
+
+
+    function foo(callBack,callBackObj) {
+
+        if(typeof callBack == "string") {
+            callBack = callBackObj[callBack];
+        }
+
+        if(typeof callBack == "function") {
+            callBack.call(callBackObj);
+        }
+    }
+
+    foo(obj.showName,obj);
+
+
+    foo("showName",obj);
+</script>
+</body>
+</html>

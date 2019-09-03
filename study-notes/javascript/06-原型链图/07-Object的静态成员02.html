@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+1.Object.apply 借用其他对象的方法
+2.Object.arguments 接受实参
+3.Object.assign 属性拷贝
+4.Object.call  借用其他对象的方法
+5.Object.caller 返回调用函数的函数
+    如果该函数在全局作用域中调用,是null,不是window
+6.Object.constructor 指向构造函数
+7.Object.create 创建对象并设置原型对象
+8.Object.getOwnPropertyDescriptor 获取实例属性的描述信息
+    configurable 是否可配置(1.是否可以删除 2.是否可以修改该配置)
+    enumerable 是否可以枚举 可以枚举 可以for..in遍历
+    value 值
+    writable 是否可以重写(修改)
+9.Object.defineProperty 设置属性的描述对象
+    9.1 修改已经存在的属性,默认是true
+    9.2 添加新的属性,默认是false
+
+10.Object.getOwnPropertyNames 获取对象所有实例属性的名字,不包括原型属性,返回一个数组
+
+11.Object.keys 获取对象所有属性名,不包括原型属性和不可枚举的属性
+
+12.Object.preventExtensions | Object.isExtensible
+    禁止扩展 (不可以添加属性,可以删除,可以修改)
+13.Object.seal | Object.isSealed
+    密封对象 禁止扩展,不可以删除,不可以修改configurable和enumerable,可以修改属性的值
+
+14.Object.freeze | Object.isFrozen
+冻结对象  禁止扩展,不可以删除,不可以修改修改属性的值,不可以修改configurable和enumerable和writable
+
+15.Object.getPrototypeOf 获取原型对象
+<script>
+    function Person() {
+
+    }
+//    Person.prototype
+    var p1 = new Person();
+//    p1.__proto__
+//    console.log(Object.getPrototypeOf(p1) == p1.__proto__);
+</script>
+<script>
+
+    function fun() {
+//        console.log(arguments); // 是一个对象,不是数组,是类似于数组的结构
+//        console.log(Array.isArray(arguments)); // false
+        console.log(arguments[0]);
+    }
+
+    fun(1,2,3,4,5,6,7,8,9,0,12,34);
+
+    var obj = {name:"zs"};
+    var obj1 = {age: 20};
+    var o = {};
+    Object.assign(o,obj,obj1);
+    console.log(o);
+</script>
+
+<script>
+    function fun01() {
+        console.log(fun01.caller); // 返回调用函数的函数
+    }
+
+    function fun02() {
+        fun01();
+    }
+
+//    fun02();
+    fun01();
+
+    var obj = {name : "zs",age:20};
+    console.log(Object.getOwnPropertyDescriptor(obj, "name"));
+
+//    Object.defineProperty(obj,"name",{
+//        configurable :false,
+//        enumerable : false,
+//        value : "zs",
+//        writable : false
+//    });
+
+//    delete obj.name;
+//    console.log(obj);
+//    for(var k in obj) {
+//        console.log(k);
+//    }
+    obj.name = "ls";
+//    console.log(obj);
+
+</script>
+
+<script>
+    var obj = {name : "zs",age:20};
+//    console.log(Object.getOwnPropertyDescriptor(obj, "name"));
+
+        Object.defineProperty(obj,"des",{
+
+        });
+    console.log(Object.getOwnPropertyDescriptor(obj, "des"));
+
+</script>
+<script>
+    var obj = {name : "zs",age:20};
+    Object.prototype.des = "des";
+    Object.defineProperty(obj,"name",{
+        enumerable : false
+    });
+    console.log(Object.getOwnPropertyNames(obj));
+    console.log(Object.keys(obj));
+</script>
+<script>
+    var obj = {name : "zs"};
+    Object.preventExtensions(obj);
+    // 添加属性
+//    obj.age = 20;
+//    delete  obj.name;
+    obj.name = "ls";
+    console.log(obj);
+</script>
+<script>
+    var obj = {name : "zs"};
+    Object.seal(obj);
+//    console.log(Object.getOwnPropertyDescriptor(obj, "name"));
+
+//    Object.defineProperty(obj,"name",{
+////        configurable : true
+//        enumerable : false
+//    });
+
+    // 添加属性
+//        obj.age = 20;
+//        delete  obj.name;
+//    obj.name = "ls";
+//    console.log(obj);
+</script>
+<script>
+    var obj = {name : "zs"};
+    Object.freeze(obj);
+        console.log(Object.getOwnPropertyDescriptor(obj, "name"));
+
+    Object.defineProperty(obj,"name",{
+//        configurable : true
+//        enumerable : false
+        writable:true
+    });
+
+    // 添加属性
+//            obj.age = 20;
+//            delete  obj.name;
+//        obj.name = "ls";
+//        console.log(obj);
+</script>
+</body>
+</html>

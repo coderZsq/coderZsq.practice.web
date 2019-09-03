@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+arguments :接受实参
+    不是一个数组,是一个类似于数组的对象
+注意点:
+    函数调用的时候传递的实参会保存在arguments中
+    实参的个数大于形参的个数,超出的部分可以通过arguments获得
+    实参的个数小于形参的个数,会依次赋值,多余的形参为undefined
+
+arguments.length :实参的个数
+函数名.length :形参的个数
+
+this-->指向具体的对象
+1.函数作为对象的方法调用 --> 调用该方法的对象
+2.普通方式调用-->window
+3.使用new 构造函数调用 -->构造函数内部新创建的对象
+4.上下文低调用(call | apply) --> 第一个参数
+
+<script>
+//    Array.prototype.des = "des";
+
+    function fun(a,b,c) {
+//        console.log(a);
+//        console.log(b);
+        console.log(c);
+        for (var i = 0; i < arguments.length; i++) {
+            console.log(arguments[i]);
+
+        }
+//        console.log(arguments);
+//        console.log(typeof arguments); //object
+//        console.log(Array.isArray(arguments));// false
+//        console.log(arguments.des);//undefined
+//        // [object Array] | [object Object] |([object Arguments])
+//        console.log(Object.prototype.toString.call(arguments));;
+    }
+    fun(1,2);
+console.log(fun.length);
+
+</script>
+</body>
+</html>

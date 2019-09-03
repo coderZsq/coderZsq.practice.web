@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+处理函数参数过长的问题:
+需求:
+打印4句话
+
+多留汗水莫流泪
+顶天立地要坚强
+谁叫你是男子汉
+再苦再累自己扛
+
+
+<script>
+
+    var fun = new Function("console.log('多留汗水莫流泪');console.log('顶天立地要坚强');console.log('谁叫你是男子汉');console.log('再苦再累自己扛');");
+    fun();
+
+</script>
+<script>
+    var fun = new Function("console.log('多留汗水莫流泪');" +
+        "console.log('顶天立地要坚强');" +
+        "console.log('谁叫你是男子汉');" +
+        "console.log('再苦再累自己扛');");
+    fun();
+</script>
+
+处理过长的问题:
+1.使用+拼接字符串
+2.使用反括号 ``
+3.使用JS模板
+<script>
+
+    console.log("----");
+    var fun = new Function(`console.log('多留汗水莫流泪');
+        console.log('顶天立地要坚强');
+        console.log('谁叫你是男子汉');
+        console.log('再苦再累自己扛');`);
+    fun();
+</script>
+
+<script type = "text/template" id = "demo">
+    console.log('多留汗水莫流泪');
+    console.log('顶天立地要坚强');
+    console.log('谁叫你是男子汉');
+    console.log('再苦再累自己扛');
+</script>
+
+<script>
+    console.log("---+++++-");
+    var scr = document.getElementById("demo");
+    var str = scr.innerHTML;
+    var fun = new Function(str);
+    fun();
+</script>
+</body>
+</html>

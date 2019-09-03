@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+工厂模式:
+    大批量的创建同一种类型的对象
+优点:代码的复用性更好,结构更稳定,通过统一的接口创建对象
+
+核心的步骤:
+    1.提供一个父构造函数 (工厂)
+    2.设置父构造函数的原型对象(产品公共的东西)
+    3.设置父构造函数的静态工厂方法 (生成车间)
+        3.1 接受传入的参数(产品的类型)
+        3.2 判断是否支持生产
+        3.3 设置子构造函数的原型对象
+        3.4 利用子构造函数创建对象
+        3.5 返回创建的对象
+    4.定制合作伙伴
+    5.利用父构造函数的静态工厂方法创建对象
+
+<script>
+    // 1.提供一个父构造函数 (工厂)
+    function PhoneMake() {}
+
+    // 2.设置父构造函数的原型对象
+    PhoneMake.prototype.logDes  = function () {
+        console.log("我们的口号" + this.des);
+    }
+
+    // 3.设置父构造函数的静态工厂方法
+    PhoneMake.factory = function (typeStr) {
+        // 3.1 接受传入的参数(要生产产品的类型)
+        var shopType =  typeStr;
+
+        // 3.2 判断是否支持生产
+        if (typeof PhoneMake[shopType] != "function") {
+            throw "Sorry,目前不支持生产该产品!";
+        }
+
+        // 3.3设置子构造函数的原型对象(获取父构造函数的方法)
+        PhoneMake[shopType].prototype = new PhoneMake();
+
+        // 3.4利用子构造函数创建对象
+        var shop = new PhoneMake[shopType]();
+
+        // 3.5返回创建的对象
+        return shop;
+
+    }
+
+    // 4.定制合作伙伴
+    PhoneMake.iphone = function () {
+        this.des = "最安全最稳定的系统,但是不好用";
+    }
+
+    PhoneMake.vivo = function () {
+        this.des = "照亮你的美,你到底美不美!";
+    }
+
+    PhoneMake.oppo = function () {
+        this.des = "充电2小时,通话5分钟";
+    }
+
+    PhoneMake.meizu = function () {
+        this.des = "我就是我,不一样烟火!";
+    }
+
+    // 5.利用父构造函数的静态工厂方法创建对象(指定创建的类型)
+    var iphone = PhoneMake.factory("iphone");
+    var vivo = PhoneMake.factory("vivo");
+    var oppo = PhoneMake.factory("oppo");
+    var meizu = PhoneMake.factory("meizu");
+
+
+    iphone.logDes();
+    vivo.logDes();
+    oppo.logDes();
+    meizu.logDes();
+
+//    var huawei = PhoneMake.factory("huawei");
+
+
+</script>
+</body>
+</html>

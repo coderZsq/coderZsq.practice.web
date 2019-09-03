@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+eval 函数
+作用:可以把字符串转为JS代码,并且马上执行
+
+eval 函数和Function构造函数
+1.都可以把字符串转为JS代码
+2.eval把字符串转为JS代码后会马上执行,函数需要调用才能执行
+
+JSON:是一种数据结构,可以存储数据,传输数据,本质是一个字符串
+JSON操作:把JSON转为对象,把对象转为JSON
+
+建议:不建议使用(JS是词法作用域,eval可以动态的调整(破坏)作用域,性能不好)
+
+<script>
+//    var fun = new Function("console.log('--++');")
+//    eval("console.log('--++');")
+
+    var jsonData = "{\"name\":\"zs\"}";
+    // 把JSON转为对象
+    console.log(JSON.parse(jsonData));
+    // 把对象转为JSON
+    var obj = JSON.parse(jsonData);
+    console.log(JSON.stringify(obj));
+</script>
+
+<script>
+
+    console.log("----");
+//    '{"name":"zs"}';
+
+//    eval("var o =" + "{\"name\":\"zs\"}");
+    console.log(eval("(" + "{\"name\":\"zs\"}" + ")"));;
+
+</script>
+</body>
+</html>

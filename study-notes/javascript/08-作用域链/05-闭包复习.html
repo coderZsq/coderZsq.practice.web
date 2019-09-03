@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+闭包:
+闭:关闭 封闭的意思,对外界不开放
+包:包裹
+
+闭包技术:
+    1.作用域链:内层作用域可以访问外层作用域,反过来不行
+    2.有的时候,确实想要访问内层作用域(外层作用域-->内层作用域)
+    3.闭包技术是一种可以(间接)访问封闭空间私有数据的方法
+
+获取数据
+    1.直接return数据
+    2.闭包:对直接return的数据进行包装(函数)
+
+return 值类型的数据
+<script>
+    function foo() {
+        var a = 10;
+        return a;
+    }
+    var a1 = foo();
+    var a2 = foo();
+
+    // 一次性获取数据
+    // 每调用一次函数,获取的数据不是同一份
+</script>
+
+return 引用类型的数据
+<script>
+    function foo() {
+        var obj = {name : 'zs'};
+        return obj;
+    }
+
+    var o1 = foo();
+    var o2 = foo();
+    console.log(o1 == o2); //false
+</script>
+
+闭包
+<script>
+    function foo() {
+        var obj = {name : 'zs'};
+        var func = function () {
+            return obj;
+        }
+        return func;
+    }
+
+    var fuc1 = foo();
+
+
+    var f1 = fuc1;
+    var f2 = fuc1;
+
+    console.log(f1 == f2);
+
+</script>
+
+闭包的一般写法
+<script>
+    function foo() {
+        var obj = {name : 'zs'};
+
+        return  function () {
+            return obj;
+        };
+    }
+
+    var fuc1 = foo();
+
+
+    var f1 = fuc1;
+    var f2 = fuc1;
+
+    console.log(f1 == f2);
+
+</script>
+
+返回多个值
+<script>
+    function foo() {
+        var name = "zs";
+        var age = 20;
+        return function () {
+            return [name ,age];
+        }
+    }
+
+    var fun = foo();
+
+    console.log(fun()[0]);
+    console.log(fun()[1]);
+
+
+</script>
+
+返回多个值
+<script>
+    function foo() {
+        var name = "zs";
+        var age = 20;
+        return [
+            function () {
+                return name;
+            },
+            function () {
+                return age;
+            }
+        ];
+    }
+
+    var fun = foo();
+
+    console.log(fun[0]());
+    console.log(fun[1]());
+
+</script>
+闭包的基本写法
+<script>
+    function foo() {
+        var name = "zs";
+        var age = 20;
+        return {
+            getName : function () {
+                return name;
+            },
+            getAge : function () {
+                return age;
+            }
+        };
+    }
+
+    var obj = foo();
+    console.log(obj.getName());
+    console.log(obj.getAge());
+
+</script>
+</body>
+</html>

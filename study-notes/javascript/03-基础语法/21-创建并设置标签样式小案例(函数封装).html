@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div>第1个div</div>
+<div>第2个div</div>
+<div>第3个div</div>
+<div>第4个div</div>
+<div>第5个div</div>
+
+<p>第1个p</p>
+<p>第2个p</p>
+<p>第3个p</p>
+<p>第4个p</p>
+<p>第5个p</p>
+
+需要:找到所有的div,设置边框 "2px solid #fef"
+需要:找到所有的p,设置边框 "2px solid #fef"
+<script>
+    // 存在问题:全局变量污染,结构性不好
+
+     // 1.封装一个函数获取标签
+     function getElements(eleName) {
+         return document.getElementsByTagName(eleName);
+     }
+
+     // 2.封装一个函数设置标签
+     function setStyle(eles) {
+         for (var i = 0; i < eles.length; i++) {
+             eles[i].style.border = "2px solid #fef";
+         }
+     }
+
+
+    var  divs = getElements("div");
+    var ps =  getElements("p");
+    setStyle(divs);
+    setStyle(ps);
+
+</script>
+</body>
+</html>

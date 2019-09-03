@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+赋值 =
+等于 == :判断左边和右边是否相等
+特点:只判断值是否相等
+全等于 ===:判断左边和右边是否相等
+特点:不仅仅判断值,还判断类型是否一样
+
+不等于 !=
+不全等于 !==
+<script>
+    var str = "123";
+    var num = 123;
+    console.log(str == num); // true
+    console.log(str === num);//false
+
+    var arr = [1,2,3]; // 0x123
+    var arr1 =[1,2,3]; // 0x345
+    console.log(arr == arr1); // true | (false)
+    console.log(arr === arr1);// true | (false)
+
+    console.log(null == undefined); // true
+    console.log(null === undefined); // false
+
+    // null 和undefined有什么区别?
+//    var b = 10;
+//    var a ;
+
+    //什么时候变量的值为Null?
+   // 变量的值永远不可能为null,除了手动赋值为null
+
+    // 赋值变量的值为null?
+    // 告诉系统不在使用这个变量,可以回收其占用的空间
+
+</script>
+</body>
+</html>

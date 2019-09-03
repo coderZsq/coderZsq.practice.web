@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+with
+    作用:把对象的作用域引申到{}中 ,减少代码量
+
+注意点:
+    1.添加属性不能使用无前缀的方式
+    2.this指向window
+    3.严格模式下,禁止使用
+
+使用场合:当你需要引用深层次的对象会方便点(对象.属性.属性....)
+
+建议:不建议使用
+
+<div id = "demo">div</div>
+<script>
+    var obj = {
+        name : "zs",
+        age :20,
+        des : "des"
+    };
+
+//    obj.name = "ls";
+//    obj.age = 21;
+//    obj.des = "demo";
+
+    with(obj){
+        name = "ls";
+        age = 21;
+        des = "demo";
+        obj.num = "2017"
+        console.log(this);
+    };
+
+    console.log(obj);
+</script>
+<script>
+//    var div = document.getElementById("demo");
+//    div.style.background = "red";
+//    div.style.height = "100px";
+//    div.style.width = "200px";
+//
+//    with (div.style){
+//        background = "red";
+//        height = "100px";
+//        width = "200px";
+//    };
+
+
+    // 即时调用函数
+    (function (t) {
+       t.background = "red";
+       t.height = "100px";
+        t.width = "200px";
+    })(div.style);
+
+</script>
+</body>
+</html>

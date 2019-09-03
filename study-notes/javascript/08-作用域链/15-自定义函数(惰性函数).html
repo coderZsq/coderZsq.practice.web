@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+惰性函数:函数真正的内容需要执行(调用)一次函数以后才能确定
+
+应用场景:需要做一次性初始化的操作
+
+注意点:
+    1.给函数添加一个属性,自我更新后属性会丢失
+    2.把这个函数赋值给一个变量,永远不会更新
+    3.把这个函数赋值给一个对象的方法,永远不会更新
+
+<script>
+
+    function foo() {
+
+        // 初始化的操作
+        console.log("foo");
+
+        // 实现自我更新
+        foo = function () {
+            console.log("foo foo");
+        }
+    }
+
+    foo(); // foo
+    foo(); //  foo foo
+    foo();// foo foo
+
+</script>
+<script>
+    function foo() {
+
+        // 初始化的操作
+        console.log("foo");
+
+        // 实现自我更新
+        foo = function () {
+            console.log("foo foo");
+        }
+    }
+
+    foo.des = "des";
+
+    foo(); // foo
+    foo(); //  foo foo
+    foo();// foo foo
+    console.log(foo.des); //undefined
+
+</script>
+<script>
+    function foo() {
+
+        // 初始化的操作
+        console.log("foo");
+
+        // 实现自我更新
+        foo = function () {
+            console.log("foo foo");
+        }
+    }
+
+    var func = foo;
+    func(); // foo
+    func(); // foo
+    func(); // foo
+
+    foo(); // foo foo
+
+</script>
+<script>
+    function foo() {
+
+        // 初始化的操作
+        console.log("foo");
+
+        // 实现自我更新
+        foo = function () {
+            console.log("foo foo");
+        }
+    }
+
+    var obj = {};
+    obj.func = foo;
+
+    obj.func(); // foo
+    obj.func();// foo
+    obj.func();// foo
+
+    foo();
+</script>
+</body>
+</html>

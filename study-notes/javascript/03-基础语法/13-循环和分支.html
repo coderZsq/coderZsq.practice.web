@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+循环:
+for
+while
+do while
+for ..in
+
+分支:
+if...else
+switch..case
+
+循环
+<script>
+    // 01 for循环
+    for (var i = 0; i < 100; i++) {
+        // 循环体
+
+    }
+
+    // 02while循环:先判断后执行,有可能一次都不执行循环体
+    var a = 10;
+    while (a > 11) {
+
+        a--;
+        console.log(a);
+    }
+
+    // 03 do while:先执行后判断,至少执行一次循环体
+//    do {
+//        //  循环体
+//    }while (条件语句);
+
+</script>
+
+分支
+<script>
+//    if(true) {
+//
+//    }else{
+//
+//    }
+
+    var a = 1;
+   switch (a) {
+       case 1 :
+           console.log(1);
+           break; // 防止case穿透
+       case 2 :
+           console.log(2);
+           break;
+       default :
+           break;
+   }
+
+</script>
+</body>
+</html>

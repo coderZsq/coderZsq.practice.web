@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+核心步骤:
+    1.提供一个发布者(信息的发布者)
+    2.提供观察者(发布者发布信息后需要采取行动的人)
+    3.注册观察者
+    4.发布者发布信息
+
+女神:(rose)
+
+男生1:jack
+男生2:tom
+
+结构:1个发布者,2个观察者,关注的是一个状态
+思考:多个发布者
+<script>
+
+    // 1.提供发布者(信息的发布者)
+    var publisher = {
+        addUser:function (fn,type) {
+            var type = type || "eat";
+
+            // 判断this.user[type]是否是个对象
+            if (typeof this.user[type] != "object"){
+                this.user[type] = [];
+            }
+
+            if (typeof fn != "function") {
+                throw "不支持!";
+            }
+            this.user[type].push(fn);
+        },
+
+        removeUser : function (fn,type) {
+            this.publish(type,fn);
+        },
+        publish : function (type,fn) {
+            var type = type || "eat";
+            for (var i = 0; i < this.user[type].length; i++) {
+
+                // 判断是发布信息还是移出观察
+                if (typeof fn == "function") {
+                    //  移出观察
+                    if(this.user[type][i] == fn) {
+                        this.user[type].splice(i,1);
+                    }
+                } else  {
+                    // 发布信息
+                    this.user[type][i]();
+                }
+            }
+        }
+    };
+    var rose ={
+        eat : function () {
+            this.publish("eat");
+        },
+        sleep : function () {
+            this.publish("sleep");
+        },
+        run : function () {
+            this.publish("run");
+        },
+        lol_rose : function () {
+            console.log("又在玩游戏,是我重要还是lol重要!");
+        }
+    };
+
+    // 封装一个函数快速创建发布者
+    function makePublisher(obj) {
+        for (var k in publisher) {
+            // 只拷贝实例方法
+            if(publisher.hasOwnProperty(k) && (typeof publisher[k] == "function")) {
+                obj[k] = publisher[k];
+            }
+        }
+        obj.user = {
+        }
+    }
+
+    makePublisher(rose);
+
+    // 2.提供观察者(发布者发布信息后需要采取行动的人)
+    var jack = {
+        eat_jack : function () {
+            console.log("邀请女神吃麻辣烫!-jack");
+        },
+        sleep_jack : function () {
+            console.log("带你去看星星吧-jack");
+        },
+        // 发布信息
+        lol : function () {
+            this.publish("lol");
+        }
+    };
+    var tom = {
+        eat_tom : function () {
+            console.log("邀请女神吃火锅!-tom");
+        },
+        sleep_tom : function () {
+            console.log("晚安!-tom");
+        },
+        run_tom : function () {
+            console.log("我们一起去天河公园-tom");
+        },
+        lol_tom : function () {
+            console.log("我们一起去开黑吧,不要管rose了");
+        }
+    };
+
+    // 需求:让jack成为发布者
+    makePublisher(jack);
+
+    // 3.注册观察者:注册的是关注的状态
+    rose.addUser(jack.eat_jack,"eat");
+    rose.addUser(jack.sleep_jack,"sleep");
+
+    // 4.发布者发布信息
+    rose.eat();
+    rose.sleep();
+
+
+</script>
+</body>
+</html>

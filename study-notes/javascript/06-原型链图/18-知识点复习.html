@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+1.
+静态成员:直接定义在构造函数上的属性或者方法
+实例成员:直接定义在实例上的属性和方法
+原型成员:直接定义在原型对象上的属性和方法
+
+2.函数创建的方式
+    2.1函数声明
+    2.2函数表达式
+    2.3Function构造函数
+
+3.处理函数参数过长
+    3.1使用 + 拼接字符串
+    3.2使用反括号``
+    3.3使用JS模板
+
+4.arguments 接受实参
+arguments.length 实参的个数
+函数名.length  形参的个数
+
+注意点:
+1.在调用函数的时候,实参会保存在arguments中
+2.实参 > 形参 ,超出的形参可以通过arguments获取
+3.实参 < 形参, 依次赋值,多余的形参为undefined
+<script>
+    function fun(a) {
+
+    }
+    fun(1,2,3)
+</script>
+
+this-->具体的对象
+1.作为对象的方法调用 调用方法的对象
+2.普通函数调用  window
+3.使用new构造函调用 构造函数内部新创建的对象
+4.上下文调用(call | apply) 第一个参数
+
+5.callee caller
+ callee : 返回函数自身
+caller:返回调用函数的函数,在全局作用域中调用,返回null
+
+6.私有变量和私有函数
+在构造函数内部定义的变量和函数
+特权方法:可以访问私有变量和私有函数的实例方法
+
+
+</body>
+</html>

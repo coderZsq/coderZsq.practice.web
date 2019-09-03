@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+基本包装类型:String | Number |Boolean
+
+<script>
+    // 1.创建字符串对象
+    var str1 = new String("demo");
+    var st2 = "demo"; // string
+    var str3 = String("demo"); //string
+
+    console.log(typeof str1); // string | (object)
+    console.log(typeof str3);
+
+    // 2.创建数值对象
+    var num1 = new Number(10); // object
+    var num2 = 10; // number
+    var num3 = Number(10);//number
+
+    // 3.创建布尔对象
+    var bool1 = new Boolean(true); // object
+    var bool2 = true;//boolean
+    var bool3 = Boolean(true); //boolean
+
+    // 4. 特殊的创建方式
+    var str4 = new Object("demo");
+    var num4 = new Object(10);
+    var bool4 = new Object(true);
+
+</script>
+</body>
+</html>

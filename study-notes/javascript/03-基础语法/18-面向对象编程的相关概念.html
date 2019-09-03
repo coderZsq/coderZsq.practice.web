@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+1.对象?
+什么都是对象,万物皆对象! 人,狗,车
+对象一般是具体的事物
+
+2.对象的静态描述信息
+张三(姓名,年龄,性别,身高,头发的颜色...)
+张三家的狗(姓名,性格,体重..)
+
+3.对象动态的特征
+张三(吃,睡,谈恋爱,打游戏,打呼噜..)
+张三家的狗(吃,睡,打呼噜,流口水..)
+
+4.现实中的对象和JS中的对象的对应关系
+对象静态描述信息 ---->对象的属性(定义在对象中的变量)
+动态的行为特征------->对象的方法(定义在对象中的函数)
+
+对象的成员(属性 + 方法)
+
+5.提取下面的对象
+(张三)牵着一条叼着(骨头)的(狗)在等(公交车).
+<script>
+
+    var dog = {
+            name : "旺财",
+            age : 10,
+            run:function () {
+            console.log("run");
+        }
+    };
+
+    var zs = {
+        name :"zs",
+        age : 20,
+        sex : "男",
+        dog : dog,
+        eat : function () {
+            console.log("吃货");
+        },
+        run :function () {
+            console.log("run");
+        },
+        lol:function () {
+            console.log("lol");
+        }
+    };
+
+
+</script>
+</body>
+</html>

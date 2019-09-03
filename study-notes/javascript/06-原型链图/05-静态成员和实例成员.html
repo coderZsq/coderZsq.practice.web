@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+静态成员:构造函数也是一个对象,也有自己的属性和方法,这个属性和方法称为静态成员
+实例成员: 直接定义在实例上的属性和方法
+原型成员: 直接定义在原型对象上的属性和方法
+
+// 所有的对象都是基础Object
+<script>
+    function Person() {
+        this.name = "moren";
+        this.showName = function () {
+            console.log(this.name);
+        }
+    }
+    Person.prototype.des = "des---";
+    Person.prototype.logDes = function () {
+        console.log(this.des);
+    }
+
+    var p1 = new Person();
+
+    Person.des = "des";
+    Person.logDes = function () {
+        console.log(this.des);
+    }
+
+    Person.logDes();
+</script>
+</body>
+</html>

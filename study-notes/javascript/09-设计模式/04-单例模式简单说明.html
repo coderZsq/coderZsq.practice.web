@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+单例(粒)模式
+    特点:在整个程序的运行过程中,一个类只有一个实例
+class Person;
+
+JS中没有类(ES6),JS实现单例模式(限定一个讨论的范围)
+    字面量 + 内置构造函数 + 工厂函数 + 自定义构造函数(单例模式)
+
+JS是一门什么语言?
+    弱类型,解释性,脚本,面向对象,基于原型(对象),函数式
+JS到底是不是面向对象(类)的语言?
+JS是支持面向对象的语言
+
+function Person() {}
+var p1 = new Person();
+var p2 = new Person();
+p1 == p2; // true
+
+<script>
+    function Person() {
+        // 创建一个新的对象
+        // 赋值给 this
+        // this设置属性和方法
+        // 默认返回新创建的对象
+    }
+
+    var p1 = new Person();
+    var p2 = new Person();
+
+    console.log(p1 == p2);
+
+</script>
+</body>
+</html>

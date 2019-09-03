@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+JS执行的过程:
+    1.预解析:会对var声明的变量和function声明的代码块进行声明提升
+    2.执行代码
+
+<script>
+//    console.log(a); // (undefiend) | 报错 | 10
+//    var a = 10;
+//
+//    demo(); // demo
+//
+//    function demo() {
+//        console.log("demo");
+//    }
+
+    // 模拟提升
+//    var a;
+//    function demo() {
+//        console.log("demo");
+//    }
+//    console.log(a); // (undefiend) | 报错 | 10
+//    a= 10;
+//
+//    demo(); // demo
+
+
+</script>
+
+变量和变量名字一样 :后面的会把前面的覆盖掉
+<script>
+//    console.log(a); // undefined
+//    var a= 10;
+//    console.log(a); // 10
+//    var a = 20;
+//    console.log(a); // 20
+//    var a;
+//    var a;
+//    console.log(a); // undefined
+//    a= 10;
+//    console.log(a); // 10
+//    a = 20;
+//    console.log(a); // 20
+</script>
+
+函数名和函数名一样:后面的会把前面的覆盖掉
+<script>
+//    demo(); // demo+++
+//    function demo() {
+//        console.log("demo");
+//    }
+//    demo(); // demo+++
+//    function demo() {
+//        console.log("demo+++++");
+//    }
+//    demo(); // demo+++
+
+//    function demo() {
+//        console.log("demo");
+//    }
+//    function demo() {
+//        console.log("demo+++++");
+//    }
+//    demo(); // demo+++
+//
+//    demo(); // demo+++
+//
+//    demo(); // demo+++
+</script>
+
+函数名和变量名一样:可以理解为只提升函数的声明,不提升变量(和函数名一样的)的声明
+<script>
+
+//    console.log(demo);  // (函数) | 字符串 | undefined
+//    var demo = "字符串";
+//    console.log(demo); // 字符串
+//    function demo() {
+//        console.log(" 函数");
+//    }
+//    console.log(demo); // 字符串
+
+    // 模拟提升
+//    var demo;
+//    function demo() {
+//        console.log(" 函数");
+//    }
+//    console.log(demo);  // (函数) | 字符串 | undefined
+//    demo = "字符串";
+//    console.log(demo); // 字符串
+//
+//    console.log(demo); // 字符串
+
+    function demo() {
+        console.log(" 函数");
+    }
+    console.log(demo);  // (函数) | 字符串 | undefined
+    var demo = "字符串";
+    console.log(demo); // 字符串
+
+    console.log(demo); // 字符串
+</script>
+
+<script>
+//    console.log(demo);  // (函数) | 字符串 | undefined
+//    function demo() {
+//        console.log(" 函数");
+//    }
+//    console.log(demo); // (函数) | 字符串 | undefiend
+//    var demo = "字符串";
+//    console.log(demo); // 字符串
+
+//function demo() {
+//    console.log(" 函数");
+//}
+//var demo;
+//console.log(demo);  // (函数) | 字符串 | undefined
+//
+//console.log(demo); // (函数) | 字符串 | undefiend
+//demo = "字符串";
+//console.log(demo); // 字符串
+
+//    function demo() {
+//        console.log(" 函数");
+//    }
+//
+//    console.log(demo);  // (函数) | 字符串 | undefined
+//
+//    console.log(demo); // (函数) | 字符串 | undefiend
+//    var demo = "字符串";
+//    console.log(demo); // 字符串
+</script>
+</body>
+</html>

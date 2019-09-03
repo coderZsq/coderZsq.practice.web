@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+1.in: 判断对象中是否存在指定的属性(实例属性和原型属性) 属性 in 对象
+
+2.hasOwnProperty:判断对象中是否存在指定的属性(实例属性)
+
+3.需求:怎么判断一个属性是原型属性,而且仅仅是原型属性?
+1.是一个属性
+2.不是实例属性
+
+<script>
+    function Person(name) {
+        this.name = name;
+        this.age = 20;
+    }
+
+    Person.prototype.des = "人";
+    Person.prototype.age = 30;
+    var p1 = new Person("zs");
+
+    console.log("name" in p1); //true
+    console.log(p1.hasOwnProperty("name"));//true
+
+    console.log("des" in p1);//true
+    console.log(p1.hasOwnProperty("des"));false
+
+    function isPrototypeProperty(name,obj) {
+        return name in obj && !obj.hasOwnProperty(name);
+    }
+
+    console.log(isPrototypeProperty("name", p1));//false
+    console.log(isPrototypeProperty("des", p1));//true
+    console.log(isPrototypeProperty("age", p1));//false
+</script>
+
+
+</body>
+</html>

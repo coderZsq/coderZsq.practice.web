@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+
+<script>
+
+//    console.log([0].toString());
+
+// [] [0] [1]在条件判断的时候都为真
+// 对象和基本数据类型进行比较的时候,会进行隐式的转换,调用对象的toString这个方法
+
+    if ([1]) {
+
+        console.log([1] == true); // true
+    } else {
+        console.log("NO");
+    }
+
+</script>
+
+
+// 1 true 2.false 3.NO
+</body>
+</html>

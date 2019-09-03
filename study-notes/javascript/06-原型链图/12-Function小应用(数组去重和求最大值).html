@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+数组去重:返回一个数组,数组中没有重复的元素
+
+<script>
+    function fun() {
+        var arry = [];
+        // 怎么判断数组中是否有某个元素
+
+        for (var i = 0; i < arguments.length; i++) {
+            // indexOf 返回元素的索引,没有这个元素返回-1
+            if (arry.indexOf(arguments[i]) == -1) {
+
+                arry.push(arguments[i]);
+            }
+
+        }
+        return arry;
+    }
+
+    console.log(fun(2, 1, 3, 5, 6, 7, 4, 3, 7, 9, 12, 3));;
+</script>
+
+求最大值
+<script>
+    function getMaxNum() {
+        var maxNum = arguments[0];
+        for (var i = 0; i < arguments.length; i++) {
+           if(maxNum < arguments[i]) {
+               maxNum = arguments[i];
+           }
+
+        }
+
+        return maxNum;
+    }
+    console.log(getMaxNum(23, 2, 1, 4, 5, 7, 7, 8, 56));;
+</script>
+</body>
+</html>

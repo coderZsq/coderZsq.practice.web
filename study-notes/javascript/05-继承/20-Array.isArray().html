@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+Array.isArray
+ 判断对象是否是一个数组
+兼容性:ES5
+
+ 处理兼容性的问题
+
+<script>
+
+    //  Array.isArray兼容性处理
+    if(typeof Array.isArray != "function"){
+        Array.isArray = function (obj) {
+            return Object.prototype.toString.call(obj) == "[object Array]";
+        }
+    }
+
+    function deepCopy(obj,copyObj) {
+        obj = obj || {};
+        for (var k in copyObj) {
+
+            // 判断是否是实例属性
+            if(copyObj.hasOwnProperty(copyObj[k])) {
+
+                if(typeof copyObj[k] == "object") {
+
+                    // 判断是否是数组
+                    obj[k] = Array.isArray(copyObj[k]) ? [] :{};
+                    // 引用类型
+                    deepCopy(obj[k],copyObj[k]); //调用函数
+                } else {
+                    //值类型
+                    obj[k] = copyObj[k];
+                }
+            }
+        }
+    }
+
+    var obj = {
+        name :"zs",
+        car :{
+            type : "飞船"
+        },
+        friends:["小明"]
+    };
+
+    var o = {};
+
+    deepCopy(o,obj);
+
+    console.log(o);
+
+    console.log(obj);
+
+</script>
+<script>
+    var arr1 = [1,2,3];
+    var str = "demo";
+    var obj = {};
+    //  toString:返回对象的字符串描述信息
+    console.log(obj.toString()); // [object Object]
+
+//    console.log(str.toString()); //[object Sting] | demo
+//    console.log(arr1.toString()); // [object Array] | 1,2,3
+    console.log(Object.prototype.toString.call(arr1));// [object Array]
+</script>
+</body>
+</html>

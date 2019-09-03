@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+面向对象的三大特性:
+封装
+继承
+多态
+
+#封装:利用对象封装变量和函数
+作用:方便维护,信息隐蔽,代码的复用性更好
+<script>
+    var name = "功夫";
+
+    var actors = ["周星驰","黄圣依","林子聪","元华"];
+
+    var showTime = "2014-12-23";
+
+    var type ="动作片";
+
+    var play = function () {
+        console.log("play");
+    };
+
+
+    var film = {
+        name :"功夫",
+        actors:["周星驰","黄圣依","林子聪","元华"],
+        showTime:"2014-12-23",
+        type:"动作片",
+        play:function () {
+            console.log("play");
+        }
+    };
+
+
+
+</script>
+
+继承
+    现实生活中的继承:一个人获取其他人资源和财富的一种方式
+    程序中的继承:一个类(对象)获取另外一个类(对象)属性和方法的一种方式
+    面向对象语言的特点:有没有类(C++ Java )
+    JS没有类,支持面向对象的语言(基于对象的语言)
+<script>
+    // 混入式继承
+    var obj1 = {name:"zs",age:20};
+    var obj2 ={};
+
+    //  需求:obj2想要获取 obj1的属性
+    for(var k in  obj1) {
+        obj2[k] = obj1[k];
+//        obj2.k = obj1.k;
+    }
+
+    console.log(obj2);
+</script>
+多态
+    表现:
+        1.同一个操作,作用于不同的对象有不同的反应
+        2.隐蔽不同
+    实现:
+        JS天生就具备多态的特性(弱类型的语言)
+
+</body>
+</html>

@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="b1675f31-1259-4dc2-a877-26f564c58408" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list default="true" id="b1675f31-1259-4dc2-a877-26f564c58408" name="Default Changelist" comment="" />
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
     <ignored path="$PROJECT_DIR$/tmp/" />
@@ -19,7 +17,7 @@
         <entry file="file://$PROJECT_DIR$/02-网页特效/36-旋转木马/index.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="1209">
-              <caret line="75" column="6" lean-forward="true" selection-start-line="75" selection-start-column="6" selection-end-line="75" selection-end-column="6" />
+              <caret line="75" column="6" selection-start-line="75" selection-start-column="6" selection-end-line="75" selection-end-column="6" />
             </state>
           </provider>
         </entry>
@@ -40,12 +38,33 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/02-网页特效/37-序列帧/index-动态调用.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="581">
-              <caret line="151" column="27" lean-forward="true" selection-start-line="151" selection-start-column="27" selection-end-line="151" selection-end-column="27" />
+            <state relative-caret-position="669">
+              <caret line="155" selection-start-line="155" selection-end-line="155" />
             </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/02-网页特效/38-面向对象/01-面向对象基本写法.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-211" />
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/02-网页特效/38-面向对象/02-面向对象常用写法.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-258" />
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/02-网页特效/38-面向对象/03-面向对象常用写法-优化.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-123" />
           </provider>
         </entry>
       </file>
@@ -63,7 +82,7 @@
         <entry file="file://$PROJECT_DIR$/02-网页特效/36-旋转木马/test.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="572">
-              <caret line="26" column="5" lean-forward="true" selection-start-line="26" selection-start-column="5" selection-end-line="26" selection-end-column="5" />
+              <caret line="26" column="5" selection-start-line="26" selection-start-column="5" selection-end-line="26" selection-end-column="5" />
             </state>
           </provider>
         </entry>
@@ -130,7 +149,7 @@
               <item name="javascript" type="b2602c69:ProjectViewProjectNode" />
               <item name="javascript" type="462c0819:PsiDirectoryNode" />
               <item name="02-网页特效" type="462c0819:PsiDirectoryNode" />
-              <item name="37-序列帧" type="462c0819:PsiDirectoryNode" />
+              <item name="38-面向对象" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -172,12 +191,12 @@
       <workItem from="1567129015891" duration="4451000" />
       <workItem from="1567143033577" duration="10841000" />
       <workItem from="1567388154971" duration="17791000" />
-      <workItem from="1567474276117" duration="9040000" />
+      <workItem from="1567474276117" duration="10493000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="52335000" />
+    <option name="totallyTimeSpent" value="53788000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1680" height="1050" extended-state="0" />
@@ -206,30 +225,6 @@
     <option name="version" value="1" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/02-网页特效/17-瀑布流-动态加载数据/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="352">
-          <caret line="16" column="5" selection-start-line="16" selection-start-column="5" selection-end-line="16" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/01-预备概念/03-dom.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="726">
-          <caret line="33" column="37" lean-forward="true" selection-start-line="33" selection-start-column="37" selection-end-line="33" selection-end-column="37" />
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/02-网页特效/15-瀑布流-父盒子居中/css/index.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="352">
-          <caret line="16" column="1" lean-forward="true" selection-start-line="16" selection-start-column="1" selection-end-line="16" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/02-网页特效/15-瀑布流-父盒子居中/js/index.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="242">
@@ -496,14 +491,14 @@
     <entry file="file://$PROJECT_DIR$/02-网页特效/36-旋转木马/test.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="572">
-          <caret line="26" column="5" lean-forward="true" selection-start-line="26" selection-start-column="5" selection-end-line="26" selection-end-column="5" />
+          <caret line="26" column="5" selection-start-line="26" selection-start-column="5" selection-end-line="26" selection-end-column="5" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/02-网页特效/36-旋转木马/index.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1209">
-          <caret line="75" column="6" lean-forward="true" selection-start-line="75" selection-start-column="6" selection-end-line="75" selection-end-column="6" />
+          <caret line="75" column="6" selection-start-line="75" selection-start-column="6" selection-end-line="75" selection-end-column="6" />
         </state>
       </provider>
     </entry>
@@ -527,9 +522,24 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/02-网页特效/37-序列帧/index-动态调用.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="581">
-          <caret line="151" column="27" lean-forward="true" selection-start-line="151" selection-start-column="27" selection-end-line="151" selection-end-column="27" />
+        <state relative-caret-position="669">
+          <caret line="155" selection-start-line="155" selection-end-line="155" />
         </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/02-网页特效/38-面向对象/01-面向对象基本写法.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-211" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/02-网页特效/38-面向对象/02-面向对象常用写法.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-258" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/02-网页特效/38-面向对象/03-面向对象常用写法-优化.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-123" />
       </provider>
     </entry>
   </component>

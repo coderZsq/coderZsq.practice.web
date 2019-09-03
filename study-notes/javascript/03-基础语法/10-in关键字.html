@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+in关键字:
+1.for..in遍历对象(key-value键值对)所有的key
+2.判断对象中是否存在指定的属性
+    语法: 属性 in 对象
+    注意点:属性名是字符串
+
+break:终止循环,后面的代码不执行
+contiune:结束当前的循环,后面的代码不执行,但会继续下一次循环
+<script>
+    var obj = {
+      name : "zs" ,
+        age : 20
+    };
+
+    // 01for..in遍历对象
+    for(var k in obj) {
+//        console.log(k, obj[k]);
+//        console.log(k, obj.k);
+    }
+
+</script>
+
+<script>
+
+    // 02判断对象中是否存在指定的属性
+    var obj = {name : 'zs'};
+    console.log("name" in obj); //true
+
+    // 03in在数组中的注意点
+    // 注意点:in在操作数组的时候,操作的是索引,不是元素
+    var arr1 = [1,2,4,7,6];
+    console.log(1 in arr1); // true
+    console.log(7 in arr1); // true | (false)
+
+    // 04判断数组中是否存在指定的元素
+    //04.1遍历数组,每遍历一次就判断一次
+    for (var i = 0; i < arr1.length; i++) {
+       if (arr1[i] == 7){
+           console.log(arr1);
+           break;
+       }
+
+    }
+
+    // 04.2 indexOf:返回指定元素的索引.如果元素不存在,返回-1
+    console.log(arr1.indexOf(9));// -1
+
+</script>
+</body>
+</html>

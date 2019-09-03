@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<script>
+
+    var MOMO = MOMO || {};
+
+    function func(strType) {
+        // 1.接受传入的字符串
+        var str = strType;
+        // [MOMO,name,des,abc]
+        // 根据字符串切割字符串,返回数组
+        var strArr = str.split(".");
+
+        var parent = MOMO;
+        // 如果是 momo,删除
+
+        if (strArr[0] == "MOMO"){
+            // [name,des,abc]
+            strArr = strArr.slice(1); // 删除第0个元素,返回一个新的数组
+        }
+
+        // [name,des,abc]
+        // MOMO["name"] = {}
+        // ["des"]
+        for (var i = 0; i < strArr.length; i++) {
+            if (parent[strArr[i]] == undefined) {
+                parent[strArr[i]] = {};
+            }
+            // 更新父节点
+            parent = parent[strArr[i]];
+        }
+
+    }
+
+//    func("MOMO.name.des.abc.a.f.g.t.y.u.i.o.r.t.y");
+    func("name.des.abc.a.f.g.t.y.u.i.o.r.t.y");
+    console.log(MOMO);
+    //    func("name.des.abc");
+
+</script>
+</body>
+</html>

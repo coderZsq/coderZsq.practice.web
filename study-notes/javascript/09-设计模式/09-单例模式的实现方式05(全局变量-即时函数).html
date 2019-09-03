@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<script>
+    var Person;
+    (function () {
+        var instance;
+        Person = function () {
+            if(instance) {
+                return instance;
+            }
+            instance = this;
+            this.name = "zs";
+        }
+    })();
+
+
+
+    var p1 = new Person();
+    var p2 = new Person();
+//
+//    instance = "demo";
+//    var p3 = new Person();
+//    console.log(p1 == p3);
+//    Person = "demo";
+//    var p3 = new Person();
+
+</script>
+</body>
+</html>

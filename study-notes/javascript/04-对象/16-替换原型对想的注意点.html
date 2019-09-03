@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+替换原型对象的注意点:
+1.替换原型对象之前创建的的对象和替换之后创建的对象,它们的原型对象不是同一个对象
+
+2. 替换了原型对象之前,constructor指向Person;替换之后指向Object,需要修正
+
+建议:在替换原型对象之后在创建对象
+
+<script>
+    // 1提供一个构造函数
+    function Person() {
+
+    }
+
+    // 2创建对象
+    var p1 = new Person();
+
+    var obj =  {
+        // 修正构造器属性的指向
+        constructor : Person,
+        des:"嘿嘿"
+    };
+//    new Object()
+    // 3.设置原型对象
+    Person.prototype =obj;
+
+    var p2 = new Person();
+
+//    console.log(p1.des); // 嘿嘿 (undefined)
+//    console.log(p2.des);// 嘿嘿
+
+    console.log(p1.constructor == p2.constructor);//false
+
+    console.log(p1.constructor);
+    console.log(p2.constructor);
+
+    console.log(p1);
+
+</script>
+</body>
+</html>

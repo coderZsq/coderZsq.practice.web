@@ -1,0 +1,100 @@
+01 请简单介绍setTimeOut和setInterval方法,它们有何区别?
+setTimeOut : 只会执行一次(延迟执行函数)
+setInterval:每隔一定的时间就会执行
+
+参数:
+    第一个参数:回调函数(时间到了要执行的函数)
+    第二个参数:时间间隔(毫秒)
+
+JS单线程
+进程:正在运行的应用程序,CPU分配的最小单位
+线程:进程中用来执行任务的,同一时间只能执行一个任务
+串行执行:多个任务按照一定的顺序一个一个的执行
+并发执行:多条线程同时工作
+多线程:开启了多条线程
+多线程的原理:CPU在多个任务之间来回的快速切换(调度),造成多个任务同时执行的假象
+
+02 请简单介绍闭包技术,它的作用是什么?
+    一种可以间接访问封闭空间私有数据的方法
+    1.延长变量的生命周期
+    2.统一的接口获取数据
+    3.设置数据更安全(校验处理)
+<script>
+    function foo() {
+        var name = "zs";
+        return {
+            getName : function () {
+                return name;
+            },
+            setName : function (nameValue) {
+                name = nameValue;
+            }
+        }
+    }
+
+//    function foo() {
+//        var name = "zs";
+//        function getName() {
+//            return name;
+//        };
+//        function setName(nameValue) {
+//            name = nameValue;
+//        };
+//
+//        return {
+//            getName : getName,
+//            setName : setName
+//        }
+//    }
+
+</script>
+03 请说明闭包的实现思路
+04 函数回调在使用的时候有哪些注意点,如何处理?
+     函数也是一个对象 + 作用域 + 调用
+        函数可以作为参数也可以作为返回值
+<script>
+    function foo(callBack) {
+        callBack();
+    }
+
+    foo(function () {
+        console.log("demo");
+    });
+
+    var obj = {
+        name : "zs",
+        showName : function () {
+            console.log(this.name);
+        }
+    }
+
+    foo(obj.showName); // 保证方法内部的this绑定obj
+</script>
+05 什么是惰性函数定义?
+<script>
+    function foo() {
+        // 初始化的操作
+        console.log("foo");
+
+        // 自我更新
+        foo = function () {
+            console.log("foo+++");
+
+        }
+    }
+</script>
+06 惰性函数定义的优点是什么,缺点呢?
+    使用注意点:
+        1.添加到函数上的属性,更新后会丢失
+        2.把这个函数赋值给变量或者对象的方法,永远不会更新
+
+07 即时函数技术的作用是什么,基本写法是什么
+    可以形成一个封闭的空间(作用域)
+(function () {})();
+(function () {}());
++function () {}();
+-function () {}();
+!function () {}();
+
+08 即时对象初始化的基本写法是什么?
+({init : function (){}}).init();

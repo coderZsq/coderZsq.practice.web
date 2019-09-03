@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<div>第1个div</div>
+<div>第2个div</div>
+<div>第3个div</div>
+<div>第4个div</div>
+<div>第5个div</div>
+
+<script>
+    // 1.获取所有的div
+    var divs = document.getElementsByTagName("div");
+
+    // 2.遍历所有的 div
+//    for (var i = 0; i < divs.length; i++) {
+//        divs[i].onclick = function () {
+//            alert("我是第" + i + "个div");
+//        }
+//    }
+
+//    for (var i = 0; i < divs.length; i++) {
+//        (function (j) {
+//            divs[j].onclick = function () {
+//                alert("我是第" + (j + 1) + "个div");
+//            }
+//        })(i);
+//    }
+    for (var i = 0; i < divs.length; i++) {
+
+            divs[i].onclick = (function (j) {
+                return function () {
+                    alert("我是第" + (j + 1) + "个div");
+                }
+            })(i);
+
+    }
+</script>
+
+</body>
+</html>

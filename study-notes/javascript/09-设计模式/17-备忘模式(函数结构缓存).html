@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+备忘模式(函数结构缓存)
+特点场合:
+    某个参数要进行大量重复的操作,我们可以考虑把这个参数对应的结果缓存起来.
+
+
+
+fn("demo");-->"qwer" // 耗时 1s
+fn("demo");-->"qwer"
+
+提供一个缓存对象key-value
+
+核心步骤:
+    1.提供一个缓存对象cache(key-value)
+    2.获取传入的参数
+    3.去缓存对象中看这个参数是否有对应的结果
+    4.如果有缓存数据,直接返回
+    5.如果没有缓存数据,再往下执行函数得到结果后保存到cache中,并返回
+        把参数作为对象的key,把这个参数得到的结果作为value
+
+<!--<script>-->
+    <!--// 1.提供一个缓存对象-->
+    <!--var cache = {};-->
+    <!--function fn(str) {-->
+        <!--// 2.获取传入的参数-->
+        <!--var strType = str;-->
+        <!--// 3.判断缓存对象中是否有结果-->
+        <!--if(cache[strType] != undefined) {-->
+            <!--// 有缓存数据,直接返回-->
+            <!--console.log("有数据,直接返回");-->
+            <!--return cache[strType];-->
+        <!--}-->
+
+        <!--// 模拟执行耗时的操作-->
+        <!--var res = str + "哈哈";-->
+
+        <!--// 如果没有就再执行计算(逻辑),得到结果后保存到缓存对象,并且返回-->
+        <!--cache[strType] = res;-->
+
+        <!--console.log("没有数据");-->
+        <!--return res;-->
+    <!--}-->
+
+    <!--fn("demo");-->
+    <!--fn("demo");-->
+    <!--fn("demo");-->
+<!--</script>-->
+
+<script>
+    function fn(str) {
+
+        if (typeof fn.cache == "undefined") {
+            fn.cache = {};
+        }
+        var strType = str;
+        if(fn.cache[strType] != undefined) {
+            console.log("有数据,直接返回");
+            return fn.cache[strType];
+        }
+        var res = str + "哈哈";
+        fn.cache[strType] = res;
+        console.log("没有数据");
+
+        return res;
+
+    }
+
+
+    fn("demo");
+    fn("demo");
+</script>
+</body>
+</html>

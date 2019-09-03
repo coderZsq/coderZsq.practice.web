@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+1.提供一个父构造函数(开的工厂)
+2.设置父构造函数的原型对象(方法)
+3.提供父构造函数静态工厂方法(统一的接口)
+    3.1需要接受传入的类型(产品的类型)
+    3.2判断是否支持生产
+    3.3设置子构造函数的原型对象
+    3.4使用子构造函数创建对象
+    3.5直接返回创建的对象
+4.定制合作伙伴(设置子构造函数->父构造函数的静态方法)
+5.利用父构造函数静态工厂方法创建对象(传入类型)
+
+<script>
+    function SmokeMake() {
+
+    }
+    SmokeMake.prototype.logDes = function () {
+        console.log("我们的特点" + this.des);
+    }
+    SmokeMake.factory = function (strType) {
+        var shopType = strType;
+
+        if (typeof SmokeMake[shopType] != "function"){
+            throw "不支持生产!";
+        }
+
+        SmokeMake[shopType].prototype = new SmokeMake();
+
+        var shop = new SmokeMake[shopType]();
+        return shop;
+    }
+
+    SmokeMake.china =  function () {
+        this.des = "抽的不是烟,是寂寞"
+    }
+
+    SmokeMake.mab = function () {
+        this.des = "感受指尖薄荷的味道"
+    }
+
+    var mab = SmokeMake.factory("mab");
+    mab.logDes();
+</script>
+</body>
+</html>

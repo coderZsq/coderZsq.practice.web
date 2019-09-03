@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+call和apply
+1.在ES3,给函数的原型对象添加2个方法
+Function.prototype.call
+Function.prototype.apply
+
+2.作用:借用其他对象的方法
+3.参数:
+    第一参数:调用方法的对象(函数内部this的绑定对象)
+    后面参数:
+        call  参数列表 :参数1,参数2...
+        apply 参数数组 :[参数1,参数2]
+<script>
+
+    var obj = {
+        name :"老实人",
+        showName :function (parm1,parm2) {
+            console.log(this.name,parm1,parm2);
+        }
+    }
+
+    var o = {
+        name : "聪明人"
+    }
+
+    obj.showName("憨厚","厚道");
+//    obj.showName.call(o,"高智商","高情商")
+    obj.showName.apply(o,["高智商","高情商"])
+</script>
+
+this ->指向具体的对象
+函数调用:
+    1.作为对象的方法调用 this->当前的对象
+    2.普通函数调用 this->window
+    3.通过new构造函数调用 this->构造函数内部创建的新对象
+    4.使用call|apply调用(函数上下文调用) this->第一参数
+<script>
+    var obj = {
+        name :"老实人",
+        showName :function () {
+            console.log(this.name);
+        }
+    }
+
+    obj.showName();
+</script>
+<script>
+    window.name = "window的name";
+    var obj = {
+        name :"老实人",
+        showName :function () {
+            console.log(this.name);
+        }
+    }
+
+     var showName =  obj.showName;
+    showName();
+
+</script>
+<script>
+    function Person() {
+        this.name = "more1";
+        this.showName = function () {
+            console.log(this.name);
+        }
+    }
+
+    var p = new Person();
+    p.showName();
+</script>
+<script>
+
+    var obj = {
+        name :"老实人",
+        showName :function (parm1,parm2) {
+            console.log(this.name,parm1,parm2);
+        }
+    }
+
+    var o = {
+        name : "聪明人"
+    }
+
+    obj.showName("憨厚","厚道");
+    //    obj.showName.call(o,"高智商","高情商")
+    obj.showName.apply(o,["高智商","高情商"])
+</script>
+
+this的丢失
+<script>
+
+    var obj = {
+        name :"老实人",
+        showName :function () {
+            console.log(this.name);
+        }
+    }
+    obj.showName(); // this-->obj
+
+    var showName =  obj.showName;
+
+    showName(); // this-->window
+
+</script>
+</body>
+</html>

@@ -1,0 +1,90 @@
+01 in 关键字和hasOwnProperty方法的作用是什么?有什么区别。
+    in 判断对象中是否有指定的属性(实例属性和原型属性)
+        语法: "属性" in 对象
+    hasOwnProperty 判断对象中是否有指定的实例属性
+        语法:对象.hasOwnProperty(属性)
+
+02 原型链中属性的搜索规则是什么
+    在访问属性的时候,首先查找自身的实例属性,如果有直接使用
+    如果没有,会查找该对象的原型对象,如果有直接使用
+    如果没有,会查找该对象原型对象的原型对象,如果有直接使用
+    如果没有,继续先原型链的顶端查找
+    原型链的顶端是Object.prototype
+    Object.prototype.__proto__ == null
+
+03 原型链继承使用的时候有哪些注意点
+    1.在完成原型链继承后,在设置原型对象的属性和方法
+    2.在完成原型链继承后,在修正构造器属性
+    3.在完成原型链继承后,不能使用字面量的方式设置原型(替换)
+
+04 call和apply方法的作用是什么?
+    作用:借用其他对象的方法
+    区别:
+        第一参数:调用方法的对象(函数内部 this的绑定对象)
+        第二个参数:
+    call : 参数列表 :参数1,参数2
+    apply : 参数数组 :[参数1,参数2]
+    <script>
+        var obj = {
+            name :"zs",
+            showName:function () {
+            console.log(this.name);
+        }};
+        var obj1 = {name : "ls"};
+
+        obj.showName(); // 可以
+//        obj1.showName(); // 不可以
+        obj.showName.apply(obj1);
+
+    </script>
+05 借用构造函数继承的基本写法是什么?
+call
+<script>
+    // 1.父构造函数
+    function Person(name) {
+        this.name = name;
+    }
+
+    // 2.子构造函数
+    function Student(num,name) {
+
+        this.num = num;
+        //  借用父构造函数
+        Person.call(this,name);
+    }
+
+    var s1 = new Student("2017","ls");
+    console.log(s1);
+
+</script>
+06 如何获取一个字符串|数值对象?
+<script>
+    var str1 = new String("demo");
+    var str2 = new Object("demo");
+
+    var num1 = new Number(10);
+    var num2 = new Object(10);
+</script>
+07 组合继承的基本写法是什么。
+    借用构造函数继承 + 原型式继承
+<script>
+    // 1.父构造函数
+    function Person(name) {
+        this.name = name;
+    }
+
+    Person.prototype.des = "des";
+    // 2.子构造函数
+    function Student(num,name) {
+
+        this.num = num;
+        //  借用父构造函数
+        Person.call(this,name);
+    }
+    // 设置原型式继承
+    Student.prototype = Person.prototype;
+
+    var s1 = new Student("2017","ls");
+    console.log(s1.des);
+
+</script>

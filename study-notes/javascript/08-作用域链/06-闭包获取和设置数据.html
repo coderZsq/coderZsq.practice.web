@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+使用数据:
+    获取数据
+    设置数据
+<script>
+    function foo() {
+        var name = "zs";
+        var age = 20;
+        return {
+            getName : function (newName) {
+                if (newName != undefined) {
+                    name = newName;
+                }
+
+                return name;
+            },
+            getAge : function () {
+                return age;
+            }
+        }
+    }
+
+    var obj = foo();
+//    console.log(obj.getName());
+//    console.log(obj.getName("ls"));;
+    console.log(obj.getName());
+
+</script>
+
+闭包的完整写法
+<script>
+    function foo() {
+        var name = "zs";
+        var age = 20;
+        return {
+            getName : function () {
+                return name;
+            },
+            getAge : function () {
+                return age;
+            },
+            setName : function (newName) {
+                if (newName == undefined) return;
+                name = newName;
+            },
+            setAge : function (newAge) {
+                if (newAge == undefined) return;
+               age = newAge;
+            }
+        }
+    }
+
+    var obj = foo();
+    console.log(obj.getName());
+    obj.setName("ls");
+    console.log(obj.getName());
+    console.log(obj.getName());
+
+    console.log(obj.getAge()); // 20
+    obj.setAge(23);
+    console.log(obj.getAge()); // 23
+</script>
+</body>
+</html>

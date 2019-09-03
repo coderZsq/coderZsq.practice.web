@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+__proto__属性:
+每一对象都有一个__proto__属性,这个属性指向该对象构造函数的原型对象
+
+访问原型对象:
+构造函数.prototype
+对象.__proto__
+
+注意点:
+在正式的代码中,不要使用该属性
+因为这个属性不是ECMA标准里的,部分浏览器厂商为了方便程序员调试程序提供的,是非标准的
+
+<script>
+    function Person() {
+
+    }
+
+    var p1 = new Person();
+    console.log(Person.prototype == p1.__proto__);//true
+</script>
+</body>
+</html>

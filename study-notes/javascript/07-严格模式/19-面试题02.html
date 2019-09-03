@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<script>
+//    var scope = "global";
+//
+//    foo();
+//
+//    function foo() {
+//
+//        console.log(scope); //？ undefined
+//        var scope = "local";
+//        console.log(scope); //？ local
+//    }
+//
+//    console.log(scope); //  global
+
+    var scope;
+
+    function foo() {
+        var scope;
+        console.log(scope); //？ undefined
+         scope = "local";
+        console.log(scope); //？ local
+    }
+
+    scope = "global";
+
+    foo();
+
+
+    console.log(scope); //  global
+</script>
+</body>
+</html>

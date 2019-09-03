@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+函数创建
+1.函数声明
+2.函数表达式
+2.构造函数
+<script>
+    // 1.函数声明
+//    function 函数名() {
+//        // 函数体
+//    }
+
+    // 2.函数表达式
+    var fun1 = function () { //匿名的函数表达式
+
+    };
+    var fun2 = function fun() { //命名的函数表达式
+
+    }
+
+    // 3.Function 构造函数的使用
+    // 参数:没有参数,是空函数
+    // 1个参数:这个参数就是函数体
+    // 多个参数:最后一个是函数体,前面的形参列表
+    var fun3 = new Function(); // var fun3 = function{}
+
+    var fun4 = new Function("console.log(\"des\");");
+    fun4();
+
+    var fun5 = new Function("a","b","console.log(a + b);");
+    fun5(1,3);
+
+</script>
+</body>
+</html>

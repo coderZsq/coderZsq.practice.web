@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+ 借用构造函数实现继承->解决了无法传递参数给父构造函数,只能获取实例属性
+
+<script>
+    function Person(name) {
+        this.name = name
+    }
+    Person.prototype.des = "des";
+
+    function Student(num,name) {
+        this.num = num;
+        // 借用构造函数继承 | 经典继承 | 伪对象继承
+        Person.call(this,name);
+    }
+
+
+    var stu1 = new Student("20171223","zs");
+
+    var stu2 = new Student("20171224","ls");
+
+    console.log(stu1);
+    console.log(stu2);
+
+</script>
+</body>
+</html>

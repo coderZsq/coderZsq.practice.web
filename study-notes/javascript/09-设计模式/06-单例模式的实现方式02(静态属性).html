@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+静态属性:直接添加到构造函数上的属性
+
+问题:静态属性也是可以修改的,也不安全
+<script>
+//    var instance;
+    // 2.提供一个构造函数
+    function Person() {
+
+        // 3.判断全局变量是否有值,如果有直接返回
+        if (Person.instance) {
+            console.log("之前已经创建过,直接返回");
+            return Person.instance;
+        }
+
+        // 4.把this赋值给instance
+        Person.instance = this;
+        // 5.通过this 设置属性或者方法
+        this.name = "zs";
+        console.log("第一次创建对象");
+    }
+
+    var p1= new Person();
+    var p2 = new Person();
+    console.log(p1 == p2); // true
+
+    instance = "demo";
+    var p3 = new Person();
+
+    console.log(p1 == p3);
+    Person.instance = "demo";
+    var p4= new Person();
+</script>
+</body>
+</html>

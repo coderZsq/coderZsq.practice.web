@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+函数作为返回值
+
+
+计数器
+<script>
+    function sum() {
+        var a = 0;
+        return function () {
+            a++;
+            return a;
+        }
+    }
+
+    var func = sum();
+    console.log(func());
+    console.log(func());
+    console.log(func());
+    console.log(func());
+    console.log(func());
+</script>
+</body>
+</html>

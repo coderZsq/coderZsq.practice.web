@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+# 01 以下创建对象的方法,错误的是:
+<script>
+
+    var obj1 = new Object();
+    obj1.name = "XMG";
+    obj1.getName = function () {
+        return this.name;
+    }
+    console.log(obj1.getName());
+</script>
+
+<script>
+    var obj2 = {
+        name:"XMG",
+        getName:function () {
+            return this.name;
+        }
+    }
+
+    console.log(obj2.getName());
+</script>
+<script>
+    var MYClass = function () {
+        this.name = "XMG";
+        this.getName = function () {
+            return this.name;
+        }
+    };
+
+    var obj3 = new MYClass();
+    console.log(obj3.getName());
+</script>
+<script>
+    var obj4;
+    obj4.name = "XMG";
+    obj4.getName = function () {
+        return this.name;
+    };
+    console.log(obj4);
+</script>
+
+
+# 02 请给出以下代码的打印结果
+<script>
+    function test() {};
+    console.log(typeof test);   //?  function ?string
+
+    var test = "2017";
+
+</script>
+
+# 03 请给出以下代码的输出结果
+<script>
+
+    var f = new Number(true);
+    if (f == true) {
+        var a = 10;
+    }
+
+    function fn() {
+        var b = 20;
+        c = 30;
+    }
+
+    fn();
+    console.log(a);  //?  10 ? undefined
+    console.log(b);  //?
+    console.log(c);   //30
+
+</script>
+
+# 04 请给出下面代码的输出结果
+<script>
+
+    var name = 'World!';
+
+    (function () {
+
+        if (typeof name === 'undefined') {
+            var name = "张三";
+            console.log('hi ' + name);
+        } else {
+            console.log("hello"  + name);
+        }
+    })();
+
+
+</script>
+
+#05 请给出下面代码的结果
+<script>
+    console.log(Array.isArray(Array.prototype));
+</script>
+
+#06 请给出下面代码的输出结果
+<script>
+
+    var a = [0];
+    if ([0]) {
+
+        console.log([0] == true);
+    } else {
+        console.log("NO");
+    }
+
+    console.log("___");
+</script>
+
+#07 请给出下面代码的输出结果
+<script>
+    (function(){
+        var x = y = 1;
+    })();
+
+    console.log(y); //能够获取y的值吗?
+    console.log(x); //能够获取x的值吗?
+</script>
+
+
+</body>
+</html>

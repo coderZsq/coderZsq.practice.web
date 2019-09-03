@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+判断 == ===
+1.对象和对象比较会判断地址是否相等
+2.对象和基本数据类型比较,会进行隐式的转换
+<script>
+    var str1 = new String("demo");
+    var str2 = new String("demo");
+    var str3 = str1;
+
+    var str4 = "demo";
+
+    console.log(str1 == str2); // true |(fasle)
+    console.log(str1 === str2);//fasle
+
+    console.log(str1 == str4); // (true) |fasle
+    console.log(str1 === str4); // false
+
+    console.log(str1 == str3); // true
+    console.log(str1 === str3); // true
+
+    // 基本数据为什么有属性或者方法?
+    // 内部默认的实现
+    // 01.创建一个与之对应的对象
+    // 02利用这个对象访问属性和方法,并返回结果
+    // 03.返回结果以后,销毁该对象
+
+    console.log(str4.length);
+
+
+//    str4.des = "des";
+
+    console.log(str4.des); //  (undefined) | des
+
+    str1.des = "des";
+    console.log(str1.des); // des
+
+
+</script>
+</body>
+</html>

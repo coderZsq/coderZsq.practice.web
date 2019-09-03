@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+1.constructor:指向构造函数
+2.hasOwnProperty:判断对象中是否有指定的实例属性
+3.isPrototypeOf:判断对象是否是指定对象的原型对象(判断是整一条原型链)
+4.propertyIsEnumerable :对象的属性是否可枚举,如果可枚举,for..in可以遍历出来
+5.toString:返回对象的字符串描述信息
+    5.1 object类型的对象,返回[object Object]
+    5.2  函数 | 数组--> 返回字符串形式
+    5.3 Number调用该方法可以传参,表示进制
+6.toLocaleString :作用和toString差不多,特殊时候会做本地化的处理
+7.valueOf
+    7.1基本包装类型->对应的基本数据类型的值
+    7.2对象-->对象本身
+    7.3日期-->时间戳
+<script>
+    function Person() {
+
+    }
+
+    var o = {name : "zs"};
+    Person.prototype = o;
+    var p1 = new Person();
+    console.log(o.isPrototypeOf(p1));//true
+    console.log(Object.prototype.isPrototypeOf(p1)); // true
+</script>
+
+<script>
+    var obj ={
+        name :"zs",
+        age :23
+    }
+    // enumerable 枚举
+//    console.log(Object.getOwnPropertyDescriptor(obj, "age"));
+
+    // 第一参数:要配置的对象
+    // 第二个参数:要配置对象的属性
+    // 第三个参数:该属性的描述对象
+    Object.defineProperty(obj,"age",{
+        enumerable : false
+    });
+
+    for(var k in obj) {
+        console.log(k, obj[k]);
+    }
+</script>
+
+<script>
+    var obj = {};
+    console.log(obj.toString());
+
+    function Person() {
+
+    }
+
+    console.log(typeof Person.toString());
+    var arr = [1,2,3];
+    console.log(arr.toString());
+
+    var num = new Number(19);
+//    console.log(num.toString()); // 10
+//    console.log(num.toString(2)); // 1010   1*2*2*2 + 1*2 = 10
+//    console.log(num.toString(5)); // 20  2 * 5 = 10
+//    console.log(num.toString(3)); // 101 1*3*3 + 1= 10
+
+    console.log(num.toString(8)); // 23 2*8 + 3 = 19
+</script>
+<script>
+    var str1 = new String("demo");
+    console.log( str1.valueOf());
+    var num = new Number(10);
+    console.log(typeof num.valueOf());
+
+    var obj = {name : "zs"};
+    console.log(obj.valueOf());
+
+    var date = new Date();
+    console.log(date.valueOf());//1491706236900 时间戳
+</script>
+</body>
+</html>

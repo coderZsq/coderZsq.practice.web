@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+核心步骤:
+1.提供一个构造函数
+2.在构造函数内部提供一个私有变量
+3.利用惰性函数实现构造函数的自我更新(直接返回instance)
+4.设置新构造函数的原型对象是旧构造函数的一个实例
+5.使用新构造函数创建对象并赋值给instance
+6.修改instance的构造器属性
+7.使用instance设置属性和方法
+8.返回instance
+
+<script>
+    // 1.提供一个构造函数
+    function Person(){
+        // this01
+
+        // 2. 提供一个私有变量
+        var instance;
+        // 3.使用惰性函数的定义更新构造函数
+        Person = function () {
+            // this02
+            return instance;
+        }
+        // 4.设置新构造函数的原型对象
+
+        // 原型式继承 Student.prototype = Person.prototype
+        // 原型链继承  Student.prototype = new Person();
+
+        // 设置新构造函数的原型对象是旧构造函数的原型对象
+//        Person.prototype = this.__proto__;// 非标准的
+
+        // 设置新构造函数的原型对象是旧构造函数的一个实例
+        Person.prototype = this;
+
+        // 5.使用新构造函数创建对象并赋值给instance
+        instance = new Person();
+//        instance = this;
+         //6.修正构造器属性
+        instance.constructor = Person;
+        // 7.使用instance设置属性和方法
+        instance.name = "zs";
+        // 8.返回新创建的对象的
+        return instance;
+    }
+
+    Person.prototype.des = "des";
+    var p1 = new Person();
+    Person.prototype.hi = "hi";
+    var p2 = new Person();
+
+    console.log(p1 == p2); //true
+
+    console.log(p1.constructor == Person); // true
+
+    console.log(p1.des); // des
+    console.log(p1.hi); // hi
+    console.log(p2.des);// des
+    console.log(p2.hi);// hi
+</script>
+</body>
+</html>

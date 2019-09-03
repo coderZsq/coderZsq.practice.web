@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+
+<script>
+
+    var a = {name :"zs"};
+    var b = {};
+
+    var c= {};
+    // 对象作为属性名,内部会默认调用toString
+    c[a] = "demo1"; //[object Object]
+    c[b] = "demo2"; // [object Object]
+
+    console.log(c);//{[object Object]: "demo2"}
+    console.log(c[a]); // demo2
+</script>
+</body>
+</html>

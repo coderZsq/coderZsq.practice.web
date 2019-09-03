@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+函数表达式的提升:
+只提升var声明的变量,并不会把整个函数表达式进行提升.
+<script>
+
+//    console.log(func);       // 函数 | (undefined)
+//    var func = function () {
+//        console.log("函数");
+//    }
+//    console.log(func); // 函数
+//    var func = "字符串";
+//    console.log(func); //字符串
+
+    var func;
+    var func;
+    console.log(func);       // (undefined)
+    func = function () {
+        console.log("函数");
+    }
+    console.log(func); // 函数
+    func = "字符串";
+    console.log(func); //字符串
+</script>
+</body>
+</html>

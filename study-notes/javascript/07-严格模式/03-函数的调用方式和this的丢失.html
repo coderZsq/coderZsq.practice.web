@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<div id = "demo">测试的div</div>
+<p id = "demoP"></p>
+this的丢失:
+    函数调用方式发生了改变
+<script>
+    function Person() {
+        this.name = "moren";
+        this.showName = function () {
+            console.log(this.name);
+        }
+    }
+
+    var p1 = new Person();
+
+    p1.showName(); // this-->p1
+
+    var showName = p1.showName;
+    showName(); // this-->window
+</script>
+
+<script>
+//    var div = document.getElementById("demo");
+
+//    var getDiv = document.getElementById;
+//    var div = getDiv("demo");
+//    console.log(div);
+
+    // 问题:document.getElementById这个方法内部有this ,默认指向document;
+    // 以普通的方式调用,指向window
+
+    // 保证:document.getElementById这个方法内部的this绑定document
+
+    var getDiv = (function (func) {
+        return function () {
+            return func.apply(document,arguments);
+        }
+    })(document.getElementById);
+
+
+    var div = getDiv("demo");
+    var p1 = getDiv("demoP");
+    console.log(div);
+
+</script>
+</body>
+</html>

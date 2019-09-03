@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+实参:实际的参数
+形参:占位用的,函数调用之前没有值
+函数的调用:默认会把实参赋值给形参
+
+值类型作为函数的参数(值传递):
+形参和实参是独立的,互相没有影响
+
+引用类型作为函数的参数(地址传递):
+形参和实参共享同一份数据,修改其中一个对象属性的值 对另外一个有影响
+<script>
+    var  num = 20;
+    function fun(n) {
+//        n = num; // 默认的操作
+        n = 10;
+        console.log(n); // 10
+    }
+    fun(num);
+    console.log(num); // 20
+
+
+
+    var obj = {name :"zs"};
+    function f1(obj1) {
+        obj1.name = "ls";
+        obj1 = {age : 20};
+
+        console.log(obj1.name); // ls (undefiend)
+    }
+    f1(obj);
+    console.log(obj.name); // zs(ls)
+</script>
+</body>
+</html>

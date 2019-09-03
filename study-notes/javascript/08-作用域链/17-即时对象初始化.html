@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+即时 对象 初始化
+<script>
+    ({
+        name : "zs",
+        age : 20,
+        showName : function () {
+            console.log(this.name);
+        },
+        showAge : function () {
+            console.log(this.age);
+        },
+        init : function () {
+            // 在实例方法中调用对象的方法要用this
+           this.showName();
+           this.showAge();
+        }
+    }).init();
+
+//    person.init();
+</script>
+</body>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<script>
+//    var MOMO = {};
+//    MOMO.a = 20;
+//    MOMO.b = 30;
+
+    //  在赋值之前先判断是否有值,没有值在赋值
+
+// 安全,会很麻烦
+//    if (MOMO == undefined) {
+//        var MOMO = {};
+//    }
+    var MOMO = MOMO || {};
+
+    if (MOMO.a == undefined) {
+        MOMO.a = 20;
+    }
+
+    if (MOMO.b == undefined) {
+        MOMO.b = 30;
+    }
+
+    // 100
+</script>
+
+</body>
+</html>

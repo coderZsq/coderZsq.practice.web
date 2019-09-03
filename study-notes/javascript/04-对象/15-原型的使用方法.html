@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+原型对象的使用方法
+
+概念:
+实例成员:实例属性 | 实例方法
+原型成员:原型属性 | 原型方法
+
+## 利用对象的动态特性操作原型
+<script>
+    function Person(name) {
+       this.name = name;
+    }
+
+    // 1.增加原型对象的成员(属性 | 方法)
+    Person.prototype.des = "我是一个人.";
+    Person.prototype.logDes = function () {
+        console.log(this.des);
+    }
+
+    // 2.修改原型对象的成员
+    Person.prototype.des = "嘿嘿,我是一个人";
+
+    var p1 = new Person("zs");
+
+//    console.log(p1.des);
+//    p1.logDes();
+
+    // 3.删除原型对象的属性
+//    delete p1.des;// 删除是p1这个对象自己的属性(实例属性),并不会影响原型对象
+     delete Person.prototype.des;
+    console.log(p1.des);
+</script>
+
+## 替换原型对象(字面量的方式)
+<script>
+    function Person(name) {
+        this.name = name;
+    }
+
+    var obj = {
+        des : "我是一个人",
+        logDes:function () {
+            console.log(this.des);
+        }
+    };
+
+    Person.prototype = obj;
+
+
+    var p1 = new Person("zs");
+
+    p1.logDes();
+</script>
+</body>
+</html>

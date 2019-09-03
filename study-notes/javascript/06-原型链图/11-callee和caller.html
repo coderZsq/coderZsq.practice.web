@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+1.callee :在arguments对象中有一个方法callee,返回函数自身.常用于匿名函数的递归调用
+2.caller:返回调用函数的函数
+    在全局作用域中调用,返回null
+ <script>
+     function f1() {
+         console.log(f1.caller); // f2
+         console.log(arguments.callee); // f1
+     }
+     function f2() {
+         f1();
+     }
+
+     f2();
+ </script>
+
+递归调用
+    1.自己调用自己
+    2.有退出条件
+<script>
+//    function f1() {
+//       f1();
+//    }
+//    f1();
+
+    // 2 1+2
+    // 3 1+2+3
+    // 4 1+2+3+4
+    // 5 1+2+3+4+5
+    // n-1 1+2+....+(n-1)
+    // n 1~n-1 + n
+
+//    function sum(n) {
+//        if(n == 1) {
+//            return 1;
+//        }
+//        return sum(n-1) + n;
+//    }
+
+//    console.log(sum(1000));
+
+   // 即时调用函数
+    console.log((function (n) {
+        if (n == 1) {
+            return 1;
+        }
+        return arguments.callee(n - 1) + n;
+    })(100));
+
+
+</script>
+</body>
+</html>
