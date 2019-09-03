@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        html,body{
+            width: 100%;
+            height: 100%;
+        }
+        #main{
+            width: 100%;
+            height: 100%;
+            background-color: #000;
+        }
+    </style>
+</head>
+<body>
+<div id="main"></div>
+<script src="js/Underscore-min.js"></script>
+<script src="js/ColorBall.js"></script>
+<script>
+    var main = document.getElementById('main');
+
+    // 1.创建小球数组
+    var ballArray = [];
+    // 2.创建颜色数组
+    var colorArr = ['red','green','yellow','blue','orange','pink'];
+
+    // 2.添加事件
+    main.onmousemove = function (event) {
+        var event = event || window.event;
+        // 1.创建小球
+        var index = _.random(0,colorArr.length-1);
+        var color = colorArr[index];
+
+        var ball = new ColorBall({
+            parentId:'main',
+            x:event.clientX,
+            y:event.clientY,
+            bgColor:color
+        });
+        // 2.添加到数组
+        ballArray.push(ball);
+    };
+
+    // 3.定时绘制
+    setInterval(function () {
+        // 1.清空界面
+        for(var i = 0; i<main.children.length; i++){
+            // 获取盒子
+            var box = main.children[i];
+            // 移除盒子
+            main.removeChild(box);
+        }
+
+        // 绘制小球
+        for(var i = 0; i<ballArray.length; i++){
+            var ball = ballArray[i];
+            // 绘制
+            ball.render();
+            // 更新
+            ball.update();
+        }
+    },50);
+
+</script>
+</body>
+</html>

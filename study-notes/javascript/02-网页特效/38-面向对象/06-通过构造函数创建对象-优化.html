@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+  </style>
+</head>
+<body>
+<script>
+  // 构造函数特点 构造函数首字母大写
+  function Dog(name, age, sex) {
+    this.name = name || '未命名';
+    this.age = age || 0;
+    this.sex = sex || '男';
+
+    this.eat = function () {
+      console.log( this.name + '吃了');
+    }
+    this.run = function () {
+      console.log('跑了');
+    }
+  }
+
+  var dog = new Dog('小小',1);
+
+  console.log(dog);
+  dog.eat();
+
+  var dog1 = new Dog('小花',2);
+  console.log(dog1);
+  
+</script>
+</body>
+</html>

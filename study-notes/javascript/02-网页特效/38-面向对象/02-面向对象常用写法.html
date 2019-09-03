@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+  </style>
+</head>
+<body>
+<script>
+  /**
+   * 类 描述某一类事物
+   */
+  function dog() {
+    var obj = {};
+    obj.name = '未命名';
+    obj.age = 0;
+    obj.sex = '男';
+
+    obj.eat = function () {
+      console.log('吃了');
+    }
+    obj.run = function () {
+      console.log('跑了');
+    }
+
+    return obj;
+  }
+
+
+  var dog1 = dog();
+  dog1.name = '小灰';
+  dog1.age = 1;
+
+  console.log(dog1);
+
+  var dog2 = dog();
+  dog2.name = '小小';
+  dog2.age = 3;
+
+  dog1.age = 2;
+  console.log(dog2);
+  console.log(dog1);
+
+</script>
+</body>
+</html>

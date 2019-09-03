@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+    ul {
+      list-style: none;
+    }
+    ul li {
+      width: 100px;
+      height: 30px;
+      margin-bottom: 10px;
+      background-color: red;
+    }
+    ul li.current {
+      background-color: green;
+    }
+  </style>
+</head>
+<body>
+<ul>
+  <li class="current">1</li>
+  <li>2</li>
+  <li>3</li>
+  <li>2</li>
+  <li>3</li>
+  <li>2</li>
+  <li>3</li>
+  <li>2</li>
+  <li>3</li>
+  <li>2</li>
+  <li>3</li>
+</ul>
+<script>
+  var list = document.querySelectorAll('ul li');
+
+  // for (var i = 0; i < list.length; i++) {
+  //   list[i].onmouseover = function () {
+  //     // 排它
+  //     // 清空所有 清空上一次选中的类名
+  //     for (var j = 0; j < list.length; j++) {
+  //       list[j].className = '';
+  //     }
+  //     this.className = 'current';
+  //   }
+  // }
+
+  // 记录当前选中的索引
+  // var lastIndex = 0;
+  //
+  // for (var i = 0; i < list.length; i++) {
+  //   list[i].index = i;
+  //
+  //   list[i].onmouseover = function () {
+  //     // 排它
+  //     // 清空所有 清空上一次选中的类名
+  //     // for (var j = 0; j < list.length; j++) {
+  //     //   list[j].className = '';
+  //     // }
+  //     list[lastIndex].className = '';
+  //
+  //     this.className = 'current';
+  //
+  //     // 更新索引
+  //     lastIndex = this.index;
+  //   }
+  // }
+
+  // 第二种方法
+  // 记录选中的元素
+  var seleEle = list[0];
+
+  for (var i = 0; i < list.length; i++) {
+
+    // if (i === 0){
+    //   seleEle = list[i];
+    // }
+
+    list[i].onmouseover = function () {
+      // 排它
+      // 清空所有 清空上一次选中的类名
+      seleEle.className = '';
+
+      this.className = 'current';
+
+      // 记录当前选中的元素 seleEle = this;
+
+    }
+  }
+</script>
+</body>
+</html>

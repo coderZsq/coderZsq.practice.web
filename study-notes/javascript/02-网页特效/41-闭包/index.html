@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+  </style>
+</head>
+<body>
+<script>
+  // 变量销毁的依据 没有人引用就销毁
+  /*
+    * 所有的全局函数都是window的方法
+    * 所有的全局变量都是window的属性
+    * */
+
+  // 闭包可以让局部变量不会销毁
+  // 闭包不能乱用 会造成局部变量永远在内存中不会销毁
+
+  // 复杂闭包 在函数里面又返回函数
+
+  function fn(x) {
+    var a = 10;
+    return function (y) {
+      alert(x + y);
+    }
+  }
+  var f = fn(10);
+  f(20);
+
+  // fn()();
+
+  // 闭包穿参
+
+</script>
+</body>
+</html>

@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+  </style>
+</head>
+<body>
+<ul>
+  <li>1</li>
+  <li>2</li>
+  <li>3</li>
+  <li>4</li>
+  <li>5</li>
+</ul>
+<script>
+  // 并不是所有的浏览器都支持es6 我们开发的时候用es6的语法 当项目上线为了支持所有的浏览器需要把es6的代码转换es5.1
+  // let 声明变量 同一个作用域里面变量名不能重复
+  // var a = 10;
+  // var a = 20;
+
+  // let b = 20;
+  // console.log(a, b);
+  // console.log(a);
+  // let a = 10;
+  // let a = 20;
+  // console.log(a);
+
+  // 函数的形参和变量名不能重复
+  // function fn(x, y) {
+  //   var x = 10;
+  //   console.log(x);
+  // }
+  // fn(1);
+  // function fn(x) {
+  //   let x = 20;
+  //
+  // }
+
+  let list = document.querySelectorAll('ul li');
+  // for (var i = 0; i < list.length; i++) {
+  //   list[i].index = i;
+  //   list[i].onclick = function () {
+  //     alert(this.index);
+  //   }
+  // }
+  // console.log(i);
+
+  // let 会在作用域里面开辟新的变量
+  for (let i = 0; i < list.length; i++) {
+    list[i].onclick = function () {
+      alert(i);
+    }
+  }
+  // console.log(i);
+  /*{
+    let i = 0;
+    list[i].onclick = function () {
+      alert(i);
+    }
+  }
+  {
+    let i = 1;
+    list[i].onclick = function () {
+      alert(i);
+    }
+  }
+  {
+    let i = 2;
+    list[i].onclick = function () {
+      alert(i);
+    }
+  }*/
+  // (function () {
+  //
+  // })()
+  // {
+  //   let a = 1;
+  // }
+  // {
+  //   let a = 2;
+  // }
+  // console.log(a);
+
+</script>
+</body>
+</html>

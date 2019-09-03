@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+  </style>
+</head>
+<body>
+<script>
+  // var timer = null;
+  // window.onresize = function () {
+  //   clearTimeout(timer);
+  //   timer = setTimeout(function () {
+  //     console.log(1);
+  //   },200);
+  //   console.log(2);
+  // }
+
+  function fn(callback,del) {
+    var timer = null;
+    return function () {
+      clearTimeout(timer);
+      timer = setTimeout(function () {
+        console.log(1);
+        if (callback) callback();
+      }, del);
+    }
+  }
+
+  function ff() {
+    console.log(3);
+  }
+  window.onresize = fn(ff,200);
+
+  window.onscroll = fn(function () {
+    console.log(4);
+  },300);
+
+</script>
+</body>
+</html>

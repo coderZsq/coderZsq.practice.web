@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+  </style>
+</head>
+<body>
+<button id="btn"></button>
+<button id="btn1"></button>
+<button id="btn2"></button>
+<script>
+  // var a = 10;
+  // 1.内存溢出 / 泄露
+  // 2.全局变量冲突的问题
+  // var a = 10;;;;;
+
+  // (function () {
+  //   var a = 10;
+  //   console.log(a);
+  //
+  // })();;
+  // ;(function () {
+  //   var a = 10;
+  //   console.log(a);
+  // })();
+  //
+  // +function () {
+  //   var a = 10;
+  //   console.log(a);
+  //
+  // }();
+  // -function () {
+  //   var a = 10;
+  //   console.log(a);
+  // }();
+  // !function () {
+  //   var a = 10;
+  //   console.log(a);
+  // }();
+
+  // (function () {
+  //   var btn = document.getElementById('btn');
+  //   var btn1 = document.getElementById('btn1');
+  //   var btn2 = document.getElementById('btn2');
+  // })()
+  // (function () {
+  //   var d = document;
+  //   var btn = d.getElementById('btn');
+  //   var btn1 = d.getElementById('btn1');
+  //   var btn2 = d.getElementById('btn2');
+  // })()
+  (function (document,window) {
+    var btn = document.getElementById('btn');
+    var btn1 = document.getElementById('btn1');
+    var btn2 = document.getElementById('btn2');
+
+  })(document,window)
+
+  (function () {
+
+  }())
+
+</script>
+<script>
+  // var a = 20;
+</script>
+</body>
+</html>

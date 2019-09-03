@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+  </style>
+</head>
+<body>
+<div id="main"></div>
+<script>
+  function Rect(option) {
+    var opt = option || {};
+    this.x = opt.x || 0;
+    this.y = opt.y || 0;
+    this.width = opt.width || 100;
+    this.height = opt.height || 100;
+    this.bgColor = opt.bgColor || 'red';
+    this.parentId = opt.parentId;
+    this.borderRadius = opt.borderRadius;
+    this.border = opt.border;
+  }
+  // 绘制方法
+  Rect.prototype.render = function () {
+    var div = document.createElement('div');
+    var parentNode = document.getElementById(this.parentId);
+    parentNode.appendChild(div);
+    div.style.position = 'absolute';
+    parentNode.style.position = 'relative';
+
+    div.style.left = this.x + 'px';
+    div.style.top = this.y + 'px';
+    div.style.width = this.width + 'px';
+    div.style.height = this.height + 'px';
+    div.style.backgroundColor = this.bgColor;
+    div.style.borderRadius = this.borderRadius;
+    div.style.border = this.border;
+  };
+
+  var react = new Rect({
+    x:100,
+    y:100,
+    width: 200,
+    height: 300,
+    parentId: 'main',
+    border: '10px solid #ccc'
+  });
+
+  // 绘制方法
+  react.render();
+
+  var react1 = new Rect({
+    x:500,
+    y:300,
+    width: 100,
+    height: 100,
+    parentId: 'main',
+    bgColor: 'yellow',
+    borderRadius: '50%'
+  });
+  // 绘制方法
+  react1.render();
+</script>
+</body>
+</html>

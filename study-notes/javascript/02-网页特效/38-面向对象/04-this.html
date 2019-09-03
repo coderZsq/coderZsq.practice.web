@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+  </style>
+</head>
+<body>
+<div id="btn">我是按钮</div>
+<script>
+  // this
+  /**
+   * 2中特殊用法
+   * 1.this在事件指令中指向事件源
+   * 2.this在定时器中指向window
+   *
+   * 一般用法 this所在的函数属于哪个对象this就指向那个对象
+   */
+    // document.getElementById('btn').onclick = function () {
+    //   console.log(this);
+    // }
+    // setInterval(function () {
+    //   console.log(this);
+    // },1000);
+
+    var obj = {
+      name: 'zs',
+      eat: function () {
+        console.log(this.name);
+      }
+    };
+    obj.eat();
+
+    var a = 10;
+    /*
+    * 所有的全局函数都是window的方法
+    * 所有的全局变量都是window的属性
+    * */
+    function fn() {
+      console.log(this);
+    }
+
+    fn();
+
+  //   var obj1 = {};
+  //   var obj2 = new Object();
+  // console.log(obj1, obj2);
+
+  // var arr = [];
+    // var arr1 = new Array();
+</script>
+</body>
+</html>

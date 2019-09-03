@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+  </style>
+</head>
+<body>
+<script>
+
+  /*
+    * 所有的全局函数都是window的方法
+    * 所有的全局变量都是window的属性
+    * */
+  // var num = 0;
+  //
+  // var dog = 1;
+  //
+  // function fn() {
+  //
+  // }
+  //
+  // for (var key in window) {
+  //   // console.log(key);
+  //   document.write(key  + '==>>' + num + '<br>');
+  //   num++;
+  // }
+
+
+  // 作用域链条 有多个作用域连起来 称为作用域链
+  var a = 10;
+  (function () {
+    var a = 20;
+    (function () {
+      var a = 30;
+      (function () {
+        var a = 40;
+        alert(a);
+      })();
+    })();
+  })();
+
+  /**
+   * 变量查找顺序
+   * 1.要使用变量 先在自己的作用域里面找 如果找到就直接用
+   * 2.如果找不到去上一级作用域里面找 找了就用
+   * 3.如果找不再去上一级
+   * 直到找到全局作用域如果还没有找到就报错
+   * 这个查找过程类似于递归
+   *
+   * 能使用局部变量就用局部变量 尽量不要开辟全局变量
+   * 变量查找只能自下而上 不能自上而下
+   */
+
+</script>
+</body>
+</html>

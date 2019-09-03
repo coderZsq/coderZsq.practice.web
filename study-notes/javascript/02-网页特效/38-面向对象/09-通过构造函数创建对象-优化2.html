@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+  </style>
+</head>
+<body>
+<script>
+  // 构造函数特点 构造函数首字母大写
+  // 在ES5.1语法里面没有类的概念 Class
+  // 工厂模式
+  function Dog(option) {
+    var opt = option || {};
+
+    this.name = opt.name;
+    this.age = opt.age;
+    this.sex = opt.sex;
+  }
+
+  // Dog.prototype.eat = function () {
+  //   console.log( this.name + '吃了');
+  // }
+  // Dog.prototype.run = function () {
+  //   console.log('跑了');
+  // }
+
+  Dog.prototype = {
+    eat: function () {
+      console.log( this.name + '吃了');
+    },
+    run: function () {
+      console.log('跑了');
+    }
+  };
+
+  var dog = new Dog({
+    name:'小灰',
+    age: 1,
+    sex: '男'
+  });
+  console.log(dog);
+  dog.eat();
+
+
+  var dog1 = new Dog({
+    name:'小灰1',
+    age: 2,
+    sex: '男'
+  });
+  console.log(dog1);
+  dog1.eat();
+
+  // console.log(dog.eat === dog1.eat);
+
+  var dog2 = new Dog();
+
+</script>
+</body>
+</html>

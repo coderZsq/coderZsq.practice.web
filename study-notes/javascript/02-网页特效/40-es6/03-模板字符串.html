@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+  </style>
+</head>
+<body>
+<div id="main"></div>
+<script>
+  // var a = 10;
+  // var b = 'h'+ a +'ah';
+
+
+  var a = {
+    age: 18,
+    name:'zs'
+  };
+  // var b = `h${ a.age }ah${123*123}`;
+  // console.log(b);
+
+  let ul = `<ul>
+       <li>${a.age}</li>
+       <li>${a.name}</li>
+       <li>${[1,2,3]}</li>
+    </ul>`
+
+  let main = document.getElementById('main');
+  main.innerHTML = ul;
+
+</script>
+</body>
+</html>
