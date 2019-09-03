@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+    <script src="js/XMGQuery-1.0.3.js"></script>
+    <!--<script src="js/jquery-2.0.0.js"></script>-->
+
+</head>
+<body>
+<div id="demoID">div1</div>
+<div class="box">div2</div>
+<div class="box">div3</div>
+<script>
+    console.log($("div"));
+    console.log($("#demoID"));
+    console.log($(".box"));
+    //querySelector 获取所有选中标签中的第一个返回
+    //querySelectorAll 获取所有选中标签返回
+    //console.log(document.querySelector(".box"));
+    //console.log(document.querySelectorAll(".box"));
+</script>
+</body>
+</html>

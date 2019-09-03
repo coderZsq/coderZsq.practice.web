@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+    <script src="js/XMGQuery-1.0.9.js"></script>
+
+</head>
+<body>
+<script>
+    //console.log(Tool.trim(" sd "));   //(1)
+    //console.log($.Tool.trim(" sd ")); //(2)
+    //console.log($.trim(" sd "));      //(3)
+
+    //对面的成员:属性和方法
+    //实例成员:实例对象的属性和方法
+    //原型成员:创建实例对象构造函数相关链的原型对象上面的属性和方法
+    //静态成员:构造函数自己的属性和方法
+    function Person() {
+        this.name = "哈哈";
+        this.age = 18;
+
+        var className = "修仙1班";
+        function getClassName() {
+            return "班级名称 " + className;
+        }
+        this.getInfo = function () {
+            return "姓名" + this.name + "年龄 " + this.age + getClassName();
+        }
+    }
+    Person.prototype = {
+        constructor:Person,
+        showName:function () {
+            console.log(this.name);
+        },
+        showAge:function () {
+            console.log(this.age);
+        }
+    }
+
+    Person.des = "描写";
+    Person.logDes = function () {
+        console.log(this.des);
+    }
+
+    var p1 = new Person();
+    console.log(p1);
+
+    //构造函数:Person
+    //原型对象:Person.prototype
+    //实例对象:p1
+    //p1的实例成员:name age getInfo
+    //原型成员:showName showAge
+    //构造函数的静态成员:des logDes
+    //私有成员:className getClassName
+    //特权方法:getInfo
+    //console.log(p1.name);
+    //console.log(p1.className);
+
+
+    //问题:
+    //console.log(p1.des);           //undefined
+    //p1.logDes();                   //错误
+    //Person.showName();             //错误
+    //Person.prototype.showName();     //正确 undefined  this-->Person.prototype
+    //Person.logDes();                 //正确  描写
+    //console.log(Person.name);          //Person
+
+    //(1)构造函数只能访问静态方法
+    //(2)实例对象不能访问静态方法
+
+    //工具方法优化,如果操作跟jQ实例对象没有依赖关系那么建议使用(1) 如果有依赖,建议使用(2)
+    //(1)  $.trim()    $.map()
+    //(2)  $().each()  $().css() $().addClass()
+
+</script>
+<script>
+    console.log($.isArray([1, 2, 3]));
+    console.log($.isObject("ASS"));
+</script>
+</body>
+</html>

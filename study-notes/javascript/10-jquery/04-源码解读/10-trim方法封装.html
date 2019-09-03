@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+    <!--<script src="js/jquery-2.0.0.js"></script>-->
+
+</head>
+<body>
+<script>
+    //$.trim()
+    var str1 = "abc  ";
+    var str2 = "  xcv";
+    var str3 = "   sss x  ";
+//    console.log($.trim(str1));
+//    console.log($.trim(str2));
+//    console.log($.trim(str3));
+
+    //自己封装trim方法
+    //补充:系统string类型提供trim方法
+    function trim(text) {
+        //检测当前环境是否支持trim方法,如果支持那么就直接使用
+        if(text.trim)
+        {
+            return text.trim();
+        }else
+        {
+            //如果当前环境不支持,那么就自己实现
+            //第一个参数:要替换的字符是什么 空格
+            //第二个参数:要替换成什么东西   空
+            //注意点:只会替换一次
+            //return text.replace(" ","")
+
+            //第一个参数:正则表达式(匹配)
+            //目前:字符串前面和后面的一个或多个空格
+            //\s 空格
+            //\s+ N个空格
+            //^\s+ 开头的N个空格
+            //\s+$ 结尾的N个空格
+            //g 表示连续处理
+            return text.replace(/^\s+|\s+$/g,"")
+        }
+    }
+    console.log(trim(str1));
+    console.log(trim(str2));
+    console.log(trim(str3));
+</script>
+</body>
+</html>

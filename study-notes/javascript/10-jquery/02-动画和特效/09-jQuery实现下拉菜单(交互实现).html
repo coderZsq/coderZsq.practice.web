@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+
+        body
+        {
+            background: green;
+        }
+
+        .box
+        {
+            width: 900px;
+            height: 44px;
+            border: 1px solid #ccc;
+            background: #fff;
+            margin: 50px auto;
+        }
+
+        .first >li{
+            float: left;
+            width: 110px;
+            line-height: 44px;
+            text-align: center;
+        }
+
+        .first >li:hover{
+            background: #F35;
+        }
+
+        .second
+        {
+            display: none;
+        }
+        .second >li{
+            background: #fff;
+        }
+    </style>
+    <script src="js/jquery-3.3.1.min.js"></script>
+</head>
+<body>
+<div class="box">
+    <ul class="first">
+        <li>我是一级菜单1<ul class="second">
+            <li>我是二级菜单</li>
+            <li>我是二级菜单</li>
+            <li>我是二级菜单</li>
+            <li>我是二级菜单</li>
+            <li>我是二级菜单</li></ul></li>
+        <li>我是一级菜单2<ul class="second">
+            <li>我是二级菜单</li>
+            <li>我是二级菜单</li>
+            <li>我是二级菜单</li>
+            <li>我是二级菜单</li>
+            <li>我是二级菜单</li></ul></li>
+        <li>我是一级菜单3<ul class="second">
+            <li>我是二级菜单</li>
+            <li>我是二级菜单</li>
+            <li>我是二级菜单</li>
+            <li>我是二级菜单</li>
+            <li>我是二级菜单</li></ul></li>
+        <li>我是一级菜单4<ul class="second">
+            <li>我是二级菜单</li>
+            <li>我是二级菜单</li>
+            <li>我是二级菜单</li>
+            <li>我是二级菜单</li>
+            <li>我是二级菜单</li></ul></li>
+        <li>我是一级菜单5<ul class="second">
+            <li>我是二级菜单</li>
+            <li>我是二级菜单</li>
+            <li>我是二级菜单</li>
+            <li>我是二级菜单</li>
+            <li>我是二级菜单</li></ul></li>
+        <li>我是一级菜单6<ul class="second">
+            <li>我是二级菜单</li>
+            <li>我是二级菜单</li>
+            <li>我是二级菜单</li>
+            <li>我是二级菜单</li>
+            <li>我是二级菜单</li></ul></li>
+        <li>我是一级菜单7<ul class="second">
+            <li>我是二级菜单</li>
+            <li>我是二级菜单</li>
+            <li>我是二级菜单</li>
+            <li>我是二级菜单</li>
+            <li>我是二级菜单</li></ul></li>
+        <li>我是一级菜单8<ul class="second">
+            <li>我是二级菜单</li>
+            <li>我是二级菜单</li>
+            <li>我是二级菜单</li>
+            <li>我是二级菜单</li>
+            <li>我是二级菜单</li></ul></li>
+    </ul>
+</div>
+<script>
+    $(function () {
+        //..........
+        //[1] 监听一级菜单的鼠标移入事件
+        //[2] 当鼠标移入的时候展开当前标签的二级菜单
+        //[3] 当鼠标离开的时候要收起当前标签的二级菜单
+        /*
+        $(".first > li").mouseenter(function () {
+            //this 当前的标签li
+            //目标标签是:li标签的子标签(ul)
+            $(this).children("ul").slideDown(1000);
+        })
+
+        $(".first > li").mouseleave(function () {
+            //this 当前的标签li
+            //目标标签是:li标签的子标签(ul)
+            $(this).children("ul").slideUp(1000);
+        })*/
+
+        /*
+        $(".first > li").hover(function () {
+            $(this).children("ul").slideDown(1000);
+        },function () {
+            $(this).children("ul").slideUp(1000);
+        })*/
+
+        //动画队列
+        //如果标签身上作用多个动画,这些动画执行都需要时间,不可能前部瞬间执行完
+        //动画-任务(Task) - 动画需要一个接着一个的执行(所有的动画任务会存放到队列中维护)
+        //队列 | 栈  数据结构
+        //队列 先进先出
+        //栈   先进后出
+
+        $(".first > li").hover(function () {
+            //监听鼠标的移入|移除事件
+            $(this).children("ul").stop().slideToggle(400);
+        })
+    })
+</script>
+</body>
+</html>

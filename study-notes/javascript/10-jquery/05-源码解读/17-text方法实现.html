@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+    <script src="js/XMGQuery-1.2.2.js"></script>
+    <!--<script src="js/jquery-3.3.1.min.js"></script>-->
+
+</head>
+<body>
+<div class="box">呵呵,呵呵</div>
+<div class="box">嘿嘿,嘿嘿</div>
+<script>
+    //jQ.html()
+    //没有参数:获取所有选中标签中第一个标签的内容返回
+    //传递参数:批量的设置所有选中标签的节点内容,返回实例对象
+    //console.log($(".box").html("<h1>哈哈,哈哈</h1>"));
+    //console.log($(".box").html());
+
+    //jQ.text()
+    //没有参数:获取所有标签的文本内容拼接在一起最终返回
+    //传递参数:批量的设置所有选中标签的文本内容,返回实例对象
+    console.log($(".box").text("<h1>哈哈,哈哈</h1>"));
+    console.log($(".box").text());
+</script>
+</body>
+</html>

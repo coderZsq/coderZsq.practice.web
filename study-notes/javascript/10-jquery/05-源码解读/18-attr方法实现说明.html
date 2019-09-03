@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+    <script src="js/XMGQuery-1.2.3.js"></script>
+    <!--<script src="js/jquery-3.3.1.min.js"></script>-->
+
+</head>
+<body>
+<div class="box1">呵呵,呵呵</div>
+<div class="box2">嘿嘿,嘿嘿</div>
+<script>
+    //jQ.attr()
+    //作用:设置(添加|修改)和查询标签的属性节点
+    //语法:
+    //jQ.attr(key)       查询:获取所有标签中第一个标签对应的属性节点值返回
+    //jQ.attr(key,value) 添加|修改:批量设置所有选中标签的属性节点
+    //jQ.attr({key1:value,key2:value})  //批量添加|修改多个属性节点
+
+    //总结:
+    //(1) 没有参数 报错
+    //(2) 1个参数
+    //      A 字符串  查询
+    //      B 对象    批量设置
+    //(3) 2个参数     设置
+
+    //console.log($("div").attr());  //报错
+
+    //原生的操作方式:setAttributes | getAttribute | removeAttribute
+    //console.log($("div").attr("class"));
+    //console.log($("div").attr("title", "我是标题"));
+    console.log($("div").attr({"title":"我是标题T","des":"描写信息"}));
+</script>
+</body>
+</html>

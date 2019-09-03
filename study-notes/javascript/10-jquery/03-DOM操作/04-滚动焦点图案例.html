@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+
+        body
+        {
+            background: #aaa;
+        }
+        .box
+        {
+            overflow: hidden;
+            width: 600px;
+            height: 200px;
+            border: 1px solid red;
+            margin: 50px auto;
+        }
+
+        ul{
+            width: 9999px;
+            height: 200px;
+            position: relative;
+        }
+        ul >li{
+            float: left;
+        }
+
+    </style>
+    <script src="js/jquery-3.3.1.min.js"></script>
+</head>
+<body>
+<div class="box">
+    <ul>
+        <li><img src="img/01.jpg"></li>
+        <li><img src="img/02.jpg"></li>
+        <li><img src="img/03.jpg"></li>
+        <li><img src="img/04.jpg"></li>
+        <li><img src="img/01.jpg"></li>
+        <li><img src="img/02.jpg"></li>
+    </ul>
+</div>
+<script>
+    $(function () {
+        //..........
+        //(1) 设置让标签向左边滚动
+        var leftX = 0;
+        var timer ;
+        function autoPlayer() {
+            timer = setInterval(function () {
+                leftX += 3;
+                if(leftX >= 1200)
+                {
+                    $("ul").css("left",0);
+                    leftX = 0;
+                }
+                $("ul").css("left",-leftX);
+            },50)
+        }
+        autoPlayer();
+
+        //(2) 鼠标移入的时候,停止滚动(高亮效果),离开的时候恢复
+        $('ul>li').hover(function () {
+            clearInterval(timer);
+            $(this).fadeTo(50,1).siblings().fadeTo(50,0.3);
+        },function () {
+            autoPlayer();
+            $("li").fadeTo(50,1);
+        })
+    })
+</script>
+</body>
+</html>`

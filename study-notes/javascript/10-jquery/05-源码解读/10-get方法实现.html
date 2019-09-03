@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+    <!--<script src="js/jquery-3.3.1.min.js"></script>-->
+    <script src="js/XMGQuery-1.1.2.js"></script>
+
+</head>
+<body>
+<div>div1</div>
+<div>div2</div>
+<div>div3</div>
+<div>div4</div>
+<script>
+    //分析get方法
+    //作用:获取jQ对象中索引对应的元素(标签)返回,返回的是DOM标签
+    //用法:
+    //jQ.get()        把jQ实例对象转换成数组返回
+    //jQ.get(index)   正数(>=0) 负数(<0 倒着数第N个)
+    console.log($("div").get(-3));
+</script>
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+    <!--<script src="js/jquery-2.0.0.js"></script>-->
+    <script src="js/XMGQuery-1.1.1.js"></script>
+
+</head>
+<body>
+<div>div1</div>
+<div>div2</div>
+<div>div3</div>
+<div>div4</div>
+<div>div5</div>
+<script>
+    //原型成员上面部分属性和方法
+    //属性" jquery(版本号) selector(选择器) length(长度)
+    //方法
+    /*
+    * eq()
+    * get()
+    * first()
+    * last()
+    * each()
+    * map()
+    * slice()
+    * push()
+    * toArray()
+    * */
+    console.log($("body").jquery);  //3.3.1
+    console.log($("body").selector);
+    console.log($("body").length);  //1
+
+    console.log($("div"));
+    console.log($("div").toArray());
+</script>
+</body>
+</html>`

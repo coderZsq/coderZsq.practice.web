@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .box1
+        {
+            width: 200px;
+            height: 200px;
+            background: red;
+        }
+
+        .box2
+        {
+            width: 50px;
+            height: 100px;
+            background: greenyellow;
+        }
+    </style>
+    <script src="js/jquery-3.3.1.min.js"></script>
+</head>
+<body>
+<div class="box1">
+    <div class="box2"></div>
+</div>
+<script>
+    $(function () {
+        //..........
+        //监听鼠标的移入和移除事件
+        //mouseenter(移入) mouseleave(移出)  对子标签没有影响
+        //mouseover(移入)  mouseout(移出)    对子标签有影响
+        //hover方法
+        //语法1:jQ.hover(fn)  鼠标移入或者是移出都会触发回调函数
+        //语法2:jQ.hover(fn1,fn2) 鼠标移入触发第一个回调,鼠标移出就触发第二个回调
+        //补充:hover方法本身是对mouseenter(移入) mouseleave(移出) 方法进行的封装
+
+
+//        $(".box1").mouseenter(function () {
+//            console.log("mouseenter(移入)");
+//        })
+//
+//
+//        $(".box1").mouseleave(function () {
+//            console.log("mouseleave(移出)");
+//        })
+
+//
+//        $(".box1").mouseover(function () {
+//            console.log("mouseover(移入)");
+//        })
+//
+//
+//        $(".box1").mouseout(function () {
+//            console.log("mouseout(移出)");
+//        })
+
+//        $(".box1").hover(function () {
+//            console.log("鼠标移入或者是移出啦....");
+//        })
+
+        $(".box1").hover(function () {
+            console.log("鼠标移入啦....");
+        },function () {
+            console.log("鼠标移出啦....");
+        })
+
+     })
+</script>
+</body>
+</html>

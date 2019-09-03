@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+    <script src="js/jquery-3.3.1.min.js"></script>
+</head>
+<body>
+<li>li1</li>
+<li>li2</li>
+<li>li3</li>
+<li>li4</li>
+<li>li5</li>
+<script>
+    $(function () {
+        //..........
+        //each方法的语法
+        //[001] $.each(目标对象,fn)
+        //[002] $().each(fn)
+        //作用:遍历数组\对象\jQ实例对象(伪数组)
+
+        //001 遍历数组
+        var arrM = [1,2,3,"demoA","demoB",true];
+        $.each(arrM,function (index,value) {
+            console.log(index, value);
+        })
+
+        //002 遍历对象
+        var objM = {name:"zs",age:18,color:"green"};
+        $.each(objM,function (key,value) {
+            console.log(key, value);
+        })
+
+        //003 遍历jQ实例对象
+        $.each($("li"),function (index,ele) {
+            console.log(index, ele);
+        })
+
+
+        //思考:为什么jQ要提供两个each方法
+        //注意点:只能遍历jQ对象
+        $("li").each(function (index,ele) {
+            console.log(index, ele);
+        })
+
+    })
+</script>
+</body>
+</html>

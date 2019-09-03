@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+    <script src="js/jquery-3.3.1.min.js"></script>
+</head>
+<body>
+
+<span class="class1">我是span</span>
+<div class="class1">我是div1</div>
+<p>我是p标签</p>
+<div class="class1">我是div2</div>
+<div>我是div3
+    <span>我是spanB</span>
+</div>
+<div>我是div4
+    <span>我是spanB</span>
+    <span>我是spanB</span>
+</div>
+<div id="demoID">
+    <div>哈哈</div>
+    <div class="class1">哈哈</div>
+</div>
+<script>
+    $(function () {
+        //..........
+        //filter是jQuery框架中强大的过滤器方法
+        //需求:给页面中所有样式为class1的标签设置背景颜色red
+        //    给样式为class1的div标签添加边框
+        //解决:错误的演示
+        //$(".class1").css("background","red");
+        //$("div").css("border","1px solid #000")
+
+        //filter语法
+        //① jQ.filter(expr)  接受的参数是选择器字符串
+        //② jQ.filter(fn)    接受的参数是过滤函数
+
+        //具体的用法(1):
+        //jQ.filter(expr)
+        //$(".class1").css("background","red").filter("div").css("border","1px solid #000");
+
+        //具体的用法(2):
+        //jQ.filter(fn)
+        //需求:给页面中所有的div标签设置背景,然后给有且仅有1个span子标签的div设置边框
+        //遍历处理选中的每一个标签,拿到当前标签来看是否满足函数中的条件,如果满足那么就保存当前标签到新的jQ对象中
+        //jQ() div3
+
+        $("div").css("background","red").filter(function () {
+
+            //this     --> 当前的标签
+            console.log(this);
+            //如果函数返回的是true,那么表示满足条件.否则不满足
+            return $("span",this).length === 1;
+        }).css("border","1px solid #000");
+
+
+        //jQ对象的length属性返回标签(jQ中存储的DOM标签)的数量
+        console.log($("div").length);
+        //var obj = {name:"zs","age":18};
+        //console.log(obj);
+        //console.log([1, 2, 3, 5]);
+
+        //关于$()函数的参数说明
+        //获取当前页面中所有的div标签
+        //第一个参数:选择器
+        //第二个参数:当前上下文
+        var oDiv = document.getElementById("demoID");
+        //console.log($("div", document));
+        console.log(oDiv);
+        console.log($(".class1", oDiv));
+
+        //has方法的使用
+        //作用:在当前jQ实例对象的基础上筛选,如果拥有span子标签那么就保留,否则就剔除掉
+        console.log($("div").has(".class1"));
+    })                                                                       
+</script>
+</body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+    <!--<script src="js/jquery-2.0.0.js"></script>-->
+    <script src="js/XMGQuery-1.0.5.js"></script>
+
+</head>
+<body>
+<script>
+    console.log($([1, 2, 3, 56, "DEMO"]));
+
+    //实现思路:
+    //[1] 判断参数是否是数组
+    //[2] 如果是数组,把数组中所有的元素依次保存到jQ对象中返回
+
+    //思考:如何判断参数是数组
+    var arr = [12,3,"demo"];
+    console.log(typeof arr);
+
+    //Object.prototype.toString() 作用:返回指定对象的类型信息
+    //[对象类型 构造函数]
+    //普通对象 --  [object Object]
+    //字符串对象 --[object String]
+    //数组对象  -- [object Array]
+    var obj = {name:"zs"};
+    console.log(obj.toString());   //[object Object]
+    var str = new String("我是字符串对象");
+    console.log(str.toString());  //我是字符串对象
+    console.log(arr.toString());
+
+    //obj.toString === Object.prototype.toString()
+    //str.toString === String.prototype.toString()  字符串化输出
+    //arr.toString === Array.prototype.toString()
+
+    //借用
+    console.log(Object.prototype.toString.call(str)); //[object String]
+    console.log(Object.prototype.toString.call(arr)); //[object Array]
+
+    //ES5推出
+    console.log(Array.isArray(str));
+</script>
+</body>
+</html>

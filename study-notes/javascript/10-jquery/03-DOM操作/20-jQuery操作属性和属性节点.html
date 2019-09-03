@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+    <script src="js/jquery-3.3.1.min.js"></script>
+</head>
+<body>
+<div id="demoID">div1</div>
+<div class="classTest" title="标题" xx="xxxx">div2</div>
+
+<script>
+    $(function () {
+        //..........
+        //DOM标签的属性
+        //DOM标签的属性节点 像上面这些id class title xx就是属性节点(key-value)
+        //key-value (id - demoID) (class - classTest) (xx - xxxx)
+        //区别:
+        //属性节点保存在DOM标签的attributes属性(保存的是对象)上面,属性直接保存在标签上.
+        console.log($("div"));
+
+        //属性节点的操作
+        // 原生的操作属性节点的方式:
+        // 添加|修改 DOM.setAttribute(key,value)
+        // 删除     DOM.removeAttribute(key)
+        // 查询     DOM.getAttribute("title")
+        //$("#demoID").attr("title","我是标题")
+        //var oDiv = document.getElementById("demoID");
+        //oDiv.setAttribute("title","我是标题");
+        //oDiv.removeAttribute("id");
+        //console.log(oDiv.getAttribute("title"));
+
+        //jQuery操作方式:
+        //jQ.attr()  添加|修改|查询
+        //jQ.removeAttr() 删除
+        //$("#demoID").attr("title","我是标题")     //添加
+        //$("#demoID").attr("title","我是标题-X")   //修改
+        //console.log($("#demoID").attr("title"));
+        //$("#demoID").removeAttr("id");
+
+
+        //原生的操作属性的方式
+        /*
+        var oDiv = document.getElementById("demoID");
+        oDiv.A = "AAA";
+        oDiv["B"] = "bbb";
+        oDiv["fn"] = function () {
+            console.log("我是标签的方法");
+        }
+        oDiv["fn"]();*/
+        //jQuery框架提供的操作DOM属性的方法
+        //jQ.prop()     添加|修改|查询
+        //jQ.removeProp() 删除
+        $("#demoID").prop("A","A-X");
+        $("#demoID").prop("A","A-XXX");
+        console.log($("#demoID").prop("A"));
+        $("#demoID").removeProp("A");
+    })
+</script>
+</body>
+</html>

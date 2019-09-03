@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+    <script src="js/XMGQuery-1.1.5.js"></script>
+    <!--<script src="js/jquery-3.3.1.min.js"></script>-->
+</head>
+<body>
+<script>
+    //map方法用法:
+    //$.map(arrM,fn)  $().map(fn)
+    //作用:遍历数组,对数组的元素进行操作(过滤|放大|拼接)收集回调函数的返回值保存到新数组中返回
+    //区别:(1)回调函数中参数顺序是反的 (2) 没有结束循环功能 (3) this-->window (4) 会收集返回值
+
+    var arrM = [1,3,6,"demo","test",true];
+    var arrT = $.map(arrM,function (value,index) {
+        console.log(index, value);
+        //if(typeof value == "string") return value;
+        //console.log(this);
+        if(typeof value == "number") return value *5;
+    })
+    console.log(arrT);
+
+
+
+    var arr = $.map({name:"zs",age:18,NO:2005},function (value,index) {
+        console.log(index, value);
+        if(typeof value == "number") return value;
+    })
+    console.log(arr);
+</script>
+</body>
+</html>

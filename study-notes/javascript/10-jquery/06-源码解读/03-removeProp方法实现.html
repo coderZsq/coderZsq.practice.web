@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+    <!--<script src="js/jquery-3.3.1.min.js"></script>-->
+    <script src="js/XMGQuery-1.2.6.js"></script>
+
+</head>
+<body>
+<div>div1</div>
+<div>div2</div>
+
+<script>
+    //removeProp方法
+    //作用:删除标签的属性
+    //jQ.removeProp(key)
+    //总结:对参数进行判断,如有1个参数,那么遍历jQ对象,拿到每一个DOM标签删除属性
+    console.log($("div").prop({"a1": "我是新的a1","a2":"我是a2"}));
+    console.log($("div").removeProp("a2").removeProp("a1"));
+
+    //delete关键字
+    var obj = {name:"zs",age:19};
+    delete obj["name"];
+    console.log(obj);
+</script>
+</body>
+</html>

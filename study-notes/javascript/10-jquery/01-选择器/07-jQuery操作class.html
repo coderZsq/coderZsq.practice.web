@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .class1{
+            width: 300px;
+            height: 50px;
+            background: red;
+        }
+
+        .class2{
+            border: 1px solid #000;
+            background: yellow;
+        }
+    </style>
+    <script src="js/jquery-3.3.1.min.js"></script>
+</head>
+<body>
+<div class="class1">div1</div>
+<!--<div class="class2">div2</div>-->
+
+<button>添加</button>
+<button>检查</button>
+<button>删除</button>
+<button>切换</button>
+<script>
+    $(function () {
+        //..........
+        //[1]addClass 添加样式
+        $("button").eq(0).click(function () {
+
+            //方式(1)直接添加
+            //$("div").addClass("class1");
+            //$("div").addClass("class2");
+
+            //方式(2)链式操作
+            //$("div").addClass("class1").addClass("class2");
+
+            //方式(3)空格隔开
+            $("div").addClass("class1 class2");
+        })
+
+        //[2]hasClass 检查是否拥有指定的样式
+        $("button").eq(1).click(function () {
+            //返回值:布尔类型,如果指定标签中没有特定的样式那么返回false,否则返回true
+            console.log($("div").hasClass("class1"));
+
+            //说明(1):该方法不支持链式操作
+            //说明(2):该方法不支持一次性检测多个样式
+            //说明(3):所有指定标签中只要有一个标签中存在特定的样式就返回true
+        })
+
+        //[3]removeClass 删除样式
+        $("button").eq(2).click(function () {
+
+            //说明:使用方式同addClass方法
+
+            //$("div").removeClass("class1")
+            //$("div").removeClass("class1").removeClass("class2");
+
+            $("div").removeClass("class1 class2");
+        })
+
+        //[4]toggleClass 切换样式
+        $("button").eq(3).click(function () {
+            //如果标签存在指定的样式,那么就删除,不存在那么就添加
+            $("div").toggleClass("class1 class2")
+        })
+    })
+</script>
+</body>
+</html>
