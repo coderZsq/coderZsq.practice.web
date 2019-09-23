@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<!--存放舞台的容器-->
+<div id="containerId"></div>
+<script src="js/konva.js"></script>
+<script src="js/ProgressBar.js"></script>
+<script>
+    // 1.创建舞台
+    var stage = new Konva.Stage({
+        width : window.innerWidth,
+        height : window.innerHeight,
+        container : 'containerId'
+    });
+
+    // 2.创建层
+    var layer = new Konva.Layer();
+    stage.add(layer);
+
+    // 3.创建进度条
+    var progressBar = new ProgressBar({
+        x: 1/8 * stage.width(),
+        y: 1/2 * stage.height(),
+        width: 3/4 * stage.width(),
+        height : 1/20 * stage.height(),
+        strokeColor: "#ccc",
+        fillColor: 'red',
+        strokeWidth: 5,
+        value: 0.1
+    });
+    progressBar.render(layer);
+
+    // 4.绘制层
+    layer.draw();
+
+    // 5.做动画
+    progressBar.update();
+</script>
+</body>
+</html>

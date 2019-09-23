@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+</head>
+<body>
+<canvas id="canvas" width="900" height="600" style="border: 1px solid #000;"></canvas>
+<p></p>
+<button dir = 2>上</button>
+<button dir = 6>下</button>
+<button dir = 0>左</button>
+<button dir = 4>右</button>
+
+<script src="js/Girl.js"></script>
+<script>
+    // 1.获取标签和上下文
+    var canvas = document.getElementById('canvas');
+    var ctx = canvas.getContext('2d');
+
+    // 2.创建小女孩对象
+    var girl = new Girl({
+        imgSrc : 'images/girl.png',
+        sWidth : 256,
+        sHeight : 256,
+        x : 200,
+        y : 200,
+        width : 256,
+        height :256,
+        duration : 400,
+        dir : 0
+    });
+    // 绘制
+    girl.render(ctx);
+
+    // 监听所有按钮的点击事件
+    var buttons = document.getElementsByTagName('button');
+    for (var i = 0; i < buttons.length; i++) {
+        buttons[i].onclick = function () {
+            girl.changeDir(this.getAttribute('dir'));
+        }
+    }
+</script>
+</body>
+</html>

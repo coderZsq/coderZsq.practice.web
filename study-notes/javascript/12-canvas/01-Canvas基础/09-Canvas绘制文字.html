@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<canvas id="canvas" width="900" height="600" style="border: 1px solid #000;"></canvas>
+<script>
+    // 1.获取标签和上下文
+    var canvas = document.getElementById('canvas');
+    var ctx = canvas.getContext('2d');
+
+    // 2.绘制文字
+    ctx.font = "40px '微软雅黑'";
+
+    ctx.strokeStyle = 'red';
+    ctx.strokeText("LOVE",200,200);
+    ctx.fillStyle = 'blue';
+    ctx.fillText("LOVE",200,200);
+
+    // 对齐方式
+    ctx.textAlign = 'end';
+    // 文本基线
+    ctx.textBaseline = 'bottom ';
+
+    // 阴影的颜色
+    ctx.shadowColor = 'pink';
+    // 阴影的偏移量
+    ctx.shadowOffsetX = 10;
+    ctx.shadowOffsetY = 10;
+    // 阴影的模糊范围
+    ctx.shadowBlur = 7;
+
+    ctx.strokeStyle = 'red';
+    ctx.strokeText("HTML5",200,350);
+    ctx.fillStyle = 'blue';
+    ctx.fillText("HTML5",200,350);
+</script>
+</body>
+</html>
