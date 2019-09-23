@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>03-jQuery框架中的Ajax模块_get方法</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+    <script src="js/jquery-3.3.1.js"></script>
+
+</head>
+<body>
+<button>发送GET请求</button>
+<button>发送POST请求</button>
+<script>
+
+    //get方法
+    //语法: $.get(url, [data], [callback], [type])
+    //作用: 发送GET请求
+    //第一个参数: 请求路径
+    //第二个参数: 提交到服务器端的具体的参数(对象|查询字符串)
+    //第三个参数: 网络请求成功的回调(responseText,statusText,xhr)
+    //第四个参数: 控制服务器返回给我们的响应体的数据类型  xml | text | json | jsonP |script
+    $("button:first").click(function () {
+
+        /*
+        var data1 = {name:"zs",value:123};
+        var data2 = "name=zs&value=123";
+        $.get("php/02-jQ.php",data2,function (responseText,statusText,xhr) {
+            console.log(responseText);
+            console.log(statusText);
+            console.log(xhr);
+        });*/
+
+
+        $.get("php/03-json.php",function (responseText,statusText,xhr) {
+            console.log(responseText);
+            console.log(statusText);
+            console.log(xhr);
+        },"json");
+
+        $.get("php/04-XML.php",function (responseText,statusText,xhr) {
+            console.log(responseText);
+            console.log(statusText);
+            console.log(xhr);
+        },"xml");
+
+    })
+
+
+    //post方法
+    //语法: $.post(url, [data], [callback], [type])
+    $("button:last").click(function () {
+
+         var data1 = {name:"zs",value:123};
+         var data2 = "name=zs&value=123";
+
+         $.post("php/02-jQ.php",data2,function (responseText,statusText,xhr) {
+             console.log(responseText);
+             console.log(statusText);
+             console.log(xhr);
+         });
+    })
+</script>
+</body>
+</html>

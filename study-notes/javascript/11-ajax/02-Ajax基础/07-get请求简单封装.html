@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>07-get请求简单封装</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+    <script src="js/get.js"></script>
+
+</head>
+<body>
+<button>GET请求01</button>
+<button>GET请求02</button>
+<p></p>
+<script>
+
+    //点击第一个按钮,请求完成之后把结果显示在页面中
+    //点击第二个按钮,请求完成之后把结果打印出来
+   var oBtn1 = document.querySelectorAll("button")[0];
+   var oBtn2 = document.querySelectorAll("button")[1];
+   var p = document.querySelector("p");
+
+   oBtn1.onclick = function () {
+       get("http://127.0.0.1/day02/Code/php/01-get.php",function success(xhr) {
+           p.innerText = "请求成功:" + xhr.responseText;
+       },function error(xhr) {
+           p.innerText = "请求失败:" + xhr.statusText;
+       });
+   }
+
+   oBtn2.onclick = function () {
+       get("http://127.0.0.1/day02/Code/php/02-get.php",function (xhr) {
+           console.log("请求成功:" + xhr.responseText);
+       },function (xhr) {
+           console.log("请求失败:" + xhr.statusText);
+       });
+   }
+</script>
+</body>
+</html>

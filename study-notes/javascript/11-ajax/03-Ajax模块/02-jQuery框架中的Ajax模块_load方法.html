@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>02-jQuery框架中的Ajax模块_load方法</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+    <script src="js/jquery-3.3.1.js"></script>
+
+</head>
+<body>
+<div>占位1</div>
+<div>占位2</div>
+<button>点击我</button>
+<script>
+    //原生的DOM操作的来实现功能:当点击按钮的时候发送请求获取到数据后把div的内容换掉
+    /*
+    var oDiv = document.getElementsByTagName("div")[0];
+    var oBtn = document.getElementsByTagName("button")[0];
+
+    oBtn.onclick = function () {
+        var xhr = new XMLHttpRequest();
+        xhr.open("get","php/01-jQ.php",true);
+        xhr.send();
+        xhr.onreadystatechange = function () {
+            if (xhr.readyState == 4 && xhr.status == 200)
+            {
+                oDiv.innerText = xhr.responseText;
+            }
+        }
+    }*/
+
+    //load方法
+    //语法:$().load(url,[data],[callBack])
+    //作用:根据参数来发送网络请求,请求成功之后用响应的数据来替换指定标签的内容
+    //第一个参数:请求路径
+    //第二个参数:提交给服务器端的数据(参数),支持对象和查询字符串两种形式
+    //第三个参数:完成后的回调函数
+    //注意点1: 默认发送的是GET请求,如果以对象的方式提交参数那么发送的是POST请求
+    //注意点2: load方法支持对返回的数据进行筛选
+    $("button").click(function () {
+        //$("div").load("php/01-jQ.php");
+
+        /*
+        $("div").load("php/01-jQ.php",function () {
+            console.log("---end---");
+        });*/
+
+        //POST请求
+        /*
+        $("div").load("php/01-jQ.php",{name:"zs"},function () {
+            console.log("---end---");
+        });*/
+
+        //GET请求
+        /*
+        $("div").load("php/01-jQ.php","name=qiongda",function () {
+            console.log("---end---");
+        });*/
+
+        //$("div").load("php/01-jQ.html p");
+        $("div").load("php/01-jQ.html .box");
+    })
+</script>
+</body>
+</html>

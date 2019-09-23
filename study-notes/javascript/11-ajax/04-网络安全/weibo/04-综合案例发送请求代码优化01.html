@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="style/weibo.css">
+    <script src="js/jquery-3.3.1.js"></script>
+
+</head>
+<body>
+<div class="xmgArea">
+    <div class="takeComment">
+        <textarea name="textarea" class="takeTextField" id="submitText"></textarea>
+        <div class="takeSbmComment">
+            <input id="btn_send" type="button" class="inputs" value="" />
+        </div>
+    </div>
+    <div class="commentOn">
+        <div id="messList" class="messList">
+            <!--<div class="reply">-->
+                <!--<p class="replyContent">福彩领导能力很强!</p>-->
+                <!--<p class="operation">-->
+                    <!--<span class="replyTime">2018-11-11 12:00:00</span>-->
+                    <!--<span class="handle">-->
+                        <!--<a href="javascript:;" class="top">0</a>-->
+                        <!--<a href="javascript:;" class="down_icon">0</a>-->
+                        <!--<a href="javascript:;" class="cut">删除</a>-->
+                    <!--</span>-->
+                <!--</p>-->
+            <!--</div>-->
+        </div>
+        <div id="page" class="page">
+        	<a href="javascript:;" class="active">1</a>
+        	<a href="javascript:;">2</a>
+        	<a href="javascript:;">3</a>
+        </div>
+    </div>
+</div>
+<script>
+    $(function () {
+
+        //000 代码优化
+        //(1) 请求成功之后,清空输入框
+        //(2) 对服务器返回的数据进行分页的处理  更新UI的时候当前界面中最多只能有6非评论
+        //(3) 最新提交的评论应该要显示在最前面
+
+        //001 先获取页面中对应的标签
+        var oSubmitText = $("#submitText");
+        var oBtn = $("#btn_send");
+        var oList = $("#messList");
+
+        //002 给按钮添加点击事件
+        oBtn.click(function () {
+           //003 当用户点击按钮的时候,获取输入框中的内容,然后把该内容作为参数发送请求给服务器提交
+           //  请求方法：GET
+           //  接口名称：weibo.php?act=add&content=xxx
+           //      参数说明：
+           //  act对应的值固定为add
+           //  content对应的值为具体的微博内容
+           //  返回值示例：{error:0, id: 新添加内容的ID, time: 添加时间}
+
+            //获取文本输入框的内容
+            var textValue = $.trim(oSubmitText.val());
+            if(textValue.length == 0) {
+                alert("请输入数据!");
+                return;
+            };
+
+            //004 发送网络请求新增数据保存到数据库中
+            $.ajax({
+                type:"get",
+                url:"weibo.php",
+                data:"act=add&content="+textValue,
+                dataType:"json",
+                success:function (dataObj) {
+                    oSubmitText.val("");
+
+                    //根据服务器返回的数据来更新UI
+                    //先根据数据来创建标签
+
+                    var time = dateTime(dataObj.time);
+                    var oDiv = $("<div></div>");
+                    var html =
+                        '<p class="replyContent">'+dataObj.content+'</p>'+
+                            '<p class="operation">'+
+                                '<span class="replyTime">'+time+'</span>'+
+                                    '<span class="handle">'+
+                                    '<a href="javascript:;" class="top">'+dataObj.acc+'</a>'+
+                                    '<a href="javascript:;" class="down_icon">'+dataObj.ref+'</a>'+
+                                    '<a href="javascript:;" class="cut">删除</a>'+
+                                '</span>'+
+                           '</p>';
+                    oDiv.html(html);
+                    oDiv.addClass("reply");
+
+                    if(oList.children("div").length >= 6)
+                    {
+                        //把相对最先提交的评论删除
+                        oList.children("div").last().remove();
+                    }
+                    //把创建好的标签插入到页面中
+                    oList.prepend(oDiv);
+
+                }
+            })
+        })
+
+
+        function dateTime(time) {
+            //1542013198 --> Mon Nov 12 2018 17:02:18 GMT+0800 (中国标准时间)-->2018-11-11 12:00:00
+           var date = new Date(time * 1000);
+           var arrM = [];
+            arrM.push(date.getFullYear()+"-");
+            arrM.push((date.getMonth() + 1)+"-");
+            arrM.push(date.getDate()+" ");
+            arrM.push(date.getHours()+":");
+            arrM.push(date.getMinutes()+":");
+            arrM.push(PrefixInteger(date.getSeconds(),2));
+            return arrM.join("");
+        }
+        function PrefixInteger(num, length) {
+            return (Array(length).join('0') + num).slice(-length);
+        }
+    })
+</script>
+</body>
+</html>

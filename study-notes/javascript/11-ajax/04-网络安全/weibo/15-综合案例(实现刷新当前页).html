@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="style/weibo.css">
+    <script src="js/jquery-3.3.1.js"></script>
+    <script src="js/template-web.js"></script>
+
+</head>
+<body>
+<div class="xmgArea">
+    <div class="takeComment">
+        <textarea name="textarea" class="takeTextField" id="submitText"></textarea>
+        <div class="takeSbmComment">
+            <input id="btn_send" type="button" class="inputs" value="" />
+        </div>
+    </div>
+    <div class="commentOn">
+        <div id="messList" class="messList">
+            <!--<div class="reply">-->
+                <!--<p class="replyContent">福彩领导能力很强!</p>-->
+                <!--<p class="operation">-->
+                    <!--<span class="replyTime">2018-11-11 12:00:00</span>-->
+                    <!--<span class="handle">-->
+                        <!--<a href="javascript:;" class="top">0</a>-->
+                        <!--<a href="javascript:;" class="down_icon">0</a>-->
+                        <!--<a href="javascript:;" class="cut">删除</a>-->
+                    <!--</span>-->
+                <!--</p>-->
+            <!--</div>-->
+        </div>
+        <div id="page" class="page">
+        	<!--<a href="javascript:;" class="active">1</a>-->
+        	<!--<a href="javascript:;">2</a>-->
+        	<!--<a href="javascript:;">3</a>-->
+        </div>
+    </div>
+</div>
+<script type="text/template" id="templateID">
+    <p class="replyContent">{{ content }}</p>
+    <p class="operation">
+        <span class="replyTime">{{ time }}</span>
+        <span class="handle">
+                        <a href="javascript:;" class="top">{{ acc }}</a>
+                        <a href="javascript:;" class="down_icon">{{ ref }}</a>
+                        <a href="javascript:;" class="cut">删除</a>
+        </span>
+    </p>
+</script>
+<!--
+    模板引擎的处理:
+    [1] 导入引擎文件
+    [2] 提供模板,里面使用引擎语法来处理
+    [3] 提供一个对象,保存着必要的数据
+    [4] 调用template方法来渲染得到一个标签片段
+
+-->
+<script>
+    $(function () {
+
+        var pageIndex = window.location.hash.substr(1) || 1;
+
+        //[000] 获取对应的标签
+        var oBtn = $("#btn_send");
+        var oList = $("#messList");
+        var oPageList = $("#page");
+        var oSubmitText = $("#submitText");
+
+        //[001] 获取并展示页码信息
+        getPage();
+
+        //[002] 默认显示第一页的数据
+        getMsgWithPageCount(pageIndex);
+
+        //[003] 添加评论的功能
+        //[003-01] 给标题添加点击事件
+        oBtn.click(function () {
+
+            //[003-02] 获取输入框中的内容,检测
+            var textValue = $.trim(oSubmitText.val());
+
+            if(textValue.length == 0) {
+                alert("请输入数据!");
+                return;
+            };
+
+            //[003-03] 发送网络请求给服务器
+            $.ajax({
+                type:"get",
+                url:"weibo.php",
+                data:"act=add&content="+textValue,
+                dataType:"json",
+                success:function (dataObj) {
+
+                    //网络请求成功之后:
+                    //[003-04] 清空输入框的内容
+                    oSubmitText.val("");
+
+                    // //[003-05] 解析并处理服务器返回的数据
+                    // dataObj.time = dateTime(dataObj.time); //转换时间的格式
+                    //
+                    // //[003-06] 更新UI
+                    // //(1) 分页限制-设置每页只能显示6条数据
+                    // if(oList.children("div").length >= 6)
+                    // {
+                    //     oList.children("div").last().remove();
+                    // }
+                    // //(2) 根据数据来创建标签插入页面中
+                    // oList.prepend(createEle(dataObj));
+
+                    //(3) 更新页码信息
+                    getPage();
+                    getMsgWithPageCount(1);
+                }
+            })
+        })
+
+        //[004] 点击页码切换显示
+        //[004-01] 通过事件委托来添加点击事件
+        oPageList.on("click","a",function () {
+
+            //[004-02] 设置当前页面的选中状态
+            $(this).addClass("active").siblings().removeClass("active");
+
+            //[004-03] 获取当前页码对应的评论数据显示出来
+            var index = $(this).text();
+            window.location.hash = index;
+            getMsgWithPageCount(index)
+        });
+
+        //[005] 点赞功能
+        //[006] 踩一踩功能
+        //[007] 删除功能
+        //以上三个功能的实现参考createEle
+
+        //功能性方法
+        function getPage() {
+            $.ajax({
+                type:"get",
+                url:"weibo.php",
+                data:"act=get_page_count",
+                dataType:"json",
+                success:function (countObj) {
+
+                    oPageList.empty();
+                    //解析服务器返回的数据
+                    var count = countObj["count"];
+                    for (var i = 0 ;i<count;i++)
+                    {
+                        var oPage =  $('<a href=\"javascript:;\">'+(i + 1)+'</a>');
+                        oPageList.append(oPage);
+                    }
+                    oPageList.children("a").eq(pageIndex -1 ).addClass("active");
+                }
+            })
+        }
+        function dateTime(time) {
+            //1542013198 --> Mon Nov 12 2018 17:02:18 GMT+0800 (中国标准时间)-->2018-11-11 12:00:00
+           var date = new Date(time * 1000);
+           var arrM = [];
+            arrM.push(date.getFullYear()+"-");
+            arrM.push((date.getMonth() + 1)+"-");
+            arrM.push(date.getDate()+" ");
+            arrM.push(date.getHours()+":");
+            arrM.push(date.getMinutes()+":");
+            arrM.push(PrefixInteger(date.getSeconds(),2));
+            return arrM.join("");
+        }
+        function createEle(dataObj) {
+            var oDiv = $("<div></div>");
+            var html = template("templateID", dataObj);
+            oDiv.html(html);
+            oDiv.addClass("reply");
+            addClickWithTop(oDiv,dataObj.id);
+            addClickWithDown(oDiv,dataObj.id);
+            addClickWithDel(oDiv,dataObj.id);
+            return oDiv;
+        }
+        function PrefixInteger(num, length) {
+            return (Array(length).join('0') + num).slice(-length);
+        }
+        function addClickWithTop(oDiv,ID) {
+            oDiv.find(".top").click(function () {
+                var self = this;
+                //(2) 发送请求同步的数据
+                //weibo.php?act=acc&id=xx
+                $.ajax({
+                    type:"get",
+                    url:"weibo.php",
+                    data:"act=acc&id="+ID,
+                    dataType:"json",
+                    success:function (obj) {
+                        if(obj.error == 0)
+                        {
+                            //请求成功再更新UI
+                            $(self).text($(self).text() *1 + 1)
+                        }
+                    }
+                })
+            })
+        }
+        function addClickWithDown(oDiv,ID) {
+            oDiv.find(".down_icon").click(function () {
+                var self = this;
+                //(2) 发送请求同步的数据
+                //weibo.php?act=acc&id=xx
+                $.ajax({
+                    type:"get",
+                    url:"weibo.php",
+                    data:"act=ref&id="+ID,
+                    dataType:"json",
+                    success:function (obj) {
+                        if(obj.error == 0)
+                        {
+                            //请求成功再更新UI
+                            $(self).text($(self).text() *1 + 1)
+                        }
+                    }
+                })
+            })
+        }
+        function addClickWithDel(oDiv,ID) {
+            oDiv.find(".cut").click(function () {
+                var self = this;
+                //(2) 发送请求同步的数据
+                //weibo.php?act=acc&id=xx
+                $.ajax({
+                    type:"get",
+                    url:"weibo.php",
+                    data:"act=del&id="+ID,
+                    dataType:"json",
+                    success:function (obj) {
+                        if(obj.error == 0)
+                        {
+                            //请求成功再更新UI
+                            //$(self).text($(self).text() *1 + 1)
+                            /*
+                            console.log($(self).parents(".reply")[0]);
+                            console.log("---删除数据成功---");
+                            $(self).parents(".reply").remove();
+                            */
+                            getMsgWithPageCount(pageIndex);
+                            getPage();
+                        }
+                    }
+                })
+            })
+        }
+        function getMsgWithPageCount(pageCount) {
+            $.ajax({
+                type:"get",
+                url:"weibo.php",
+                data:"act=get&page="+pageCount,
+                success:function (res) {
+                    oList.empty();
+
+                    //解析服务器返回的数据(非标准的JSON数据)
+                    var dataArr = eval(res);
+                    for (var i = 0; i < dataArr.length; i++) {
+                        var data = dataArr[i];
+                        data.time = dateTime(data.time);
+                        oList.append(createEle(data));
+                    }
+                }
+            })
+        }
+    })
+</script>
+</body>
+</html>

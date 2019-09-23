@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>03-jQuery框架中的Ajax模块_get方法</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+    <script src="js/jquery-3.3.1.js"></script>
+
+</head>
+<body>
+<button>getJSON方法</button>
+<script>
+
+    //getJSON方法
+    //$.getJSON(url,data,callBack)
+    //该方法实现基于$.get方法 === $.get(url,data,callBack,"json")
+    $("button:first").click(function () {
+       $.getJSON("php/03-json.php",function (responseJSONOBJ,statusText,xhr) {
+           console.log(responseJSONOBJ);
+           console.log(statusText);
+           console.log(xhr);
+       })
+    })
+
+</script>
+</body>
+</html>

@@ -1,0 +1,50 @@
+001 发布微博信息
+    请求方法：GET
+    接口名称：weibo.php?act=add&content=xxx
+    参数说明：
+            act对应的值固定为add
+            content对应的值为具体的微博内容
+    返回值示例：{error:0, id: 新添加内容的ID, time: 添加时间}
+
+
+002 获取页码信息
+    请求方法：GET
+    接口名称：weibo.php?act=get_page_count
+    参数说明：
+            act对应的值固定为get_page_count
+    返回值示例：{count:页数}
+
+003 获取指定页码对应的数据
+    请求方法：GET
+    接口名称：weibo.php?act=get&page=xx
+    参数说明：
+            act对应的值固定为get
+            page对应的值为当前的页码值
+    返回值示例： [{id: ID, content: "内容", time: 时间戳, acc: 顶次数, ref: 踩次数}, {...}, ...]
+
+004 微博点赞
+    请求方法：GET
+    接口名称：weibo.php?act=acc&id=xx
+    参数说明：
+            act对应的值固定为acc
+            id对应的值为点赞微博的id标记
+    返回值示例：{error:0}
+
+
+005 微博踩一踩
+    请求方法：GET
+    接口名称：weibo.php?act=ref&id=xx
+    参数说明：
+            act对应的值固定为ref
+            id对应的值为踩一踩微博的id标记
+    返回值示例：{error:0}
+
+
+
+006 删除某条微博数据
+    请求方法：GET
+    接口名称：weibo.php?act=del&id=xx
+    参数说明：
+            act对应的值固定为del
+            id对应的值为删除微博的id标记
+    返回值示例：{error:0}

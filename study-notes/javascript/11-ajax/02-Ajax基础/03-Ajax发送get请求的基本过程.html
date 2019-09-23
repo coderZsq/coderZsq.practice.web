@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>03-Ajax发送get请求的基本过程</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+<button>发送GET请求</button>
+<script>
+   var btn = document.getElementsByTagName("button")[0];
+   btn.onclick = function () {
+       //01 创建网络请求的对象
+       var xhr = new XMLHttpRequest();
+
+       //02 设置请求对象
+       //参数1:请求方法 get
+       //参数2:请求路径
+       //参数3:是否发送异步请求 true false
+       //xhr.open("get","php/01-get.php",true);
+       xhr.open("get","http://127.0.0.1/day02/Code/php/01-get.php",true);
+
+       //03 发送请求
+       xhr.send();
+
+       //04 监听网络请求的状态
+       //当网络请求的状态发生了改变就执行函数
+       xhr.onreadystatechange = function () {
+           //readyState记录的是网络请求当前状态
+           //console.log(xhr.readyState);
+           if (xhr.readyState === 4)
+           {
+               //05 处理服务器返回的数据
+               console.log(xhr.responseText);
+           }
+       }
+   }
+</script>
+</body>
+</html>

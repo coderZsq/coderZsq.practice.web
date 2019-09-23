@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>02-使用表单发送get请求</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+<!--
+    文件上传
+    [1] 使用POST请求
+    [2] 设置enctype
+    [3] 文件上传 后端$_FILES
+-->
+<form action="04-from-upload.php" method="post" enctype="multipart/form-data">
+    <input type="file" name="username">
+    <input type="submit" value="上传">
+</form>
+</body>
+</html>

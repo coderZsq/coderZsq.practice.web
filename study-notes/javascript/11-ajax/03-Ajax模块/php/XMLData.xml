@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<root>
+    <product id="nz">
+        <title>时尚女装</title>
+        <des>大牌女装 1件9999.00RMB</des>
+        <img>images/1.png</img>
+    </product>
+    <product id="bb">
+        <title>时尚包包</title>
+        <des>最好的包包最可爱的宝宝</des>
+        <img>images/2.png</img>
+    </product>
+    <product id="xz">
+        <title>时尚鞋子</title>
+        <des>老板黄鹤和小姨子跑路,全部清仓处理</des>
+        <img>images/3.png</img>
+    </product>
+</root>

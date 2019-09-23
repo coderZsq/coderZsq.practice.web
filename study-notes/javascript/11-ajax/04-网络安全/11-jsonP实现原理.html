@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <!--<script src="https://code.jquery.com/jquery-3.3.1.js"></script>-->
+</head>
+<body>
+<!--
+其实是利用某些特定的标签来走偏门实现跨域网络请求
+jsonP -- 特定的标签(script | img)设置属性发请求 + 服务器配合(返回特定格式的json数据)
+
+//http://localhost:63342/www/day04/Code/11-jsonP%E5%AE%9E%E7%8E%B0%E5%8E%9F%E7%90%86.html?_ijt=g1dlfe17t7bnc7ndve4so38ioc
+//http://wendingding.com/%E9%B2%B8%E9%B1%BC.png
+//https://code.jquery.com/jquery-3.3.1.js
+
+总结:
+[1] 提供script标签,在该标签中提供函数的声明(接受参数)
+[2] 再提供一个script标签,设置该标签的src属性的值为 请求的路径
+[3] 服务器端需要配合返回特定格式的数据 fn(数据)
+-->
+<script>
+    function callBack(obj) {
+        console.log(obj);
+    }
+</script>
+
+<script src="http://127.0.0.1/day04/Code/php/ajax.php"></script>
+
+
+<!--<script>-->
+    <!--callBack({'name':'zs','age':18});-->
+<!--</script>-->
+
+</body>
+
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>02-使用表单发送get请求</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+<!--
+    表单发送请求(GET)
+    (1) 请求路径              action
+    (2) 请求方法              GET(默认)|POST
+    (3) 参数以键值对的方式提交
+
+
+    GET:http://127.0.0.1/day01/Code/02-form-get.php?username=xxxx&password=11111
+    POST:http://127.0.0.1/day01/Code/03-form-post.php
+    区别:
+    [1] GET请求的路径中有参数,参数直接拼接跟在URL的后面 协议 + 主机地址 + 路径 ? key1=value1&key2=value2
+        POST请求路径中没有参数,参数放在请求体中提交
+    [2] GET请求安全性很差
+        POST请求相对安全
+    [3] GET请求参数有限制(大小 && 个数)
+        POST请求没有参数的限制(文件上传使用POST请求)
+-->
+<form action="03-form-post.php" method="post">
+    <input type="text" placeholder="请输入用户名" name="username">
+    <input type="text" placeholder="请输入密码" name="password">
+    <input type="submit" value="登录">
+</form>
+</body>
+</html>

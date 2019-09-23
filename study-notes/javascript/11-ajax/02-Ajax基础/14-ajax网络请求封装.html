@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>10-ajax发送同步请求</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+    <script src="js/ajax2.js"></script>
+    <!--<script src="js/ajax1.js"></script>-->
+    <!--<script src="js/ajax0.js"></script>-->
+    <!--<script src="js/get2.js"></script>-->
+    <!--<script src="js/post.js"></script>-->
+
+</head>
+<button>GET请求</button>
+<button>POST请求</button>
+
+<body>
+<script>
+    var oBtn1 = document.getElementsByTagName("button")[0];
+    oBtn1.onclick = function () {
+//        ajax({
+//            type:"get",
+//            obj:{username:"熊二",password:"654321"},
+//            url:"php/06-ajax.php",
+//            successCallBack:function (xhr) {
+//                console.log("成功--" + xhr.responseText);
+//            },
+//            errorCallBack:function (xhr) {
+//                console.log("失败---" + xhr.statusText);
+//            }
+//        });
+
+        get({
+            url:"php/06-ajax.php",
+            obj:{username:"熊二",password:"654321"},
+            successCallBack:function (xhr) {
+                console.log("成功--" + xhr.responseText);
+            },
+            errorCallBack:function (xhr) {
+                console.log("失败---" + xhr.statusText);
+            }
+        });
+    }
+
+    var oBtn2 = document.getElementsByTagName("button")[1];
+    oBtn2.onclick = function () {
+        ajax({
+            type:"post",
+            obj:{username:"熊三",password:"654321"},
+            url:"php/06-ajax.php",
+            successCallBack:function (xhr) {
+                console.log("成功--" + xhr.responseText);
+            },
+            errorCallBack:function (xhr) {
+                console.log("失败---" + xhr.statusText);
+            }
+        });
+    }
+</script>
+</body>
+</html>

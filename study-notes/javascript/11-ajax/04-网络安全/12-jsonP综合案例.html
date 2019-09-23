@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+
+        *{
+            margin: 10px;
+        }
+        input{
+            width: 200px;
+            height: 30px;
+            text-indent: 10px;
+        }
+    </style>
+</head>
+<body>
+<!--
+[1] 提供script标签,在该标签中提供函数的声明(接受参数)
+[2] 再提供一个script标签,设置该标签的src属性的值为 请求的路径
+[3] 服务器端需要配合返回特定格式的数据 fn(数据)
+https://www.baidu.com/su?wd=w&cb=BaiduSuggestion.callbacks.give1542105906922
+-->
+<input type="text" placeholder="请输入搜索的内容">
+<script>
+    function callBack(obj) {
+        var data = obj["s"];
+        var oUl = document.getElementsByTagName("ul")[0] || document.createElement("ul");
+        oUl.innerHTML = "";
+        for(var i = 0;i<data.length;i++)
+        {
+            var oLi = document.createElement("li");
+            oLi.innerText = data[i];
+            oUl.appendChild(oLi);
+        }
+        document.body.appendChild(oUl);
+    }
+</script>
+<script>
+    var oInput = document.getElementsByTagName("input")[0];
+    oInput.onkeyup = function () {
+        var oScript = document.getElementById("demoID");
+        if(oScript) document.body.removeChild(oScript);
+
+        oScript = document.createElement("script");
+        oScript.setAttribute("id","demoID");
+        oScript.setAttribute("src","https://www.baidu.com/su?wd="+oInput.value+"&cb=callBack");
+        document.body.appendChild(oScript);
+    }
+</script>
+</body>
+</html>
