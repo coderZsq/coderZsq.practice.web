@@ -2,101 +2,17 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b1675f31-1259-4dc2-a877-26f564c58408" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/11-ajax/02-Ajax基础/js/ajax0.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../resume/contents/img1.png" beforeDir="false" afterPath="$PROJECT_DIR$/../../resume/contents/img1.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../resume/contents/img2.png" beforeDir="false" afterPath="$PROJECT_DIR$/../../resume/contents/img2.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../resume/contents/img3.png" beforeDir="false" afterPath="$PROJECT_DIR$/../../resume/contents/img3.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../html+css/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../html+css/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
-    <ignored path="$PROJECT_DIR$/.tmp/" />
-    <ignored path="$PROJECT_DIR$/temp/" />
-    <ignored path="$PROJECT_DIR$/tmp/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
-  </component>
-  <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/11-ajax/02-Ajax基础/11-ajax发送POST请求.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1144">
-              <caret line="52" column="46" lean-forward="true" selection-start-line="52" selection-start-column="46" selection-end-line="52" selection-end-column="46" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/11-ajax/02-Ajax基础/12-ajax网络请求封装.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="537">
-              <caret line="29" lean-forward="true" selection-start-line="29" selection-end-line="29" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/11-ajax/02-Ajax基础/php/03-get.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="176">
-              <caret line="8" column="12" lean-forward="true" selection-start-line="8" selection-start-column="12" selection-end-line="8" selection-end-column="12" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/11-ajax/02-Ajax基础/13-ajax网络请求封装.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-387" />
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/11-ajax/02-Ajax基础/14-ajax网络请求封装.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="317">
-              <caret line="43" column="24" selection-start-line="43" selection-start-column="24" selection-end-line="43" selection-end-column="24" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/11-ajax/02-Ajax基础/16-网络请求小案例(JSON1).html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="324">
-              <caret line="55" column="44" lean-forward="true" selection-start-line="55" selection-start-column="44" selection-end-line="55" selection-end-column="44" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/11-ajax/02-Ajax基础/17-JSON数据的序列化和反序列处理.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-427" />
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/11-ajax/02-Ajax基础/15-网络请求小案例(数据处理).html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-761" />
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/11-ajax/02-Ajax基础/18-网络请求小案例(XML).html">
-          <provider selected="true" editor-type-id="text-editor" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/11-ajax/02-Ajax基础/js/ajax0.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2055">
-              <caret line="94" column="55" lean-forward="true" selection-start-line="94" selection-start-column="55" selection-end-line="94" selection-end-column="55" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -109,80 +25,16 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
   </component>
-  <component name="IdeDocumentHistory">
-    <option name="CHANGED_PATHS">
-      <list>
-        <option value="$PROJECT_DIR$/01-预编译/index.html" />
-        <option value="$PROJECT_DIR$/01-预编译/01-预编译.js" />
-        <option value="$PROJECT_DIR$/02-类数组/index.html" />
-        <option value="$PROJECT_DIR$/02-类数组/01-类数组.js" />
-        <option value="$PROJECT_DIR$/03-dom/index.html" />
-        <option value="$PROJECT_DIR$/03-dom/01-dom.js" />
-        <option value="$PROJECT_DIR$/04-定时器/01-定时器.js" />
-        <option value="$PROJECT_DIR$/01-基础概念/index.html" />
-        <option value="$PROJECT_DIR$/01-基础概念/05-正则表达式.js" />
-        <option value="$PROJECT_DIR$/01-预备概念/index.html" />
-        <option value="$PROJECT_DIR$/01-预备概念/05-正则表达式.js" />
-        <option value="$PROJECT_DIR$/02-网页特效/02-常用函数库/index.html" />
-        <option value="$PROJECT_DIR$/02-网页特效/04-天猫导航/index.html" />
-        <option value="$PROJECT_DIR$/02-网页特效/05-事件对象/index.html" />
-        <option value="$PROJECT_DIR$/02-网页特效/18-中部吸顶/index.html" />
-        <option value="$PROJECT_DIR$/02-网页特效/36-旋转木马/index.html" />
-        <option value="$PROJECT_DIR$/02-网页特效/37-序列帧/index.html" />
-        <option value="$PROJECT_DIR$/02-网页特效/38-面向对象/07-通过构造函数创建对象-优化1.html" />
-        <option value="$PROJECT_DIR$/02-网页特效/46-五彩小球/js/ColorBall.js" />
-        <option value="$PROJECT_DIR$/03-基础语法/16-函数和对象的创建.html" />
-        <option value="$PROJECT_DIR$/05-继承/12-原型链注意点.html" />
-        <option value="$PROJECT_DIR$/08-作用域链/09-div事件和闭包.html" />
-        <option value="$PROJECT_DIR$/10-jquery/03-DOM操作/19-jQuery节点的复制和替换.html" />
-        <option value="$PROJECT_DIR$/11-ajax/02-Ajax基础/js/ajax.js" />
-        <option value="$PROJECT_DIR$/11-ajax/02-Ajax基础/js/ajax0.js" />
-      </list>
-    </option>
-  </component>
-  <component name="ProjectFrameBounds" extendedState="6" fullScreen="true">
-    <option name="width" value="1680" />
-    <option name="height" value="1050" />
-  </component>
+  <component name="ProjectId" id="1RMgzsAl87iwt6595gpmJ8cSjfq" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
-  </component>
-  <component name="ProjectView">
-    <navigator proportions="" version="1">
-      <foldersAlwaysOnTop value="true" />
-    </navigator>
-    <panes>
-      <pane id="ProjectPane">
-        <subPane>
-          <expand>
-            <path>
-              <item name="javascript" type="b2602c69:ProjectViewProjectNode" />
-              <item name="javascript" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="javascript" type="b2602c69:ProjectViewProjectNode" />
-              <item name="javascript" type="462c0819:PsiDirectoryNode" />
-              <item name="11-ajax" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="javascript" type="b2602c69:ProjectViewProjectNode" />
-              <item name="javascript" type="462c0819:PsiDirectoryNode" />
-              <item name="11-ajax" type="462c0819:PsiDirectoryNode" />
-              <item name="02-Ajax基础" type="462c0819:PsiDirectoryNode" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
-      </pane>
-      <pane id="Scope" />
-    </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
-    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
+    <property name="settings.editor.selected.configurable" value="reference.settings.ide.settings.web.browsers" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -226,339 +78,31 @@
       <workItem from="1568858125073" duration="9176000" />
       <workItem from="1568943505296" duration="2708000" />
       <workItem from="1569218944744" duration="7610000" />
-      <workItem from="1569288898546" duration="1694000" />
+      <workItem from="1569288898546" duration="10029000" />
+      <workItem from="1569375378166" duration="5157000" />
+      <workItem from="1569462130469" duration="5242000" />
+      <workItem from="1569482297212" duration="104000" />
+      <workItem from="1569482649827" duration="79000" />
+      <workItem from="1569484062079" duration="98000" />
+      <workItem from="1569484218974" duration="2271000" />
+      <workItem from="1569721710316" duration="782000" />
     </task>
     <servers />
-  </component>
-  <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="191153000" />
-  </component>
-  <component name="ToolWindowManager">
-    <frame x="0" y="0" width="1680" height="1050" extended-state="6" />
-    <editor active="true" />
-    <layout>
-      <window_info id="Favorites" order="0" side_tool="true" />
-      <window_info active="true" content_ui="combo" id="Project" order="1" visible="true" weight="0.17600964" />
-      <window_info id="Structure" order="2" side_tool="true" weight="0.25" />
-      <window_info anchor="bottom" id="Terminal" order="0" />
-      <window_info anchor="bottom" id="Event Log" order="1" side_tool="true" />
-      <window_info anchor="bottom" id="Version Control" order="2" />
-      <window_info anchor="bottom" id="Docker" order="3" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Message" order="4" />
-      <window_info anchor="bottom" id="Find" order="5" />
-      <window_info anchor="bottom" id="Run" order="6" weight="0.030612245" />
-      <window_info anchor="bottom" id="Debug" order="7" weight="0.4" />
-      <window_info anchor="bottom" id="Cvs" order="8" weight="0.25" />
-      <window_info anchor="bottom" id="Inspection" order="9" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="10" />
-      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
-      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-    </layout>
-    <layout-to-restore>
-      <window_info id="Favorites" order="0" side_tool="true" />
-      <window_info active="true" content_ui="combo" id="Project" order="1" visible="true" weight="0.17600964" />
-      <window_info id="Structure" order="2" side_tool="true" weight="0.25" />
-      <window_info anchor="bottom" id="Terminal" order="0" />
-      <window_info anchor="bottom" id="Event Log" order="1" side_tool="true" />
-      <window_info anchor="bottom" id="Version Control" order="2" />
-      <window_info anchor="bottom" id="Docker" order="3" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Message" order="4" />
-      <window_info anchor="bottom" id="Find" order="5" />
-      <window_info anchor="bottom" id="Run" order="6" weight="0.030612245" />
-      <window_info anchor="bottom" id="Debug" order="7" weight="0.4" />
-      <window_info anchor="bottom" id="Cvs" order="8" weight="0.25" />
-      <window_info anchor="bottom" id="Inspection" order="9" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="10" />
-      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
-      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-    </layout-to-restore>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
-  <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/10-jquery/07-项目实战/10-项目实现切换操作/js/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3476">
-          <caret line="158" column="25" selection-start-line="158" selection-start-column="25" selection-end-line="158" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/10-jquery/07-项目实战/07-项目实现添加功能(数组存储)/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="176">
-          <caret line="8" column="43" selection-start-line="8" selection-start-column="43" selection-end-line="8" selection-end-column="43" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/10-jquery/07-项目实战/07-项目实现添加功能(数组存储)/js/jquery-3.3.1.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/10-jquery/07-项目实战/07-项目实现添加功能(数组存储)/js/store.min.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/10-jquery/07-项目实战/11-项目实现标记完成/js/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="509">
-          <caret line="193" column="48" selection-start-line="193" selection-start-column="48" selection-end-line="193" selection-end-column="48" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/10-jquery/06-源码解读/16-on方法的实现分析.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="286">
-          <caret line="13" selection-start-line="13" selection-end-line="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/11-ajax/01-Php语法/03-使用表单发送post请求.html">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/11-ajax/01-Php语法/03-form-post.php">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/11-ajax/01-Php语法/file/123.jpeg">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/11-ajax/01-Php语法/01-base.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="576">
-          <caret line="57" column="7" lean-forward="true" selection-start-line="57" selection-start-column="7" selection-end-line="57" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/11-ajax/03-Ajax模块/09-jQuery框架中的Ajax模块_AjaxSetup.html">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/11-ajax/03-Ajax模块/07-jQuery框架中的Ajax模块_Ajax方法.html">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/11-ajax/03-Ajax模块/05-jQuery框架中的Ajax模块_getJSON方法.html">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/11-ajax/03-Ajax模块/04-jQuery框架中的Ajax模块_post方法.html">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/11-ajax/03-Ajax模块/php/05-ajax.php">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/11-ajax/03-Ajax模块/php/04-XML.php">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/11-ajax/03-Ajax模块/php/03-json.php">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/11-ajax/03-Ajax模块/php/02-jQ.php">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/11-ajax/01-Php语法/02-使用表单发送get请求.html">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/11-ajax/01-Php语法/02-form-get.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="308">
-          <caret line="14" column="29" selection-start-line="14" selection-start-column="29" selection-end-line="14" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/05-继承/22-通过深拷贝实现继承.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="182">
-          <caret line="14" column="33" selection-start-line="14" selection-start-column="33" selection-end-line="14" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/05-继承/15-Object.create()方法.html">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/05-继承/14-原型链继承的问题.html">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/05-继承/17-借用构造函数继承的基本写法.html">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/05-继承/18-组合继承的基本写法.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="427">
-          <caret line="27" column="5" selection-start-line="27" selection-start-column="4" selection-end-line="27" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/11-ajax/01-Php语法/04-使用表单文件上传.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="506">
-          <caret line="23" column="7" selection-start-line="23" selection-start-column="7" selection-end-line="23" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/11-ajax/01-Php语法/04-from-upload.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="462">
-          <caret line="20" column="60" selection-start-line="20" selection-start-column="60" selection-end-line="20" selection-end-column="60" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/11-ajax/02-Ajax基础/02-Ajax技术简单介绍.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="418">
-          <caret line="19" column="3" lean-forward="true" selection-start-line="19" selection-start-column="3" selection-end-line="19" selection-end-column="3" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/11-ajax/02-Ajax基础/01-回顾和课程内容说明.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="506">
-          <caret line="23" column="10" lean-forward="true" selection-start-line="23" selection-start-column="10" selection-end-line="23" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/11-ajax/02-Ajax基础/03-Ajax发送get请求的基本过程.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="416">
-          <caret line="24" column="47" lean-forward="true" selection-start-line="24" selection-start-column="47" selection-end-line="24" selection-end-column="47" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/11-ajax/02-Ajax基础/04-ajax发送get请求回调和兼容性处理.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-452" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/11-ajax/02-Ajax基础/05-响应状态码介绍.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="550">
-          <caret line="25" column="3" lean-forward="true" selection-start-line="25" selection-start-column="3" selection-end-line="25" selection-end-column="3" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/11-ajax/02-Ajax基础/07-get请求简单封装.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="405">
-          <caret line="25" lean-forward="true" selection-start-line="25" selection-end-line="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/11-ajax/02-Ajax基础/09-get请求超时处理.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="537">
-          <caret line="34" column="13" lean-forward="true" selection-start-line="34" selection-start-column="13" selection-end-line="34" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/11-ajax/02-Ajax基础/10-ajax发送同步请求.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="291">
-          <caret line="25" column="13" lean-forward="true" selection-start-line="25" selection-start-column="13" selection-end-line="25" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/11-ajax/02-Ajax基础/06-get请求缓存问题.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="9">
-          <caret line="38" lean-forward="true" selection-start-line="38" selection-end-line="38" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/11-ajax/02-Ajax基础/08-get请求参数和中文处理.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="660">
-          <caret line="40" column="34" lean-forward="true" selection-start-line="40" selection-start-column="34" selection-end-line="40" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/11-ajax/02-Ajax基础/备课案例.html">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/11-ajax/02-Ajax基础/目录文件.html">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/11-ajax/02-Ajax基础/js/get.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="364">
-          <caret line="17" column="27" selection-start-line="17" selection-start-column="27" selection-end-line="17" selection-end-column="27" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/11-ajax/02-Ajax基础/js/get2.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="66">
-          <caret line="3" selection-start-line="3" selection-end-line="61" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/11-ajax/02-Ajax基础/js/ajax0.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2055">
-          <caret line="94" column="55" lean-forward="true" selection-start-line="94" selection-start-column="55" selection-end-line="94" selection-end-column="55" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/11-ajax/02-Ajax基础/11-ajax发送POST请求.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1144">
-          <caret line="52" column="46" lean-forward="true" selection-start-line="52" selection-start-column="46" selection-end-line="52" selection-end-column="46" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/11-ajax/02-Ajax基础/php/03-get.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="176">
-          <caret line="8" column="12" lean-forward="true" selection-start-line="8" selection-start-column="12" selection-end-line="8" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/11-ajax/02-Ajax基础/15-网络请求小案例(数据处理).html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-761" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/11-ajax/02-Ajax基础/16-网络请求小案例(JSON1).html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="324">
-          <caret line="55" column="44" lean-forward="true" selection-start-line="55" selection-start-column="44" selection-end-line="55" selection-end-column="44" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/11-ajax/02-Ajax基础/18-网络请求小案例(XML).html">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/11-ajax/02-Ajax基础/17-JSON数据的序列化和反序列处理.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-427" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/11-ajax/02-Ajax基础/12-ajax网络请求封装.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="537">
-          <caret line="29" lean-forward="true" selection-start-line="29" selection-end-line="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/11-ajax/02-Ajax基础/13-ajax网络请求封装.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-387" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/11-ajax/02-Ajax基础/14-ajax网络请求封装.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="317">
-          <caret line="43" column="24" selection-start-line="43" selection-start-column="24" selection-end-line="43" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
 </project>

@@ -1,81 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="6c3d14ff-dcb2-440d-831b-3fe7ef4f2032" name="Default Changelist" comment="" />
-    <ignored path="$PROJECT_DIR$/.tmp/" />
-    <ignored path="$PROJECT_DIR$/temp/" />
-    <ignored path="$PROJECT_DIR$/tmp/" />
+    <list default="true" id="6c3d14ff-dcb2-440d-831b-3fe7ef4f2032" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../javascript/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../javascript/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="FileEditorManager">
-    <leaf />
-  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
   </component>
-  <component name="IdeDocumentHistory">
-    <option name="CHANGED_PATHS">
-      <list>
-        <option value="$PROJECT_DIR$/41-HTML5新标签/02-音频标签.html" />
-        <option value="$PROJECT_DIR$/41-新特性/08-弹性效果.html" />
-        <option value="$PROJECT_DIR$/41-新特性/09-手风琴效果.html" />
-        <option value="$PROJECT_DIR$/41-新特性/15-照片墙.html" />
-        <option value="$PROJECT_DIR$/41-新特性/18-动画其他属性.html" />
-        <option value="$PROJECT_DIR$/41-新特性/21-3D.html" />
-        <option value="$PROJECT_DIR$/41-新特性/22-立方体.html" />
-        <option value="$PROJECT_DIR$/41-新特性/23-3D立方体终极方案.html" />
-        <option value="$PROJECT_DIR$/41-新特性/24-3D立方体终极方案1.html" />
-        <option value="$PROJECT_DIR$/41-新特性/25-3D立方体终极方案2.html" />
-        <option value="$PROJECT_DIR$/41-新特性/26-无限轮播图.html" />
-        <option value="$PROJECT_DIR$/41-新特性/28-背景图片定位属性.html" />
-        <option value="$PROJECT_DIR$/41-新特性/29-背景绘制属性.html" />
-        <option value="$PROJECT_DIR$/41-新特性/30-多重背景.html" />
-        <option value="$PROJECT_DIR$/41-新特性/31-多重背景练习.html" />
-        <option value="$PROJECT_DIR$/41-新特性/32-云层效果.html" />
-        <option value="$PROJECT_DIR$/41-新特性/33-无限轮播图.html" />
-        <option value="$PROJECT_DIR$/41-新特性/27-3D播放器.html" />
-      </list>
-    </option>
-  </component>
-  <component name="ProjectFrameBounds" fullScreen="true">
-    <option name="width" value="1680" />
-    <option name="height" value="1050" />
-  </component>
+  <component name="ProjectId" id="1RMk4YoMluIzALXujHbyf7fdaDP" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
-  <component name="ProjectView">
-    <navigator proportions="" version="1">
-      <foldersAlwaysOnTop value="true" />
-    </navigator>
-    <panes>
-      <pane id="Scope" />
-      <pane id="ProjectPane">
-        <subPane>
-          <expand>
-            <path>
-              <item name="html+css" type="b2602c69:ProjectViewProjectNode" />
-              <item name="html+css" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="html+css" type="b2602c69:ProjectViewProjectNode" />
-              <item name="html+css" type="462c0819:PsiDirectoryNode" />
-              <item name="41-新特性" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="html+css" type="b2602c69:ProjectViewProjectNode" />
-              <item name="html+css" type="462c0819:PsiDirectoryNode" />
-              <item name="41-新特性" type="462c0819:PsiDirectoryNode" />
-              <item name="images" type="462c0819:PsiDirectoryNode" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
-      </pane>
-    </panes>
-  </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
@@ -111,295 +51,25 @@
       <workItem from="1566978674470" duration="5699000" />
       <workItem from="1567043737453" duration="3493000" />
       <workItem from="1567059136258" duration="5000" />
+      <workItem from="1569484163097" duration="39000" />
+      <workItem from="1569484213884" duration="2000" />
     </task>
     <servers />
-  </component>
-  <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="14135000" />
-  </component>
-  <component name="ToolWindowManager">
-    <frame x="0" y="0" width="1680" height="1050" extended-state="0" />
-    <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.15611814" />
-      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info id="Favorites" order="2" side_tool="true" />
-      <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
-      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Version Control" order="7" />
-      <window_info anchor="bottom" id="Terminal" order="8" />
-      <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
-      <window_info anchor="bottom" id="Docker" order="10" show_stripe_button="false" />
-      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
-      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-    </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
-  <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/11-iframe/01-iframe.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="352">
-          <caret line="16" column="7" selection-start-line="16" selection-start-column="7" selection-end-line="16" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/11-iframe/02-iframe.html">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/10-a/04-a.html">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/10-a/02-a.html">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/10-a/03-a.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="286">
-          <caret line="13" column="7" selection-start-line="13" selection-start-column="7" selection-end-line="13" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/41-HTML5新标签/01-视频.html" />
-    <entry file="file://$PROJECT_DIR$/41-HTML5新标签/02-音频标签.html" />
-    <entry file="file://$PROJECT_DIR$/41-HTML5新标签/20-无限轮播图.html" />
-    <entry file="file://$PROJECT_DIR$/41-HTML5新标签/03-详情标签.html" />
-    <entry file="file://$PROJECT_DIR$/41-HTML5新标签/04-marquee.html" />
-    <entry file="file://$PROJECT_DIR$/41-HTML5新标签/05-h5废弃的标签.html" />
-    <entry file="file://$PROJECT_DIR$/41-HTML5新标签/06-过渡.html" />
-    <entry file="file://$PROJECT_DIR$/41-新特性/06-过渡.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="396">
-          <caret line="18" column="37" lean-forward="true" selection-start-line="18" selection-start-column="37" selection-end-line="18" selection-end-column="37" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/41-新特性/07-过渡其他属性.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="156">
-          <caret line="18" column="25" lean-forward="true" selection-start-line="18" selection-start-column="25" selection-end-line="18" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/41-新特性/images/ad1.jpg">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/41-新特性/08-弹性效果.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="726">
-          <caret line="33" column="18" lean-forward="true" selection-start-line="33" selection-start-column="18" selection-end-line="33" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/41-新特性/09-手风琴效果.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="484">
-          <caret line="22" column="26" lean-forward="true" selection-start-line="22" selection-start-column="26" selection-end-line="22" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/41-新特性/10-2D转换.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="47">
-          <caret line="38" column="16" lean-forward="true" selection-start-line="38" selection-start-column="16" selection-end-line="38" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/41-新特性/11-旋转轴向.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-123">
-          <caret line="10" column="11" lean-forward="true" selection-start-line="10" selection-start-column="11" selection-end-line="10" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/41-新特性/12-形变中心点.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="499">
-          <caret line="27" column="42" lean-forward="true" selection-start-line="27" selection-start-column="42" selection-end-line="27" selection-end-column="42" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/41-新特性/13-形变练习.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="352">
-          <caret line="16" column="9" selection-start-line="16" selection-start-column="9" selection-end-line="16" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/41-新特性/14-阴影.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="308">
-          <caret line="14" column="31" selection-start-line="14" selection-start-column="31" selection-end-line="14" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/41-新特性/15-照片墙.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="19">
-          <caret line="28" column="29" selection-start-line="28" selection-start-column="29" selection-end-line="28" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/41-新特性/16-翻转菜单.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-411">
-          <caret line="47" column="39" lean-forward="true" selection-start-line="47" selection-start-column="39" selection-end-line="47" selection-end-column="39" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/01-前端项目初体验/02-Emmet.html">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/01-前端项目初体验/01-动画效果.html">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/01-前端项目初体验/03-使用别人的功能.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="352">
-          <caret line="16" column="17" selection-start-line="16" selection-start-column="17" selection-end-line="16" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/40-项目实战/vertical-align.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="308">
-          <caret line="14" column="18" lean-forward="true" selection-start-line="14" selection-start-column="18" selection-end-line="14" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/41-新特性/17-动画.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="387">
-          <caret line="43" column="15" lean-forward="true" selection-start-line="43" selection-start-column="15" selection-end-line="43" selection-end-column="15" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/41-新特性/18-动画其他属性.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="82">
-          <caret line="19" column="25" lean-forward="true" selection-start-line="19" selection-start-column="25" selection-end-line="19" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/41-新特性/19-animation-fill-mode.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="22">
-          <caret line="15" column="29" selection-start-line="15" selection-start-column="29" selection-end-line="15" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/41-新特性/20-无限轮播图.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="946">
-          <caret line="43" column="18" selection-start-line="43" selection-start-column="18" selection-end-line="43" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/41-新特性/21-3D.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="477">
-          <caret line="23" column="21" selection-start-line="23" selection-start-column="21" selection-end-line="23" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/41-新特性/22-立方体.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="108">
-          <caret line="24" column="41" selection-start-line="24" selection-start-column="41" selection-end-line="24" selection-end-column="41" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/41-新特性/23-3D立方体终极方案.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="409">
-          <caret line="37" column="24" selection-start-line="37" selection-start-column="24" selection-end-line="37" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/08-常用图片格式/01-常用图片格式.html">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/08-常用图片格式/bd_logo.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/41-新特性/24-3D立方体终极方案1.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1166">
-          <caret line="53" column="9" selection-start-line="53" selection-start-column="9" selection-end-line="53" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/41-新特性/25-3D立方体终极方案2.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="484">
-          <caret line="22" column="31" selection-start-line="22" selection-start-column="31" selection-end-line="22" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/41-新特性/26-无限轮播图.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="462">
-          <caret line="21" column="43" selection-start-line="21" selection-start-column="43" selection-end-line="21" selection-end-column="43" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/41-新特性/33-无限轮播图.html" />
-    <entry file="file://$PROJECT_DIR$/41-新特性/28-背景图片定位属性.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="339">
-          <caret line="22" column="20" selection-start-line="22" selection-start-column="20" selection-end-line="22" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/41-新特性/29-背景绘制属性.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="17" column="14" lean-forward="true" selection-start-line="17" selection-start-column="14" selection-end-line="17" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/41-新特性/30-多重背景.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="154">
-          <caret line="7" column="22" lean-forward="true" selection-start-line="7" selection-start-column="22" selection-end-line="7" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/41-新特性/31-多重背景练习.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="439">
-          <caret line="20" lean-forward="true" selection-start-line="20" selection-end-line="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/41-新特性/images/cloud_one.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/41-新特性/images/cloud_three.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/41-新特性/images/cloud_two.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/41-新特性/27-3D播放器.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="669">
-          <caret line="145" column="44" lean-forward="true" selection-start-line="145" selection-start-column="44" selection-end-line="145" selection-end-column="44" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/41-新特性/32-云层效果.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="547">
-          <caret line="57" column="13" selection-start-line="57" selection-start-column="13" selection-end-line="57" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
 </project>
