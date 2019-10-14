@@ -1,0 +1,51 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    padding-top: 50px;
+}
+
+.xmg-navbar{
+    margin-bottom: 0px;
+}
+
+
+#cate-bar .row .img-circle{
+    margin-top: 20px;
+}
+
+#cate-bar .row > div p{
+    /*文本的缩进*/
+    text-indent: 30px;
+}
+
+#cate-bar .row >div img{
+    width: 180px;
+}
+
+#tab{
+    margin-top: 20px;
+}
+
+#tab .tab-content .row .col-md-8{
+    margin-top: 100px;
+}
+
+#tab .tab-content .row .col-md-8 h2{
+ color: red;
+}
+
+#tab .tab-content .row .col-md-8 h2 span{
+    color: purple;
+    font-size: 20px;
+}
+
+
+@media (max-width: 670px){
+    #tab .tab-content .row .col-md-8{
+        margin-top: 10px;
+    }
+}
+

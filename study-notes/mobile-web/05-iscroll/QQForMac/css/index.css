@@ -1,0 +1,1008 @@
+html,body,section{
+    width: 100%;
+    height: 100%;
+
+    /*隐藏滚动条*/
+    overflow: hidden;
+    position: relative;
+}
+
+section.p1{
+    background: url('../images/page1_glow.png') no-repeat center -60px,
+                linear-gradient(0deg, #395ecb 0%, #3657be 35%, #242161 75%, #1a0531 100%);
+}
+
+section.p2{
+    background: linear-gradient(0deg, #41b93e 0%, #3b9e3c 35%, #274535 75%, #190530 100%);
+
+}
+
+section.p3{
+    background: linear-gradient(0deg, #395ecb 0%, #3657be 35%, #242161 75%, #1a0531 100%);
+
+}
+
+section.p4{
+    background: url('../images/page4_glow.png') no-repeat center 200px, linear-gradient(0deg, #ff9f42 0%, #ed923d 35%, #6d3816 75%, #2e0b04 100%);
+
+}
+
+
+section.p5{
+    background: url('../images/page5_glow.png') no-repeat center -300px,linear-gradient(0deg, #d74d53 0%, #c44655 35%, #4c184c 75%, #110145 100%);
+}
+
+
+/*头部--左边*/
+.header{
+    width: 300px;
+    height: 80px;
+    /*background: green;*/
+
+    position: fixed;
+    top: 10px;
+    left: 10px;
+
+    /*指定flexbox*/
+    display: flex;
+    /*指定主轴*/
+    flex-direction: row;
+    /*指定item在主轴的对齐方式*/
+    justify-content: space-between;
+    align-items: center;
+
+}
+
+.header a{
+    text-decoration: none;
+    color: white;
+    border: 1px solid white;
+
+    padding: 6px 14px;
+    border-radius: 15px;
+}
+
+/*右边的gps*/
+.gps{
+    width: 60px;
+    height: 200px;
+    /*background: green;*/
+
+    position: fixed;
+    top: 50%;
+    right: 0px;
+
+    margin-top: -100px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.gps li{
+    width: 16px;
+    height: 16px;
+    border-radius: 100%;
+    background: rgba(255, 255, 255, 0.6);;
+}
+
+.gps li.current{
+    background: white;
+}
+
+
+/*尾部*/
+
+.footer{
+    height: 60px;
+    width: 100%;
+    /*background: green;*/
+    padding: 0px 10px;
+
+    position: fixed;
+    bottom: 0px;
+    left: 0px;
+
+    /*弹性布局*/
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+
+}
+
+.footer-left{
+    color: white;
+}
+
+.footer-right{
+    display: flex;
+    flex-direction: row;
+
+    margin-right: 20px;
+}
+
+.footer-right a{
+    color:white;
+    text-decoration: none;
+}
+
+.footer-right span{
+    margin-right: 5px;
+}
+
+
+/*指示器*/
+.scroll{
+    width: 29px;
+    height: 31px;
+    /*background: pink;*/
+
+    position: fixed;
+    bottom: 30px;
+    left: 50%;
+
+    /*z-index: 3;*/
+    margin-left: -14px;
+
+
+    /*动画*/
+    animation: upAndDown 0.6s infinite alternate;
+}
+
+/*实现自定义动画*/
+@keyframes upAndDown {
+    /*初始化状态*/
+    from{
+        transform: translateY(0px) scale(1,1);
+    }
+
+    /*最终的状态*/
+    to{
+        transform: translateY(12px) scale(1.1,1.1);
+    }
+}
+
+/* 第1屏 */
+section.p1{
+    /*css3透视效果*/
+    perspective:1000px;
+}
+
+
+section.p1 .p1-title{
+    width: 500px;
+    height: 80px;
+    /*background: green;*/
+
+    position: absolute;
+    left: 50%;
+    top: 40px;
+
+    margin-left: -250px;
+
+    /*指定为弹性布局*/
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+section.p1 .p1-title img{
+    width: 290px;
+}
+
+section.p1 .p1-title a{
+    color: white;
+    text-decoration: none;
+    padding: 7px 15px;
+
+    border: 1px solid white;;
+    border-radius: 20px;
+}
+
+section.p1 .p1-title a:hover{
+    background: white;
+    color: black;
+}
+
+section.p1 .p1-main,
+section.p1 .p1-main ul{
+    width: 600px;
+    height: 600px;
+    /*background: green;*/
+    /*居中*/
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-left: -300px;
+    margin-top: -300px;
+
+}
+
+section.p1 .p1-main ul{
+
+    /*ul在Y轴旋转的动画*/
+    animation: p1Cirlce 20s infinite linear;
+    /*添加3d的效果*/
+    transform-style: preserve-3d;
+}
+
+/*自定义动画*/
+@keyframes p1Cirlce {
+    /*初始化状态*/
+    0%{
+        transform: translateX(0px) translateY(0px) translateZ(0px)
+                   rotateX(0deg) rotateY(0deg) rotateZ(0deg)
+                   scaleX(1) scaleY(1) scaleZ(1);
+    }
+
+    /*最终的状态*/
+    100%{
+        transform: translateX(0px) translateY(0px) translateZ(0px)
+                    rotateX(0deg) rotateY(360deg) rotateZ(0deg)
+                    scaleX(1) scaleY(1) scaleZ(1);
+    }
+}
+
+
+
+section.p1 .p1-main ul li{
+    width: 580px;
+    height: 361px;
+    /*居中*/
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-left: -290px;
+    margin-top: -180px;
+
+    /*css3 背向不可见*/
+    backface-visibility: hidden;
+}
+
+section.p1 .p1-main ul li:nth-of-type(1){
+    transform: translateX(0px) translateY(0px) translateZ(0px)
+                rotateX(0deg) rotateY(0deg) rotateZ(0deg)
+                scaleX(1) scaleY(1) scaleZ(1);
+}
+section.p1 .p1-main ul li:nth-of-type(2){
+    transform: translateX(0px) translateY(0px) translateZ(80px)
+                rotateX(0deg) rotateY(0deg) rotateZ(0deg)
+                scaleX(1) scaleY(1) scaleZ(1);
+}
+
+section.p1 .p1-main ul li:nth-of-type(3){
+    transform: translateX(0px) translateY(0px) translateZ(50px)
+               rotateX(0deg) rotateY(180deg) rotateZ(0deg)
+               scaleX(1) scaleY(1) scaleZ(1);
+}
+
+section.p1 .p1-main ul li:nth-of-type(4){
+    transform: translateX(0px) translateY(0px) translateZ(0px)
+                rotateX(0deg) rotateY(180deg) rotateZ(0deg)
+                scaleX(1) scaleY(1) scaleZ(1);
+}
+section.p1 .p1-main ul li:nth-of-type(5){
+    transform: translateX(0px) translateY(0px) translateZ(-50px)
+                rotateX(0deg) rotateY(180deg) rotateZ(0deg)
+                scaleX(1) scaleY(1) scaleZ(1);
+}
+
+/*圆环*/
+section.p1 .p1-circle{
+    width: 680px;
+    height: 680px;
+    /*居中*/
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-left: -340px;
+    margin-top: -340px;
+
+    /*旋转的动画*/
+    animation: p1Round 5s infinite linear;
+}
+
+/*自定义的动画*/
+@keyframes p1Round{
+
+    /*初始化状态*/
+    0%{
+        transform: translateX(0px) translateY(0px) translateZ(0px)
+                    rotateX(60deg) rotateY(-10deg) rotateZ(0deg)
+                    scaleX(1.4) scaleY(1.4) scaleZ(1.4);
+    }
+
+    /*最终的状态*/
+    100%{
+        transform: translateX(0px) translateY(0px) translateZ(0px)
+                    rotateX(60deg) rotateY(-10deg) rotateZ(360deg)
+                    scaleX(1.4) scaleY(1.4) scaleZ(1.4);
+    }
+}
+
+
+/* 第2屏 */
+section.p2{
+    /*添加透视效果*/
+    perspective: 1000px;
+}
+
+section.p2 .p2-bg span{
+    width: 100%;
+    height: 1px;
+    background: #c7e00e;
+
+    position: absolute;
+    top: 50%;
+    left: 0;
+
+}
+
+section.p2 .p2-bg img:nth-of-type(1){
+    width: 684px;
+    height: 395px;
+
+    /*居中*/
+    position: absolute;
+    top: 50%;
+    right: 0px;
+    margin-top: -197px;
+
+}
+
+section.p2 .p2-bg img:nth-of-type(2){
+    width: 346px;
+    height: 123px;
+
+    /*居中*/
+    position: absolute;
+    top: 50%;
+    right: 260px;
+    margin-top: -61px;
+}
+
+
+section.p2 .p2-main,
+section.p2 .p2-main ul{
+    width: 600px;
+    height: 600px;
+    /*background: green;*/
+
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-top: -300px;
+    margin-left: -300px;
+
+
+}
+
+section.p2 .p2-main ul li{
+    width: 350px;
+    height: 350px;
+
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-top: -175px;
+    margin-left: -175px;
+
+
+}
+
+section.p2 .p2-main ul li:nth-of-type(1){
+    left: 80%;
+    /*在z轴旋转*/
+    animation: p2Cirlce 2s infinite linear;
+}
+section.p2 .p2-main ul li:nth-of-type(2){
+    left: 60%;
+    /*在z轴旋转*/
+    animation: p2Cirlce 3s infinite linear;
+}
+section.p2 .p2-main ul li:nth-of-type(3){
+    left: 50%;
+    /*在z轴旋转*/
+    animation: p2Cirlce 2s infinite linear;
+}
+section.p2 .p2-main ul li:nth-of-type(4){
+    left: 30%;
+    /*在z轴旋转*/
+    animation: p2Cirlce 1s infinite linear;
+}
+
+/*自定义动画*/
+@keyframes p2Cirlce {
+    /*初始化状态*/
+    0%{
+        transform:  translateX(0px) translateY(0px) translateZ(0px)
+                    rotateX(0deg) rotateY(0deg) rotateZ(0deg)
+                    scaleX(1) scaleY(1) scaleZ(1);
+    }
+
+    /*最终的状态*/
+    100%{
+        transform:  translateX(0px) translateY(0px) translateZ(0px)
+                    rotateX(0deg) rotateY(0deg) rotateZ(360deg)
+                    scaleX(1) scaleY(1) scaleZ(1);
+    }
+}
+
+
+section.p2 .p2-title{
+    width: 360px;
+    height: 150px;
+    /*background: green;*/
+
+    position: absolute;
+    left: 10px;
+    top: 55%;
+    margin-top: -100px;
+    color: white;
+
+
+}
+
+
+/*
+ 内容和title默认放大
+*/
+section.p2.current .p2-main,
+section.p2.current .p2-title
+{
+    transform:  translateX(0px) translateY(0px) translateZ(0px)
+                rotateX(0deg) rotateY(0deg) rotateZ(0deg)
+                scaleX(4) scaleY(4) scaleZ(4);
+}
+
+/*过渡的效果*/
+section.p2 .p2-main,
+section.p2 .p2-title{
+   transition: all 1s linear;
+}
+
+
+
+
+
+/* 第3屏 */
+section.p3{
+    /*透视的效果*/
+    perspective: 1000px;
+}
+
+section.p3 .p3-bg img{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+}
+section.p3 .p3-bg img:nth-of-type(1){
+    width: 1368px;
+    height: 1111px;
+
+    margin-top: -555px;
+    margin-left: -684px;
+}
+
+section.p3 .p3-bg img:nth-of-type(2){
+    width: 131px;
+    height: 130px;
+
+    margin-top: -65px;
+    margin-left: -65px;
+}
+
+section.p3 .p3-main,
+section.p3 .p3-main ul{
+    width: 800px;
+    height: 800px;
+    /*background: green;*/
+
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    margin-left: -400px;
+    margin-top: -400px;
+}
+
+
+section.p3 .p3-main ul li{
+    width: 680px;
+    height: 680px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    margin-left: -340px;
+    margin-top: -340px;
+
+    border: 1px dashed #5ec0ff;
+    border-radius: 100%;
+}
+
+
+section.p3 .p3-main ul li:nth-child(1){
+/*    transform:  translateX(0px) translateY(0px) translateZ(0px)
+                rotateX(0deg) rotateY(-60deg) rotateZ(0deg)
+                scaleX(1) scaleY(1) scaleZ(1);*/
+
+    /*在Y轴旋转*/
+    animation: p3Cirlce1 20s infinite linear;
+}
+
+section.p3 .p3-main ul li:nth-child(2){
+    /*transform:  translateX(0px) translateY(0px) translateZ(0px)*/
+                /*rotateX(0deg) rotateY(0deg) rotateZ(0deg)*/
+                /*scaleX(1) scaleY(1) scaleZ(1);*/
+
+    /*在Y轴旋转*/
+    animation: p3Cirlce2 20s infinite linear;
+}
+
+section.p3 .p3-main ul li:nth-child(3){
+   /* transform:  translateX(0px) translateY(0px) translateZ(0px)
+                rotateX(0deg) rotateY(60deg) rotateZ(0deg)
+                scaleX(1) scaleY(1) scaleZ(1);*/
+
+    /*在Y轴旋转*/
+    animation: p3Cirlce3 20s infinite linear;
+}
+
+/*自定义动画*/
+@keyframes p3Cirlce1 {
+    /*初始化状态*/
+    0%{
+        transform:  translateX(0px) translateY(0px) translateZ(0px)
+                    rotateX(75deg) rotateY(-60deg) rotateZ(0deg)
+                    scaleX(1) scaleY(1) scaleZ(1);
+    }
+
+    /*最终的状态*/
+    100%{
+        transform:  translateX(0px) translateY(0px) translateZ(0px)
+                    rotateX(75deg) rotateY(300deg) rotateZ(360deg)
+                    scaleX(1) scaleY(1) scaleZ(1);
+    }
+}
+
+
+/*自定义动画*/
+@keyframes p3Cirlce2 {
+    /*初始化状态*/
+    0%{
+        transform:  translateX(0px) translateY(0px) translateZ(0px)
+                    rotateX(75deg) rotateY(0deg) rotateZ(0deg)
+                    scaleX(1) scaleY(1) scaleZ(1);
+    }
+
+    /*最终的状态*/
+    100%{
+        transform:  translateX(0px) translateY(0px) translateZ(0px)
+                    rotateX(75deg) rotateY(360deg) rotateZ(360deg)
+                    scaleX(1) scaleY(1) scaleZ(1);
+    }
+}
+
+/*自定义动画*/
+@keyframes p3Cirlce3 {
+    /*初始化状态*/
+    0%{
+        transform:  translateX(0px) translateY(0px) translateZ(0px)
+                    rotateX(75deg) rotateY(60deg) rotateZ(0deg)
+                    scaleX(1) scaleY(1) scaleZ(1);
+    }
+
+    /*最终的状态*/
+    100%{
+        transform:  translateX(0px) translateY(0px) translateZ(0px)
+                    rotateX(75deg) rotateY(420deg) rotateZ(360deg)
+                    scaleX(1) scaleY(1) scaleZ(1);
+    }
+}
+
+
+section.p3 .p3-main ul li:nth-child(1) img{
+    animation: p3Round 3.5s infinite linear;
+}
+section.p3 .p3-main ul li:nth-child(2) img{
+    animation: p3Round 2s infinite linear;
+}
+section.p3 .p3-main ul li:nth-child(3) img{
+    animation: p3Round 3s infinite linear;
+}
+
+@keyframes p3Round {
+    /*初始化状态*/
+    0%{
+        transform: rotateZ(0deg);
+    }
+
+    /*最终的状态*/
+    100%{
+        transform: rotateZ(360deg);
+    }
+}
+
+
+
+section.p3 .p3-title{
+    width: 450px;
+    height: 149px;
+
+    position: absolute;
+    top: 30%;
+    right: 5%;
+
+    transform: rotateY(-40deg) rotateX(10deg) rotateZ(-10deg);
+
+
+}
+
+
+/*
+ 内容应该放大,标题应该是从右边过来
+*/
+section.p3.current .p3-main{
+    transform: scaleX(4) scaleY(4) scaleZ(4);
+}
+
+section.p3.current .p3-title{
+    transform: translateX(600px);
+}
+
+
+/*
+ 添加过渡效果
+*/
+section.p3 .p3-main,
+section.p3 .p3-title{
+    transition: all 1s linear;
+}
+
+
+/* 第4屏 */
+section.p4{
+
+    /*透视的效果*/
+    perspective: 1000px;
+}
+
+section.p4 .p4-bg{
+    width: 100%;
+    height: 230px;
+
+    /*background: red;*/
+    position: absolute;
+    bottom: 70px;
+    left: 0;
+
+    border-top: 1px solid white;
+    border-bottom: 1px solid white;
+
+}
+
+
+section.p4 .p4-bg img:nth-child(1){
+    width: 346px;
+    height: 123px;
+
+    position: absolute;
+    top: -62px;
+    left: 60px;
+
+    /*在x轴有一个平移的动画*/
+   animation: p4Line 2s infinite linear;
+
+
+}
+section.p4 .p4-bg img:nth-child(2){
+    width: 346px;
+    height: 123px;
+
+    position: absolute;
+    bottom: -62px;
+    right: 100px;
+
+    /*在x轴有一个平移的动画*/
+    animation: p4Line 1.5s infinite linear;
+}
+
+@keyframes p4Line {
+    /*初始化状态*/
+    0%{
+        transform:  translateX(-1000px);
+    }
+    /*最终的状态*/
+    100%{
+        transform:  translateX(1000px);
+    }
+}
+
+section.p4 .p4-main,
+section.p4 .p4-main ul{
+    width: 600px;
+    height: 600px;
+
+    /*background: green;*/
+
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-top: -300px;
+    margin-left: -300px;
+
+}
+
+section.p4 .p4-main ul{
+
+    /*在x轴旋转动画*/
+    transform: rotateX(45deg);
+    /*添加3d的效果*/
+    transform-style: preserve-3d;
+}
+
+section.p4 .p4-main ul li{
+    width: 414px;
+    height: 414px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-top: -207px;
+    margin-left: -207px;
+
+}
+
+section.p4 .p4-main ul li:nth-child(1){
+    transform: translateZ(0px);
+}
+section.p4 .p4-main ul li:nth-child(2){
+    transform: translateZ(0px);
+}
+
+
+
+section.p4 .p4-main ul li:nth-child(3){
+    transform: translateZ(-100px);
+}
+section.p4 .p4-main ul li:nth-child(4){
+    transform: translateZ(-50px);
+}
+
+section.p4 .p4-main ul li:nth-child(5){
+    transform: translateZ(50px);
+}
+
+
+section.p4 .p4-main ul li:nth-child(1) img{
+    animation: p4Cirle 60s infinite linear;
+}
+section.p4 .p4-main ul li:nth-child(2) img{
+    animation: p4Cirle 60s infinite linear;
+}
+
+section.p4 .p4-main ul li:nth-child(3) img{
+    animation: p4Cirle 1s infinite linear;
+}
+section.p4 .p4-main ul li:nth-child(4) img{
+    animation: p4Cirle 3s infinite linear;
+}
+section.p4 .p4-main ul li:nth-child(5) img{
+    animation: p4Cirle 2s infinite linear;
+}
+
+@keyframes p4Cirle {
+    /*初始化状态*/
+    0%{
+        transform:  rotateZ(0deg);
+    }
+    /*最终的状态*/
+    100%{
+        transform:  rotateZ(360deg);
+    }
+}
+
+section.p4 .p4-tag{
+    width: 300px;
+    height: 70px;
+    /*background: green;*/
+
+    position: absolute;
+    top: 50%;
+    left: 10%;
+    margin-top: -40px;
+    color: white;
+}
+
+section.p4 .p4-title{
+    width: 300px;
+    height: 71px;
+
+    position: absolute;
+    top: 40%;
+    right: 10%;
+
+    transform: rotateX(30deg) scale(1.2,1.2);
+
+}
+
+/*
+    内容放大,左边布局从左边过来,右边的布局从右边过来
+*/
+section.p4.current .p4-main{
+    transform: scaleX(4) scaleY(4) scaleZ(4);
+}
+section.p4.current .p4-tag{
+     transform:translateX(-500px);
+}
+
+section.p4.current .p4-title{
+    transform:translateX(500px);
+}
+
+/*
+ 添加过渡的效果
+*/
+section.p4 .p4-main,
+section.p4 .p4-tag,
+section.p4 .p4-title{
+    transition: all 1s linear;
+}
+
+
+/* 第5屏 */
+section.p5{
+    /*透视的效果*/
+    perspective: 1000px;
+}
+
+section.p5 .p5-main,
+section.p5 .p5-main ul{
+    width: 600px;
+    height: 600px;
+
+    /*background: green;*/
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-top: -300px;
+    margin-left: -300px;
+
+}
+
+section.p5 .p5-main ul li{
+    /*li里面的内容居中*/
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /*圆形*/
+    border-radius: 100%;
+
+}
+
+section.p5 .p5-main ul li:nth-of-type(1){
+    width:305px;
+    height: 305px;
+    background: url("../images/page5_bubble_glow.png");
+
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-top: -152px;
+    margin-left: -152px;
+}
+section.p5 .p5-main ul li:nth-of-type(2){
+    width:200px;
+    height: 200px;
+    background: url("../images/page5_bubble.png");
+    background-size: contain;
+
+    position: absolute;
+    top: 8%;
+    left: 8%;
+
+}
+section.p5 .p5-main ul li:nth-of-type(3){
+    width:250px;
+    height: 250px;
+    background: url("../images/page5_bubble.png");
+    background-size: contain;
+
+    position: absolute;
+    bottom: -4%;
+    left: -3%;
+}
+section.p5 .p5-main ul li:nth-of-type(4){
+    width:180px;
+    height: 180px;
+    background: url("../images/page5_bubble.png");
+    background-size: contain;
+
+    position: absolute;
+    bottom: 6%;
+    right: 0%;
+}
+section.p5 .p5-main ul li:nth-of-type(5){
+    width:120px;
+    height: 120px;
+    background: url("../images/page5_bubble.png");
+    background-size: contain;
+
+    position: absolute;
+    top: 12%;
+    right: 5%;
+}
+section.p5 .p5-main ul li:nth-of-type(6){
+    width:90px;
+    height: 90px;
+    background: url("../images/page5_bubble.png");
+    background-size: contain;
+
+    position: absolute;
+    top: 20%;
+    right:-5%;
+}
+
+section.p5 .p5-main ul li:nth-of-type(6) img{
+    transform: scale(0.5,0.5);
+}
+
+
+section.p5 .p5-tag{
+    position: absolute;
+    top: 50%;
+    left: 13%;
+    color: white;
+}
+
+section.p5 .p5-title{
+    width: 410px;
+    height: 121px;
+
+    position: absolute;
+    top: 42%;
+    right: 0px;
+
+}
+
+/*添加落空类*/
+section.p5.current .p5-main ul li:nth-of-type(1){
+    transform: translateX(-800px);
+}
+
+section.p5.current .p5-main ul li:nth-of-type(2){
+    transform: translateX(-800px) translateY(-400px);
+}
+
+section.p5.current .p5-main ul li:nth-of-type(3){
+    transform: translateX(-800px) translateY(400px);
+}
+
+section.p5.current .p5-main ul li:nth-of-type(4){
+    transform: translateX(400px) translateY(400px);
+}
+section.p5.current .p5-main ul li:nth-of-type(5){
+    transform: translateX(400px) translateY(-400px);
+}
+section.p5.current .p5-main ul li:nth-of-type(6){
+    transform: translateX(400px) translateY(-200px);
+}
+
+section.p5.current .p5-tag,
+section.p5.current .p5-title
+{
+    transform: rotateY(-90deg);
+    transform-origin: right bottom;
+}
+
+
+
+/*添加过渡效果*/
+section.p5 .p5-main ul li,
+section.p5 .p5-tag,
+section.p5 .p5-title{
+    transition: all 1s linear;
+}
+
+

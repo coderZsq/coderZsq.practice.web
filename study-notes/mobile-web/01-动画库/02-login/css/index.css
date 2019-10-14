@@ -1,0 +1,136 @@
+*{
+    padding: 0;
+    margin: 0;
+
+    box-sizing: border-box;
+}
+
+a{
+    text-decoration: none;
+    color: black;
+}
+
+body{
+    /*设置背景颜色*/
+    background: url("../images/bg.png") no-repeat;
+    /*设置背景的尺寸*/
+    background-size: cover;
+
+    text-align: center;
+}
+
+/*面板*/
+#panel{
+    width:400px;
+    height: 400px;
+    background-color: white;
+    /*重写*/
+    text-align: left;
+    border-radius: 5px;
+    box-shadow: -10px 20px 100px black;
+    /*定位*/
+    position: absolute;
+    top:50%;
+    left:50%;
+    margin-left: -200px;
+    margin-top: -200px;
+}
+
+.panel-header{
+    width:100%;
+    height:64px;
+    background-color: orangered;
+    border-radius: 5px 5px 0 0;
+    line-height: 64px;
+    color:white;
+    text-align: center;
+    margin-bottom: 10px;
+    cursor: move;
+}
+
+/*中间的主要内容*/
+.panel-content{
+    padding: 20px;
+}
+
+.panel-content .user-pwd{
+   /*background-color: red;*/
+   margin-bottom: 15px;
+   height: 40px;
+
+   position: relative;
+}
+
+.panel-content .user-pwd img{
+   position: absolute;
+   top: 7px;
+   left: 6px;
+}
+
+.panel-content .user-pwd input{
+   width: 100%;
+   height: 100%;
+   box-sizing: border-box;
+    /*设置内边距*/
+   padding-left: 38px;
+   border-radius: 5px;
+   border:1px solid #dddddd;
+
+}
+
+.panel-content .user-pwd input:focus{
+    outline: none;
+    border: 1px solid orange;
+    box-shadow: 0 0 10px orange;
+}
+
+.setting a{
+    color: darkgray;
+    font-size: 13px;
+}
+
+.setting a.pull-right{
+    float: right;
+}
+
+/*按钮*/
+.login-btn{
+  margin: 15px 0;
+  width: 100%;
+  height: 38px;
+  background-color: orangered;
+  /*去除边框*/
+  border: 0;
+  font-size: 20px;
+  color: white;
+  border-radius: 5px;
+}
+
+.login-btn:focus{
+    outline: none;
+}
+
+.reg{
+    text-align: center;
+    margin-bottom: 15px;
+    color: darkgray;
+    font-size: 13px;
+}
+
+.reg a{
+    color: orangered;
+}
+
+
+/*尾部*/
+.panel-footer{
+    padding:0 20px;
+    height: 44px;
+    line-height: 44px;
+}
+
+.panel-footer img{
+    width: 30px;
+    /*图片居中*/
+    vertical-align: middle;
+}

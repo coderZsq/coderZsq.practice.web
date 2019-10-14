@@ -1,0 +1,628 @@
+/*==============公共的样式================*/
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    font-family: "Helvetica Neue",
+    Helvetica,
+    Microsoft Yahei,
+    Hiragino Sans GB,
+    WenQuanYi Micro Hei,
+    sans-serif;
+}
+
+/*自定义一个字体:字体图标*/
+@font-face {
+    font-family: xmg;
+    src: url("../fonts/MiFie-Web-Font.svg") format('svg'),
+         url("../fonts/MiFie-Web-Font.eot") format('embedded-opentype'),
+         url("../fonts/MiFie-Web-Font.ttf") format('truetype'),
+         url("../fonts/MiFie-Web-Font.woff") format('woff');
+}
+
+
+/*选中所有的字体图标*/
+[class^="icon-"],
+[class*=" icon-"]{
+    font-family: xmg;
+    font-style: normal;
+}
+
+/*自定义按钮的样式:
+    btn-success
+    btn-info
+    btn-warning
+    ..
+*/
+.btn-xmg {
+    color: #FFFFFF;
+    background-color: #E9232C;
+    border-color: #DB3B43;
+}
+
+.btn-xmg:hover,
+.btn-xmg:focus,
+.btn-xmg:active,
+.btn-xmg.active,
+.open .dropdown-toggle.btn-xmg {
+    color: #FFFFFF;
+    background-color: #E9232C;
+    border-color: #DB3B43;
+}
+
+.btn-xmg:active,
+.btn-xmg.active,
+.open .dropdown-toggle.btn-xmg {
+    background-image: none;
+}
+
+.btn-xmg.disabled,
+.btn-xmg[disabled],
+fieldset[disabled] .btn-xmg,
+.btn-xmg.disabled:hover,
+.btn-xmg[disabled]:hover,
+fieldset[disabled] .btn-xmg:hover,
+.btn-xmg.disabled:focus,
+.btn-xmg[disabled]:focus,
+fieldset[disabled] .btn-xmg:focus,
+.btn-xmg.disabled:active,
+.btn-xmg[disabled]:active,
+fieldset[disabled] .btn-xmg:active,
+.btn-xmg.disabled.active,
+.btn-xmg[disabled].active,
+fieldset[disabled] .btn-xmg.active {
+    background-color: #E9232C;
+    border-color: #DB3B43;
+}
+
+.btn-xmg .badge {
+    color: #E9232C;
+    background-color: #FFFFFF;
+}
+
+
+/*==============头部的样式================*/
+
+/*顶部通栏的样式*/
+#top_bar{
+    border-bottom: 1px solid #dddddd;
+}
+
+#top_bar .container{
+    height: 40px;
+    /*background: red;*/
+    line-height: 40px;
+}
+
+#top_bar a{
+    text-decoration: none;
+}
+
+#top_bar .container .row > div + div{
+    border-left: 1px solid #dddddd;
+}
+
+
+
+.icon-phone::before{
+    content: '\e908';
+    font-size: 13px;
+}
+
+.icon-tel::before{
+    content: '\e909';
+    font-size: 13px;
+
+}
+
+/*二维码*/
+#top_bar .ecode{
+    width: 120px;
+    display: none;
+
+    /*绝对定位*/
+    position: absolute;
+    top: 50%;
+    left: 50%;
+
+    margin-left: -60px;
+    margin-top: 8px;
+
+    /*修改二维码的z-index*/
+    z-index: 9999;
+}
+
+#top_bar .row > div a:hover img{
+    display: inline-block;
+}
+
+
+
+
+
+/*导航条*/
+.navbar-xmg{
+    background: white;
+    margin-bottom: 0;
+
+    /*position: fixed;*/
+    top: 0;
+    left: 0;
+    width: 100%;
+}
+
+.icon-logo::before{
+    content: '\e920';
+    font-size: 50px;
+    color:#E9232C;
+
+    /*垂直居中*/
+    line-height: 50px;
+    vertical-align: middle;
+
+}
+
+.icon-wjs::before{
+    content: '\e93e';
+    font-size: 36px;
+    color: black;
+
+    /*垂直居中*/
+    line-height: 50px;
+    vertical-align: middle;
+}
+
+#wjs_header .navbar .navbar-brand{
+    
+    height: 70px;
+    padding: 10px 10px;
+}
+
+#wjs_header .navbar .navbar-nav li a{
+    line-height: 40px;
+}
+
+#wjs_header .navbar .navbar-nav li.active a,
+#wjs_header .navbar .navbar-nav li a:hover{
+    background: transparent;
+    font-weight: bold;
+    border-bottom: 2px solid #E9232C;
+}
+
+#wjs_header .navbar-header > button{
+    margin-top: 18px;
+    margin-bottom: 18px;
+}
+
+/*==============轮播图的样式================*/
+
+#wjs_banner{
+
+}
+
+/*轮播图中的每一个item*/
+#wjs_banner .item{
+
+    background-position: center center;
+
+}
+
+/*大屏*/
+@media screen and (min-width: 640px){
+
+    #wjs_banner .item{
+        height: 410px;
+    }
+}
+
+
+/*==============平台展示的样式================*/
+#wjs_display{
+    padding: 50px 0px;
+    border-bottom: 1px solid #dddddd;
+}
+
+#wjs_display a{
+    text-decoration: none;
+}
+
+
+#wjs_display a:hover{
+    color: #E9232C;
+}
+.icon-uniE907::before{
+    content: '\e907';
+    font-size: 35px;
+}
+
+#wjs_display .row > div{
+    margin-top: 20px;
+}
+
+/*==============预约的样式================*/
+
+#wjs_order{
+    padding: 20px 0px;
+    font-size: 16px;
+}
+#wjs_order .row > div > p > a{
+    text-decoration: none;
+    border-bottom: 1px dashed #E9232C;
+}
+
+
+#wjs_order .row > div strong{
+    color: #E9232C;
+}
+
+.icon-uniE906::before{
+    content: '\e906';
+    font-size: 20px;
+}
+.icon-uniE905::before{
+    content: '\e905';
+    font-size: 20px;
+}
+
+/*==============产品的样式================*/
+
+#wjs_product{
+    background-color: #cccccc;
+    padding: 20px 0px;
+}
+
+#wjs_product .nav-tabs > li > a{
+    color: #777777;
+    font-size: 16px;
+}
+
+#wjs_product .nav-tabs > li.active > a,
+#wjs_product .nav-tabs > li.active > a:focus{
+    background-color: transparent;
+    border-color: transparent;
+    /*border: 0px;*/
+
+    border-bottom: 2px solid #E9232C;
+    color: black;
+}
+
+#wjs_product .nav-tabs > li > a:hover{
+    background-color: transparent;
+    border-color: transparent;
+}
+
+/*更多*/
+#wjs_product .nav-tabs > li.more{
+    float: right;
+}
+
+
+/*面板的样式*/
+#wjs_product .tab-content{
+    margin-top: 30px;
+}
+
+
+#wjs_product .tab-content .row > div .panel{
+    /*相对于面板*/
+    position: relative;
+}
+
+
+/*1.找到面板的头部:panel-heading*/
+#wjs_product .tab-content .row > div .panel-heading{
+    float: right;
+    width: 120px;
+    height: 150px;
+
+    border-left: 1px dashed #cccccc;
+    /*相对定位*/
+    position: relative;
+
+    /*弹性布局:flexbox*/
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+#wjs_product .tab-content .row > div .panel-heading::before{
+    content: '';
+    width: 20px;
+    height: 20px;
+    background-color: #cccccc;
+    border-radius: 100%;
+    /*绝对定位*/
+    position: absolute;
+    top: -10px;
+    left: -10px;
+}
+
+#wjs_product .tab-content .row > div .panel-heading::after{
+    content: '';
+    width: 20px;
+    height: 20px;
+    background-color: #cccccc;
+    border-radius: 100%;
+    /*绝对定位*/
+    position: absolute;
+    bottom: -10px;
+    left: -10px;
+}
+
+#wjs_product .tab-content .row > div .panel-heading sub{
+    color: #E9232C;
+}
+
+#wjs_product .tab-content .row > div .panel-heading strong{
+    font-size: 26px;
+    color: #E9232C;
+    font-weight: bold;
+}
+
+
+/*2.面板的:panel-body*/
+#wjs_product .tab-content .row > div .panel-body{
+    padding: 0px 10px;
+    height: 150px;
+    margin-right: 120px;
+}
+
+#wjs_product .tab-content .row > div .panel-body dt{
+    font-size: 12px;
+    color: #cccccc;
+}
+
+
+
+/* 找到第一个面板 */
+#wjs_product .tab-content .row > div.first .panel{
+
+    background-color: #E9232C;
+    color: white;
+
+}
+
+#wjs_product .tab-content .row > div.first .panel::before{
+    font-family: xmg;
+    content: '\e915';
+    font-size: 45px;
+
+    /*绝对定位*/
+    position:absolute;
+    top: -10px;
+    left: 0;
+
+}
+
+#wjs_product .tab-content .row > div.first .panel-heading strong,
+#wjs_product .tab-content .row > div.first .panel-heading sub{
+    color: white;
+}
+
+/*第二个面板*/
+#wjs_product .tab-content .row > div.second .panel::after{
+    font-family: xmg;
+    content: '\e925';
+    font-size: 100px;
+    color: #E9232C;
+    position: absolute;
+    top: 10%;
+    left: 20%;
+    /*z-index: 10;*/
+}
+
+#wjs_product .tab-content .row > div.third .panel::after{
+    font-family: xmg;
+    content: '\e926';
+    font-size: 100px;
+    color: #E9232C;
+    position: absolute;
+    top: 10%;
+    left: 20%;
+    /*z-index: 10;*/
+}
+
+
+/*==============新闻的样式================*/
+#wjs_news{
+    padding: 20px 0px;
+
+    border-bottom: 1px solid #dddddd;
+}
+
+#wjs_news .all-news{
+    height: 60px;
+    border-bottom: 1px dashed #cccccc;
+
+    /*居中*/
+    /*text-align: center;*/
+    /*line-height: 60px;*/
+
+    /*弹性布局:ie-10*/
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+#wjs_news .row .nav > li.active a{
+    background-color:#E9232C;
+}
+
+#wjs_news .row .nav > li a{
+    background-color: #cccccc;
+    width: 60px;
+    height: 60px;
+    border-radius: 100%;
+    margin-bottom: 10px;
+
+    float: left;
+    margin-right: 10px;
+}
+
+
+.icon-new1,
+.icon-new2,
+.icon-new3,
+.icon-new4{
+    font-size: 28px;
+    color: #EAEAEA;
+}
+
+.icon-new1::before{
+    content: "\e90e";
+
+}
+
+.icon-new2::before{
+    content: "\e910";
+
+}
+
+
+.icon-new3::before{
+    content: "\e911";
+
+}
+
+
+.icon-new4::before{
+    content: "\e912";
+}
+
+
+#wjs_news .tab-content > div ul{
+    list-style: none;
+}
+
+#wjs_news .tab-content > div ul li{
+    line-height: 40px;
+}
+
+
+/*==============尾部的样式================*/
+
+#wjs_footer{
+    padding: 30px 0px;
+}
+
+
+#wjs_footer h2{
+    /*background-color: red;*/
+    text-align: center;
+}
+
+/*ul*/
+#wjs_footer .footer-icon{
+    list-style: none;
+    /*background-color: green;*/
+
+    /*清除字体的间隙*/
+    /*font-size: 0;*/
+}
+
+
+#wjs_footer .footer-icon li{
+    font-size: 64px;
+    /*display: inline-block;*/
+    float: left;
+    width: calc(100% / 9);
+    /*background-color: red;*/
+    text-align: center;
+}
+
+.footer-icon li a{
+    color: #999;
+    text-decoration: none;
+}
+#wjs_footer .footer-icon li + li{
+    border-left: 1px dashed #dddddd;
+
+}
+
+
+
+.icon-uniE930:hover {
+    color: #df3232;
+}
+
+.icon-uniE930:before {
+    content: "\e946";
+}
+
+.icon-uniE92F:hover {
+    color: #e8380d;
+}
+
+.icon-uniE92F:before {
+    content: "\e92f";
+}
+
+.icon-uniE92E:hover {
+    color: #ed6f00;
+}
+
+.icon-uniE92E:before {
+    content: "\e92e";
+}
+
+.icon-uniE92A:hover {
+    color: #159f69;
+}
+
+.icon-uniE92A:before {
+    content: "\e92a";
+}
+
+.icon-uniE929:hover {
+    color: #07569e;
+}
+
+.icon-uniE929:before {
+    content: "\e929";
+}
+
+.icon-uniE931:hover {
+    color: #004098;
+}
+
+.icon-uniE931:before {
+    content: "\e931";
+}
+
+.icon-uniE92C:hover {
+    color: #d32019;
+}
+
+.icon-uniE92C:before {
+    content: "\e92c";
+}
+
+.icon-uniE92B:hover {
+    color: #3eac4a;
+}
+
+.icon-uniE92B:before {
+    content: "\e92b";
+}
+
+.icon-uniE92D:hover {
+    color: #2bb289;
+}
+
+.icon-uniE92D:before {
+    content: "\e92d";
+}
+
+
+
+
+
+
+
+
+
