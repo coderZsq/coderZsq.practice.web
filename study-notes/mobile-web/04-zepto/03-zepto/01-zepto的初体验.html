@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+
+        div{
+            width: 200px;
+            height: 200px;
+            background: red;
+        }
+    </style>
+</head>
+<body>
+
+
+<button id="btn">点击修改div的颜色</button>
+<div class="box"></div>
+
+<!--<script src="libs/jquery-3.2.0.min.js"></script>-->
+
+<!--引入zepto的js库( 默认只包含5个核心的模块 )-->
+<script src="libs/zepto.min.js"></script>
+
+<script>
+    $(function () {
+        $('#btn').on('click',function () {
+            // alert('sd')
+            $('.box').css({
+                background:'pink'
+            })
+        })
+    })
+</script>
+
+
+
+</body>
+</html>

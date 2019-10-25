@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <!--
+        兼容移动端
+    -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Title</title>
+
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            /*box-sizing: border-box;*/
+        }
+
+        .box{
+            position: relative;
+            overflow: hidden;
+        }
+
+        .header{
+            height: 40px;
+            background: #dddddd;
+            list-style: none;
+        }
+
+        .header li{
+            height: 40px;
+            width: 50%;
+            /*background: red;*/
+            float: left;
+
+            /*居中*/
+            text-align: center;
+            line-height: 40px;
+            font-size: 16px;
+        }
+
+        .header  li.current{
+            color: #E9232C;
+            font-weight: bold;
+        }
+
+
+        /*线*/
+        .line{
+            width: 50%;
+            height: 3px;
+            background: #E9232C;
+
+            display: inline-block;
+            position: absolute;
+            top: 37px;
+            left: 0;
+        }
+
+        .list{
+            width: 200%;
+        }
+
+        /*新闻*/
+        .list > div{
+             width:50%;
+             float: left;
+        }
+
+        .list > div ul{
+            list-style: none;
+            padding: 10px;
+        }
+        .list > div ul li{
+            line-height: 35px;
+            border-bottom: 1px solid #dddddd;
+
+        }
+
+        .list > div a{
+            display: inline-block;
+            width: 100%;
+            /*background: red;*/
+            text-align: center;
+            color:gray;
+            text-decoration: none;
+        }
+
+
+    </style>
+</head>
+<body>
+
+<div class="box">
+
+    <!--header-->
+    <ul class="header">
+        <li class="current">新闻</li>
+        <li>科技</li>
+    </ul>
+
+    <!--line-->
+    <span class="line"></span>
+
+    <!--content-->
+    <div class="list">
+        <!--新闻-->
+        <div class="list1">
+            <ul>
+                <li>新闻内容新闻内容</li>
+                <li>新闻内容新闻内容</li>
+                <li>新闻内容新闻内容</li>
+                <li>新闻内容新闻内容</li>
+                <li>新闻内容新闻内容</li>
+                <li>新闻内容新闻内容</li>
+            </ul>
+            <a href="#">查看更多</a>
+        </div>
+        <!--科技-->
+        <div class="list2">
+            <ul>
+                <li>科技内容新闻内容</li>
+                <li>科技内容新闻内容</li>
+                <li>科技内容新闻内容</li>
+                <li>科技内容新闻内容</li>
+                <li>科技内容新闻内容</li>
+                <li>科技内容新闻内容</li>
+            </ul>
+            <a href="#">查看更多</a>
+        </div>
+    </div>
+</div>
+
+
+<script src="libs/zepto.min.js"></script>
+<script src="libs/touch.js"></script> <!--tap swipe-->
+<script>
+    
+    $(function () {
+
+        /*1.监听header中li的点击事件*/
+        $('.header li').tap(function () {
+            var index = $(this).index(); // index = 0 ; 1
+            // alert( index )
+            switchTab(index);
+        })
+
+
+        $('.list').swipeLeft(function () {
+            console.log('swipeLeft')
+            // index=1
+            switchTab(1);
+        })
+
+        $('.list').swipeRight(function () {
+            console.log('swipeRight')
+            // index=0
+            switchTab(0);
+        })
+
+        
+        
+        function switchTab(index) {
+            /*2.修改文本的颜色*/
+            $('.header li').eq(index).addClass('current')
+                    .siblings('li').removeClass('current')
+
+            /*3.线条的切换*/
+            $('.line').css({
+                transform:'translateX('+(index * 100)+'%)',  //相对于自身的平移
+                transition:'all 0.15s linear'
+            })
+
+            var offsetX = -index * 50;  // 0  -50
+            /*4.让内容的切换*/
+            $('.list').css({
+                transform:'translateX('+offsetX+'%)',  //相对于自身的平移
+                transition:'all 0.15s linear'
+            })
+        }
+
+
+        
+    })
+    
+
+
+</script>
+
+
+
+</body>
+</html>

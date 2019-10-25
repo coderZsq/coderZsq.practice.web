@@ -1,0 +1,28 @@
+/*1.定义匹配*/
+/**
+  参数一:模式的名称(字符串)
+  参数二:普通变量
+*/
+div {
+  background: #ff0000;
+  width: 200px;
+  height: 100px;
+  margin-bottom: 3px;
+  /*调用混合*/
+}
+.test1 {
+  /*1.调用匹配*/
+  border-top-left-radius: 50px;
+}
+.test2 {
+  /*1.调用匹配*/
+  border-bottom-left-radius: 50px;
+}
+.test3 {
+  /*1.调用匹配*/
+  border-top-right-radius: 50px;
+}
+.test4 {
+  /*1.调用匹配*/
+  border-bottom-right-radius: 50px;
+}
