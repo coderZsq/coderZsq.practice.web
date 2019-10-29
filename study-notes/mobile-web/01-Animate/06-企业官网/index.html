@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <!--
+        做 ie 兼容
+    -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!--
+        兼容移动设备
+    -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+    <title>企业官网</title>
+
+    <!-- 1.引入Bootstrap.css -->
+    <link href="./libs/Bootstrap/css/bootstrap.css" rel="stylesheet">
+    <!--引入自己写的css-->
+    <link rel="stylesheet" href="./css/index.css">
+</head>
+<body>
+
+
+<!-- 导航条 -->
+<nav class="navbar navbar-default xmg-navbar navbar-inverse navbar-fixed-top">
+    <div class="container-fluid">
+        <!-- 品牌和移动端的按钮 -->
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#">广州小码哥教育</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav">
+                <li class="active"><a href="#">简介 <span class="sr-only">(current)</span></a></li>
+                <li><a href="#">综述</a></li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">学院 <span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#">HTML5</a></li>
+                        <li role="separator" class="divider"></li>
+                        <li><a href="#">IOS</a></li>
+                        <li role="separator" class="divider"></li>
+                        <li><a href="#">Java</a></li>
+                        <li role="separator" class="divider"></li>
+                        <li><a href="#">UI</a></li>
+                        <li role="separator" class="divider"></li>
+                        <li><a href="#">Android</a></li>
+                    </ul>
+                </li>
+                <li><a href="#">关于</a></li>
+                <li><a href="#">社区</a></li>
+                <li><a href="#">服务</a></li>
+            </ul>
+
+        </div><!-- /.navbar-collapse -->
+    </div><!-- /.container-fluid -->
+</nav>
+
+
+<!--轮播图-->
+<div id="carousel-example-generic" data-interval="2000" class="carousel slide" data-ride="carousel">
+    <!-- 指示点 -->
+    <ol class="carousel-indicators">
+        <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+        <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+        <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+    </ol>
+
+    <!-- items -->
+    <div class="carousel-inner" role="listbox">
+        <div class="item active">
+            <img src="images/nav_01.jpg" alt="...">
+        </div>
+        <div class="item">
+            <img src="images/nav_02.jpg" alt="...">
+
+        </div>
+        <div class="item">
+            <img src="images/nav_03.jpg" alt="...">
+        </div>
+    </div>
+
+    <!-- 上一张 和 下一张 -->
+    <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+        <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+    </a>
+    <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+        <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+    </a>
+
+</div>
+
+
+<!--分类栏-->
+<div id="cate-bar">
+
+    <!--定义一个布局容器-->
+    <div class="container-fluid">
+        <!--栅格系统-->
+        <div class="row">
+            <div class="col-md-4 text-center">
+                <img class="img-circle" src="images/apple-logo.png" alt="">
+                <h3>iOS学院</h3>
+                <p class="text-left">iOS学院,又称大神学院,学院的每一个学生都十分的牛逼,他们的梦想是用"指尖改变世界",励志做"中国的乔布斯"。</p>
+                <button class="btn btn-success">立即咨询</button>
+
+            </div>
+            <div class="col-md-4 text-center">
+                 <img class="img-circle" src="images/android.png" alt="">
+                <h3>Android学院</h3>
+                <p class="text-left">Android学院,学院的每一个学生都很牛逼,他们的梦想是通过代码改变自己,终极目标:"瞬间高富帅,赢取白富美"。</p>
+                <button class="btn btn-success">立即咨询</button>
+
+            </div>
+            <div class="col-md-4 text-center">
+                 <img class="img-circle" src="images/web.png" alt="">
+                <h3>UI学院</h3>
+                <p class="text-left">UI学院,又称女神学院。学院每个学生的梦想是:设计出能改变世界的UI界面,成为其他两大学院男生心目中的女神。</p>
+                <button class="btn btn-success">立即咨询</button>
+
+            </div>
+        </div>
+    </div>
+
+
+</div>
+
+
+<!--底部tab选项卡-->
+<div class="container-fluid">
+
+    <div id="tab">
+
+        <!--选项卡-->
+        <ul class="nav nav-tabs" role="tablist">
+            <li role="presentation" class="active"><a href="#ios" aria-controls="home" role="tab" data-toggle="tab">IOS</a></li>
+            <li role="presentation"><a href="#android" aria-controls="profile" role="tab" data-toggle="tab">Android</a></li>
+            <li role="presentation"><a href="#ui" aria-controls="messages" role="tab" data-toggle="tab">UI</a></li>
+
+        </ul>
+
+        <!-- 选项卡面板-->
+        <div class="tab-content">
+            <div role="tabpanel" class="tab-pane active" id="ios">
+                <!--栅格系统-->
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-md-8">
+                            <h2>IOS学院 <span>史上最具逼格</span></h2>
+                            <p class="lead">iOS学院，又称大神学院，学院内优秀学员比比皆是,不断挑战着业界薪资神话。学院的每一个学生都十分的牛逼,他们的梦想是用"指尖改变世界",励志做"中国的乔布斯"。</p>
+                        </div>
+                        <div class="col-md-4">
+                            <img class="img-responsive" src="images/safari-logo.jpg" alt="">
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div role="tabpanel" class="tab-pane" id="android">
+
+                <div class="container-fluid">
+                    <!--栅格系统-->
+                    <div class="row">
+                        <div class="col-md-4">
+                            <img class="img-responsive" src="images/firefox-logo.jpg" alt="">
+                        </div>
+                        <div class="col-md-8">
+                            <h2>Android学院 <span>史上最具逼格</span></h2>
+                            <p class="lead">Android学院,学院的每一个学生都很牛逼,他们的梦想是通过代码改变自己,终极目标:"瞬间高富帅,赢取白富美"。</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div role="tabpanel" class="tab-pane" id="ui">
+                <!--栅格系统-->
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-md-8">
+                            <h2>UI学院 <span>史上最具逼格</span></h2>
+                            <p class="lead">网页UI学院,又称女神学院。学院每个学生的梦想是:设计出能改变世界的UI界面,成为其他两大学院男生心目中的女神。</p>
+                        </div>
+                        <div class="col-md-4">
+                            <img class="img-responsive" src="images/ie-logo.jpg" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+
+</div>
+
+
+<hr>
+
+<footer>
+
+    <p class="pull-left">© 2015 广州小码哥教育集团</p>
+    <a class="pull-right" href="#" target="_top">回到顶部</a>
+
+</footer>
+
+
+<!-- 2.jQuery (Bootstrap 的所有 JavaScript 插件都依赖 jQuery，所以必须放在前边) -->
+<script src="./libs/jQuery/jquery-3.2.0.min.js"></script>
+<!-- 3.加载 Bootstrap 的所有 JavaScript 插件。你也可以根据需要只加载单个插件。 -->
+<script src="./libs/Bootstrap/js/bootstrap.js"></script>
+<script src="js/index.js"></script>
+</body>
+</html>

@@ -1,0 +1,28 @@
+/*1.定义变量*/
+@bgColor:red;
+@w:300px;
+@h:100px;
+
+/*2.定义混合*/
+.createRadius(@Radius:30px,@Border:1px solid green){
+  border-radius: @Radius;
+  border: @Border;
+}
+
+
+div{
+  width: @w;
+  height: @h;
+  background: @bgColor;
+
+  /*3.调用混合*/
+  .createRadius(100px);
+}
+p{
+  width: @w;
+  height: @h;
+  background: @bgColor;
+
+  /*3.调用混合*/
+  .createRadius(30px,2px solid blue);
+}

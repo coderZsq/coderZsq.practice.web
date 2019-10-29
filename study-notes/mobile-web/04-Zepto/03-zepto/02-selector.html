@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+
+        div{
+            width: 200px;
+            height: 200px;
+            background: red;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+
+
+<button id="btn">点击修改第二个div的颜色</button>
+<div class="box"></div>
+<div class="box"></div>
+
+<!--<script src="libs/jquery-3.2.0.min.js"></script>-->
+
+
+<!--引入zepto.js( 包含核心的5个模块 )-->
+<script src="libs/zepto.min.js"></script>
+<!-- 单独的引入selector模块( :eq(1) ) -->
+<script src="./libs/selector.js"></script>
+
+
+
+<script>
+
+    $('#btn').on('click',function () {
+        $('.box:eq(1)').css({
+            background:'green'
+        })
+    })
+
+</script>
+</body>
+</html>

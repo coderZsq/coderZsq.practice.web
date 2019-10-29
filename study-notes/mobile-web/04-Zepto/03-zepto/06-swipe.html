@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Title</title>
+    <style>
+
+        div{
+            width: 100px;
+            height: 100px;
+            background: red;
+
+            position: absolute;
+            left: 0;
+            top: 0;
+            
+        }
+
+    </style>
+</head>
+<body>
+
+
+
+<div class="box"></div>
+
+
+<script src="libs/zepto.min.js"></script>
+<script src="libs/fx.js"></script> <!-- animate -->
+<script src="libs/touch.js"></script> <!-- tap swipe -->
+
+<script>
+    
+    $(function () {
+        
+        $('.box').swipe(function () {
+            console.log('sdf')
+        })
+
+        $('.box').swipeLeft(function () {
+            console.log('向左滑动')
+            $(this).animate({
+                left:'0px'
+            })
+        })
+
+        $('.box').swipeRight(function () {
+            console.log('向右滑动')
+            $(this).animate({
+                left:'100px'
+            })
+        })
+
+        $('.box').swipeUp(function () {
+            console.log('向上滑动')
+            $(this).animate({
+                top:'0px'
+            })
+        })
+        $('.box').swipeDown(function () {
+            console.log('向下滑动')
+            $(this).animate({
+                top:'100px'
+            })
+        })
+
+
+    })
+    
+</script>
+
+
+</body>
+</html>

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <!--指定网页的编码-->
+    <meta charset="utf-8">
+    <!--
+        用来做ie的兼容
+    -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!--
+        用来做移动端的兼容
+    -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+    <title>Bootstrap 初体验</title>
+
+    <!--1.引入Bootstrap框架-->
+    <link rel="stylesheet" href="./libs/Bootstrap/css/bootstrap.css">
+
+    <style>
+        body{
+            margin: 100px;
+        }
+    </style>
+</head>
+<body>
+
+<a href="#" class="btn btn-success btn-lg">Link</a>
+
+<button class="btn btn-info">button</button>
+
+<input type="button" value="Input" class="btn btn-danger">
+
+<button type="button" class="close" ><span aria-hidden="true">&times;</span></button>
+
+<span class="caret"></span>
+
+
+<span class="glyphicon glyphicon-trash" style="font-size: 100px;color: green"></span>
+
+<i  class="glyphicon glyphicon-search" style="font-size: 100px;color:gray"></i>
+
+
+<div class="dropdown">
+    <button class="btn btn-success dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+        Dropdown
+        <span class="caret"></span>
+    </button>
+    <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+        <li><a href="#">Action</a></li>
+        <li><a href="#">Another action</a></li>
+        <li><a href="#">Something else here</a></li>
+        <li role="separator" class="divider"></li>
+        <li><a href="#">Separated link</a></li>
+    </ul>
+</div>
+
+
+<div class="btn-group" role="group" aria-label="...">
+    <button type="button" class="btn btn-default">+</button>
+    <button type="button" class="btn btn-default">10</button>
+    <button type="button" class="btn btn-default">-</button>
+</div>
+
+
+<div class="input-group">
+    <span class="input-group-addon" id="basic-addon1">@</span>
+    <input type="text" class="form-control" placeholder="Username" aria-describedby="basic-addon1">
+</div>
+
+
+<div class="progress">
+    <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 20%;">
+        20%
+    </div>
+</div>
+
+
+<!--引入jQuery框架( 要在Bootstrap框架之前引入 )-->
+<script src="libs/jQuery/jquery-3.2.0.min.js"></script>
+<!--引入Bootstrap框架(依赖jQuery框架)-->
+<script src="libs/Bootstrap/js/bootstrap.js"></script>
+</body>
+</html>

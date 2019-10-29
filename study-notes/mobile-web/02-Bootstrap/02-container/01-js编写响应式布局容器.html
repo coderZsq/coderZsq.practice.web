@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        div{
+            height: 40px;
+            background: red;
+            padding:0px 15px;
+            margin: 0 auto;
+        }
+
+    </style>
+</head>
+<body>
+
+
+
+<div class="container">
+
+</div>
+
+<script>
+    window.onload=function () {
+
+        var container = document.querySelector('.container');
+
+        windowWidthChange();
+
+        console.log(container);
+
+        /*1.监听屏幕宽度的变化*/
+        window.addEventListener('resize',windowWidthChange)
+
+        /**
+         * 2.当屏幕的宽度放生变化就会回调这个函数
+         */
+        function windowWidthChange() {
+            // console.log("sdf")
+
+            //3.获取屏幕的宽度
+            var windowWith = window.innerWidth; // with + padding
+            console.log(windowWith)
+            /*四个档位 1170 970 750 100%*/
+
+            /*超大屏*/
+            if(windowWith>=1200){
+                container.style.width=1170+'px'
+
+                /*中等屏幕*/
+            }else if(windowWith>=992){
+                container.style.width=970+'px'
+                /*平板*/
+            }else if(windowWith>=768){
+                container.style.width=750 +'px'
+            }else{
+                container.style.width='100%'
+            }
+
+        }
+
+
+    }
+
+
+
+</script>
+
+</body>
+</html>
