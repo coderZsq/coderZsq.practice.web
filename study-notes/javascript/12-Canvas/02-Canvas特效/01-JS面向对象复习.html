@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<script>
+   /*
+   面向过程和面向对象
+   相同点:都是解决问题的一种思想(思路)
+   不同点:
+        面向过程更加关注的是解决问题的一个一个的步骤(细节)
+        面向对象更加关注的是解决问题所需要的对象
+   */
+
+    // 创建对象的方式
+    // 1.字面量的方式
+    // 不可以作为模板使用
+    // 场合:数据传输 JSON [] {}字典->数据模型对象
+    var person = {name : 'zs',age :20};
+    var arr = [1,2,3];
+
+    // 2.内置的构造函数
+    // 不可以作为模板使用
+    var obj = new Object();
+    obj.name = 'zs';
+    var image = new Image();
+
+    // 3.简单的工厂函数
+    function createPerson(name) {
+        var obj = new Object();
+        obj.name = name;
+        return obj;
+    }
+
+   function createDog(color) {
+       var obj = new Object();
+       obj.color = color;
+       return obj;
+   }
+    var p1 = createPerson('zs');
+    var d1  = createDog('白色')
+    // console.log(typeof p1); // object
+    // console.log(typeof d1); // object
+
+    // 4.自定义构造函数
+    function Dog(option) {
+        this._init(option);
+    }
+    Dog.prototype = {
+        // 初始化的操作
+        _init : function (option) {
+            option = option || {};
+            this.name = option.name;
+            this.age = option.age;
+        },
+        eat : function () {
+            console.log(this.dog + '正在吃骨头');
+        }
+    }
+
+    var d2 = new Dog({name :'旺财',age : 3});
+
+    // 5.类创建对象
+    // prototype.js 中大型的项目中 设计模式
+
+</script>
+</body>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>07-get请求简单封装</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+    <script src="js/get2.js"></script>
+
+</head>
+<body>
+<button>GET请求01</button>
+<p></p>
+<script>
+
+    //点击第一个按钮,请求完成之后把结果显示在页面中
+    //点击第二个按钮,请求完成之后把结果打印出来
+   var oBtn1 = document.querySelectorAll("button")[0];
+   var p = document.querySelector("p");
+
+   oBtn1.onclick = function () {
+       /*
+       var url = "http://127.0.0.1/day02/Code/php/03-get.php";
+       var obj = {username:"wc",password:"321"};
+
+       get(url,obj,function success(xhr) {
+           p.innerText = "请求成功:" + xhr.responseText;
+       },function error(xhr) {
+           p.innerText = "请求失败:" + xhr.statusText;
+       });*/
+
+       get("http://127.0.0.1/day02/Code/php/03-get.php",
+           {
+               username:"张三啥啥啥",
+               password:"321"
+           },
+           function success(xhr) {
+                p.innerText = "请求成功:" + xhr.responseText;
+           },
+           function error(xhr) {
+                p.innerText = "请求失败:" + xhr.statusText;
+        });
+   }
+
+   //如果发送GET请求的时候,参数中存在中文那么需要进行转码处理
+    //
+</script>
+</body>
+</html>

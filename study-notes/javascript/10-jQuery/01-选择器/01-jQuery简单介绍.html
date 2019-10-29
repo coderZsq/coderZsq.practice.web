@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+    <script src="js/jquery-3.3.1.js"></script>
+</head>
+
+<!--
+01 下载获取jQuery框架
+02 导入框架到页面中
+03 使用
+-->
+<body>
+<!--需求1:点击页面的按钮,添加点击事件,弹出框Hello!-->
+<!--需求2:给页面中所有的按钮都添加事件-->
+<button>按钮1</button>
+<button>按钮2</button>
+
+<!--01 原生js实现-->
+<script>
+//    //001 先获取按钮
+//    var oBtn = document.getElementsByTagName("button")[0];
+//    //002 添加点击事件
+//    oBtn.onclick = function () {
+//        //03 弹出消息
+//        alert("Hello JS!");
+//    }
+</script>
+
+<!--02 jQuery实现-->
+<script>
+    $("button").click(function () {
+        alert("Hello jQuery!");
+    })
+</script>
+</body>
+</html>

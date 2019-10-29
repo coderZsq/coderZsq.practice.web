@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+    <script src="js/jquery-3.3.1.min.js"></script>
+</head>
+<body>
+<div id="demoID">
+    <div>div1</div>
+    <div class="box">div2
+        <span>spanA</span><span>spanB</span>
+    </div>
+    <div>div3</div>
+</div>
+<button>删除</button>
+<button>清空</button>
+<script>
+    $(function () {
+        //..........
+        $("button:eq(0)").click(function () {
+            //原生的DOM操作:删除class为box的标签
+            /*
+            var oDiv = document.getElementsByClassName("box")[0];
+            var node = oDiv.parentNode;
+            node.removeChild(oDiv);
+            console.log(node);*/
+            //jQ.remove()
+            $(".box").remove();
+        })
+
+        $("button:eq(1)").click(function () {
+            //原生的DOM操作:清空id为demoID的标签
+            /*
+            var oDiv = document.getElementById("demoID");
+            oDiv.innerHTML = "";*/
+
+            $("#demoID").empty();
+        })
+
+    })
+</script>
+</body>
+</html>

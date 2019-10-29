@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<canvas id="canvas" width="900" height="600" style="border: 1px solid #000;"></canvas>
+<p></p>
+<button dir = 2>上</button>
+<button dir = 6>下</button>
+<button dir = 0>左</button>
+<button dir = 4>右</button>
+
+<script>
+    // 1.获取标签和上下文
+    var canvas = document.getElementById('canvas');
+    var ctx = canvas.getContext('2d');
+
+    // 2.常量
+    var clipWH = 256;
+    var time = 400;// ms
+    var index = 0;
+    var dir = 0; // 左边
+
+    // 3.绘制图片
+    var image  = new Image();
+    image.src = "images/girl.png";
+    // 图片加载完毕后再绘制
+    image.onload = function (ev) {
+        // 备份this
+        var self = this;
+        // 定时器
+        setInterval(function () {
+            // 清屏
+            ctx.clearRect(0,0,canvas.width,canvas.height);
+            // 绘制图片
+            ctx.drawImage(self,index * clipWH,dir * clipWH,clipWH,clipWH,200,200,clipWH,clipWH);
+            // 累加索引
+            index ++;
+            // 取余 0~7
+            // index = index % 8
+            index %= 8;
+        },time);
+    }
+
+    // 监听所有按钮的点击事件
+    var buttons = document.getElementsByTagName('button');
+    for (var i = 0; i < buttons.length; i++) {
+        buttons[i].onclick = function () {
+            dir = this.getAttribute('dir');
+        }
+    }
+</script>
+</body>
+</html>

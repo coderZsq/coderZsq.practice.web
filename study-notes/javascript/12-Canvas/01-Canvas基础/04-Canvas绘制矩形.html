@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<canvas id="canvas" width="900" height="600" style="border: 1px solid #000;"></canvas>
+<script>
+    // 1.获取标签和上下文
+    var canvas = document.getElementById('canvas');
+    var ctx = canvas.getContext('2d');
+
+    // 2.绘制矩形
+    /*
+    ctx.rect(200,200,250,100);
+    ctx.strokeStyle = 'red';
+    ctx.lineWidth = 10;
+    // 描边
+    ctx.stroke();
+    ctx.fillStyle = 'blue';
+    // 填充
+    ctx.fill();
+    */
+
+    ctx.strokeStyle = 'red';
+    ctx.lineWidth = 10;
+    // 快速描边矩形:设置完路径后会直接进行描边处理
+    ctx.strokeRect(200,200,250,100);
+
+    ctx.fillStyle = 'blue';
+    // 快速填充矩形:设置完路径后会直接进行填充处理
+    ctx.fillRect(200,200,250,100);
+
+    // 清除矩形
+    // ctx.clearRect(200,200,100,50);
+    // 清屏处理
+    // ctx.clearRect(0,0,canvas.width,canvas.height);
+</script>
+</body>
+</html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+    <script src="js/jquery-3.3.1.min.js"></script>
+</head>
+<body>
+<button>按钮1</button>
+<div>我是div</div>
+<!--<button>按钮2</button>-->
+<script>
+    $(function () {
+        //..........
+        //[001] 注册的事件的方法
+        //事件注册(1):使用快捷方法
+        //使用注册(2):on
+
+        //jQ.on("事件类型",回调函数)
+
+        //[002] 标签可以绑定多个事件,不会被覆盖
+        //[003] 关于事件对象(event)
+        //      type 事件类型
+        //      target 目标对象(事件作用的对象)
+        $("button").click(function (event) {
+            console.log("click---1");
+            //console.log(event);
+            //console.log(event.type);
+            //console.log(event.target);
+        })
+
+        $("button").click(function () {
+            console.log("click---2");
+        })
+
+        $("button").on("click",{name:"zs",age:18},function (e) {
+            console.log("on---a");
+            console.log(e.data.name);
+
+        })
+
+        $("button").on("click",function () {
+            console.log("on---b");
+        })
+
+        $("button").on("mouseenter",function (event) {
+            console.log("mouseenter---鼠标移入");
+            console.log(event.type);
+        })
+
+        $("div").one("click",function () {
+            alert(123);
+        })
+
+        
+    })
+</script>
+</body>
+</html>

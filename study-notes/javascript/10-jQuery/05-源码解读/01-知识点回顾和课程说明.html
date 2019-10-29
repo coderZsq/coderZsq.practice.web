@@ -1,0 +1,45 @@
+jQuery源码解读
+[1] jQuery整体的结构
+<script>
+    (function () {
+       var jQuery = function () {
+            return new jQuery.prototype.init();
+       }
+
+       jQuery.prototype = {
+           constructor:jQuery,
+           init:function () {
+               //......
+           }
+       }
+
+       jQuery.prototype.init.prototype = jQuery.prototype;
+
+       window.jQuery = window.$ = jQuery;
+    })()
+</script>
+
+[2] jQuery入口函数的处理
+    001 分析参数(字符串|假|数组|伪数组|其它|函数)的情况以及对应的输出
+    002 探究自己应该怎么去实现(判断 --> 实现)
+    003 验证
+
+
+课程内容
+[1] 课程内容补充(函数作为参数)
+[2] jQuery框架中的插件机制(工具方法)
+[3] jQuery原型对象上面的属性和方法实现
+[4] jQuery操作DOM的方法(attr prop text...)
+
+
+
+
+
+
+
+
+
+
+
+
+

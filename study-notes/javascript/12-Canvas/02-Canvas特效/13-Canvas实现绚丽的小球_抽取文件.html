@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<canvas id="canvas" width="900" height="600" style="border: 1px solid #000;"></canvas>
+<script src="js/underScore-min.js"></script>
+<script src="js/ColorBall.js"></script>
+<script>
+    // 1.获取标签和上下文
+    var canvas = document.getElementById('canvas');
+    var ctx = canvas.getContext('2d');
+
+    // 2.监听鼠标的移动事件创建小球
+    // 小球数组
+    var ballArray = [];
+    // 颜色数组
+    var colors = ['red','blue','green','pink','yellow','purple','orange','skyBlue'];
+    canvas.onmousemove = function (ev) {
+
+        var color = colors[_.random(0,colors.length-1)];
+        // 创建小球并添加到数组中
+        ballArray.push(new ColorBall({
+            x : ev.offsetX,
+            y : ev.offsetY,
+            r : 30,
+            color : color
+        }));
+    }
+
+    // 5.定时器
+    setInterval(function () {
+        // 清屏
+        ctx.clearRect(0,0,canvas.width,canvas.height);
+        // 更新并绘制小球
+        for (var i = 0; i < ballArray.length; i++) {
+            ballArray[i].update();
+            // ballArray[i].render();
+        }
+        for (var i = 0; i < ballArray.length; i++) {
+            // ballArray[i].update();
+            ballArray[i].render(ctx);
+        }
+        // console.log(ballArray.length);
+    },40);
+
+
+</script>
+</body>
+</html>

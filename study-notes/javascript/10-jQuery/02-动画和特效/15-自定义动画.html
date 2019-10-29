@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        div
+        {
+            width: 50px;
+            height: 50px;
+            background: red;
+        }
+    </style>
+    <script src="js/jquery-3.3.1.min.js"></script>
+</head>
+<body>
+<div>我是div</div>
+<button>执行动画1</button>
+<button>执行动画2</button>
+<button>执行动画3</button>
+<script>
+    $(function () {
+        //..........
+        //自定义动画 animate()方法
+        //语法:jQ.animate(targetObj,timer,fn)  参数说明:(目标对象,动画时间,回调函数)
+        //具体的使用方式(一)
+        $("button").eq(0).click(function () {
+            $("div").animate({"width":"200px","height":"100px"},1000,function () {
+                console.log("动画执行完毕");
+            })
+        })
+
+        //具体的使用方式(二)
+        $("button").eq(1).click(function () {
+            $("div").animate({"width":"+=20px","height":"-=20px"},1000,function () {
+                console.log("动画执行完毕");
+            })
+        })
+
+        //具体的使用方式(三)
+        $("button").eq(2).click(function () {
+            $("div").animate({"width":"+=20px","height":"toggle"},1000,function () {
+                console.log("动画执行完毕");
+            })
+        })
+    })
+</script>
+</body>
+</html>

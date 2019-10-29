@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .box1{
+            width: 300px;
+            height: 300px;
+            background: red;
+        }
+
+        .box2{
+            width: 100px;
+            height: 100px;
+            background: greenyellow;
+        }
+
+        .box3{
+            width: 50px;
+            height: 50px;
+            background: deepskyblue;
+        }
+    </style>
+    <script src="js/jquery-3.3.1.min.js"></script>
+</head>
+<body>
+<div class="box1">
+    <div class="box2">
+        <div class="box3"></div>
+    </div>
+</div>
+<script>
+    $(function () {
+        //..........
+        //事件冒泡:当标签事件被触发的时候,事件会向上层层传递直到根节点,如果这个过程中遇到注册了相同事件的标签那么也会触发
+        //阻止事件冒泡:[1] 在回调函数中返回false
+        //            [2] 通过调用事件对象的
+        $(".box1").on("click",function () {
+            console.log("box1");
+        })
+
+        $(".box2").on("click",function (event) {
+            console.log("box2");
+            //event.stopPropagation()
+            //return false;
+        })
+
+        $(".box3").on("click",function () {
+            console.log("box3");
+        })
+
+        $(".box3").triggerHandler("click");
+
+    })
+</script>
+</body>
+</html>

@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+
+        .box
+        {
+            width: 320px;
+            /*height: 500px;*/
+            border: 1px solid #ccc;
+            margin: 50px auto;
+            font-size: 14px;
+        }
+
+        h1{
+            font-size: 20px;
+            color: #F23D7C;
+            height: 50px;
+            line-height: 50px;
+            padding-left: 20px;
+        }
+
+        li{
+            /*height: 30px;*/
+            line-height: 30px;
+            border-top: 1px dashed #ccc;
+        }
+
+        span
+        {
+            width: 20px;
+            height: 20px;
+            display: inline-block;
+            background: #ccc;
+            margin: 5px;
+            text-align: center;
+            line-height: 20px;
+        }
+
+        li:nth-child(-n+3) span
+        {
+            background: #F23D7C;
+        }
+
+        .content
+        {
+            overflow: hidden;
+            display: none;
+        }
+        .content img
+        {
+            width: 80px;
+            height: 110px;
+            margin: 5px;
+            float: left;
+        }
+
+        .content p{
+            font-size: 14px;
+            width: 210px;
+            line-height: 18px;
+            float: left;
+            margin-left: 10px;
+        }
+
+        .current .content
+        {
+            display: block;
+        }
+
+    </style>
+    <script src="js/jquery-3.3.1.min.js"></script>
+</head>
+<body>
+<div class="box">
+    <h1>电影风云榜</h1>
+    <div class="classT">
+        <ul>
+            <li class="current">
+                <p><span>1</span> 我不是药神</p>
+                <div class="content">
+                    <img src="imgs/01.jpg">
+                    <p>《我不是药神》是由文牧野执导，宁浩、徐峥共同监制的剧情片，徐峥、周一围、王传君、谭卓、章宇、杨新鸣等主演 。影片讲述了神油店老板程勇…</p>
+                </div>
+            </li>
+            <li>
+                <p><span>2</span> 环太平洋：雷霆再起</p>
+                <div class="content">
+                    <img src="imgs/02.jpg">
+                    <p>《环太平洋：雷霆再起》是斯蒂文·S·迪奈特执导，约翰·波耶加、斯科特·伊斯特伍德、景甜、卡莉·史派妮、菊地凛子、伯恩·戈曼、亚德里亚·霍纳、……</p>
+                </div>
+            </li>
+            <li>
+                <p><span>3</span> 西游记女儿国</p>
+                <div class="content">
+                    <img src="imgs/03.jpg">
+                    <p>《西游记女儿国》是星皓影业有限公司出品，由郑保瑞执导，郭富城、冯绍峰、赵丽颖、小沈阳、罗仲谦领衔主演，林志玲、梁咏琪、刘涛、苑琼丹、…</p>
+                </div>
+            </li>
+            <li>
+                <p><span>4</span> 复仇者联盟</p>
+                <div class="content">
+                    <img src="imgs/04.jpg">
+                    <p>《复仇者联盟》（Marvels The Avengers）是由乔斯·韦登执导的动作科幻电影，小罗伯特·唐尼、克里斯·埃文斯、斯嘉丽·约翰逊、克里斯·海姆…</p>
+                </div>
+            </li>
+            <li>
+                <p><span>5</span> 白鹿原</p>
+                <div class="content">
+                    <img src="imgs/05.jpg">
+                    <p>《白鹿原》是根据陈忠实的同名小说而改编的，由王全安执导，张丰毅、张雨绮、吴刚、段奕宏等主演。该片筹备9年、拍摄3年，影片以“白家”和“…</p>
+                </div>
+            </li>
+            <li>
+                <p><span>6</span> 银魂</p>
+                <div class="content">
+                    <img src="imgs/06.jpg">
+                    <p>《银魂》是由福田雄一执导，小栗旬、菅田将晖、桥本环奈、长泽雅美等联合主演的一部喜剧片。该片于2017年7月14日在日本上映，同年9月1日在中国大陆…</p>
+                </div>
+            </li>
+            <li>
+                <p><span>7</span> 钢铁侠3</p>
+                <div class="content">
+                    <img src="imgs/07.jpg">
+                    <p>《钢铁侠3》是《钢铁侠》系列电影第三部，是由美国漫威影业公司出品的科幻动作电影，由沙恩·布莱克执导，小罗伯特·唐尼、格温妮丝·帕特洛、唐·…</p>
+                </div>
+            </li>
+            <li>
+                <p><span>8</span> 三体</p>
+                <div class="content">
+                    <img src="imgs/08.jpg">
+                    <p>《三体》是中国游族影业出品的科幻电影，由张番番执导，冯绍峰、张静初、吴刚、唐嫣、杜淳、张翰等主演。该片根据中国科幻作家刘慈欣同名小说改编…</p>
+                </div>
+            </li>
+            <li>
+                <p><span>9</span> 芳华</p>
+                <div class="content">
+                    <img src="imgs/09.jpg">
+                    <p>《芳华》是由浙江东阳美拉传媒有限公司出品的剧情片，由冯小刚执导，严歌苓编剧，黄轩、苗苗、钟楚曦主演。该影片根据严歌苓同名小说改编，以…</p>
+                </div>
+            </li>
+            <li>
+                <p><span>10</span> 天黑请闭眼</p>
+                <div class="content">
+                    <img src="imgs/10.jpg">
+                    <p>《天黑请闭眼》是由阿甘执导，吴倩莲、李小冉、张耀扬等人主演的一部惊悚影片。于2004年4月1日在中国大陆上映。影片以几个朋友在酒吧中玩杀人…</p>
+                </div>
+            </li>
+
+        </ul>
+    </div>
+</div>
+<script>
+    $(function () {
+        //..........
+        //需求:当鼠标移入到li标签的时候
+        //(1) 隐藏其他兄弟节点的内容细节(图片和简介)\
+        //(2) 展示当前标签的内容
+
+        //代码实现
+        //001 监听页面中li标签的鼠标移入事件
+        $("li").mouseenter(function () {
+            //console.log("鼠标移入");
+            //002 展开自己的内容,隐藏兄弟节点的内容
+            //this是当前的li标签 DOM对象 要使用jQ中的方法需要先包裹成jQ对象
+            $(this).addClass("current").siblings().removeClass("current");
+        })
+    })
+</script>
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<!--
+Cookie基础:会话跟踪技术
+注意点:
+[1] 大小限制 <=4KB
+[2] 个数限制 <=50
+[3] 过期时间(默认是当前会话,可以设置)
+[4] 本身不可以跨浏览器访问
+[5] 本身不可以跨域访问,在相同的域中是可以共享
+[6] 在设置Cookie数据的时候,一次只能设置一个数据
+-->
+<script>
+    //[1] 读取和设置Cookie数据
+    document.cookie = "username=zhangsan";
+    document.cookie = "age=18";
+    console.log(document.cookie);
+
+    //[2] 设置过期时间
+    var date = new Date();
+    date.setDate(date.getDate() + 3);
+    document.cookie = "color=red; expires="+date;
+
+    //[3] 域(源)
+    //相同的域(源)---同源
+    //不同的域(源)---跨域
+    //http://localhost:63342/www/day04/Code/01.hash%E7%9A%84%E7%AE%80%E5%8D%95%E4%BD%BF%E7%94%A8.html?_ijt=ol2qsbli7c1cjdacg236ka6ngs
+    //http://localhost:63342/www/day04/Code/04-Cookie%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8.html?_ijt=sd4em2bjgcljjgvgib80ss59dm
+    //http://wendingding.com/
+</script>
+</body>
+</html>

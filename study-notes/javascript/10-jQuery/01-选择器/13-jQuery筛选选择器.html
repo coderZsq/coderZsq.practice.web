@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+    <script src="js/jquery-3.3.1.min.js"></script>
+</head>
+<body>
+<ul>
+    <li>1</li>
+    <li>2</li>
+    <li>3</li>
+    <li>4</li>
+    <li>5</li>
+    <li>6</li>
+    <li>7</li>
+    <li>8</li>
+    <li>9</li>
+    <li>10</li>
+</ul>
+
+<button>获取第一个li标签</button>
+<button>获取获取最后一个li标签</button>
+<button>获取除了第一个外所有的li标签</button>
+<button>获取第4个li标签</button>
+<button>获取索引为奇数的标签</button>
+<button>获取索引为偶数的标签</button>
+<button>获取索引大于特定值的标签</button>
+<button>获取索引小于特定值的标签</button>
+<script>
+    $(function () {
+        //..........
+        //需求:
+        $("button").eq(0).click(function () {
+            $("li:first").css("background","red");
+        })
+
+        $("button").eq(1).click(function () {
+            $("li:last").css("background","red");
+        })
+
+        $("button").eq(2).click(function () {
+            $("li:not(:eq(0))").css("background","red");
+        })
+
+        $("button").eq(3).click(function () {
+            //$("li").eq(3).css("background","red");
+            $("li:eq(3)").css("background","red");
+        })
+
+        $("button").eq(4).click(function () {
+            $("li:odd").css("background","red");
+        })
+
+        $("button").eq(5).click(function () {
+            $("li:even").css("background","yellow");
+        })
+
+        $("button").eq(6).click(function () {
+            $("li:gt(5)").css("background","yellow");
+        })
+        $("button").eq(7).click(function () {
+            $("li:lt(5)").css("background","yellow");
+        })
+
+    })
+
+
+</script>
+<!--
+    :first
+    :last
+    :not()
+    :odd
+    :even
+    :gt()
+    :lt()
+-->
+</body>
+</html>

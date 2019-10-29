@@ -1,0 +1,49 @@
+知识点复习
+
+[1] jQuery准备知识
+    001 jQ -- DOM
+    002 DOM监听对比
+    003 解决冲突
+[2] jQuery基本操作
+    001 样式相关 css() addClass() hasClass() removeClass()
+    002 内容相关 html() text()
+    003 位置相关 offset() position()
+
+[3] jQuery选择器
+    001 基本选择器  #ID .class div div,#ID  *
+    002 层级选择器  后代 直接后代(>) 后面的第一个兄弟节点(+) ~
+    003 属性选择器  $("a[title][href]")
+    004 筛选选择器  :last eq() :not() odd even gt() lt()..
+    005 父子选择器  parent() parents() parentsUntil() children() | find() siblings() ..
+                   prev() prevAll() prevUntil() next() nextAll....
+                   has()  filter()..
+[4] jQuery动画和特效
+    001 显示和隐藏(高度|宽度|透明度)
+        show(timer,fn) hide(timer,fn) toggle(timer,fn)
+    002 展开和收起(高度)
+        slideDown(timer,fn) slideUp(timer,fn) slideToggle(timer,fn)
+    003 淡入和淡出(透明度)
+        fadeIn(timer,fn) fadeOut(timer,fn) fadeToggle(timer,fn) fadeTo(timer,target,fn)
+    004 自定义动画(animate)
+        $().animate({},timer,fn)
+        delay() 延迟执行
+        stop(true,false)  停止动画队列
+
+[5] jQuery常用工具方法
+    001 each方法
+        $.each(arrM|obj|jQ,fn(key,value){//....this == value})
+        $().each(fn(key,value){//.....})
+    002 map(数组映射)方法
+        var arr = $.map(arrM,fn(value,index){//...this == window})
+        $().map(fn)
+    003 $.trim()
+        $().toArray()
+        first()
+        last()
+        get() ...
+
+
+课程内容
+[1] 综合案例
+[2] jQuery事件相关方法
+[3] jQuery对DOM的基本操作(创建|替换|删除|清空|复制|插入|属性|属性节点)

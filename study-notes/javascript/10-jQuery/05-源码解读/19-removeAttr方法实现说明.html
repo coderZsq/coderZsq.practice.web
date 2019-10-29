@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+    <script src="js/XMGQuery-1.2.4.js"></script>
+    <!--<script src="js/jquery-3.3.1.min.js"></script>-->
+
+</head>
+<body>
+<div class="box1" title="TT" des="猪叫的声音">呵呵,呵呵</div>
+<div class="box2">嘿嘿,嘿嘿</div>
+<script>
+    //jQ.attr()
+    //作用:设置(添加|修改)和查询标签的属性节点
+    //语法:
+    //jQ.attr(key)       查询:获取所有标签中第一个标签对应的属性节点值返回
+    //jQ.attr(key,value) 添加|修改:批量设置所有选中标签的属性节点
+    //jQ.attr({key1:value,key2:value})  //批量添加|修改多个属性节点
+
+    //jQ.removeAttr()
+    //作用:删除标签中指定的属性节点
+    //总结:传递参数表示批量的删除,没有参数,那么就返回jQ实例对象
+    //console.log($("div").removeAttr());
+    console.log($("div").removeAttr("class"));
+</script>
+</body>
+</html>

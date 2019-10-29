@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+    <script src="js/jquery-3.3.1.min.js"></script>
+</head>
+<body>
+<script>
+    $(function () {
+        //..........
+        //基本选择器:
+        //(1) ID选择器 #ID名
+        //(2) 类选择器 .类名
+        //(3) 标签选择器 标签类型
+        //(4) 并集选择器
+        //(5) 通配符选择器 *
+        $("button").eq(0).click(function () {
+            $("#demoID").css("background","red");
+        })
+
+        $("button").eq(1).click(function () {
+            $(".box1").css("background","yellow");
+        })
+
+        $("button").eq(2).click(function () {
+            $(".box2").css("background","blue");
+        })
+
+        $("button").eq(3).click(function () {
+            $("div").css("background","#ccc");
+        })
+
+        $("button").eq(4).click(function () {
+
+            //id为demoID以及p标签以及class=box2的标签
+            $("#demoID,p,.box2").css("background","#f28");
+        })
+
+        $("button").eq(5).click(function () {
+
+            //id为demoID以及p标签以及class=box2的标签
+            $("*").css("background","#666");
+        })
+    })
+
+</script>
+
+<div id="demoID">id为demoID的标签</div>
+<div class="box1">class为box1的标签</div>
+<div class="box1">class为box1的标签</div>
+<div class="box1 box2">class为box1 box2的标签</div>
+<div class="box2">class为box2的标签</div>
+<p>我是p</p>
+
+
+<button>ID == demoID</button>
+<button>class == box1</button>
+<button>class == box2</button>
+<button>div标签</button>
+<button>并集选择器</button>
+<button>通配符</button>
+</body>
+</html>

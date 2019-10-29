@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+    <script src="js/jquery-3.3.1.min.js"></script>
+</head>
+<body>
+<div class=" box1 class1 bbx class2 ">div1</div>
+<!--<div class="box2">div2</div>-->
+<script>
+    //hasClass方法
+    //语法:jQ.hasClass(class)   返回值:布尔类型的值
+    //基本使用方式:
+    // (001) 如果没有参数 总是返回false
+    // (002) 传递1个参数  检查所有选中的标签,如果某个标签中存在指定的样式就返回true,如果所有标签中都没有对应的样式那么就返回false
+    //console.log($("div").hasClass("box"));
+
+    //分析应该如何实现:
+    //实现hasClass方法的时候最核心的问题是:子串的匹配问题
+    //需求:检查div1中是否拥有box这个样式
+
+
+    //(0) 初始化要匹配的子串
+    var str = " class2 ";
+
+    //(1) 先获取标签对应的所有样式(字符串)
+    var oDiv = document.querySelector("div");
+    //第一种方式:使用className属性获取
+    console.log(oDiv.className);  //box1 class1 class2
+    //第二种方式:通过属性节点相关的方法来获取
+    console.log(oDiv.getAttribute("class"));
+
+    var classNameString = " " + oDiv.className + " ";
+    //(2) 检查classNameString字符串中是否存在str这个子串
+    var arrM = classNameString.split(" ");
+    console.log(arrM);
+    /*
+    for(var i = 0 ;i<arrM.length;i++)
+    {
+        console.log(i,arrM[i]);
+        if(arrM[i] == str)
+        {
+            console.log("找到了对应的元素");
+            break;
+        }
+    }*/
+    //获取arrM数组中str元素的索引,如果有这个元素那么就返回对应的索引,如果没有这个元素,那么就返回-1
+    //console.log(arrM.indexOf(str));
+    console.log(classNameString.indexOf(str));
+
+
+</script>
+</body>
+</html>

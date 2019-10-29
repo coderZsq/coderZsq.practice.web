@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+    <script src="js/jquery-2.0.0.js"></script>
+
+</head>
+<body>
+<script>
+    /*
+    * Call方法和apply方法:
+    * 作用:借用其他对象的方法,并且绑定函数中的this
+    * 语法:
+    *   对象1.方法.call(对象2)
+    *   对象1.方法.apply(对象2)
+    * 差别:
+    * [A] 传参的方式不一样
+        *   call(绑定给this的对象,参数1,参数2,参数3...)
+        *   apply(绑定给this的对象,[参数1,参数2,参数3...])
+      [B] length不一样,所有的函数都拥有length属性,代表的是形参的个数(期望传递的参数个数)
+          函数.length         形参的个数
+          arguments.length   实参的个数
+     Function.prototype.call.length  === 1
+     Function.prototype.apply.length === 2
+
+    * */
+
+    var obj1 = {
+        name:"张三",
+        show:function (a,b) {
+            console.log("姓名 " + this.name,a,b);
+        }
+    }
+
+    var obj2 = {
+        name:"老王"
+    }
+
+    obj1.show();
+    obj1.show.call(obj2,"AAA","aaa");    //obj2.show()
+    obj1.show.apply(obj2,["BBB","bbb"]);
+
+    console.log(obj1.show.length);
+
+    //为什么所有的函数都可以调用call方法和apply方法
+    //函数是由Function构造函数实例化出来的
+    console.log(Function.prototype.call.length);
+    console.log(Function.prototype.apply.length);
+</script>
+
+
+<script>
+    //遍历所有的数据并且把它们依次保存到实例对象中,更新length的值
+    var arrM  = [1,3,"demoA","demoB"];
+    arrM.push("demoC");
+    arrM.push("123",456,"demoD");
+    console.log(arrM);
+    //Array.prototype.push
+
+    var objM = {name:"zs",age:18};
+
+    //push方法:把数据添加到对象中(数据本身作为key为0,1,2,...对应的value保存),并且更新length的值
+    //arrM.push.call(objM,"color");   //objM.push("color")
+    //arrM.push.call(objM,"className");
+
+    //把数组中的元素依次添加到对象中,并且更新length的值
+    //arrM.push.call(objM,"color","className","No");
+    //arrM.push.apply(objM,["color","className","No"]);
+    var arrT = ["color","className","No"];
+
+    [].push.apply(objM,arrT);
+    //Array.prototype.push.apply(objM,arrT);
+    console.log(objM);
+</script>
+</body>
+</html>

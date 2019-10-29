@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        .class1{
+            width: 200px;
+            height: 100px;
+            background: red;
+        }
+
+        .class2
+        {
+            width: 50px;
+            height: 50px;
+            border: 1px solid #ffff00;
+            background: green;
+        }
+    </style>
+    <script src="js/XMGQuery-1.3.5.js"></script>
+    <!--<script src="js/jquery-3.3.1.min.js"></script>-->
+
+</head>
+<body>
+<div id="demoID" class="box class2">div1</div>
+<div>div2</div>
+<script>
+    //(1)jQ.addClass(class1)
+    //(2)jQ.addClass(class1).addClass(class2)
+    //(3)jQ.addClass(class1 class2)
+
+    //$("div").addClass("class1");
+    //$("#demoID").addClass("class2")
+
+
+    console.log($("div").addClass("class1 box"));
+
+    //分析实现方式:
+    //参数可能只有一个样式,也可能拥有多个样式
+    //思路:(1)先对参数进行切割 ==> 数组 ["class2","box"]
+    //     (2)遍历实例对象(遍历所有选中的标签),每循环一次,就拿到当前标签的className + 遍历数组是当前元素
+
+</script>
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<canvas id="canvas" width="900" height="600" style="border: 1px solid #000;"></canvas>
+<script>
+    // 1.获取标签和上下文
+    var canvas = document.getElementById('canvas');
+    var ctx = canvas.getContext('2d');
+
+    // 2.
+    // ctx.fillStyle = 'blue';
+    // ctx.fillRect(200,200,200,100);
+
+
+    // 旋转的度数
+    var angle = 20;
+
+    // 定时器
+    setInterval(function () {
+        // 清屏
+        ctx.clearRect(0,0,canvas.width,canvas.height);
+        ctx.save(); // 保存状态
+        // 位移
+        ctx.translate(300,250);
+        // 旋转
+        ctx.rotate(angle*Math.PI/180);
+        // 位移回去
+        // ctx.translate(-300,-250);
+        // 绘制矩形
+        ctx.fillStyle = 'red';
+        // ctx.fillRect(200,200,200,100);
+        ctx.fillRect(-100,-50,200,100);
+        ctx.restore(); // 还原状态
+        // 累加角度
+        angle += 10;
+    },200);
+
+</script>
+</body>
+</html>

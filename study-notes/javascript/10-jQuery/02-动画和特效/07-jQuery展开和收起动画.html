@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        div{
+            width: 100px;
+            height: 200px;
+            background: #538;
+        }
+    </style>
+    <script src="js/jquery-3.3.1.min.js"></script>
+</head>
+<body>
+<div>我是div1</div>
+<div>我是div2</div>
+<button>展开</button>
+<button>收起</button>
+<button>切换</button>
+<script>
+    $(function () {
+        //..........
+        //slideDown(timer,fn) 展开
+        //slideUp(timer,fn)   收起
+        //slideToggle(timer,fn)切换
+
+        //展开和收起动画主要修改标签的高度
+        $("button").eq(0).click(function () {
+            $("div").slideDown(1000,function () {
+                console.log("动画执行完毕");
+            })
+        })
+        $("button").eq(1).click(function () {
+            $("div").slideUp(1000,function () {
+                console.log("动画执行完毕");
+            })
+        })
+
+        $("button").eq(2).click(function () {
+            $("div").slideToggle("fast",function () {
+                console.log("动画执行完毕");
+            })
+        })
+    })
+</script>
+</body>
+</html>

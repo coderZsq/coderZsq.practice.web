@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        div{
+            width: 50px;
+            height: 50px;
+            background: red;
+        }
+    </style>
+    <script src="js/XMGQuery-1.3.8.js"></script>
+    <!--<script src="js/jquery-3.3.1.min.js"></script>-->
+
+</head>
+<body>
+<div>div1</div>
+<div>div2</div>
+<script>
+    //CSS方法的用法
+    //(1) jQ.css(key)  查询标签中对应样式的值
+    //(2) jQ.css(key,value) 以键值对的方式来传递参数设置
+    //(3) jQ.css({...})     传递对象,批量设置选中标签多个样式
+    //console.log($("div").css("width", "200px"));
+    //console.log($("div").css({"width": "400px","background":"green"}));
+    console.log($("div").css("width"));
+    //console.log($("div").css());
+
+    /*
+    //分析实现思路
+    //[000] 0个参数:报错
+    //[001] 1个参数:
+    //      (1) 对象
+    //      (2) 字符串
+    //[002] 2个参数:
+    */
+    var oDiv = document.getElementsByTagName("div")[0];
+    //console.log(window.getComputedStyle(oDiv).width);
+    //console.log(oDiv.currentStyle);
+
+</script>
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<canvas id="canvas" width="900" height="600" style="border: 1px solid #000;"></canvas>
+<script>
+    // 1.获取标签和上下文
+    var canvas = document.getElementById('canvas');
+    var ctx = canvas.getContext('2d');
+
+    // 2.颜色数组
+    var colors = ['red','pink','blue','green','yellow'];
+
+    // 3.绘制五环
+    for (var i = 0; i < colors.length; i++) {
+        ctx.beginPath();
+        ctx.arc(100 * (i + 1),100,80,0,2*Math.PI);
+        ctx.strokeStyle = colors[i];
+        ctx.lineWidth = 5;
+        ctx.stroke();
+    }
+
+    for (var i = 0; i < colors.length; i++) {
+        ctx.beginPath();
+        if(i < 3) { // 0 ,1 ,2
+            ctx.arc(100 * (i + 1),330,80,0,2*Math.PI);
+        } else {
+            ctx.arc(100 * (i - 2) + 50,420,80,0,2*Math.PI);
+        }
+
+        ctx.strokeStyle = colors[i];
+        ctx.lineWidth = 5;
+        ctx.stroke();
+    }
+</script>
+</body>
+</html>

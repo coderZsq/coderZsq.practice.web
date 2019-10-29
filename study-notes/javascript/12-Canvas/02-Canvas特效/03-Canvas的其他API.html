@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<canvas id="canvas" width="900" height="600" style="border: 1px solid #000;"></canvas>
+<script>
+    // 1.获取标签和上下文
+    var canvas = document.getElementById('canvas');
+    var ctx = canvas.getContext('2d');
+
+    // 2.创建线性渐变对象
+    /*
+    var grd = ctx.createLinearGradient(200,200,400,300);
+    // 添加渐变的颜色
+    grd.addColorStop(0,'red');
+    grd.addColorStop(0.2,'blue');
+    grd.addColorStop(0.4,'pink');
+    grd.addColorStop(0.6,'green');
+    grd.addColorStop(0.8,'yellow');
+    grd.addColorStop(1,'purple');
+    // 把线性渐变对象赋值给填充的样式
+    ctx.fillStyle = grd;
+    ctx.fillRect(200,200,200,100);
+    */
+
+    // 3.创建圆形渐变对象
+    /*
+    var rlg = ctx.createRadialGradient(200,200,50,200,200,100);
+    rlg.addColorStop(0,'red');
+    rlg.addColorStop(0.4,'pink');
+    rlg.addColorStop(1,'green');
+    ctx.arc(200,200,100,0,2*Math.PI);
+    // 把圆形渐变对象赋值给填充的样式
+    ctx.fillStyle = rlg;
+    ctx.fill();
+    */
+
+    // 4.背景图
+    // 创建图片对象
+    var image = new Image();
+    image.src = 'images/bg.jpg';
+
+    image.onload = function () {
+        // 创建背景对象
+        var pa = ctx.createPattern(image,'repeat');
+        // 把背景对象赋值给填充的样式
+        ctx.fillStyle = pa;
+        ctx.fillRect(200,200,300,200);
+    }
+</script>
+</body>
+</html>

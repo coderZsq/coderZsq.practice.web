@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+    <script src="js/XMGQuery-1.3.1.js"></script>
+    <!--<script src="js/jquery-3.3.1.min.js"></script>-->
+
+</head>
+<body>
+
+<div>div1</div>
+<div>div2</div>
+<div>div3</div>
+
+<ul>
+    <li>li1</li>
+    <li>li2</li>
+    <li>li3</li>
+    <li>li4</li>
+</ul>
+<script>
+   //jQ.appendTo方法
+   //作用:把选中的所有标签都插入到指定标签内容的后面
+   //返回值:把操作的所有li标签都保存到jQ实例对象中返回
+   //console.log($("li").appendTo($("div")));  //把所有的li标签都插入到div标签内容的后面
+   //console.log($("li").appendTo("div"));
+
+    //jQ.append方法
+    //参数如果是jQ实例对象,那么和appendTo方法是相反的操作
+    //参数如果是选择器字符串,那么会把参数拼接在每个选中标签内容的后面  innerHTML
+   console.log($("div").append($("li")));
+   //console.log($("div").append("li"));
+
+   //console.log(Object.prototype.toString.call($("li")));
+</script>
+</body>
+</html>

@@ -1,0 +1,40 @@
+[01] 网络基本概念
+    请求报文(首部[请求行][请求头] + 主体[请求体]) + 响应报文(首部[状态行][响应头] + 主体[响应体])
+    请求方法:HTTP协议规定了多种请求(GET POST),主要区别(参数的处理方式)
+
+[02] 表单发送网络请求
+    (1) 请求路径(action) (2) 请求方法(method) (3) 请求参数(以键值对  key[name] value)
+    [0] $_GET   [1] $_POST   [2] $_FILES [3] $_REQUEST
+
+[03] Ajax发送网络请求
+    (1) Async JavaScript and XML 异步发送网络请求的技术(异步请求  +  局部刷新)
+    (2) Ajax发送GET请求
+        [1] 创建请求对象  new XMLHTTPRe....
+        [2] 设置请求对象  xhr.open(方法,路径,是否异步)
+        [3] 发送网络请求  xhr.send()
+        [4] 监听网络状态  xhr.onreadystatechange..
+        [5] 解析返回数据  请求成功|请求失败(响应状态码)  JSON|XML
+
+    (3) Ajax发送POST请求
+        [1] 创建请求对象  new XMLHTTPRe....
+        [2] 设置请求对象  xhr.open(方法,路径,是否异步)
+        [+] 设置请求头信息
+        [3] 发送网络请求  xhr.send(参数)
+        [4] 监听网络状态  xhr.onreadystatechange..
+        [5] 解析返回数据  请求成功|请求失败(响应状态码)  JSON|XML
+
+    (4) Ajax网络请求注意点
+        [1] GET请求缓存问题   ---  随机数 |  时间戳
+        [2] GET请求参数中文   ---  中文转码
+        [3] 网络请求超时处理  ---  定时器
+
+[04] JSON和XML数据的解析
+    (1) JSON是一种轻量级的数据结构(表示和传输数据).
+        常用操作:
+            [1] 反序列化处理 JSON-->Obj|Arr    JSON.parser() eval()
+            [2] 序列化处理   Obj|Arr -->JSON   JSON.stringify()
+    (2) XML是数据传输格式.
+        DOM Api可以直接操作XML数据
+
+[05] jQuery框架中的网络请求
+[06] 综合案例

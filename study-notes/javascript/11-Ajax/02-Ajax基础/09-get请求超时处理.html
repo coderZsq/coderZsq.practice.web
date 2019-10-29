@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>07-get请求简单封装</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+    <script src="js/get2.js"></script>
+
+</head>
+<body>
+<button>GET请求01</button>
+<p></p>
+
+<script>
+
+    //点击第一个按钮,请求完成之后把结果显示在页面中
+    //点击第二个按钮,请求完成之后把结果打印出来
+   var oBtn1 = document.querySelectorAll("button")[0];
+   var p = document.querySelector("p");
+
+   oBtn1.onclick = function () {
+
+       get("http://127.0.0.1/day02/Code/php/03-get.php",
+           {
+               username:"张三啥啥啥",
+               password:"321"
+           },
+           function success(xhr) {
+                p.innerText = "请求成功:" + xhr.responseText;
+           },
+           function error(xhr) {
+                p.innerText = "请求失败:" + xhr.statusText;
+        },3);
+   }
+
+
+   //请求超时处理:
+   //规定请求的时间范围是5s,如果在5s内能够拿到数据那么就正常处理,如果那不到数据那么就提示用户检查网络,取消网络请求
+
+</script>
+</body>
+</html>

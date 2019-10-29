@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="Cookie.js"></script>
+
+</head>
+<body>
+<button>发送请求</button>
+<!--
+注意点:当前页面的Cookie数据在每次发送网络请求的时候,会附带一起发送给服务器端
+
+-->
+<script>
+    Cookie.setCookie("className","H5");
+    Cookie.setCookie("type","前端开发");
+
+    var oBtn = document.querySelector("button");
+    oBtn.onclick = function () {
+        var xhr = new XMLHttpRequest();
+        xhr.open("get","php/demo.php?name=zs&age=99",true);
+        xhr.send();
+        xhr.onreadystatechange = function () {
+            if(xhr.readyState == 4 && xhr.status ==200)
+            {
+                console.log(xhr.responseText);
+            }
+        }
+    }
+</script>
+</body>
+</html>

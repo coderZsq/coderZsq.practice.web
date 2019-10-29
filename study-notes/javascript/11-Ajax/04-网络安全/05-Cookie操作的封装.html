@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="Cookie.js"></script>
+
+</head>
+<body>
+<script>
+    //目标:提供一系列的方法优化对Cookie的操作(添加|修改|查询|删除|清空)
+    //setCookie(key,value)
+    //getCookie(key)
+    //removeCookie(key)
+    //clearCookie()
+
+    //设置数据(添加|修改)
+    Cookie.setCookie("name","lisi");
+    Cookie.setCookie("color","red");
+    Cookie.setCookie("name","zhangsan");
+    Cookie.setCookie("age",18,7);
+
+    //查询数据
+    console.log(Cookie.getCookie("age"));
+    
+    //删除数据
+    Cookie.removeCookie("name");
+
+    console.log(document.cookie);
+    //获取所有的key
+    console.log(Cookie.keys());
+
+    //清空数据
+    Cookie.clearCookie();
+</script>
+</body>
+</html>
