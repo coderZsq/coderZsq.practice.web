@@ -3,53 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="b18d1118-3560-46b4-ba88-dae78e95e842" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/04-zepto/05-QQForMac/css/cssreset-min.css" beforeDir="false" afterPath="$PROJECT_DIR$/04-zepto/QQForMac/css/cssreset-min.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/04-zepto/05-QQForMac/css/cssreset.css" beforeDir="false" afterPath="$PROJECT_DIR$/04-zepto/QQForMac/css/cssreset.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/04-zepto/05-QQForMac/css/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/04-zepto/QQForMac/css/index.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/04-zepto/05-QQForMac/images/favicon.ico" beforeDir="false" afterPath="$PROJECT_DIR$/04-zepto/QQForMac/images/favicon.ico" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/04-zepto/05-QQForMac/images/logo.png" beforeDir="false" afterPath="$PROJECT_DIR$/04-zepto/QQForMac/images/logo.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/04-zepto/05-QQForMac/images/logo_small.png" beforeDir="false" afterPath="$PROJECT_DIR$/04-zepto/QQForMac/images/logo_small.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/04-zepto/05-QQForMac/images/page1_3_round.png" beforeDir="false" afterPath="$PROJECT_DIR$/04-zepto/QQForMac/images/page1_3_round.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/04-zepto/05-QQForMac/images/page1_glow.png" beforeDir="false" afterPath="$PROJECT_DIR$/04-zepto/QQForMac/images/page1_glow.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/04-zepto/05-QQForMac/images/page1_main_1.png" beforeDir="false" afterPath="$PROJECT_DIR$/04-zepto/QQForMac/images/page1_main_1.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/04-zepto/05-QQForMac/images/page1_main_2.png" beforeDir="false" afterPath="$PROJECT_DIR$/04-zepto/QQForMac/images/page1_main_2.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/04-zepto/05-QQForMac/images/page1_main_3.png" beforeDir="false" afterPath="$PROJECT_DIR$/04-zepto/QQForMac/images/page1_main_3.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/04-zepto/05-QQForMac/images/page1_main_4.png" beforeDir="false" afterPath="$PROJECT_DIR$/04-zepto/QQForMac/images/page1_main_4.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/04-zepto/05-QQForMac/images/page1_main_5.png" beforeDir="false" afterPath="$PROJECT_DIR$/04-zepto/QQForMac/images/page1_main_5.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/04-zepto/05-QQForMac/images/page2_glow.png" beforeDir="false" afterPath="$PROJECT_DIR$/04-zepto/QQForMac/images/page2_glow.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/04-zepto/05-QQForMac/images/page2_lineglow.png" beforeDir="false" afterPath="$PROJECT_DIR$/04-zepto/QQForMac/images/page2_lineglow.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/04-zepto/05-QQForMac/images/page2_main_1.png" beforeDir="false" afterPath="$PROJECT_DIR$/04-zepto/QQForMac/images/page2_main_1.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/04-zepto/05-QQForMac/images/page2_main_2.png" beforeDir="false" afterPath="$PROJECT_DIR$/04-zepto/QQForMac/images/page2_main_2.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/04-zepto/05-QQForMac/images/page2_main_3.png" beforeDir="false" afterPath="$PROJECT_DIR$/04-zepto/QQForMac/images/page2_main_3.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/04-zepto/05-QQForMac/images/page2_main_4.png" beforeDir="false" afterPath="$PROJECT_DIR$/04-zepto/QQForMac/images/page2_main_4.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/04-zepto/05-QQForMac/images/page2_title.png" beforeDir="false" afterPath="$PROJECT_DIR$/04-zepto/QQForMac/images/page2_title.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/04-zepto/05-QQForMac/images/page3_glow.png" beforeDir="false" afterPath="$PROJECT_DIR$/04-zepto/QQForMac/images/page3_glow.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/04-zepto/05-QQForMac/images/page3_logo.png" beforeDir="false" afterPath="$PROJECT_DIR$/04-zepto/QQForMac/images/page3_logo.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/04-zepto/05-QQForMac/images/page3_title.png" beforeDir="false" afterPath="$PROJECT_DIR$/04-zepto/QQForMac/images/page3_title.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/04-zepto/05-QQForMac/images/page4_glow.png" beforeDir="false" afterPath="$PROJECT_DIR$/04-zepto/QQForMac/images/page4_glow.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/04-zepto/05-QQForMac/images/page4_lineglow.png" beforeDir="false" afterPath="$PROJECT_DIR$/04-zepto/QQForMac/images/page4_lineglow.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/04-zepto/05-QQForMac/images/page4_main_clock.png" beforeDir="false" afterPath="$PROJECT_DIR$/04-zepto/QQForMac/images/page4_main_clock.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/04-zepto/05-QQForMac/images/page4_main_clockout.png" beforeDir="false" afterPath="$PROJECT_DIR$/04-zepto/QQForMac/images/page4_main_clockout.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/04-zepto/05-QQForMac/images/page4_main_sheild.png" beforeDir="false" afterPath="$PROJECT_DIR$/04-zepto/QQForMac/images/page4_main_sheild.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/04-zepto/05-QQForMac/images/page4_main_storm.png" beforeDir="false" afterPath="$PROJECT_DIR$/04-zepto/QQForMac/images/page4_main_storm.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/04-zepto/05-QQForMac/images/page4_main_xf.png" beforeDir="false" afterPath="$PROJECT_DIR$/04-zepto/QQForMac/images/page4_main_xf.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/04-zepto/05-QQForMac/images/page4_tag.png" beforeDir="false" afterPath="$PROJECT_DIR$/04-zepto/QQForMac/images/page4_tag.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/04-zepto/05-QQForMac/images/page4_title.png" beforeDir="false" afterPath="$PROJECT_DIR$/04-zepto/QQForMac/images/page4_title.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/04-zepto/05-QQForMac/images/page5_bubble.png" beforeDir="false" afterPath="$PROJECT_DIR$/04-zepto/QQForMac/images/page5_bubble.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/04-zepto/05-QQForMac/images/page5_bubble_glow.png" beforeDir="false" afterPath="$PROJECT_DIR$/04-zepto/QQForMac/images/page5_bubble_glow.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/04-zepto/05-QQForMac/images/page5_glow.png" beforeDir="false" afterPath="$PROJECT_DIR$/04-zepto/QQForMac/images/page5_glow.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/04-zepto/05-QQForMac/images/page5_icon_1.png" beforeDir="false" afterPath="$PROJECT_DIR$/04-zepto/QQForMac/images/page5_icon_1.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/04-zepto/05-QQForMac/images/page5_icon_2.png" beforeDir="false" afterPath="$PROJECT_DIR$/04-zepto/QQForMac/images/page5_icon_2.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/04-zepto/05-QQForMac/images/page5_icon_3.png" beforeDir="false" afterPath="$PROJECT_DIR$/04-zepto/QQForMac/images/page5_icon_3.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/04-zepto/05-QQForMac/images/page5_icon_4.png" beforeDir="false" afterPath="$PROJECT_DIR$/04-zepto/QQForMac/images/page5_icon_4.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/04-zepto/05-QQForMac/images/page5_icon_5.png" beforeDir="false" afterPath="$PROJECT_DIR$/04-zepto/QQForMac/images/page5_icon_5.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/04-zepto/05-QQForMac/images/page5_icon_6.png" beforeDir="false" afterPath="$PROJECT_DIR$/04-zepto/QQForMac/images/page5_icon_6.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/04-zepto/05-QQForMac/images/page5_title.png" beforeDir="false" afterPath="$PROJECT_DIR$/04-zepto/QQForMac/images/page5_title.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/04-zepto/05-QQForMac/images/scroll.png" beforeDir="false" afterPath="$PROJECT_DIR$/04-zepto/QQForMac/images/scroll.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/04-zepto/05-QQForMac/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/04-zepto/QQForMac/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/04-zepto/05-QQForMac/js/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/04-zepto/QQForMac/js/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/04-zepto/05-QQForMac/js/jquery-1.7.2.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/04-zepto/QQForMac/js/jquery-1.7.2.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/04-zepto/05-QQForMac/js/jquery.mousewheel.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/04-zepto/QQForMac/js/jquery.mousewheel.min.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -106,7 +59,7 @@
       <workItem from="1571812390028" duration="2028000" />
       <workItem from="1571984422748" duration="4800000" />
       <workItem from="1572247340273" duration="2971000" />
-      <workItem from="1572314758278" duration="1941000" />
+      <workItem from="1572314758278" duration="2755000" />
     </task>
     <servers />
   </component>
