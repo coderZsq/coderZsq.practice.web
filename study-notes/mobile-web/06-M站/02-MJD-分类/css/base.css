@@ -1,0 +1,40 @@
+* {
+    margin: 0;
+    padding: 0;
+
+    box-sizing: border-box;
+    /*清除移动端高亮效果*/
+    -webkit-tap-highlight-color: transparent;
+}
+
+ol,ul {
+    list-style: none;
+}
+a {
+    text-decoration: none;
+    color: #666;
+}
+textarea,input {
+    outline: none;
+    border: none;
+    -webkit-appearance: none;
+}
+img {
+    vertical-align: top;
+}
+/*清除浮动*/
+.clearfix:after {
+    content: '';
+    display: block;
+    clear: both;
+    visibility: hidden;
+    height: 0;
+    line-height: 0;
+}
+[class^="icon-"]{
+    background: url("../images/home/nav/sprites.png") no-repeat;
+    background-size: 200px 200px;
+}
+body {
+    font-size: 14px;
+}

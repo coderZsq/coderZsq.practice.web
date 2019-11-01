@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .main {
+             width: 300px;
+             height: 300px;
+             background-color: red;
+            display: flex;
+         }
+        .son1 {
+            /* flex */
+            /* 绝缘体 BFC*/
+            width: 100px;
+            height: 100px;
+            background-color: blue;
+            /*float: left;*/
+        }
+        .son2 {
+            /*overflow: hidden;*/
+            height: 50px;
+            background-color: yellow;
+            flex: 1;
+        }
+    </style>
+</head>
+<body>
+<div class="main">
+    <div class="son1"></div>
+    <div class="son2"></div>
+</div>
+</body>
+</html>
