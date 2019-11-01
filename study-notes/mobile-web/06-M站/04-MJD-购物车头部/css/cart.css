@@ -1,0 +1,22 @@
+.header h3{
+    text-align: center;
+    font-weight: normal;
+    line-height: 44px;
+    height: 44px;
+}
+/*安全提示*/
+.cart-safe {
+    margin-top: 44px;
+    line-height: 36px;
+    height: 36px;
+    width: 100%;
+    text-align: center;
+    border-top: 1px solid #e0e0e0;
+    border-bottom: 1px solid #e0e0e0;
+}
+.cart-safe img {
+    width: 18px;
+    height: 18px;
+    margin-top: 9px;
+    margin-right: 3px;
+}

@@ -1,0 +1,76 @@
+* {
+    margin: 0;
+    padding: 0;
+
+    box-sizing: border-box;
+    /*清除移动端高亮效果*/
+    -webkit-tap-highlight-color: transparent;
+}
+
+ol,ul {
+    list-style: none;
+}
+a {
+    text-decoration: none;
+    color: #666;
+}
+textarea,input {
+    outline: none;
+    border: none;
+    -webkit-appearance: none;
+}
+img {
+    vertical-align: top;
+}
+/*清除浮动*/
+.clearfix:after {
+    content: '';
+    display: block;
+    clear: both;
+    visibility: hidden;
+    height: 0;
+    line-height: 0;
+}
+[class^="icon-"]{
+    background: url("../images/home/nav/sprites.png") no-repeat;
+    background-size: 200px 200px;
+}
+body {
+    font-size: 14px;
+}
+
+/*头部公共样式*/
+.header {
+    height: 44px;
+    width: 100%;
+    background: url("../images/category/header/header-bg.png");
+    background-size: 1px 44px;
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 998;
+}
+.header .icon-back {
+    /*真实的宽度 40 42*/
+    width: 40px;
+    height: 42px;
+    padding: 11px 10px;
+    background-position: -21px 0;
+    position: absolute;
+    left: 0;
+    top: 0;
+    background-origin: content-box;
+    background-clip: content-box;
+}
+/*菜单*/
+.header .icon-menu {
+    width: 40px;
+    height: 42px;
+    padding: 11px 10px;
+    background-position: -60px 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+    background-origin: content-box;
+    background-clip: content-box;
+}

@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <!--meta:vp+tab-->
+    <!--
+    minimum-scale=1.0 最小缩放比例
+    maximum-scale=1.0 最大缩放比例
+    user-scalable=no 要不要开启用户缩放
+
+    和项目没有任何关系的文件以及文件夹统一不要提交到仓库
+    -->
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=no">
+    <!--
+    流体布局(百分比)
+    -->
+    <title>Title</title>
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/index.css">
+</head>
+<body>
+
+<div class="layout">
+    <!--头部-->
+    <div class="jd-header">
+        <div class="header-in">
+            <a href="javascript:;" class="icon-logo"></a>
+            <form action="#">
+                <span class="icon-search"></span>
+                <!-- 让右下角的键变成搜索键 -->
+                <input type="search" placeholder="请输入商品名称/店铺">
+            </form>
+            <a href="#" class="header-login">登录</a>
+        </div>
+    </div>
+
+    <!--banner 轮播图-->
+    <div class="banner">
+        <ul class="clearfix">
+            <li><a href="#"><img src="images/home/banner/l8.jpg" alt=""></a></li>
+            <li><a href="#"><img src="images/home/banner/l1.jpg" alt=""></a></li>
+            <li><a href="#"><img src="images/home/banner/l2.jpg" alt=""></a></li>
+            <li><a href="#"><img src="images/home/banner/l3.jpg" alt=""></a></li>
+            <li><a href="#"><img src="images/home/banner/l4.jpg" alt=""></a></li>
+            <li><a href="#"><img src="images/home/banner/l5.jpg" alt=""></a></li>
+            <li><a href="#"><img src="images/home/banner/l6.jpg" alt=""></a></li>
+            <li><a href="#"><img src="images/home/banner/l7.jpg" alt=""></a></li>
+            <li><a href="#"><img src="images/home/banner/l8.jpg" alt=""></a></li>
+            <li><a href="#"><img src="images/home/banner/l1.jpg" alt=""></a></li>
+        </ul>
+        <!--指示器-->
+        <ol>
+            <li class="current"></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ol>
+    </div>
+
+    <!--导航-->
+    <div class="jd-nav">
+        <ul class="clearfix">
+            <li><a href="#"><img src="images/home/nav/nav1.png" alt=""><p>京东超市</p></a></li>
+            <li><a href="#"><img src="images/home/nav/nav2.png" alt=""><p>京东超市</p></a></li>
+            <li><a href="#"><img src="images/home/nav/nav3.png" alt=""><p>京东超市</p></a></li>
+            <li><a href="#"><img src="images/home/nav/nav4.png" alt=""><p>京东超市</p></a></li>
+            <li><a href="#"><img src="images/home/nav/nav5.png" alt=""><p>京东超市</p></a></li>
+            <li><a href="#"><img src="images/home/nav/nav6.png" alt=""><p>京东超市</p></a></li>
+            <li><a href="#"><img src="images/home/nav/nav7.png" alt=""><p>京东超市</p></a></li>
+            <li><a href="#"><img src="images/home/nav/nav8.png" alt=""><p>京东超市</p></a></li>
+            <li><a href="#"><img src="images/home/nav/nav9.png" alt=""><p>京东超市</p></a></li>
+            <li><a href="#"><img src="images/home/nav/nav10.png" alt=""><p>京东超市</p></a></li>
+        </ul>
+    </div>
+
+    <!--产品-->
+    <div class="product">
+        <section>
+            <!--标题-->
+            <div class="product-title">
+                <img class="p-title-img" src="images/home/product/seckill-icon.png" alt="">
+                <span class="product-seckill-nth">14点场</span>
+                <!--倒计时-->
+                <div class="product-kill">
+                    <span>0</span>
+                    <span>0</span>
+                    <span>:</span>
+                    <span>0</span>
+                    <span>0</span>
+                    <span>:</span>
+                    <span>0</span>
+                    <span>0</span>
+                </div>
+                <!--更多-->
+                <a href="#" class="p-more">更多</a>
+            </div>
+            <!--内容-->
+            <div class="product-content">
+                <ul class="clearfix">
+                    <li>
+                        <a href="#">
+                            <img src="images/home/product/detail01.jpg" alt="">
+                        </a>
+                        <p class="hot-price">&yen;17998</p>
+                        <p class="old-price">&yen;18488</p>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <img src="images/home/product/detail02.jpg" alt="">
+                        </a>
+                        <p class="hot-price">&yen;17998</p>
+                        <p class="old-price">&yen;18488</p>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <img src="images/home/product/detail03.jpg" alt="">
+                        </a>
+                        <p class="hot-price">&yen;17998</p>
+                        <p class="old-price">&yen;18488</p>
+                    </li>
+                </ul>
+            </div>
+        </section>
+        <section>
+            <!--标题-->
+            <div class="product-title border-bottom">
+                <h3>京东乐购</h3>
+            </div>
+            <!--内容-->
+            <div class="product-content">
+                <div class="clearfix">
+                    <div class="w-50 border-right fl">
+                        <img src="images/home/product/cp1.jpg" alt="">
+                    </div>
+                    <div class="w-50 fr border-bottom">
+                        <img src="images/home/product/cp2.jpg" alt="">
+                    </div>
+                    <div class="w-50 fr">
+                        <img src="images/home/product/cp3.jpg" alt="">
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section>
+            <!--标题-->
+            <div class="product-title border-bottom">
+                <h3>京东超市</h3>
+            </div>
+            <!--内容-->
+            <div class="product-content">
+                <div class="clearfix">
+                    <div class="w-50 fr border-left">
+                        <img src="images/home/product/cp4.jpg" alt="">
+                    </div>
+                    <div class="w-50 fl border-bottom">
+                        <img src="images/home/product/cp5.jpg" alt="">
+                    </div>
+                    <div class="w-50 fl">
+                        <img src="images/home/product/cp6.jpg" alt="">
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section>
+            <!--标题-->
+            <div class="product-title border-bottom">
+                <h3>爱生活</h3>
+            </div>
+            <!--内容-->
+            <div class="product-content">
+                <div class="clearfix">
+                    <div class="w-50 border-right fl">
+                        <img src="images/home/product/cp1.jpg" alt="">
+                    </div>
+                    <div class="w-50 fr border-bottom">
+                        <img src="images/home/product/cp2.jpg" alt="">
+                    </div>
+                    <div class="w-50 fr">
+                        <img src="images/home/product/cp3.jpg" alt="">
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!--为你推荐-->
+    <div class="jd-intro">
+        <!--标题-->
+        <div class="jd-intro-title">
+            <p class="line"></p>
+            <span>为你推荐</span>
+        </div>
+        <!--内容-->
+        <div class="jd-intro-list">
+            <ul class="clearfix">
+                <li>
+                    <a href="#">
+                        <img src="images/home/intro/intro1.jpg" alt="">
+                    </a>
+                    <p>玉石挂坠挂链 附证书</p>
+                    <div>
+                        <span>&yen;128</span>
+                        <span>找相似</span>
+                    </div>
+                </li>
+                <li>
+                    <a href="#">
+                        <img src="images/home/intro/intro2.jpg" alt="">
+                    </a>
+                    <p>玉石挂坠挂链 附证书</p>
+                    <div>
+                        <span>&yen;128</span>
+                        <span>找相似</span>
+                    </div>
+                </li>
+                <li>
+                    <a href="#">
+                        <img src="images/home/intro/intro3.jpg" alt="">
+                    </a>
+                    <p>玉石挂坠挂链 附证书</p>
+                    <div>
+                        <span>&yen;128</span>
+                        <span>找相似</span>
+                    </div>
+                </li>
+                <li>
+                    <a href="#">
+                        <img src="images/home/intro/intro4.jpg" alt="">
+                    </a>
+                    <p>玉石挂坠挂链 附证书</p>
+                    <div>
+                        <span>&yen;128</span>
+                        <span>找相似</span>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <!--尾部-->
+    <div class="jd-tab">
+        <ul>
+            <li><a href="#"><img src="images/home/tab/a-home.png" alt=""></a></li>
+            <li><a href="#"><img src="images/home/tab/n-catergry.png" alt=""></a></li>
+            <li><a href="#"><img src="images/home/tab/n-cart.png" alt=""></a></li>
+            <li><a href="#"><img src="images/home/tab/n-find.png" alt=""></a></li>
+            <li><a href="#"><img src="images/home/tab/n-me.png" alt=""></a></li>
+        </ul>
+    </div>
+</div>
+<script src="js/base.js"></script>
+<script src="js/index.js"></script>
+</body>
+</html>

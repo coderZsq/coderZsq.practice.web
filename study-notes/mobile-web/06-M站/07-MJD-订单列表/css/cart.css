@@ -1,0 +1,133 @@
+.header h3{
+    text-align: center;
+    font-weight: normal;
+    line-height: 44px;
+    height: 44px;
+}
+/*安全提示*/
+.cart-safe {
+    margin-top: 44px;
+    line-height: 36px;
+    height: 36px;
+    width: 100%;
+    text-align: center;
+    border-top: 1px solid #e0e0e0;
+    border-bottom: 1px solid #e0e0e0;
+}
+.cart-safe img {
+    width: 18px;
+    height: 18px;
+    margin-top: 9px;
+    margin-right: 3px;
+}
+/*订单头部*/
+.cart-order {
+    margin-top: 10px;
+    width: 100%;
+}
+.cart-order section {
+    width: 100%;
+    margin-bottom: 20px;
+}
+.cart-order .cart-order-title{
+    width: 100%;
+    height: 36px;
+    border-top: 1px solid #e0e0e0;
+    border-bottom: 1px solid #e0e0e0;
+    line-height: 36px;
+}
+.cart-checked{
+    background: url("../images/cart/shop-icon.png") no-repeat;
+    background-size: 50px 100px;
+    width: 20px;
+    height: 20px;
+    float: left;
+    margin-top: 8px;
+    margin-left: 8px;
+}
+.cart-checked[checked]{
+    background-position: -25px 0;
+}
+/*logo*/
+.cart-order-title .cart-logo{
+    background: url("../images/cart/buy-logo.png") no-repeat;
+    width: 20px;
+    height: 20px;
+    background-size: 20px 20px;
+    float: left;
+    margin-top: 8px;
+    margin-right: 5px;
+    margin-left: 5px;
+}
+.cart-order-title span:nth-of-type(3){
+    float: right;
+    margin-right: 8px;
+    color: #e9232c;
+    font-size: 12px;
+}
+/*订单部分*/
+.cart-order-list {
+    padding: 10px 8px 10px 0;
+    border-bottom: 1px solid #e0e0e0;
+}
+.cart-order-list .order-list-r{
+    overflow: hidden;
+}
+.cart-order-list .order-list-r img {
+    width: 80px;
+    height: 80px;
+    float: left;
+}
+.order-list-detail {
+    overflow: hidden;
+    padding-left: 5px;
+}
+.order-list-detail p{
+    height: 40px;
+    line-height: 20px;
+    overflow: hidden;
+    color: #666;
+}
+/*价格*/
+.order-list-detail .price {
+    color: #e9232c;
+}
+/*数量*/
+.list-detail-bottom .detail-number {
+    float: left;
+}
+.list-detail-bottom .detail-number span{
+    width: 20px;
+    height: 20px;
+    text-align: center;
+    float: left;
+    border: 1px solid #e0e0e0;
+}
+.list-detail-bottom .detail-number input {
+    float: left;
+    width: 50px;
+    height: 20px;
+    border-top: 1px solid #e0e0e0;
+    border-bottom: 1px solid #e0e0e0;
+    /*设置对其方式 就会修改光标在中间*/
+    text-align: center;
+}
+/*垃圾桶*/
+.list-detail-bottom .trash{
+    float: right;
+}
+.list-detail-bottom .trash span:nth-of-type(1){
+    background: url("../images/cart/delete_up.png") no-repeat;
+    background-size: 18px 4px;
+    width: 18px;
+    height: 4px;
+    display: block;
+}
+.list-detail-bottom .trash span:nth-of-type(2){
+    background: url("../images/cart/delete_down.png") no-repeat;
+    background-size: 18px 18px;
+    width: 18px;
+    height: 18px;
+    display: block;
+    margin-top: -3px;
+}

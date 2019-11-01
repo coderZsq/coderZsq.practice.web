@@ -1,0 +1,352 @@
+body {
+    background-color: #f5f5f5;
+    font-size: 14px;
+}
+.layout {
+    min-width: 320px;
+    max-width: 640px;
+    /*background-color: gray;*/
+    /*height: 3000px;*/
+    margin: 0 auto;
+    padding-bottom: 70px;
+    overflow: hidden;
+}
+/*头部*/
+.jd-header {
+    height: 44px;
+    width: 100%;
+    /*background-color: #000;*/
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 998;
+}
+.jd-header .header-in {
+    margin: 0 auto;
+    height: 44px;
+    min-width: 320px;
+    max-width: 640px;
+    /*background-color: rgba(201, 21, 35, 0.8);*/
+    background-color: transparent;
+    position: relative;
+}
+.jd-header .header-in .icon-logo {
+    width: 60px;
+    height: 30px;
+    background-position: 0 -103px;
+    position: absolute;
+    left: 10px;
+    top: 5px;
+}
+.jd-header .header-in .header-login {
+    color: white;
+    position: absolute;
+    right: 10px;
+    top: 0;
+    height: 44px;
+    line-height: 44px;
+}
+.jd-header .header-in form {
+    width: 100%;
+    height: 100%;
+    padding-left: 80px;
+    padding-right: 50px;
+    /*position: relative;*/
+}
+.jd-header .header-in form input {
+    width: 100%;
+    height: 30px;
+    margin-top: 7px;
+    border-radius: 15px;
+    padding-left: 35px;
+}
+/*放大镜*/
+.jd-header .header-in .icon-search {
+    width: 20px;
+    height: 20px;
+    background-position: -60px -109px;
+    position: absolute;
+    left: 90px;
+    top: 12px;
+}
+/*尾部tab*/
+.jd-tab {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 56px;
+    background-color: #fff;
+}
+.jd-tab ul {
+    width: 100%;
+    height: 100%;
+}
+.jd-tab ul li {
+    float: left;
+    width: 20%;
+    height: 100%;
+    text-align: center;
+}
+.jd-tab ul li a {
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+.jd-tab ul li a img {
+    width: 80px;
+}
+/*  轮播图 */
+.banner {
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+}
+.banner ul {
+    width: 1000%;
+    transform: translateX(-10%);
+}
+.banner ul li {
+    width: 10%;
+    float: left;
+}
+.banner ul li a {
+    width: 100%;
+    height: 100%;
+    display: inline-block;
+}
+.banner ul li a img {
+    width: 100%;
+}
+/*指示器*/
+.banner ol {
+    width: 118px;
+    height: 6px;
+    /*background-color: blue;*/
+    position: absolute;
+    left: 50%;
+    margin-left: -59px;
+    bottom: 10px;
+}
+.banner ol li {
+    float: left;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    border: 1px solid #fff;
+    margin-left: 8px;
+}
+.banner ol li.current {
+    background-color: #fff;
+}
+/*导航*/
+.jd-nav {
+    width: 100%;
+    background-color: #fff;
+}
+.jd-nav ul {
+    width: 100%;
+    padding-top: 20px;
+    padding-bottom: 10px;
+}
+.jd-nav ul li {
+    width: 20%;
+    float: left;
+    text-align: center;
+    margin-bottom: 10px;
+}
+.jd-nav ul li img {
+    width: 40px;
+}
+/*秒杀列表*/
+.product {
+    width: 100%;
+    margin-top: 10px;
+}
+.product section {
+    width: 100%;
+    background-color: #fff;
+    margin-bottom: 10px;
+}
+.product section .product-title {
+    width: 100%;
+    height: 36px;
+    line-height: 36px;
+}
+.product section .product-title h3 {
+    font-weight: normal;
+    margin-left: 15px;
+    position: relative;
+}
+.product section .product-title h3:before {
+    content: '';
+    width: 5px;
+    height: 20px;
+    background-color: #e9232c;
+    position: absolute;
+    left: -8px;
+    top: 8px;
+}
+.product .product-title img {
+    width: 60px;
+    height: 24px;
+    margin-top: 6px;
+}
+/*倒计时*/
+.product .product-title .product-kill{
+    display: inline-block;
+    height: 36px;
+}
+.product .product-title .product-kill span {
+    background-color: #000;
+    color: white;
+    padding: 0 3px 0 3px;
+}
+.product .product-title .product-kill span:nth-child(3n){
+    background-color: #fff;
+    color: #000000;
+    padding: 0;
+}
+/*更多*/
+.product .product-title .p-more {
+    float: right;
+    color: #f23030;
+    position: relative;
+    margin-right: 25px;
+}
+.product .product-title .p-more:after {
+    content: '';
+    background: url("../images/home/product/arrow_rt.png");
+    background-size: 12px 12px;
+    width: 12px;
+    height: 12px;
+    position: absolute;
+    right: -20px;
+    top: 12px;
+}
+/*内容*/
+.product .product-content{
+    width: 100%;
+}
+.product .product-content ul {
+    width: 100%;
+}
+.product .product-content ul li {
+    width: 33.33%;
+    float: left;
+    text-align: center;
+}
+.product .product-content ul li a {
+    width: 100%;
+    height: 100%;
+    display: inline-block;
+    border-right: 1px solid #e0e0e0;
+}
+.product .product-content ul li:last-child a{
+    border-right: none;
+}
+.product .product-content ul li img {
+    width: 150px;
+}
+.product .product-content .hot-price {
+    color: #e9232c;
+    margin-top: 10px;
+    margin-bottom: 5px;
+}
+.product .product-content .old-price {
+    text-decoration: line-through;
+    margin-bottom: 10px;
+}
+
+.w-50{
+    width: 50%;
+}
+.w-50 img {
+    width: 100%;
+}
+.border-bottom{
+    border-bottom: 1px solid #e0e0e0;
+}
+.border-right{
+    border-right: 1px solid #e0e0e0;
+}
+.border-left {
+    border-left: 1px solid #e0e0e0;
+}
+.fl{
+    float: left;
+}
+.fr{
+    float: right;
+}
+/*为你推荐*/
+.jd-intro {
+    width: 100%;
+    margin-top: 10px;
+}
+.jd-intro .jd-intro-title {
+    width: 100%;
+    margin-top: 10px;
+    position: relative;
+}
+.jd-intro .jd-intro-title .line {
+    width: 100%;
+    height: 1px;
+    background-color: #ccc;
+    margin-top: 30px;
+}
+.jd-intro .jd-intro-title span {
+    position: absolute;
+    left: 50%;
+    margin-left: -50px;
+    top: -10px;
+    width: 100px;
+    text-align: center;
+    background-color: #f5f5f5;
+    color: #666;
+}
+/*为你推荐内容部分*/
+.jd-intro .jd-intro-list {
+    margin-top: 30px;
+    width: 100%;
+}
+.jd-intro .jd-intro-list ul {
+    width: 100%;
+}
+.jd-intro .jd-intro-list ul li {
+    width: 49%;
+    background-color: #fff;
+    margin-bottom: 10px;
+    padding: 10px;
+}
+.jd-intro .jd-intro-list ul li:nth-child(2n+1){
+    float: left;
+}
+.jd-intro .jd-intro-list ul li:nth-child(2n){
+    float: right;
+}
+.jd-intro .jd-intro-list ul li img {
+    width: 100%;
+}
+.jd-intro .jd-intro-list ul li p {
+    color: #666;
+    font-size: 12px;
+}
+.jd-intro .jd-intro-list  div {
+    font-size: 12px;
+    margin-top: 10px;
+}
+.jd-intro .jd-intro-list  div span:nth-child(1){
+    color: #e9232c;
+    float: left;
+}
+.jd-intro .jd-intro-list  div span:nth-child(2){
+    float: right;
+    border: 1px solid #e0e0e0;
+    width: 60px;
+    height: 28px;
+    border-radius: 3px;
+    text-align: center;
+    line-height: 28px;
+    color: #666;
+}

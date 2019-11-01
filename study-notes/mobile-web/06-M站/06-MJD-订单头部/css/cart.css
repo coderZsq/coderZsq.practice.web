@@ -1,0 +1,66 @@
+.header h3{
+    text-align: center;
+    font-weight: normal;
+    line-height: 44px;
+    height: 44px;
+}
+/*安全提示*/
+.cart-safe {
+    margin-top: 44px;
+    line-height: 36px;
+    height: 36px;
+    width: 100%;
+    text-align: center;
+    border-top: 1px solid #e0e0e0;
+    border-bottom: 1px solid #e0e0e0;
+}
+.cart-safe img {
+    width: 18px;
+    height: 18px;
+    margin-top: 9px;
+    margin-right: 3px;
+}
+/*订单头部*/
+.cart-order {
+    margin-top: 10px;
+    width: 100%;
+}
+.cart-order section {
+    width: 100%;
+}
+.cart-order .cart-order-title{
+    width: 100%;
+    height: 36px;
+    border-top: 1px solid #e0e0e0;
+    border-bottom: 1px solid #e0e0e0;
+    line-height: 36px;
+}
+.cart-order-title .cart-checked{
+    background: url("../images/cart/shop-icon.png") no-repeat;
+    background-size: 50px 100px;
+    width: 20px;
+    height: 20px;
+    float: left;
+    margin-top: 8px;
+    margin-left: 8px;
+}
+.cart-order-title .cart-checked[checked]{
+    background-position: -25px 0;
+}
+/*logo*/
+.cart-order-title .cart-logo{
+    background: url("../images/cart/buy-logo.png") no-repeat;
+    width: 20px;
+    height: 20px;
+    background-size: 20px 20px;
+    float: left;
+    margin-top: 8px;
+    margin-right: 5px;
+    margin-left: 5px;
+}
+.cart-order-title span:nth-of-type(3){
+    float: right;
+    margin-right: 8px;
+    color: #e9232c;
+    font-size: 12px;
+}

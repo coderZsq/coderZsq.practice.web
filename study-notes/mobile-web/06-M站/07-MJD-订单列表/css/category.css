@@ -1,0 +1,115 @@
+body,html {
+    width: 100%;
+    height: 100%;
+}
+.header {
+    height: 44px;
+    width: 100%;
+    background: url("../images/category/header/header-bg.png");
+    background-size: 1px 44px;
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 998;
+}
+.header .icon-back {
+    /*真实的宽度 40 42*/
+    width: 40px;
+    height: 42px;
+    padding: 11px 10px;
+    background-position: -21px 0;
+    position: absolute;
+    left: 0;
+    top: 0;
+    background-origin: content-box;
+    background-clip: content-box;
+}
+/*菜单*/
+.header .icon-menu {
+    width: 40px;
+    height: 42px;
+    padding: 11px 10px;
+    background-position: -60px 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+    background-origin: content-box;
+    background-clip: content-box;
+}
+.header form {
+    width: 100%;
+    height: 44px;
+    padding-left: 50px;
+    padding-right: 50px;
+}
+.header form input {
+    width: 100%;
+    height: 30px;
+    margin-top: 7px;
+    border: 1px solid #e0e0e0;
+    border-radius: 5px;
+}
+
+/*内容部分*/
+.category-main{
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    padding-top: 44px;
+}
+.category-main .main-left {
+    width: 90px;
+    float: left;
+    height: 100%;
+}
+.category-main .main-left ul {
+    width: 90px;
+}
+.category-main .main-left ul li {
+    width: 100%;
+    height: 50px;
+    line-height: 50px;
+    text-align: center;
+    background-color: #ccc;
+    border-bottom: 1px solid #e0e0e0;
+}
+.category-main .main-left ul li.current {
+    background-color: #fff;
+    border-bottom: none;
+}
+.category-main .main-left ul li.current a {
+    color: #e9232c;
+}
+    /*内容部分*/
+.main-right {
+    /* 100% - 90px
+     可以写四则运算
+     */
+    /*width: calc(100% - 90px);*/
+    /*float: right;*/
+    /*
+    绝缘体
+    一个子元素要想拿到父元素的剩余空间
+
+    */
+    overflow: hidden;
+}
+.main-right .main-r-title img {
+    width: 100%;
+}
+.main-right .main-r-content {
+    margin-top: 10px;
+}
+.main-right .main-r-content h3 {
+    margin-left: 10px;
+}
+.main-right .main-r-content ul {
+    margin-top: 10px;
+    width: 100%;
+}
+.main-right .main-r-content ul li {
+    width: 33.33%;
+    float: left;
+    text-align: center;
+    margin-bottom: 10px;
+}

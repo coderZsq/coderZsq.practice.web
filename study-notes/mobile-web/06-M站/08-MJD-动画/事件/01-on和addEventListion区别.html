@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .father {
+            width: 200px;
+            height: 200px;
+            background-color: red;
+        }
+        .son {
+            width: 100px;
+            height: 100px;
+            background-color: yellow;
+        }
+    </style>
+</head>
+<body>
+<div class="father">
+    <div class="son">点我啊</div>
+</div>
+<script>
+    var son = document.querySelector('.son');
+    // btn.onclick = function () {
+    //     alert(1);
+    // }
+    // btn.onclick = function () {
+    //     alert(2);
+    // }
+
+    // 添加一个事件
+    /*
+    * 第一个参数事件的名称
+    * 第二参数是回调函数
+    * 第三个参数布尔值 在哪个阶段触发该事件 捕获阶段(true) 冒泡阶段(false 默认)
+    * */
+    son.addEventListener('click',function () {
+        alert('son');
+    });
+
+    var father = document.querySelector('.father');
+
+    father.addEventListener('click',function () {
+        alert('father');
+    })
+</script>
+</body>
+</html>

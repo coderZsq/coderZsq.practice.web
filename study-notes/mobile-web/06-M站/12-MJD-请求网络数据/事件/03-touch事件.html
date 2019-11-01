@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Title</title>
+    <style>
+        #box {
+            width: 100px;
+            height: 100px;
+            background-color: red;
+        }
+    </style>
+</head>
+<body>
+<div id="box"></div>
+<script>
+    var box = document.querySelector('#box');
+    // 移动端touch事件要比on事件快 200ms-300ms
+    // box.addEventListener('touchstart',function (e) {
+    //     console.log(2);
+    // });
+    //
+    // box.onclick = function () {
+    //     console.log(1);
+    // }
+
+    // 定义移动端点击事件规则 点击 结束中间没有移动 开始点击和结束中间的时长不超过200ms
+    // var startTime = 0;
+    // var endTime = 0;
+    // // 规定 false代表没有移动 true代表移动了
+    // var isMove = false;
+    // box.addEventListener('touchstart',function (e) {
+    //     console.log(Date.now());
+    //
+    //     // var date = new Date();
+    //     // console.log(date.getTime());
+    //
+    //     // 获取当前时间戳
+    //     startTime = Date.now();
+    // })
+    //
+    // box.addEventListener('touchmove',function (e) {
+    //     isMove = true;
+    // });
+    // box.addEventListener('touchend',function () {
+    //     endTime = Date.now();
+    //     if (endTime - startTime <= 200 && isMove == false){
+    //         console.log('产生了点击事件');
+    //     }
+    //     isMove = false;
+    // })
+
+    tap(box,function () {
+        console.log(1);
+    });
+
+    function tap(obj,callback) {
+        var startTime = 0;
+        var endTime = 0;
+        // 规定 false代表没有移动 true代表移动了
+        var isMove = false;
+        box.addEventListener('touchstart',function (e) {
+            // 获取当前时间戳
+            startTime = Date.now();
+        })
+
+        box.addEventListener('touchmove',function (e) {
+            isMove = true;
+        });
+        box.addEventListener('touchend',function (e) {
+            endTime = Date.now();
+            if (endTime - startTime <= 200 && isMove == false){
+                if (callback) callback(e);
+            }
+            isMove = false;
+        })
+    }
+</script>
+</body>
+</html>
