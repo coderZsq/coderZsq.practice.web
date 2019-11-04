@@ -4,6 +4,79 @@
         <view class="login">登录</view>
         <image src="/assets/imgs/bg_mine_login.png" mode="aspectFill"/>
     </view>
+
+    <view class="items-wrapper">
+        <view class="title-wrapper">
+            <view class="title">我的书影音</view>
+            <view class="view">
+                登录查看
+                <view class="arrow"></view>
+            </view>
+        </view>
+
+        <view class="items">
+            <view class="item">
+                <image class="icon" src="/assets/imgs/ic_cat_movie.png" />
+                <view class="info-wrapper">
+                    <view class="info">
+                        <view class="left">
+                            <view class="top">观影分析</view>
+                            <view class="bottom">
+                                <view class="count">0</view>
+                                <view class="text">看过</view>
+                            </view>
+                        </view>
+                        <view class="right">
+                            <text class="text">标记10部影片\n开启观影分析</text>
+                            <view class="begin">立即开启</view>
+                            <view class="arrow"></view>
+                        </view>
+                    </view>
+                    <view class="divider"></view>
+                </view>
+            </view>
+            <view class="item">
+                <image class="icon" src="/assets/imgs/ic_cat_book.png" />
+                <view class="info-wrapper">
+                    <view class="info">
+                        <view class="left">
+                            <view class="top">读书分析</view>
+                            <view class="bottom">
+                                <view class="count">0</view>
+                                <view class="text">读过</view>
+                            </view>
+                        </view>
+                        <view class="right">
+                            <text class="text">标记10本书\n开启读书分析</text>
+                            <view class="begin">立即开启</view>
+                            <view class="arrow"></view>
+                        </view>
+                    </view>
+                    <view class="divider"></view>
+                </view>
+            </view>
+            <view class="item">
+                <image class="icon" src="/assets/imgs/ic_cat_music.png" />
+                <view class="info-wrapper">
+                    <view class="info">
+                        <view class="left">
+                            <view class="top">音乐分析</view>
+                            <view class="bottom">
+                                <view class="count">0</view>
+                                <view class="text">听过</view>
+                            </view>
+                        </view>
+                        <view class="right">
+                            <text class="text">标记10张唱片\n开启音乐分析</text>
+                            <view class="begin">立即开启</view>
+                            <view class="arrow"></view>
+                        </view>
+                    </view>
+                </view>
+            </view>           
+        </view>
+    </view>
+
     <view class="version">版本1.0.39</view>
 </view>
   
