@@ -1,66 +1,41 @@
 // pages/profile/profile.js
 Page({
-
-  /**
-   * Page initial data
-   */
   data: {
-
+    // nums: [11, 22, 33, 44, 55],
+    items: [
+      {
+        icon: 'ic_cat_movie.png',
+        title: '观影分析',
+        count: 0,
+        has: '看过',
+        mark: '标记10部影片\n开启观影分析'
+      },
+      {
+        icon: 'ic_cat_book.png',
+        title: '读书分析',
+        count: 0,
+        has: '读过',
+        mark: '标记10本书\n开启读书分析'
+      },
+      {
+        icon: 'ic_cat_music.png',
+        title: '音乐分析',
+        count: 0,
+        has: '听过',
+        mark: '标记10张唱片\n开启音乐分析'
+      }
+    ]
   },
-
-  /**
-   * Lifecycle function--Called when page load
-   */
-  onLoad: function (options) {
-
-  },
-
-  /**
-   * Lifecycle function--Called when page is initially rendered
-   */
-  onReady: function () {
-
-  },
-
-  /**
-   * Lifecycle function--Called when page show
-   */
-  onShow: function () {
-
-  },
-
-  /**
-   * Lifecycle function--Called when page hide
-   */
-  onHide: function () {
-
-  },
-
-  /**
-   * Lifecycle function--Called when page unload
-   */
-  onUnload: function () {
-
-  },
-
-  /**
-   * Page event handler function--Called when user drop down
-   */
-  onPullDownRefresh: function () {
-
-  },
-
-  /**
-   * Called when page reach bottom
-   */
-  onReachBottom: function () {
-
-  },
-
-  /**
-   * Called when user click on the top right corner to share
-   */
-  onShareAppMessage: function () {
-
+  begin: function(evt) {
+    // evt.currentTarget.id == 'item-0'
+    // console.log(evt);
+    const idx = evt.currentTarget.dataset.index;
+    if (idx == 0) {
+      console.log("观影分析");
+    } else if (idx == 1) {
+      console.log("读书分析");
+    } else if (idx == 2) {
+      console.log("音乐分析");
+    }
   }
 })

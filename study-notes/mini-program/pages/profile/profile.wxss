@@ -25,6 +25,7 @@
     line-height: 100rpx;
     width: 350rpx;
     text-align: center;
+    box-shadow: 2rpx 2rpx 10rpx 0 rgba(0, 0, 0, 0.2);
 }
 
 .version {
@@ -116,9 +117,17 @@
     margin-bottom: 10rpx;
 }
 
+.info .begin-wrapper {
+    display: flex;
+    align-items: center;
+}
+
 .info .right {
     display: flex;
     align-items: center;
+    justify-content: space-between;
+    flex-grow: 1;
+    padding-left: 26rpx;
 }
 
 .info .right .text {
