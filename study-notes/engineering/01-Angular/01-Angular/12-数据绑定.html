@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>12-数据绑定</title>
+    <style>
+        [ng-cloak]{
+            display: none;
+        }
+    </style>
+</head>
+<body ng-app="app" ng-controller="XmgController">
+<!--
+插值语法   数据绑定
+如何解决一闪的办法  {{msg}}
+1.用插值语法 设置一个属性 ng-cloak 并且设置样式 display: none;
+<p ng-cloak>{{msg}}</p>
+
+2.用 ng-bind 只能绑定一个值
+<p ng-bind="msg"></p>
+
+3.第三种  ng-bind-template
+<p ng-bind-template="{{msg}} {{age}}"></p>
+-->
+<!--<p>{{msg}} -&#45;&#45;&#45;&#45; {{age}}</p>-->
+<!--<p ng-cloak>{{msg}}</p>-->
+<!--<p ng-bind="str"></p>-->
+
+<!--<p ng-bind-template="{{msg}} {{age}}"></p>-->
+
+<script src="js/angular-1.5.8.js"></script>
+<script>
+    // 1.创建模块
+    var app = angular.module('app',[]);
+    // 2.创建控制器
+    app.controller('XmgController',['$scope',function ($scope) {
+        $scope.msg = 'xmg';
+        $scope.age = 18;
+
+        $scope.str = $scope.msg + $scope.age;
+    }])
+    // 3.绑定模块 绑定控制器
+</script>
+</body>
+</html>

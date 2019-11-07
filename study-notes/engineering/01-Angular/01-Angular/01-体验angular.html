@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>01-体验angular</title>
+</head>
+<body ng-app="qwe" ng-controller="XmgController">
+<!--  插值语法 -->
+<input type="text" ng-model="msg">
+<p>{{msg}}</p>
+
+<script src="js/angular-1.5.8.js"></script>
+<script>
+    // 1.创建模块
+    var xx = angular.module('qwe',[]);
+
+    // 2.创建控制器
+    xx.controller('XmgController',['$scope','$http',function ($scope,$http,dafa) {
+        $scope.msg = '我是MT1231';
+    }]);
+</script>
+</body>
+</html>

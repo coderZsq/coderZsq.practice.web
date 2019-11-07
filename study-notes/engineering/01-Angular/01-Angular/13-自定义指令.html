@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>13-自定义指令</title>
+    <style>
+        .xmg{
+            background-color: yellow;
+        }
+    </style>
+</head>
+<body ng-app="app">
+
+<!-- 属性 A -->
+<!--<div xmg></div>-->
+
+<!--元素 E -->
+<!--<xmg></xmg>-->
+
+<!-- 类名 C -->
+<!--<div class="xmg"></div>-->
+
+<!--注释 M -->
+<!-- directive:xmg -->
+
+<!--<div xmg></div>-->
+
+<div xmg-str>
+</div>
+
+<script src="js/angular-1.5.8.js"></script>
+<script>
+    // 1.创建模块
+    var app = angular.module('app',[]);
+
+    // 2.自定义指令
+    app.directive('xmg',function () {
+        return {
+            // 规定指令的使用方式
+            /**
+             * E 元素
+             * A 属性
+             * M 注释
+             * C 类名
+             * 默认 EA
+             */
+//            restrict:'MCEA',
+//             模版 用这个指令替代 模版
+            //template:'<div><h1>我是指令</h1><p>我是段落</p></div>',
+            // 引入外部模版 路径
+            templateUrl:'header.html',
+            // 要不要替换原标签 true 代表替换  false(默认) 代表不替换
+            replace:true
+        }
+    })
+
+    // 如果这样写xmgStr angular 内部会转换成 xmg-str
+    app.directive('xmgStr',function () {
+        return {
+//            restrict:'MCEA',
+//             模版 用这个指令替代 模版
+            //template:'<div><h1>我是指令</h1><p>我是段落</p></div>',
+            // 引入外部模版 路径
+            templateUrl:'header.html',
+            // 要不要替换原标签 true 代表替换  false(默认) 代表不替换
+            replace:true
+        }
+    })
+</script>
+</body>
+</html>

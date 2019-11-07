@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>17-依赖注入</title>
+</head>
+<body ng-app="app" ng-controller="XmgController">
+<p>{{msg}}</p>
+
+<script src="js/angular-1.5.8.js"></script>
+<script>
+    // 1.创建模块
+    var app = angular.module('app',[]);
+    // 2.创建控制器
+    // 注入式  函数的形参可以修改
+    /*app.controller('XmgController',['$scope','$log','$http',function ($scope,$log,$http) {
+        $scope.msg = 'xmg1231';
+    }]);*/
+
+    // 推断式 函数的形参不能改 根据函数的形参来推断可能要这个服务/卡
+    app.controller("XmgController",function ($scope) {                  $scope.msg = '12123';
+    })
+</script>
+</body>
+</html>

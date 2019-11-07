@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>03-ng-show-if-hide</title>
+</head>
+<body ng-app="app" ng-controller="XmgController">
+
+<!--
+ng-show="false"
+true 代表显示 false 隐藏
+ng-hide 和 ng-show 相反
+
+ng-if="false"
+ng-if true 显示/添加到dom 上  false 从dom移除
+
+只展示一次用ng-if 如果展示多次 用ng-show/ng-hide
+-->
+<!--<p ng-show="false">{{msg}}</p>-->
+<!--<p ng-hide="true">{{msg}}</p>-->
+
+<p ng-if="2 == 2">{{msg}}</p>
+
+<script src="js/angular-1.5.8.js"></script>
+<script>
+    // 1.创建模块
+    var app = angular.module('app',[]);
+    // 2.创建控制器
+    app.controller('XmgController',['$scope',function ($scope) {
+        $scope.msg = 'xmg';
+    }])
+    // 3.绑定模块 绑定控制器
+</script>
+</body>
+</html>

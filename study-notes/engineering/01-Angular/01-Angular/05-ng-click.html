@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>05-ng-click</title>
+</head>
+<body ng-app="app" ng-controller="XmgController">
+<button ng-click="move(3,'qwe')">点我啊</button>
+
+<p>{{msg}}</p>
+<script src="js/angular-1.5.8.js"></script>
+<script>
+    // 1.创建模块
+    var app = angular.module('app',[]);
+    // 2.创建控制器
+    app.controller('XmgController',['$scope',function ($scope) {
+        $scope.msg = 'xmg';
+
+        $scope.move = function (num,params) {
+            $scope.msg = num + params;
+        }
+    }])
+    // 3.绑定模块 绑定控制器
+</script>
+</body>
+</html>

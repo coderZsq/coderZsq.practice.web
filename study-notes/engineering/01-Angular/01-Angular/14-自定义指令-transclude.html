@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>14-自定义指令-transclude</title>
+</head>
+<body ng-app="app">
+
+<xmg ng-transclude>
+    <p>我是p</p>
+    <p>我是p</p>
+    <p>我是p</p>
+    <p>我是p</p>
+    <p>我是p</p>
+</xmg>
+
+<script src="js/angular-1.5.8.js"></script>
+<script>
+    // 1.创建模块
+    var app = angular.module('app',[]);
+    // 2.创建控制器
+    app.directive('xmg',function () {
+        return {
+            template:'<h1>我是指令1</h1>',
+            transclude:true
+        }
+    })
+</script>
+</body>
+</html>

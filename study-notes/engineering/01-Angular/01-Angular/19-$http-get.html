@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>19-$http</title>
+</head>
+<body ng-app="app" ng-controller="XmgController">
+
+<p>{{msg}}</p>
+
+<p>{{title}}</p>
+
+<script src="js/angular-1.5.8.js"></script>
+<script>
+    // 1.创建模块
+    var app = angular.module('app',[]);
+    // 2.创建控制器
+    app.controller('XmgController',['$scope','$http',function ($scope,$http) {
+        $scope.msg = 'xmg';
+        $http({
+            // 请求路径
+            url:'get.php',
+            // 默认是get
+            //method:'GET',
+            // 请求参数
+            params:{
+                price:101
+            }
+        }).success(function (res) {
+            console.log(res);
+            // 要想在界面上显示 必需把数据绑定到 $scope 身上
+            $scope.title = res;
+        }).error(function (err) {
+            console.log(err);
+        })
+    }])
+</script>
+</body>
+</html>

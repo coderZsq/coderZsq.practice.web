@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>07-ng-src</title>
+</head>
+<body ng-app="app" ng-controller="XmgController">
+<!--<img src="{{mySrc}}" alt="图坏了">-->
+<!--
+ng-src="{{mySrc}}"
+用插值语法
+-->
+<img src="{{mySrc}}" alt="图坏了">
+<img ng-src="{{mySrc}}" alt="图坏了">
+
+<script src="js/angular-1.5.8.js"></script>
+<script>
+    // 1.创建模块
+    var app = angular.module('app',[]);
+    // 2.创建控制器
+    app.controller('XmgController',['$scope',function ($scope) {
+        $scope.msg = 'xmg';
+        $scope.mySrc = 'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1523329682&di=ee2db1bb0383a9c80f64df09bdb2e2a7&imgtype=jpg&er=1&src=http%3A%2F%2Fuploads.xuexila.com%2Fallimg%2F1702%2F706-1F21PRT9.jpg'
+    }])
+    // 3.绑定模块 绑定控制器
+</script>
+</body>
+</html>

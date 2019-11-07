@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>15-内置过滤器</title>
+</head>
+<body ng-app="app" ng-controller="XmgController">
+
+<!--
+过滤器  对数据进行处理/格式化
+
+内置过滤器
+filter
+json
+uppercase
+currency
+orderBy
+number
+date
+lowercase
+limitTo
+
+1.货币格式化 currency
+默认是美元符号 $  要想传入其他符号需要参入参数 第一个参数是符号 第二个参数是保留的位数(默认保留2位小数) 内部采用 四舍五入
+<p>{{ 10.125 | currency:'¥':1 }}</p>
+
+2.number 保留几位小数 默认保留三位小数
+<p>{{price | number:1 }}</p>
+
+3.date  日期格式化
+<p>{{myDate | date:'yyyy-MM-dd HH:mm:ss'}}</p>
+<p>{{myDate | date:'yyyy/MM/dd HH:mm:ss'}}</p>
+<p>{{myDate | date:'yyyy MM dd HH:mm:ss'}}</p>
+<p>{{myDate | date:'yyyy年MM月dd日 HH:mm:ss'}}</p>
+
+4.uppercase 转换大写 将字母转换为大写
+<p>{{str | uppercase}}</p>
+5. lowercase 小写
+<p>{{str | lowercase}}</p>
+6.json  把对象转换成json
+<p>{{stu | json}}</p>
+
+-->
+<!--<p>{{ 10.125 | currency:'¥':1 }}</p>-->
+<!--<p>{{ 10.125 | currency:'¥':1 }}</p>-->
+<!--<p>{{ price  | currency:'¥':1 }}</p>-->
+
+<!--<p>{{price | number:1 }}</p>-->
+
+<!--<p>{{myDate | date:'yyyy-MM-dd HH:mm:ss'}}</p>-->
+<!--<p>{{myDate | date:'yyyy/MM/dd HH:mm:ss'}}</p>-->
+<!--<p>{{myDate | date:'yyyy MM dd HH:mm:ss'}}</p>-->
+<!--<p>{{myDate | date:'yyyy年MM月dd日 HH:mm:ss'}}</p>-->
+
+<!--<p>{{str | uppercase}}</p>-->
+<!--<p>{{str | lowercase}}</p>-->
+
+<p>{{stu | json}}</p>
+
+<script src="js/angular-1.5.8.js"></script>
+<script>
+    // 1.创建模块
+    var app = angular.module('app',[]);
+
+    app.controller('XmgController',['$scope',function ($scope) {
+        $scope.price = '100.1233435435';
+
+        $scope.myDate = new Date();
+
+        $scope.str = 'CoderYJ';
+
+        $scope.stu = {name:'zs',age:18};
+    }])
+</script>
+</body>
+</html>

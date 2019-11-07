@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="app" ng-controller="XmgController">
+<head>
+    <meta charset="UTF-8">
+    <title>{{title}}</title>
+    <style type="text/css">
+        * {
+            padding: 0;
+            margin: 0;
+            border: 0;
+            list-style: none;
+        }
+        .box {
+            width: 1000px;
+            margin: 50px auto;
+        }
+
+        .box .title {
+            width: 400px;
+            height: 44px;
+            border: 3px solid #ccc;
+            /*头部设置往下走3个像素,遮盖住下面的面的内容*/
+            position: relative;
+            top: 3px;
+            /*注意一定要设置背景颜色*/
+            background: #fff;
+            border-bottom: none;
+        }
+
+        .box .content {
+            width: 1000px;
+            height: 475px;
+            border: 3px solid #ccc;
+
+        }
+        .box .content img{
+            width: 1000px;
+            height: 475px;
+        }
+        .box ul {
+            overflow: hidden;
+        }
+
+        .box ul li {
+            float: left;
+            padding: 10px;
+        }
+
+        .box ul .cur {
+            color: red;
+            font-size: 18px;
+        }
+        /*把所有content下面的div给隐藏掉*/
+    </style>
+</head>
+<body >
+<div class="box">
+    <div class="title">
+        <ul>
+            <li ng-class="{cur:item == 'html'}" ng-mouseover="move('html')">前端学院</li>
+            <li ng-class="{cur:item == 'ios'}" ng-mouseover="move('ios')">ios学院</li>
+            <li ng-class="{cur:item == 'java'}" ng-mouseover="move('java')" >java学院</li>
+            <li ng-class="{cur: item == 'ui'}" ng-mouseover="move('ui')">UI精品学院</li>
+        </ul>
+    </div>
+    <div class="content" ng-switch="item">
+        <div ng-switch-when="html"><img src="image/01.png" alt=""></div>
+        <div ng-switch-when="ios"><img src="image/02.png" alt=""></div>
+        <div ng-switch-when="java"><img src="image/03.png" alt=""></div>
+        <div ng-switch-when="ui"><img src="image/04.png" alt=""></div>
+    </div>
+</div>
+<script src="js/angular-1.5.8.js"></script>
+<script>
+    // 1.创建模块
+    var app = angular.module('app',[]);
+    // 2.创建控制器
+    app.controller('XmgController',['$scope',function ($scope) {
+        $scope.title = '12132e';
+        $scope.msg = 'xmg';
+
+        // 只要控制属性的值 就可以控制显示内容了
+        $scope.item = 'html';
+
+        // 添加事件
+        $scope.move = function (str) {
+            $scope.item = str;
+        }
+    }])
+</script>
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>11-双向绑定</title>
+</head>
+<body ng-controller="XmgController" ng-app="app">
+
+<!--
+MVVM
+M model (存储数据)
+V view (展示数据)
+VM viewModel  (处理数据的)
+-->
+<!--
+数据双向绑定
+模型可以影响视图
+视图可以影响模型
+-->
+<button ng-click="click()">点我啊</button>
+<input type="text" ng-model="msg">
+<p>{{msg}}</p>
+<p>{{msg}}</p>
+<p>{{msg}}</p>
+<p>{{msg}}</p>
+
+<script src="js/angular-1.5.8.js"></script>
+<script>
+    // 1.创建模块
+    var app = angular.module('app',[]);
+    // 2.创建控制器
+    app.controller('XmgController',['$scope',function ($scope) {
+        $scope.msg = 'dafda';
+
+        $scope.click = function () {
+            alert($scope.msg);
+        }
+    }])
+</script>
+</body>
+</html>

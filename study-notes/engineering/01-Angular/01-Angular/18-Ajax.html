@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>18-Ajax</title>
+</head>
+<body>
+<p id="op"></p>
+<script>
+    // 1.创建请求对象
+    var xhr = new XMLHttpRequest();
+
+    // 2.设置回调函数
+    xhr.onreadystatechange = function () {
+        if (xhr.status == 200 && xhr.readyState == 4){
+            // 请求成功
+            alert(xhr.responseText);
+            var op = document.getElementById('op');
+            op.innerHTML = xhr.responseText;
+        }
+    };
+    // 3.设置url 请求方式
+    xhr.open('GET','get.php');
+
+    // 4.发送请求
+    xhr.send();
+
+
+</script>
+</body>
+</html>

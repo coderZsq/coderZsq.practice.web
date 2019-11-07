@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>10-事件属性$event</title>
+</head>
+<body ng-app="app" ng-controller="XmgController">
+<button id="btn" ng-click="move($event)">点我啊</button>
+
+<p>{{num}}</p>
+<script src="js/angular-1.5.8.js"></script>
+<script>
+
+    /*document.getElementById('btn').onclick = function (event) {
+        var event = event || window.event;
+        console.log(event);
+    }*/
+
+    // 1.创建模块
+    var app = angular.module('app',[]);
+    // 2.创建控制器
+    app.controller('XmgController',['$scope',function ($scope) {
+        $scope.msg = 'xmg';
+
+        $scope.num = 1;
+        $scope.move = function (event) {
+           //console.log(event);
+            // angular对原生的对象都有封装 以后要用尽量用angular封装的,如果不用angular封装的会出一些小问题
+
+            setInterval(function () {
+                $scope.num++;
+                console.log($scope.num);
+                //$scope.$apply();
+                // 脏值检测
+            },1000);
+        }
+
+
+    }])
+</script>
+</body>
+</html>

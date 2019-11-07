@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>09-ng-switch</title>
+</head>
+<body ng-app="app" ng-controller="XmgController">
+
+<!--<ul ng-switch="item">
+    <li ng-switch-default>html</li>
+    <li ng-switch-when="css">css</li>
+    <li ng-switch-when="js">js</li>
+</ul>-->
+
+<input type="text" ng-model="item">
+
+<ul ng-switch="item">
+    <li ng-switch-default>html</li>
+    <li ng-switch-when="css">css</li>
+    <li ng-switch-when="js">js</li>
+</ul>
+
+<script src="js/angular-1.5.8.js"></script>
+<script>
+    // 1.创建模块
+    var app = angular.module('app',[]);
+    // 2.创建控制器
+    app.controller('XmgController',['$scope',function ($scope) {
+        $scope.msg = 'xmg';
+
+        $scope.item = 'css1';
+    }])
+
+    /*switch (3){
+        case 0:
+            break;
+        case 1:
+            break;
+        case 2:
+            表达式
+            break;
+        default:
+            break;
+    }*/
+
+    /*switch (值){
+        case 值1:
+            表达式1
+            break;
+        case 值2:
+            表达式2
+            break;
+        case 值3:
+            表达式3
+            break;
+        case 值4:
+            表达式4
+            break;
+            . . .
+            default:
+            表达式n
+    }*/
+
+
+</script>
+</body>
+</html>

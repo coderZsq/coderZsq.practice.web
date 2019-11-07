@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>06-ng-class</title>
+    <style>
+        .box {
+            background-color: red;
+        }
+        .fs_50 {
+            font-size: 50px;
+        }
+    </style>
+</head>
+<body ng-app="app" ng-controller="XmgController">
+<button ng-click="move()">点我啊</button>
+
+<!--<p class="box fs_50">{{msg}}</p>-->
+<!--
+ng-class 添加类名(true)/移除类名(false)
+<p ng-class="{box:true,fs_50:true}">{{msg}}</p>
+-->
+<p ng-class="{box:isShow,fs_50:isShow}">{{msg}}</p>
+<script src="js/angular-1.5.8.js"></script>
+<script>
+    // 1.创建模块
+    var app = angular.module('app',[]);
+    // 2.创建控制器
+    app.controller('XmgController',['$scope',function ($scope) {
+        $scope.msg = 'xmg';
+        $scope.isShow = true;
+        $scope.move = function () {
+            $scope.isShow = !$scope.isShow;
+        }
+    }])
+    // 3.绑定模块 绑定控制器
+</script>
+</body>
+</html>
