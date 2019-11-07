@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>10-jsonp原理</title>
+</head>
+<body>
+<img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1522823409741&di=bc50bbd1bc90d67bb6a801b23e419720&imgtype=0&src=http%3A%2F%2Fimg.zcool.cn%2Fcommunity%2F013d2a58f56ef2a8012049ef67ebf6.jpg" alt="">
+
+<script>
+    /*
+    * 1. html标签的src属性支持跨域
+    * 2. 服务器返回的js代码可以在浏览器中执行
+    *
+    * 前端
+    * 1.声明一个全局函数 用于接收数据
+    * 2.利用script的src属性访问别人家的服务器 并且把全局函数名传过去 通过callback 传递
+    *
+    * 后台
+    * 1.接收前端传递的callback参数
+    * 2.拼接函数名 并且返回
+    * */ 
+    /*function test(num) {
+        alert(num);
+    }*/
+    //fn(3);
+</script>
+<!--<script src="jsonp.php?callback=test"></script>-->
+
+<script>
+    function fn(str) {
+        console.log(str);
+        console.log(str.alt);
+    }
+</script>
+<script src="https://api.douban.com/v2/book/1220562?callback=fn"></script>
+</body>
+</html>

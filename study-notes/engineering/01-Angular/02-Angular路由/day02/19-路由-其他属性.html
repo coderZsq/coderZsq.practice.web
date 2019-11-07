@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>19-路由-其他属性</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .home{
+            background-color: red;
+        }
+        .contact {
+            background-color: yellow;
+        }
+    </style>
+</head>
+<body ng-app="app">
+
+<a href="#/home">首页</a>
+<a href="#/contact">联系人</a>
+
+<div ng-view>
+    <div>
+        <h1>我是首页dafsafdas</h1>
+        <p>我是段落1</p>
+        <p>我是段落1</p>
+        <p>我是段落1</p>
+        <p>我是段落1</p>
+        <p>我是段落1</p>
+        <p>我是段落1</p>
+        <p>我是段落1</p>
+        <p>我是段落1</p>
+        <p>我是段落1</p>
+        <p>我是段落1</p>
+        <p>我是段落1</p>
+        <p>我是段落1</p>
+        <p>我是段落1</p>
+    </div>
+</div>
+
+<script src="js/angular-1.5.8.js"></script>
+<script src="js/angular-route.js"></script>
+<script>
+    // 1.创建模块 ['ngRoute'] 引入外部依赖
+    var app = angular.module('app',['ngRoute']);
+    // 2.配置路由 路由就可以简单的认为是锚点
+    app.config(['$routeProvider',function ($routeProvider) {
+        $routeProvider.when('/home',{
+            template:'<h1>我是首页 {{msg}}</h1>',
+            //templateUrl:'home_tpl.html',
+            // 用HomeController 来管理 template
+            controller:'HomeController'
+        }).when('/contact',{
+            //template:'<h1>我是联系人</h1><p>我是段落</p>'
+            templateUrl:'contact_tpl.html',
+            controller:'ContactController'
+        }).otherwise({
+            // 设置默认路径
+            redirectTo:'/home'
+        })
+    }])
+    // 3.创建控制器
+    app.controller('HomeController',['$scope',function ($scope) {
+        $scope.msg = 'hahdafasdfsa';
+    }])
+    app.controller('ContactController',['$scope',function ($scope) {
+        $scope.msg = 'ContactController';
+    }])
+</script>
+</body>
+</html>

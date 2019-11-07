@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>03-跨域改变</title>
+</head>
+<body ng-app="app" ng-controller="XmgController">
+
+<!--<script src="js/angular-1.5.8.js"></script>-->
+<script src="js/angular.js"></script>
+<script>
+    // 1.创建模块
+    var app = angular.module('app',[]);
+    // 2.创建控制器
+    app.controller('XmgController',['$scope','$http',function ($scope,$http) {
+        $scope.msg = 'xmg';
+        /*$http({
+            //https://sug.so.360.cn/suggest?callback=suggest_so&word=c
+            url:'https://sug.so.360.cn/suggest',
+            method:'jsonp',
+            params:{
+                callback:'JSON_CALLBACK',
+                word:"c"
+            }
+        }).success(function (res) {
+            console.log(res);
+        }).error(function (err) {
+            console.log(err);
+        })*/
+
+        // 1.6
+        $http({
+            //https://sug.so.360.cn/suggest?callback=suggest_so&word=c
+            url:'https://sug.so.360.cn/suggest',
+            method:'jsonp',
+            params:{
+                word:"c"
+            }
+        }).then(function (res) {
+            console.log(res);
+        }).catch(function (err) {
+            console.log(err);
+        })
+    }])
+        // text/*.jpg
+    // 1.6 跨域需要设置白名单
+    app.config(['$sceDelegateProvider',function ($sceDelegateProvider) {
+        $sceDelegateProvider.resourceUrlWhitelist([
+            // 让自己访问
+            'self',
+            // 设置要访问的网站地址
+            /*
+            *  一颗星  *   匹配所有但是只能匹配当前文件夹下面的所有文件,字文件夹下面的文件不能匹配   *.jpg  1.jgp  2.jpg  5.jpg
+            *  test/* 只能匹配到test文件夹下面的 文件 不能匹配到 test/code/ 的文件
+            *  2颗星 代表匹配这个文件夹下面的所有文件  test/** 只要是test下面的文件都能匹配
+            * */
+            'https://sug.so.360.cn/**'
+        ])
+    }])
+</script>
+</body>
+</html>

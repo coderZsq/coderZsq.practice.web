@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>14-自定义服务-factory</title>
+</head>
+<body ng-app="app" ng-controller="XmgController">
+<script src="js/angular-1.5.8.js"></script>
+<script>
+    // 1.创建模块
+    var app = angular.module('app',[]);
+    // 2.创建控制器
+    app.controller('XmgController',['$scope','xmg','show',function ($scope,xmg,show) {
+        $scope.msg = 'xmg';
+
+//       var result = xmg(2);
+//       console.log(result);
+//       show.showDate();
+       show.show1();
+
+    }]);
+
+    // 3.自定义服务 功能 函数
+    // 返回函数的形式 来调用
+    // factory --> {}
+    app.factory('xmg',function () {
+        return function (input) {
+            alert(input);
+
+            return 123;
+        }
+    })
+    // 返回对象的形式
+    app.factory('show',function () {
+        return {
+            showDate:function () {
+                alert(new Date());
+            },
+            show1:function () {
+                alert(1);
+            }
+        }
+    })
+
+
+</script>
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>15-自定义服务service</title>
+</head>
+<body ng-app="app" ng-controller="XmgController">
+
+<script src="js/angular-1.5.8.js"></script>
+<script>
+    // 1.创建模块
+    var app = angular.module('app',[]);
+    // 2.创建控制器
+    app.controller('XmgController',['$scope','xmg',function ($scope,xmg) {
+        $scope.msg = 'xmg';
+
+       var result =  xmg.show(3,2);
+       xmg.showDate();
+       console.log(result)
+    }])
+    // service ->> new Object()
+    app.service('xmg',function () {
+        this.show = function (num,num1) {
+//            alert(input);
+
+            return num + num1 + 'dafdsa';
+        }
+        this.showDate = function () {
+            alert(1);
+        }
+    })
+
+</script>
+</body>
+</html>

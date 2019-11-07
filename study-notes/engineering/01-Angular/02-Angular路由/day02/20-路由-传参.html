@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>20-路由-传参</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .home{
+            background-color: red;
+        }
+        .contact {
+            background-color: yellow;
+        }
+    </style>
+</head>
+<body ng-app="app">
+
+<a href="#/home/1">首页</a>
+<a href="#/home/2">联系人</a>
+
+<div ng-view>
+</div>
+
+<script src="js/angular-1.5.8.js"></script>
+<script src="js/angular-route.js"></script>
+<script>
+    // 1.创建模块 ['ngRoute'] 引入外部依赖
+    var app = angular.module('app',['ngRoute']);
+    // 2.配置路由 路由就可以简单的认为是锚点
+    app.config(['$routeProvider',function ($routeProvider) {
+        $routeProvider.when('/home/:id',{
+            template:'<h1>我是首页 {{msg}}</h1>',
+            //templateUrl:'home_tpl.html',
+            // 用HomeController 来管理 template
+            controller:'HomeController'
+        }).otherwise({
+            // 设置默认路径
+            redirectTo:'/home'
+        })
+    }])
+    // 3.创建控制器
+    app.controller('HomeController',['$scope','$routeParams','$http',function ($scope,$routeParams,$http) {
+        $scope.msg = 'hahdafasdfsa';
+        console.log($routeParams);
+    }])
+</script>
+</body>
+</html>

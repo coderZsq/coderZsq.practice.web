@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>12-服务器桥接</title>
+</head>
+<body ng-app="app" ng-controller="XmgController">
+
+<script src="js/angular-1.5.8.js"></script>
+<script>
+    // 1.创建模块
+    var app = angular.module('app',[]);
+    // 2.创建控制器
+    // https://notify.ssl.so.com/v1/list-messages?callback=
+    app.controller('XmgController',['$scope','$http',function ($scope,$http) {
+        $scope.msg = 'xmg';
+        $http({
+            url:'test.php'
+        }).success(function (res) {
+            console.log(res);
+        }).error(function (err) {
+            console.log(err);
+        })
+    }])
+</script>
+</body>
+</html>

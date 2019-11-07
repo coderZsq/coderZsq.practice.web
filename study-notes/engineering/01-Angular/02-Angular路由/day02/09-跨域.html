@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>09-跨域</title>
+</head>
+<body>
+<!--
+0 什么是同源
+主机地址   协议头  端口号 三者一致 同源
+http://baidu.com:80
+http://jd.com:80
+
+1.什么是跨域
+不是同源 就是跨域
+
+2.为什么要有跨域
+为了安全
+
+3.是谁造成跨域
+是浏览器
+
+4.jsonp 和 Ajax 有关系吗?
+jsonp 是解决跨域的一种方案
+Ajax 发送网络请求的一种技术
+
+
+5.如何解决跨域
+1.jsonp
+2.浏览器安装插件
+3.别人家的服务器允许跨域
+4.服务器桥接
+
+6.简述jsonp原理
+-->
+<script>
+    var url = 'https://api.douban.com/v2/book/1220562';
+
+    var xhr = new XMLHttpRequest();
+    xhr.onreadystatechange = function () {
+        if (xhr.status == 200 && xhr.readyState == 4){
+            console.log(xhr.responseText);
+        }
+    }
+    xhr.open('GET',url);
+    xhr.send();
+</script>
+</body>
+</html>

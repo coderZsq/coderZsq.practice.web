@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>11-JQLite</title>
+</head>
+<body ng-app="app">
+<button id="btn">点我啊</button>
+<div id="box"></div>
+
+<script src="js/jquery-3.1.1.min.js"></script>
+<script src="js/angular-1.5.8.js"></script>
+
+<script>
+    // 1.创建模块
+    var app = angular.module('app',[]);
+    // 2.创建控制器
+
+    var box = document.getElementById('box');
+    var btn = document.getElementById('btn');
+//    box.style.width = '100px';
+//    box.style.height = '100px';
+//    box.style.background = 'yellow';
+
+    // 将js对象转换成jQuery对象
+    box = angular.element(box);
+    btn = angular.element(btn);
+
+    // 在angular 中封装了基本的jQuery对象
+    // angular 内部会判断,当执行angular的时候有没有jQuery对象 如果有,我就用jQuery的全部功能 ,如果没有 就提供jQuery的基本功能
+    box.css({
+        width:'100px',
+        height:'100px',
+        background:'red'
+    });
+
+    btn.on('click',function () {
+        box.animate({
+            width:'300px',
+            height:'300px'
+        })
+    })
+</script>
+</body>
+</html>

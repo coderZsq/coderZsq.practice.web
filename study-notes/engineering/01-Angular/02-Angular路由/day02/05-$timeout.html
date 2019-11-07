@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>05-$timeout</title>
+</head>
+<body ng-app="app" ng-controller="XmgController">
+
+<p>{{msg}}</p>
+
+<script src="js/angular-1.5.8.js"></script>
+<script>
+    // 1.创建模块
+    var app = angular.module('app',[]);
+    // 2.创建控制器
+    app.controller('XmgController',['$scope','$timeout',function ($scope,$timeout) {
+        $scope.msg = 'xmg';
+        /*
+        * fn(可选)	function()=	一个将被延迟执行的函数。
+         delay(可选)	num	延迟的时间（毫秒）。
+         invokeApply(可选)	boolean	如果设置为false，则跳过脏值检测，否则将调用$apply。
+         Pass(可选)	*	执行的函数的附加参数。*/
+       var timer = $timeout(function (str) {
+            $scope.msg = '哈哈';
+            console.log(str);
+            console.log($scope.msg)
+            console.log('dadfa');
+//            $timeout.cancel(timer);
+        },2000,true,'asd');
+    }])
+
+   /*var timer = setTimeout(function () {
+//        alert(1);
+        //clearTimeout(timer);
+    },2000);*/
+
+
+</script>
+</body>
+</html>

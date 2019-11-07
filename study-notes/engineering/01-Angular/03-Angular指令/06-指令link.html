@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>06-指令link</title>
+</head>
+<body ng-app="app">
+<!--<xmg data="1231"></xmg>-->
+<div xmg="false"></div>
+<script src="js/angular-1.5.8.js"></script>
+<script>
+    // 1.创建模块
+    var app = angular.module('app',[]);
+    // 2.自定义指令
+    app.directive('xmg',function () {
+        return  {
+            // 设置使用方式
+            restrict:'EAMC',
+//            replace:false
+            template:'<h1>我是指令{{msg}}</h1>',
+            // 返回指令本身
+            // $scope 指令的作用域
+            // dom 就是angular自己内部封装的 jQuery  JQLIte
+            // attr 是指令身上的所有属性
+
+            // 操作dom
+            link:function ($scope,dom,attr) {
+                console.log($scope);
+                $scope.msg = 'hah';
+                console.log(dom);
+                dom.css({
+                    background:'yellow',
+                    width:'100px'
+                })
+                console.log(attr.xmg);
+            }
+//            templateUrl:
+        }
+    })
+</script>
+</body>
+</html>

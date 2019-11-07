@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>11-angular音乐列表-练习</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        ol,ul{
+            list-style: none;
+        }
+        .box{
+            width: 600px;
+            margin: 10px auto;
+        }
+        .header{
+            width: 100%;
+            height: 44px;
+            background-color: #000;
+            line-height: 44px;
+        }
+        .header ul{
+            width: 100%;
+            display: flex;
+            list-style: none;
+        }
+        .header ul li{
+            flex: 1;
+            text-align: center;
+        }
+        .header ul li a{
+            width: 100%;
+            height: 100%;
+            display: block;
+        }
+        a{
+            text-decoration: none;
+            color: #fff;
+        }
+        .content{
+            width: 100%;
+            height: 500px;
+            border: 1px solid #000;
+        }
+        .content ul{
+            width: 100%;
+        }
+        .content ul li{
+            width: 100%;
+            line-height: 44px;
+            border-bottom: 1px dashed #e0e0e0;
+            padding-left: 10px;
+        }
+    </style>
+</head>
+<body ng-app="app">
+
+<div class="box">
+    <div class="header">
+        <ul>
+            <li><a href="#/music/1">首页</a></li>
+            <li><a href="#/music/2">流行</a></li>
+            <li><a href="#/music/3">英文</a></li>
+        </ul>
+    </div>
+
+    <div class="content" ng-view>
+
+    </div>
+</div>
+<script src="js/angular-1.5.8.js"></script>
+<script src="js/angular-route.js"></script>
+<script>
+    // 1.创建模块,注入模块
+    var app = angular.module('app',['ngRoute']);
+
+    // 2.配置模块
+    app.config(['$routeProvider',function ($routeProvider) {
+        $routeProvider.when('/music/:id',{
+            templateUrl:'music_tpl.html',
+            controller:'musicController'
+        }).otherwise({
+            // 设置默认,什么都不是的时候加载首页
+            redirectTo:'/music/1'
+        })
+    }]);
+
+    // 3.控制器
+    app.controller('musicController',['$scope','$http','$routeParams',function ($scope,$http,$routeParams) {
+        // 1.获取参数
+
+        // 2.发送请求
+        $http({
+            url:'listMusic.php',
+            method:'get',
+            params:{
+                id:$routeParams.id
+            }
+        }).success(function (regs) {
+            $scope.dataList = regs;
+            console.log($scope.dataList);
+
+        }).error(function (err) {
+            console.log(err);
+        });
+    }]);
+
+
+</script>
+</body>
+</html>

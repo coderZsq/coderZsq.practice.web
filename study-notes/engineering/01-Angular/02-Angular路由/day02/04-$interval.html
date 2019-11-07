@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>04-interval</title>
+</head>
+<body ng-app="app" ng-controller="XmgController">
+
+<p>{{num}}</p>
+
+<script src="js/angular-1.5.8.js"></script>
+<script>
+    // 1.创建模块
+    var app = angular.module('app',[]);
+    // 2.创建控制器
+    app.controller('XmgController',['$scope','$interval',function ($scope,$interval) {
+        $scope.msg = 'xmg';
+        $scope.num = 1;
+        /*
+        * fn	function()	一个将被反复执行的函数。
+         delay	number	每次调用的间隔毫秒数值。
+         count	number	循环次数的数值，如果没设置，则无限制循环。
+         invokeApply	boolean	如果设置为false，则避开脏值检查，否则将调用$apply。
+         Pass	*	函数的附加参数。
+        * */
+       var timer = $interval(function (str) {
+            $scope.num++;
+            console.log(str);
+            console.log($scope.num);
+
+            if ($scope.num > 5){
+                // 清空angular定时器
+                $interval.cancel(timer);
+                console.log('定时器清空了');
+            }
+        },1000, -1,true,'qwe');
+        /*setInterval(function () {
+            $scope.num++;
+            console.log($scope.num);
+        },1000);*/
+    }])
+
+    /*var num = 1;
+    var timer = setInterval(function () {
+        console.log(num);
+        num++;
+        if(num > 10){
+            // 清空定时器
+            clearInterval(timer);
+        }
+    },1000);*/
+
+
+</script>
+</body>
+</html>

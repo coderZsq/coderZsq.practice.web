@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .box{
+            width: 500px;
+            height: 400px;
+            border: 1px solid #000;
+            margin: 30px auto;
+        }
+        .header {
+            height: 30px;
+            background-color: #000;
+        }
+        .header ul li{
+            text-align: center;
+            list-style: none;
+            float: left;
+            width: 150px;
+            color: #fff;
+        }
+        .header ul li a{
+            color: #fff;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+<div class="box">
+    <div class="header">
+        <ul>
+            <li><a href="#home">首页</a></li>
+            <li><a href="#contact">联系人</a></li>
+            <li><a href="#about">关于我们</a></li>
+        </ul>
+    </div>
+    <div class="content" id="content">
+
+    </div>
+</div>
+<script>
+    // 单页面应用程序不利于SEO
+
+    // 根据锚点的不同 发送不同的网络请求
+    // hashchange 当锚点发生改变就会调用
+    window.addEventListener('hashchange',function() {
+        // 1.获取锚点
+        var hash = window.location.hash;
+        hash = hash.slice(1);
+
+        // 2.发送Ajax请求
+        var xhr = new XMLHttpRequest();
+        xhr.onreadystatechange = function () {
+            if (xhr.status == 200 && xhr.readyState == 4){
+                console.log(xhr.responseText);
+
+                // 1.获取dom
+                var content = document.getElementById('content');
+                content.innerHTML = xhr.responseText;
+            }
+        }
+        // http://127.0.0.1/day02/sign.php?hash=home
+        xhr.open('GET','sign.php?hash='+hash);
+        xhr.send();
+    })
+</script>
+</body>
+</html>

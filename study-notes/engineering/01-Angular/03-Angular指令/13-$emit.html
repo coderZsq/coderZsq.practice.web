@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>13-$emit</title>
+</head>
+<body ng-app="app" ng-controller="XmgController">
+
+<xmg></xmg>
+
+<script src="js/angular-1.5.8.js"></script>
+<script>
+    // 1.创建模块
+    var app = angular.module('app',[]);
+    // 2.创建控制器
+    app.controller('XmgController',['$scope',function ($scope) {
+        $scope.msg = 'xmg';
+
+        $scope.$on('xmg_Notifice',function (event,params) {
+            console.log(params);
+            console.log('上级接收广播');
+        })
+    }])
+
+    app.directive("xmg",function () {
+        return {
+            template:"<h1>我是指令</h1><button ng-click='move()'>点我啊</button>",
+            controller:['$scope',function ($scope) {
+                $scope.move = function () {
+                    console.log('下级发送广播');
+                    // 下级发送广播
+                    $scope.$emit('xmg_Notifice',3);
+                }
+            }]
+        }
+    })
+
+</script>
+</body>
+</html>

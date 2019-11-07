@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>01-$http-post</title>
+</head>
+<body ng-app="app" ng-controller="XmgController">
+
+<p>{{msg}}</p>
+
+<script src="js/angular-1.5.8.js"></script>
+<script>
+    // 1.创建模块
+    var app = angular.module('app',[]);
+    // 2.创建控制器
+    app.controller('XmgController',['$scope','$http',function ($scope,$http) {
+        $scope.msg = 'xmg';
+
+        // 发送网络请求
+        $http({
+            url:'post.php',
+            method:"POST",
+            data:'price=11',
+            // post 请求要设置请求头
+            headers:{
+                'Content-Type':'application/x-www-form-urlencoded'
+            }
+        }).success(function (res) {
+            console.log(res);
+            $scope.msg = res;
+        }).error(function (err) {
+            console.log(err);
+        })
+    }])
+</script>
+</body>
+</html>

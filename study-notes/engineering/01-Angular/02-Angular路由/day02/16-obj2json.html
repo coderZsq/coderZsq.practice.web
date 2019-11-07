@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>16-js2json</title>
+</head>
+<body ng-app="app" ng-controller="XmgController">
+
+<script src="js/angular-1.5.8.js"></script>
+<script>
+    // 1.创建模块
+    var app = angular.module('app',[]);
+    // 2.创建控制器
+    app.controller('XmgController',['$scope','$http','formData',function ($scope,$http,formData) {
+        $scope.msg = 'xmg';
+        var params = {
+            price:10,
+            uuid:1,
+            age:18
+        };
+        var result = formData.obj2json(params);
+        console.log(result);
+
+        $http({
+            url:'post.php',
+            method:'POST',
+            data:result
+        })
+    }])
+
+    app.service('formData',function () {
+        this.obj2json = function (params) {
+//            alert(params);
+            // price=10&uuid=1
+            // price=10&uuid=1&
+            var str = '';
+            for (var key in params) {
+                str += key + '=' + params[key] + '&'
+            }
+//           str = str.slice(0,str.length-1);
+            str = str.slice(0,-1);
+            return str;
+        }
+    })
+
+</script>
+</body>
+</html>

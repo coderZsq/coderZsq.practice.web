@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>06-$log</title>
+</head>
+<body ng-app="app" ng-controller="XmgController">
+
+<script src="js/angular-1.5.8.js"></script>
+<script>
+    // 1.创建模块
+    var app = angular.module('app',[]);
+    // 2.创建控制器
+    app.controller('XmgController',['$scope','$log',function ($scope,$log) {
+        $scope.msg = 'xmg';
+
+        $log.debug('dadfa');
+        $log.info('信息');
+        $log.error('错误');
+        $log.warn('jinggao');
+        $log.log('asdf');
+    }])
+
+    /*console.log('dafas');
+    // 打印一个错误
+    console.error('报错了');
+    // 打印一个警告
+    console.warn('警告');
+    // 信息
+    console.info('信息');
+    // 调试信息
+    console.debug('tdafas');*/
+</script>
+</body>
+</html>

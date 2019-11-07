@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>07-$location</title>
+</head>
+<body ng-app="app" ng-controller="XmgController">
+
+<script src="js/angular-1.5.8.js"></script>
+<script>
+    // 1.创建模块
+    var app = angular.module('app',[]);
+    // 2.创建控制器
+    app.controller('XmgController',['$scope','$location',function ($scope,$location) {
+        $scope.msg = 'xmg';
+//        alert(1);
+//        console.log($location);
+        // 获取url的全路径
+        console.log($location.absUrl());
+        // 获取第一个锚点之后的内容
+        console.log($location.url());
+        // 获取第二个锚点之后的内容
+        console.log($location.hash());
+    }])
+
+//    console.log(window.location);
+
+
+</script>
+</body>
+</html>

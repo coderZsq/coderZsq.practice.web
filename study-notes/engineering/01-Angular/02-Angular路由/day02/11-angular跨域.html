@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>11-angular跨域</title>
+</head>
+<body ng-app="app" ng-controller="XmgController">
+
+<script src="js/angular-1.5.8.js"></script>
+<script>
+    // 1.创建模块
+    var app = angular.module('app',[]);
+    // 2.创建控制器
+    app.controller('XmgController',['$scope','$http',function ($scope,$http) {
+        $scope.msg = 'xmg';
+        // https://api.douban.com/v2/book/1220562?callback=fn
+        // https://api.douban.com/v2/book/1220562?callback=angular.callbacks._0
+        $http({
+            //url:'https://api.douban.com/v2/book/1220562',
+            // https://sug.so.360.cn/suggest?callback=suggest_so&word=c
+            url:'https://sug.so.360.cn/suggest',
+            method:'jsonp',
+            params:{
+                callback:'JSON_CALLBACK',
+                word:'c'
+            }
+        }).success(function (res) {
+            console.log(res);
+        }).error(function (er) {
+            console.log('报错了'+er);
+        })
+    }])
+</script>
+</body>
+</html>

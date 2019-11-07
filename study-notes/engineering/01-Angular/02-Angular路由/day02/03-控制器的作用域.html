@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>03-控制器的作用域</title>
+</head>
+<body ng-app="app" ng-controller="XmgController">
+
+<p>{{msg}}</p>
+
+<hr>
+
+<div ng-controller="XmgController1">
+    {{msg}}
+</div>
+
+<hr>
+<div ng-controller="XmgController2">
+    {{msg}}
+    <div>
+        <div>{{msg}}</div>
+    </div>
+</div>
+
+<!--
+1.就近原则 自己有就拿过来用
+2.自己没有 就去找父级(祖先) 父级有就拿过来用 没有 就没有
+3.父级没有就没有 不会去找子级
+只能自下而上 不能子上而下
+
+-->
+
+<script src="js/angular-1.5.8.js"></script>
+<script>
+    // 1.创建模块
+    var app = angular.module('app',[]);
+    // 2.创建控制器
+    app.controller('XmgController',['$scope',function ($scope) {
+//        $scope.msg = 'XmgController';
+    }])
+
+    app.controller('XmgController1',['$scope',function ($scope) {
+        $scope.msg = 'XmgController1';
+    }])
+
+    app.controller('XmgController2',['$scope',function ($scope) {
+//        $scope.msg = 'XmgController2';
+    }])
+</script>
+</body>
+</html>

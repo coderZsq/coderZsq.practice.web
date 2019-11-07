@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>05-$watch</title>
+</head>
+<body ng-app="app" ng-controller="XmgController">
+
+<button ng-click="click()">取消监听</button>
+<input ng-model="per.age"/>
+<input ng-model="per.name"/>
+
+<script src="js/angular-1.5.8.js"></script>
+<script>
+    // 1.创建模块
+    var app = angular.module('app',[]);
+    // 2.创建控制器
+    app.controller('XmgController',['$scope',function ($scope) {
+        $scope.msg = 'xmg';
+
+//        $scope.age = 1;
+
+//        $scope.per.age = 1;
+//        $scope.per.name = 'zs';
+
+       // var num = 1;
+        // 要想让$watch监听必需 把属性绑定到 $scope 身上
+
+        // 第一个参数 是 要检测的属性名称  第二个参数接收一个函数 函数里面有2个参数 第一个参数是新值 第二个参数是旧值
+        // 第三个参数要不要对象监听  如果要 就传入 true(对象监听) false(值监听)默认
+
+        /*$scope.$watch('num',function (newV, oldV) {
+            console.log(newV, oldV);
+        })*/
+        /*$scope.$watch('per.age',function (newV, oldV) {
+            console.log(newV, oldV);
+        })
+        $scope.$watch('per.name',function (newV, oldV) {
+            console.log(newV, oldV);
+        })*/
+        // 对象监听默认只能调用一次 如果想让他执行多次需要传递一个参数
+
+        // 监听的时候返回一个函数 只要执行这个函数就代表取消监听
+       var unwatch = $scope.$watch('per',function (newV, oldV) {
+            console.log(newV, oldV);
+        },true);
+
+        $scope.click = function () {
+            console.log(unwatch);
+            unwatch();
+        }
+    }])
+</script>
+</body>
+</html>

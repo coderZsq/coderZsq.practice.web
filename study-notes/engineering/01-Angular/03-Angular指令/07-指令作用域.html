@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>07-指令作用域</title>
+</head>
+<body ng-app="app" ng-controller="XmgController">
+<!--
+1.指令作用域
+自己没有找父级
+
+默认子级和父级是同一个作用域 $scope 同一个
+
+-->
+<input type="text" ng-model="msg">
+<p>{{msg}}</p>
+
+<hr>
+<div xmg></div>
+
+<script src="js/angular-1.5.8.js"></script>
+<script>
+    // 1.创建模块
+    var app = angular.module('app',[]);
+
+    app.controller('XmgController',['$scope',function ($scope) {
+        $scope.msg = 'xmg1';
+    }])
+
+    // 2.创建控制器
+    app.directive('xmg',function () {
+        return {
+            // ng-model="msg" 规则 绑定不会立即在$scope身上生成属性,而是用到的时候才会生成属性  懒加载
+            template:'<h1>我是指令{{msg}}</h1><input type="text" ng-model="msg">',
+            controller:"HomeController",
+            // 专门隔离作用域的
+            /*
+            * 接收2大类型的参数
+            * 第一大类型 布尔值
+            * true 隔离作用域
+            *  规则  1.子级有就用自己的,没有用父级的 2.父级没有就没有
+            * false 默认 子级和父级用的是同一个作用域 自己没有找父级
+            * 第二大类型 接收一个对象
+            *  自己有就用自己的,自己没有就没有
+            * */
+            scope:{}
+        }
+    })
+
+    app.controller('HomeController',['$scope',function ($scope) {
+//        $scope.msg = 'xmg12313';
+//        $scope.age = 18234242432;
+    }])
+</script>
+</body>
+</html>

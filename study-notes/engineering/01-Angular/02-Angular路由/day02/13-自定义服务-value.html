@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>13-自定义服务-value</title>
+</head>
+<body ng-app="app" ng-controller="XmgController">
+<script src="js/angular-1.5.8.js"></script>
+<script>
+    // 1.创建模块
+    var app = angular.module('app',[]);
+    // 2.创建控制器
+    app.controller('XmgController',['$scope','$http','xmg',function ($scope,$http,xmg) {
+        $scope.msg = 'xmg';
+        /*$http({
+
+        })*/
+//        console.log(xmg);
+        var url = baseUrl + 'business/find_businesses';
+        $http({
+            //url:'http://api.dianping.com/v1/business/find_businesses'
+            url:url
+        })
+    }])
+    app.controller('XmgController1',['$scope','$http','xmg','baseUrl',function ($scope,$http,xmg,baseUrl) {
+        $scope.msg = 'xmg';
+        /*$http({
+
+         })*/
+//        console.log(xmg);
+        var url = baseUrl + 'deal/get_all_id_list';
+
+        $http({
+//            url:'http://api.dianping.com/v1/deal/get_all_id_list'
+            url:url
+        })
+    }])
+
+    // 3.自定义服务
+    /*
+    * 第一个参数是服务的名称
+    * 第二个参数是服务的值
+    * 自定义服务 服务的名称 建议前面不添加 $
+    * */
+    app.value('xmg','dafa');
+    app.value('baseUrl','http://api.dianping.com/v1/');
+//    app.value('baseUrl','192.168.1.1/');
+    app.value('version','2.0');
+
+    // baseURL
+    // 相当于常量
+//    const a = 10;
+
+    // http://api.dianping.com/v1/business/find_businesses
+    // http://api.dianping.com/v1/deal/get_all_id_list
+    // http://api.dianping.com/v1/reservation/find_businesses_with_reservations
+</script>
+</body>
+</html>

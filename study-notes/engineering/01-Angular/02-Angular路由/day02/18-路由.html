@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>18-路由</title>
+</head>
+<body ng-app="app">
+
+<a href="#/home">首页</a>
+<a href="#/contact">联系人</a>
+
+<div ng-view></div>
+
+<script src="js/angular-1.5.8.js"></script>
+<script src="js/angular-route.js"></script>
+<script>
+    // 1.创建模块 ['ngRoute'] 引入外部依赖
+    var app = angular.module('app',['ngRoute']);
+    // 2.配置路由 路由就可以简单的认为是锚点
+    app.config(['$routeProvider',function ($routeProvider) {
+        $routeProvider.when('/home',{
+            template:'<h1>我是首页</h1>'
+        }).when('/contact',{
+            template:'<h1>我是联系人</h1>'
+        }).otherwise({
+            // 设置默认路径
+            redirectTo:'/home'
+        })
+    }])
+</script>
+</body>
+</html>

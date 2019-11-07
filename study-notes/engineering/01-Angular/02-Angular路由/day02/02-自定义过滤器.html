@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>02-自定义过滤器</title>
+</head>
+<body ng-app="app" ng-controller="XmgController">
+
+<p>{{price | currency:'!'}}</p>
+
+<p>{{ 123 | myCurrency:'qew':2 }}</p>
+
+<script src="js/angular-1.5.8.js"></script>
+<script>
+    // 1.创建模块
+    var app = angular.module('app',[]);
+    // 2.创建控制器
+    app.controller('XmgController',['$scope',function ($scope) {
+        $scope.msg = 'xmg';
+        $scope.price = 100;
+    }])
+    // 3.自定义过滤器
+    app.filter('myCurrency',function () {
+        return function (input,params,num) {
+            // 函数里面返回什么最终就会显示什么
+            //alert(num);
+            if (params == undefined){
+                // 用户没有传递参数
+                return '¥' + input;
+            }else {
+                return params + input;
+            }
+        }
+    })
+
+</script>
+</body>
+</html>

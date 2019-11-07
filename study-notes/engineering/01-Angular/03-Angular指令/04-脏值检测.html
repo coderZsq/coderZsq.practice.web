@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>04-脏值检测</title>
+</head>
+<body ng-app="app" ng-controller="XmgController">
+<p>{{num}}</p>
+<script src="js/angular-1.5.8.js"></script>
+<script>
+    // 1.创建模块
+    var app = angular.module('app',[]);
+    // 2.创建控制器
+    app.controller('XmgController',['$scope','$interval',function ($scope,$interval) {
+        $scope.msg = 'xmg';
+
+        $scope.num = 1;
+        // 超出了angular 的检测范围 / 上下文
+        setInterval(function () {
+
+            // 手动执行 $digest
+           // $scope.$digest(); 不建议手动调用$digest()
+            // 建议调用$apply() -- >  会调用$digest()
+            //$scope.$apply(); 也不建议这样调用$apply()
+            $scope.$apply(function () {
+                $scope.num++;
+                console.log($scope.num);
+            })
+            /*
+            * 以函数的形式写内部有一个异常机制
+            * */
+        },1000);
+        /*$interval(function () {
+            $scope.num++;
+            console.log($scope.num);
+        },1000);*/
+       $scope.click = function () {
+
+           $scope.age = 18;
+
+       }
+    }])
+    // 3.绑定模块 绑定控制器
+</script>
+</body>
+</html>
