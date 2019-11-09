@@ -1,0 +1,24 @@
+/* pages/home/home.wxss */
+.header {
+    background-color: #42BD55;
+    height: 80rpx;
+    display: flex;
+    align-items: center;
+    padding: 0 15rpx;
+}
+
+.search-wrapper {
+    background-color: #fff;
+    border-radius: 10rpx;
+    height: 50rpx;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.search-wrapper image {
+    width: 32rpx;
+    height: 32rpx;
+    margin-right: 10rpx;
+}

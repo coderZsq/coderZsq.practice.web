@@ -1,4 +1,15 @@
 /* pages/profile/profile.wxss */
+page {
+    height: 100%;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+}
+
 .login-wrapper {
     height: 400rpx;
     display: flex;
@@ -29,12 +40,10 @@
 }
 
 .version {
-    position: absolute;
-    bottom: 30rpx;
     color: #C9C9C9;
-    font-size: 20rpx;
-    width: 100%;
+    font-size: 24rpx;
     text-align: center;
+    margin: 30rpx 0;
 }
 
 .items-wrapper {
@@ -71,13 +80,17 @@
     margin-left: 15rpx;
 }
 
+/* .item:last-of-type .divider {
+    visibility: hidden;
+    display: none;
+} */
+
 .item {
     display: flex;
     align-items: center;
     padding-left: 30rpx;
     padding-right: 20rpx;
     margin-top: 20rpx;
-    font-size: 28rpx;
 }
 
 .items .icon {
@@ -127,7 +140,7 @@
     align-items: center;
     justify-content: space-between;
     flex-grow: 1;
-    padding-left: 26rpx;
+    padding-left: 50rpx;
 }
 
 .info .right .text {

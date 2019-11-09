@@ -1,181 +1,183 @@
 <!--pages/profile/profile.wxml-->
-<view>
-    <view class="login-wrapper">
-        <view class="login">登录</view>
-        <image src="/assets/imgs/bg_mine_login.png" mode="aspectFill"/>
-    </view>
-
-    <view class="items-wrapper">
-        <view class="title-wrapper">
-            <view class="title">我的书影音</view>
-            <view class="view">
-                登录查看
-                <view class="arrow"></view>
-            </view>
+<view class="container">
+    <view>      
+        <view class="login-wrapper">
+            <view class="login">登录</view>
+            <image src="/assets/imgs/bg_mine_login.png" mode="aspectFill"/>
         </view>
 
-        <!-- <view wx:for="{{ nums }}" wx:for-item="num" wx:for-index="idx">
-            位置为 {{ idx }} 的元素是 {{ num }}
-        </view> -->
-          
-        <!-- <view wx:for="{{ nums }}">
-            位置为 {{ index }} 的元素是 {{ item }}
-        </view> -->
+        <view class="items-wrapper">
+            <view class="title-wrapper">
+                <view class="title">我的书影音</view>
+                <view class="view">
+                    登录查看
+                    <view class="arrow"></view>
+                </view>
+            </view>
 
-        <!-- <view wx:for="{{ [88, 77, 55, 44, 33] }}">
-            位置为 {{ index }} 的元素是 {{ item }}
-        </view> -->
+            <!-- <view wx:for="{{ nums }}" wx:for-item="num" wx:for-index="idx">
+                位置为 {{ idx }} 的元素是 {{ num }}
+            </view> -->
+            
+            <!-- <view wx:for="{{ nums }}">
+                位置为 {{ index }} 的元素是 {{ item }}
+            </view> -->
 
-        <!-- <block wx:for="{{ nums }}">
-            位置为 {{ index }} 的元素是 {{ item }}
-        </block> -->
+            <!-- <view wx:for="{{ [88, 77, 55, 44, 33] }}">
+                位置为 {{ index }} 的元素是 {{ item }}
+            </view> -->
 
-        <view class="items">
-            <view wx:for="{{ items }}" class="item" wx:key="unique">
-                <image class="icon" src="/assets/imgs/{{ item.icon }}" />
-                <view class="info-wrapper">
-                    <view class="info">
-                        <view class="left">
-                            <view class="top">{{ item.title }}</view>
-                            <view class="bottom">
-                                <view class="count">{{ item.count }}</view>
-                                <view class="text">{{ item.has }}</view>
+            <!-- <block wx:for="{{ nums }}">
+                位置为 {{ index }} 的元素是 {{ item }}
+            </block> -->
+
+            <view class="items">
+                <view wx:for="{{ items }}" class="item" wx:key="unique">
+                    <image class="icon" src="/assets/imgs/{{ item.icon }}" />
+                    <view class="info-wrapper">
+                        <view class="info">
+                            <view class="left">
+                                <view class="top">{{ item.title }}</view>
+                                <view class="bottom">
+                                    <view class="count">{{ item.count }}</view>
+                                    <view class="text">{{ item.has }}</view>
+                                </view>
+                            </view>
+                            <view data-index="{{index}}" id="item-{{ index }}" class="right" bind:tap="begin">
+                                <text class="text">{{ item.mark }}</text>
+                                <view class="begin-wrapper">
+                                    <view class="begin">立即开启</view>
+                                    <view class="arrow"></view>
+                                </view>
                             </view>
                         </view>
-                        <view data-index="{{index}}" id="item-{{ index }}" class="right" bind:tap="begin">
-                            <text class="text">{{ item.mark }}</text>
-                            <view class="begin-wrapper">
+                        <view wx:if="{{ index < items.length - 1 }}" class="divider"></view>
+                    </view>
+                </view>
+            </view>    
+            <!-- <view class="items">
+                <view class="item">
+                    <image class="icon" src="/assets/imgs/{{ items[0].icon }}" />
+                    <view class="info-wrapper">
+                        <view class="info">
+                            <view class="left">
+                                <view class="top">{{ items[0].title }}</view>
+                                <view class="bottom">
+                                    <view class="count">{{ items[0].count }}</view>
+                                    <view class="text">{{ items[0].has }}</view>
+                                </view>
+                            </view>
+                            <view class="right">
+                                <text class="text">{{ items[0].mark }}</text>
+                                <view class="begin">立即开启</view>
+                                <view class="arrow"></view>
+                            </view>
+                        </view>
+                        <view class="divider"></view>
+                    </view>
+                </view>
+                <view class="item">
+                    <image class="icon" src="/assets/imgs/{{ items[1].icon }}" />
+                    <view class="info-wrapper">
+                        <view class="info">
+                            <view class="left">
+                                <view class="top">{{ items[1].title }}</view>
+                                <view class="bottom">
+                                    <view class="count">{{ items[1].count }}</view>
+                                    <view class="text">{{ items[1].has }}</view>
+                                </view>
+                            </view>
+                            <view class="right">
+                                <text class="text">{{ items[1].mark }}</text>
+                                <view class="begin">立即开启</view>
+                                <view class="arrow"></view>
+                            </view>
+                        </view>
+                        <view class="divider"></view>
+                    </view>
+                </view>
+                <view class="item">
+                    <image class="icon" src="/assets/imgs/{{ items[2].icon }}" />
+                    <view class="info-wrapper">
+                        <view class="info">
+                            <view class="left">
+                                <view class="top">{{ items[2].title }}</view>
+                                <view class="bottom">
+                                    <view class="count">{{ items[2].count }}</view>
+                                    <view class="text">{{ items[2].has }}</view>
+                                </view>
+                            </view>
+                            <view class="right">
+                                <text class="text">{{ items[2].mark }}</text>
                                 <view class="begin">立即开启</view>
                                 <view class="arrow"></view>
                             </view>
                         </view>
                     </view>
-                    <view class="divider"></view>
                 </view>
-            </view>
-        </view>    
-        <!-- <view class="items">
-            <view class="item">
-                <image class="icon" src="/assets/imgs/{{ items[0].icon }}" />
-                <view class="info-wrapper">
-                    <view class="info">
-                        <view class="left">
-                            <view class="top">{{ items[0].title }}</view>
-                            <view class="bottom">
-                                <view class="count">{{ items[0].count }}</view>
-                                <view class="text">{{ items[0].has }}</view>
+            </view> -->
+            <!-- <view class="items">
+                <view class="item">
+                    <image class="icon" src="/assets/imgs/ic_cat_movie.png" />
+                    <view class="info-wrapper">
+                        <view class="info">
+                            <view class="left">
+                                <view class="top">观影分析</view>
+                                <view class="bottom">
+                                    <view class="count">0</view>
+                                    <view class="text">看过</view>
+                                </view>
+                            </view>
+                            <view class="right">
+                                <text class="text">标记10部影片\n开启观影分析</text>
+                                <view class="begin">立即开启</view>
+                                <view class="arrow"></view>
                             </view>
                         </view>
-                        <view class="right">
-                            <text class="text">{{ items[0].mark }}</text>
-                            <view class="begin">立即开启</view>
-                            <view class="arrow"></view>
-                        </view>
+                        <view class="divider"></view>
                     </view>
-                    <view class="divider"></view>
                 </view>
-            </view>
-            <view class="item">
-                <image class="icon" src="/assets/imgs/{{ items[1].icon }}" />
-                <view class="info-wrapper">
-                    <view class="info">
-                        <view class="left">
-                            <view class="top">{{ items[1].title }}</view>
-                            <view class="bottom">
-                                <view class="count">{{ items[1].count }}</view>
-                                <view class="text">{{ items[1].has }}</view>
+                <view class="item">
+                    <image class="icon" src="/assets/imgs/ic_cat_book.png" />
+                    <view class="info-wrapper">
+                        <view class="info">
+                            <view class="left">
+                                <view class="top">读书分析</view>
+                                <view class="bottom">
+                                    <view class="count">0</view>
+                                    <view class="text">读过</view>
+                                </view>
+                            </view>
+                            <view class="right">
+                                <text class="text">标记10本书\n开启读书分析</text>
+                                <view class="begin">立即开启</view>
+                                <view class="arrow"></view>
                             </view>
                         </view>
-                        <view class="right">
-                            <text class="text">{{ items[1].mark }}</text>
-                            <view class="begin">立即开启</view>
-                            <view class="arrow"></view>
-                        </view>
+                        <view class="divider"></view>
                     </view>
-                    <view class="divider"></view>
                 </view>
-            </view>
-            <view class="item">
-                <image class="icon" src="/assets/imgs/{{ items[2].icon }}" />
-                <view class="info-wrapper">
-                    <view class="info">
-                        <view class="left">
-                            <view class="top">{{ items[2].title }}</view>
-                            <view class="bottom">
-                                <view class="count">{{ items[2].count }}</view>
-                                <view class="text">{{ items[2].has }}</view>
+                <view class="item">
+                    <image class="icon" src="/assets/imgs/ic_cat_music.png" />
+                    <view class="info-wrapper">
+                        <view class="info">
+                            <view class="left">
+                                <view class="top">音乐分析</view>
+                                <view class="bottom">
+                                    <view class="count">0</view>
+                                    <view class="text">听过</view>
+                                </view>
+                            </view>
+                            <view class="right">
+                                <text class="text">标记10张唱片\n开启音乐分析</text>
+                                <view class="begin">立即开启</view>
+                                <view class="arrow"></view>
                             </view>
                         </view>
-                        <view class="right">
-                            <text class="text">{{ items[2].mark }}</text>
-                            <view class="begin">立即开启</view>
-                            <view class="arrow"></view>
-                        </view>
                     </view>
-                </view>
-            </view>
-        </view> -->
-        <!-- <view class="items">
-            <view class="item">
-                <image class="icon" src="/assets/imgs/ic_cat_movie.png" />
-                <view class="info-wrapper">
-                    <view class="info">
-                        <view class="left">
-                            <view class="top">观影分析</view>
-                            <view class="bottom">
-                                <view class="count">0</view>
-                                <view class="text">看过</view>
-                            </view>
-                        </view>
-                        <view class="right">
-                            <text class="text">标记10部影片\n开启观影分析</text>
-                            <view class="begin">立即开启</view>
-                            <view class="arrow"></view>
-                        </view>
-                    </view>
-                    <view class="divider"></view>
-                </view>
-            </view>
-            <view class="item">
-                <image class="icon" src="/assets/imgs/ic_cat_book.png" />
-                <view class="info-wrapper">
-                    <view class="info">
-                        <view class="left">
-                            <view class="top">读书分析</view>
-                            <view class="bottom">
-                                <view class="count">0</view>
-                                <view class="text">读过</view>
-                            </view>
-                        </view>
-                        <view class="right">
-                            <text class="text">标记10本书\n开启读书分析</text>
-                            <view class="begin">立即开启</view>
-                            <view class="arrow"></view>
-                        </view>
-                    </view>
-                    <view class="divider"></view>
-                </view>
-            </view>
-            <view class="item">
-                <image class="icon" src="/assets/imgs/ic_cat_music.png" />
-                <view class="info-wrapper">
-                    <view class="info">
-                        <view class="left">
-                            <view class="top">音乐分析</view>
-                            <view class="bottom">
-                                <view class="count">0</view>
-                                <view class="text">听过</view>
-                            </view>
-                        </view>
-                        <view class="right">
-                            <text class="text">标记10张唱片\n开启音乐分析</text>
-                            <view class="begin">立即开启</view>
-                            <view class="arrow"></view>
-                        </view>
-                    </view>
-                </view>
-            </view>           
-        </view> -->
+                </view>           
+            </view> -->
+        </view>
     </view>
 
     <view class="version">版本1.0.39</view>
