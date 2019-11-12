@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>test</title>
+</head>
+<body ng-app="app" ng-controller="XmgController">
+
+<p ng-bind-html="html"></p>
+
+<script src="../bower_components/angular/angular.js"></script>
+<script>
+    // 1.创建模块
+    var app = angular.module('app',[]);
+    // 2.创建控制器
+    app.controller('XmgController',['$scope','$sce',function ($scope,$sce) {
+        $scope.msg = 'xmg';
+        var html = '<h1>我是h1</h1>';
+
+        // $sce.trustAsHtml(html) 设置信任
+
+       $scope.html = $sce.trustAsHtml(html);
+
+        //$scope.html = '<h1>我是h1</h1>'
+    }]);
+
+</script>
+</body>
+</html>

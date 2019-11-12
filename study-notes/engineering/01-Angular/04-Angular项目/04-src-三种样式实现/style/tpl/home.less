@@ -1,0 +1,57 @@
+.home {
+  .padding(0, 5);
+  .tag {
+    .w(80);
+    .h(25);
+    background-color: #666;
+    text-align: center;
+    color: white;
+    border-radius: 0 0 5px 5px;
+  }
+  h2 {
+    font-weight: normal;
+    .fs(18);
+    .mb(10);
+    .mt(10);
+  }
+  /*第一种样式*/
+  .post1 {
+    p{
+      color: #999;
+      .fs(16);
+      .lh(25);
+    }
+  }
+
+  /*第二种样式*/
+  .post2{
+    p{
+      color: #999;
+      .fs(16);
+      .lh(25);
+      .h(75);
+      .w(260);
+      float: left;
+      overflow: hidden;
+    }
+    img{
+      float: right;
+      .w(80);
+    }
+  }
+
+  /*第三种样式*/
+  .post3{
+    ul{
+      width: 100%;
+      display: flex;
+      li{
+        text-align: center;
+        flex: 1;
+        img{
+          .w(110);
+        }
+      }
+    }
+  }
+}

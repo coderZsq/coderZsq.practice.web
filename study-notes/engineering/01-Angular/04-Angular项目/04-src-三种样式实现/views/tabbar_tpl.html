@@ -1,0 +1,20 @@
+<div class="tabbar">
+    <ul>
+        <li ng-click="change(0)" ng-class="{active:index == 0}">
+            <p><img ng-src="images/tabbar/{{index == 0 ? 'homeSel.png':'home_icon.png'}}" alt=""></p>
+            首页
+        </li>
+        <li ng-click="change(1)" ng-class="{active:index == 1}">
+            <p><img ng-src="images/tabbar/{{index == 1 ? 'authorSel.png':'author_icon.png'}}" alt=""></p>
+            作者
+        </li>
+        <li ng-click="change(2)" ng-class="{active:index == 2}">
+            <p><img ng-src="images/tabbar/{{index == 2 ? 'contentSel.png':'content_icon.png'}}" alt=""></p>
+            栏目
+        </li>
+        <li ng-click="change(3)" ng-class="{active:index == 3}">
+            <p><img ng-src="images/tabbar/{{index == 3 ? 'mySel.png':'my_icon.png'}}" alt=""></p>
+            我
+        </li>
+    </ul>
+</div>

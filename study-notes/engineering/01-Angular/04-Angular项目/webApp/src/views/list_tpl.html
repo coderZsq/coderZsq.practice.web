@@ -1,0 +1,28 @@
+<div>
+
+    <div ui-sref="home.detail({index:index})" class="home" ng-repeat="(index,value) in homeList">
+        <p class="tag" ng-bind="value.column.name" ng-if="value.column.name">洗洗睡</p>
+        <h2 ng-bind="value.title">我是首页1我是首页1我是首页1我是首页1我是首页1我是首页1</h2>
+
+        <!--第一种样式-->
+        <div class="post1" ng-if="value.display_style == 10001">
+            <p ng-bind="value.abstract">努力的人,应当像好色一样好学!!努力的人,应当像好色一样好学!!努力的人,应当像好色一样好学!!努力的人,应当像好色一样好学!!努力的人,应当像好色一样好学!!努力的人,应当像好色一样好学!!努力的人,应当像好色一样好学!!</p>
+        </div>
+
+        <!-- 第二种样式 -->
+        <div class="post2 clearfix" ng-if="value.display_style == 10002">
+            <p ng-bind="value.abstract">努力的人,应当像好色一样好学!!努力的人,应当像好色一样好学!!努力的人,应当像好色一样好学!!努力的人,应当像好色一样好学!!努力的人,应当像好色一样好学!!努力的人,应当像好色一样好学!!努力的人,应当像好色一样好学!!</p>
+            <img src="images/home/post_1.png" alt="">
+        </div>
+
+        <div class="post3" ng-if="value.display_style == 10003">
+            <ul>
+                <li><img src="images/home/post_3.png" alt=""></li>
+                <li><img src="images/home/post_4.png" alt=""></li>
+                <li><img src="images/home/post_5.png" alt=""></li>
+            </ul>
+        </div>
+
+        <!--<img src="https://img1.doubanio.com/view/presto/small/public/t117757.jpg" alt="">-->
+    </div>
+</div>

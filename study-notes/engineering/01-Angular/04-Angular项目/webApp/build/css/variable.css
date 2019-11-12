@@ -1,0 +1,10 @@
+/*把像素转成rem
+ 375/10  = 37.5  --> 1rem
+ 375 它是iPone6的屏幕宽度
+*/
+.fl {
+  float: left;
+}
+.fr {
+  float: right;
+}

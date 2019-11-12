@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="zh" ng-app="app" ng-controller="AppController">
+<head>
+    <meta charset="UTF-8">
+    <title ng-bind="appTitle">index</title>
+    <!--设置视口-->
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0">
+    <!--
+    移动端屏幕适配
+    视口 前提
+    1.百分比 + 自动缩放
+    2.bootstrap
+    3.flex 移动端用的比较多
+    4.rem 布局
+    rem 单位 和 px em
+    rem 是根据HTML的字体大小进行缩放
+     -->
+    <link rel="stylesheet" href="css/index.css">
+</head>
+<body>
+
+<!--头部-->
+<nav></nav>
+
+<!--内容-->
+<div class="content">
+    <div class="home" ui-view="home" ng-show="index == 0"></div>
+    <div class="author" ui-view="author" ng-show="index == 1"></div>
+    <div class="contact" ui-view="contact" ng-show="index == 2"></div>
+    <div class="my" ui-view="my" ng-show="index == 3"></div>
+</div>
+
+<!--尾部 tab -->
+<tabbar></tabbar>
+
+<script>
+    // html 字体大小根据屏幕宽度动态设置
+    // window.screen.width 在pc端代表获取屏幕分辨率  在移动端代表获取设备宽度
+//    console.log(window.screen.width);
+//    console.log(window.screen.height);
+
+    //  1000px / 10 = 100px  <---> 1rem
+    var fontSize = window.screen.width / 10 + 'px';
+    document.getElementsByTagName('html')[0].style.fontSize = fontSize;
+</script>
+<script src="lib/angular/angular.js"></script>
+<script src="lib/angular-ui-router/release/angular-ui-router.js"></script>
+<script src="js/index.js"></script>
+</body>
+</html>

@@ -1,0 +1,1 @@
+!function(e,n,t){var l=e.module("app",[]);l.controller("AppController",["$scope",function(e){e.appTitle="webApp"}]),l.directive("nav",function(){return{templateUrl:"../views/nav_tpl.html",replace:!0}})}(angular,window,document);
