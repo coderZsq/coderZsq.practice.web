@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+
+  <style>
+    .active {
+      color: red;
+    }
+  </style>
+</head>
+<body>
+
+<div id="app">
+  <!--<h2 class="active">{{message}}</h2>-->
+  <!--<h2 :class="active">{{message}}</h2>-->
+
+  <!--<h2 v-bind:class="{key1: value1, key2: value2}">{{message}}</h2>-->
+  <!--<h2 v-bind:class="{类名1: true, 类名2: boolean}">{{message}}</h2>-->
+  <h2 class="title" v-bind:class="{active: isActive, line: isLine}">{{message}}</h2>
+  <h2 class="title" v-bind:class="getClasses()">{{message}}</h2>
+  <button v-on:click="btnClick">按钮</button>
+</div>
+
+<script src="../js/vue.js"></script>
+<script>
+  const app = new Vue({
+    el: '#app',
+    data: {
+      message: '你好啊',
+      isActive: true,
+      isLine: true
+    },
+    methods: {
+      btnClick: function () {
+        this.isActive = !this.isActive
+      },
+      getClasses: function () {
+        return {active: this.isActive, line: this.isLine}
+      }
+    }
+  })
+</script>
+
+</body>
+</html>
