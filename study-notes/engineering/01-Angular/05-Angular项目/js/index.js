@@ -120,7 +120,8 @@
             // 1.2 生成方法
             $window[callbackName] = function (regs) {
                 // 得到数据
-                return callback(regs);
+                callback && callback(regs);
+                document.body.removeChild(script);
             };
 
             // 2.使用html的src属性请求数据,一般使用script标签
