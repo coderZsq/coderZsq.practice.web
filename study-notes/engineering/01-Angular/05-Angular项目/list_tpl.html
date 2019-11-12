@@ -1,0 +1,27 @@
+<div style="text-align: center;" ng-show="isLoading">
+    <img src="images/loading.gif" alt="" style="width: 200px;height: 200px">
+</div>
+
+<div class="content_list" ng-hide="isLoading">
+    <h1 ng-bind="dataList.title">正在上映的电影</h1>
+    <div class="list" >
+        <a href="#!/detail/{{value.id}}" ng-repeat="value in dataList.subjects">
+            <dl>
+                <dt><img style="width: 80px" src="images/img.png" ng-src="{{value.images.small}}" alt=""></dt>
+                <dd>
+                    <h4 ng-bind="value.title">蝙蝠侠大战超人:正义黎明</h4>
+                    <p>类型: {{value.genres}}</p>
+                    <p>导演: <span class="directors" ng-repeat="dir in value.directors">{{dir.name}}</span></p>
+                    <p>主演: <span class="directors" ng-repeat="per in value.casts">{{per.name}}</span></p>
+                </dd>
+                <span class="score">{{value.rating.average}}分</span>
+            </dl>
+        </a>
+    </div>
+
+    <div class="page">
+        <span>{{curPage}}/{{totalPage}}</span>
+        <a ng-click="page(true)" ng-show="isPer">上一页</a>
+        <a ng-click="page(false)" ng-show="isNext">下一页</a>
+    </div>
+</div>

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="css/style.css">
+
+</head>
+<body ng-app="app" ng-controller="xmgController">
+<div class="header">NBA选票</div>
+<div class="content">
+
+    <ul class="content_h">
+        <li>
+            <p>搜索</p>
+            <input type="text" ng-model="search">
+        </li>
+        <li>
+            <p>搜索</p>
+            <!--
+            使用select时ng-model数据双向绑定必须要给ng-model进行初始化
+            设置初始值 ng-init="order='name'"
+            <option value="">请选择</option>
+            -->
+            <select ng-model="order">
+                <option value="">请选择</option>
+                <option value="-votes">票数</option>
+                <option value="name">姓名</option>
+                <option value="num">号码</option>
+            </select>
+        </li>
+    </ul>
+
+    <ul class="title">
+        <li></li>
+        <li>姓名</li>
+        <li>位置</li>
+        <li>号码</li>
+        <li>球队</li>
+        <li>票数</li>
+    </ul>
+    <!--
+    1.模糊查找 filter:'要查找的单词' 全文查找
+    2.对指定字段进行模糊查找 filter:{'字段名称':'查找的单词'}
+    3.对指定字段进行精确查找,例如 想要查找 jack 必须输入jack才能找到
+    filter:{'字段名称':'查找的单词'}:true
+
+    -->
+    <ul class="title info" ng-repeat=" play in plays | filter:{name:search} | orderBy:order">
+        <li style="text-align: center;"><img  style="width: 60px; height: 40px" ng-src="img/{{play.thumb}}" alt=""></li>
+        <!--名称-->
+        <li><a href="#">{{play.name}}</a></li>
+        <!--位置-->
+        <li>{{play.position}}</li>
+        <!--号码-->
+        <li>{{play.num}}</li>
+        <!--球队-->
+        <li>{{play.team}}</li>
+        <!--票数-->
+        <li>{{play.votes}}</li>
+    </ul>
+</div>
+</body>
+<script src="../angular1.6.js"></script>
+<script>
+    // 1.创建模块
+    var app = angular.module('app',[]);
+
+    // 2.创建控制器
+    app.controller('xmgController',['$scope','$http',function ($scope,$http) {
+        $http({
+            url:'../player.php',
+            method:'get'
+        }).then(function (regs) {
+            $scope.plays = regs.data;
+            console.log($scope.plays);
+
+        }).catch(function (err) {
+            console.log(err);
+        })
+    }]);
+</script>
+
+</html>

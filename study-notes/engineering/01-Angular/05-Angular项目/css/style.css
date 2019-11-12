@@ -1,0 +1,142 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+.header{
+    height: 64px;
+    line-height:64px;
+    background: #000;
+    color: #fff;
+    padding: 0 20px;
+}
+.search{
+    float: right;
+}
+
+input[type="text"]{
+    width: 200px;
+    height: 30px;
+    border-radius: 5px;
+    border: none;
+    padding-left: 10px;
+}
+
+button{
+    width: 70px;
+    height: 35px;
+    border-radius: 5px;
+    border: none;
+}
+
+.content{
+    min-height: 650px;
+    display: flex;
+}
+.content .content_l{
+    float: left;
+    flex: 1;
+    border-right: 1px solid #ccc;
+    text-align: center;
+    padding-top:10px;
+    min-width: 200px;
+}
+.content .content_l ul li{
+    line-height:44px;
+    border-top: 1px solid #ccc;
+    color: deepskyblue;
+}
+.content .content_l ul .active{
+    background: deepskyblue;
+    color: #fff;
+}
+
+.content .content_r{
+    float: left;
+    flex: 3;
+    padding: 10px;
+    min-width: 400px;
+    min-height: 670px;
+}
+.content .content_r h1{
+    line-height: 90px;
+    color: #999;
+    font-weight: normal;
+    border-bottom: 1px solid #ccc;
+    margin-bottom:10px;
+}
+.content .content_r dl{
+    height: 120px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-bottom: none;
+}
+
+.content .content_r dl:hover{
+    background: #ccc;
+}
+.content .content_r .list{
+    margin-bottom:20px;
+}
+
+.content .content_r .list a:first-of-type dl{
+    border-radius: 5px 5px 0 0 ;
+}
+
+.content .content_r .list a:last-child dl{
+    border-bottom: 1px solid #ccc;
+    border-radius: 0 0 5px 5px;
+    margin-bottom:10px;
+}
+
+.content .content_r dt {
+    float: left;
+}
+.content .content_r dd{
+    float: left;
+    margin-left: 10px;
+    font-style: normal;
+}
+.content .content_r dd h4{
+    color: #666;
+    margin-bottom:5px;
+}
+.content .content_r dd p{
+    line-height:30px;
+    color: #666;
+    font-style:normal;
+    font-size: 14px;
+}
+.score{
+    float: right;
+    background: #f40;
+    color: #fff;
+    border-radius: 5px;
+    font-size: 10px;
+    padding:2px 4px;
+}
+
+.page a{
+    margin-top:10px;
+    text-decoration: none;
+    border: 1px solid #ccc;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+.content .content_r .detail_content dl{
+    border:none;
+    height: 400px;
+
+    
+}
+.content .content_r .detail_content dl:hover{
+    background: none;
+}
+
+
+
+
+
+
+
