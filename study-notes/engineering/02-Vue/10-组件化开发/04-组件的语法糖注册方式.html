@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+
+<div id="app">
+  <cpn1></cpn1>
+  <cpn2></cpn2>
+</div>
+
+<script src="../js/vue.js"></script>
+<script>
+  // 1.全局组件注册的语法糖
+  // 1.创建组件构造器
+  // const cpn1 = Vue.extend()
+
+  // 2.注册组件
+  Vue.component('cpn1', {
+    template: `
+      <div>
+        <h2>我是标题1</h2>
+        <p>我是内容, 哈哈哈哈</p>
+      </div>
+    `
+  })
+
+  // 2.注册局部组件的语法糖
+  const app = new Vue({
+    el: '#app',
+    data: {
+      message: '你好啊'
+    },
+    components: {
+      'cpn2': {
+        template: `
+          <div>
+            <h2>我是标题2</h2>
+            <p>我是内容, 呵呵呵</p>
+          </div>
+    `
+      }
+    }
+  })
+</script>
+
+</body>
+</html>

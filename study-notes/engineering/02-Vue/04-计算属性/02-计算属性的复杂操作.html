@@ -8,6 +8,14 @@
 
 <div id="app">
   <h2>总价格: {{totalPrice}}</h2>
+  <h2>总价格: {{totalPrice}}</h2>
+  <h2>总价格: {{totalPrice}}</h2>
+  <h2>总价格: {{totalPrice}}</h2>
+
+  <h2>总价格: {{getTotalPrice()}}</h2>
+  <h2>总价格: {{getTotalPrice()}}</h2>
+  <h2>总价格: {{getTotalPrice()}}</h2>
+  <h2>总价格: {{getTotalPrice()}}</h2>
 </div>
 
 <script src="../js/vue.js"></script>
@@ -21,6 +29,15 @@
         {id: 112, name: '深入理解计算机原理', price: 98},
         {id: 113, name: '现代操作系统', price: 87},
       ]
+    },
+    methods: {
+      getTotalPrice: function () {
+        let result = 0
+        for (let i=0; i < this.books.length; i++) {
+          result += this.books[i].price
+        }
+        return result
+      }
     },
     computed: {
       totalPrice: function () {

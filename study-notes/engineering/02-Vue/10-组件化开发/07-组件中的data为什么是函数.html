@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+
+<!--组件实例对象-->
+<div id="app">
+  <cpn></cpn>
+  <cpn></cpn>
+  <cpn></cpn>
+</div>
+
+<template id="cpn">
+  <div>
+    <h2>当前计数: {{counter}}</h2>
+    <button @click="increment">+</button>
+    <button @click="decrement">-</button>
+  </div>
+</template>
+<script src="../js/vue.js"></script>
+<script>
+  // 1.注册组件
+  const obj = {
+    counter: 0
+  }
+  Vue.component('cpn', {
+    template: '#cpn',
+    // data() {
+    //   return {
+    //     counter: 0
+    //   }
+    // },
+    data() {
+      return obj
+    },
+    methods: {
+      increment() {
+        this.counter++
+      },
+      decrement() {
+        this.counter--
+      }
+    }
+  })
+
+  const app = new Vue({
+    el: '#app',
+    data: {
+      message: '你好啊'
+    }
+  })
+</script>
+
+<script>
+  // const obj = {
+  //   name: 'why',
+  //   age: 18
+  // }
+  //
+  // function abc() {
+  //   return obj
+  // }
+  //
+  // let obj1 = abc()
+  // let obj2 = abc()
+  // let obj3 = abc()
+  //
+  // obj1.name = 'kobe'
+  // console.log(obj2);
+  // console.log(obj3);
+
+
+</script>
+
+</body>
+</html>
