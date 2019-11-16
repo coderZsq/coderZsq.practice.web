@@ -1,24 +1,46 @@
 /* pages/home/home.wxss */
-.header {
-    background-color: #42BD55;
-    height: 80rpx;
-    display: flex;
-    align-items: center;
-    padding: 0 15rpx;
-}
-
 .search-wrapper {
-    background-color: #fff;
-    border-radius: 10rpx;
-    height: 50rpx;
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  background-color: #42BD55;
+  height: 80rpx;
+  display: flex;
+  align-items: center;
+  padding: 0 15rpx;
 }
 
-.search-wrapper image {
-    width: 32rpx;
-    height: 32rpx;
-    margin-right: 10rpx;
+.search {
+  background-color: #fff;
+  border-radius: 10rpx;
+  height: 50rpx;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.search image {
+  width: 32rpx;
+  height: 32rpx;
+  margin-right: 10rpx;
+}
+
+.title-wrapper {
+  display: flex;
+  justify-content: space-between;
+}
+
+.title-wrapper .title {
+  color: #494949;
+  font-weight: bold;
+  font-size: 32rpx;
+}
+
+.title-wrapper .more {
+  color: #0db019;
+}
+
+.title-wrapper .arrow {
+  width: 20rpx;
+  height: 20rpx;
+  border: 4rpx solid #0db019;
+
 }

@@ -1,10 +1,20 @@
 <!-- pages/home/home.wxml -->
 <view>
-  <view class="header">
-    <view class="search-wrapper">
+  <view class="search-wrapper">
+    <view class="search">
       <image src="/assets/imgs/ic_search.png"></image>
       搜索
     </view>
   </view>
-  <view class="main"></view>
+  <view class="main">
+    <view class="row">
+      <view class="title-wrapper">
+        <view class="title">影院热映</view>
+        <view class="more">
+          查看更多
+          <view class="arrow"></view>
+        </view>
+      </view>
+    </view>
+  </view>
 </view>
