@@ -2,7 +2,7 @@
 <view>
   <view class="search-wrapper">
     <view class="search">
-      <image src="/assets/imgs/ic_search.png"></image>
+      <image src="/assets/imgs/ic_search.png" />
       搜索
     </view>
   </view>
@@ -15,6 +15,28 @@
           <view class="arrow"></view>
         </view>
       </view>
+      <scroll-view class="items" scroll-x="true">
+        <view wx:for="{{ movies }}" class="item" wx:for-item="movie">
+          <image class="photo" src="{{ movie.images.large }}" />
+          <view class="title">{{ movie.title }}</view>
+          <view class="score">
+            <block wx:if="{{ movie.stars }}">
+              <view class="stars">
+                <!-- <block wx:for="{{ movie.stars }}" wx:key="unique" wx:for-item="star">
+                <image wx:if="{{ star == 1 }}" class="star" src="/assets/imgs/rating_star_small_on.png" />
+                <image wx:elif="{{ star == 0.5 }}" class="star" src="/assets/imgs/rating_star_small_half.png" />
+                <image wx:else class="star" src="/assets/imgs/rating_star_small_off.png" />
+              </block> -->
+                <image wx:for="{{ movie.stars.on }}" class="star" src="/assets/imgs/rating_star_small_on.png" />
+                <image wx:if="{{ movie.stars.half }}" class="star" src="/assets/imgs/rating_star_small_half.png" />
+                <image wx:for="{{ movie.stars.off }}" class="star" src="/assets/imgs/rating_star_small_off.png" />
+              </view>
+              {{ movie.rating.average }}
+            </block>
+            <block wx:else>暂无评分</block>
+          </view>
+        </view>
+      </scroll-view>
     </view>
   </view>
 </view>

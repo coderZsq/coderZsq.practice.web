@@ -1,7 +1,10 @@
 // pages/home/home.js
 Page({
+  data: {
+    movies: []
+  },
   onLoad: function () {
-    // this.loadCity(this.loadData);        
+    this.loadCity(this.loadData);
   },
   loadData: function (city) {
     wx.request({
@@ -9,7 +12,16 @@ Page({
       data: { city: city },
       header: { 'content-type': 'json' },
       success: (res) => {
-        console.log(res);
+        // this.data.movies = res.data.subjects;
+        // this.setData(this.data);
+        let movies = res.data.subjects;
+        for (let index = 0; index < movies.length; index++) {
+          this.updateMovie(movies[index]);
+        }
+        this.setData({
+          movies: movies
+        });
+        // console.log(this.data);
       },
       fail: () => {
         wx.db.toastError('获取热映失败');
@@ -48,5 +60,14 @@ Page({
         wx.db.toastError('获取位置失败');
       }
     });
+  },
+  updateMovie: function (movie) {
+    let stars = parseInt(movie.rating.stars);
+    if (stars == 0) return;
+    // movie.stars = [1, 1, 1, 0.5, 0];
+    movie.stars = {};
+    movie.stars.on = parseInt(stars / 10);
+    movie.stars.half = (stars - (movie.stars.on) * 10) > 0;
+    movie.stars.off = parseInt((50 - stars) / 10);
   }
 })
