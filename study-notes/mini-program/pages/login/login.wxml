@@ -1,10 +1,10 @@
-<!--pages/login/login.wxml-->
+<!-- pages/login/login.wxml -->
 <view class="container">
-    <image class="logo" src="/assets/imgs/ic_launcher.png"/>
-    <view class="wechat btn-login" bind:tap="wechatLogin">微信登录</view>
-    <view class="douban btn-login" bind:tap="doubanLogin">已有豆瓣帐号登录</view>
-    <view class="agreement">
-        登录表示同意
-        <view class="open" bind:tap="openAgreement">豆瓣使用协议/隐私协议</view>
-    </view>
+  <image class="logo" src="/assets/imgs/ic_launcher.png" />
+  <view class="wechat btn-login" bind:tap="wechatLogin">微信登录</view>
+  <view class="douban btn-login" bind:tap="doubanLogin">已有豆瓣帐号登录</view>
+  <view class="agreement">
+    登录表示同意
+    <view class="open" bind:tap="openAgreement">豆瓣使用协议/隐私协议</view>
+  </view>
 </view>

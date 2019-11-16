@@ -26,7 +26,7 @@ Page({
       }
     ]
   },
-  begin: function(evt) {
+  begin: function (evt) {
     // evt.currentTarget.id == 'item-0'
     // console.log(evt);
     const idx = evt.currentTarget.dataset.index;

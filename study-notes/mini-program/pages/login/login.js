@@ -1,12 +1,12 @@
 // pages/login/login.js
 Page({
-  wechatLogin: function() {
+  wechatLogin: function () {
     console.log('wechatLogin');
   },
-  doubanLogin: function() {
+  doubanLogin: function () {
     console.log('doubanLogin');
   },
-  openAgreement: function() {
+  openAgreement: function () {
     wx.navigateTo({
       url: '/pages/agreement/agreement'
     });

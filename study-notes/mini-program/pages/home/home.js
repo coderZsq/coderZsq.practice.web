@@ -1,13 +1,13 @@
 // pages/home/home.js
 Page({
   onLoad: function () {
-    this.loadCity(this.loadData);        
+    // this.loadCity(this.loadData);        
   },
-  loadData: function(city) {
+  loadData: function (city) {
     wx.request({
       url: 'https://douban.uieee.com/v2/movie/in_theaters',
       data: { city: city },
-      header: {'content-type':'json'},
+      header: { 'content-type': 'json' },
       success: (res) => {
         console.log(res);
       },
@@ -16,7 +16,7 @@ Page({
       }
     });
   },
-  loadCity: function(success) {
+  loadCity: function (success) {
     // 获取经纬度
     wx.getLocation({
       success: (res) => {
