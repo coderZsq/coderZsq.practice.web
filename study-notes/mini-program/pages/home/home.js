@@ -31,13 +31,13 @@ Page({
   },
   onLoad: function () {
     this.loadLocalData();
-    this.loadCity((city) => {
-      this.loadNewData(0, { city: city });
-    });
-    this.loadNewData(1);
-    this.loadNewData(2);
-    this.loadNewData(3);
-    this.loadNewData(4);
+    // this.loadCity((city) => {
+    //   this.loadNewData(0, { city: city });
+    // });
+    // this.loadNewData(1);
+    // this.loadNewData(2);
+    // this.loadNewData(3);
+    // this.loadNewData(4);
   },
   loadLocalData: function () {
     for (let index = 0; index < this.data.allMovies.length; index++) {
