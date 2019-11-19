@@ -84,6 +84,8 @@
   width: 100%;
   height: 223rpx;
   margin-bottom: 15rpx;
+  border-radius: 10rpx;
+  border: 4rpx solid #eee;
 }
 
 .item .title {

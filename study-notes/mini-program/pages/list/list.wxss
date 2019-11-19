@@ -1,0 +1,54 @@
+/* pages/list/list.wxss */
+.container {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  padding-top: 30rpx;
+}
+
+.hide {
+  visibility: hidden;
+}
+
+.item {
+  display: inline-flex;
+  flex-direction: column;  
+  width: 160rpx;
+  margin: 0 30rpx 30rpx;
+}
+
+.item .photo {
+  width: 100%;
+  height: 223rpx;
+  margin-bottom: 15rpx;
+  border-radius: 10rpx;
+  border: 4rpx solid #eee;
+}
+
+.item .title {
+  width: 100%;
+  font-weight: bold;
+  margin-bottom: 4rpx;
+  /* 超出宽度的内容直接隐藏 */
+  overflow: hidden;
+  /* 尾部超出的内容改为显示省略号 */
+  text-overflow: ellipsis;
+  /* 不换行 */
+  white-space: nowrap;
+}
+
+.score {
+  display: flex;
+  align-items: center;
+  color: #818181;
+}
+
+.score .stars {
+  display: flex;
+  margin-right: 4rpx;
+}
+
+.stars .star {
+  width: 24rpx;
+  height: 24rpx;
+}

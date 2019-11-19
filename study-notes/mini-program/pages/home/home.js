@@ -112,5 +112,12 @@ Page({
     movie.stars.on = parseInt(stars / 10);
     movie.stars.half = (stars - (movie.stars.on) * 10) > 0;
     movie.stars.off = parseInt((50 - stars) / 10);
+  },
+  viewMore: function (evt) {
+    const index = evt.currentTarget.dataset.index;
+    const obj = this.data.allMovies[index];
+    wx.navigateTo({
+      url: `/pages/list/list?title=${obj.title}&url=${obj.url}`,
+    });
   }
 })
