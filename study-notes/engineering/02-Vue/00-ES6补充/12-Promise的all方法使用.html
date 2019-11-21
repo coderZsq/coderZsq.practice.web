@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+
+<script>
+  // // 请求一:
+  // let isResult1 = false
+  // let isResult2 = false
+  // $ajax({
+  //   url: '',
+  //   success: function () {
+  //     console.log('结果1');
+  //     isResult1 = true
+  //     handleResult()
+  //   }
+  // })
+  // // 请求二:
+  // $ajax({
+  //   url: '',
+  //   success: function () {
+  //     console.log('结果2');
+  //     isResult2 = true
+  //     handleResult()
+  //   }
+  // })
+  //
+  // function handleResult() {
+  //   if (isResult1 && isResult2) {
+  //     //
+  //   }
+  // }
+
+
+  Promise.all([
+      // new Promise((resolve, reject) => {
+      //   $.ajax({
+      //     url: 'url1',
+      //     success: function (data) {
+      //       resolve(data)
+      //     }
+      //   })
+      // }),
+      // new Promise((resolve, reject) => {
+      //   $.ajax({
+      //     url: 'url2',
+      //     success: function (data) {
+      //       resolve(data)
+      //     }
+      //   })
+      // })
+
+    new Promise((resolve, reject) => {
+      setTimeout(() => {
+        resolve({name: 'why', age: 18})
+      }, 2000)
+    }),
+    new Promise((resolve, reject) => {
+      setTimeout(() => {
+        resolve({name: 'kobe', age: 19})
+      }, 1000)
+    })
+  ]).then(results => {
+    console.log(results);
+  })
+</script>
+</body>
+</html>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+
+
+<script>
+
+
+  // 参数 -> 函数(resolve, reject)
+  // resolve, reject本身它们又是函数
+  // 链式编程
+  new Promise((resolve, reject) => {
+
+    // 第一次网络请求的代码
+    setTimeout(() => {
+      resolve()
+    }, 1000)
+
+  }).then(() => {
+    // 第一次拿到结果的处理代码
+    console.log('Hello World');
+    console.log('Hello World');
+    console.log('Hello World');
+    console.log('Hello World');
+    console.log('Hello World');
+    console.log('Hello World');
+
+    return new Promise((resolve, reject) => {
+
+      // 第二次网络请求的代码
+      setTimeout(() => {
+        resolve()
+      }, 1000)
+    })
+  }).then(() => {
+
+    // 第二次处理的代码
+    console.log('Hello Vuejs');
+    console.log('Hello Vuejs');
+    console.log('Hello Vuejs');
+    console.log('Hello Vuejs');
+    console.log('Hello Vuejs');
+    console.log('Hello Vuejs');
+
+    return new Promise((resolve, reject) => {
+
+      // 第三次网络请求的代码
+      setTimeout(() => {
+        resolve()
+      })
+    })
+  }).then(() => {
+
+    // 第三处理的代码
+    console.log('Hello Python');
+    console.log('Hello Python');
+    console.log('Hello Python');
+    console.log('Hello Python');
+    console.log('Hello Python');
+  })
+</script>
+</body>
+</html>
