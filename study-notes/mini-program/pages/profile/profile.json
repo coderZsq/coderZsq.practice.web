@@ -1,3 +1,5 @@
 {
-  "navigationBarTitleText": "书影音档案"
+  "usingComponents": {
+    "nav-bar": "/cmps/nav-bar/nav-bar"
+  }
 }

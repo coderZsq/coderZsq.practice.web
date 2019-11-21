@@ -1,3 +1,5 @@
 {
-  "navigationBarTitleText": "登录"
+  "usingComponents": {
+    "nav-bar": "/cmps/nav-bar/nav-bar"
+  }
 }

@@ -1,4 +1,5 @@
 <!-- pages/home/home.wxml -->
+<nav-bar title="首页" navBarColor="#42BD55" statusBarColor="#42BD55" titleColor="#fff" back="false" home="false"></nav-bar>
 <view>
   <view class="search-wrapper">
     <view class="search">
@@ -16,7 +17,7 @@
         </view>
       </view>
       <scroll-view class="items" scroll-x="true">
-        <movie-item class="item" wx:for="{{ item.movies }}" wx:key="unique" wx:for-item="movie" movie="{{ movie }}"></movie-item>
+        <movie-item class="item" wx:for="{{ item.movies }}" wx:key="unique" wx:for-item="movie" movie="{{ movie }}" bind:tap="movieTap"></movie-item>
         <!-- <view wx:for="{{ item.movies }}" class="item" wx:key="unique" wx:for-item="movie">
           <image class="photo" src="{{ movie.images.large }}" />
           <view class="title">{{ movie.title }}</view>

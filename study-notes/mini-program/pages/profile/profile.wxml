@@ -1,14 +1,15 @@
 <!-- pages/profile/profile.wxml -->
+<nav-bar title="书影音档案" back="false" home="false"></nav-bar>
 <view class="container">
   <view>
     <view class="login-wrapper">
-      <view class="login">登录</view>
+      <view class="login" bind:tap="login">登录</view>
       <image src="/assets/imgs/bg_mine_login.png" mode="aspectFill" />
     </view>
     <view class="items-wrapper">
       <view class="title-wrapper">
         <view class="title">我的书影音</view>
-        <view class="view">
+        <view class="view" bind:tap="login">
           登录查看
           <view class="arrow"></view>
         </view>

@@ -1,3 +1,6 @@
 {
-  "navigationBarTitleText": "协议"
+  "navigationBarTitleText": "协议",
+  "usingComponents": {
+    "nav-bar": "/cmps/nav-bar/nav-bar"
+  }
 }

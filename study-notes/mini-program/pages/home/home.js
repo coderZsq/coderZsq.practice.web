@@ -30,6 +30,11 @@ Page({
     ]
   },
   onLoad: function () {
+    wx.setNavigationBarColor({
+      frontColor: '#ffffff',
+      backgroundColor: '#42BD55'
+    });
+
     this.loadLocalData();
     // this.loadCity((city) => {
     //   this.loadNewData(0, { city: city });
@@ -120,5 +125,8 @@ Page({
     wx.navigateTo({
       url: `/pages/list/list?title=${obj.title}&url=${obj.url}`,
     });
+  },
+  movieTap: function () {
+    console.log('movieTap');
   }
 })

@@ -37,5 +37,10 @@ Page({
     } else if (idx == 2) {
       console.log("音乐分析");
     }
+  },
+  login: function () {
+    wx.navigateTo({
+      url: '/pages/login/login'
+    });
   }
 })

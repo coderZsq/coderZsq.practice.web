@@ -1,12 +1,16 @@
 // pages/list/list.js
 Page({
   data: {
-    movies: []
+    movies: [],
+    title: ''
   },
   onLoad: function (options) {
-    wx.setNavigationBarTitle({
+    this.setData({
       title: options.title
     });
+    // wx.setNavigationBarTitle({
+    //   title: options.title
+    // });
     wx.getStorage({
       key: options.title,
       success: (result) => {
@@ -16,4 +20,10 @@ Page({
       }
     });
   },
+  back: function (evt) {
+    console.log('back', evt.detail);
+  },
+  home: function (evt) {
+    console.log('home', evt);
+  }
 })

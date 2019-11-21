@@ -1,24 +1,18 @@
-// pages/detail/detail.js
+// pages/rank/rank.js
 Page({
 
   /**
    * Page initial data
    */
   data: {
-    title: '' // 标题
+
   },
 
   /**
    * Lifecycle function--Called when page load
    */
   onLoad: function (options) {
-    const movie = JSON.parse(options.movie);
-    this.setData({
-      title: movie.title
-    });
-    // wx.setNavigationBarTitle({
-    //   title: movie.title
-    // });
+
   },
 
   /**
