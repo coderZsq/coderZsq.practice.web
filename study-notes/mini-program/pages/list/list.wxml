@@ -1,20 +1,9 @@
 <!-- pages/list/list.wxml -->
 <view class="container">
-  <view wx:for="{{ movies }}" class="item" wx:key="unique" wx:for-item="movie">
-    <image class="photo" src="{{ movie.images.large }}" />
-    <view class="title">{{ movie.title }}</view>
-    <view class="score">
-      <block wx:if="{{ movie.stars }}">
-        <view class="stars">
-          <image wx:for="{{ movie.stars.on }}" class="star" wx:key="unique" src="/assets/imgs/rating_star_small_on.png" />
-          <image wx:if="{{ movie.stars.half }}" class="star" wx:key="unique" src="/assets/imgs/rating_star_small_half.png" />
-          <image wx:for="{{ movie.stars.off }}" class="star" wx:key="unique" src="/assets/imgs/rating_star_small_off.png" />
-        </view>
-        {{ movie.rating.average }}
-      </block>
-      <block wx:else>暂无评分</block>
-    </view>
+  <view class="item" wx:for="{{ movies }}" wx:key="unique" wx:for-item="movie">
+    <movie-item movie="{{ movie }}"></movie-item>
   </view>
+  <!-- <movie-item class="item" wx:for="{{ movies }}" wx:key="unique" wx:for-item="movie" movie="{{ movie }}"></movie-item>
   <view wx:if="{{ movies.length % 3 > 0 }}" class="item hide"></view>
-  <view wx:if="{{ movies.length % 3 == 1 }}" class="item hide"></view>
+  <view wx:if="{{ movies.length % 3 == 1 }}" class="item hide"></view> -->
 </view>

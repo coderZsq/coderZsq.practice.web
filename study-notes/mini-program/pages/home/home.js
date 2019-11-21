@@ -42,7 +42,7 @@ Page({
   loadLocalData: function () {
     for (let index = 0; index < this.data.allMovies.length; index++) {
       const obj = this.data.allMovies[index];
-      obj.movies = wx.getStorageSync(obj.title) || [];
+      obj.movies = wx.getStorageSync(obj.title);
     }
     this.setData(this.data);
   },
@@ -54,6 +54,7 @@ Page({
       success: (res) => {
         const movies = res.data.subjects;
         const obj = this.data.allMovies[idx];
+        obj.movies = [];
         for (let index = 0; index < movies.length; index++) {
           let movie = movies[index].subject || movies[index];
           this.updateMovie(movie);

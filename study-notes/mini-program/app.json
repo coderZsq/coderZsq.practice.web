@@ -4,7 +4,8 @@
     "pages/profile/profile",
     "pages/login/login",
     "pages/agreement/agreement",
-    "pages/list/list"
+    "pages/list/list",
+    "pages/detail/detail"
   ],
   "window": {
     "backgroundTextStyle": "light",
