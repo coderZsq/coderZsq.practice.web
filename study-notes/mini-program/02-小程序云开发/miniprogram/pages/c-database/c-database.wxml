@@ -1,0 +1,5 @@
+<!-- pages/c-database/c-database.wxml -->
+<button bind:tap="addDataToDB">增加数据</button>
+<button bind:tap="removeDataToDB">删除数据</button>
+<button bind:tap="updateDataToDB">修改数据</button>
+<button bind:tap="queryDataToDB">查询数据</button>
