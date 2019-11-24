@@ -45,6 +45,7 @@ Page({
     this.loadNewData(4);
   },
   loadLocalData: function () {
+    this.data.contentHeight = wx.db.contentHeight;
     for (let index = 0; index < this.data.allMovies.length; index++) {
       const obj = this.data.allMovies[index];
       obj.movies = wx.getStorageSync(obj.title);

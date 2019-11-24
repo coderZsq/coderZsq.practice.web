@@ -1,6 +1,6 @@
 <!-- pages/home/home.wxml -->
 <nav-bar title="首页" navBarColor="#42BD55" statusBarColor="#42BD55" titleColor="#fff" back="false" home="false"></nav-bar>
-<view>
+<scroll-view scroll-y="true" style="height: {{ contentHeight }}px">
   <view class="search-wrapper">
     <view class="search">
       <image src="/assets/imgs/ic_search.png" />
@@ -41,4 +41,4 @@
       </scroll-view>
     </view>
   </view>
-</view>
+</scroll-view>
