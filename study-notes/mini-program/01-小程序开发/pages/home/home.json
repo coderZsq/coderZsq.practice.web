@@ -1,5 +1,4 @@
 {
-  "disableScroll": true,
   "usingComponents": {
     "movie-item": "/cmps/movie-item/movie-item",
     "nav-bar": "/cmps/nav-bar/nav-bar"

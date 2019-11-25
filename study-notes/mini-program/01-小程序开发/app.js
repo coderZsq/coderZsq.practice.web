@@ -14,7 +14,6 @@ App({
     } else {
       wx.db.navBarHeight = 44;
     }
-    wx.db.contentHeight = info.windowHeight - wx.db.statusBarHeight - wx.db.navBarHeight;
   },
   initToast: function () {
     const toastTypeNormal = 0;
