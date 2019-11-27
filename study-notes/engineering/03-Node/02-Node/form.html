@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>form表单</title>
+</head>
+<body>
+
+
+
+<!--设置的actiondopost:可以确定提交的url地址,
+enctype:multipart/form-data：如果是上传或者下载就利用前面设置的格式
+注意:一定要设置
+-->
+<form action="http://127.0.0.1:3000/dopost" method="post" enctype="multipart/form-data">
+
+    <!--<form action="http://127.0.0.1:3000/dopost" method="post">-->
+    <p>
+        姓名 ： <input type="text" name="name">
+    </p>
+    <p>
+        性别 ：
+        <input type="radio" name="sex" value="男">男
+        <input type="radio" name="sex" value="女">女
+    </p>
+    <p>
+        爱好：
+        <input type="checkbox" name="hobby" value="睡觉" />睡觉
+        <input type="checkbox" name="hobby" value="吃饭" />吃饭
+        <input type="checkbox" name="hobby" value="足球" />足球
+    </p>
+    <p>
+        图片：
+        <input type="file" name="tupian" />
+    </p>
+    <p>
+        <input type="submit" />
+    </p>
+</form>
+
+</body>
+</html>

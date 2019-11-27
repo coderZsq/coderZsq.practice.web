@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+		.option{
+			position: fixed;
+			bottom: 0;
+			left: 0;
+			height: 100px;
+			background-color: #ccc;
+			width: 100%;
+		}
+		.option input{
+			font-size: 30px;
+		}
+		.option input[type=text]{
+			width: 100%;
+		}
+	</style>
+</head>
+<body>
+	<h1>小小聊天室 欢迎：<span id="userName"><%=userName%></span></h1>
+	<div>
+		<ul class="oList">
+			
+		</ul>
+	</div>
+
+	<div class="option">
+		<input type="text" id="content" />
+	</div>
+
+	<script type="text/javascript" src="/socket.io/socket.io.js"></script>
+	<script type="text/javascript" src="/jquery-1.11.3.min.js"></script>
+	<script>
+		var socket = io();
+		$('#content').on('keydown',function (e) {
+			//判断点击是否是回车键(为了严格)
+			if(e.keyCode== 13){//表示点击了回车键,我们就发送信息
+				socket.emit('chat',{
+				    'content':$('#content').val(),
+					'perName':$('#userName').html()
+				})
+
+			}
+			$(this).val = '';
+
+        });
+		//接受信息
+		socket.on('chat',function (msg) {
+		    //当接受到信息,添加一条记录
+			$('.oList').prepend('<li><b>'+msg.perName+':</b>'+msg.content+'</li>');
+
+
+
+        })
+	</script>
+
+</body>
+</html>

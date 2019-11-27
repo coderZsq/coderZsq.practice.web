@@ -1,0 +1,23 @@
+﻿01: express的基本认识和使用
+02: express设置路由设置的时候的处理参数的特点
+03: express设置的时候处理静态路由的特点
+04：express设置的时候处理模板渲染的时候的特点
+
+05：express设置的时候处理大小写时候的特点
+
+06：express寻找路由的过程
+
+07.express中use中间件使用时候的特点
+08:express实际中处理多种中间件顺序
+
+09: express中get请求的时候获取参数的实现
+
+10:express中post请求的时候获取参数的实现
+
+11.littleAlbum小项目的实现
+
+
+
+
+
+

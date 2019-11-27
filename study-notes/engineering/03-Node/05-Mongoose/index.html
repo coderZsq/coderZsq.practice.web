@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<h1>我是index页面，我引用了秘密script文件dasfsd</h1>
+	<input type="button" value="发送消息给全班" id="btn"/>
+	<script type="text/javascript" src="/socket.io/socket.io.js"></script>
+	<script>
+		//创建socket
+		var socekt = io();
+		//点击按钮发送请求
+		var btn = document.getElementById('btn');
+		btn.onclick = function () {
+
+            //第二个表示具体的内容
+            console.log('1123');
+
+            socekt.emit('tiwen','你睡觉了ma');
+        }
+
+
+        socekt.on('reply',function (msg) {
+            console.log(msg);
+
+        })
+
+
+
+	</script>
+
+
+
+
+</body>
+</html>

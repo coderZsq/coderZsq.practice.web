@@ -1,0 +1,18 @@
+{
+  "name": "test1",
+  "version": "0.0.1",
+  "description": "dff",
+  "main": "index.js",
+  "dependencies": {
+    "express": "^4.15.3"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "123456"
+  },
+  "keywords": [
+    "123456"
+  ],
+  "author": "all",
+  "license": "ISC"
+}
