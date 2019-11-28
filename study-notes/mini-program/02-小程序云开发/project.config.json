@@ -31,7 +31,7 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": 1,
+			"current": 3,
 			"list": [
 				{
 					"id": -1,
@@ -43,6 +43,21 @@
 					"id": -1,
 					"name": "云数据库",
 					"pathName": "pages/c-database/c-database",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "云存储",
+					"pathName": "pages/c-storage/c-storage",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 3,
+					"name": "云函数",
+					"pathName": "pages/c-cloudfunc/c-cloudfunc",
+					"query": "",
 					"scene": null
 				}
 			]

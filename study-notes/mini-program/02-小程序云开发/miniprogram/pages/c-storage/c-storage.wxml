@@ -1,2 +1,16 @@
-<!--pages/c-storage/c-storage.wxml-->
-<text>pages/c-storage/c-storage.wxml</text>
+<!-- pages/c-storage/c-storage.wxml -->
+<!-- 1. 将文件上传到云存储中 -->
+<button bind:tap="uploadFile">上传文件</button>
+<image wx:if="{{imgFileID}}" src="{{imgFileID}}" />
+<button bind:tap="uploadVideo">上传视频</button>
+<video wx:if="{{videoFileID}}" src="{{videoFileID}}" />
+<!-- 2. 获取临时URL -->
+<!-- 作用: 如果云存储中某一个文件, 需要在小程序以外的地方进行访问时, 就可以通过fileID换取外部可以访问的URL -->
+<button bind:tap="getTempURL">获取临时链接</button>
+<!-- <image src="https://636f-coderzsq-6vs6v-1300753646.tcb.qcloud.la/images/1574909702058_openid.png" /> -->
+<!-- 3. 下载云存储中文件到本地 -->
+<!-- 作用: 文件缓存 (在没有网络的情况下也可以访问文件) -->
+<button bind:tap="downloadVideoFile">下载视频文件</button>
+<!-- <video src="{{localFilePath}}"></video> -->
+<!-- 4. 删除云存储中的文件 -->
+<button bind:tap="deleteFile">删除云存储文件</button>

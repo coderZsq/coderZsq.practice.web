@@ -1,2 +1,12 @@
-<!--pages/c-cloudfunc/c-cloudfunc.wxml-->
-<text>pages/c-cloudfunc/c-cloudfunc.wxml</text>
+<!-- pages/c-cloudfunc/c-cloudfunc.wxml -->
+<!-- 1. 基本使用: 通过云函数对两个数字进行相加 -->
+<button bind:tap="basicUsing">云函数的基本使用</button>
+<!-- 2. 通过云函数获取openid -->
+<button bind:tap="getOpenID">获取OpenID</button>
+<!-- 3. 通过云函数删除多条数据 -->
+<!-- 云函数操作数据权限更大
+    1. 删除, 更新(update), 修改(set), 可以根据条件修改多条数据
+    2.  查询数据时, 最多一次可以查询100条数据 (小程序端一次最多可以查询 20 条数据) -->
+<button bind:tap="removeMultiData">删除多条数据</button>
+<!-- 4. 通过云调用生成小程序码 -->
+<button bind:tap="generateCode">生成小程序码</button>

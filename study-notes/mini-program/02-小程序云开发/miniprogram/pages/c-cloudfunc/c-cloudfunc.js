@@ -1,66 +1,39 @@
 // pages/c-cloudfunc/c-cloudfunc.js
 Page({
+  basicUsing: function () {
+    const num1 = 100
+    const num2 = 230
 
-  /**
-   * Page initial data
-   */
-  data: {
-
+    // 如何调用云函数
+    wx.cloud.callFunction({
+      name: 'sum', // 调用哪一个云函数
+      data: { // 要给云函数传递的参数
+        num1,
+        num2
+      }
+    }).then(res => {
+      console.log(res)
+    })
   },
-
-  /**
-   * Lifecycle function--Called when page load
-   */
-  onLoad: function (options) {
-
+  getOpenID: function () {
+    wx.cloud.callFunction({
+      name: 'login'
+    }).then(res => {
+      console.log(res)
+    })
   },
-
-  /**
-   * Lifecycle function--Called when page is initially rendered
-   */
-  onReady: function () {
-
+  removeMultiData: function () {
+    wx.cloud.callFunction({
+      name: 'removeMultiData'
+    }).then(res => {
+      console.log(res)
+    })
   },
+  generateCode: function () {
+    wx.cloud.callFunction({
+      name: 'generateCode'
+    }).then(res => {
 
-  /**
-   * Lifecycle function--Called when page show
-   */
-  onShow: function () {
-
-  },
-
-  /**
-   * Lifecycle function--Called when page hide
-   */
-  onHide: function () {
-
-  },
-
-  /**
-   * Lifecycle function--Called when page unload
-   */
-  onUnload: function () {
-
-  },
-
-  /**
-   * Page event handler function--Called when user drop down
-   */
-  onPullDownRefresh: function () {
-
-  },
-
-  /**
-   * Called when page reach bottom
-   */
-  onReachBottom: function () {
-
-  },
-
-  /**
-   * Called when user click on the top right corner to share
-   */
-  onShareAppMessage: function () {
-
+    })
   }
 })

@@ -3,3 +3,5 @@
 <button bind:tap="removeDataToDB">删除数据</button>
 <button bind:tap="updateDataToDB">修改数据</button>
 <button bind:tap="queryDataFromDB">查询数据</button>
+<button bind:tap="startChanging">开始监听数据的改变</button>
+<button bind:tap="sendMessage">发送消息</button>
