@@ -10,3 +10,8 @@
 <button bind:tap="removeMultiData">删除多条数据</button>
 <!-- 4. 通过云调用生成小程序码 -->
 <button bind:tap="generateCode">生成小程序码</button>
+<!-- <image src="{{fileID}}" /> -->
+<!-- 5. 发送模板消息 form_id -->
+<form report-submit="true" bindsubmit="formSubmit">
+  <button form-type="submit">提交表单</button>
+</form>

@@ -1,5 +1,8 @@
 // pages/c-cloudfunc/c-cloudfunc.js
 Page({
+  data: {
+    fileID: ''
+  },
   basicUsing: function () {
     const num1 = 100
     const num2 = 230
@@ -33,7 +36,21 @@ Page({
     wx.cloud.callFunction({
       name: 'generateCode'
     }).then(res => {
+      this.setData({ fileID: res.result.fileID })
+    })
+  },
+  formSubmit: function (event) {
+    // 1. 取出 formId
+    const formId = event.detail.formId
 
+    // 2.
+    wx.cloud.callFunction({
+      name: 'sendTemplate',
+      data: {
+        formId
+      }
+    }).then(res => {
+      console.log(res)
     })
   }
 })
