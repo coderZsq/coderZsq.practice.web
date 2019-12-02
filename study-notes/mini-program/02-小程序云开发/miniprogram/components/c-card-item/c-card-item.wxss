@@ -1,0 +1,16 @@
+/* components/c-card-item/c-card-item.wxss */
+.item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 30rpx;
+}
+
+.item image {
+  width: 100rpx;
+}
+
+.item view {
+  font-size: 40rpx;
+  margin-top: 20rpx;
+}

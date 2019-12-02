@@ -1,46 +1,34 @@
 {
   "pages": [
-    "pages/index/index",
-    "pages/userConsole/userConsole",
-    "pages/storageConsole/storageConsole",
-    "pages/databaseGuide/databaseGuide",
-    "pages/addFunction/addFunction",
-    "pages/deployFunctions/deployFunctions",
-    "pages/chooseLib/chooseLib",
-    "pages/openapi/openapi",
-    "pages/openapi/serverapi/serverapi",
-    "pages/openapi/callback/callback",
-    "pages/openapi/cloudid/cloudid",
-    "pages/im/im",
-    "pages/im/room/room",
+    "pages/home/home",
+    "pages/profile/profile",
     "pages/c-database/c-database",
     "pages/c-storage/c-storage",
     "pages/c-cloudfunc/c-cloudfunc"
   ],
   "window": {
-    "backgroundColor": "#F6F6F6",
+    "backgroundColor": "#FFF",
     "backgroundTextStyle": "light",
-    "navigationBarBackgroundColor": "#F6F6F6",
-    "navigationBarTitleText": "云开发 QuickStart",
+    "navigationBarBackgroundColor": "#FFF",
+    "navigationBarTitleText": "卡证识别",
     "navigationBarTextStyle": "black"
+  },
+  "usingComponents": {
+    "c-header": "/components/c-header/c-header"
   },
   "tabBar": {
     "list": [
       {
-        "pagePath": "pages/index/index",
-        "text": "官方示例"
+        "pagePath": "pages/home/home",
+        "text": "首页",
+        "iconPath": "/assets/home.png",
+        "selectedIconPath": "/assets/home_selected.png"
       },
       {
-        "pagePath": "pages/c-database/c-database",
-        "text": "云数据库"
-      },
-      {
-        "pagePath": "pages/c-storage/c-storage",
-        "text": "云存储"
-      },
-      {
-        "pagePath": "pages/c-cloudfunc/c-cloudfunc",
-        "text": "云函数"
+        "pagePath": "pages/profile/profile",
+        "text": "我的",
+        "iconPath": "/assets/profile.png",
+        "selectedIconPath": "/assets/profile_selected.png"
       }
     ]
   },

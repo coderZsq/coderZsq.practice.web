@@ -1,0 +1,2 @@
+<!--components/c-header/c-header.wxml-->
+<view class="header">{{title}}</view>

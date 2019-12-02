@@ -1,0 +1,9 @@
+<!-- pages/home/home.wxml -->
+<!-- 1.卡片的头部 -->
+<c-header title="卡片类型" />
+<!-- 2.卡片类型的列表 -->
+<view class="card-category">
+  <block wx:for="{{categories}}">
+    <c-card-item title="{{item.title}}" iconPath="{{item.icon}}" />
+  </block>
+</view>

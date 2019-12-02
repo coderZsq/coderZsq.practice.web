@@ -1,0 +1,5 @@
+<!-- components/c-card-item/c-card-item.wxml -->
+<view class="item">
+  <image src="{{iconPath}}" mode="widthFix" />
+  <view>{{title}}</view>
+</view>

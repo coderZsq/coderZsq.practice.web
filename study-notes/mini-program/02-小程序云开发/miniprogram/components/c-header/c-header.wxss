@@ -1,0 +1,9 @@
+/* components/c-header/c-header.wxss */
+.header {
+  background: #f5f5f5;
+  height: 80rpx;
+  line-height: 80rpx;
+  border-left: 6rpx solid #36ab60;
+  padding-left: 10rpx;
+  font-size: 34rpx
+}
