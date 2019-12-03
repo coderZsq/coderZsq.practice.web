@@ -1,10 +1,4 @@
 /* pages/home/home.wxss */
-.card-category {
-  display: flex;
-  justify-content: space-evenly;
-  align-items: center;
-  flex-wrap: wrap;
-
-  border-bottom: 10rpx solid #36ab60;
-  padding: 80rpx 0;
+.add-card {
+  margin-top: 160rpx;
 }

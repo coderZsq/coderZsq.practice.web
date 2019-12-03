@@ -1,0 +1,5 @@
+<!-- components/c-tool-bar/c-tool-bar.wxml -->
+<view class="tool-bar my-class" hover-class="hover" hover-stay-time="50" style="background: {{bgColor}}">
+  <image src="{{icon}}" />
+  <text>{{title}}</text>
+</view>

@@ -31,7 +31,7 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": 3,
+			"current": 4,
 			"list": [
 				{
 					"id": -1,
@@ -58,6 +58,13 @@
 					"name": "云函数",
 					"pathName": "pages/c-cloudfunc/c-cloudfunc",
 					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/recognize/recognize",
+					"pathName": "pages/recognize/recognize",
+					"query": "type=0",
 					"scene": null
 				}
 			]

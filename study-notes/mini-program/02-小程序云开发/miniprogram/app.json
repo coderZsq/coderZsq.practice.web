@@ -1,7 +1,8 @@
 {
   "pages": [
     "pages/home/home",
-    "pages/profile/profile"
+    "pages/profile/profile",
+    "pages/recognize/recognize"
   ],
   "window": {
     "backgroundColor": "#FFF",
@@ -11,7 +12,8 @@
     "navigationBarTextStyle": "black"
   },
   "usingComponents": {
-    "c-header": "/components/c-header/c-header"
+    "c-header": "/components/c-header/c-header",
+    "c-tool-bar": "/components/c-tool-bar/c-tool-bar"
   },
   "tabBar": {
     "list": [

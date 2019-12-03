@@ -1,5 +1,6 @@
 {
   "usingComponents": {
-    "c-card-item": "/components/c-card-item/c-card-item"
-  }
+    "c-card-category": "./childCpns/c-card-category/c-card-category"
+  },
+  "navigationBarTitleText": "我的卡证"
 }

@@ -1,9 +1,9 @@
 <!-- pages/home/home.wxml -->
 <!-- 1.卡片的头部 -->
-<c-header title="卡片类型" />
+<c-header title="我的卡证" />
 <!-- 2.卡片类型的列表 -->
-<view class="card-category">
-  <block wx:for="{{categories}}">
-    <c-card-item title="{{item.title}}" iconPath="{{item.icon}}" />
-  </block>
-</view>
+<c-card-category categories="{{categories}}" />
+<!-- 3.工具栏 -->
+<picker range="{{categories}}" range-key="title" bindchange="pickValueChange" class="add-card">
+  <c-tool-bar icon="/assets/add.png" title="添加卡证" />
+</picker>

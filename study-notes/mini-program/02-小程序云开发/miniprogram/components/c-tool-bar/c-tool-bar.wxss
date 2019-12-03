@@ -1,0 +1,30 @@
+/* components/c-tool-bar/c-tool-bar.wxss */
+.tool-bar {
+  height: 88rpx;
+  line-height: 88rpx;
+  margin: 0 60rpx;
+  border-radius: 8rpx;
+  /* text-align: center; */
+  /* font-size: 0; */
+  /* x的基线+x的高度的一半 */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.tool-bar image {
+  width: 40rpx;
+  height: 40rpx;
+  /* vertical-align: middle; */
+}
+
+.tool-bar text {
+  color: #fff;
+  font-size: 36rpx;
+  margin-left: 30rpx;
+  /* vertical-align: middle; */
+}
+
+.hover {
+  opacity: .8;
+}

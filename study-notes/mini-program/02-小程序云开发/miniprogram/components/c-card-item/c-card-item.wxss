@@ -12,5 +12,5 @@
 
 .item view {
   font-size: 40rpx;
-  margin-top: 20rpx;
+  margin-top: 30rpx;
 }

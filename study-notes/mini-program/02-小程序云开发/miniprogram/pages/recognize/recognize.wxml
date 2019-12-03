@@ -1,0 +1,4 @@
+<!-- pages/recognize/recognize.wxml -->
+<c-tool-bar icon="/assets/add.png" title="{{categories[type]}}" my-class="select-bar" bindtap="selectClick" />
+<c-tool-bar icon="/assets/save.png" title="保存信息" my-class="select-bar" bgColor="#efb336" bindtap="saveClick" />
+<c-tool-bar icon="/assets/copy.png" title="复制信息" my-class="select-bar" bgColor="#d34b2c" bindtap="copyClick" />

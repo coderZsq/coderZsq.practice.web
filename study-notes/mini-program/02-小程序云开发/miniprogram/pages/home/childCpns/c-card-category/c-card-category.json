@@ -1,0 +1,6 @@
+{
+  "component": true,
+  "usingComponents": {
+    "c-card-item": "/components/c-card-item/c-card-item"
+  }
+}
