@@ -1,10 +1,7 @@
 {
   "pages": [
     "pages/home/home",
-    "pages/profile/profile",
-    "pages/c-database/c-database",
-    "pages/c-storage/c-storage",
-    "pages/c-cloudfunc/c-cloudfunc"
+    "pages/profile/profile"
   ],
   "window": {
     "backgroundColor": "#FFF",
