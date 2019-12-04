@@ -1,23 +1,41 @@
-setTimeout(function () {
-  console.log(2)
-}, 300)
+// 1.设置一个类
+const PENDING = 'pending'
+const FULFILLED = 'fulfilled'
+const REJECTED = 'rejected'
+function Promise(task) {
+  // 2.设置基础的属性
+  let that = this
+  that.status = PENDING
+  that.onResolveCallbacks = []
+  that.onRejectCallbacks = []
 
-setTimeout(function () {
-  console.log(4)
-}, 500)
+  // 3.设置resolve方法
+  function resolve(value) {
+    if (that.status == PENDING) {
+      that.status = FULFILLED
+      that.value = value
+      that.onResolveCallbacks.forEach(item => item(that.value))
+    }
+  }
 
-function printNum() {
-  console.log(1)
+  // 4.设置reject方法
+  function reject() {
+    if (that.status == PENDING) {
+      that.status = REJECTED
+      that.value = value
+      that.onRejectCallbacks.forEach(item => item(that.value))
+    }
+  }
+
+  // 执行task
+  task(resolve, reject)
 }
 
-let promise = new Promise(function (resolve, reject) {
-  setTimeout(function () {
-    resolve(3)
-  }, 1000)
-})
+// 设置处理then方法
+Promise.prototype.then = function (onFulfilled, onRejected) {
+  let that = this
+  that.onResolveCallbacks.push(onFulfilled)
+  that.onRejectCallbacks.push(onRejected)
+}
 
-promise.then(function (data) {
-  console.log(data)
-})
-
-printNum()
+module.exports = Promise
