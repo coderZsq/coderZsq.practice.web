@@ -1,7 +1,12 @@
-// 1.设置一个类
+/**
+ * https://promisesaplus.com/
+ */
+
 const PENDING = 'pending'
 const FULFILLED = 'fulfilled'
 const REJECTED = 'rejected'
+
+// 1.设置一个类
 function Promise(task) {
   // 2.设置基础的属性
   let that = this
