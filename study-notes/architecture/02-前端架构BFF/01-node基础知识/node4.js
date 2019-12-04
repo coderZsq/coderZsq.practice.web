@@ -1,0 +1,1 @@
+const b = require('./dirname/b.js')

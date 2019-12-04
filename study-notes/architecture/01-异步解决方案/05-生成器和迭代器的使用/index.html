@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    .divTest {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+    }
+
+    .div1 {
+      background-color: red;
+    }
+
+    .div2 {
+      background-color: blue;
+    }
+
+    .div3 {
+      background-color: green;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="divTest div1"></div>
+  <div class="divTest div2"></div>
+  <div class="divTest div3"></div>
+  <script>
+    // 需求: 使用四种方式实现第一个小球走到某个位置后然后第二个小球走, 然后第三个小球走
+    let div1 = document.querySelector('.div1')
+    let div2 = document.querySelector('.div2')
+    let div3 = document.querySelector('.div3')
+    div1.style.marginLeft = '0px'
+    div2.style.marginLeft = '0px'
+    div3.style.marginLeft = '0px'
+
+    // 第一种方式: 回调
+    function move(ball, target, cb) {
+      let timer = setInterval(function () {
+        let left = parseInt(ball.style.marginLeft);
+        if (left < target) {
+          ball.style.marginLeft = left + 1 + 'px'
+        } else {
+          cb()
+          clearInterval(timer)
+        }
+      })
+    }
+    move(div1, 200, function () {
+      move(div2, 200, function () {
+        move(div3, 200, function () {
+
+        })
+      })
+    })
+
+    // 第二种方式: promise
+    function move(ball, target) {
+      return new Promise(function (resolve, reject) {
+        let timer = setInterval(function () {
+          let left = parseInt(ball.style.marginLeft)
+          if (left < target) {
+            ball.style.marginLeft = left + 1 + 'px'
+          } else {
+            resolve()
+            clearInterval(timer)
+          }
+        }, 10)
+      })
+    }
+    move(div1, 200).then(function () {
+      return move(div2, 200)
+    }).then(function () {
+      return move(div3, 200)
+    }).then(function () {
+
+    })
+
+    // 第三种方式: generator
+    function move(ball, target) {
+      return new Promise(function (resolve, reject) {
+        let timer = setInterval(function () {
+          let left = parseInt(ball.style.marginLeft)
+          if (left < target) {
+            ball.style.marginLeft = left + 1 + 'px'
+          } else {
+            resolve()
+            clearInterval(timer)
+          }
+        }, 10)
+      })
+    }
+
+    function* gen() {
+      yield move(div1, 200)
+      yield move(div2, 200)
+      yield move(div3, 200)
+    }
+
+    function co(gen) { // gen表示一个生成器, co返回的结果是一个promise, 我们可以通过promise来处理对应的过程
+      let it = gen() // it表示一个迭代器
+      return new Promise(function (resolve, reject) {
+        !function next(lastValue) {
+          let { value, done } = it.next(lastValue)
+          /**
+           * next方法的核心过程, 就是根据done的状态来设置对应的过程
+           * 如果done为true, 我们直接采用最终的结果即可
+           * 如果done为false, 我们需要继续递归
+           */
+          if (done) {
+            resolve(value)
+          } else {
+            value.then(next, reject)
+          }
+        }()
+      })
+    }
+
+    co(gen)
+
+    // 第四种方式: async await
+    function move(ball, target) {
+      return new Promise(function (resolve, reject) {
+        let timer = setInterval(function () {
+          let left = parseInt(ball.style.marginLeft)
+          if (left < target) {
+            ball.style.marginLeft = left + 1 + 'px'
+          } else {
+            resolve()
+            clearInterval(timer)
+          }
+        }, 10)
+      })
+    }
+
+    async function gen() {
+      await move(div1, 200)
+      await move(div2, 200)
+      await move(div3, 200)
+    }
+
+    gen()
+
+  </script>
+</body>
+
+</html>
