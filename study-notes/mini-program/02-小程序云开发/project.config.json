@@ -61,10 +61,10 @@
 					"scene": null
 				},
 				{
-					"id": -1,
+					"id": 4,
 					"name": "pages/recognize/recognize",
 					"pathName": "pages/recognize/recognize",
-					"query": "type=0",
+					"query": "type=1",
 					"scene": null
 				}
 			]

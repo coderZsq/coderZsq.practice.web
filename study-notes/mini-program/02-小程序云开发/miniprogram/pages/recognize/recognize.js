@@ -1,8 +1,10 @@
 // pages/recognize/recognize.js
+const idCollection = wx.cloud.database().collection('idcards')
+
 Page({
   data: {
     type: 0,
-    categories: ['选择身份证', '选择银行卡'],
+    categories: ['身份证', '银行卡'],
     idInfo: null
   },
   onLoad: function (options) {
@@ -23,7 +25,7 @@ Page({
         const filePath = res.tempFilePaths[0]
 
         wx.showLoading({
-          title: '身份证识别中'
+          title: this.data.categories[this.data.type] + '识别中'
         })
 
         // 2. 将照片上传到云存储中
@@ -59,34 +61,94 @@ Page({
     wx.cloud.callFunction({
       name: 'recognizeCard',
       data: {
-        fileURL
+        fileURL,
+        type: this.data.type
       }
     }).then(res => {
+      this.data.type == 0 ? this.handleIDInfo(res) : this.handleBankInfo(res)
       wx.hideLoading()
-
-      // 5. 获取信息
-      const result = res.result
-      const idInfo = {
-        id: result.id,
-        address: result.address,
-        birth: result.birth,
-        name: result.name,
-        nation: result.nation,
-        sex: result.sex,
-        fileID: fileID
-      }
-
-      // 6. 展示信息
-      this.setData({ idInfo })
     })
+  },
+  handleBankInfo: function (res) {
+    console.log(res)
+  },
+  handleIDInfo: function (res) {
+    if (!res.result.id) {
+      this.deletePhoto(fileID)
+      wx.showToast({
+        title: '卡证识别失败'
+      })
+      return
+    }
+    // 5. 获取信息
+    const result = res.result
+    const idInfo = {
+      id: result.id,
+      address: result.address,
+      birth: result.birth,
+      name: result.name,
+      nation: result.nation,
+      sex: result.sex,
+      fileID: fileID
+    }
+
+    // 6. 展示信息
+    this.setData({ idInfo })
   },
   /**
    * 保存信息
    */
   saveClick: function () {
-    console.log('saveClick')
+    wx.showLoading({
+      title: '保存信息中'
+    })
+
+    // 查询是否已经保存过这个信息
+    idCollection.where({
+      id: this.data.idInfo.id
+    }).get().then(res => {
+      if (res.data.length > 0) {
+        const _id = res.data[0]._id
+        const fileID = res.data[0].fileID
+        this.coverInfo(_id)
+        this.deletePhoto(fileID)
+      } else {
+        this.saveInfo()
+      }
+    })
+  },
+  deletePhoto: function (fileID) {
+    wx.cloud.deleteFile({
+      fileList: [fileID]
+    })
+  },
+  coverInfo: function (_id) {
+    idCollection.doc(_id).set({
+      data: this.data.idInfo
+    })
+      .then(this.showSuccess)
+      .catch(this.showFail)
+  },
+  saveInfo: function () {
+    idCollection.add({
+      data: this.data.idInfo
+    })
+      .then(this.showSuccess)
+      .catch(this.showFail)
+  },
+  showSuccess: function () {
+    wx.showToast({
+      title: '信息保存成功'
+    })
+  },
+  showFail: function () {
+    wx.showToast({
+      title: '信息保存失败'
+    })
   },
   copyClick: function () {
-    console.log('copyClick')
+    wx.setClipboardData({
+      data: `${this.data.idInfo.id}`
+    })
   }
 })

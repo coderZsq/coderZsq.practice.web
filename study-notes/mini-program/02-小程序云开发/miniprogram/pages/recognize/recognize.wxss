@@ -7,3 +7,8 @@
   padding: 20rpx;
   font-size: 30rpx;
 }
+
+.id-info image {
+  margin-top: 60rpx;
+  width: 100%;
+}
