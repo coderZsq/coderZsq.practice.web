@@ -20,7 +20,7 @@ app.use(express.static('./public'))
 
 // 4. express处理后台渲染
 app.get('/ejsTest', function (req, res) {
-  res.render('index.ejs', { a: 9 })
+  res.render('index.ejs', { username: 'Castie!' })
 })
 
 app.listen(3000)

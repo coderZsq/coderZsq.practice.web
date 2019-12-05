@@ -9,7 +9,15 @@
 </head>
 
 <body>
-  <h1>ejs: <%= username=></h1>
+  <script>
+    let xhr = new XMLHttpRequest
+    xhr.open('get', 'http://localhost:3000/test', true)
+    xhr.setRequestHeader('name', 'Castie!')
+    xhr.onload = function () {
+      console.log(xhr.response)
+    }
+    xhr.send()
+  </script>
 </body>
 
 </html>
