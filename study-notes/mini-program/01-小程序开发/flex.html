@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    .container {
+      border: 1px solid #000;
+      width: 400px;
+      height: 500px;
+      margin-left: 20px;
+      margin-top: 20px;
+      display: flex;
+    }
+
+    .item {
+      width: 100px;
+      height: 100px;
+      font-size: 50px;
+      color: #fff;
+      text-align: center;
+      line-height: 100px;
+    }
+
+    .item:nth-of-type(1) {
+      background-color: #f00;
+      flex-grow: 0.1;
+    } 
+
+    .item:nth-of-type(2) {
+      background-color: #0f0;
+      flex-grow: 0.2;
+    }
+
+    .item:nth-of-type(3) {
+      background-color: #00f;
+      flex-grow: 0.3;
+    } /* 100px * 0.6 *  */
+
+    .item:nth-of-type(4) {
+      background-color: #0ff;
+    }
+
+    .item:nth-of-type(5) {
+      background-color: #ff0;
+    }
+
+    .item:nth-of-type(6) {
+      background-color: #f0f;
+    }
+
+    .item:nth-of-type(7) {
+      background-color: #333;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="item">1</div>
+    <div class="item">2</div>
+    <div class="item">3</div>
+  </div> 
+
+  <!-- 
+    每一个item的收缩比例是：base-size * flex-shrink
+    item1的收缩比例： 100px * 0.1
+    item2的收缩比例： 200px * 0.1
+    item3的收缩比例： 300px * 0.1
+
+    sum = 100px * 0.1 + 200px * 0.1 + 300px * 0.1 = 60px
+    item1的收缩距离：100px * 0.3 * (100px * 0.1) / sum = 16.66666px * 0.3
+    item2的收缩距离：100px * 0.3 * (200px * 0.1) / sum = 33.33333px * 0.3
+    item3的收缩距离：100px * 0.3 * (300px * 0.1) / sum = 50px * 0.3
+
+    如果所有items的flex-shrink之和 < 1，那么items并不能收缩到刚好在container之内
+    如果所有items的flex-grow之和 < 1，那么items并不能扩展到刚好填充container
+      -->
+
+  <!-- 
+    310
+    假设 sum = 110 * 1 + 120 * 2 + 130 * 3 + 140 * 4 + 150 * 5 + 160 * 6
+    item1的收缩比例是 110 * 1，需要收缩的距离 310 * (110 * 1) / sum
+    item2的收缩比例是 120 * 2，需要收缩的距离 310 * (120 * 2) / sum
+    item3的收缩比例是 130 * 3，需要收缩的距离 310 * (130 * 3) / sum
+    item4的收缩比例是 140 * 4，需要收缩的距离 310 * (140 * 4) / sum
+    item5的收缩比例是 150 * 5，需要收缩的距离 310 * (150 * 5) / sum
+    item6的收缩比例是 160 * 6，需要收缩的距离 310 * (160 * 6) / sum
+
+    收缩比例不是flex-shrink，收缩比例是flex-shrink * item的width
+   -->
+</body>
+</html>
+
+<!-- 
+----------------- flex container -------------------
+1. flex-flow是flex-direction || flex-wrap的简写
+
+2. flex-direction设置主轴（main axis）的方向
+
+3. flex-wrap设置是否能换行
+
+4. justify-content设置flex items在main axis上的对齐方式
+
+5. align-items设置flex items在cross axis上的对齐方式（一般是针对单行）
+
+6. align-content设置flex items在cross axis上的对齐方式（一般是针对多行）
+
+----------------- flex items -------------------
+7. flex是flex-grow flex-shrink? || flex-basis的简写
+
+8. flex-grow决定了flex items在main axis方向上如何扩展
+
+9. flex-shrink决定了flex items在main axis方向上如何收缩
+
+10. flex-basis设置flex items在main axis方向上的base size
+
+11. order设置flex items的排布顺序
+
+12. align-self允许flex items覆盖flex container设置的align-items
+
+-->

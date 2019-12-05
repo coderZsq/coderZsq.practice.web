@@ -2,3 +2,8 @@
 .select-bar {
   margin-top: 50rpx !important;
 }
+
+.id-info {
+  padding: 20rpx;
+  font-size: 30rpx;
+}

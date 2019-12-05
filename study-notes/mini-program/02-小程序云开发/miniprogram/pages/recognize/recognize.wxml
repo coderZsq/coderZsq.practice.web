@@ -2,3 +2,15 @@
 <c-tool-bar icon="/assets/add.png" title="{{categories[type]}}" my-class="select-bar" bindtap="selectClick" />
 <c-tool-bar icon="/assets/save.png" title="保存信息" my-class="select-bar" bgColor="#efb336" bindtap="saveClick" />
 <c-tool-bar icon="/assets/copy.png" title="复制信息" my-class="select-bar" bgColor="#d34b2c" bindtap="copyClick" />
+<block wx:if="{{idInfo}}">
+  <c-header title='身份证信息: ' />
+  <view class="id-info">
+    <view>姓名: {{idInfo.name}}</view>
+    <view>出生: {{idInfo.birth}}</view>
+    <view>性别: {{idInfo.sex}}</view>
+    <view>地址: {{idInfo.address}}</view>
+    <view>民族: {{idInfo.nation}}</view>
+    <view>身份证: {{idInfo.id}}</view>
+    <image src="{{idInfo.fileID}}" />
+  </view>
+</block>
