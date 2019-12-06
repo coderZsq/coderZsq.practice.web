@@ -1,0 +1,15 @@
+/* components/c-card-info/c-card-info.wxss */
+.id-info {
+  padding: 20rpx;
+  font-size: 30rpx;
+  background: #fff;
+}
+
+.id-info view {
+  margin-top: 12rpx;
+}
+
+.id-info image {
+  margin-top: 60rpx;
+  width: 100%;
+}

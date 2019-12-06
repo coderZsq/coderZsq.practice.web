@@ -1,2 +1,7 @@
-<!--components/c-header/c-header.wxml-->
-<view class="header">{{title}}</view>
+<!-- components/c-header/c-header.wxml -->
+<view class="header">
+  <text>{{title}}</text>
+  <view class="right-slot">
+    <slot />
+  </view>
+</view>

@@ -5,5 +5,9 @@
   line-height: 80rpx;
   border-left: 6rpx solid #36ab60;
   padding-left: 10rpx;
-  font-size: 34rpx
+  font-size: 34rpx;
+  
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }

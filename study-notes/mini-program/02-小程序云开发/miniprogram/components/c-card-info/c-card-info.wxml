@@ -1,0 +1,10 @@
+<!-- components/c-card-info/c-card-info.wxml -->
+<view class="id-info">
+  <view>姓名: {{info.name}}</view>
+  <view>出生: {{info.birth}}</view>
+  <view>性别: {{info.sex}}</view>
+  <view>地址: {{info.address}}</view>
+  <view>民族: {{info.nation}}</view>
+  <view>身份证: {{info.id}}</view>
+  <image wx:if="{{showImage}}" src="{{info.fileID}}" />
+</view>

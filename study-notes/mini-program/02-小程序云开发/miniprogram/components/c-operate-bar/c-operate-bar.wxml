@@ -1,0 +1,5 @@
+<!-- components/c-operate-bar/c-operate-bar.wxml -->
+<view class="operate-btn" hover-class="hover" hover-stay-time="50" style="background: {{bgColor}}">
+  <image src="{{icon}}" />
+  <text>{{title}}</text>
+</view>

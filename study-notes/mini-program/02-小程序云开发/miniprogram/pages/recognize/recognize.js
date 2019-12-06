@@ -24,8 +24,10 @@ Page({
       success: res => {
         const filePath = res.tempFilePaths[0]
 
-        wx.showLoading({
-          title: this.data.categories[this.data.type] + '识别中'
+        setTimeout(() => {
+          wx.showLoading({
+            title: this.data.categories[this.data.type] + '识别中'
+          }, 1000)
         })
 
         // 2. 将照片上传到云存储中
@@ -65,14 +67,14 @@ Page({
         type: this.data.type
       }
     }).then(res => {
-      this.data.type == 0 ? this.handleIDInfo(res) : this.handleBankInfo(res)
+      this.data.type == 0 ? this.handleIDInfo(res, fileID) : this.handleBankInfo(res)
       wx.hideLoading()
     })
   },
   handleBankInfo: function (res) {
     console.log(res)
   },
-  handleIDInfo: function (res) {
+  handleIDInfo: function (res, fileID) {
     if (!res.result.id) {
       this.deletePhoto(fileID)
       wx.showToast({

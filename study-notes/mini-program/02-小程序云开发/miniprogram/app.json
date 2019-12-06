@@ -2,7 +2,8 @@
   "pages": [
     "pages/home/home",
     "pages/profile/profile",
-    "pages/recognize/recognize"
+    "pages/recognize/recognize",
+    "pages/cardlist/cardlist"
   ],
   "window": {
     "backgroundColor": "#FFF",
@@ -13,7 +14,8 @@
   },
   "usingComponents": {
     "c-header": "/components/c-header/c-header",
-    "c-tool-bar": "/components/c-tool-bar/c-tool-bar"
+    "c-tool-bar": "/components/c-tool-bar/c-tool-bar",
+    "c-card-info": "/components/c-card-info/c-card-info"
   },
   "tabBar": {
     "list": [

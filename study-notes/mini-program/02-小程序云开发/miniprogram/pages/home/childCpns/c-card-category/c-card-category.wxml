@@ -1,6 +1,6 @@
 <!-- pages/home/childCpns/c-card-category/c-card-category.wxml -->
 <view class="card-category">
   <block wx:for="{{categories}}" wx:key="unique">
-    <c-card-item title="{{item.title}}" iconPath="{{item.icon}}" />
+    <c-card-item title="{{item.title}}" iconPath="{{item.icon}}" bind:tap="itemClick" data-index="{{index}}" />
   </block>
 </view>

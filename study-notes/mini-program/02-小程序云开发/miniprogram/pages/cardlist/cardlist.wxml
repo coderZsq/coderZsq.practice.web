@@ -1,0 +1,10 @@
+<!-- pages/cardlist/cardlist.wxml -->
+<block wx:for="{{list}}" wx:key="index">
+  <c-header title="身份证{{index + 1}}信息">
+    <view class="operate-bar">
+      <c-operate-bar title="复制" icon="/assets/copy.png" bind:tap="copyClick" data-index="{{index}}" />
+      <c-operate-bar title="删除" icon="/assets/delete.png" bgColor="#555" bind:tap="deleteClick" data-index="{{index}}" />
+    </view>
+  </c-header>
+  <c-card-info info="{{item}}" showImage="{{false}}" />
+</block>
