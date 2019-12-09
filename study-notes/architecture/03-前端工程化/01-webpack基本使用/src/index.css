@@ -1,0 +1,13 @@
+body {
+  background-color: red;
+  transform: translate(20);
+  background: url('../imgs/0.png');
+}
+
+.w {
+  font-size: 20px;
+}
+
+.h {
+  color: skyblue;
+}

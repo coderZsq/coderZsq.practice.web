@@ -2,9 +2,13 @@ const path = require('path')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const CleanWebpckPlugin = require('clean-webpack-plugin')
 const ExtractTextWebpackPlugin = require('extract-text-webpack-plugin')
+// const cssTextPlugin = new ExtractTextWebpackPlugin({ filename: 'css/index.css', disable: true })
+// const lessTestPlugin = new ExtractTextWebpackPlugin({ filename: 'css/index.less', disable: true })
 const cssTextPlugin = new ExtractTextWebpackPlugin({ filename: 'css/index.css' })
 const lessTestPlugin = new ExtractTextWebpackPlugin({ filename: 'css/index.less' })
-const MiniTextPlugin = require('mini-css-extract-plugin')
+// const MiniTextPlugin = require('mini-css-extract-plugin')
+const PurifyPlugin = require('purifycss-webpack')
+const glob = require('glob')
 
 module.exports = {
   entry: './src/index.js', // 入口文件
@@ -30,10 +34,12 @@ module.exports = {
         // ]
         // use: ExtractTextWebpackPlugin.extract({
         use: cssTextPlugin.extract({
+          // fallback: 'style-loader',
           use: [
             // { loader: 'style-loader' },
-            MiniTextPlugin.loader,
-            { loader: 'css-loader' }
+            // MiniTextPlugin.loader,
+            { loader: 'css-loader' },
+            { loader: 'postcss-loader' }
           ]
         })
       },
@@ -46,13 +52,21 @@ module.exports = {
         // ]
         // use: ExtractTextWebpackPlugin.extract({
         use: lessTestPlugin.extract({
+          // fallback: 'style-loader',
           use: [
             // { loader: 'style-loader' },
-            MiniTextPlugin.loader,
+            // MiniTextPlugin.loader,
             { loader: 'css-loader' },
+            { loader: 'postcss-loader' },
             { loader: 'less-loader' }
           ]
         })
+      },
+      {
+        test: /\.(png|jpg|gif|jpeg|svg|woff)$/,
+        use: [
+          { loader: 'url-loader', options: { limit: 10 * 10, outputPath: 'images' } }
+        ]
       }
     ]
   },
@@ -77,9 +91,13 @@ module.exports = {
     // new ExtractTextWebpackPlugin({
     //   filename: 'css/index.css' // 表示我们最终的css文件放置的位置
     // })
-    // cssTextPlugin,
-    // lessTestPlugin
-    new MiniTextPlugin({ filename: 'css/index.css' })
+    cssTextPlugin,
+    lessTestPlugin,
+    // new MiniTextPlugin({ filename: 'css/index.css' })
+    // 设置清除多余的样式我们需要把这个插件设置的对象放置在html以及extract插件之后
+    new PurifyPlugin({
+      paths: glob.sync(path.resolve('./src/*.html'))
+    })
   ],
   devServer: {
     contentBase: 'dist', // 表示我们参考的内容的基础目录
