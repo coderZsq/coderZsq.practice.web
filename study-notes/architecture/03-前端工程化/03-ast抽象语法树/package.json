@@ -1,0 +1,18 @@
+{
+  "name": "ast",
+  "version": "1.0.0",
+  "description": "",
+  "main": "ast1.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "babel-core": "^6.26.3",
+    "babel-types": "^6.26.0",
+    "escodegen": "^1.12.0",
+    "esprima": "^4.0.1",
+    "estraverse": "^4.3.0"
+  }
+}

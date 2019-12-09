@@ -4,5 +4,12 @@ import libtest from 'libtest.js'
 const fetch = require('fetch')
 const indexCss = require('./index.css')
 document.getElementById('app').innerHTML = coderzsq
+if (module.hot) {
+  console.log(122)
+  module.hot.accept('./a.js', function () {
+    const coderzsq = require('./a.js')
+    document.getElementById('app').innerHTML = coderzsq
+  })
+}
 console.log(coderzsq)
 console.log(fetch)

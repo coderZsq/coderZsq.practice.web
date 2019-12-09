@@ -75,6 +75,7 @@ module.exports = {
           beautify: true, // 文件是否压缩
           comments: false // 是否删除注释
         },
+        warnings: false, // 表示删除没用到的代码不输出警告
         compress: {
           // warnings: false, // 表示删除没用到的代码不输出警告
           drop_console: true, // 删除所有的console
@@ -82,7 +83,7 @@ module.exports = {
           reduce_vars: true // 提取出现多次但是没有定义成变量去引用的静态变量
         }
       }
-    })
+    }),
+    new webpack.HotModuleReplacementPlugin()
   ]
-
 }
