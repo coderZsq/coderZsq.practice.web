@@ -71,14 +71,36 @@
 /************************************************************************/
 /******/ ({
 
+/***/ "./src/index.css":
+/*!***********************!*\
+  !*** ./src/index.css ***!
+  \***********************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+eval("// removed by extract-text-webpack-plugin\n\n//# sourceURL=webpack:///./src/index.css?");
+
+/***/ }),
+
 /***/ "./src/index.js":
 /*!**********************!*\
   !*** ./src/index.js ***!
   \**********************/
 /*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+eval("const indexcss = __webpack_require__(/*! ./index.css */ \"./src/index.css\")\nconst testLess = __webpack_require__(/*! ./test.less */ \"./src/test.less\")\nconsole.log('Castie!')\n\n//# sourceURL=webpack:///./src/index.js?");
+
+/***/ }),
+
+/***/ "./src/test.less":
+/*!***********************!*\
+  !*** ./src/test.less ***!
+  \***********************/
+/*! no static exports found */
 /***/ (function(module, exports) {
 
-eval("console.log('Castie!')\n\n//# sourceURL=webpack:///./src/index.js?");
+eval("// removed by extract-text-webpack-plugin\n\n//# sourceURL=webpack:///./src/test.less?");
 
 /***/ })
 
