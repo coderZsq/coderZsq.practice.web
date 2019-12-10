@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+
+<body>
+  <div id="app"></div>
+  <template id="cpn">
+    <div>
+      <h2>我是根组件</h2>
+      <button @click='btnClick'></button>
+    </div>
+  </template>
+  <script src="js/vue.js"></script>
+  <script>
+    let app = new Vue({
+      el: '#app',
+      data: {
+
+      },
+      methods: {
+
+      },
+      components: {
+        cpn: {
+          template: '#cpn',
+          data() {
+            return {
+              cmessage: '我是子组件的信息'
+            }
+          },
+          methods: {
+            btnClick() {
+              // 如果子组件想要和父组件发送数据, 我们需要借助对应的$emit发送
+              // 第一个参数表示对应的函数的名称, 一般采用-来连接
+            }
+          }
+        }
+      }
+    })
+  </script>
+</body>
+
+</html>
