@@ -1,0 +1,16 @@
+(function (modules) {
+  function require(moduleId) {
+    var module = {
+      exports: {}
+    };
+    modules[moduleId].call(module.exports, module, module.exports, require);
+    return module.exports;
+  }
+  return require("<%-entryId%>");
+})({
+  <%for (let moduleId in modules) {%>
+    "<%-moduleId%>": (function (module, exports, require) {
+      eval(`<%-modules[moduleId]%>`);
+    }),
+  <%}%>
+});
