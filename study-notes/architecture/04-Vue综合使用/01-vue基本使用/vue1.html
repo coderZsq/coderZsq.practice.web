@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+
+<body>
+  <div id="app">
+    <span>{{message}}-{{info}}</span>
+    <span v-pre>{{message}}-{{info}}</span>
+    <h2 v-text="name"></h2>
+    <h2 v-html="name"></h2>
+  </div>
+  <script src="js/vue.js"></script>
+  <script>
+    const app = new Vue({
+      el: '#app',
+      data: {
+        message: 'Hello Castie!',
+        info: 'test',
+        name: '<a>Castie!</a>'
+      },
+      methods: {
+        add() {
+
+        }
+      },
+      computed: {
+        fullName() {
+
+        }
+      },
+    })
+  </script>
+</body>
+
+</html>

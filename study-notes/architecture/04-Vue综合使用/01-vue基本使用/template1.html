@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+
+<body>
+  <div id="app">
+    <cpn1></cpn1>
+  </div>
+  <div id="app2">
+    <cpn1></cpn1>
+  </div>
+  <script src="js/vue.js"></script>
+  <script>
+    // 1. 创建组件
+    const cpn1 = Vue.extend({
+      template: `
+        <div>
+          <h2>我是子组件</h2>
+          <span>我是测试组件</span>
+        </div>
+      `
+    })
+    // 2. 注册组件
+    Vue.component('cpn1', cpn1)
+    let app = new Vue({
+      el: '#app',
+      data: {
+
+      },
+      methods: {
+
+      }
+    })
+    let app2 = new Vue({
+      el: '#app2',
+      data: {
+
+      },
+      methods: {
+
+      }
+    })
+  </script>
+</body>
+
+</html>
