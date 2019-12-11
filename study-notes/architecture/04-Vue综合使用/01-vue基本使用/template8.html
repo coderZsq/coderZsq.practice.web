@@ -9,11 +9,16 @@
 </head>
 
 <body>
-  <div id="app"></div>
+  <div id="app">
+    <cpn @receive-data="receiveData"></cpn>
+    <cpn></cpn>
+    <cpn ref="aaa"></cpn>
+    <button @click="btnClick">获取子组件</button>
+  </div>
   <template id="cpn">
     <div>
       <h2>我是根组件</h2>
-      <button @click='btnClick'></button>
+      <button @click='btnClick'>点击</button>
     </div>
   </template>
   <script src="js/vue.js"></script>
@@ -24,7 +29,14 @@
 
       },
       methods: {
-
+        receiveData(data) {
+          console.log(data)
+        },
+        btnClick() {
+          // 获取子组件
+          console.log(this.$children)
+          console.log(this.$refs.aaa)
+        }
       },
       components: {
         cpn: {
@@ -37,7 +49,11 @@
           methods: {
             btnClick() {
               // 如果子组件想要和父组件发送数据, 我们需要借助对应的$emit发送
-              // 第一个参数表示对应的函数的名称, 一般采用-来连接
+              // 第一个参数表示对应的函数的名称, 一般采用-来连接, 第二个参数表示我们需要发送的数据
+              this.$emit('receive-data', this.cmessage)
+
+              console.log(this.$parent)
+              console.log(this.$root)
             }
           }
         }
