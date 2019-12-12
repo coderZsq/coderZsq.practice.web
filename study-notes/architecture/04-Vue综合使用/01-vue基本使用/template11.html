@@ -11,13 +11,25 @@
 <body>
   <div id="app">
     <cpn></cpn>
+    <cpn>
+      <template scope="slot">
+        <!-- <span>{{slot.data}}</span> -->
+        <span v-for="item in slot.data">{{item}} *</span>
+      </template>
+    </cpn>
+    <cpn>
+      <template scope="slot">
+        <!-- <span>{{slot.data}}</span> -->
+        <span v-for="item in slot.data">{{item}} -</span>
+      </template>
+    </cpn>
   </div>
   <template id="cpn">
     <div>
       <h2>我是子组件</h2>
       <slot :data="cmusics">
         <ul>
-          <li v-for="item in cmusics">item</li>
+          <li v-for="item in cmusics">{{item}}</li>
         </ul>
       </slot>
     </div>
