@@ -76,7 +76,13 @@ export default {
               password: _this.ruleForm.pass
             })
             .then(response => {
-              console.log(response.data);
+              if (response.data && response.data.length > 0) {
+                // 存储数据
+                _this.$store.commit("GET_USER", response.data);
+
+                // 跳转界面
+                _this.$router.push({ path: "/home" });
+              }
             });
         } else {
           console.log("error submit!!");
