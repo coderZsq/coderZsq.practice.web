@@ -26,41 +26,6 @@
 export default {
   name: "Login",
   data() {
-    var checkAge = (rule, value, callback) => {
-      if (!value) {
-        return callback(new Error("年龄不能为空"));
-      }
-      setTimeout(() => {
-        if (!Number.isInteger(value)) {
-          callback(new Error("请输入数字值"));
-        } else {
-          if (value < 18) {
-            callback(new Error("必须年满18岁"));
-          } else {
-            callback();
-          }
-        }
-      }, 1000);
-    };
-    var validatePass = (rule, value, callback) => {
-      if (value === "") {
-        callback(new Error("请输入密码"));
-      } else {
-        if (this.ruleForm.checkPass !== "") {
-          this.$refs.ruleForm.validateField("checkPass");
-        }
-        callback();
-      }
-    };
-    var validatePass2 = (rule, value, callback) => {
-      if (value === "") {
-        callback(new Error("请再次输入密码"));
-      } else if (value !== this.ruleForm.pass) {
-        callback(new Error("两次输入密码不一致!"));
-      } else {
-        callback();
-      }
-    };
     return {
       ruleForm: {
         username: "",
@@ -104,7 +69,15 @@ export default {
            * 如果验证成功, 我们需要进行对应的用户名获取, 然后发送给后端
            * 进行验证, 如果成功, 我们进行对应的页面跳转
            */
-          // this.axios.post()
+          const _this = this;
+          this.axios
+            .post("api/postData", {
+              username: _this.ruleForm.username,
+              password: _this.ruleForm.pass
+            })
+            .then(response => {
+              console.log(response.data);
+            });
         } else {
           console.log("error submit!!");
           return false;
