@@ -26,4 +26,15 @@ router.post('/postData', function (req, res, next) {
   })
 })
 
+// 处理获取数据列表的请求
+router.get('/getlist', function (req, res, next) {
+  connection.query('select * from login', function (err, data) {
+    if (err) {
+      throw err;
+    } else {
+      res.send(data)
+    }
+  })
+})
+
 module.exports = router;
