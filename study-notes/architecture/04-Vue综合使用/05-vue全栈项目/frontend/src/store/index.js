@@ -10,6 +10,11 @@ const store = new Vuex.Store({
     userInfo: JSON.parse(localStorage.getItem('userinfo')),
     userlist: [] // 存储用户列表数据
   },
+  getters: {
+    agelist(state) {
+      return state.userlist.filter(user => user.age > 18)
+    }
+  },
   mutations: {
     GET_USER(state, userInfo) {
       // 我们在初始化的时候, 就赋值数据, 但是这个数据记录我们需要在localstorage中记录
