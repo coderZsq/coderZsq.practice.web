@@ -9,6 +9,22 @@
 </head>
 
 <body>
+  <div id="app">
+    <h2>{{message}}</h2>
+    <h2>{{info.news}}</h2>
+  </div>
+  <script src="vue.js"></script>
+  <script>
+    const app = new Vue({
+      el: '#app',
+      data: {
+        message: '我是测试消息',
+        info: {
+          news: '我是新闻'
+        }
+      }
+    })
+  </script>
   <!-- mvvm -->
   <!-- 1. Object.defineProperty -->
   <!-- 2. 数据劫持 -->

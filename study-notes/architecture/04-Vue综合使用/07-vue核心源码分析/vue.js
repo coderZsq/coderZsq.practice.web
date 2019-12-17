@@ -16,7 +16,7 @@ function Vue(options) {
     })
   }
   // 编译模板, 设置一个对象来编译对应的模板
-  return Compile(options.el, this)
+  new Compile(options.el, this)
 }
 
 function Compile(el, vm) {
@@ -34,13 +34,13 @@ function Compile(el, vm) {
   // 所以我们需要使用递归, 那么我们可以把对应的步骤设置为一个函数, 然后递归调用
   replace(fragment)
   function replace(fragment) {
-    Array.from(fragment).forEach(function (node) {
+    Array.from(fragment.childNodes).forEach(function (node) {
       // 3.1 获取对应的节点的内容, 然后替换
       let text = node.textContent
       // 3.2 设置正则匹配
       let reg = /\{\{(.*)\}\}/
       // 如果我们的节点是文本节点, 而且可以匹配, 我们就需要使用对应的值进行替换
-      if (node.nodeType == 3 && reg.test(test)) {
+      if (node.nodeType == 3 && reg.test(text)) {
         // 我们替换对应的内容
         let arr = RegExp.$1.split('.') // info.news
         let val = vm
@@ -49,10 +49,10 @@ function Compile(el, vm) {
         })
         // 我们设置对应的数据修改, 所以我们可以在这里设置对应的观察者
         new Watcher(vm, RegExp.$1, function (newVal) {
-          text.replace(/\{\{(.*)\}\}/, newVal)
+          node.textContent = text.replace(/\{\{(.*)\}\}/, newVal)
         })
         // 我们使用对应的text去替换
-        text.replace(/\{\{(.*)\}\}/, val)
+        node.textContent = text.replace(/\{\{(.*)\}\}/, val)
       }
       // 如果我们的node还有子节点, 我们需要重新继续替换
       if (node.childNodes) {
@@ -71,7 +71,7 @@ function Observe(data) {
   // 使用对应方法来劫持data中的数据
   for (let key in data) {
     let val = data[key]
-    observe(data)
+    observe(val)
     // 设置对应的方法来劫持每一个key
     Object.defineProperty(data, key, {
       get() {
