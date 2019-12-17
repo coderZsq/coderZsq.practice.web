@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="container"></div>
+    <input id="website" />
+    <button id="addBtn">添加</button>
+    <script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
+    <script>
+        /*当点击的时候,设置出一个恶意连接,如果我们点击这个恶意连接,就可以跳转到一个恶意网站*/
+        $('#addBtn').click(function () {
+            let website = $('#website').val();
+            $('#container').html(`<a href="${website}">跳转</a>`)
+        })
+
+    </script>
+</body>
+
+</html>
