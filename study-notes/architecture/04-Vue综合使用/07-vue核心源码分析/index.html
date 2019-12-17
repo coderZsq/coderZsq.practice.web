@@ -12,6 +12,8 @@
   <div id="app">
     <h2>{{message}}</h2>
     <h2>{{info.news}}</h2>
+    <input type="text" v-model="message" />{{message}}
+    <h2>{{getData}}</h2>
   </div>
   <script src="vue.js"></script>
   <script>
@@ -21,6 +23,11 @@
         message: '我是测试消息',
         info: {
           news: '我是新闻'
+        }
+      },
+      computed: {
+        getData() {
+          return 'data test'
         }
       }
     })

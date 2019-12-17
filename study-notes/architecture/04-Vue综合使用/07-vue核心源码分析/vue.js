@@ -15,8 +15,25 @@ function Vue(options) {
       }
     })
   }
+
+  // 处理computed中的属性
+  initComputed.call(this)
+
   // 编译模板, 设置一个对象来编译对应的模板
   new Compile(options.el, this)
+}
+
+function initComputed() {
+  let vm = this
+  let computeds = this.$options.computed
+  Object.keys(computeds).forEach(function (key) {
+    Object.defineProperty(vm, key, {
+      get: typeof computeds[key] == 'function' ? computeds[key] : computeds[key].get,
+      set() {
+
+      }
+    })
+  })
 }
 
 function Compile(el, vm) {
@@ -55,6 +72,28 @@ function Compile(el, vm) {
         node.textContent = text.replace(/\{\{(.*)\}\}/, val)
       }
       // 如果我们的node还有子节点, 我们需要重新继续替换
+      if (node.nodeType == 1) {
+        // 获取对应的属性, 然后遍历属性, 找到对应v-model
+        Array.from(node.attributes).forEach(function (attr) {
+          let name = attr.name // v-model
+          let exp = attr.value // message
+          // 设置赋值
+          if (name.indexOf('v-') == 0) { // 表示匹配到v-属性, 我们这里就表示就是v-model
+            // 设置对应的值
+            node.value = vm[exp]
+          }
+          // 设置一个订阅者我们用来当监听到数据发生改变后, 让对应的界面发生改变
+          new Watcher(vm, exp, function (newValue) {
+            node.value = newValue
+          })
+
+          // 监听对应的事件, 然后设置对应的值
+          node.addEventListener('input', function (event) {
+            let newValue = event.target.value
+            vm[exp] = newValue
+          })
+        })
+      }
       if (node.childNodes) {
         // 重新调用这个方法
         replace(node)
