@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+
+<body>
+  <!-- mvvm -->
+  <!-- 1. Object.defineProperty -->
+  <!-- 2. 数据劫持 -->
+  <!-- 3. 发布订阅模式 -->
+  <script>
+    // 设置一个对象
+    let obj = {}
+    // 设置这个对象的属性
+    Object.defineProperty(obj, 'name', {
+      configurable: true,
+      // writable: true,
+      enumerable: true,
+      // value: 'Castie!',  
+      // get表示当我们获取对应的name属性的值的时候, 就会调用
+      get() {
+
+      },
+      // 表示当我们给name设置值的时候就会调用
+      set(value) {
+
+      }
+    })
+    // delete obj.name
+    console.log(obj.name)
+    for (let key in obj) {
+      console.log(key)
+    }
+  </script>
+</body>
+
+</html>
