@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ember</title>
+    <!--顺序不能颠倒-->
+    <script src="http://cdn.bootcss.com/jquery/2.0.0/jquery.js"></script>
+    <script src="http://cdn.bootcss.com/ember.js/2.1.0-beta.2/ember.debug.js"></script>
+</head>
+<body>
+<script>
+    Parent = Ember.Object.extend();
+   //使用reopenClass方法添加新的static属性,和方法
+    Parent.reopenClass({
+        isPerson:true
+    });
+
+    Parent.reopen({
+        isPerson:false
+    })
+    console.log(Parent.isPerson);
+    console.log(Parent.create().get('isPerson'));
+
+</script>
+
+</body>
+</html>

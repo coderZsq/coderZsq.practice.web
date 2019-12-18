@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ember</title>
+    <!--顺序不能颠倒-->
+    <script src="http://cdn.bootcss.com/jquery/2.0.0/jquery.js"></script>
+    <script src="http://cdn.bootcss.com/ember.js/2.1.0-beta.2/ember.debug.js"></script>
+</head>
+<body>
+<script>
+    Parent = Ember.Object.extend({
+        name: '小码哥',
+        fun1() {
+            console.log("The name is " + this.name);
+        },
+        common() {
+            console.log("common method...");
+        }
+    });
+    //使用extend()方法添加新的属性和方法
+   Child1= Parent.extend({
+           //给Parent 添加新的属性
+       pwd:'123456',
+           //给Parent 添加新的方法
+       fun2(){
+           console.log("the pwd is" + this.pwd);
+       },
+       //重新父亲的common方法
+       common(){
+           this._super();
+       }
+   });
+    var c1=Child1.create();
+    console.log("name=" + c1.get('name') + ',pwd=' + c1.get('pwd'));
+    c1.fun1();
+    c1.fun2();
+    c1.common();
+    console.log("---------");
+    //使用reopen方法添加新的属性和方法
+    Parent.reopen({
+        //给parent添加新的属性
+        pwd:'12345',
+        //给parent添加新的方法
+        fun2(){
+            console.log("the pwd is" + this.pwd);
+        },
+        //从写本身的common方法
+        common(){
+            console.log("override common method by reopen method...");
+        }
+    });
+
+    var p=Parent.create();
+    console.log("name=" + c1.get('name') + ',pwd=' + c1.get('pwd'));
+    p.fun1();
+    p.fun2();
+    p.common();
+    console.log("---------------");
+
+
+</script>
+
+</body>
+</html>

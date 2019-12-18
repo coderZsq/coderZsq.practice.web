@@ -1,0 +1,10 @@
+{
+  "version": 3,
+  "file": "03-变量和作用域.js",
+  "sourceRoot": "",
+  "sources": [
+    "03-变量和作用域.coffee"
+  ],
+  "names": [],
+  "mappings": ";AACA;AAAA,MAAA;;EAAA,IAAA,GAAO;;EACP,IAAA,GAAO;;EACP,IAAA,GAAO;;EACP,OAAO,CAAC,GAAR,CAAY,IAAZ;AAHA"
+}

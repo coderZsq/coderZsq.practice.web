@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>01-初体验</title>
+</head>
+<body>
+<!--<p id="op">我是段落</p>-->
+
+<!--
+data-bind 绑定一个数据
+text 是绑定的类型
+一般文本级别的用text绑定就可以了
+input 用value绑定
+
+-->
+<p data-bind="text: title"></p>
+
+<script src="js/knockout-debug.js"></script>
+<script>
+//    var op = document.getElementById('op');
+//
+//    op.innerHTML = '哈哈哈';
+
+// 数据和界面分离 以后我们关系数据怎么处理就可以了,不需要再关心界面怎么处理
+
+    // 1.创建模型/对象
+    var viewModel = {
+        title:'我是段落1213'
+    };
+    // 2.激活knockout
+    ko.applyBindings(viewModel);
+
+</script>
+</body>
+</html>

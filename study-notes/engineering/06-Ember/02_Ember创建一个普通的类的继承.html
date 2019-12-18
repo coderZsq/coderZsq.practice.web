@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ember</title>
+    <!--顺序不能颠倒-->
+    <script src="http://cdn.bootcss.com/jquery/2.0.0/jquery.js"></script>
+    <script src="http://cdn.bootcss.com/ember.js/2.1.0-beta.2/ember.debug.js"></script>
+</head>
+<body>
+<script>
+    //定义一个person类
+    Person=Ember.Object.extend({
+        //Person类里面创建一个方法
+        say(thing){
+            alert(thing);
+        },
+        walk(str){
+            console.log(str);
+        }
+    });
+    //给Person创建一个子类,名称叫Soldier
+     Soldier=Person.extend({
+         sleep(str2){
+             alert(str2);
+         },
+         say(thing2){
+             alert("这个是子类中say方法打印");
+             //代表调用和父类相同方法名称的方法
+             this._super(thing2+'sir!');
+         }
+     });
+
+    var soldier=Soldier.create({});
+   // soldier.sleep("波波想休息");
+    soldier.say("波波在子类中说了话");
+
+    //获得类的实例对象
+    //调用create方法就能获得该类的实例
+    var person=Person.create({});
+   // person.say("波波说了,新年好!");
+   // person.walk('步步高升');
+</script>
+<!--
+   1 知道如何去定义一个类
+   2 知道如何去创建类的实例
+   3 知道如何创建方法
+   4 知道如何调用方法
+-->
+</body>
+</html>

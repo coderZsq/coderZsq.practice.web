@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>05-click-传参.html</title>
+</head>
+<body>
+<button data-bind="click: function() { viewModel.move(event,10) }">点我啊</button>
+<br>
+<span data-bind="text: count"></span>
+<script src="js/knockout-debug.js"></script>
+<script>
+    // 1.创建模型
+    var viewModel = {
+        // ko.observable(1) 动态监听 就是模型里面的值修改了界面上值就会随着修改
+        count:ko.observable(0),
+        move:function (event,reg) {
+            console.log(event);
+            alert(reg);
+        }
+    };
+    // 2.激活knockout
+    ko.applyBindings(viewModel);
+
+</script>
+</body>
+</html>

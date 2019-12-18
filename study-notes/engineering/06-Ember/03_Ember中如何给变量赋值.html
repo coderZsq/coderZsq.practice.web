@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ember</title>
+    <!--顺序不能颠倒-->
+    <script src="http://cdn.bootcss.com/jquery/2.0.0/jquery.js"></script>
+    <script src="http://cdn.bootcss.com/ember.js/2.1.0-beta.2/ember.debug.js"></script>
+</head>
+<body>
+<script>
+    //定义一个person类
+    Person=Ember.Object.extend({
+        init(){
+
+        },
+        //Person类里面创建一个方法
+        say(thing){
+
+            var name=this.get('haha');
+            alert(thing+name);
+        }
+    });
+    //获得类的实例对象
+    //调用create方法就能获得该类的实例
+    //一般情况下,如果某个变量需要在别处使用,要在create方法中以键值对的形式赋值,否则获取不到
+    var person=Person.create({
+        haha:'小码哥'
+    });
+    person.say("波波说了,新年好!");
+
+</script>
+
+</body>
+</html>

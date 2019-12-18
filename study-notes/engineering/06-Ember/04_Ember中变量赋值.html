@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ember</title>
+    <!--顺序不能颠倒-->
+    <script src="http://cdn.bootcss.com/jquery/2.0.0/jquery.js"></script>
+    <script src="http://cdn.bootcss.com/ember.js/2.1.0-beta.2/ember.debug.js"></script>
+</head>
+<body>
+<script>
+    //定义一个person类
+    Person=Ember.Object.extend({
+        name:'小码哥'
+
+    });
+    //一个类初始化完毕其实就是创建了实例对象
+    var person=Person.create({});
+    console.log("my name is:"+person.get('name'));
+    person.set('name','小码哥越来越牛逼了');
+    console.log("my name is:"+person.get('name'));
+    console.log("----------------------------");
+    var person2=Person.create({});
+    console.log("my name is:" + person2.name);
+    person2.name="小码哥确实越来越强大了";
+    console.log("my name is:" + person2.name);
+
+</script>
+
+</body>
+</html>

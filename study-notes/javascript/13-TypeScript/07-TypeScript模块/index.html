@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body id="container">
+
+<!--引入 BMap模块 -->
+<script src="02-TypeScript中的模块.js"></script>
+
+<script>
+    /**1.创建地图对象*/
+    var map=new BMap.Map('#container');
+
+    /**2.创建坐标点对象*/
+    var point=new BMap.Point(116.1232323,39.02343);
+
+    /**3.给百度地图设置中心坐标点*/
+    map.centerAndZoom(point);
+
+</script>
+</body>
+</html>

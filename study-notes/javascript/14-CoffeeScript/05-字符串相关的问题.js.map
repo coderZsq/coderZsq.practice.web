@@ -1,0 +1,10 @@
+{
+  "version": 3,
+  "file": "05-字符串相关的问题.js",
+  "sourceRoot": "",
+  "sources": [
+    "05-字符串相关的问题.coffee"
+  ],
+  "names": [],
+  "mappings": ";AAOA;AAAA,MAAA;;EAAA,IAAA,GAAO;;EAEP,GAAA,GAAM,SAAA,GAAU;;EAGhB,OAAO,CAAC,GAAR,CAAY,GAAZ;AALA"
+}

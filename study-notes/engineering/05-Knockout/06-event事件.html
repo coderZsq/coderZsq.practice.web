@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>06-event事件</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        div{
+            width: 100px;
+            height: 100px;
+            background-color: red;
+        }
+    </style>
+</head>
+<body>
+
+<!--
+事件
+事件传递出参数
+<div data-bind="event: { mouseover: function() { viewModel.move(1, 'param2') }}"></div>
+-->
+<!--<div data-bind="event: { mouseover: move}"></div>-->
+<div data-bind="event: { mouseover: function() { viewModel.move(1, 'param2') }}"></div>
+
+<script src="js/knockout-debug.js"></script>
+<script>
+    // 1.创建模型
+    var viewModel = {
+        move:function (str,str1) {
+           console.log(str,str1);
+        }
+    }
+
+    // 2.激活knockout
+    ko.applyBindings(viewModel);
+
+</script>
+</body>
+</html>

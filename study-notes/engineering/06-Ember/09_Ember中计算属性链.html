@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ember</title>
+    <!--顺序不能颠倒-->
+    <script src="http://cdn.bootcss.com/jquery/2.0.0/jquery.js"></script>
+    <script src="http://cdn.bootcss.com/ember.js/2.1.0-beta.2/ember.debug.js"></script>
+</head>
+<body>
+<script>
+    Person = Ember.Object.extend({
+        firstName:null,
+        lastName:null,
+        //fullName fullName就是一个计算属性,也就是说,它是通过计算得来的
+        fullName:Ember.computed('firstName','lastName',function () {
+            return this.get('firstName')+','+this.get('lastName');
+        }),
+        description:Ember.computed('firstName,','age','county',function () {
+            return this.get('fullName')+'age'+this.get('age')+'county'+this.get('county');
+        })
+    });
+
+    //实例化并同时传入参数
+    var piter=Person.create({
+        firstName:'小',
+        lastName:'码哥',
+        age:3,
+        county:'china'
+    });
+    console.log(piter.get('description'));
+</script>
+
+</body>
+</html>

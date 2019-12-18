@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>03-input-动态监听</title>
+</head>
+<body>
+<!--
+data-bind 绑定一个数据
+text 是绑定的类型
+一般文本级别的用text绑定就可以了
+input 用value绑定
+
+如果想要html绑定只需要在绑定的时候 用html就可以了
+<p data-bind="html: title"></p>
+
+-->
+<!--<p data-bind="html: title"></p>-->
+
+<!--
+MVVM设计模式
+
+要想让模型时时更新只需要设置更新方式
+valueUpdate:'afterkeydown'
+afterkeydown 当键盘按下的时候就更新
+-->
+<input type="text" data-bind="value: title,,valueUpdate:'afterkeydown'">
+
+<p data-bind="text: title"></p>
+
+<script src="js/knockout-debug.js"></script>
+<script>
+    // 数据和界面分离 以后我们关系数据怎么处理就可以了,不需要再关心界面怎么处理
+
+    // 1.创建模型/对象
+    var viewModel = {
+        title:ko.observable('haha')
+    };
+    // 2.激活knockout
+    ko.applyBindings(viewModel);
+</script>
+</body>
+</html>

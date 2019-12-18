@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>09-CSS类名绑定</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .current{
+            background-color: red;
+        }
+        .fz50{
+            font-size: 50px;
+        }
+    </style>
+</head>
+<body>
+
+<!--<div class="current fz50">我是MT</div>-->
+<!--
+类名接受一个对象
+{类名1:布尔值,类名2:布尔值}
+如果布尔值是true就代表添加类名
+如果为false 就代表删除类名
+-->
+<button data-bind="click: move">点击</button>
+<div data-bind="css:{current:isShow,fz50:isShow}">我是MT</div>
+
+<script src="js/knockout-debug.js"></script>
+<script>
+    // 1.创建模型
+    var viewModel = {
+        isShow:ko.observable(true),
+        move:function () {
+            var show = this.isShow();
+            this.isShow(!show);
+        }
+    };
+
+    // 2.激活
+    ko.applyBindings(viewModel);
+
+</script>
+</body>
+</html>

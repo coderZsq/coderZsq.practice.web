@@ -1,0 +1,10 @@
+{
+  "version": 3,
+  "file": "07-区间.js",
+  "sourceRoot": "",
+  "sources": [
+    "07-区间.coffee"
+  ],
+  "names": [],
+  "mappings": ";AAEA;AAAA,MAAA;;EAAA,KAAA,GAAQ;;EAKR,MAAA,GAAS;;EAIT,GAAA,GAAM;;EACN,GAAA,GAAM,GAAI;;EAKV,yCAAY,CAAC,GAAD,EAAK,GAAL,EAAS,GAAT,EAAa,GAAb,CAAZ,IAAY;;EAEZ,OAAO,CAAC,GAAR,CAAY,GAAZ;AAjBA"
+}

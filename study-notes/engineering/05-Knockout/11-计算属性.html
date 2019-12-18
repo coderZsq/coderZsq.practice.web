@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>11-计算属性</title>
+</head>
+<body>
+<p data-bind="text: firstName"></p>
+<p data-bind="text: lastName"></p>
+
+<p data-bind="text: fullName"></p>
+
+<script src="js/knockout-debug.js"></script>
+<script>
+    // 1.创建模型
+    function viewModel() {
+        this.firstName = ko.observable('zhang');
+        this.lastName = ko.observable('san');
+
+        // 计算属性 就是一个函数 具有特殊功能
+        /**
+         * computed 接收2个参数
+         * 第一个参数是函数
+         * 第二个参数是当前对象 this
+         */
+        this.fullName = ko.computed(function () {
+
+
+            return this.firstName() + '---' + this.lastName();
+        },this);
+    }
+
+    // 2.激活
+    ko.applyBindings(new viewModel());
+</script>
+</body>
+</html>

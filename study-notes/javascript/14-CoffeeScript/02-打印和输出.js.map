@@ -1,0 +1,10 @@
+{
+  "version": 3,
+  "file": "02-打印和输出.js",
+  "sourceRoot": "",
+  "sources": [
+    "02-打印和输出.coffee"
+  ],
+  "names": [],
+  "mappings": ";AAAA;AAAA,MAAA;;EAAA,OAAO,CAAC,GAAR,CAAY,SAAZ;;EAEA,GAAA,GAAM;;EAEN,OAAO,CAAC,GAAR,CAAY,GAAZ;AAJA"
+}

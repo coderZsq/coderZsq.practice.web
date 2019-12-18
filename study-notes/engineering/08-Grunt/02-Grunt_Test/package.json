@@ -1,0 +1,9 @@
+{
+  "name": "test",
+  "version": "1.0.0",
+  "dependencies": {},
+  "devDependencies": {
+    "grunt": "^1.0.2",
+    "grunt-contrib-concat": "^1.0.1"
+  }
+}

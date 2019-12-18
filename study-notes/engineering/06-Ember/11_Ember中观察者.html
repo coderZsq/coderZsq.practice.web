@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ember</title>
+    <!--顺序不能颠倒-->
+    <script src="http://cdn.bootcss.com/jquery/2.0.0/jquery.js"></script>
+    <script src="http://cdn.bootcss.com/ember.js/2.1.0-beta.2/ember.debug.js"></script>
+</head>
+<body>
+<script>
+    Person = Ember.Object.extend({
+        firstName:null,
+        lastName:null,
+        //fullName fullName就是一个计算属性,也就是说,它是通过计算得来的
+        fullName:Ember.computed('firstName','lastName',function () {
+            return this.get('firstName')+','+this.get('lastName');
+        }),
+        //当fullName的值被改变的时候触发
+        fullNameChange:Ember.observer('fullName',function () {
+            console.log("the fullName is change by caller");
+        })
+
+    });
+
+    //实例化并同时传入参数
+    var piter=Person.create({
+        firstName:'小',
+        lastName:'码哥'
+    });
+    console.log('fullName=' + piter.get('fullName'));
+    //fullName是依赖于fisrtName和lastname,这里改变firstName的值,计算属性会制动更新
+    //也就是说改变firstName的值就会触发观察者
+    piter.set('firstName','广州小');
+    console.log('fullName=' + piter.get('fullName'));
+
+</script>
+
+</body>
+</html>

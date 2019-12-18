@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>if绑定</title>
+</head>
+<body>
+<button data-bind="click: move">显示/隐藏</button>
+<p data-bind="if: show">你能看到我吗?</p>
+
+<script src="js/knockout-debug.js"></script>
+<script>
+    // 1.创建模型
+    var viewModel = {
+        // false 代表不显示
+        // true代表显示
+        show:ko.observable(true),
+        move:function () {
+            // 取出值
+            var isShow = this.show();
+            this.show(!isShow);
+        }
+    };
+    // 2.激活
+    ko.applyBindings(viewModel);
+</script>
+</body>
+</html>

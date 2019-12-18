@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>10-样式绑定</title>
+</head>
+<body>
+<div data-bind="style:{background: 1000 < 1000 ? 'red' : 'blue' }">我是MT</div>
+<script src="js/knockout-debug.js"></script>
+<script>
+    // 1创建模型
+    var viewModel = {
+
+    };
+
+    // 2.激活
+    ko.applyBindings(viewModel);
+</script>
+</body>
+</html>

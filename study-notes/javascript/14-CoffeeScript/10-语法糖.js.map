@@ -1,0 +1,10 @@
+{
+  "version": 3,
+  "file": "10-语法糖.js",
+  "sourceRoot": "",
+  "sources": [
+    "10-语法糖.coffee"
+  ],
+  "names": [],
+  "mappings": ";AACA;AAAA,MAAA;;EAAA,IAAA,GAAO;;EAKP,OAAO,CAAC,GAAR,CAAY,CAAA,KAAK,CAAjB;;EAEA,OAAO,CAAC,GAAR,CAAY,CAAA,KAAO,CAAnB;;EAEA,OAAO,CAAC,GAAR,CAAY,CAAA,KAAK,CAAL,IAAW,CAAA,KAAK,CAA5B;;EAEA,OAAO,CAAC,GAAR,CAAY,CAAA,KAAK,CAAL,IAAU,CAAA,KAAK,CAA3B;AAXA"
+}

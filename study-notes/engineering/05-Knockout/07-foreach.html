@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>07-foreach</title>
+</head>
+<body>
+
+<ul data-bind="foreach: arr">
+    <li data-bind="text: score"></li>
+</ul>
+<script src="js/knockout-debug.js"></script>
+<script>
+    // 1.创建模型
+    var viewModel = {
+        arr:[
+            {score:90},
+            {score:80},
+            {score:70},
+            {score:60}
+        ]
+    };
+
+    // 2激活
+    ko.applyBindings(viewModel);
+
+</script>
+</body>
+</html>
