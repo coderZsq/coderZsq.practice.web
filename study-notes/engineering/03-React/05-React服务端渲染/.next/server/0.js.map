@@ -1,0 +1,1 @@
+{"version":3,"file":"0.js","sources":["webpack:///./components/one.js"],"sourcesContent":["export default () => <div>Lazy Loading Component</div>"],"mappings":";;;;;;;;;;;;;;;;;AAAA;AAAA;AAAA;AAAA;AAAA;AAAA;AAAA;;;;A","sourceRoot":""}
