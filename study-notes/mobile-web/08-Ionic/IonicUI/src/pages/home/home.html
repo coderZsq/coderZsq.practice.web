@@ -1,0 +1,65 @@
+<!--首页的头部布局-->
+<ion-header>
+  <!--首页导航栏-->
+  <ion-toolbar color="primary">
+    <!--左边-->
+    <ion-buttons start>
+      <button ion-button icon-only color="light">
+        <ion-icon name="more"></ion-icon>
+      </button>
+    </ion-buttons>
+    <!--中间-->
+    <ion-title>首页</ion-title>
+    <!--右边-->
+    <ion-buttons end>
+      <button ion-button icon-only color="light">
+        <ion-icon name="person-add"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content style="background-color: #F5FCFF">
+  <h2>1.buttons 组件</h2>
+  <button>button</button><br>
+  <button ion-button>button</button>
+  <button ion-button color="light">button</button>
+  <button ion-button color="danger">button</button>
+
+  <button ion-item>设计</button>
+  <div ion-item>钱包</div>
+  <button ion-button>button</button>
+
+  <h2>2.Icons</h2>
+  <ion-icon name="contact"></ion-icon>
+  <ion-icon name="contact" isActive="false"></ion-icon> <!-- isActive 默认是true-->
+  <ion-icon name="home" isActive="false" style="font-size: 30px;"></ion-icon> <!-- 设计字体图标大小 -->
+
+  <h2>3.img</h2>
+  <!--加载assets中的图片-->
+  <img src="assets/imgs/advance-card-map-mario.png" alt="">
+
+  <h2>4.inputs</h2>
+  <ion-item>
+    <ion-label floating>Username</ion-label>
+    <ion-input type="text"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label fixed>Password</ion-label>
+    <ion-input type="password"></ion-input>
+  </ion-item>
+
+  <h2>5.cards</h2>
+  <!--card  header  and  content-->
+  <ion-card>
+     <ion-card-header>
+       Ion-Card-Header
+     </ion-card-header>
+     <ion-card-content>
+       <ion-card-title>content tile</ion-card-title>
+       <p>The British use the term "header", but the American term "head-shot" the English simply</p>
+     </ion-card-content>
+  </ion-card>
+
+</ion-content>

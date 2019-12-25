@@ -1,0 +1,49 @@
+<!--首页的头部布局-->
+<ion-header>
+  <!--首页导航栏-->
+  <ion-toolbar color="primary">
+    <!--左边-->
+    <ion-buttons start>
+      <button ion-button icon-only color="royal">
+         <ion-icon name="create"></ion-icon>
+      </button>
+    </ion-buttons>
+    <!--中间-->
+    <ion-title>首页</ion-title>
+    <!--右边-->
+    <ion-buttons end>
+      <button ion-button icon-only color="royal">
+        <ion-icon name="search"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content class="content-bg">
+
+  <ion-card (click)="onSelectItem('São Paulo')">
+    <img src="assets/imgs/card-saopaolo.png"/>
+    <div class="card-title">São Paulo</div>
+    <div class="card-subtitle">41 Listings</div>
+  </ion-card>
+
+  <ion-card>
+    <img src="assets/imgs/card-amsterdam.png"/>
+    <div class="card-title">Amsterdam</div>
+    <div class="card-subtitle">64 Listings</div>
+  </ion-card>
+
+  <ion-card>
+    <img src="assets/imgs/card-sf.png"/>
+    <div class="card-title">San Francisco</div>
+    <div class="card-subtitle">72 Listings</div>
+  </ion-card>
+
+  <ion-card>
+    <img src="assets/imgs/card-madison.png"/>
+    <div class="card-title">Madison</div>
+    <div class="card-subtitle">28 Listings</div>
+  </ion-card>
+
+</ion-content>

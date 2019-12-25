@@ -1,0 +1,16 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>Home</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+    <button ion-button (click)="getCurrentPos()">1.获取当前的位置</button>
+    <p>当前的纬度:{{currentLatitude}}</p>
+    <p>当前的经度:{{currentLongitude}}</p>
+    <p>json:{{currentInfo}}</p>
+
+    <button ion-button (click)="showCurrentPosition()">2.显示地图</button>
+    <div id="containerBaidu" style="width: 100%;height: 400px;"></div>
+
+</ion-content>
