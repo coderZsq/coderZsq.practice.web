@@ -4,8 +4,14 @@
     "static/development/dll/dll_d6a88dbe3071bd165157.js.map"
   ],
   "pages": {
+    "/": [
+      "static/runtime/webpack.js",
+      "static/runtime/main.js"
+    ],
     "/_app": [
       "static/runtime/webpack.js",
+      "static/css/styles.chunk.css",
+      "static/chunks/styles.js",
       "static/runtime/main.js"
     ],
     "/_error": [
@@ -18,9 +24,11 @@
     ],
     "/header": [
       "static/runtime/webpack.js",
+      "static/css/styles.chunk.css",
+      "static/chunks/styles.js",
       "static/runtime/main.js"
     ],
-    "/time": [
+    "/index": [
       "static/runtime/webpack.js",
       "static/runtime/main.js"
     ]

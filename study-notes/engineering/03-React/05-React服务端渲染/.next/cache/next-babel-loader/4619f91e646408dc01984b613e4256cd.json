@@ -1,0 +1,1 @@
+{"ast":null,"code":"import App from 'next/app';\nimport 'antd/dist/antd.css';\nexport default App;","map":null,"metadata":{},"sourceType":"module"}

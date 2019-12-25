@@ -1,0 +1,1 @@
+{"ast":null,"code":"import React from \"react\";\nvar __jsx = React.createElement;\nexport default (({\n  children\n}) => __jsx(\"button\", null, children));","map":null,"metadata":{},"sourceType":"module"}

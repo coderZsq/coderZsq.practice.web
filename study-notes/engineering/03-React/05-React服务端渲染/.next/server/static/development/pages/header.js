@@ -88,7 +88,7 @@ module.exports =
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 4);
+/******/ 	return __webpack_require__(__webpack_require__.s = 5);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -140,36 +140,65 @@ const MyHeader = () => {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _components_myheader__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../components/myheader */ "./components/myheader.js");
+/* harmony import */ var antd_lib_button__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! antd/lib/button */ "antd/lib/button");
+/* harmony import */ var antd_lib_button__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(antd_lib_button__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _components_myheader__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../components/myheader */ "./components/myheader.js");
+/* harmony import */ var _public_test_css__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../public/test.css */ "./public/test.css");
+/* harmony import */ var _public_test_css__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_public_test_css__WEBPACK_IMPORTED_MODULE_3__);
+
 var _jsxFileName = "/Users/zhushuangquan/Native Drive/GitHub/coderZsq.practice.web.js/study-notes/engineering/03-React/05-React\u670D\u52A1\u7AEF\u6E32\u67D3/pages/header.js";
 
-var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
+var __jsx = react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement;
 // import Head from 'next/head'
 
 
+
 function Header() {
-  return __jsx(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, __jsx(_components_myheader__WEBPACK_IMPORTED_MODULE_1__["default"], {
+  return __jsx(react__WEBPACK_IMPORTED_MODULE_1___default.a.Fragment, null, __jsx(_components_myheader__WEBPACK_IMPORTED_MODULE_2__["default"], {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 11
+      lineNumber: 13
     },
     __self: this
   }), __jsx("div", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 12
+      lineNumber: 14
     },
     __self: this
-  }, "coderZsq.github.io"));
+  }, "coderZsq.github.io"), __jsx("div", {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 15
+    },
+    __self: this
+  }, __jsx(antd_lib_button__WEBPACK_IMPORTED_MODULE_0___default.a, {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 15
+    },
+    __self: this
+  }, "\u6211\u662F\u6309\u94AE")));
 }
 
 /* harmony default export */ __webpack_exports__["default"] = (Header);
 
 /***/ }),
 
-/***/ 4:
+/***/ "./public/test.css":
+/*!*************************!*\
+  !*** ./public/test.css ***!
+  \*************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+
+
+/***/ }),
+
+/***/ 5:
 /*!*******************************!*\
   !*** multi ./pages/header.js ***!
   \*******************************/
@@ -178,6 +207,17 @@ function Header() {
 
 module.exports = __webpack_require__(/*! /Users/zhushuangquan/Native Drive/GitHub/coderZsq.practice.web.js/study-notes/engineering/03-React/05-React服务端渲染/pages/header.js */"./pages/header.js");
 
+
+/***/ }),
+
+/***/ "antd/lib/button":
+/*!**********************************!*\
+  !*** external "antd/lib/button" ***!
+  \**********************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = require("antd/lib/button");
 
 /***/ }),
 
