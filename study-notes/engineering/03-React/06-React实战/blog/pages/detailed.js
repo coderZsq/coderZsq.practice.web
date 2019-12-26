@@ -1,7 +1,6 @@
 import React, { useState } from 'react'
 import Head from 'next/head'
 import { Row, Col, Affix, Icon, Breadcrumb } from 'antd'
-
 import Header from '../components/Header'
 import Author from '../components/Author'
 import Advert from '../components/Advert'
@@ -14,6 +13,7 @@ import marked from 'marked'
 import hljs from "highlight.js";
 import 'highlight.js/styles/monokai-sublime.css';
 import Tocify from '../components/tocify.tsx'
+import servicePath from '../config/apiUrl'
 
 const Detailed = (props) => {
   let articleContent = props.article_content
@@ -91,7 +91,7 @@ Detailed.getInitialProps = async (context) => {
   console.log(context.query.id)
   let id = context.query.id
   const promise = new Promise((resolve) => {
-    axios('http://127.0.0.1:7001/default/getArticleById/' + id).then(
+    axios(servicePath.getArticleById + id).then(
       (res) => {
         // console.log(title)
         resolve(res.data.data[0])

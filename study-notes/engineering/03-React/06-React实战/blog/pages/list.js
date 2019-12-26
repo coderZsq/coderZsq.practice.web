@@ -1,22 +1,21 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import Head from 'next/head'
 import { Row, Col, List, Icon, Breadcrumb } from 'antd'
 import Header from '../components/Header'
 import Author from '../components/Author'
 import Advert from '../components/Advert'
 import Footer from '../components/Footer'
+import axios from 'axios'
+import servicePath from '../config/apiUrl'
+import Link from 'next/link'
 
 
-const MyList = () => {
+const MyList = (list) => {
 
-  const [mylist, setMylist] = useState(
-    [
-      { title: 'title', context: 'context' },
-      { title: 'title', context: 'context' },
-      { title: 'title', context: 'context' },
-      { title: 'title', context: 'context' }
-    ]
-  )
+  const [mylist, setMylist] = useState(list.data)
+  useEffect(() => {
+    setMylist(list.data)
+  })
 
   return (
     <div>
@@ -38,13 +37,17 @@ const MyList = () => {
             dataSource={mylist}
             renderItem={item => (
               <List.Item>
-                <div className="list-title">{item.title}</div>
-                <div className="list-icon">
-                  <span><Icon type="calendar" />2019-06-28</span>
-                  <span><Icon type="folder" />视频教程</span>
-                  <span><Icon type="fire" />5864人</span>
+                <div className="list-title">
+                  <Link href={{ pathname: '/detailed', query: { id: item.id } }} >
+                    {item.title}
+                  </Link>
                 </div>
-                <div className="list-content">{item.context}</div>
+                <div className="list-icon">
+                  <span><Icon type="calendar" />{item.addTime}</span>
+                  <span><Icon type="folder" />{item.typeName}</span>
+                  <span><Icon type="fire" />{item.view_count}人</span>
+                </div>
+                <div className="list-content">{item.introduce}</div>
               </List.Item>
             )}
           />
@@ -57,6 +60,14 @@ const MyList = () => {
       <Footer />
     </div>
   )
+}
+
+MyList.getInitialProps = async (context) => {
+  let id = context.query.id
+  const promise = new Promise((resolve) => {
+    axios(servicePath.getListById + id).then((res) => resolve(res.data))
+  })
+  return await promise
 }
 
 export default MyList
