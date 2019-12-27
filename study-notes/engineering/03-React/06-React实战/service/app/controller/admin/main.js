@@ -19,6 +19,28 @@ class MainController extends Controller {
       this.ctx.body = { data: '登录失败' };
     }
   }
+  async getTypeInfo() {
+    const resType = await this.app.mysql.select('type');
+    this.ctx.body = { data: resType };
+  }
+  async addArticle() {
+    const tmpArticle = this.ctx.request.body;
+    const result = await this.app.mysql.insert('article', tmpArticle);
+    const insertSuccess = result.affectedRows === 1;
+    const insertId = result.insertId;
+    this.ctx.body = {
+      isSuccess: insertSuccess,
+      insertId,
+    };
+  }
+  async updateArticle() {
+    const tempArticle = this.ctx.request.body;
+    const result = await this.app.mysql.update('article', tempArticle);
+    const updateSuccess = result.affectedRows === 1;
+    this.ctx.body = {
+      isSuccess: updateSuccess,
+    };
+  }
 }
 
 module.exports = MainController;
