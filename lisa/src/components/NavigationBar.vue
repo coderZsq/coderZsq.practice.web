@@ -27,7 +27,7 @@ export default {};
 .navigation-warpper .navigation-icon {
   width: 44px;
   height: 44px;
-  margin-left: 20px;
+  margin-left: 50px;
   vertical-align: middle;
 }
 
@@ -36,9 +36,10 @@ export default {};
   justify-content: space-evenly;
   align-items: center;
   margin-right: 100px;
-  list-style: none;
-  width: 400px;
+  width: 40%;
   color: #fff;
   font-size: 22px;
+  font-weight: 444;
+  list-style: none;
 }
 </style>
