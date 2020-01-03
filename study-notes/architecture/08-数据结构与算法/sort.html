@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    // 1. 创建一个类用来设置我们的排序算法
+    function ArrayList() {
+      this.array = [];
+    }
+
+    // 设置一个插入数据的方法
+    ArrayList.prototype.insert = function (item) {
+      this.array.push(item);
+    }
+
+    // 设置一个转化成字符串的方法
+    ArrayList.prototype.toString = function () {
+      return this.array.join();
+    }
+
+    // 设置一个函数用来标识调整位置
+    ArrayList.prototype.swap = function (m, n) {
+      var temp = this.array[m];
+      this.array[m] = this.array[n];
+      this.array[n] = temp;
+    }
+
+    // 实现冒泡排序
+    // 1. 循环多少次
+    // 2. 每次循环做什么事情
+    ArrayList.prototype.bubbleSort = function () {
+      // 1. 获取数组的长度
+      var length = this.array.length;
+      // 2. 确定数组的外层的循环次数
+      for (var i = length - 1; i >= 0; i++) {
+        // 3. 确定内部做什么事情
+        // 每次确定我们最终的最大的值
+        for (var j = 0; j < i; j++) {
+          // 比较相邻两个的大小, 然后替换位置
+          if (this.array[j] > this.array[j + 1]) {
+            // 调整位置
+            this.swap(j, j + 1);
+          }
+        }
+      }
+    }
+    // 2. 实现选择排序
+    ArrayList.prototype.selectSort = function () {
+      var length = this.array.length;
+      // 1. 设置外层比较次数
+      for (var i = 0; i < length - 1; i++) {
+        // 就是设置对应的获取最小的值, 放在最左边
+        var min = i;
+        for (var j = min + 1; j < length; j++) {
+          if (this.array[min] > this.array[j]) {
+            min = j;
+          }
+        }
+        // 让我们的j和min值进行替换
+        this.swap(min, j);
+      }
+    }
+  </script>
+</body>
+
+</html>
