@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+
+<body>
+  <script src="jquery-3.4.1.min.js"></script>
+  <script src="underscore-min.js"></script>
+  <script src="backbone-min.js"></script>
+  <script>
+    // 1.创建模型
+    var model = new Backbone.Model();
+    // 2. 通过模型设置数据
+    model.set('name', 'it');
+    // 3. 获取数据
+    console.log(model.get('name'));
+  </script>
+</body>
+
+</html>

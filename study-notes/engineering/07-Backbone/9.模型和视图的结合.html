@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+
+<body>
+  <script src="jquery-3.4.1.min.js"></script>
+  <script src="underscore-min.js"></script>
+  <script src="backbone-min.js"></script>
+  <script>
+    //
+    $(function () {
+      // 1. 创建模型的扩展
+      var M = Backbone.Model.extend({
+        // 设置默认属性
+        defaults: {
+          name: 'it'
+        }
+      });
+
+      // 2. 创建视图的扩展
+      var V = Backbone.View.extend({
+        initialize: function () {
+          // 当对应的模型发生变化的时候, 我们可以调用方法让我们的视图发生变化
+
+          // 监听模型变化
+
+          // listenTo: 这个方法比on方法多了一个参数
+          // 第一个参数表示监听的对象, 就是model, 第二个参数表示对应事件
+          // 第三个参数表示回调
+          this.listenTo(this.model, 'change', this.show);
+        },
+        // 实现show方法
+        show: function (model) {
+          // show方法中, 我们需要使用一个参数表示模型数据
+          $('body').append('<div>' + model.get('name') + '</div>');
+        }
+      });
+
+      // 3. 创建模型
+      var m = new M;
+
+      // 4. 创建视图, 我们需要使用模型来创建视图
+      var v = new V({ model: m });
+
+      // 5. 设置模型变化
+      m.set('name', '123');
+
+    });
+
+  </script>
+</body>
+
+</html>

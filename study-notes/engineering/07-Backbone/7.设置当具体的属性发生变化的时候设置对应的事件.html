@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+
+<body>
+  <script src="jquery-3.4.1.min.js"></script>
+  <script src="underscore-min.js"></script>
+  <script src="backbone-min.js"></script>
+  <script>
+    // 1. 创建模型的扩展
+    var M = Backbone.Model.extend({
+      // 1.1 设置默认属性
+      defaults: {
+        name: 'it'
+      },
+      // 1.2 设置对应的初始化方法
+      initialize: function () {
+        // 我们需要设置当某个固定的属性发生变化的时候, 然后让对应事件调用
+        this.on('change : name', function () {
+          // 指定当对应的name属性发生变化的时候, 我们才去调用回调
+          console.log('1234')
+        });
+      }
+    });
+
+    // 2. 设置实例
+    var model = new M;
+    model.set('name', '23456');
+  </script>
+</body>
+
+</html>

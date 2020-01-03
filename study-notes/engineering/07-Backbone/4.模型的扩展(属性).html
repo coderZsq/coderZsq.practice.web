@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+
+<body>
+  <script src="jquery-3.4.1.min.js"></script>
+  <script src="underscore-min.js"></script>
+  <script src="backbone-min.js"></script>
+  <script>
+    // 1. 设置注释
+    var M = Backbone.Model.extend({
+      // 设置默认属性
+      defaults: {
+        'name': 'it'
+      }
+    });
+
+    // 2. 设置一个实例对象
+    var model = new M;
+
+    // 3. 获取默认的属性的值
+    console.log(model.get('name'));
+
+  </script>
+</body>
+
+</html>

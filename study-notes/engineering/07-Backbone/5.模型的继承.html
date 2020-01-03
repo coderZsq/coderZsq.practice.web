@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+
+<body>
+  <script src="jquery-3.4.1.min.js"></script>
+  <script src="underscore-min.js"></script>
+  <script src="backbone-min.js"></script>
+  <script>
+    // 1. 创建模型的扩展
+    // 子的模型的扩展如果继承父的模型的扩展, 可以使用里面的方法和属性
+    var M = Backbone.Model.extend({
+      aaa: function () {
+        console.log('aaa');
+      }
+    });
+
+    // 2. 设置模型的扩展的子类
+    var childM = M.extend();
+    // 通过上面的模型的扩展声明一个实例对象
+    var model = new childM;
+    model.aaa();
+  </script>
+</body>
+
+</html>

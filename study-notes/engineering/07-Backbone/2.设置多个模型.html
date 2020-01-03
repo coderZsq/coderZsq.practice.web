@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+
+<body>
+  <script src="jquery-3.4.1.min.js"></script>
+  <script src="underscore-min.js"></script>
+  <script src="backbone-min.js"></script>
+  <script>
+    // 1.创建多个模型, 创建模型的时候就设置对应的值
+    var model1 = new Backbone.Model({ 'name': 'it' });
+    var model2 = new Backbone.Model({ 'name': 'it2' });
+    // 2. 使用两个模型需要设置集合来存储对应的模型, 设置一个集合
+    var models = new Backbone.Collection();
+    // 3. 使用集合添加模型
+    models.add(model1);
+    models.add(model2);
+    // 4.显示集合, 通过json把对应的数据进行解析
+    console.log(JSON.stringify(models));
+  </script>
+</body>
+
+</html>

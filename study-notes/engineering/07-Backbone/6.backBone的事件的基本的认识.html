@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+
+<body>
+  <script src="jquery-3.4.1.min.js"></script>
+  <script src="underscore-min.js"></script>
+  <script src="backbone-min.js"></script>
+  <script>
+    // backBone的事件: 就是在backBone中包含了很多事件, 具体就是当属性发生改变的时候, 我们可以出发对应的事件
+    // 1. 设置模型扩展
+    var M = Backbone.Model.extend({
+      // 1.1 设置默认属性
+      defaults: {
+        name: 'it'
+      },
+      // 1.2 设置初始化方法
+      initialize: function () {
+        // on: 这个方法中有两个参数, 第一个参数表示对应的标识, 就是表示我们出发了什么东西, 第二个参数表示回调
+        // 表示当对应的第一个参数中的事件出发, 就会调用回调
+        this.on('change', function () {
+          // 当出发change事件, 我们调用对应的回调
+          console.log('123');
+        });
+      }
+    });
+
+    // 2. 使用模型扩展设置实例
+    var model = new M;
+
+    // 3. 设置name变化
+    // 当我们运行程序后, 我们发现会输出123,
+    // 当我们的属性name发生变化的时候, 我们就会触发对应的事件, 然后调用对应的回调
+    // 我们在模型扩展中设置了对应的默认属性为name, 然后设置对应的change事件
+    // 当我们的name发生变化的时候, 就会触发对应的初始化中的change事件, 然后调用对应的回调
+    // 
+    model.set('name', 'it2');
+  </script>
+</body>
+
+</html>
