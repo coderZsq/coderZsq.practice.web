@@ -39,7 +39,7 @@
       // 1. 获取数组的长度
       var length = this.array.length;
       // 2. 确定数组的外层的循环次数
-      for (var i = length - 1; i >= 0; i++) {
+      for (var i = length - 1; i >= 0; i--) {
         // 3. 确定内部做什么事情
         // 每次确定我们最终的最大的值
         for (var j = 0; j < i; j++) {
@@ -64,9 +64,65 @@
           }
         }
         // 让我们的j和min值进行替换
-        this.swap(min, j);
+        this.swap(min, i);
       }
     }
+    // 3.实现插入排序
+    ArrayList.prototype.insertSort = function () {
+      var length = this.array.length;
+      // 3.1 确定循环的次序
+      for (var i = 1; i < length; i++) {
+        // 3.2 设置我们每次外层循环的索引对应的数组中的值为临时值
+        // 然后取出当前这个值前面所有的值和他比较
+        // 然后如果小于, 就往前移动, 最终, 我们把对应的当前的这个值赋值给最终的获取到的索引
+        var temp = this.array[i];
+        var j = i;
+        while (j > 0 && this.array[j - 1] > temp) {
+          this.array[j] = this.array[j - 1];
+          j--;
+        }
+        // 当比较完成后, 我们需要把temp值赋值到对应的位置
+        this.array[j] = temp;
+      }
+    }
+
+    // 4. 希尔排序
+    // 思路: 设置对应的分组, 然后我们对分组的数据排序
+    // 一般设置分组的时候我们需要设置间隔, 一般这个间隔我们可以设置为长度的一半
+    // 然后一直减少, 设置为上一次间隔的以一半, 直到最终的间隔为一
+    ArrayList.prototype.shellSort = function () {
+      var length = this.array.length;
+      // 1. 确定间隔
+      var gap = Math.floor(length / 2);
+      // 2. 设置循环
+      while (gap > 0) {
+        for (var i = gap; i < length; i++) {
+          var j = i;
+          var temp = this.array[i];
+          while (j > gap - 1 && this.array[j - gap] > temp) {
+            this.array[j] = this.array[j - gap];
+            j -= gap;
+          }
+          this.array[j] = temp;
+        }
+        gap = Math.floor(gap / 2);
+      }
+    }
+
+    // 设置插入数据
+    var list = new ArrayList();
+    list.insert(1);
+    list.insert(3);
+    list.insert(10);
+    list.insert(13);
+    list.insert(5);
+    list.insert(7);
+    list.insert(6);
+    // list.bubbleSort();
+    // list.selectSort();
+    // list.insertSort();
+    list.shellSort();
+    alert(list);
   </script>
 </body>
 
