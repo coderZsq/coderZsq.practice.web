@@ -109,6 +109,58 @@
       }
     }
 
+    // 5. 快速排序
+    // 5.1 设置枢纽值, 就是获取对应刚才的中间值
+    ArrayList.prototype.median = function (left, right) {
+      var center = Math.floor((left + right) / 2);
+      // 设置左边右边以及中间值进行排序
+      if (this.array[left] > this.array[center]) {
+        this.swap(left, center);
+      }
+      if (this.array[center] > this.array[right]) {
+        this.swap(center, right);
+      }
+      if (this.array[left] > this.array[right]) {
+        this.swap(left, right);
+      }
+      // 排序完成后, 我们需要让对应的center设置为right - 1
+      this.swap(center, right - 1);
+      return this.array[right - 1];
+    }
+
+    // 设置一个方法表示快速排序
+    ArrayList.prototype.quickSort = function () {
+      // 因为我们需要进行步骤的重复, 所以我们需要递归, 就直接设置一个函数
+      this.quickRect(0, this.array.length - 1);
+    }
+
+    ArrayList.prototype.quickRect = function (left, right) {
+      if (left >= right) return;
+
+      // 1. 获取枢纽
+      var pivot = this.median(left, right);
+      // 2. 获取对应的i值和j值
+      var i = left;
+      var j = right - 1;
+      while (true) {
+        // 如果要是左边的值小于枢纽值, 我们什么都不做
+        // 如果要是右边的值大于枢纽值, 我们也什么都不做
+        while (this.array[++i] < pivot) { };
+        while (this.array[--j] > pivot) { };
+        // 左边的大于右边的小于我们交换位置, 并且i < j
+        if (i < j) {
+          this.swap(i, j);
+        } else {
+          break;
+        }
+      }
+      this.swap(i, right - 1);
+      // 左边重复对应的步骤
+      this.quickRect(left, i - 1);
+      // 右边重复对应的步骤
+      this.quickRect(i + 1, right);
+    }
+
     // 设置插入数据
     var list = new ArrayList();
     list.insert(1);
@@ -121,7 +173,8 @@
     // list.bubbleSort();
     // list.selectSort();
     // list.insertSort();
-    list.shellSort();
+    // list.shellSort();
+    list.quickSort();
     alert(list);
   </script>
 </body>
