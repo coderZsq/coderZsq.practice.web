@@ -1,0 +1,86 @@
+{
+  "configVersion": 2,
+  "packages": [
+    {
+      "name": "async",
+      "rootUri": "file:///Users/zhushuangquan/.pub-cache/hosted/pub.flutter-io.cn/async-2.4.0",
+      "packageUri": "lib/",
+      "languageVersion": "2.0"
+    },
+    {
+      "name": "charcode",
+      "rootUri": "file:///Users/zhushuangquan/.pub-cache/hosted/pub.flutter-io.cn/charcode-1.1.3",
+      "packageUri": "lib/",
+      "languageVersion": "2.0"
+    },
+    {
+      "name": "collection",
+      "rootUri": "file:///Users/zhushuangquan/.pub-cache/hosted/pub.flutter-io.cn/collection-1.14.12",
+      "packageUri": "lib/",
+      "languageVersion": "2.0"
+    },
+    {
+      "name": "http",
+      "rootUri": "file:///Users/zhushuangquan/.pub-cache/hosted/pub.flutter-io.cn/http-0.12.0+4",
+      "packageUri": "lib/",
+      "languageVersion": "2.4"
+    },
+    {
+      "name": "http_parser",
+      "rootUri": "file:///Users/zhushuangquan/.pub-cache/hosted/pub.flutter-io.cn/http_parser-3.1.3",
+      "packageUri": "lib/",
+      "languageVersion": "2.0"
+    },
+    {
+      "name": "meta",
+      "rootUri": "file:///Users/zhushuangquan/.pub-cache/hosted/pub.flutter-io.cn/meta-1.1.8",
+      "packageUri": "lib/",
+      "languageVersion": "1.12"
+    },
+    {
+      "name": "path",
+      "rootUri": "file:///Users/zhushuangquan/.pub-cache/hosted/pub.flutter-io.cn/path-1.6.4",
+      "packageUri": "lib/",
+      "languageVersion": "2.0"
+    },
+    {
+      "name": "pedantic",
+      "rootUri": "file:///Users/zhushuangquan/.pub-cache/hosted/pub.flutter-io.cn/pedantic-1.9.0",
+      "packageUri": "lib/",
+      "languageVersion": "2.1"
+    },
+    {
+      "name": "source_span",
+      "rootUri": "file:///Users/zhushuangquan/.pub-cache/hosted/pub.flutter-io.cn/source_span-1.6.0",
+      "packageUri": "lib/",
+      "languageVersion": "2.6"
+    },
+    {
+      "name": "string_scanner",
+      "rootUri": "file:///Users/zhushuangquan/.pub-cache/hosted/pub.flutter-io.cn/string_scanner-1.0.5",
+      "packageUri": "lib/",
+      "languageVersion": "2.0"
+    },
+    {
+      "name": "term_glyph",
+      "rootUri": "file:///Users/zhushuangquan/.pub-cache/hosted/pub.flutter-io.cn/term_glyph-1.1.0",
+      "packageUri": "lib/",
+      "languageVersion": "1.8"
+    },
+    {
+      "name": "typed_data",
+      "rootUri": "file:///Users/zhushuangquan/.pub-cache/hosted/pub.flutter-io.cn/typed_data-1.1.6",
+      "packageUri": "lib/",
+      "languageVersion": "2.0"
+    },
+    {
+      "name": "coderZsq",
+      "rootUri": "../",
+      "packageUri": "lib/",
+      "languageVersion": "2.7"
+    }
+  ],
+  "generated": "2020-02-27T01:01:23.061270Z",
+  "generator": "pub",
+  "generatorVersion": "2.7.1"
+}
