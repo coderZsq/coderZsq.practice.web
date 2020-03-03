@@ -2,61 +2,127 @@ import 'package:flutter/material.dart';
 
 main() => runApp(MyApp());
 
-/// widget:
-/// 有状态的widget: StatefulWidget 在运行过程中有一些状态(data)需要改变
-/// 无状态的Widget: StatelessWidget 内容是确定的没有状态(data)的改变
 class MyApp extends StatelessWidget {
-  // build
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(debugShowCheckedModeBanner: false, home: SQHomePage());
+    return MaterialApp(
+      home: SQHomePage(),
+    );
   }
 }
 
 class SQHomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text("第一个Flutter程序"),
-      ),
-      body: SQContentBody(),
-    );
+    return SQHomeDemo();
   }
 }
 
-// flag: 状态
-// Stateful不能定义状态 -> 创建一个单独的类, 这个类负责维护状态
-class SQContentBody extends StatefulWidget {
+class SQHomeDemo extends StatefulWidget {
   @override
-  State<StatefulWidget> createState() {
-    return SQContentBodyState();
-  }
+  _SQHomeDemoState createState() => _SQHomeDemoState();
 }
 
-class SQContentBodyState extends State<SQContentBody> {
-  var flag = true;
+class _SQHomeDemoState extends State<SQHomeDemo> {
+  List<Widget> widgets = [SQHomeContent()];
 
   @override
   Widget build(BuildContext context) {
-    return Center(
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: <Widget>[
-          Checkbox(
-            value: flag,
-            onChanged: (value) {
-              setState(() {
-                flag = value;
-              });
-            },
-          ),
-          Text(
-            "同意协议",
-            style: TextStyle(fontSize: 20),
-          )
-        ],
+    print("build");
+    return Scaffold(
+      appBar: AppBar(
+        title: Text("商品列表"),
+      ),
+      body: Column(
+        children: widgets,
+      ),
+      floatingActionButton: RaisedButton(
+        child: Icon(Icons.add),
+        onPressed: () {
+          setState(() {
+            widgets.insert(0, Text("Hello World"));
+          });
+        },
       ),
     );
+  }
+}
+
+// StatelessWidget的生命周期
+//class SQHomeContent extends StatelessWidget {
+//  final String message;
+//
+//  SQHomeContent(this.message) {
+//    print("构造函数被调用");
+//  }
+//
+//  @override
+//  Widget build(BuildContext context) {
+//    print("调用build方法");
+//    return Text(message);
+//  }
+//}
+
+// StatefulWidget的生命周期
+class SQHomeContent extends StatefulWidget {
+  SQHomeContent() {
+    print("1. 调用SQHomeContent的constructor方法");
+  }
+
+  @override
+  _SQHomeContentState createState() {
+    print("2. 调用SQHomeContent的createState方法");
+    return _SQHomeContentState();
+  }
+}
+
+class _SQHomeContentState extends State<SQHomeContent> {
+  int _counter = 0;
+
+  _SQHomeContentState() {
+    print("3. 调用_SQHomeContentState的constructor方法");
+  }
+
+  @override
+  void initState() {
+    // 调用: 这里是必须调用super
+    super.initState();
+    print("4. 调用_SQHomeContentState的initState方法");
+  }
+
+  @override
+  void didUpdateWidget(SQHomeContent oldWidget) {
+    super.didUpdateWidget(oldWidget);
+    print("调用_SQHomeContentState的didUpdateWidget方法");
+  }
+
+  @override
+  void didChangeDependencies() {
+    super.didChangeDependencies();
+    print("调用_SQHomeContentState的didChangeDependencies方法");
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    print("5. 调用_SQHomeContentState的build方法");
+    return Column(
+      children: <Widget>[
+        RaisedButton(
+          child: Icon(Icons.add),
+          onPressed: () {
+            setState(() {
+              _counter++;
+            });
+          },
+        ),
+        Text("数字:$_counter")
+      ],
+    );
+  }
+
+  @override
+  void dispose() {
+    print("6. 调用_SQHomeContentState的dispose方法");
+    super.dispose();
   }
 }
