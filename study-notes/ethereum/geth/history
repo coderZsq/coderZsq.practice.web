@@ -40,3 +40,4 @@ eth.getBlockTransactionCount(1)
 eth.getBlockTransactionCount(3)
 eth.getBlock(1)
 eth.getBlock(3)
+web3

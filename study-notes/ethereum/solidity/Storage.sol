@@ -1,6 +1,6 @@
 pragma solidity ^0.6.1;
 
-contract SimpleStorage {
+contract Storage {
     uint256 myData;
     function setData(uint256 newData) public {
         myData = newData;

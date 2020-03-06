@@ -6,5 +6,5 @@ contract Faucet {
         msg.sender.transfer(amount);
     }
     fallback() external {}
-    receive() payable external {}
+    receive() external payable {}
 }
