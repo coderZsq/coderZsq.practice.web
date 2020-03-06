@@ -125,3 +125,21 @@
 21:24:18.670471 table@remove removed @24
 21:25:40.638429 db@close closing
 21:25:40.638675 db@close done T·252.024µs
+=============== Mar 6, 2020 (CST) ===============
+21:40:39.285870 log@legend F·NumFile S·FileSize N·Entry C·BadEntry B·BadBlock Ke·KeyError D·DroppedEntry L·Level Q·SeqNum T·TimeElapsed
+21:40:39.286294 version@stat F·[0 1] S·127KiB[0B 127KiB] Sc·[0.00 0.00]
+21:40:39.286353 db@open opening
+21:40:39.286482 journal@recovery F·1
+21:40:39.288679 journal@recovery recovering @26
+21:40:39.298592 memdb@flush created L0@29 N·228 S·7KiB "loc..seq,v10276":"n:\xf2..ail,v10326"
+21:40:39.301364 version@stat F·[1 1] S·135KiB[7KiB 127KiB] Sc·[0.25 0.00]
+21:40:39.347994 db@janitor F·5 G·1
+21:40:39.348023 db@janitor removing table-25
+21:40:39.348208 db@open done T·61.838444ms
+21:40:50.012833 table@compaction L0·1 -> L1·1 S·135KiB Q·10538
+21:40:50.034632 table@build created L1@32 N·3442 S·132KiB "loc..seq,v10276":"version,v1"
+21:40:50.034713 version@stat F·[0 1] S·132KiB[0B 132KiB] Sc·[0.00 0.00]
+21:40:50.047486 table@compaction committed F-1 S-3KiB Ke·0 D·94 T·34.568997ms
+21:40:50.051131 table@remove removed @28
+21:48:15.811051 db@close closing
+21:48:15.811251 db@close done T·199.034µs
