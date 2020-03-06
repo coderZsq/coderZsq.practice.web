@@ -23,6 +23,11 @@ contract Car {
         Weekday wd = Weekday.Wednesday;
         return uint16(wd);
     }
+    function fun(uint len) public pure returns(uint[] memory, bytes memory) {
+        uint[] memory a = new uint[](10);
+        bytes memory b = new bytes(len);
+        return (a, b);
+    }
 }
 contract CarPayable {
     string a;
