@@ -79,14 +79,14 @@ console.log(web3.isConnected());
 });
 
 // 交易相关
-; (function (err, res) {
+; (function () {
   console.log(web3.eth.getBalance(web3.eth.accounts[0]).toString())
   console.log(web3.eth.getBalance(web3.eth.accounts[0], 'latest').toString())
   console.log(web3.eth.getBalance(web3.eth.accounts[0], 15).toString())
 });
 
 // 交易执行相关
-; (function (err, res) {
+; (function () {
   console.log(web3.eth.getTransactionReceipt("0x92abcd25ccc696ec1540e557b9d910ff06353552472605b9cbec63f0c7634da7"))
   web3.eth.getTransactionReceipt("0x92abcd25ccc696ec1540e557b9d910ff06353552472605b9cbec63f0c7634da7", (err, res) => console.log(res))
   console.log(web3.eth.estimateGas({ from: web3.eth.accounts[0], to: web3.eth.accounts[1], value: 2000000 }))
@@ -98,7 +98,7 @@ console.log(web3.isConnected());
 // 123456
 ; (function () {
   console.log(web3.eth.sendTransaction({ from: web3.eth.accounts[0], to: web3.eth.accounts[1], value: 2000000, data: "0x92abcd25ccc696ec1540e557b9d910ff06353552472605b9cbec63f0c7634da7" }))
-  console.log(web3.eth.getTransaction("0x8e16faa5855f01421022c60b4f5fc2f45a2b2dc6f88d0b5b5a66db409c43e417 "))
+  console.log(web3.eth.getTransaction("0x8e16faa5855f01421022c60b4f5fc2f45a2b2dc6f88d0b5b5a66db409c43e417"))
   console.log(web3.eth.getBlock(16))
   console.log(web3.eth.getBlock(16, true))
 });
