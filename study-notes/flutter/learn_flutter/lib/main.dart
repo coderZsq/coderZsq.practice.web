@@ -32,43 +32,76 @@ class SQHomeContent extends StatefulWidget {
 }
 
 class _SQHomeContentState extends State<SQHomeContent> {
-  final imageURL =
-      "https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1583340863953&di=46c8127502fa80464eb9b65396f61f97&imgtype=0&src=http%3A%2F%2Fwww.mux5.com%2Fpicture%2F3881ad96ba228dcd6c05acf0b2af5ef9.jpg";
-
   @override
   Widget build(BuildContext context) {
-    return Image.asset("assets/images/juren.jpeg");
-//    return Image(
-//      // 1. 在Flutter项目创建一个文件夹, 存储图片
-//      // 2. 在pubspec.yaml进行配置
-//      // 3. 使用图片
-//      image: AssetImage("assets/images/juren.jpeg"),
-//    );
+    return Container(
+//      color: Colors.red,
+      width: 200,
+      height: 200,
+      alignment: Alignment(0, 0),
+      padding: EdgeInsets.all(20),
+      margin: EdgeInsets.all(10),
+      child: Text("Hello World"),
+//      child: Icon(Icons.pets, size: 50, color: Colors.white),
+//      transform: Matrix4.rotationZ(50),
+      decoration: BoxDecoration(
+          color: Colors.red,
+          border: Border.all(width: 5, color: Colors.purple),
+//          borderRadius: BorderRadius.circular((100)),
+          boxShadow: [
+            BoxShadow(
+                color: Colors.orange,
+                offset: Offset(10, 10),
+                spreadRadius: 5,
+                blurRadius: 10),
+            BoxShadow(
+                color: Colors.blue,
+                offset: Offset(-10, 10),
+                spreadRadius: 5,
+                blurRadius: 10)
+          ]),
+    );
   }
 }
 
-class ImageDemo01 extends StatelessWidget {
-  const ImageDemo01({
+class PaddingDemo extends StatelessWidget {
+  const PaddingDemo({
     Key key,
-    @required this.imageURL,
   }) : super(key: key);
-
-  final String imageURL;
 
   @override
   Widget build(BuildContext context) {
-    // Image.network(imageURL)
-    return Image(
-      color: Colors.green,
-      colorBlendMode: BlendMode.colorDodge,
-      image: NetworkImage(imageURL),
-      width: 200,
-      height: 200,
-      fit: BoxFit.contain,
-      repeat: ImageRepeat.repeatY,
-      // alignment: Alignment.bottomCenter,
-      // 范围 -1, 1
-      alignment: Alignment(0, 0),
+    return Column(
+      children: <Widget>[
+        Padding(
+          padding: EdgeInsets.only(bottom: 10),
+          child: Text("你好啊, 李银河",
+              style: TextStyle(fontSize: 30, backgroundColor: Colors.red)),
+        ),
+        Text("你好啊, 李银河",
+            style: TextStyle(fontSize: 30, backgroundColor: Colors.red)),
+        Text("你好啊, 李银河",
+            style: TextStyle(fontSize: 30, backgroundColor: Colors.red)),
+      ],
     );
+  }
+}
+
+class AlignDemo extends StatelessWidget {
+  const AlignDemo({
+    Key key,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+        width: 200,
+        height: 200,
+        color: Colors.red,
+        child: Align(
+            alignment: Alignment(0.5, 0.5),
+            widthFactor: 5,
+            heightFactor: 5,
+            child: Icon(Icons.pets, size: 50)));
   }
 }
