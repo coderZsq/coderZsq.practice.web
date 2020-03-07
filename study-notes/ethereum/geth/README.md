@@ -253,3 +253,6 @@ TypeError: 'getTransactiom' is not a function
 }
 >
 ```
+```
+geth --datadir . --networkid 15 --rpc --allow-insecure-unlock console 2>output.log 
+```

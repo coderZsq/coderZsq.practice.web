@@ -41,3 +41,15 @@ eth.getBlockTransactionCount(3)
 eth.getBlock(1)
 eth.getBlock(3)
 web3
+eth
+eth.newAccount()
+webr
+web3
+personal
+eth.getAccounts()
+eth.getAccounts
+miner
+miner.start(1)
+miner.stop*(
+)
+miner.stop()
