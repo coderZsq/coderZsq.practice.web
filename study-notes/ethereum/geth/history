@@ -53,3 +53,8 @@ miner.start(1)
 miner.stop*(
 )
 miner.stop()
+miner
+miner.start(1)
+miner.stop()
+miner.start(1)
+miner.stop()
