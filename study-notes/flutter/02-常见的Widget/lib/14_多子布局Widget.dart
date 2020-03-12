@@ -52,7 +52,24 @@ class _SQHomeContentState extends State<SQHomeContent> {
     ///   - center: 中心点对齐 (默认值)
     ///   - baseline: 基线对齐 (必须有文本的时候才起效果)
     ///   - stretch: 先Row占据交叉轴尽可能大的空间, 将所有的子widget交叉轴的高度, 拉伸到最大
-    ///
+    return StackDemo2();
+  }
+}
+
+class StackDemo2 extends StatefulWidget {
+  const StackDemo2({
+    Key key,
+  }) : super(key: key);
+
+  @override
+  _StackDemo2State createState() => _StackDemo2State();
+}
+
+class _StackDemo2State extends State<StackDemo2> {
+  bool _isFavor = false;
+
+  @override
+  Widget build(BuildContext context) {
     /// Stack默认的大小是包裹内容的
     /// - alignment从什么位置开始排布所有的子Widget
     /// - fit: expand(很少) 将子元素拉伸到尽可能大
@@ -73,8 +90,14 @@ class _SQHomeContentState extends State<SQHomeContent> {
                 Text("进击的巨人挺不错的",
                     style: TextStyle(fontSize: 20, color: Colors.white)),
                 IconButton(
-                    icon: Icon(Icons.favorite, color: Colors.white),
-                    onPressed: () => print("点击了收藏"))
+                  icon: Icon(Icons.favorite,
+                      color: _isFavor ? Colors.red : Colors.white),
+                  onPressed: () {
+                    setState(() {
+                      _isFavor = !_isFavor;
+                    });
+                  },
+                )
               ],
             ),
           ),
