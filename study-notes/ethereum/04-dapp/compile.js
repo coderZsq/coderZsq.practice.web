@@ -21,4 +21,6 @@ var byteCode = compiledCode.contracts[':Voting'].bytecode
 var VotingContract = web3.eth.contract(abi)
 var deployTxObj = { data: byteCode, from: web3.eth.accounts[0], gas: 3000000 }
 var contractInstance = VotingContract.new(['Alice', 'Bob', 'Cary'], deployTxObj)
-console.log(contractInstance.address)
+setTimeout(() => {
+  console.log(contractInstance.address)
+}, 1000)
