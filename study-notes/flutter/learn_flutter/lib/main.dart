@@ -1,3 +1,4 @@
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:dio/dio.dart';
 import 'package:learn_flutter/service/http_request.dart';
@@ -44,9 +45,25 @@ class _SQHomePageState extends State<SQHomePage> {
     }).catchError((err) {
 
     });
+    runCalc();
   }
+
+  void runCalc() async {
+    var result = await compute(calc, 100);
+    print("---------: $result");
+  }
+
   @override
   Widget build(BuildContext context) {
     return Container();
   }
+}
+
+int calc(int count) {
+  int total = 0;
+  print(count);
+  for (int i = 0; i < count; i++) {
+    total += i;
+  }
+  return total;
 }
