@@ -262,3 +262,10 @@ nohup geth--datadir. --networkid 15 --rpc 2 > output.log &
 ```
 geth attach http://localhost:8545
 ```
+
+```
+geth --datadir . --networkid 15 --rpc --rpcapi "eth.personal" console 2>output.log 
+```
+
+
+

@@ -84,3 +84,4 @@ eth.getBalance(eth.accounts[0])
 eth.getBalance(eth.accounts[1])
 eth.accounts
 123456
+eth.accounts
