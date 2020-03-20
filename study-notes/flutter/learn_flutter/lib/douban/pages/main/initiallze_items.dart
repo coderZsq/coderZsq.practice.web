@@ -14,7 +14,7 @@ List<SQBottomBarItem> items = [
 List<Widget> pages = [
   SQHomePage(),
   SQSubjectPage(),
-  SQHomePage(),
-  SQHomePage(),
-  SQHomePage(),
+  SQSubjectPage(),
+  SQSubjectPage(),
+  SQSubjectPage(),
 ];

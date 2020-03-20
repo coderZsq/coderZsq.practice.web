@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'home_content.dart';
+
+import 'package:learn_flutter/douban/pages/home/home_content.dart';
 
 class SQHomePage extends StatelessWidget {
   @override
