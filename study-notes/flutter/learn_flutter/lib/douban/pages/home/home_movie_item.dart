@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:learn_flutter/douban/model/home_model.dart';
 import 'package:learn_flutter/douban/widgets/dashed_line.dart';
@@ -48,11 +49,19 @@ class SQHomeMovieItem extends StatelessWidget {
       children: <Widget>[
         buildContentImage(),
         SizedBox(width: 8),
-        buildContentInfo(),
-        SizedBox(width: 8),
-        buildContentLine(),
-        SizedBox(width: 8),
-        buildContentWish()
+        Expanded(
+          child: IntrinsicHeight(
+            child: Row(
+              children: <Widget>[
+                buildContentInfo(),
+                SizedBox(width: 8),
+                buildContentLine(),
+                SizedBox(width: 8),
+                buildContentWish()
+              ],
+            ),
+          ),
+        )
       ],
     );
   }
@@ -83,15 +92,19 @@ class SQHomeMovieItem extends StatelessWidget {
   Widget buildContentInfoTitle() {
     return Text.rich(TextSpan(children: [
       WidgetSpan(
-          child: Icon(Icons.play_circle_outline,
-              color: Colors.redAccent, size: 24),
-          alignment: PlaceholderAlignment.bottom),
-      TextSpan(
-          text: movie.title,
-          style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold)),
-      TextSpan(
-          text: "(${movie.playDate})",
-          style: TextStyle(fontSize: 18, color: Colors.grey)),
+          child: Icon(Icons.play_circle_outline, color: Colors.pink, size: 40),
+          baseline: TextBaseline.ideographic,
+          alignment: PlaceholderAlignment.middle),
+      ...movie.title.runes.map((rune) {
+        return WidgetSpan(
+            child: Text(new String.fromCharCode(rune),
+                style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold)),
+            alignment: PlaceholderAlignment.middle);
+      }),
+      WidgetSpan(
+          child: Text("(${movie.playDate})"),
+          style: TextStyle(fontSize: 18, color: Colors.grey),
+          alignment: PlaceholderAlignment.bottom)
     ]));
   }
 
@@ -119,15 +132,12 @@ class SQHomeMovieItem extends StatelessWidget {
 
   // 2.3 内容的虚线
   Widget buildContentLine() {
-    return Container(
-      height: 100,
-      child: SQDashedLine(
-        axis: Axis.vertical,
-        dashedWidth: .4,
-        dashedHeight: 6,
-        count: 10,
-        color: Colors.pink,
-      ),
+    return SQDashedLine(
+      axis: Axis.vertical,
+      dashedWidth: .4,
+      dashedHeight: 6,
+      count: 10,
+      color: Colors.pink,
     );
   }
 

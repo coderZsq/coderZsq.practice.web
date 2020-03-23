@@ -7,5 +7,5 @@ class SQBottomBarItem extends BottomNavigationBarItem {
       icon: Image.asset("assets/images/tabbar/$iconName.png", width: 32),
       activeIcon: Image.asset(
           "assets/images/tabbar/${iconName}_active.png",
-          width: 32));
+          width: 32, gaplessPlayback: true));
 }

@@ -1,7 +1,4 @@
-import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-import 'package:dio/dio.dart';
-import 'package:learn_flutter/service/http_request.dart';
 
 main() => runApp(MyApp());
 
@@ -17,53 +14,46 @@ class MyApp extends StatelessWidget {
   }
 }
 
-class SQHomePage extends StatefulWidget {
+class SQHomePage extends StatelessWidget {
+  final GlobalKey<_SQHomeContentState> homeKey = GlobalKey();
+
   @override
-  _SQHomePageState createState() => _SQHomePageState();
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text("列表测试"),
+      ),
+      body: SQHomeContent(key: homeKey),
+      floatingActionButton: FloatingActionButton(
+        child: Icon(Icons.gesture),
+        onPressed: () {
+          print(homeKey.currentState.message);
+          print(homeKey.currentState.widget.name);
+          homeKey.currentState.test();
+        },
+      ),
+    );
+  }
 }
 
-class _SQHomePageState extends State<SQHomePage> {
+class SQHomeContent extends StatefulWidget {
+  final String name = "coderZsq";
+
+  SQHomeContent({Key key}) : super(key: key);
+
   @override
-  void initState() {
-    super.initState();
+  _SQHomeContentState createState() => _SQHomeContentState();
+}
 
-    // 发送网络请求
-    // 1. 创建Dio对象
-//    final dio = Dio();
+class _SQHomeContentState extends State<SQHomeContent> {
+  final String message = "123";
 
-    // 2. 发送网络请求
-//    dio.get("https://httpbin.org/get").then((res) {
-//      print(res);
-//    });
-//
-//    dio.post("https://httpbin.org/post").then((res) {
-//      print(res);
-//    });
-
-    HttpRequest.request("/get", params: {"name" : "coderZsq"}).then((res) {
-      print(res);
-    }).catchError((err) {
-
-    });
-    runCalc();
-  }
-
-  void runCalc() async {
-    var result = await compute(calc, 100);
-    print("---------: $result");
+  void test() {
+    print("testtesttest");
   }
 
   @override
   Widget build(BuildContext context) {
-    return Container();
+    return Text(message);
   }
-}
-
-int calc(int count) {
-  int total = 0;
-  print(count);
-  for (int i = 0; i < count; i++) {
-    total += i;
-  }
-  return total;
 }
