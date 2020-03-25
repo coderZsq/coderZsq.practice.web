@@ -1,7 +1,7 @@
 var web3 = new Web3(new Web3.providers.HttpProvider('http://localhost:8545'))
 
 var abi = JSON.parse('[{"constant":true,"inputs":[{"name":"candidateName","type":"bytes32"}],"name":"totalVotesFor","outputs":[{"name":"","type":"uint8"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[{"name":"","type":"bytes32"}],"name":"votesReceived","outputs":[{"name":"","type":"uint8"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":false,"inputs":[{"name":"candidateName","type":"bytes32"}],"name":"vote","outputs":[],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":true,"inputs":[{"name":"","type":"uint256"}],"name":"candidateList","outputs":[{"name":"","type":"bytes32"}],"payable":false,"stateMutability":"view","type":"function"},{"inputs":[{"name":"candidateListName","type":"bytes32[]"}],"payable":false,"stateMutability":"nonpayable","type":"constructor"}]')
-var contractAddr = "0x6b5ed6cd17190b88ff1bf4a419a69877f091c98d"
+var contractAddr = "0x4442ba953f56b368fa430264fa644558b8c1db83"
 var VotingContract = web3.eth.contract(abi)
 var contractInstance = VotingContract.at(contractAddr)
 
