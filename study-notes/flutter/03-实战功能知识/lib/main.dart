@@ -1,24 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:flutterapp/viewmodel/counter_view_model.dart';
-import 'package:flutterapp/viewmodel/initialize_providers.dart';
-import 'package:flutterapp/viewmodel/user_view_model.dart';
-import 'package:provider/provider.dart';
+import 'package:flutterapp/about.dart';
+import 'package:flutterapp/detail.dart';
+import 'package:flutterapp/router/router.dart';
 
-void main() {
-  runApp(MultiProvider(
-    providers: providers,
-    child: MyApp(),
-  ));
-
-//  runApp(
-//      // 2. 在应用程序的顶层ChangeNotifierProvider
-//      ChangeNotifierProvider(
-//    create: (ctx) => SQCounterViewModel(),
-//    child: ChangeNotifierProvider(
-//      create: (ctx) => SQUserViewModel(UserInfo("coderZsq", 18, "url")),
-//    ),
-//  ));
-}
+main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget {
   @override
@@ -27,87 +12,81 @@ class MyApp extends StatelessWidget {
       title: "Flutter Demo",
       theme: ThemeData(
           primarySwatch: Colors.blue, splashColor: Colors.transparent),
-      home: SQHomePage(),
+      routes: SQRouter.routes,
+      initialRoute: SQRouter.initialRoute,
+      onGenerateRoute: SQRouter.generateRoute,
+      onUnknownRoute: SQRouter.unknownRoute,
     );
   }
 }
 
-class SQHomePage extends StatelessWidget {
+class SQHomePage extends StatefulWidget {
+  static const String routeName = "/";
+
+  @override
+  _SQHomePageState createState() => _SQHomePageState();
+}
+
+class _SQHomePageState extends State<SQHomePage> {
+  String _homeMessage = "default message";
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text("列表测试"),
-      ),
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            SQShowData01(),
-            SQShowData02(),
-            SQShowData03(),
-          ],
+        appBar: AppBar(
+          title: Text("首页"),
         ),
-      ),
-      floatingActionButton: Selector<SQCounterViewModel, SQCounterViewModel>(
-        selector: (ctx, counterVM) => counterVM,
-        shouldRebuild: (prev, next) => false,
-        builder: (ctx, counterVM, child) {
-          print("floatingActionButton builder方法被执行");
-          return FloatingActionButton(
-            child: child,
-            onPressed: () {
-              counterVM.counter += 1;
-            },
-          );
-        },
-        child: Icon(Icons.add),
-      ),
-    );
+        body: Center(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: <Widget>[
+              Text(_homeMessage,
+                  style: TextStyle(fontSize: 20, color: Colors.red)),
+              RaisedButton(
+                child: Text("跳转到详情"),
+                onPressed: () => _jumpToDetail(context),
+              ),
+              RaisedButton(
+                child: Text("跳转到关于"),
+                onPressed: () => _jumpToAbout(context),
+              ),
+              RaisedButton(
+                child: Text("跳转到详情"),
+                onPressed: () => _jumpToDetail2(context),
+              ),
+              RaisedButton(
+                child: Text("跳转到设置"),
+                onPressed: () => _jumpToSettings(context),
+              ),
+            ],
+          ),
+        ));
   }
-}
 
-class SQShowData01 extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    // 3. 在其他位置使用共享数据
-    int counter = Provider.of<SQCounterViewModel>(context).counter;
-    print("data01的build方法");
-    return Container(
-      color: Colors.blue,
-      child: Text("当前计数: $counter", style: TextStyle(fontSize: 30)),
-    );
+  void _jumpToDetail(BuildContext context) {
+    // 1. 普通的跳转方式
+    // 传递参数: 通过构造器直接传递即可
+    Future result =
+    Navigator.of(context).push(MaterialPageRoute(builder: (ctx) {
+      return SQDetailPage("a home message");
+    }));
+
+    result.then((res) {
+      setState(() {
+        _homeMessage = res;
+      });
+    });
   }
-}
 
-class SQShowData02 extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    print("data02的build方法");
-    return Container(
-      color: Colors.red,
-      child: Consumer<SQCounterViewModel>(
-        builder: (ctx, counterVM, child) {
-          print("data02 Consumer builder方法被执行");
-          return Text("当前计数: ${counterVM.counter}",
-              style: TextStyle(fontSize: 30));
-        },
-      ),
-    );
+  void _jumpToAbout(BuildContext context) {
+     Navigator.of(context).pushNamed(SQAboutPage.routeName, arguments: "a home message");
   }
-}
 
-class SQShowData03 extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    // Provider.of Consumer Selector Consumer2
-    return Consumer2<SQUserViewModel, SQCounterViewModel>(
-      builder: (ctx, userVM, counterVM, child) {
-        return Text(
-          "nickname: ${userVM.user.nickname} counter: ${counterVM.counter}",
-          style: TextStyle(fontSize: 20),
-        );
-      },
-    );
+  void _jumpToDetail2(BuildContext context) {
+    Navigator.of(context).pushNamed(SQDetailPage.routeName, arguments: "a home detail2 message");
+  }
+
+  void _jumpToSettings(BuildContext context) {
+    Navigator.of(context).pushNamed("/settings");
   }
 }

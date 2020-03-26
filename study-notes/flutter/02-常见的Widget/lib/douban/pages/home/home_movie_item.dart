@@ -109,12 +109,14 @@ class SQHomeMovieItem extends StatelessWidget {
   }
 
   Widget buildContentInfoRate() {
-    return Row(
-      children: <Widget>[
-        SQStarRating(rating: movie.rating, size: 20),
-        SizedBox(width: 6),
-        Text("${movie.rating}", style: TextStyle(fontSize: 16))
-      ],
+    return FittedBox(
+      child: Row(
+        children: <Widget>[
+          SQStarRating(rating: movie.rating, size: 20),
+          SizedBox(width: 6),
+          Text("${movie.rating}", style: TextStyle(fontSize: 16))
+        ],
+      ),
     );
   }
 
