@@ -1,0 +1,1 @@
+nohup geth --datadir . --networkid 15 --rpc --rpcapi db,eth,net,web3,admin,personal,miner, --rpcport 8545 --rpcaddr 127.0.0.1 --rpccorsdomain "*" 2>output.log &

@@ -310,3 +310,31 @@
 16:26:57.136720 db@open done T·90.921486ms
 16:33:45.513719 db@close closing
 16:33:45.513804 db@close done T·84.337µs
+=============== Mar 26, 2020 (CST) ===============
+17:19:23.776931 log@legend F·NumFile S·FileSize N·Entry C·BadEntry B·BadBlock Ke·KeyError D·DroppedEntry L·Level Q·SeqNum T·TimeElapsed
+17:19:23.778812 version@stat F·[2 1] S·65KiB[18KiB 47KiB] Sc·[0.50 0.00]
+17:19:23.778900 db@open opening
+17:19:23.779104 journal@recovery F·1
+17:19:23.783619 journal@recovery recovering @71
+17:19:23.795551 memdb@flush created L0@73 N·1 S·217B "Las..der,v1663":"Las..der,v1663"
+17:19:23.799351 version@stat F·[3 1] S·65KiB[18KiB 47KiB] Sc·[0.75 0.00]
+17:19:23.850331 db@janitor F·6 G·0
+17:19:23.850482 db@open done T·71.555646ms
+=============== Mar 26, 2020 (CST) ===============
+17:22:38.842291 log@legend F·NumFile S·FileSize N·Entry C·BadEntry B·BadBlock Ke·KeyError D·DroppedEntry L·Level Q·SeqNum T·TimeElapsed
+17:22:38.842534 version@stat F·[3 1] S·65KiB[18KiB 47KiB] Sc·[0.75 0.00]
+17:22:38.842563 db@open opening
+17:22:38.842648 journal@recovery F·1
+17:22:38.844734 journal@recovery recovering @74
+17:22:38.858072 memdb@flush created L0@76 N·1 S·217B "Las..der,v1665":"Las..der,v1665"
+17:22:38.861230 version@stat F·[4 1] S·65KiB[18KiB 47KiB] Sc·[1.00 0.00]
+17:22:38.906829 db@janitor F·7 G·0
+17:22:38.906891 db@open done T·64.31035ms
+17:22:38.907045 table@compaction L0·4 -> L1·1 S·65KiB Q·1666
+17:22:38.946366 table@build created L1@79 N·1087 S·61KiB "\x10\x0f3..\xc1#\xf6,v650":"\xedؖ..\x9e\x10\xd9,v903"
+17:22:38.946498 version@stat F·[0 1] S·61KiB[0B 61KiB] Sc·[0.00 0.00]
+17:22:38.980420 table@compaction committed F-4 S-4KiB Ke·0 D·137 T·73.285857ms
+17:22:38.985187 table@remove removed @73
+17:22:38.985477 table@remove removed @70
+17:22:38.985739 table@remove removed @67
+17:22:38.996191 table@remove removed @66
