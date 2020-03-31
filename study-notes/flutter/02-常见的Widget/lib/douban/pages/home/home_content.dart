@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:learn_flutter/_06_service/home_request.dart';
 import 'package:learn_flutter/douban/model/home_model.dart';
 import 'package:learn_flutter/douban/pages/home/home_movie_item.dart';
-import 'package:learn_flutter/service/home_request.dart';
 
 class SQHomeContent extends StatefulWidget {
   @override

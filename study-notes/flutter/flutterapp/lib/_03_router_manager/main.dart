@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutterapp/about.dart';
-import 'package:flutterapp/detail.dart';
-import 'package:flutterapp/router/router.dart';
+import './about.dart';
+import './detail.dart';
+import './router/router.dart';
 
 main() => runApp(MyApp());
 

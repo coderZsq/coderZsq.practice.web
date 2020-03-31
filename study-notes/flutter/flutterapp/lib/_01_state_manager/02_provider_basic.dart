@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutterapp/viewmodel/counter_view_model.dart';
+import './viewmodel/counter_view_model.dart';
 import 'package:provider/provider.dart';
 
 /// 1. 创建自己需要共享的数据

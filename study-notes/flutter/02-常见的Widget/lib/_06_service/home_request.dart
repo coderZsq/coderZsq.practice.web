@@ -1,7 +1,7 @@
 import 'package:learn_flutter/douban/model/home_model.dart';
-import 'package:learn_flutter/service/http_request.dart';
 
 import 'config.dart';
+import 'http_request.dart';
 
 class HomeRequest {
   static Future<List<MovieItem>> requestMovieList(int start) async {

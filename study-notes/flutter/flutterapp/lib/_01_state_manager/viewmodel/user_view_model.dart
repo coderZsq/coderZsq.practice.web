@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutterapp/model/user_info.dart';
+import '../model/user_info.dart';
 
 class SQUserViewModel extends ChangeNotifier {
   UserInfo _user;

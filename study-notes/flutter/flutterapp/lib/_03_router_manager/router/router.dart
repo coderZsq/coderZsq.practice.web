@@ -1,9 +1,9 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutterapp/about.dart';
-import 'package:flutterapp/main.dart';
+import 'package:flutterapp/_03_router_manager/main.dart';
 
 import '../detail.dart';
+import '../about.dart';
 import '../unknown.dart';
 
 class SQRouter {

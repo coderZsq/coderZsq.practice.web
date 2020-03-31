@@ -1,8 +1,9 @@
 import 'package:event_bus/event_bus.dart';
 import 'package:flutter/material.dart';
+import 'event_bus.dart';
 
 // 1. 创建全局的EventBus对象
-final eventBus = EventBus();
+//final eventBus = EventBus();
 
 class UserInfo {
   String nickname;
