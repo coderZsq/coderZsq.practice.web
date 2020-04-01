@@ -14,3 +14,19 @@
 16:08:58.352611 version@stat F·[1] S·696B[696B] Sc·[0.25]
 16:08:58.378830 db@janitor F·3 G·0
 16:08:58.378865 db@open done T·42.019422ms
+=============== Apr 1, 2020 (CST) ===============
+13:53:08.103848 log@legend F·NumFile S·FileSize N·Entry C·BadEntry B·BadBlock Ke·KeyError D·DroppedEntry L·Level Q·SeqNum T·TimeElapsed
+13:53:08.112966 version@stat F·[1] S·696B[696B] Sc·[0.25]
+13:53:08.113005 db@open opening
+13:53:08.113131 journal@recovery F·1
+13:53:08.116735 journal@recovery recovering @3
+13:53:08.131694 memdb@flush created L0@5 N·1261 S·67KiB "Blo..ion,v14":"r\x00\x00..\xe25#,v1269"
+13:53:08.145571 version@stat F·[2] S·68KiB[68KiB] Sc·[0.50]
+13:53:08.183028 db@janitor F·4 G·0
+13:53:08.183187 db@open done T·70.127127ms
+13:53:08.200569 table@compaction L0·2 -> L1·0 S·68KiB Q·1275
+13:53:08.213964 table@build created L1@8 N·855 S·51KiB "Blo..ion,v14":"\xeaB\x04..\xf4\xd0;,v2"
+13:53:08.214200 version@stat F·[0 1] S·51KiB[0B 51KiB] Sc·[0.00 0.00]
+13:53:08.242829 table@compaction committed F-1 S-16KiB Ke·0 D·417 T·42.010823ms
+13:53:08.246664 table@remove removed @5
+13:53:08.246979 table@remove removed @2
