@@ -1,6 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutterapp/_06_screenfit/shared/size_fit.dart';
+import 'extension/double_extension.dart';
+import 'extension/int_extension.dart';
 
 main() => runApp(MyApp());
 
@@ -29,19 +31,22 @@ class SQHomePage extends StatelessWidget {
     print("状态栏的高度: $statusHeight");
     print(SQSizeFit.screenWidth);
 
+    print(200.px);
+    print(400.rpx);
+
     return Scaffold(
       appBar: AppBar(
         title: Text("首页"),
       ),
       body: Center(
         child: Container(
-          width: SQSizeFit.setRpx(400),
-          height: SQSizeFit.setPx(200),
+          width: 200.px,
+          height: 200.px,
           color: Colors.red,
           alignment: Alignment.center,
           child: Text(
             "Hello World",
-            style: TextStyle(fontSize: SQSizeFit.setRpx(40)),
+            style: TextStyle(fontSize: 20.px),
           ),
         ),
       ),

@@ -14,3 +14,15 @@
 13:53:10.394571 version@stat F·[1] S·69KiB[69KiB] Sc·[0.25]
 13:53:10.433186 db@janitor F·3 G·0
 13:53:10.433240 db@open done T·67.033184ms
+=============== Apr 2, 2020 (CST) ===============
+10:59:04.624679 memdb@flush N·43240 S·3MiB
+10:59:04.664243 memdb@flush created L0@6 N·43240 S·406KiB "n:\x11..ail,v7366":"n:\xa9..ing,v7358"
+10:59:04.671060 version@stat F·[2] S·476KiB[476KiB] Sc·[0.50]
+10:59:04.681390 memdb@flush committed F·1 T·54.051673ms
+10:59:04.708128 journal@remove removed @3
+10:59:07.493972 table@compaction L0·2 -> L1·0 S·476KiB Q·50598
+10:59:07.517392 table@build created L1@7 N·13 S·687B "n:\x11..ail,v7366":"version,v1"
+10:59:07.517450 version@stat F·[0 1] S·687B[0B 687B] Sc·[0.00 0.00]
+10:59:07.537427 table@compaction committed F-1 S-475KiB Ke·0 D·50579 T·43.329038ms
+10:59:08.532946 table@remove removed @6
+10:59:08.534188 table@remove removed @2

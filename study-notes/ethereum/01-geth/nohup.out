@@ -161,3 +161,4 @@ MISC OPTIONS:
 COPYRIGHT:
    Copyright 2013-2017 The go-ethereum Authors
    
+Fatal: Error starting protocol stack: datadir already used by another process
