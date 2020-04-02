@@ -97,7 +97,7 @@ contract Voting {
         return candidateList;
     }
 
-    function transfer(address payable _to) public {
+    function transfer(address _to) public {
         _to.transfer(address(this).balance);
     }
 }
