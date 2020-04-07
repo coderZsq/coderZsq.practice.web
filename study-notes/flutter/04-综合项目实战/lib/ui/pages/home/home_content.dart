@@ -3,53 +3,29 @@ import 'package:favorcate/core/services/json_parse.dart';
 import 'package:flutter/material.dart';
 import 'package:favorcate/core/extension/int_extension.dart';
 
-class SQHomeContent extends StatefulWidget {
-  @override
-  _SQHomeContentState createState() => _SQHomeContentState();
-}
+import 'home_category_item.dart';
 
-class _SQHomeContentState extends State<SQHomeContent> {
-  List<SQCategoryModel> _categories = [];
-
-  @override
-  void initState() {
-    super.initState();
-
-    // 加载数据
-    JsonParse.getCategoryData().then((res) {
-      setState(() {
-        _categories = res;
-      });
-    });
-  }
-
+class SQHomeContent extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return GridView.builder(
-        padding: EdgeInsets.all(20.px),
-        itemCount: _categories.length,
-        gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-            crossAxisCount: 2,
-            crossAxisSpacing: 20.px,
-            mainAxisSpacing: 20.px,
-            childAspectRatio: 1.5),
-        itemBuilder: (ctx, index) {
-          final bgColor = _categories[index].cColor;
-
-          return Container(
-              decoration: BoxDecoration(
-                  color: bgColor,
-                  borderRadius: BorderRadius.circular(12),
-                  gradient: LinearGradient(
-                      colors: [bgColor.withOpacity(.5), bgColor])),
-              alignment: Alignment.center,
-              child: Text(
-                _categories[index].title,
-                style: Theme.of(context)
-                    .textTheme
-                    .display2
-                    .copyWith(fontWeight: FontWeight.bold),
-              ));
-        });
+    return FutureBuilder<List<SQCategoryModel>>(
+      future: SQJsonParse.getCategoryData(),
+      builder: (ctx, snapshot) {
+        if (!snapshot.hasData) return Center(child: CircularProgressIndicator());
+        if (snapshot.error != null) return Center(child: Text("请求失败"));
+        final categories = snapshot.data;
+        return GridView.builder(
+            padding: EdgeInsets.all(20.px),
+            itemCount: categories.length,
+            gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                crossAxisCount: 2,
+                crossAxisSpacing: 20.px,
+                mainAxisSpacing: 20.px,
+                childAspectRatio: 1.5),
+            itemBuilder: (ctx, index) {
+              return SQHomeCategoryItem(categories[index]);
+            });
+      },
+    );
   }
 }

@@ -1,9 +1,17 @@
 import 'package:favorcate/core/router/router.dart';
+import 'package:favorcate/core/viewmodel/meal_view_model.dart';
 import 'package:favorcate/ui/shared/app_theme.dart';
 import 'package:favorcate/ui/shared/size_fit.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
-main() => runApp(MyApp());
+main() {
+  // Provider -> ViewModel/Provider/Consumer(Selector)
+  runApp(ChangeNotifierProvider(
+    create: (ctx) => SQMealViewModel(),
+    child: MyApp(),
+  ));
+}
 
 class MyApp extends StatelessWidget {
   @override
@@ -25,4 +33,3 @@ class MyApp extends StatelessWidget {
     );
   }
 }
-
