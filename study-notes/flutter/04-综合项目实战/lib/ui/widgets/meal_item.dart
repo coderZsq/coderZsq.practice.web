@@ -1,13 +1,16 @@
 import 'package:favorcate/core/model/meal_model.dart';
+import 'package:favorcate/core/viewmodel/favor_view_model.dart';
 import 'package:favorcate/ui/pages/detail/detail.dart';
 import 'package:favorcate/ui/widgets/operation_item.dart';
 import 'package:flutter/material.dart';
 import 'package:favorcate/core/extension/int_extension.dart';
+import 'package:provider/provider.dart';
 
 final cardRadius = 12.px;
 
 class SQMealItem extends StatelessWidget {
   final SQMealModel _meal;
+
   SQMealItem(this._meal);
 
   @override
@@ -23,7 +26,8 @@ class SQMealItem extends StatelessWidget {
         ),
       ),
       onTap: () {
-        Navigator.of(context).pushNamed(SQDetailScreen.routeName, arguments: _meal);
+        Navigator.of(context)
+            .pushNamed(SQDetailScreen.routeName, arguments: _meal);
       },
     );
   }
@@ -50,9 +54,8 @@ class SQMealItem extends StatelessWidget {
             width: 300.px,
             padding: EdgeInsets.symmetric(horizontal: 10.px, vertical: 5.px),
             decoration: BoxDecoration(
-              color: Colors.black54,
-              borderRadius: BorderRadius.circular(6.px)
-            ),
+                color: Colors.black54,
+                borderRadius: BorderRadius.circular(6.px)),
             child: Text(
               _meal.title,
               style: Theme.of(context)
@@ -68,15 +71,41 @@ class SQMealItem extends StatelessWidget {
 
   Widget buildOperationInfo() {
     return Padding(
-      padding: EdgeInsets.all(16.px),
+      padding: EdgeInsets.all(5.px),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceAround,
         children: <Widget>[
           SQOperationItem(Icon(Icons.schedule), "${_meal.duration}分钟"),
           SQOperationItem(Icon(Icons.restaurant), "${_meal.complexStr}"),
-          SQOperationItem(Icon(Icons.favorite), "未收藏"),
+          buildFavorItem()
         ],
       ),
+    );
+  }
+
+  Widget buildFavorItem() {
+    return Consumer<SQFavorViewModel>(
+      builder: (ctx, favorVM, child) {
+        // 1. 判断是否收藏状态
+        final iconData =
+            favorVM.isFavor(_meal) ? Icons.favorite : Icons.favorite_border;
+        final favorColor = favorVM.isFavor(_meal) ? Colors.red : Colors.black;
+        final title = favorVM.isFavor(_meal) ? "收藏" : "未收藏";
+
+        return GestureDetector(
+          child: SQOperationItem(
+            Icon(
+              iconData,
+              color: favorColor,
+            ),
+            title,
+            textColor: favorColor,
+          ),
+          onTap: () {
+            favorVM.handleMeal(_meal);
+          },
+        );
+      },
     );
   }
 }
