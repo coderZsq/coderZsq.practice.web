@@ -1,20 +1,17 @@
 import 'package:favorcate/core/model/meal_model.dart';
+import 'package:favorcate/core/viewmodel/base_view_model.dart';
 import 'package:flutter/material.dart';
 
-class SQFavorViewModel extends ChangeNotifier {
-  List<SQMealModel> _favorMeals = [];
+import 'filter_view_model.dart';
 
-  List<SQMealModel> get favorMeals {
-    return _favorMeals;
-  }
-
+class SQFavorViewModel extends BaseMealViewModel {
   void addMeal(SQMealModel meal) {
-    _favorMeals.add(meal);
+    originMeals.add(meal);
     notifyListeners();
   }
 
   void removeMeal(SQMealModel meal) {
-    _favorMeals.remove(meal);
+    originMeals.remove(meal);
     notifyListeners();
   }
 
@@ -27,6 +24,6 @@ class SQFavorViewModel extends ChangeNotifier {
   }
 
   bool isFavor(SQMealModel meal) {
-    return _favorMeals.contains(meal);
+    return originMeals.contains(meal);
   }
 }

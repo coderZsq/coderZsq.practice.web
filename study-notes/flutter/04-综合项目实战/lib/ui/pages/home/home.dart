@@ -1,6 +1,5 @@
 import 'package:favorcate/ui/pages/home/home_app_bar.dart';
 import 'package:favorcate/ui/pages/home/home_content.dart';
-import 'package:favorcate/ui/pages/home/home_drawer.dart';
 import 'package:flutter/material.dart';
 
 class SQHomeScreen extends StatelessWidget {
@@ -9,7 +8,6 @@ class SQHomeScreen extends StatelessWidget {
     return Scaffold(
       appBar: SQHomeAppBar(context),
       body: SQHomeContent(),
-      drawer: SQHomeDrawer()
     );
   }
 }

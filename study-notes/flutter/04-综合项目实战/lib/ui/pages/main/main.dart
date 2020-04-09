@@ -1,3 +1,4 @@
+import 'package:favorcate/ui/pages/home/home_drawer.dart';
 import 'package:favorcate/ui/pages/main/initialize_items.dart';
 import 'package:flutter/material.dart';
 
@@ -14,6 +15,7 @@ class _SQMainScreenState extends State<SQMainScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      drawer: SQHomeDrawer(),
       body: IndexedStack(
         index: _currentIndex,
         children: pages,

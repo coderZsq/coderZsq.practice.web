@@ -1,3 +1,4 @@
+import 'package:favorcate/ui/pages/filter/filter.dart';
 import 'package:flutter/material.dart';
 import 'package:favorcate/core/extension/int_extension.dart';
 
@@ -14,7 +15,7 @@ class SQHomeDrawer extends StatelessWidget {
               Navigator.of(context).pop();
             }),
             buildListTile(context, Icon(Icons.settings), "过滤", () {
-
+              Navigator.of(context).pushNamed(SQFilterScreen.routeName);
             }),
           ],
         ),
