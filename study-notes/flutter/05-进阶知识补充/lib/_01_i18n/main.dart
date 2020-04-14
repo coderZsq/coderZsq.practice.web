@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutterapp/generated/l10n.dart';
-import 'package:flutterapp/i18n/localizations.dart';
-import 'package:flutterapp/i18n/localizations_delegate.dart';
+
+import 'i18n/localizations_delegate.dart';
 
 main() => runApp(MyApp());
 

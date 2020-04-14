@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
-import 'package:flutterapp/i18n/localizations.dart';
+
+import 'localizations.dart';
 
 class SQLocalizationDelegate extends LocalizationsDelegate<SQLocalizations> {
   static SQLocalizationDelegate delegate = SQLocalizationDelegate();
