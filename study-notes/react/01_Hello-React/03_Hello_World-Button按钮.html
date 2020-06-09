@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+</head>
+
+<body>
+  <div id="app"></div>
+  <!-- 添加React的依赖 -->
+  <script src="https://unpkg.com/react@16/umd/react.development.js" crossorigin></script>
+  <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js" crossorigin></script>
+  <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+
+  <!-- 开始开发 -->
+  <!-- 注意事项: 注意jsx, 并且希望script中的jsx的代码被解析, 必须在script标签中添加一个属性 -->
+  <!-- jsx特点: 多个标签最外层(根)只能有一个标签 -->
+  <script type="text/babel">
+    let message = 'Hello World'
+
+    function btnClick() {
+      message = 'Hello React'
+      console.log(message)
+      render()
+    }
+
+    // <h2></h2>: jsx代码
+    function render() {
+      ReactDOM.render(
+        <div>
+          <h2>{message}</h2>
+          <button onClick={btnClick}>改变文本</button>
+        </div>,
+        document.getElementById('app')
+      )
+    }
+
+    render()
+  </script>
+</body>
+
+</html>
