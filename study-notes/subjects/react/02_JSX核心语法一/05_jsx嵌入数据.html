@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <div id="app"></div>
+
+  <script src="../react/react.development.js"></script>
+  <script src="../react/react-dom.development.js"></script>
+  <script src="../react/babel.min.js"></script>
+
+  <script type="text/babel">
+    class App extends React.Component {
+      constructor(props) {
+        super(props)
+
+        this.state = {
+          // 1. 在{}中可以正常显示的内容
+          name: 'coderZsq', // String
+          age: 18, // Number
+          names: ['abc', 'cba', 'nba'], // Array
+
+          // 2. 在{}中不能显示(忽略)
+          test1: null, // null
+          test2: undefined, // undefined
+          test3: true, // Boolean
+          flag: true,
+
+          // 3. 对象不能作为jsx的子类
+          friend: {
+            name: 'kobe',
+            age: 40
+          }
+        }
+      }
+
+      render() {
+        return (
+          <div>
+            <h2>{this.state.name}</h2>
+            <h2>{this.state.age}</h2>
+            <h2>{this.state.names}</h2>
+
+            <h2>{this.state.test1 + ''}</h2>
+            <h2>{this.state.test2 + ''}</h2>
+            <h2>{this.state.test3.toString()}</h2>
+
+            <h2>{this.state.flag ? '你好啊' : null}</h2>
+            {/* <h2>{this.state.flag && '你好啊'}</h2> */}
+
+            {/* <h2>{this.state.friend}</h2> */}
+          </div>
+        )
+      }
+    }
+    ReactDOM.render(<App />, document.getElementById('app'))
+  </script>
+</body>
+
+</html>

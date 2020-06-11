@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <div id="app"></div>
+
+  <!-- 1. 引入依赖 -->
+  <script src="../react/react.development.js"></script>
+  <script src="../react/react-dom.development.js"></script>
+  <script src="../react/babel.min.js"></script>
+
+  <!-- 2. 编写React代码 -->
+  <script type="text/babel">
+    class App extends React.Component {
+      constructor(props) {
+        super(props)
+        this.state = {
+          counter: 0
+        }
+      }
+
+      render() {
+        return (
+          <div>
+            <h2>当前计数: {this.state.counter}</h2>
+            <button onClick={this.increment.bind(this)}>+1</button>
+            <button onClick={this.decrement.bind(this)}>-1</button>
+          </div>
+        )
+      }
+
+      increment() {
+        this.setState({
+          counter: this.state.counter + 1
+        })
+      }
+
+      decrement() {
+        this.setState({
+          counter: this.state.counter - 1
+        })
+      }
+    }
+
+    ReactDOM.render(<App />, document.getElementById('app'))
+  </script>
+</body>
+
+</html>
