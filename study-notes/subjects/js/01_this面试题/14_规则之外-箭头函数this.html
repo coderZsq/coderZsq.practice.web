@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    // var obj = {
+    //   products: [],
+    //   getData: function () {
+    //     // ES5的做法
+    //     var _this = this
+    //     setTimeout(function () {
+    //       var res = ['衣服', '鞋子', '裤子']
+    //       _this.products.push(...res)
+    //       console.log(_this)
+    //     }, 1000)
+    //   }
+    // }
+
+    // var obj = {
+    //   products: [],
+    //   getData: function () {
+    //     // ES6直接使用箭头函数
+    //     setTimeout(() => {
+    //       var res = ['衣服', '鞋子', '裤子']
+    //       this.products.push(...res)
+    //       console.log(this)
+    //     }, 1000)
+    //   }
+    // }
+
+    var obj = {
+      getData: () => {
+        setTimeout(() => {
+          console.log(this)
+        }, 1000)
+      }
+    }
+
+    obj.getData()
+  </script>
+</body>
+
+</html>
