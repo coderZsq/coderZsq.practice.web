@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    // 总结: 在全局作用域下this代表的就是window
+    // 但是, 很少在全局作用域下使用this
+    // 一般情况下, this都是在函数中使用的
+    var name = 'coderZsq'
+
+    console.log(this)
+    console.log(window)
+
+    console.log(name)
+    console.log(window.name)
+    console.log(this.name)
+  </script>
+</body>
+
+</html>

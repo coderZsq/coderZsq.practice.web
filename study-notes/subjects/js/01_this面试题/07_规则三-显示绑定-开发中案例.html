@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .box {
+      width: 200px;
+      height: 200px;
+      background-color: red;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="box"></div>
+
+  <script>
+    // 1. setTimeout
+    // 源码v8引擎源码 -> fn.apply(window)
+    setTimeout(function () {
+      console.log(this) // window
+    }, 1000)
+
+    // 2. forEach
+    // var fn = 传入的函数
+    // var arg = obj || window
+    // var newFn = fn.bind(arg)
+    // newFn()
+    var obj = { name: 'obj' }
+    var names = ['abc', 'cba', 'nba', 'mba']
+    names.forEach(function (item) {
+      console.log(this)
+    }, obj)
+
+    // 3. 监听div的点击
+    // fn.apply(box)
+    var box = document.querySelector('.box')
+    box.onclick = function () {
+      console.log(this) // box
+    }
+
+    // 很多其他方法/第三方库
+  </script>
+</body>
+
+</html>

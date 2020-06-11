@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    // var name = 'coderZsq'
+    // var temp = null
+
+    // var message = (temp = name)
+    // console.log(message)
+
+    var obj = {
+      name: 'obj',
+      foo: function () {
+        console.log(this)
+      }
+    }
+
+    var temp = null;
+    (temp = obj.foo)()  // window
+  </script>
+</body>
+
+</html>

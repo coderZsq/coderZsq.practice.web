@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    // var person1 = {
+    //   name: 'person1',
+    //   foo: function () {
+    //     console.log(this)
+    //   }
+    // }
+
+    function foo() {
+      console.log(this)
+    }
+
+    var person = { name: 'person' }
+
+    // foo.call(person)
+    // new foo()
+
+    // new/apply/call不能同时使用
+    // var p = new foo.call(person)
+
+    // new和bind new优先级更高
+    var Foo = foo.bind(person)
+    var p = new Foo()
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    // // 默认绑定: 独立函数调用
+    // // 情况一: 直接调用函数
+    // function foo() {
+    //   console.log(this)
+    // }
+
+    // foo()
+
+    // // 情况二: 函数的独立调用 -> 全局对象(window)
+    // function test1() {
+    //   console.log(this) // window
+    //   test2()
+    // }
+
+    // function test2() {
+    //   console.log(this) // window
+    //   test3()
+    // }
+
+    // function test3() {
+    //   console.log(this) // window
+    // }
+
+    // test1()
+
+    // 情况三: 把一个函数作为另外一个函数的参数
+    function foo(fn) {
+      // 调用的位置和调用的方式跟obj没有任何关系
+      fn()
+    }
+
+    function test() {
+      console.log(this) // window
+    }
+
+    var obj = {
+      name: 'coderZsq',
+      demo: function () {
+        console.log(this) // window
+      }
+    }
+
+    // foo(test)
+    foo(obj.demo)
+
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    var person1 = {
+      name: 'person1',
+      foo: function () {
+        console.log(this)
+      }
+    }
+
+    // this创建出来的新对象
+    // new绑定优先级高于隐式绑定
+    var p = new person1.foo()
+  </script>
+</body>
+
+</html>

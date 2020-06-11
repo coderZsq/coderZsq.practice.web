@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <input type="text" class="search">
+  <script>
+    // 获取输入框
+    var search = document.querySelector('.search')
+
+    // 监听事件
+    var counter = 0
+    search.oninput = function () {
+      counter++
+      console.log('发送' + counter + '次网络请求')
+    }
+  </script>
+</body>
+
+</html>

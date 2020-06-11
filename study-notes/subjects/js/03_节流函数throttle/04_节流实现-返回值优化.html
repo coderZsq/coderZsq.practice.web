@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <input type="text" class="search">
+  <script>
+    // 1. 是否需要别人调用时传入一些参数: 参数
+    // 2. 函数是否需要返回值: 返回值
+    function throttle(fn, interval, options) {
+      var lastTime = 0
+      var timer = null
+      options = options || {}
+      var trailing = options.trailing || false
+      var callback = options.callback || null
+
+      return function () {
+        var _this = this
+        var _arguments = arguments
+        // 获取当前最新事件
+        var newTime = new Date().getTime()
+
+        // 只要依然有触发事件, 那么就不断的取消定时器
+        if (timer) {
+          clearTimeout(timer)
+        }
+        if (newTime - lastTime > interval) {
+          if (callback) {
+            callback(fn.apply(_this, _arguments))
+          } else {
+            fn.apply(_this, _arguments)
+          }
+          lastTime = newTime
+        } else if (trailing) {
+          timer = setTimeout(function () {
+            if (callback) {
+              callback(fn.apply(_this, _arguments))
+            } else {
+              fn.apply(_this, _arguments)
+            }
+          }, interval)
+        }
+      }
+    }
+  </script>
+  <script>
+    // 获取输入框
+    var search = document.querySelector('.search')
+
+    // 监听事件
+    var counter = 0
+
+    function searchFunc(event) {
+      counter++
+      console.log('发送' + counter + '次网络请求')
+      console.log(this)
+      return 100
+    }
+
+    var newFunc = throttle(searchFunc, 1000, {
+      callback: function (res) {
+        console.log(res)
+      }
+    })
+    search.oninput = newFunc
+
+  </script>
+</body>
+
+</html>

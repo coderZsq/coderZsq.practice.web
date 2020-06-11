@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    // 总结: 在JavaScript里面, this非常灵活, 在不同的场景下面, 指向的是不同的对象
+    // this的指向和什么有关系呢? 和调用方式和调用位置有关系的
+    function foo() {
+      console.log(this)
+    }
+
+    // 1. this -> window
+    foo()
+
+    // 2. obj: this -> obj
+    var obj = {
+      name: 'coderZsq',
+      bar: foo
+    }
+    obj.bar()
+
+    // 3. obj2:
+    var obj2 = {
+      name: 'lilei',
+      obj1: obj
+    }
+    // this -> obj2
+    foo.call(obj2)
+
+    // this -> obj1
+    obj2.obj1.bar()
+
+    // this -> obj2
+    obj.bar.call(obj2)
+
+    // this -> foo对象
+    new obj.bar()
+  </script>
+</body>
+
+</html>

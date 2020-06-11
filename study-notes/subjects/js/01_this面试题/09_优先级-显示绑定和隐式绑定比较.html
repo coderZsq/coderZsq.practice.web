@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    var person1 = {
+      name: 'person1',
+      foo: function () {
+        console.log(this)
+      }
+    }
+
+    person1.foo()
+
+    var person2 = {
+      name: 'person2'
+    }
+
+    // 显示绑定的优先级高于隐式绑定
+    person1.foo.call(person2)
+  </script>
+</body>
+
+</html>

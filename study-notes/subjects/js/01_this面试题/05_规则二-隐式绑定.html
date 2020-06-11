@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    // 隐式绑定: 函数的调用是由一个对象发起的
+    // 当前的this由javascript内部将this绑定到调用的对象身上
+    function foo() {
+      console.log(this)
+    }
+
+    var obj = {
+      name: 'coderZsq',
+      test: foo
+    }
+
+    // 1. 案例一:
+    // this -> obj
+    // 为什么指向的是obj? obj发起的这个函数调用
+    obj.test()
+
+    // 2. 案例二:
+    var obj2 = {
+      obj: obj,
+      demo: obj.test
+    }
+    // this -> obj
+    // 最终函数的发起者 obj
+    obj2.obj.test()
+
+    // 3. 案例三:
+    // this -> obj2
+    obj2.demo()
+
+    // 4. 案例四:
+    var bar = obj2.demo
+    // this -> window
+    // 独立函数调用
+    bar()
+  </script>
+</body>
+
+</html>

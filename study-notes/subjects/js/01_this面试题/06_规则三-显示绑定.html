@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    function foo() {
+      console.log(this)
+    }
+
+    // 1. 默认绑定: 独立函数调用
+    // foo()
+
+    // 2. 隐式绑定
+    var obj = {
+      name: 'obj'
+    }
+
+    // 前提: 必须在调用的对象内部有一个队函数的引用
+    // obj.foo()
+
+    // 3. 显示绑定: call/apply/bind
+    foo.call(obj, 123, 'abc', 'coderZsq, 1.88')
+    foo.call(window)
+    foo.call(123)
+    foo.call('abc')
+
+    foo.apply(obj, [123, 'abc', 'coderZsq, 1.88'])
+    foo.apply(window)
+    foo.apply(123)
+    foo.apply('abc')
+
+    var newFoo = foo.bind(obj)
+    newFoo() // obj
+    newFoo() // obj
+    newFoo() // obj
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <input type="text" class="search">
+  <script>
+    function debounce(fn, delay) {
+      var timer = null
+      return function () {
+        if (timer) clearTimeout(timer)
+        var _this = this
+        var _arguments = arguments
+        timer = setTimeout(function () {
+          fn.apply(_this, _arguments)
+        }, delay)
+      }
+    }
+  </script>
+
+  <script>
+    // 获取输入框
+    var search = document.querySelector('.search')
+
+    // 定义函数
+    function searchFunc(event) {
+      counter++
+      console.log('发送' + counter + '次网络请求')
+      console.log(this)
+      console.log(event)
+    }
+
+    var debounceSearchFunc = debounce(searchFunc, 500)
+
+    // 监听事件
+    var counter = 0
+    search.oninput = debounceSearchFunc
+  </script>
+</body>
+
+</html>

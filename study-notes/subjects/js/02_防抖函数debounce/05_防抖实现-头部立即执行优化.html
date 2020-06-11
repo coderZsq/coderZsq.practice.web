@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <input type="text" class="search">
+  <script>
+    function debounce(fn, delay, leading) {
+      var timer = null
+      leading = leading || false
+      return function () {
+        if (timer) clearTimeout(timer)
+        var _this = this
+        var _arguments = arguments
+        if (leading) {
+          // 1. 刚开始的时候, 立即执行一次
+          var isInvoke = false
+          if (!timer) {
+            fn.apply(_this, _arguments)
+            isInvoke = true
+          }
+          // 2. 延迟执行
+          timer = setTimeout(function () {
+            timer = null
+            if (!isInvoke) {
+              fn.apply(_this, _arguments)
+            }
+          }, delay)
+        } else {
+          timer = setTimeout(function () {
+            fn.apply(_this, _arguments)
+          }, delay)
+        }
+      }
+    }
+  </script>
+
+  <script>
+    // 获取输入框
+    var search = document.querySelector('.search')
+
+    // 定义函数
+    function searchFunc(event) {
+      counter++
+      console.log('发送' + counter + '次网络请求')
+      console.log(this)
+      console.log(event)
+    }
+
+    var debounceSearchFunc = debounce(searchFunc, 2000)
+
+    // 监听事件
+    var counter = 0
+    search.oninput = debounceSearchFunc
+  </script>
+</body>
+
+</html>

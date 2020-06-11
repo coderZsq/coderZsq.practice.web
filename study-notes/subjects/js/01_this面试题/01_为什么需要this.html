@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    // 定义对象
+    var stu = {
+      name: 'coderZsq',
+      age: 18,
+      eating: function () {
+        console.log(this.name + ' eating')
+      },
+      running: function () {
+        console.log(this.name + ' running')
+      }
+    }
+
+    stu.eating()
+    stu.running()
+  </script>
+</body>
+
+</html>
