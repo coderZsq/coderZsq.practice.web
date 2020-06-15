@@ -18,6 +18,22 @@
       return item + '000'
     })
     console.log(newNames)
+
+    // const newNames1 = names.forEach((item) => {
+    //   return item + '111'
+    // })
+    // console.log(newNames1)
+
+    const nums = [110, 123, 50, 32, 55, 10, 8, 333]
+    const newNums = nums.filter((item, index, arr) => {
+      return item >= 50
+    })
+    console.log(newNums)
+
+    const newNums2 = nums.filter(item => {
+      return item % 2 === 0
+    })
+    console.log(newNums2)
   </script>
 </body>
 

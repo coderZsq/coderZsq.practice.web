@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <div id="app"></div>
+
+  <script src="../react/react.development.js"></script>
+  <script src="../react/react-dom.development.js"></script>
+  <script src="../react/babel.min.js"></script>
+
+  <script type="text/babel">
+    class App extends React.Component {
+      constructor(props) {
+        super(props)
+
+        this.state = {
+          isLogin: true
+        }
+      }
+
+      render() {
+        const { isLogin } = this.state
+        const titleDisplayValue = isLogin ? 'block' : 'none'
+        return (
+          <div>
+            <button onClick={e => this.loginClick()}>{isLogin ? '退出' : '登录'}</button>
+            <h2 style={{ display: titleDisplayValue }}>你好啊, Castie!</h2>
+          </div>
+        )
+      }
+
+      loginClick() {
+        this.setState({
+          isLogin: !this.state.isLogin
+        })
+      }
+    }
+    ReactDOM.render(<App />, document.getElementById('app'))
+  </script>
+</body>
+
+</html>

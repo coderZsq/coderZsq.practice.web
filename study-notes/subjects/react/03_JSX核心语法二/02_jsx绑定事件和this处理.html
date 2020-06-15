@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <div id="app"></div>
+
+  <script src="../react/react.development.js"></script>
+  <script src="../react/react-dom.development.js"></script>
+  <script src="../react/babel.min.js"></script>
+
+  <script type="text/babel">
+    class App extends React.Component {
+      constructor(props) {
+        super(props)
+
+        this.state = {
+          message: '你好啊',
+          counter: 100
+        }
+
+        this.btnClick = this.btnClick.bind(this)
+      }
+
+      render() {
+        return (
+          <div>
+            {/* 1. 方案一: bind绑定this(显示绑定) */}
+            <button onClick={this.btnClick}>按钮1</button>
+            <button onClick={this.btnClick}>按钮2</button>
+            <button onClick={this.btnClick}>按钮3</button>
+
+            {/* 2. 方案二: 定义函数时, 使用箭头函数 */}
+            <button onClick={this.increment}>+1</button>
+
+            {/* 3. 方案三(推荐): 直接传入一个箭头函数, 在箭头函数中调用需要执行的函数 */}
+            <button onClick={() => { this.decrement() }}>-1</button>
+          </div>
+        )
+      }
+
+      btnClick() {
+        console.log(this.state.message)
+      }
+
+      // increment() {
+      //   console.log(this.state.counter)
+      // }
+      // 箭头函数中永远不绑定this
+      // ES6中给对象增加属性: class fields
+      increment = () => {
+        console.log(this.state.counter)
+      }
+
+      decrement() {
+        console.log(this.state.counter)
+      }
+    }
+    ReactDOM.render(<App />, document.getElementById('app'))
+  </script>
+</body>
+
+</html>
