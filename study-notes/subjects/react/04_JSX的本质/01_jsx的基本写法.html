@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <div id="app"></div>
+
+  <script src="../react/react.development.js"></script>
+  <script src="../react/react-dom.development.js"></script>
+
+  <script>
+    // jsx -> babel -> React.createElement()
+    // const message1 = <h2>Hello React</h2>
+    const message2 = React.createElement('h2', null, 'Hello React')
+    ReactDOM.render(message2, document.getElementById('app'))
+  </script>
+</body>
+
+</html>

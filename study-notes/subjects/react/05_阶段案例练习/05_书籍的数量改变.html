@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+
+  <style>
+    table {
+      border: 1px solid #eee;
+      border-collapse: collapse;
+    }
+
+    th,
+    td {
+      border: 1px solid #eee;
+      padding: 10px 16px;
+      text-align: center;
+    }
+
+    th {
+      background-color: #ccc;
+    }
+
+    .count {
+      margin: 0 5px;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="app"></div>
+
+  <script src="../react/react.development.js"></script>
+  <script src="../react/react-dom.development.js"></script>
+  <script src="../react/babel.min.js"></script>
+  <script src="./format-utils.js"></script>
+
+  <script type="text/babel">
+    class App extends React.Component {
+      constructor(props) {
+        super(props)
+
+        this.state = {
+          books: [
+            {
+              id: 1,
+              name: '《算法导论》',
+              date: '2006-9',
+              price: 85.00,
+              count: 2
+            },
+            {
+              id: 2,
+              name: '《UNIX编程艺术》',
+              date: '2006-2',
+              price: 59.00,
+              count: 1
+            },
+            {
+              id: 3,
+              name: '《编程珠玑》',
+              date: '2008-10',
+              price: 39.00,
+              count: 1
+            },
+            {
+              id: 4,
+              name: '《代码大全》',
+              date: '2006-3',
+              price: 128.00,
+              count: 1
+            },
+          ]
+        }
+      }
+
+      renderBooks() {
+        return (
+          <div>
+            <table>
+              <thead>
+                <tr>
+                  <th></th>
+                  <th>书籍名称</th>
+                  <th>出版日期</th>
+                  <th>价格</th>
+                  <th>购买数量</th>
+                  <th>操作</th>
+                </tr>
+              </thead>
+              <tbody>
+                {
+                  this.state.books.map((item, index) => {
+                    return (
+                      <tr>
+                        <td>{index + 1}</td>
+                        <td>{item.name}</td>
+                        <td>{item.date}</td>
+                        <td>{formatPrice(item.price)}</td>
+                        <td>
+                          <button disabled={item.count <= 1} onClick={e => this.changeBookCount(index, -1)}>-</button>
+                          <span className="count">{item.count}</span>
+                          <button onClick={e => this.changeBookCount(index, 1)}>+</button>
+                        </td>
+                        <td><button onClick={e => this.removeBook(index)}>移除</button></td>
+                      </tr>
+                    )
+                  })
+                }
+              </tbody>
+            </table>
+            <h2>总价格: {this.getTotalPrice()}</h2>
+          </div>
+        )
+      }
+
+      renderEmptyTip() {
+        return <h2>购物车为空~</h2>
+      }
+
+      render() {
+        return this.state.books.length ? this.renderBooks() : this.renderEmptyTip()
+      }
+
+      removeBook(index) {
+        // React中设计原则: state中的数据的不可变性
+        this.setState({
+          books: this.state.books.filter((item, indey) => index != indey)
+        })
+      }
+
+      changeBookCount(index, count) {
+        const newBooks = [...this.state.books]
+        newBooks[index].count += count
+        this.setState({
+          books: newBooks
+        })
+      }
+
+      getTotalPrice() {
+        // 1. for循环的方式
+        // let totalPrice = 0
+        // for (let item of this.state.books) {
+        //   totalPrice += item.price * item.count
+        // }
+        // return formatPrice(totalPrice)
+
+        // 2. filter/map/reduce(归纳为)
+        // 回调函数的参数:
+        // 参数一: 上一次回调函数的结果(第一次没有上一次函数的回调函数的结果, 使用初始化值)
+        const totalPrice = this.state.books.reduce((preValue, item, index, arr) => {
+          return preValue + item.price * item.count
+        }, 0)
+        return formatPrice(totalPrice)
+      }
+    }
+    ReactDOM.render(<App />, document.getElementById('app'))
+  </script>
+</body>
+
+</html>

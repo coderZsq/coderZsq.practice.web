@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <div id="app"></div>
+
+  <script src="../react/react.development.js"></script>
+  <script src="../react/react-dom.development.js"></script>
+  <script src="../react/babel.min.js"></script>
+
+  <script type="text/babel">
+    class App extends React.Component {
+      constructor(props) {
+        super(props)
+
+        this.state = {
+
+        }
+      }
+
+      render() {
+        // jsx -> createElement函数 -> ReactElement(对象树) -> ReactDOM.render -> 真实DOM
+        // jsx -> createElement函数 -> ReactElement(对象树) -> ReactDOM.render -> 原生的控件(UIButton/Button)
+        var elementObj = (
+          <div>
+            <div className="header">
+              <h1 title="标题">我是标题</h1>
+            </div>
+            <div className="content">
+              <h2>我是页面的内容</h2>
+              <button>按钮</button>
+              <button>+1</button>
+              <a href="http://www.baidu.com">百度一下</a>
+            </div>
+            <div className="footer">
+              <p>我是尾部的内容</p>
+            </div>
+          </div>
+        )
+
+        console.log(elementObj)
+        return elementObj
+      }
+    }
+    ReactDOM.render(<App />, document.getElementById('app'))
+  </script>
+</body>
+
+</html>
