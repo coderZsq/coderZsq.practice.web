@@ -40,7 +40,7 @@ ChildCpn.defaultProps = {
   name: 'coderZsq',
   age: 30,
   height: 1.98,
-  name: ['aaa', 'bbb']
+  names: ['aaa', 'bbb']
 }
 
 export default class App extends Component {
