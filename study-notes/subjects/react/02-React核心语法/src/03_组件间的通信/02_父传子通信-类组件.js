@@ -1,7 +1,17 @@
 import React, { Component } from 'react'
 
 class ChildCpn extends Component {
+  constructor() {
+    super()
+    console.log(this.props)
+  }
+
+  componentDidMount() {
+    console.log(this.props, 'componentDidMount')
+  }
+
   render() {
+    // console.log(this.props, 'render')
     const { name, age, height } = this.props
     return (
       <div>
