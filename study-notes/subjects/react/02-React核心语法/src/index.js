@@ -41,7 +41,21 @@ import ReactDOM from 'react-dom'
 // import App from './11_高阶组件的使用/07_高阶组件应用-生命周期劫持-增强'
 
 // import App from './12_组件内容补充/01_ref的转发'
-import App from './12_组件内容补充/02_portals的使用'
-import "./css/index.css"
+// import App from './12_组件内容补充/02_portals的使用'
+// import "./css/index.css"
+// import App from './12_组件内容补充/03_fragments的使用'
+// import App from './12_组件内容补充/04_strictMode的使用'
 
-ReactDOM.render(<App name="coderZsq" />, document.getElementById('root'))
+// ReactDOM.render(<App name="coderZsq" />, document.getElementById('root'))
+
+// import App from './13_内联样式/App'
+// import App from './14_普通的css/app'
+// import App from './15_css_modules/app'
+import App from './16_styled-components/app'
+
+ReactDOM.render(
+  <React.StrictMode>
+    <App />
+  </React.StrictMode>,
+  document.getElementById('root')
+)
