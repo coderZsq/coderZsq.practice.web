@@ -42,7 +42,7 @@ import ReactDOM from 'react-dom'
 
 // import App from './12_组件内容补充/01_ref的转发'
 // import App from './12_组件内容补充/02_portals的使用'
-// import "./css/index.css"
+// import "./12_组件内容补充/css/index.css"
 // import App from './12_组件内容补充/03_fragments的使用'
 // import App from './12_组件内容补充/04_strictMode的使用'
 
@@ -51,11 +51,14 @@ import ReactDOM from 'react-dom'
 // import App from './13_内联样式/App'
 // import App from './14_普通的css/app'
 // import App from './15_css_modules/app'
-import App from './16_styled-components/app'
+// import App from './16_styled-components/app'
+
+// import App from './17_antdesign/App'
+// import 'antd/dist/antd.css'
+import 'antd/dist/antd.less'
+import App from './17_antdesign/comment/App'
 
 ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
+  <App />,
   document.getElementById('root')
 )
