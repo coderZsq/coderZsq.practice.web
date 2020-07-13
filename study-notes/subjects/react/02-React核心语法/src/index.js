@@ -59,13 +59,17 @@ import ReactDOM from 'react-dom'
 // import App from './17_antdesign/comment/App'
 // import 'moment/locale/zh-cn'
 
-import App from './18_axios/App'
-import axios from 'axios'
-// 7. 默认配置
-axios.defaults.baseURL = 'https://httpbin.org'
-axios.defaults.timeout = 5000
-axios.defaults.headers.common['token'] = 'dnwjdkndjwkdnjkqb'
-// axios.defaults.header.post['Content-Type'] = 'application/text'
+// import App from './18_axios/App'
+// import axios from 'axios'
+// // 7. 默认配置
+// axios.defaults.baseURL = 'https://httpbin.org'
+// axios.defaults.timeout = 5000
+// axios.defaults.headers.common['token'] = 'dnwjdkndjwkdnjkqb'
+// // axios.defaults.header.post['Content-Type'] = 'application/text'
+
+import App from './19_transition/App'
+import './19_transition/transition/CSSTransition.css'
+import 'antd/dist/antd.css'
 
 ReactDOM.render(
   <App />,

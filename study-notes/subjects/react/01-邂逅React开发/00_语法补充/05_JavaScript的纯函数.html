@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    // 是否是一个纯函数: 是纯函数
+    function sum(num1, num2) {
+      return num1 + num2
+    }
+
+    // add函数是否是一个纯函数
+    let foo = 10
+    function add(num) {
+      return foo + num
+    }
+
+    add(5) // 15
+    foo = 20
+    add(5) // 25
+
+    // 能否将上面的函数改写成一个纯函数
+    // add2就是一个纯函数
+    const bar = 10
+    function add2(num) {
+      return bar + num
+    }
+
+    // bar = 11
+
+    // add3是一个纯函数吗? 不是一个纯函数
+    const baz = {
+      count: 10
+    }
+    function add3(num) {
+      return baz.count + num
+    }
+    baz.count = 20
+
+    // printInfo是一个纯函数吗? 不是一个纯函数
+    function printInfo(info) {
+      info.name = 'sq'
+      console.log(info.name, info.age)
+    }
+
+    const obj = {
+      name: 'sq',
+      age: 18
+    }
+
+    printInfo(info)
+    console.log(obj)
+  </script>
+</body>
+
+</html>
