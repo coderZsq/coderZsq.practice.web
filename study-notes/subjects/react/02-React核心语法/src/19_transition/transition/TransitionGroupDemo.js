@@ -17,11 +17,14 @@ export default class TransitionGroupDemo extends PureComponent {
         {
           this.state.names.map((item, index) => {
             return (
-              <CSSTransition key={index}
+              <CSSTransition key={item}
                 timeout={500}
                 classNames="item"
               >
-                <div>{item}</div>
+                <div>
+                  {item}
+                  <button onClick={e => this.removeItem(index)}>-</button>
+                </div>
               </CSSTransition>
             )
           })
@@ -34,6 +37,13 @@ export default class TransitionGroupDemo extends PureComponent {
   addName() {
     this.setState({
       names: [...this.state.names, 'coderZsq']
+    })
+  }
+
+  removeItem(index) {
+    // index indey indez
+    this.setState({
+      names: this.state.names.filter((item, indey) => index !== indey)
     })
   }
 }
