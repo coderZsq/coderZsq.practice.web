@@ -1,0 +1,13 @@
+{
+  "name": "state",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "dependencies": {
+    "redux": "^4.0.5"
+  },
+  "type": "module",
+  "scripts": {
+    "start": "node --experimental-modules index.js"
+  }
+}
