@@ -1,24 +1,30 @@
 import React, { PureComponent } from 'react'
 import { NavLink, Switch, Route } from 'react-router-dom'
+import { renderRoutes, matchRoutes } from 'react-router-config'
+import routes from '../router'
 
-function AboutHistory(props) {
+export function AboutHistory(props) {
   return <h2>企业成立于2000年, 拥有悠久的历史文化</h2>
 }
 
-function AboutCulture(props) {
+export function AboutCulture(props) {
   return <h2>创新/发展/共赢</h2>
 }
 
-function AboutContact(props) {
+export function AboutContact(props) {
   return <h2>联系电话: 020-68888888</h2>
 }
 
-function AboutJoin(props) {
+export function AboutJoin(props) {
   return <h2>投递简历到aaaa@123.com</h2>
 }
 
 export default class About extends PureComponent {
   render() {
+    console.log(this.props.route)
+    const branch = matchRoutes(this.props.route.routes, '/about')
+    console.log(branch)
+
     return (
       <div>
         <NavLink exact to="/about" activeClassName="about-active">企业历史</NavLink>
@@ -26,12 +32,14 @@ export default class About extends PureComponent {
         <NavLink exact to="/about/contact" activeClassName="about-active">联系我们</NavLink>
         <button onClick={e => this.jumpToJoin()}>加入我们</button>
 
-        <Switch>
+        {/* <Switch>
           <Route exact path="/about" component={AboutHistory} />
           <Route path="/about/culture" component={AboutCulture} />
           <Route path="/about/contact" component={AboutContact} />
           <Route path="/about/join" component={AboutJoin} />
-        </Switch>
+        </Switch> */}
+
+        {renderRoutes(this.props.route.routes)}
       </div>
     )
   }

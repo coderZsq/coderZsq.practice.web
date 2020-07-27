@@ -6,7 +6,7 @@ export default class User extends PureComponent {
     super(props)
 
     this.state = {
-      isLogin: false
+      isLogin: true
     }
   }
 
