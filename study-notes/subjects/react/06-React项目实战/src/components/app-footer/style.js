@@ -59,10 +59,10 @@ export const FooterRight = styled.ul`
     :nth-child(2) .link {
       background-position: 0 0;
     }
-    :nth-child(2) .link {
+    :nth-child(3) .link {
       background-position: -60px -50px;
     }
-    :nth-child(2) .link {
+    :nth-child(4) .link {
       background-position: 0 -101px;
     }
 

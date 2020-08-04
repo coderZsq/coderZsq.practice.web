@@ -9,6 +9,7 @@ import {
 } from '../store/actionCreators'
 
 function About(props) {
+  console.log('About页面重新渲染了')
   return (
     <div>
       <hr />

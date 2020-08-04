@@ -17,7 +17,7 @@ export default memo(function SQAppHeader() {
   const showSelectItem = (item, index) => {
     if (index < 3) {
       return (
-        <NavLink to={item.link} exact>
+        <NavLink to={item.link}>
           {item.title}
           <i className="sprite_01 icon"></i>
         </NavLink>
@@ -37,7 +37,7 @@ export default memo(function SQAppHeader() {
             {
               headerLinks.map((item, index) => {
                 return (
-                  <div key={item.index} className="select-item">
+                  <div key={item.title} className="select-item">
                     {showSelectItem(item, index)}
                   </div>
                 )
