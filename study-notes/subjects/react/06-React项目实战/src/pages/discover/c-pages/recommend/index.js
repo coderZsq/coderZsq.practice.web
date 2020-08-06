@@ -1,24 +1,29 @@
-import React, { memo, useEffect } from 'react'
-import { useDispatch, useSelector, shallowEqual } from 'react-redux'
+import React, { memo } from 'react'
 
-import { getTopBannerAction } from './store/actionCreators'
+import SQTopBanner from './c-cpns/top-banner'
+import SQHotRecommend from './c-cpns/hot-recommend'
+import SQNewAlbum from './c-cpns/new-album'
+import SQRecommendRanking from './c-cpns/recommend-ranking'
+import {
+  RecommendWrapper,
+  Content,
+  RecommendLeft,
+  RecommendRight
+} from './style'
 
 function SQRecommend(props) {
-  // 组件和redux关联: 获取数据和进行操作
-  const { topBanners } = useSelector(state => ({
-    topBanners: state.recommend.topBanners
-  }), shallowEqual)
-  const dispatch = useDispatch()
-
-  // 发送网络请求
-  useEffect(() => {
-    dispatch(getTopBannerAction())
-  }, [dispatch])
-
   return (
-    <div>
-      <h2>SQRecommend: {topBanners.length}</h2>
-    </div>
+    <RecommendWrapper>
+      <SQTopBanner />
+      <Content className="wrap-v2">
+        <RecommendLeft>
+          <SQHotRecommend />
+          <SQNewAlbum />
+          <SQRecommendRanking />
+        </RecommendLeft>
+        <RecommendRight></RecommendRight>
+      </Content>
+    </RecommendWrapper>
   )
 }
 
