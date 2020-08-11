@@ -4,6 +4,9 @@ import SQTopBanner from './c-cpns/top-banner'
 import SQHotRecommend from './c-cpns/hot-recommend'
 import SQNewAlbum from './c-cpns/new-album'
 import SQRecommendRanking from './c-cpns/recommend-ranking'
+import SQUserLogin from './c-cpns/user-login'
+import SQSettleSinger from './c-cpns/settle-singer'
+import SQHotAnchor from './c-cpns/hot-anchor'
 import {
   RecommendWrapper,
   Content,
@@ -21,7 +24,11 @@ function SQRecommend(props) {
           <SQNewAlbum />
           <SQRecommendRanking />
         </RecommendLeft>
-        <RecommendRight></RecommendRight>
+        <RecommendRight>
+          <SQUserLogin />
+          <SQSettleSinger />
+          <SQHotAnchor />
+        </RecommendRight>
       </Content>
     </RecommendWrapper>
   )
