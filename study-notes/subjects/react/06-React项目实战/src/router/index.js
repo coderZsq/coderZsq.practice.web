@@ -7,6 +7,7 @@ import SQSongs from '../pages/discover/c-pages/songs'
 import SQDjradio from '../pages/discover/c-pages/djradio'
 import SQArtist from '../pages/discover/c-pages/artist'
 import SQAlbum from '../pages/discover/c-pages/album'
+import SQPlayer from '../pages/player'
 
 import SQMine from '@/pages/mine'
 import SQFriend from '@/pages/friend'
@@ -55,6 +56,10 @@ const routes = [
       {
         path: '/discover/album',
         component: SQAlbum
+      },
+      {
+        path: '/discover/player',
+        component: SQPlayer
       }
     ]
   },

@@ -142,7 +142,16 @@ export const Operator = styled.div`
     }
 
     .loop {
-      background-position: -3px -344px;
+      background-position: ${props => {
+    switch (props.sequence) {
+      case 1:
+        return "-66px -248px"
+      case 2:
+        return "-66px -344px"
+      default:
+        return "-3px -344px"
+    }
+  }};
     }
 
     .playlist {
