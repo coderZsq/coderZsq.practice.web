@@ -4,7 +4,7 @@ import { useDispatch, useSelector, shallowEqual } from 'react-redux'
 import { getSizeImage, formatDate, getPlaySong } from '@/utils/format-utils'
 
 import { NavLink } from 'react-router-dom'
-import { Slider } from 'antd'
+import { message, Slider } from 'antd'
 import {
   PlaybarWrapper,
   Control,
@@ -14,7 +14,8 @@ import {
 import {
   getSongDetailAction,
   changeSequenceAction,
-  changeCurrentIndexAndSongAction
+  changeCurrentIndexAndSongAction,
+  changeCurrentLyricIndexAction
 } from '../store/actionCreators'
 
 export default memo(function SQAppPlayerBar() {
@@ -25,9 +26,16 @@ export default memo(function SQAppPlayerBar() {
   const [isPlaying, setIsPlaying] = useState(false)
 
   // redux hook
-  const { currentSong, sequence } = useSelector(state => ({
+  const {
+    currentSong,
+    sequence,
+    lyricList,
+    currentLyricIndex
+  } = useSelector(state => ({
     currentSong: state.getIn(['player', 'currentSong']),
-    sequence: state.getIn(['player', 'sequence'])
+    sequence: state.getIn(['player', 'sequence']),
+    lyricList: state.getIn(['player', 'lyricList']),
+    currentLyricIndex: state.getIn(['player', 'currentLyricIndex'])
   }), shallowEqual)
   const dispatch = useDispatch()
 
@@ -60,9 +68,30 @@ export default memo(function SQAppPlayerBar() {
   }, [isPlaying])
 
   const timeUpdate = (e) => {
+    let currentTime = e.target.currentTime
     if (!isChanging) {
-      setCurrentTime(e.target.currentTime * 1000)
-      setProgress(currentTime / duration * 100)
+      setCurrentTime(currentTime * 1000)
+      setProgress(currentTime * 1000 / duration * 100)
+    }
+
+    // 获取当前的歌词
+    let i = 0
+    for (; i < lyricList.length; i++) {
+      let lyricItem = lyricList[i]
+      if (currentTime * 1000 < lyricItem.time) {
+        break
+      }
+    }
+
+    if (currentLyricIndex !== i - 1) {
+      dispatch(changeCurrentLyricIndexAction(i - 1))
+      const content = lyricList[i - 1] && lyricList[i - 1].content
+      message.open({
+        key: 'Lyric',
+        content: content,
+        duration: 0,
+        className: 'lyric-class'
+      })
     }
   }
 

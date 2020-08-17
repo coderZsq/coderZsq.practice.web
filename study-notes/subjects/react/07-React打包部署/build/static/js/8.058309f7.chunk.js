@@ -1,0 +1,2 @@
+(this["webpackJsonpsq-web-music-react"]=this["webpackJsonpsq-web-music-react"]||[]).push([[8],{226:function(e,t,c){"use strict";c.r(t);var n=c(0),a=c.n(n);t.default=Object(n.memo)((function(){return a.a.createElement("div",null,a.a.createElement("h2",null,"SQDjradio"))}))}}]);
+//# sourceMappingURL=8.058309f7.chunk.js.map

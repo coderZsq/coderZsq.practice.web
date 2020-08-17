@@ -1,0 +1,1 @@
+{"version":3,"sources":["pages/discover/c-pages/songs/index.js"],"names":["memo"],"mappings":"iIAAA,2BAEeA,0BAAK,WAClB,OACE,6BACE","file":"static/js/10.b67da6f0.chunk.js","sourcesContent":["import React, { memo } from 'react'\n\nexport default memo(function SQSongs() {\n  return (\n    <div>\n      <h2>SQSongs</h2>\n    </div>\n  )\n})\n"],"sourceRoot":""}

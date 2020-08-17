@@ -1,0 +1,1 @@
+{"version":3,"sources":["pages/discover/c-pages/artist/index.js"],"names":["memo"],"mappings":"gIAAA,2BAEeA,0BAAK,WAClB,OACE,6BACE","file":"static/js/7.ef75339d.chunk.js","sourcesContent":["import React, { memo } from 'react'\n\nexport default memo(function SQArtist() {\n  return (\n    <div>\n      <h2>SQArtist</h2>\n    </div>\n  )\n})\n"],"sourceRoot":""}

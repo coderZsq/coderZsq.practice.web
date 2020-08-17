@@ -30,6 +30,11 @@ export const changeSequenceAction = (sequence) => ({
   sequence
 })
 
+export const changeCurrentLyricIndexAction = (index) => ({
+  type: actionTypes.CHANGE_CURRENT_LYRIC_INDEX,
+  index
+})
+
 export const changeCurrentIndexAndSongAction = (tag) => {
   return (dispatch, getState) => {
     const playList = getState().getIn(['player', 'playList'])
@@ -37,7 +42,7 @@ export const changeCurrentIndexAndSongAction = (tag) => {
     let currentSongIndex = getState().getIn(['player', 'currentSongIndex'])
     switch (sequence) {
       case 1: // 随机播放
-        let randomIndex = -1
+        let randomIndex = getRandomNumber(playList.length)
         while (randomIndex === currentSongIndex) {
           randomIndex = getRandomNumber(playList.length)
         }
