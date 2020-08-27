@@ -1,5 +1,4 @@
-function show_date_time() {
-  window.setTimeout('show_date_time()', 1000);
+var show_date_time = function () {
   BirthDay = new Date('10/26/2019 12:00:00');
   today = new Date();
   timeold = (today.getTime() - BirthDay.getTime());
@@ -14,15 +13,16 @@ function show_date_time() {
   minsold = Math.floor((e_hrsold - hrsold) * 60);
   seconds = Math.floor((e_minsold - minsold) * 60);
   span_dt_dt.innerHTML = daysold + '天' + hrsold + '小时' + minsold + '分' + seconds + '秒';
-}
+};
 
-setInterval(function () { show_date_time(); }, 1000);
+show_date_time();
+setInterval(show_date_time, 1000);
 
 var S = {
   init: function () {
     S.Drawing.init('.canvas');
     document.body.classList.add('body--ready');
-    S.UI.simulate('|#countdown 1|#rectangle 15x15|#circle 12 |哈哈哈哈|宝宝 生日快乐!');
+    S.UI.simulate('#circle 15|#circle 10|#circle 5|#countdown 10|#rectangle 15x15|#circle 1|祝|我的傻宝宝|~莎子同学~|AKA 夏目の猫|可爱多小仙女|人间皮卡丘|中国发电站|生日快乐!|Happy Bithday!|Bon Anniversaire|Buon compleanno|с Днем рожденья|お誕生日おめでとう|생일 축하 해요|生日快楽|#circle 1|#circle 1|');
     S.Drawing.loop(function () {
       S.Shape.render();
     });
@@ -75,12 +75,7 @@ S.Drawing = (function () {
   };
 }());
 S.UI = (function () {
-  var interval,
-    currentAction,
-    time,
-    maxShapeSize = 30,
-    sequence = [],
-    cmd = '#';
+  var interval, currentAction, time, maxShapeSize = 30, sequence = [], cmd = '#', idx = 0;
   function formatTime(date) {
     var h = date.getHours(),
       m = date.getMinutes(),
@@ -108,13 +103,12 @@ S.UI = (function () {
       }, delay);
     }
   }
+
   function performAction(value) {
-    var action,
-      value,
-      current;
+    var action, value, current;
     sequence = typeof (value) === 'object' ? value : sequence.concat(value.split('|'));
     timedAction(function (index) {
-      current = sequence.shift();
+      current = sequence[idx++ % sequence.length];
       action = getAction(current);
       value = getValue(current);
       switch (action) {
@@ -280,10 +274,10 @@ S.Dot.prototype = {
   }
 };
 S.ShapeBuilder = (function () {
-  var gap = 13,
+  var gap = 12,
     shapeCanvas = document.createElement('canvas'),
     shapeContext = shapeCanvas.getContext('2d'),
-    fontSize = 500,
+    fontSize = 400,
     fontFamily = 'Avenir, Helvetica Neue, Helvetica, Arial, sans-serif';
   function fit() {
     shapeCanvas.width = Math.floor(window.innerWidth / gap) * gap;
@@ -459,7 +453,7 @@ S.Shape = (function () {
           dots[i].move(new S.Point({
             x: Math.random() * a.w,
             y: Math.random() * a.h,
-            a: 0.3, //.4
+            a: 0.3,
             z: Math.random() * 4,
             h: 0
           }));
