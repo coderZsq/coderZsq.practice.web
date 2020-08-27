@@ -22,7 +22,7 @@ var S = {
   init: function () {
     S.Drawing.init('.canvas');
     document.body.classList.add('body--ready');
-    S.UI.simulate('|Big Bang|   你相信   |量子力学吗?|   倒计时   |#countdown 10|#rectangle 15x15|#circle 1|      祝      |我的傻宝宝|~莎子同学~|AKA 夏目の猫|可爱多小仙女|人间皮卡丘|中国发电站|生日快乐!|Happy Bithday!|Bon Anniversaire|Buon compleanno|с Днем рожденья|お誕生日おめでとう|생일 축하 해요|生日快楽|#circle 1|#circle 1|#circle 15|#circle 10|#circle 5|');
+    S.UI.simulate('|Big Bang|   你相信   |量子力学吗?|   倒计时   |#countdown 10|#rectangle 15x15|#circle 1|祝|我的傻宝宝|~莎子同学~|AKA 夏目の猫|可爱多小仙女|人间皮卡丘|中国发电站|生日快乐!|Happy Bithday!|Bon Anniversaire|Buon compleanno|с Днем рожденья|お誕生日おめでとう|생일 축하 해요|生日快楽|#circle 1|#circle 1|#circle 15|#circle 10|#circle 5|');
     S.Drawing.loop(function () {
       S.Shape.render();
     });
