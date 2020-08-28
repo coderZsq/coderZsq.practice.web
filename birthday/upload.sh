@@ -1,0 +1,1 @@
+scp -P 22 -r ../birthday/ Aliyun:/root/apps
