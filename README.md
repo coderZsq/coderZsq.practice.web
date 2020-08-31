@@ -1,5 +1,13 @@
 ## Find inspiration in practice
 
+### birthday
+> Use **canvas** implemention **bitmap animation** Power by [Junrui-L](https://github.com/Junrui-L)
+
+#### Display
+<img src="./birthday/contents/img.png">
+
+<br>
+
 ### resume
 > Practice a **web version** of resume, please **feel free** to connect me!
 
