@@ -1,3 +1,5 @@
+const RENDER_TO_DOM = Symbol('render to dom')
+
 // 元素的包装类
 class ElementWrapper {
   constructor(type) {
@@ -9,12 +11,18 @@ class ElementWrapper {
   appendChild(component) {
     this.root.appendChild(component.root)
   }
+  [RENDER_TO_DOM](range) {
+    this.render().[RENDER_TO_DOM](range)
+  }
 }
 
 // 文字的包装类
 class TextWrapper {
   constructor(content) {
     this.root = document.createTextNode(content)
+  }
+  [RENDER_TO_DOM](range) {
+    this.render().[RENDER_TO_DOM](range)
   }
 }
 
@@ -30,11 +38,8 @@ export class Component {
   appendChild(component) {
     this.children.push(component)
   }
-  get root() {
-    if (!this._root) {
-      this._root = this.render().root
-    }
-    return this._root
+  [RENDER_TO_DOM](range) {
+    this.render().[RENDER_TO_DOM](range)
   }
 }
 
