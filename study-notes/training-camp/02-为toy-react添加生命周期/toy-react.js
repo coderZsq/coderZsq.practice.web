@@ -11,7 +11,12 @@ class ElementWrapper {
       // 绑定事件, 第一个单词小写
       this.root.addEventListener(RegExp.$1.replace(/^[\s\S]/, c => c.toLowerCase()), value)
     } else {
-      this.root.setAttribute(name, value)
+      // 处理css
+      if (name === 'className') {
+        this.root.setAttribute('class', value)
+      } else {
+        this.root.setAttribute(name, value)
+      }
     }
   }
   appendChild(component) {
@@ -56,13 +61,20 @@ export class Component {
   [RENDER_TO_DOM](range) {
     // 存储绘制区域
     this._range = range
+    // 先调用外面的render得到jsx进行渲染
     this.render()[RENDER_TO_DOM](range)
   }
   rerender() {
-    // 把之前的区域全删掉
-    this._range.deleteContents()
-    // 重新渲染
-    this[RENDER_TO_DOM](this._range)
+    // 保存旧的range 
+    let oldRange = this._range
+    // 创建新的range设置成旧的range的start
+    let range = document.createRange()
+    range.setStart(oldRange.startContainer, oldRange.startOffset)
+    range.setEnd(oldRange.startContainer, oldRange.startOffset)
+    this[RENDER_TO_DOM](range)
+    // 把旧的range的start挪到插入的内容之后再进行删除
+    oldRange.setStart(range.endContainer, range.endOffset)
+    oldRange.deleteContents()
   }
   setState(newState) {
     // Js中 null 也是 'object' 类型 所以要联合判断
@@ -100,6 +112,10 @@ export function createElement(type, attributes, ...children) {
     for (let child of children) {
       if (typeof child === 'string') {
         child = new TextWrapper(child)
+      }
+      // 如果传入是null则不处理
+      if (child === null) {
+        continue
       }
       if ((typeof child === 'object') && (child instanceof Array)) {
         insertChildren(child)
