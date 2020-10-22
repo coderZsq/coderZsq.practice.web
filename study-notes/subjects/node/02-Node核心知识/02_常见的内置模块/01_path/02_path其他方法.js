@@ -17,6 +17,14 @@ console.log(filepath1)
 
 // 3. resolve路径拼接
 // resolve会判断拼接的路径字符串中, 是否有以/或./或../开头的路径
-const filepath2 = path.resolve(basepath, filename, othername)
-console.log(filepath2)
+// const filepath2 = path.resolve(basepath, filename, othername)
+// console.log(filepath2)
 
+const basepath2 = '/User/zhushuangquan'
+// const filename2 = '/sq/abc.txt' // /sq/abc.txt
+// const filename2 = './sq/abc.txt' // /User/zhushuangquan/sq/abc.txt
+// const filename2 = 'sq/abc.txt' // /User/zhushuangquan/sq/abc.txt
+const filename2 = '../sq/abc.txt' // /User/sq/abc.txt
+const result = path.resolve(basepath2, filename2)
+
+console.log(result)
