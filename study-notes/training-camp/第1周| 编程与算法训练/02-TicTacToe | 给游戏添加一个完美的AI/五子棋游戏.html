@@ -33,10 +33,16 @@
     // 棋盘行数
     const ROW = 15
     // 连续数量
-    let COUNT = 5
+    const FIVE = 5
+    // 赢
+    const WIN = 1
+    // 输
+    const LOSE = -1
+    // 平
+    const DRAW = 0
 
     // 定义 五子棋为 15x15 棋盘
-    let pattern = [
+    const pattern = [
       [EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY],
       [EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY],
       [EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY],
@@ -80,21 +86,25 @@
       if (pattern[x][y] !== EMPTY) return
       pattern[x][y] = color
       // 胜负判断
-      if (check()) {
+      if (check(pattern, color)) {
         alert(color === WHITE ? '⚪️ is winner!' : '⚫️ is winner!')
       }
-      color = 3 - color
+      color = (BLACK + WHITE) - color
       show()
+      // 判断即将胜利
+      if (willWin(pattern, color)) {
+        console.log(color === WHITE ? '⚪️ will win!' : '⚫️ will win!')
+      }
     }
 
     // 胜负判断
-    function check() {
+    function check(pattern, color) {
       // 扫描所有的行, 连续五个相同子判定为胜利
       for (let i = 0; i < ROW; i++) {
         let count = null
         for (let j = 0; j < ROW; j++) {
           if (pattern[i][j] === color) {
-            if (++count >= COUNT) return true;
+            if (++count >= FIVE) return true;
           } else {
             count = 0
           }
@@ -105,7 +115,7 @@
         let count = null
         for (let j = 0; j < ROW; j++) {
           if (pattern[j][i] === color) {
-            if (++count >= COUNT) return true;
+            if (++count >= FIVE) return true;
           } else {
             count = 0
           }
@@ -116,10 +126,10 @@
         let count = 0
         for (let i = 0; i < ROW; i++) {
           for (let j = 0; j < ROW; j++) {
-            for (let k = 0; k < COUNT; k++) {
+            for (let k = 0; k < FIVE; k++) {
               if (i - k < 0 || j - k < 0) continue
               if (pattern[i - k][j - k] === color) {
-                if (++count >= COUNT) return true;
+                if (++count >= FIVE) return true;
               } else {
                 count = 0
               }
@@ -132,10 +142,10 @@
         let count = 0
         for (let i = 0; i < ROW; i++) {
           for (let j = 0; j < ROW; j++) {
-            for (let k = 0; k < COUNT; k++) {
+            for (let k = 0; k < FIVE; k++) {
               if (i + k >= ROW || j - k < 0) continue
               if (pattern[i + k][j - k] === color) {
-                if (++count >= COUNT) return true;
+                if (++count >= FIVE) return true;
               } else {
                 count = 0
               }
@@ -146,6 +156,71 @@
       return false
     }
 
+
+
+    // 克隆棋盘
+    function clone(pattern) {
+      return JSON.parse(JSON.stringify(pattern))
+    }
+
+
+    // 即将获得胜利函数
+    function willWin(pattern, color) {
+      for (let i = 0; i < ROW; i++) {
+        for (let j = 0; j < ROW; j++) {
+          if (pattern[i][j] !== EMPTY) continue
+          let tmp = clone(pattern)
+          tmp[i][j] = color
+          if (check(tmp, color)) {
+            return [i, j]
+          }
+        }
+      }
+      return null
+    }
+
+    // 层级
+    let LEVEL = 0
+
+    // 最佳选择函数, 设置遍历15层, 不然会栈溢出
+    function bestChoice(pattern, color) {
+      if (LEVEL >= 15) {
+        return {
+          point: null,
+          result: DRAW
+        }
+      } else {
+        LEVEL++
+      }
+
+      let p = null
+      if (p = willWin(pattern, color)) {
+        return {
+          point: p,
+          result: WIN
+        }
+      }
+      let result = -Infinity
+      let point = null
+      for (let i = 0; i < ROW; i++) {
+        for (let j = 0; j < ROW; j++) {
+          if (pattern[i][j !== EMPTY]) continue
+          let tmp = clone(pattern)
+          tmp[i][j] = color
+          let r = bestChoice(tmp, (BLACK + WHITE) - color).result
+          if (-r > result) {
+            result = -r
+            point = [i, j]
+          }
+        }
+      }
+      return {
+        point,
+        result: point ? result : 0
+      }
+    }
+
+    console.log(bestChoice(pattern, color))
   </script>
 </body>
 </html>
