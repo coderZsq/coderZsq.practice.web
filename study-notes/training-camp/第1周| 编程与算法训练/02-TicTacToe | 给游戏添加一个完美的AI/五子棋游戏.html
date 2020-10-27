@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gobang</title>
+  <style>
+    body {
+      background-color: #333;
+    }
+    .cell {
+      width: 40px;
+      height: 40px;
+      line-height: 40px;
+      background-color: #999;
+      border: solid 1px #333;
+      display: inline-block;
+      text-align: center;
+      font-size: 30px;
+      vertical-align: middle;
+    }
+  </style>
+</head>
+<body>
+  <div id="board"></div>
+  <script>
+    // 空
+    const EMPTY = 0
+    // 黑子
+    const BLACK = 1
+    // 白子
+    const WHITE = 2
+    // 棋盘行数
+    const ROW = 15
+    // 连续数量
+    let COUNT = 5
+
+    // 定义 五子棋为 15x15 棋盘
+    let pattern = [
+      [EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY],
+      [EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY],
+      [EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY],
+      [EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY],
+      [EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY],
+      [EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY],
+      [EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY],
+      [EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY],
+      [EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY],
+      [EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY],
+      [EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY],
+      [EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY],
+      [EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY],
+      [EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY],
+      [EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY]
+    ]
+
+    // 当前子
+    let color = BLACK
+
+    // 渲染棋盘布局
+    function show() {
+      let board = document.getElementById('board')
+      board.innerHTML = ''
+      for (let i = 0; i < ROW; i++) {
+        for (let j = 0; j < ROW; j++) {
+          let div = document.createElement('div')
+          div.classList.add('cell')
+          div.innerText = pattern[i][j] === WHITE ? '⚪️' : pattern[i][j] === BLACK ? '⚫️' : ''
+          // 绑定点击事件
+          div.addEventListener('click', () => { move(i, j)})
+          board.appendChild(div)
+        }
+        board.appendChild(document.createElement('br'))
+      }
+    }
+    show()
+
+    // 落子
+    function move(x, y) {
+      if (pattern[x][y] !== EMPTY) return
+      pattern[x][y] = color
+      // 胜负判断
+      if (check()) {
+        alert(color === WHITE ? '⚪️ is winner!' : '⚫️ is winner!')
+      }
+      color = 3 - color
+      show()
+    }
+
+    // 胜负判断
+    function check() {
+      // 扫描所有的行, 连续五个相同子判定为胜利
+      for (let i = 0; i < ROW; i++) {
+        let count = null
+        for (let j = 0; j < ROW; j++) {
+          if (pattern[i][j] === color) {
+            if (++count >= COUNT) return true;
+          } else {
+            count = 0
+          }
+        }
+      }
+      // 扫描所有的列, 连续五个相同子判定为胜利
+      for (let i = 0; i < ROW; i++) {
+        let count = null
+        for (let j = 0; j < ROW; j++) {
+          if (pattern[j][i] === color) {
+            if (++count >= COUNT) return true;
+          } else {
+            count = 0
+          }
+        }
+      }
+      // 扫描所有左斜边, 连续五个相同子判定为胜利
+      {
+        let count = 0
+        for (let i = 0; i < ROW; i++) {
+          for (let j = 0; j < ROW; j++) {
+            for (let k = 0; k < COUNT; k++) {
+              if (i - k < 0 || j - k < 0) continue
+              if (pattern[i - k][j - k] === color) {
+                if (++count >= COUNT) return true;
+              } else {
+                count = 0
+              }
+            }
+          }
+        }
+      }
+      // 扫描所有右斜边, 连续五个相同子判定为胜利
+      {
+        let count = 0
+        for (let i = 0; i < ROW; i++) {
+          for (let j = 0; j < ROW; j++) {
+            for (let k = 0; k < COUNT; k++) {
+              if (i + k >= ROW || j - k < 0) continue
+              if (pattern[i + k][j - k] === color) {
+                if (++count >= COUNT) return true;
+              } else {
+                count = 0
+              }
+            }
+          }
+        } 
+      }
+      return false
+    }
+
+  </script>
+</body>
+</html>
