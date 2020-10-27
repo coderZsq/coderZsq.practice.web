@@ -43,21 +43,21 @@
 
     // 定义 五子棋为 15x15 棋盘
     const pattern = [
-      [EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY],
-      [EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY],
-      [EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY],
-      [EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY],
-      [EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY],
-      [EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY],
-      [EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY],
-      [EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY],
-      [EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY],
-      [EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY],
-      [EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY],
-      [EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY],
-      [EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY],
-      [EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY],
-      [EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY]
+      EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY,
+      EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY,
+      EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY,
+      EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY,
+      EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY,
+      EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY,
+      EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY,
+      EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY,
+      EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY,
+      EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY,
+      EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY,
+      EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY,
+      EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY,
+      EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY,
+      EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY
     ]
 
     // 当前子
@@ -71,9 +71,9 @@
         for (let j = 0; j < ROW; j++) {
           let div = document.createElement('div')
           div.classList.add('cell')
-          div.innerText = pattern[i][j] === WHITE ? '⚪️' : pattern[i][j] === BLACK ? '⚫️' : ''
+          div.innerText = pattern[i * ROW + j] === WHITE ? '⚪️' : pattern[i * ROW + j] === BLACK ? '⚫️' : ''
           // 绑定点击事件
-          div.addEventListener('click', () => { move(i, j)})
+          div.addEventListener('click', () => { userMove(i, j)})
           board.appendChild(div)
         }
         board.appendChild(document.createElement('br'))
@@ -82,19 +82,31 @@
     show()
 
     // 落子
-    function move(x, y) {
-      if (pattern[x][y] !== EMPTY) return
-      pattern[x][y] = color
+    function userMove(x, y) {
+      if (pattern[x * ROW + y] !== EMPTY) return
+      pattern[x * ROW + y] = color
       // 胜负判断
       if (check(pattern, color)) {
         alert(color === WHITE ? '⚪️ is winner!' : '⚫️ is winner!')
       }
       color = (BLACK + WHITE) - color
       show()
+      // 人机对战
+      computerMove()
+
       // 判断即将胜利
       if (willWin(pattern, color)) {
         console.log(color === WHITE ? '⚪️ will win!' : '⚫️ will win!')
       }
+    }
+
+    // 人机对战函数
+    function computerMove() {
+      let choice = bestChoice(pattern, color, 0)
+      if (choice.point) 
+        pattern[choice.point[0] * ROW + choice.point[1]] = color
+      color = (BLACK + WHITE) - color
+      show()
     }
 
     // 胜负判断
@@ -103,7 +115,7 @@
       for (let i = 0; i < ROW; i++) {
         let count = null
         for (let j = 0; j < ROW; j++) {
-          if (pattern[i][j] === color) {
+          if (pattern[i * ROW + j] === color) {
             if (++count >= FIVE) return true;
           } else {
             count = 0
@@ -114,7 +126,7 @@
       for (let i = 0; i < ROW; i++) {
         let count = null
         for (let j = 0; j < ROW; j++) {
-          if (pattern[j][i] === color) {
+          if (pattern[j * ROW + i] === color) {
             if (++count >= FIVE) return true;
           } else {
             count = 0
@@ -127,8 +139,9 @@
         for (let i = 0; i < ROW; i++) {
           for (let j = 0; j < ROW; j++) {
             for (let k = 0; k < FIVE; k++) {
+              // 从遍历到的子往左上查找
               if (i - k < 0 || j - k < 0) continue
-              if (pattern[i - k][j - k] === color) {
+              if (pattern[(i - k) * ROW + (j - k)] === color) {
                 if (++count >= FIVE) return true;
               } else {
                 count = 0
@@ -144,7 +157,8 @@
           for (let j = 0; j < ROW; j++) {
             for (let k = 0; k < FIVE; k++) {
               if (i + k >= ROW || j - k < 0) continue
-              if (pattern[i + k][j - k] === color) {
+              // 从遍历到的子往右上查找
+              if (pattern[(i + k) * ROW + (j - k)] === color) {
                 if (++count >= FIVE) return true;
               } else {
                 count = 0
@@ -156,21 +170,18 @@
       return false
     }
 
-
-
     // 克隆棋盘
     function clone(pattern) {
-      return JSON.parse(JSON.stringify(pattern))
+        return Object.create(pattern)
     }
-
 
     // 即将获得胜利函数
     function willWin(pattern, color) {
       for (let i = 0; i < ROW; i++) {
         for (let j = 0; j < ROW; j++) {
-          if (pattern[i][j] !== EMPTY) continue
+          if (pattern[i * ROW + j] !== EMPTY) continue
           let tmp = clone(pattern)
-          tmp[i][j] = color
+          tmp[i * ROW + j] = color
           if (check(tmp, color)) {
             return [i, j]
           }
@@ -179,39 +190,40 @@
       return null
     }
 
-    // 层级
-    let LEVEL = 0
-
-    // 最佳选择函数, 设置遍历15层, 不然会栈溢出
-    function bestChoice(pattern, color) {
-      if (LEVEL >= 15) {
+    // 最佳选择函数
+    function bestChoice(pattern, color, level) {
+      // 扫描一遍, 不然会栈溢出
+      if (level == 1) {
         return {
           point: null,
           result: DRAW
         }
       } else {
-        LEVEL++
+        level++
       }
 
-      let p = null
-      if (p = willWin(pattern, color)) {
+      let point = null
+      if (point = willWin(pattern, color)) {
         return {
-          point: p,
+          point,
           result: WIN
         }
       }
+
       let result = -Infinity
-      let point = null
-      for (let i = 0; i < ROW; i++) {
+      point = null
+
+      outer: for (let i = 0; i < ROW; i++) {
         for (let j = 0; j < ROW; j++) {
-          if (pattern[i][j !== EMPTY]) continue
+          if (pattern[i * ROW + j]) continue
           let tmp = clone(pattern)
-          tmp[i][j] = color
-          let r = bestChoice(tmp, (BLACK + WHITE) - color).result
-          if (-r > result) {
-            result = -r
-            point = [i, j]
+          tmp[i * ROW + j] = color
+          let opp = bestChoice(tmp, (BLACK + WHITE) - color, level)
+          if (-opp.result >= result) {
+            point = opp.point ? opp.point : randomPoint()
+            result = -opp.result
           }
+          if (result === WIN) break outer
         }
       }
       return {
@@ -220,7 +232,17 @@
       }
     }
 
-    console.log(bestChoice(pattern, color))
+    // 随机落子
+    function randomPoint() {
+      let x = null
+      let y = null
+      do {
+        x = Math.round(Math.random() * ROW)
+        y = Math.round(Math.random() * ROW)
+      } while (pattern[x * ROW + y])
+      return [x, y]
+    }
+
   </script>
 </body>
 </html>
