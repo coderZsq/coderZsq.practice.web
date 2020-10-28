@@ -1,3 +1,7 @@
+/**
+ * https://leetcode-cn.com/problems/unique-number-of-occurrences/
+ */
+
 {
   let uniqueOccurrences = function (arr) {
     arr.sort((a, b) => a - b)
@@ -19,14 +23,9 @@
 {
   let uniqueOccurrences = function (arr) {
     let map = new Map()
-    for (let x of arr) {
-      map.set(x, (map.get(x) ? map.get(x) : 0) + 1)
-    }
-    let set = new Set()
-    for (let x of map.values()) {
-      set.add(x)
-    }
-    return map.size === set.size
+    for (let x of arr)
+      map.set(x, (map.get(x) || 0) + 1)
+    return map.size === (new Set(map.values())).size
   }
 }
 
