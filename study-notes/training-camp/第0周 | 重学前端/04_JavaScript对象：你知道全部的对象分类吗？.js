@@ -104,7 +104,10 @@
           set.add(d.set), objects.push(d.set);
     }
   }
+  console.log(set.size)
   console.log(set)
+
+  // 440
   /*
   Set {
   [Function: eval],
