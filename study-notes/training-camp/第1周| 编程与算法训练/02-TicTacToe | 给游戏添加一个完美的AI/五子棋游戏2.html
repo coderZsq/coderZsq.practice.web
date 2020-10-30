@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gobang</title>
+  <style>
+    body {
+      background-color: #333;
+    }
+
+    .cell {
+      width: 40px;
+      height: 40px;
+      line-height: 40px;
+      background-color: #999;
+      border: solid 1px #333;
+      display: inline-block;
+      text-align: center;
+      font-size: 30px;
+      vertical-align: middle;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="board"></div>
+  <script>
+    // 空
+    const EMPTY = 0
+    // 黑子
+    const BLACK = 1
+    // 白子
+    const WHITE = 2
+    // 棋盘行数
+    const ROW = 15
+    // 连续数量
+    const FIVE = 5
+
+    // 定义 五子棋为 15x15 棋盘
+    const pattern = Array.from({length: Math.pow(ROW, 2)}).map(x => 0)
+
+    // 当前子
+    let color = BLACK
+
+    // 渲染棋盘布局
+    function show() {
+      let board = document.getElementById('board')
+      board.innerHTML = ''
+      for (let y = 0; y < ROW; y++) {
+        for (let x = 0; x < ROW; x++) {
+          let div = document.createElement('div')
+          div.classList.add('cell')
+          div.innerText = pattern[y * ROW + x] === WHITE ? '⚪️' : pattern[y * ROW + x] === BLACK ? '⚫️' : ''
+          // 绑定点击事件
+          div.addEventListener('click', () => { userMove(x, y) })
+          board.appendChild(div)
+        }
+        board.appendChild(document.createElement('br'))
+      }
+    }
+    show()
+
+    // 落子
+    function userMove(x, y) {
+      if (pattern[y * ROW + x] !== EMPTY) return
+      pattern[y * ROW + x] = color
+      // 胜负判断
+      if (check(pattern, color, FIVE)) {
+        alert(color === WHITE ? '⚪️ is winner!' : '⚫️ is winner!')
+      }
+      color = (BLACK + WHITE) - color
+      show()
+      // 人机对战
+      computerMove()
+    }
+
+    // 人机对战函数
+    function computerMove() {
+      let choice = bestChoice(pattern, color, FIVE)
+      if (choice.point)
+        pattern[choice.point[1] * ROW + choice.point[0]] = color
+      // 胜负判断
+      if (check(pattern, color, FIVE)) {
+        alert(color === WHITE ? '⚪️ is winner!' : '⚫️ is winner!')
+      }
+      color = (BLACK + WHITE) - color
+      show()
+    }
+
+    // 胜负判断
+    function check(pattern, color, target) {
+      // 扫描所有的行, 连续五个相同子判定为胜利
+      for (let i = 0; i < ROW; i++) {
+        let counts = []
+        for (let j = 0; j < ROW; j++) {
+          if (pattern[i * ROW + j] === color) {
+            counts.push(i * ROW + j)
+          } else {
+            counts = []
+          }
+          if (counts.length >= target) {
+            if (target !== FIVE
+            && ((counts[0] === i * ROW || pattern[counts[0] - 1])
+            || (pattern[counts.length - 1] === i * ROW + ROW - 1)
+            || pattern[counts[counts.length - 1] + 1])) {
+              counts = []
+            } else {
+              return true
+            }
+          }
+        }
+      }
+      // 扫描所有的列, 连续五个相同子判定为胜利
+      for (let i = 0; i < ROW; i++) {
+        let counts = []
+        for (let j = 0; j < ROW; j++) {
+          if (pattern[j * ROW + i] === color) {
+            counts.push(j * ROW + i)
+          } else {
+            counts = []
+          }
+          if (counts.length >= target) {
+            if (target !== FIVE 
+            && ((counts[0] === i || pattern[counts[0] - ROW]) 
+            || (counts[counts.length - 1] === (ROW - 1) * ROW + i)
+            || pattern[counts[counts.length - 1] + ROW])) {
+              counts = []
+            } else {
+              return true
+            }
+          }
+        }
+      }
+      
+      for (let i = 0; i < ROW; i++) {
+        let counts = []
+        if (ROW - i < target) continue
+        for (let j = 0; j < ROW - i; j++) {
+          if (pattern[(j * ROW) + j + i] === color) {
+            counts.push((j * ROW) + j + i)
+          } else {
+            counts = []
+          }
+          if (counts.length >= target) {
+            if (target !== FIVE
+            && ((counts[0] === i || pattern[counts[0] - (ROW + 1)])
+            || (counts[counts.length - 1] === (ROW - i - 1) * ROW + (ROW - i - 1) + i
+            || pattern[counts[counts.length - 1] + (ROW + 1)]))) {
+              counts = []
+            } else {
+              return true
+            }
+          }
+        }
+      }
+
+      for (let i = 1; i < ROW ; i++) {
+        let counts = []
+        if (ROW - i < target) continue
+        for (let j = i; j < ROW; j++) {
+          if (pattern[(j * ROW) + j - i] === color) {
+            counts.push((j * ROW) + j - i)
+          } else {
+            counts = []
+          }
+          if (counts.length >= target) {
+            if (target !== FIVE
+            && ((counts[0] === i * ROW
+            || pattern[counts[0] - (ROW + 1)])
+            || (counts[counts.length - 1] === (ROW - 1) * ROW + (ROW - 1) - i)
+            || pattern[counts[counts.length - 1] + (ROW + 1)])) {
+              counts = []
+            } else {
+              return true
+            }
+          }
+        }
+      }
+      
+      for (let i = 0; i < ROW; i++) {
+        let counts = []
+        if (ROW - i < target) continue
+        for (let j = i ; j < ROW; j++) {
+          if (pattern[j * ROW + (ROW - 1 - j) + i] === color) {
+            counts.push(j * ROW + (ROW - 1 - j) + i)
+          } else {
+            counts = []
+          }
+        }
+        if (counts.length >= target) {
+          if (target !== FIVE
+          && ((counts[0] === i * ROW + (ROW - 1 - i) + i
+          || pattern[counts[0] - (ROW - 1)]) 
+          || counts[counts.length - 1] === (ROW - 1) * ROW + i
+          || pattern[counts[counts.length - 1] + (ROW - 1)])) {
+            counts = []
+          } else {
+            return true
+          }
+        }
+      }
+
+      for (let i = 0; i < ROW ; i++) {
+        let counts = []
+        if (ROW - i < target) continue
+        for (let j = 0; j < ROW - i; j++) {
+          if (pattern[j * ROW + (ROW - i - j) - i] === color) {
+            counts.push(j * ROW + (ROW - i - j) - i)
+          } else {
+            counts = []
+          }
+          if (counts.length >= target) {
+            if (target !== FIVE
+            && ((counts[0] === (ROW - 1) - i)
+            || pattern[counts[0] - (ROW - 1)]
+            || (counts[counts.length - 1] === (ROW - i - 1) * ROW + (ROW - 1 - (ROW - i - 1)) - i
+            || pattern[counts[counts.length - 1] + (ROW - 1)]))) {
+              counts = []
+            } else {
+              return true
+            }
+          }
+        }
+      }
+      return false
+    }
+
+    // 克隆棋盘
+    function clone(pattern) {
+      return Object.create(pattern)
+    }
+
+    // 即将获得胜利函数
+    function willWin(pattern, color, target) {
+      for (let y = 0; y < ROW; y++) {
+        for (let x = 0; x < ROW; x++) {
+          if (pattern[y * ROW + x] !== EMPTY) continue
+          let tmp = clone(pattern)
+          tmp[y * ROW + x] = color
+          if (check(tmp, color, target)) {
+            return [x, y]
+          }
+        }
+      }
+      return null
+    }
+
+    // 最佳选择函数
+    function bestChoice(pattern, color, target) {
+      target = target || FIVE
+      let point = willWin(pattern, color, target)
+      point = point ? point : willWin(pattern, (BLACK + WHITE) - color, target)
+      if (point) return { point }
+      return bestChoice(pattern, color, target - 1)
+    }
+
+  </script>
+</body>
+
+</html>

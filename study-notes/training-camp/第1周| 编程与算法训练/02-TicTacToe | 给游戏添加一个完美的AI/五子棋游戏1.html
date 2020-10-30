@@ -73,7 +73,7 @@
           div.classList.add('cell')
           div.innerText = pattern[i * ROW + j] === WHITE ? '⚪️' : pattern[i * ROW + j] === BLACK ? '⚫️' : ''
           // 绑定点击事件
-          div.addEventListener('click', () => { userMove(i, j)})
+          div.addEventListener('click', () => { userMove(j, i)})
           board.appendChild(div)
         }
         board.appendChild(document.createElement('br'))
@@ -83,8 +83,8 @@
 
     // 落子
     function userMove(x, y) {
-      if (pattern[x * ROW + y] !== EMPTY) return
-      pattern[x * ROW + y] = color
+      if (pattern[y * ROW + x] !== EMPTY) return
+      pattern[y * ROW + x] = color
       // 胜负判断
       if (check(pattern, color)) {
         alert(color === WHITE ? '⚪️ is winner!' : '⚫️ is winner!')
@@ -93,18 +93,17 @@
       show()
       // 人机对战
       computerMove()
-
-      // 判断即将胜利
-      if (willWin(pattern, color)) {
-        console.log(color === WHITE ? '⚪️ will win!' : '⚫️ will win!')
-      }
     }
 
     // 人机对战函数
     function computerMove() {
       let choice = bestChoice(pattern, color, 0)
       if (choice.point) 
-        pattern[choice.point[0] * ROW + choice.point[1]] = color
+        pattern[choice.point[1] * ROW + choice.point[0]] = color
+      // 胜负判断
+      if (check(pattern, color, FIVE)) {
+        alert(color === WHITE ? '⚪️ is winner!' : '⚫️ is winner!')
+      }
       color = (BLACK + WHITE) - color
       show()
     }
@@ -183,7 +182,7 @@
           let tmp = clone(pattern)
           tmp[i * ROW + j] = color
           if (check(tmp, color)) {
-            return [i, j]
+            return [j, i]
           }
         }
       }

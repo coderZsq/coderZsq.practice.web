@@ -36,7 +36,7 @@
         cell.innerText = 
           pattern[i][j] == 2 ? '❌' :
           pattern[i][j] == 1 ? '⭕️' : ''
-        cell.addEventListener('click', () => move(i , j))
+        cell.addEventListener('click', () => move(j , i))
         board.appendChild(cell)
       }
       board.appendChild(document.createElement('br'))
@@ -44,7 +44,7 @@
   }
 
   function move(x, y) {
-    pattern[x][y] = color
+    pattern[y][x] = color
     color = 3 - color
     show()
   }
