@@ -38,3 +38,25 @@
     return result
   }
 }
+
+{
+  let islandPerimeter = function (grid) {
+    let land = 0 // 土地个数
+    let border = 0 // 接壤边界的条数
+
+    for (let y = 0; y < grid.length; y++) {
+      for (let x = 0; x < grid[0].length; x++) {
+        if (grid[y][x] == 1) {
+          land++
+          if (y < grid.length - 1 && grid[y + 1][x] == 1) {
+            border++
+          }
+          if (x < grid[0].length - 1 && grid[y][x + 1] == 1) {
+            border++
+          }
+        }
+      }
+    }
+    return 4 * land - 2 * border
+  }
+}
