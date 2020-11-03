@@ -72,12 +72,12 @@
           this.data[i] = this.data[i * 2 + 2]
           i = i * 2 + 2
         }
-        if (i < this.data.length - 1) 
-          this.insertAt(i, this.data.pop())
-        else 
-          this.data.pop()
-        return min
       } 
+      if (i < this.data.length - 1)
+        this.insertAt(i, this.data.pop())
+      else
+        this.data.pop()
+      return min
     }
     insertAt(i, v) {
       this.data[i] = v
@@ -131,7 +131,7 @@
     clear = (e.which === 3)
   })
   document.addEventListener('mouseup', () => mousedown = false)
-  // document.addEventListener('contextmenu', e => e.preventDefault())
+  document.addEventListener('contextmenu', e => e.preventDefault())
 
   function sleep(t) {
     return new Promise(function(reslove) {
@@ -141,7 +141,7 @@
 
   async function findPath(map, start, end) {
     let table = Object.create(map)
-    let queue = new Sorted([start], (a, b) => distance(a) - distance(b))
+    let queue = new BinaryHeap([start], (a, b) => distance(a) - distance(b))
 
     async function insert(x, y, pre) {
       if (x < 0 || x >= 100 || y < 0 || y >= 100) 
@@ -152,7 +152,7 @@
       await sleep(3)
       container.children[y * 100 + x].style.backgroundColor = 'lightgreen'
       table[y * 100 + x] = pre
-      queue.give([x, y])
+      queue.insert([x, y])
     }
 
     function distance(point) {

@@ -80,7 +80,7 @@
     clear = (e.which === 3)
   })
   document.addEventListener('mouseup', () => mousedown = false)
-  // document.addEventListener('contextmenu', e => e.preventDefault())
+  document.addEventListener('contextmenu', e => e.preventDefault())
 
   function sleep(t) {
     return new Promise(function(reslove) {
