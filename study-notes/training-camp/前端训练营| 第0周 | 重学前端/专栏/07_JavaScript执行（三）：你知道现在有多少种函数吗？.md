@@ -171,3 +171,133 @@ Reference 类型由两部分组成：一个对象和一个属性值。不难理�
 这时候，我们使用 showThis 这个引用去调用方法时，得到了 undefined。
 
 所以，在方法中，我们看到 this 的行为也不太一样，它得到了 undefined 的结果。按照我们上面的方法，不难验证出：生成器函数、异步生成器函数和异步普通函数跟普通函数行为是一致的，异步箭头函数与箭头函数行为是一致的。
+
+### this 关键字的机制
+
+说完了 this 行为，我们再来简单谈谈在 JavaScript 内部，实现 this 这些行为的机制，让你对这部分知识有一个大概的认知。
+
+函数能够引用定义时的变量，如上文分析，函数也能记住定义时的 this，因此，函数内部必定有一个机制来保存这些信息。
+
+在 JavaScript 标准中，为函数规定了用来保存定义时上下文的私有属性[[Environment]]。
+
+当一个函数执行时，会创建一条新的执行环境记录，记录的外层词法环境（outer lexical environment）会被设置成函数的[[Environment]]。
+
+这个动作就是切换上下文了，我们假设有这样的代码：
+
+```js
+  var a = 1;
+  foo();
+
+  // 在别处定义了foo：
+
+  var b = 2;
+  function foo() {
+    console.log(b); // 2
+    console.log(a); // error
+  }
+```
+
+这里的 foo 能够访问 b（定义时词法环境），却不能访问 a（执行时的词法环境），这就是执行上下文的切换机制了。JavaScript 用一个栈来管理执行上下文，这个栈中的每一项又包含一个链表。如下图所示：
+
+![](https://static001.geekbang.org/resource/image/e8/31/e8d8e96c983a832eb646d6c17ff3df31.jpg)
+
+当函数调用时，会入栈一个新的执行上下文，函数调用结束时，执行上下文被出栈。
+
+而 this 则是一个更为复杂的机制，JavaScript 标准定义了 [[thisMode]] 私有属性。[[thisMode]] 私有属性有三个取值。
+
+- lexical：表示从上下文中找 this，这对应了箭头函数。
+- global：表示当 this 为 undefined 时，取全局对象，对应了普通函数。
+- strict：当严格模式时使用，this 严格按照调用时传入的值，可能为 null 或者 undefined。
+
+非常有意思的是，方法的行为跟普通函数有差异，恰恰是因为 class 设计成了默认按 strict 模式执行。我们可以用 strict 达成与上一节中方法的例子一样的效果:
+
+```js
+  "use strict"
+  function showThis() {
+    console.log(this);
+  }
+
+  var o = {
+    showThis: showThis
+  }
+
+  showThis(); // undefined
+  o.showThis(); // o
+```
+
+函数创建新的执行上下文中的词法环境记录时，会根据[[thisMode]]来标记新纪录的[[ThisBindingStatus]]私有属性。
+
+代码执行遇到 this 时，会逐层检查当前词法环境记录中的[[ThisBindingStatus]]，当找到有 this 的环境记录时获取 this 的值。
+
+这样的规则的实际效果是，嵌套的箭头函数中的代码都指向外层 this，例如：
+
+```js
+  var o = {}
+  o.foo = function foo() {
+    console.log(this);
+    return () => {
+      console.log(this);
+      return () => console.log(this);
+    }
+  }
+
+  o.foo()()(); // o, o, o
+```
+
+这个例子中，我们定义了三层嵌套的函数，最外层为普通函数，两层都是箭头函数。
+
+这里调用三个函数，获得的 this 值是一致的，都是对象 o。
+
+JavaScript 还提供了一系列函数的内置方法来操纵 this 值，下面我们来了解一下。
+
+### 操作 this 的内置函数
+
+Function.prototype.call 和 Function.prototype.apply 可以指定函数调用时传入的 this 值，示例如下：
+
+```js
+  function foo(a, b, c) {
+    console.log(this);
+    console.log(a, b, c);
+  }
+  foo.call({}, 1, 2, 3);
+  foo.apply({}, [1, 2, 3]);
+```
+
+这里 call 和 apply 作用是一样的，只是传参方式有区别。
+
+此外，还有 Function.prototype.bind 它可以生成一个绑定过的函数，这个函数的 this 值固定了参数：
+
+```js
+  function foo(a, b, c) {
+    console.log(this);
+    console.log(a, b, c);
+  }
+  foo.bind({}, 1, 2, 3)();
+```
+
+有趣的是，call、bind 和 apply 用于不接受 this 的函数类型如箭头、class 都不会报错。
+
+这时候，它们无法实现改变 this 的能力，但是可以实现传参。
+
+### 结语
+
+在这一节课程中，我们认识了 ES2018 中规定的各种函数，我一共简单介绍了 8 种函数。
+
+我们围绕 this 这个中心，介绍了函数的执行上下文切换机制。同时我们还讲解了 this 中的一些相关知识。包括了操作 this 的内置函数。
+
+最后，留给你一个问题，你在日常开发中用过哪些函数类型呢？欢迎给我留言，我们一起讨论。
+
+### 补充阅读：new 与 this
+
+我们在之前的对象部分已经讲过 new 的执行过程，我们再来看一下：
+- 以构造器的 prototype 属性（注意与私有字段[[prototype]]的区分）为原型，创建新对象；
+- 将 this 和调用参数传给构造器，执行；
+- 如果构造器返回的是对象，则返回，否则返回第一步创建的对象。
+
+显然，通过 new 调用函数，跟直接调用的 this 取值有明显区别。那么我们今天讲的这些函数跟 new 搭配又会产生什么效果呢？
+
+这里我整理了一张表：
+
+![](https://static001.geekbang.org/resource/image/6a/da/6a9f0525b713a903c6c94f52afaea3da.png)
+
+我们可以看到，仅普通函数和类能够跟 new 搭配使用，这倒是给我们省去了不少麻烦。
