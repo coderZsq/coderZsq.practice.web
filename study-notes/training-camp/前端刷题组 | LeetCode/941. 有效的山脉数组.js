@@ -24,3 +24,14 @@
     return peak === 1
   }
 }
+
+{
+  let validMountainArray = function (A) {
+    if (A.length < 3) return false
+    let i = 0, n = A.length - 1
+    while (A[i] < A[i + 1]) i++
+    if (i == 0 || i == n) return false
+    while (A[i] > A[i + 1]) i++
+    return i == n
+  }
+}
