@@ -132,3 +132,52 @@ return 语句可能产生 return 或者 throw 类型的 Completion Record。
 但是假如我们在 block 中插入了一条 return 语句，产生了一个非 normal 记录，那么整个 block 会成为非 normal。这个结构就保证了非 normal 的完成类型可以穿透复杂的语句嵌套结构，产生控制效果。
 
 接下来我们就具体讲讲控制类语句。
+
+### 控制型语句
+
+控制型语句带有 if、switch 关键字，它们会对不同类型的 Completion Record 产生反应。
+
+控制类语句分成两部分，一类是对其内部造成影响，如 if、switch、while/for、try。
+
+另一类是对外部造成影响如 break、continue、return、throw，这两类语句的配合，会产生控制代码执行顺序和执行逻辑的效果，这也是我们编程的主要工作。
+
+一般来说， for/while - break/continue 和 try - throw 这样比较符合逻辑的组合，是大家比较熟悉的，但是，实际上，我们需要控制语句跟 break 、continue 、return 、throw 四种类型与控制语句两两组合产生的效果。
+
+![](https://static001.geekbang.org/resource/image/77/d3/7760027d7ee09bdc8ec140efa9caf1d3.png)
+
+通过这个表，我们不难发现知识的盲点，也就是我们最初的的 case 中的 try 和 return 的组合了。
+
+因为 finally 中的内容必须保证执行，所以 try/catch 执行完毕，即使得到的结果是非 normal 型的完成记录，也必须要执行 finally。
+
+而当 finally 执行也得到了非 normal 记录，则会使 finally 中的记录作为整个 try 结构的结果。
+
+### 带标签的语句
+
+前文我重点讲了 type 在语句控制中的作用，接下来我们重点来讲一下最后一个字段：target，这涉及了 JavaScript 中的一个语法，带标签的语句。
+
+实际上，任何 JavaScript 语句是可以加标签的，在语句前加冒号即可：
+
+```js
+  firstStatement: var i = 1;
+```
+
+大部分时候，这个东西类似于注释，没有任何用处。唯一有作用的时候是：与完成记录类型中的 target 相配合，用于跳出多层循环。
+
+```js
+  outer: while (true) {
+    inner: while (true) {
+      break outer;
+    }
+  }
+  console.log("finished")
+```
+
+break/continue 语句如果后跟了关键字，会产生带 target 的完成记录。一旦完成记录带了 target，那么只有拥有对应 label 的循环语句会消费它。
+
+### 结语
+
+我们以 Completion Record 类型为线索，为你讲解了 JavaScript 语句执行的原理。
+
+因为 JavaScript 语句存在着嵌套关系，所以执行过程实际上主要在一个树形结构上进行， 树形结构的每一个节点执行后产生 Completion Record，根据语句的结构和 Completion Record，JavaScript 实现了各种分支和跳出逻辑。
+
+你遇到哪些语句中的执行的实际效果，是跟你想象的有所出入呢，你可以给我留言，我们一起讨论。

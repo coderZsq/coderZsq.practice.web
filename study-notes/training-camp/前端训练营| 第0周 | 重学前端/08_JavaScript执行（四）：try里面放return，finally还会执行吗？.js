@@ -45,3 +45,16 @@
     console.log(i)
   } // return, 1, empty
 }
+
+{
+  firstStatement: var i = 1;
+}
+
+{
+  outer: while (true) {
+    inner: while (true) {
+      break outer;
+    }
+  }
+  console.log("finished")
+}
