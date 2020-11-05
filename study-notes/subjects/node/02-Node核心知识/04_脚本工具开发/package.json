@@ -14,12 +14,13 @@
     "vue",
     "coderZsq"
   ],
-  "author": "coderZsq",
+  "author": "coderzsq",
   "license": "MIT",
+  "private": false,
   "homepage": "https://github.com/coderZsq",
   "repository": {
     "type": "git",
-    "url": "https://github.com/coderZsq/coderZsq.practice.web/tree/master/study-notes/subjects/node/02-Node%E6%A0%B8%E5%BF%83%E7%9F%A5%E8%AF%86/04_%E8%84%9A%E6%9C%AC%E5%B7%A5%E5%85%B7%E5%BC%80%E5%8F%91"
+    "url": "https://github.com/coderZsq/"
   },
   "dependencies": {
     "commander": "^6.1.0",
