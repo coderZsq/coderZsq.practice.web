@@ -1,5 +1,6 @@
 #!/usr/bin/env node
 // $ npm link
+// $ npm publish --access public
 
 const program = require('commander')
 
