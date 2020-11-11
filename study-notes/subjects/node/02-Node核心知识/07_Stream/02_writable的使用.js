@@ -7,7 +7,7 @@ const fs = require('fs')
 
 // Stream的写入方式
 const writer = fs.createWriteStream('./bar.txt', {
-  flags: 'a',
+  flags: 'r+',
   start: 4
 })
 
