@@ -5,17 +5,19 @@ const qs = require('querystring');
 const server = http.createServer((req, res) => {
   if (req.url === '/upload') {
     if (req.method === 'POST') {
+      req.setEncoding('binary');
+
       let body = '';
       const totalBoundary = req.headers['content-type'].split(';')[1];
       const boundary = totalBoundary.split('=')[1];
-      console.log(boundary)
+      // console.log(boundary)
 
       req.on('data', (data) => {
         body += data
       });
 
       req.on('end', () => {
-        console.log(body);
+        // console.log(body); 
         // 处理body
         // 1. 获取image/png的位置
         const payload = qs.parse(body, '\r\n', ': ');
@@ -29,10 +31,13 @@ const server = http.createServer((req, res) => {
         // 3. 将中间的两个空格去掉
         imageData = imageData.replace(/^\s\s*/, '');
 
-        // 4. 将最后的
+        // 4. 将最后的boundary去掉
+        imageData = imageData.substring(0, imageData.indexOf(`--${boundary}--`));
 
-        console.log('文件上传成功~');
-        res.end('文件上传成功');
+        fs.writeFile('./foo.png', imageData, 'binary', (err) => {
+          res.end('文件上传成功');
+        });
+
       });
     }
   }
