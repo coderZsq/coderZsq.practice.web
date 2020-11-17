@@ -1,0 +1,60 @@
+<script>
+  function find(source, pattern) {
+    let starCount = 0;
+    // 循环遍历pattern字符串, 找出有多少个星号
+    for (let i = 0; i < pattern.length; i++) {
+      if (pattern[i] === '*')
+        starCount++;
+    }
+    // 处理边缘case, 没有星号的情况
+    // 没有星号就是字符串和pattern严格的一一匹配
+    if (starCount === 0) {
+      for (let i = 0; i < pattern.length; i++) {
+        if (pattern[i] !== source[i] && pattern[i] !== '?')
+          return false
+      }
+      return;
+    }
+
+    // i 代表pattern的位置
+    let i = 0;
+    // lastIndex 表示原字符串source的位置
+    let lastIndex = 0;
+
+    for (i = 0; pattern[i] !== '*'; i++) {
+      if (pattern[i] !== source[i] && pattern[i] !== '?')
+        return false;
+    }
+
+    lastIndex = i;
+
+    // 中间正则匹配
+    for (let p = 0; p < starCount - 1; p++) {
+      i++;
+      let subPattern = '';
+      while (pattern[i] !== '*') {
+        subPattern += pattern[i];
+        i++;
+      }
+
+      let reg = new RegExp(subPattern.replace(/\?/g, '[\\s\\S]'), 'g');
+      reg.lastIndex = lastIndex;
+
+      console.log(reg.exec(source));
+
+      if (!reg.exec(source))
+        return false;
+
+      lastIndex = reg.lastIndex;
+    }
+
+    // 从后往前遍历
+    for (let j = 0; j <= source.length - lastIndex && pattern[pattern.length - j] !== '*'; j++) {
+      if (pattern[pattern.length - j] !== source[source.length - j]
+        && pattern[pattern.length - j] !== '?')
+        return false;
+    }
+    return true;
+
+  } 
+</script>
