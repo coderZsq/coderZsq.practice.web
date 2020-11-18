@@ -38,7 +38,7 @@ const addComponentAction = async (name, dest) => {
 
 // 添加组件和路由
 const addPageAndRouteAction = async (name, dest) => {
-  // 1. 编译ejs末班
+  // 1. 编译ejs模板
   const data = { name, lowerName: name.toLowerCase() }
   const pageResult = await compile('component.vue.ejs', data)
   const routeResult = await compile('vue-router.js.ejs', data)

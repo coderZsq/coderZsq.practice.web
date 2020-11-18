@@ -1,0 +1,28 @@
+{
+  "name": "@coderzsq/npm-clear",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "bin": {
+    "npmc": "index.js"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "Castie!",
+    "coderZsq"
+  ],
+  "author": "coderzsq",
+  "license": "MIT",
+  "private": false,
+  "homepage": "https://github.com/coderZsq",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/coderZsq/"
+  },
+  "dependencies": {
+    "colors": "^1.4.0",
+    "commander": "^6.2.0"
+  }
+}
