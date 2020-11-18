@@ -1,6 +1,6 @@
 {
   "name": "@coderzsq/npm-clear",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "",
   "main": "index.js",
   "bin": {
@@ -19,7 +19,7 @@
   "homepage": "https://github.com/coderZsq",
   "repository": {
     "type": "git",
-    "url": "https://github.com/coderZsq/"
+    "url": "https://github.com/coderZsq/coderZsq.practice.web.git"
   },
   "dependencies": {
     "colors": "^1.4.0",

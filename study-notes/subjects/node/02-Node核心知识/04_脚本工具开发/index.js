@@ -1,6 +1,7 @@
 #!/usr/bin/env node
 // $ npm link
 // $ npm publish --access public
+// $ npm unpublish @coderzsq/npm-clear@1.0.0
 
 const program = require('commander')
 
