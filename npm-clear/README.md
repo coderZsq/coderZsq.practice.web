@@ -5,7 +5,7 @@
 ### Installation
 
 ```shell
-$ npm install  npm-clear -g
+$ npm install npm-clear -g
 ```
 ### Usage
 
