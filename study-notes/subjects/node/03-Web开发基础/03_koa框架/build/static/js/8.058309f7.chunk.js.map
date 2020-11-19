@@ -1,0 +1,1 @@
+{"version":3,"sources":["pages/discover/c-pages/djradio/index.js"],"names":["memo"],"mappings":"gIAAA,2BAEeA,0BAAK,WAClB,OACE,6BACE","file":"static/js/8.058309f7.chunk.js","sourcesContent":["import React, { memo } from 'react'\n\nexport default memo(function SQDjradio() {\n  return (\n    <div>\n      <h2>SQDjradio</h2>\n    </div>\n  )\n})\n"],"sourceRoot":""}

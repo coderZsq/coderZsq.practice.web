@@ -1,0 +1,2 @@
+(this["webpackJsonpsq-web-music-react"]=this["webpackJsonpsq-web-music-react"]||[]).push([[9],{224:function(e,t,n){"use strict";n.r(t);var c=n(0),a=n.n(c);t.default=Object(c.memo)((function(){return a.a.createElement("div",null,a.a.createElement("h2",null,"SQRanking"))}))}}]);
+//# sourceMappingURL=9.fc606c10.chunk.js.map

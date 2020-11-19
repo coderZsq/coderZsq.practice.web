@@ -1,0 +1,1 @@
+{"version":3,"sources":["pages/mine/index.js"],"names":["memo"],"mappings":"iIAAA,2BAEeA,0BAAK,WAClB,OACE,6BACE","file":"static/js/13.ccf880e7.chunk.js","sourcesContent":["import React, { memo } from 'react'\n\nexport default memo(function SQMine() {\n  return (\n    <div>\n      <h2>SQMine</h2>\n    </div>\n  )\n})\n"],"sourceRoot":""}
