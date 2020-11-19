@@ -106,3 +106,174 @@ ruby 的这个形式，在中国的网友中间最近被玩出了新花样，比
 ```
 
 一些文章常常会拿 em 和 strong 做对比，实际上，我们只要理解了 em 的真正意思，它和 strong 可谓天差地别，并没有任何混淆的可能。
+
+### 作为标题摘要的语义类标签
+
+介绍完自然语言的语义场景后，我想介绍的另一个语义重要使用场景，就是文章的结构。中国古代小说就形成了“章 - 回”的概念，西方的戏剧也有幕的区分，所以人类的自然语言作品也是如出一辙。
+
+HTML 也应该支持这样的需求。HTML 语义标签中，有不少是用于支持这样的结构的标签。
+
+语义化的 HTML 能够支持自动生成目录结构，HTML 标准中还专门规定了生成目录结构的算法，即使我们并不打算深入实践语义，也应该尽量在大的层面上保证这些元素的语义化使用。
+
+首先我们需要形成一个概念，一篇文档会有一个树形的目录结构，它由各个级别的标题组成。这个树形结构可能不会跟 HTML 元素的嵌套关系一致。
+
+```html
+例如：
+
+<h1>HTML语义</h1>
+<p>balah balah balah balah</p>
+<h2>弱语义</h2>
+<p>balah balah</p>
+<h2>结构性元素</h2>
+<p>balah balah</p>
+......
+```
+
+这段 HTML 几乎是平铺的元素，但是它的标题结构是：
+- HTML 语义
+  - 弱语义
+  - 结构性元素
+  - ……
+
+h1-h6 是最基本的标题，它们表示了文章中不同层级的标题。有些时候，我们会有副标题，为了避免副标题产生额外的一个层级，我们使用 hgroup 标签。
+
+我们来看下有 / 无 hgroup 的对比：
+
+```html
+<h1>JavaScript对象</h1>
+<h2>我们需要模拟类吗？</h2>
+<p>balah balah</p>
+......
+```
+
+此段生成以下标题结构：
+- JavaScript 
+  - 对象我们需要模拟类吗？
+  - …
+
+```html
+<hgroup>
+<h1>JavaScript对象</h1>
+<h2>我们需要模拟类吗？</h2>
+</hgroup>
+<p>balah balah</p>
+......
+```
+
+这一段生成以下标题结构：
+- JavaScript 对象——我们需要模拟类吗？
+  - …
+
+我们通过两个效果的对比就可以知道，在 hgroup 中的 h1-h6 被视为同一标题的不同组成部分。
+
+从 HTML 5 开始，我们有了 section 标签，这个标签可不仅仅是一个“有语义的 div”，它会改变 h1-h6 的语义。section 的嵌套会使得其中的 h1-h6 下降一级，因此，在 HTML5 以后，我们只需要 section 和 h1 就足以形成文档的树形结构：
+
+```html
+<section>
+    <h1>HTML语义</h1>
+    <p>balah balah balah balah</p>
+    <section>
+        <h1>弱语义</h1>
+        <p>balah balah</p>
+    </section>
+    <section>
+        <h1>结构性元素</h1>
+        <p>balah balah</p> 
+    </section>
+......
+</section>
+```
+
+这段代码同样会形成前面例子的标题结构：
+
+- HTML 语义
+  - 弱语义
+  - 结构性元素
+  - ……
+
+### 作为整体结构的语义类标签
+
+我们想介绍的最后一个场景是，随着越来越多的浏览器推出“阅读模式”，以及各种非浏览器终端的出现，语义化的 HTML 适合机器阅读的特性变得越来越重要。
+
+应用了语义化结构的页面，可以明确地提示出页面信息的主次关系，它能让浏览器很好地支持“阅读视图功能”，还可以让搜索引擎的命中率提升，同时，它也对视障用户的读屏软件更友好。
+
+我们正确使用整体结构类的语义标签，可以让页面对机器更友好。比如，这里一个典型的 body 类似这样：
+
+```html
+<body>
+    <header>
+        <nav>
+            ……
+        </nav>
+    </header>
+    <aside>
+        <nav>
+            ……
+        </nav>
+    </aside>
+    <section>……</section>
+    <section>……</section>
+    <section>……</section>
+    <footer>
+        <address>……</address>
+    </footer>
+</body>
+```
+
+在 body 下面，有一个 header，header 里面是一个 nav，跟 header 同级的有一个 aside，aside 里面也有一个 nav。接下来是文章的整体，也就是一个一个的 section。section 里面可能还有嵌套，但是我们就不管了，最后是一个 footer，这个 footer 里面可能有 address 这样的内容。
+
+除此之外，还有 article，article 是一种特别的结构，它表示具有一定独立性质的文章。所以，article 和 body 具有相似的结构，同时，一个 HTML 页面中，可能有多个 article 存在。
+
+一个典型的场景是多篇新闻展示在同一个新闻专题页面中，这种类似报纸的多文章结构适合用 article 来组织。
+
+```html
+<body>
+    <header>……</header>
+    <article>
+        <header>……</header>
+        <section>……</section>
+        <section>……</section>
+        <section>……</section>
+        <footer>……</footer>
+    </article>
+    <article>
+        ……
+    </article>
+    <article>
+        ……
+    </article>
+    <footer>
+        <address></address>
+    </footer>
+</body>
+```
+
+body 里面有自己的 header 和 footer，然后里面是竖篇的 article，每一个 article 里面都有自己的 header、section、footer。这是一个典型的多文章结构。
+
+在这个结构里，我们看到了一些新标签，我也来逐个介绍一下。
+
+- header，如其名，通常出现在前部，表示导航或者介绍性的内容。
+- footer，通常出现在尾部，包含一些作者信息、相关链接、版权信息等。
+
+header 和 footer 一般都是放在 article 或者 body 的直接子元素，但是标准中并没有明确规定，footer 也可以和 aside，nav，section 相关联（header 不存在关联问题）。
+
+- aside 表示跟文章主体不那么相关的部分，它可能包含导航、广告等工具性质的内容。
+
+aside 很容易被理解为侧边栏，实际上二者是包含关系，侧边栏是 aside，aside 不一定是侧边栏。
+
+aside 和 header 中都可能出现导航（nav 标签），二者的区别是，header 中的导航多数是到文章自己的目录，而 aside 中的导航多数是到关联页面或者是整站地图。
+
+最后 footer 中包含 address，这是个非常容易被误用的标签。address 并非像 date 一样，表示一个给机器阅读的地址，而是表示“文章（作者）的联系方式”，address 明确地只关联到 article 和 body。
+
+### 总结
+
+本篇中我们介绍了一些基本原则和 HTML 文档的整体结构，从整体上了解了 HTML 语义。
+
+至此，我们可以回答是否要语义化的问题：我们应该分开一些场景来看语义，把它用在合适的场景下，可以获得额外的效果。本篇文中，我们至少涉及了三个明确的场景：
+
+- 自然语言表达能力的补充；
+- 文章标题摘要；
+- 适合机器阅读的整体结构。
+
+下一篇中，我们会继续深入到更细致的结构中，进一步了解语义。你在工作中是否在使用语义化的标签开发？学习过本篇之后，答案有没有变化呢？你可以给我留言，我们一起讨论。
+
