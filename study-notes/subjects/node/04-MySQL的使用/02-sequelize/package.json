@@ -1,0 +1,16 @@
+{
+  "name": "02-sequelize",
+  "version": "1.0.0",
+  "description": "",
+  "main": "01_Sequelize的基本使用.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "mysql2": "^2.2.5",
+    "sequelize": "^6.3.5"
+  }
+}
