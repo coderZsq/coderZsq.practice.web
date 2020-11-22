@@ -5,7 +5,7 @@ const { program } = require('commander');
 require('colors');
 
 const cleaRemoveodules = () => {
-  const dir = program.dest || path.resolve(__dirname, '../../../');
+  const dir = program.dest || path.resolve(__dirname, '../../../../');
   console.log('Clear Path: '.cyan + dir);
   checkdir(dir);
   readdir(dir);
