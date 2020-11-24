@@ -40,7 +40,12 @@ const verifyAuth = async (ctx, next) => {
   // 1. 获取token
   console.log(ctx.headers)
   const authorization = ctx.headers.authorization;
+  if (!authorization) {
+    const error = new Error(errorTypes.UNAUTHORIZATION);
+    return ctx.app.emit('error', error, ctx);
+  }
   const token = authorization.replace('Bearer ', '');
+  console.log(token);
 
   // 2. 验证token(id/name/iat/exp)
   /**
