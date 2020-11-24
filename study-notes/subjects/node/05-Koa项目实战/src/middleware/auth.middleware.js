@@ -1,8 +1,13 @@
+const jwt = require('jsonwebtoken');
+
 const errorTypes = require('../constants/error-types');
 const service = require('../service/user.service');
 const md5password = require('../utils/password-handle');
+const { PUBLIC_KEY } = require('../app/config');
 
 const verifyLogin = async (ctx, next) => {
+  console.log('验证登录的middleware');
+
   // 1. 获取用户名和密码
   const { name, password } = ctx.request.body;
 
@@ -26,9 +31,36 @@ const verifyLogin = async (ctx, next) => {
     return ctx.app.emit('error', err, ctx);
   }
 
+  ctx.user = user;
   await next();
 };
 
+const verifyAuth = async (ctx, next) => {
+  console.log('验证授权的middleware');
+  // 1. 获取token
+  console.log(ctx.headers)
+  const authorization = ctx.headers.authorization;
+  const token = authorization.replace('Bearer ', '');
+
+  // 2. 验证token(id/name/iat/exp)
+  /**
+    postman 中的 Test 脚本获取token , {{token}}
+    const res = pm.response.json();
+    pm.globals.set('token', res.token);
+   */
+  try {
+    const result = jwt.verify(token, PUBLIC_KEY, {
+      algorithms: ['RS256']
+    });
+    ctx.user = result;
+    await next();
+  } catch (err) {
+    const error = new Error(errorTypes.UNAUTHORIZATION);
+    ctx.app.emit('error', error, ctx);
+  }
+}
+
 module.exports = {
-  verifyLogin
+  verifyLogin,
+  verifyAuth
 };
