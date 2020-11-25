@@ -7,9 +7,27 @@ class MomentController {
     const userId = ctx.user.id;
     const content = ctx.request.body.content;
 
-
     // 2. 将数据插入到数据库
     const result = await momentService.create(userId, content);
+    ctx.body = result;
+  }
+
+  async detail(ctx, next) {
+    // 1. 获取数据(momentId)
+    const momentId = ctx.params.momentId;
+
+    // 2. 根据id去拿查询这条数据
+    const result = await momentService.getMomentById(momentId);
+
+    ctx.body = result;
+  }
+
+  async list(ctx, next) {
+    // 1. 获取数据(offset/size)
+    const { offset, size } = ctx.query;
+
+    // 2. 查询列表
+    const result = await momentService.getMomentList(offset, size);
     ctx.body = result;
   }
 }
