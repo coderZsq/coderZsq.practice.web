@@ -39,14 +39,14 @@ const verifyLogin = async (ctx, next) => {
 const verifyAuth = async (ctx, next) => {
   console.log('验证授权的middleware');
   // 1. 获取token
-  console.log(ctx.headers)
+  // console.log(ctx.headers)
   const authorization = ctx.headers.authorization;
   if (!authorization) {
     const error = new Error(errorTypes.UNAUTHORIZATION);
     return ctx.app.emit('error', error, ctx);
   }
   const token = authorization.replace('Bearer ', '');
-  console.log(token);
+  // console.log(token);
 
   // 2. 验证token(id/name/iat/exp)
   /**
