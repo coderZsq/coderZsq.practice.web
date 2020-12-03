@@ -46,6 +46,23 @@ CREATE TABLE IF NOT EXISTS `moment_label`(
 	FOREIGN KEY (label_id) REFERENCES label(id) ON DELETE CASCADE ON UPDATE CASCADE
 );
 
+SELECT
+  m.id id, m.content content, m.createAt createTime, m.updateAt updateTime,
+  JSON_OBJECT('id', u.id, 'name', u.name) author,
+	IF(COUNT(l.id),JSON_ARRAYAGG(
+		JSON_OBJECT('id', l.id, 'name', l.name)
+	),NULL) labels,
+	(SELECT IF(COUNT(c.id),JSON_ARRAYAGG(
+    JSON_OBJECT('id', c.id, 'content', c.content, 'commentId', c.comment_Id, 'createTime', c.createAt, 
+                'user', JSON_OBJECT('id', cu.id, 'name', cu.name))
+  ),NULL) FROM comment c LEFT JOIN user cu ON c.user_id = cu.id WHERE m.id = c.moment_id) comments
+FROM moment m
+LEFT JOIN user u ON m.user_id = u.id
+LEFT JOIN moment_label ml ON m.id = ml.moment_id
+LEFT JOIN label l ON ml.label_id = l.id
+WHERE m.id = 1
+GROUP BY m.id;
+
 INSERT INTO moment (content, user_id) VALUES ('纵然再苦守数百年 我的心意 始终如一', 1);
 INSERT INTO moment (content, user_id) VALUES ('曾几何时，他也好，她也好，都是这家伙的被害者。所以我才憎恶着。这个强求着所谓“大家”的世界。必须建立在牺牲某人之上才能成立的低劣的和平。以温柔和正义粉饰，明明是恶毒之物却登大雅之堂，随着时间的流逝越发凶恶，除欺瞒外别无其二的空虚的概念。过去和世界都是无法改变的。发生过的事情和所谓的“大家”都是无法改变的。但是，并不是说自己只能隶属于他们', 1);
 INSERT INTO moment (content, user_id) VALUES ('不要告诉我你不需要保护，不要告诉我你不寂寞，知微，我只希望你，在走过黑夜的那个时辰，不要倔强的选择一个人。', 3);
