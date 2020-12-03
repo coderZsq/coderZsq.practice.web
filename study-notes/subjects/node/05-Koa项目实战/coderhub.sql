@@ -6,6 +6,8 @@ CREATE TABLE IF NOT EXISTS `user`(
 	updateAt TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
 );
 
+ALTER TABLE `user` ADD `avatar_url` VARCHAR(200);
+
 CREATE TABLE IF NOT EXISTS `moment` (
 	id INT PRIMARY KEY AUTO_INCREMENT,
 	content VARCHAR(1000) NOT NULL,
@@ -42,20 +44,55 @@ CREATE TABLE IF NOT EXISTS `moment_label`(
 	createAt TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
 	updateAt TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
 	PRIMARY KEY(moment_id, label_id),
-	FOREIGN KEY (moment_id) REFERENCES moment(id) ON DELETE CASCADE ON UPDATE CASCADE,
-	FOREIGN KEY (label_id) REFERENCES label(id) ON DELETE CASCADE ON UPDATE CASCADE
+	FOREIGN KEY(moment_id) REFERENCES moment(id) ON DELETE CASCADE ON UPDATE CASCADE,
+	FOREIGN KEY(label_id) REFERENCES label(id) ON DELETE CASCADE ON UPDATE CASCADE
+);
+
+CREATE TABLE IF NOT EXISTS `avatar`(
+	id INT PRIMARY KEY AUTO_INCREMENT,
+	filename VARCHAR(255) NOT NULL UNIQUE,
+	mimetype VARCHAR(30),
+	size INT,
+	user_id INT,
+	createAt TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+	updateAt TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+	FOREIGN KEY(user_id) REFERENCES user(id) ON DELETE CASCADE ON UPDATE CASCADE
+);
+
+CREATE TABLE IF NOT EXISTS `file`(
+	id INT PRIMARY KEY AUTO_INCREMENT,
+	filename VARCHAR(100) NOT NULL UNIQUE,
+	mimetype VARCHAR(30),
+	size INT,
+	moment_id INT,
+	user_id INT,
+	createAt TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+	updateAt TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+	FOREIGN KEY(user_id) REFERENCES user(id) ON DELETE CASCADE ON UPDATE CASCADE,
+	FOREIGN KEY(moment_id) REFERENCES moment(id) ON DELETE CASCADE ON UPDATE CASCADE
 );
 
 SELECT
+	m.id id, m.content content, m.createAt createTime, m.updateAt updateTime,
+JSON_OBJECT('id', u.id, 'name', u.name) author,
+(SELECT COUNT(*) FROM comment c WHERE c.moment_id = m.id) commentCount,
+(SELECT COUNT(*) FROM moment_label ml WHERE ml.moment_id = m.id) labelCount,
+(SELECT JSON_ARRAYAGG(CONCAT('http://localhost:8000/moment/images/',file.filename)) FROM file WHERE m.id = file.moment_id) images
+FROM moment m
+LEFT JOIN user u ON m.user_id = u.id
+LIMIT 0, 10;
+
+SELECT
   m.id id, m.content content, m.createAt createTime, m.updateAt updateTime,
-  JSON_OBJECT('id', u.id, 'name', u.name) author,
+  JSON_OBJECT('id', u.id, 'name', u.name, 'avatarUrl', u.avatar_url) author,
 	IF(COUNT(l.id),JSON_ARRAYAGG(
 		JSON_OBJECT('id', l.id, 'name', l.name)
 	),NULL) labels,
 	(SELECT IF(COUNT(c.id),JSON_ARRAYAGG(
     JSON_OBJECT('id', c.id, 'content', c.content, 'commentId', c.comment_Id, 'createTime', c.createAt, 
-                'user', JSON_OBJECT('id', cu.id, 'name', cu.name))
-  ),NULL) FROM comment c LEFT JOIN user cu ON c.user_id = cu.id WHERE m.id = c.moment_id) comments
+                'user', JSON_OBJECT('id', cu.id, 'name', cu.name, 'avatarUrl', cu.avatar_url))
+  ),NULL) FROM comment c LEFT JOIN user cu ON c.user_id = cu.id WHERE m.id = c.moment_id) comments,
+	(SELECT JSON_ARRAYAGG(CONCAT('http://localhost:8000/moment/images/',file.filename)) FROM file WHERE m.id = file.moment_id) images
 FROM moment m
 LEFT JOIN user u ON m.user_id = u.id
 LEFT JOIN moment_label ml ON m.id = ml.moment_id
