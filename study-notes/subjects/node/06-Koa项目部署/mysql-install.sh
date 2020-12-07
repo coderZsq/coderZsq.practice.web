@@ -10,3 +10,4 @@ $ mysql-secure-installation
   use mysql;
   select host, user from user;
   update user set host = '%' where user = 'root';
+  MYSQL8PASSWORD.
