@@ -1,0 +1,13 @@
+<PrimaryExpression> = <DecimalNumber> | "(" <LogicalExpress> ")"
+
+<AdditiveExpression> = <PrimaryExpression> |
+  <AdditiveExpression> "+" <PrimaryExpression> |
+    <AdditiveExpression> "-" <PrimaryExpression>
+
+<MultiplicativeExpression> = <DecimalNumber> |
+  <MultiplicativeExpression> "*" <DecimalNumber> |
+    <MultiplicativeExpression> "/" <DecimalNumber> 
+
+<LogicalExpress> = <DecimalNumber> |
+  <LogicalExpress> "||" <AdditiveExpression> |
+    <LogicalExpress> "&&" <AdditiveExpression>

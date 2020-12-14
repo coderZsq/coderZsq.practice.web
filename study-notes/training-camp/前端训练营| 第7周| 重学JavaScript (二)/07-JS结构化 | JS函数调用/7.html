@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Realm</title>
+</head>
+
+<body>
+  <div id="container" style="width: 100vw; height: 100vh;"></div>
+</body>
+<script src="https://gw.alipayobjects.com/os/antv/pkg/_antv.g6-3.5.10/dist/g6.min.js"></script>
+<script>
+  function getRealm() {
+    let map = new Map(); // 实例表: 存实例的表
+    let set = new Set(); // 目的是防止重复
+    let objectNames = [
+      // 函数属性
+      'eval',
+      'isFinite',
+      'isNaN',
+      'parseFloat',
+      'parseInt',
+      'decodeURI',
+      'decodeURIComponent',
+      'encodeURI',
+      'encodeURIComponent',
+      // 基本对象
+      'Array',
+      'Date',
+      'RegExp',
+      'Promise',
+      'Proxy',
+      'Map',
+      'WeakMap',
+      'Set',
+      'WeakSet',
+      'Function',
+      'Boolean',
+      'String',
+      'Number',
+      'Symbol',
+      'Object',
+      // 错误对象
+      'Error',
+      'EvalError',
+      'ReferenceError',
+      'SyntaxError',
+      'TypeError',
+      'URIError',
+      // 可索引的集合对象
+      'ArrayBuffer',
+      'SharedArrayBuffer',
+      'DataView',
+      'Float32Array',
+      'Float64Array',
+      'Int8Array',
+      'Int16Array',
+      'Int32Array',
+      'Uint8Array',
+      'Uint16Array',
+      'Uint32Array',
+      'Uint8ClampedArray',
+      'Atomics',
+      'JSON',
+      'Math',
+      'Reflect',
+    ];
+
+    // g6 要求的数据结构
+    // 1. 第一级, 所有内置对象名
+    let realm = {
+      id: 'realm',
+      children: []
+    };
+
+    objectNames.forEach(name => {
+      if (window[name]) {
+        map.set(name, window[name]);
+        realm.children.push({
+          id: name,
+          children: []
+        });
+      }
+    });
+
+    // 2. 循环取每个对象的属性
+    let realmChildrenQueue = [...realm.children];
+
+    while (realmChildrenQueue.length) {
+      let child = realmChildrenQueue.shift();
+      let id = child.id;
+      let object = map.get(id);
+
+      if (set.has(object)) continue;
+      set.add(object);
+
+      for (const prop of Object.getOwnPropertyNames(object)) {
+        let desc = Object.getOwnPropertyDescriptor(object, prop);
+
+        const pushChild = (type = 'value') => {
+          let name = type === 'value' ? `${id}.${prop}` : `${id}.${prop}.[${type}]`;
+
+          let o = {
+            id: name,
+            children: []
+          };
+          map.set(name, desc[type]); // 存实例
+          child.children.push(o); // push, 存结构
+
+          realmChildrenQueue.push(o);
+        }
+        if (desc.value !== null && typeof desc.value === 'object' || typeof desc.value === 'function') {
+          pushChild()
+        }
+        if (desc.get) pushChild('get');
+        if (desc.set) pushChild('set');
+      }
+    }
+    return realm;
+  }
+
+  function render(data) {
+    console.log(data);
+    const width = document.getElementById('container').scrollWidth;
+    const height = document.getElementById('container').scrollHeight || 500
+    const graph = new G6.TreeGraph({
+      container: 'container',
+      width,
+      height,
+      modes: {
+        default: [
+          {
+            type: 'collapse-expand',
+            onChange: function onChange(item, collapsed) {
+              const data = item.get('model').data;
+              data.collapsed = collapsed;
+              return true;
+            }
+          },
+          'drag-canvas',
+          'zoom-canvas'
+        ]
+      },
+      defaultNode: {
+        size: 26,
+        anchorPoints: [
+          [0, 0.5],
+          [1, 0.5]
+        ],
+        style: {
+          fill: '#C6E5FF',
+          stroke: '#5B8FF9'
+        }
+      },
+      defaultEdge: {
+        type: 'cubie-horizontal',
+        style: {
+          stroke: '#A3B1BF'
+        }
+      },
+      layout: {
+        type: 'mindmap',
+        direction: 'H',
+        getHeight: () => {
+          return 16
+        },
+        getWidth: () => {
+          return 100
+        },
+        getVGap: () => {
+          return 10
+        },
+        getHGap: () => {
+          return 100
+        },
+        getSide: () => {
+          return 'right'
+        }
+      }
+    });
+
+    let centerX = 0;
+    graph.node(function (node) {
+      if (node.id === 'Modeling Methods') {
+        centerX = node.x;
+      }
+
+      return {
+        label: node.id,
+        labelCfg: {
+          position:
+            node.children && node.children.length > 0
+              ? 'right'
+              : node.x > centerX
+                ? 'right'
+                : 'left',
+          offset: 5
+        }
+      }
+    });
+
+    graph.data(data);
+    graph.render();
+    graph.fitView();
+  }
+  render(getRealm());
+</script>
+
+</html>
