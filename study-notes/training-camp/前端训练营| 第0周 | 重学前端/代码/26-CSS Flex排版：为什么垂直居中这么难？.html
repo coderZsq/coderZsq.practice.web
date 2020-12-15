@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    #parent {
+      display: flex;
+      width: 300px;
+      height: 300px;
+      outline: solid 1px;
+      justify-content: center;
+      align-content: center;
+      align-items: center;
+    }
+
+    #child {
+      width: 100px;
+      height: 100px;
+      outline: solid 1px;
+    }
+
+    /* .parent {
+      display: flex;
+      width: 300px;
+      justify-content: center;
+      align-content: center;
+      align-items: stretch;
+    }
+
+    .child {
+      width: 100px;
+      outline: solid 1px;
+    } */
+
+    .parent {
+      display: flex;
+      width: 300px;
+      height: 200px;
+      background-color: pink;
+    }
+
+    .child1 {
+      width: 100px;
+      background-color: lightblue;
+    }
+
+    .child2 {
+      width: 100px;
+      flex: 1;
+      outline: solid 1px;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="parent">
+    <div id="child">
+    </div>
+  </div>
+
+  <!-- <div class="parent">
+    <div class="child" style="height:300px;">
+    </div>
+    <div class="child">
+    </div>
+  </div>
+  <br />
+  <div class="parent">
+    <div class="child">
+    </div>
+    <div class="child" style="height:300px;">
+    </div>
+  </div> -->
+
+  <div class="parent">
+    <div class="child1">
+    </div>
+    <div class="child2">
+    </div>
+  </div>
+</body>
+
+</html>
