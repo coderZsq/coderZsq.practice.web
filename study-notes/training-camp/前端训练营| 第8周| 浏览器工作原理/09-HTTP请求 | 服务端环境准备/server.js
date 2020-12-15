@@ -5,7 +5,7 @@ http.createServer((request, response) => {
   request.on('error', (err) => {
     console.error(err);
   }).on('data', (chunk) => {
-    body.push(chunk.toString());
+    body.push(chunk); // 视频有误, 需删除toString,保持字节数组.
   }).on('end', () => {
     body = Buffer.concat(body).toString();
     console.log('body: ', body);
