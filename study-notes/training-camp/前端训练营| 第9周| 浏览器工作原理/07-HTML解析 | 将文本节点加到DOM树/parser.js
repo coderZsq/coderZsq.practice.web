@@ -5,8 +5,6 @@ let stack = [{ type: 'docment', children: [] }];
 let currentTextNode = null;
 
 function emit(token) {
-  if (token.type === 'text')
-    return;
   let top = stack[stack.length - 1];
 
   if (token.type == 'startTag') {
@@ -41,6 +39,15 @@ function emit(token) {
       stack.pop();
     }
     currentTextNode = null;
+  } else if (token.type == 'text') {
+    if (currentTextNode == null) {
+      currentTextNode = {
+        type: 'text',
+        content: ''
+      }
+      top.children.push(currentTextNode);
+    }
+    currentTextNode.content += token.content;
   }
 }
 
@@ -264,5 +271,5 @@ module.exports.parseHTML = function parseHTML(html) {
     state = state(c);
   }
   state = state(EOF);
-  console.log(stack[0]);
+  return stack[0];
 }
