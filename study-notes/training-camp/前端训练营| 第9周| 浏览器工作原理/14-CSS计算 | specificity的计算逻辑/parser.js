@@ -3,6 +3,7 @@ const css = require('css');
 const EOF = Symbol('EOF');
 
 let currentToken = null;
+
 let currentAttribute = null;
 
 let stack = [{ type: 'docment', children: [] }];
@@ -31,7 +32,6 @@ function match(element, selector) {
       return true;
     }
   }
-  return false;
 }
 
 function specificity(selector) {
@@ -67,6 +67,7 @@ function computeCSS(element) {
 
   for (let rule of rules) {
     var selectorParts = rule.selectors[0].split(' ').reverse();
+
     if (!match(element, selectorParts[0]))
       continue;
 
@@ -124,12 +125,12 @@ function emit(token) {
     computeCSS(element);
 
     top.children.push(element);
-    element.parent = top;
 
     if (!token.isSelfClosing)
       stack.push(element);
 
     currentTextNode = null;
+
   } else if (token.type == 'endTag') {
     if (top.tagName != token.tagName) {
       throw new Error("Tag start end doesn't match!");
@@ -140,6 +141,7 @@ function emit(token) {
       stack.pop();
     }
     currentTextNode = null;
+
   } else if (token.type == 'text') {
     if (currentTextNode == null) {
       currentTextNode = {
@@ -179,6 +181,10 @@ function tagOpen(c) {
     }
     return tagName(c);
   } else {
+    emit({
+      type: 'text',
+      content: c
+    });
     return;
   }
 }
@@ -189,12 +195,13 @@ function tagName(c) {
   } else if (c == '/') {
     return selfClosingStartTag;
   } else if (c.match(/^[a-zA-Z]$/)) {
-    currentToken.tagName += c//.toLowerCase();
+    currentToken.tagName += c;
     return tagName;
   } else if (c == '>') {
     emit(currentToken);
     return data;
   } else {
+    currentToken.tagName += c;
     return tagName;
   }
 }
@@ -211,13 +218,11 @@ function beforeAttributeName(c) {
       name: '',
       value: ''
     }
-    // console.log('currentAttribute', currentAttribute)
     return attributeName(c);
   }
 }
 
 function attributeName(c) {
-  // console.log(currentAttribute);
   if (c.match(/^[\t\n\f ]$/) || c == '/' || c == '>' || c == EOF) {
     return afterAttributeName(c);
   } else if (c == '=') {
@@ -240,7 +245,7 @@ function beforeAttributeValue(c) {
   } else if (c == '\'') {
     return singleQuotedAttributeValue;
   } else if (c == '>') {
-    // return data;
+    return data;
   } else {
     return UnquotedAttributeValue(c);
   }
@@ -317,6 +322,7 @@ function UnquotedAttributeValue(c) {
 function selfClosingStartTag(c) {
   if (c == '>') {
     currentToken.isSelfClosing = true;
+    emit(currentToken);
     return data;
   } else if (c == 'EOF') {
 

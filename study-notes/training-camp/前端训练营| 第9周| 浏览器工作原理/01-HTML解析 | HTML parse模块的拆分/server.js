@@ -1,16 +1,12 @@
 const http = require('http');
 
-http.createServer((request, response) => {
-  let body = [];
-  request.on('error', (err) => {
-    console.error(err);
-  }).on('data', (chunk) => {
-    body.push(chunk.toString());
-  }).on('end', () => {
-    body = body.join('');
-    console.log('body: ', body);
-    response.writeHead(200, { 'Content-Type': 'text/html' });
-    response.end(`
+const server = http.createServer((req, res) => {
+  console.log('request received');
+  console.log(req.headers);
+  res.setHeader('Content-Type', 'text/html');
+  res.setHeader('X-Foo', 'bar');
+  res.writeHead(200, { 'Content-Type': 'text/plain' });
+  res.end(`
 <html maaa=a >
 <head>
   <style>
@@ -32,7 +28,6 @@ http.createServer((request, response) => {
 </body>
 </html>
     `);
-  });
-}).listen(8088);
+});
 
-console.log('server started');
+server.listen(8088);

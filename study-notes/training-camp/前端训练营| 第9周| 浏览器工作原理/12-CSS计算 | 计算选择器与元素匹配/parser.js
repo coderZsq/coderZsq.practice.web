@@ -3,6 +3,7 @@ const css = require('css');
 const EOF = Symbol('EOF');
 
 let currentToken = null;
+
 let currentAttribute = null;
 
 let stack = [{ type: 'docment', children: [] }];
@@ -142,6 +143,10 @@ function tagOpen(c) {
     }
     return tagName(c);
   } else {
+    emit({
+      type: 'text',
+      content: c
+    });
     return;
   }
 }
@@ -152,12 +157,13 @@ function tagName(c) {
   } else if (c == '/') {
     return selfClosingStartTag;
   } else if (c.match(/^[a-zA-Z]$/)) {
-    currentToken.tagName += c//.toLowerCase();
+    currentToken.tagName += c;
     return tagName;
   } else if (c == '>') {
     emit(currentToken);
     return data;
   } else {
+    currentToken.tagName += c;
     return tagName;
   }
 }
@@ -174,13 +180,11 @@ function beforeAttributeName(c) {
       name: '',
       value: ''
     }
-    // console.log('currentAttribute', currentAttribute)
     return attributeName(c);
   }
 }
 
 function attributeName(c) {
-  // console.log(currentAttribute);
   if (c.match(/^[\t\n\f ]$/) || c == '/' || c == '>' || c == EOF) {
     return afterAttributeName(c);
   } else if (c == '=') {
@@ -203,7 +207,7 @@ function beforeAttributeValue(c) {
   } else if (c == '\'') {
     return singleQuotedAttributeValue;
   } else if (c == '>') {
-    // return data;
+    return data;
   } else {
     return UnquotedAttributeValue(c);
   }
@@ -280,6 +284,7 @@ function UnquotedAttributeValue(c) {
 function selfClosingStartTag(c) {
   if (c == '>') {
     currentToken.isSelfClosing = true;
+    emit(currentToken);
     return data;
   } else if (c == 'EOF') {
 
