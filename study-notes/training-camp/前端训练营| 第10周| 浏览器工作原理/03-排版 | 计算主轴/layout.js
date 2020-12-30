@@ -166,7 +166,90 @@ function layout(element) {
     }
     flexLine.mainSpace = mainSpace;
 
-    console.log(items);
+    if (style.flexWrap === 'nowrap' || isAutoMainSize) {
+      flexLine.crossSpace = (style[crossSize] !== undefined) ? style[crossSize] : crossSpace;
+    } else {
+      flexLine.crossSpace = crossSpace;
+    }
+
+    if (mainSpace < 0) {
+      // overflow (happens only if container is single line), scale every item
+      var scale = style[mainSize] / (style[mainSize] - mainSpace);
+      var currentMain = mainBase;
+      for (var i = 0; i < items.length; i++) {
+        var item = items[i];
+        var itemStyle = getStyle(item);
+
+        if (itemStyle.flex) {
+          itemStyle[mainSize] = 0;
+        }
+
+        itemStyle[mainSize] = itemStyle[mainSize] * scale;
+
+        itemStyle[mainStart] = currentMain;
+        itemStyle[mainEnd] = itemStyle[mainStart] + mainSign * itemStyle[mainSize];
+        currentMain = itemStyle[mainEnd];
+      }
+    } else {
+      // process each flex line
+      flexLines.forEach(function (items) {
+        var mainSpace = items.mainSpace;
+        var flexTotal = 0;
+        for (var i = 0; i < items.length; i++) {
+          var item = items[i];
+          var itemStyle = getStyle(item);
+
+          if ((itemStyle.flex !== null) && (itemStyle.flex !== (void 0))) {
+            flexTotal += itemStyle.flex;
+            continue;
+          }
+        }
+
+        if (flexTotal > 0) {
+          // There is flexiable flex items
+          var currentMain = mainBase;
+          for (var i = 0; i < items.length; i++) {
+            var item = items[i];
+            var itemStyle = getStyle(item);
+
+            if (itemStyle.flex) {
+              itemStyle[mainSize] = (mainSpace / flexTotal) * itemStyle.flex;
+            }
+            itemStyle[mainStart] = currentMain;
+            itemStyle[mainEnd] = itemStyle[mainStart] + mainSign * itemStyle[mainSize];
+            currentMain = itemStyle[mainEnd];
+          }
+        } else {
+          // There is *NO* flexible items, which means, justifyContent should work
+          if (style.justifyContent === 'flex-start') {
+            var currentMain = mainBase;
+            var step = 0;
+          }
+          if (scale.justifyContent === 'flex-end') {
+            var currentMain = mainSpace * mainSign + mainBase;
+            var step = 0;
+          }
+          if (style.justifyContent === 'center') {
+            var currentMain = mainSpace / 2 * mainSign + mainBase;
+            var step = 0;
+          }
+          if (style.justifyContent === 'space-between') {
+            var step = mainSpace / (item.length - 1) * mainSign;
+            var currentMain = mainBase;
+          }
+          if (style.justifyContent === 'space-around') {
+            var step = mainSpace / items.length * mainSign;
+            var currentMain = step / 2 + mainBase;
+          }
+          for (var i = 0; i < items.length; i++) {
+            var item = items[i];
+            itemStyle[mainStart] = currentMain;
+            itemStyle[mainEnd] = itemStyle[mainStart] + mainSign * itemStyle[mainSize];
+            currentMain = itemStyle[mainEnd] + step;
+          }
+        }
+      });
+    }
   }
 }
 
