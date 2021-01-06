@@ -88,14 +88,13 @@ function computeCSS(element) {
       for (var declaration of rule.declarations) {
         if (!computedStyle[declaration.property])
           computedStyle[declaration.property] = {};
-      }
-
-      if (!computedStyle[declaration.property].specificity) {
-        computedStyle[declaration.property].value = declaration.value;
-        computedStyle[declaration.property].specificity = sp;
-      } else if (compare(computedStyle[declaration.property].specificity, sp) < 0) {
-        computedStyle[declaration.property].value = declaration.value;
-        computedStyle[declaration.property].specificity = sp;
+        if (!computedStyle[declaration.property].specificity) {
+          computedStyle[declaration.property].value = declaration.value;
+          computedStyle[declaration.property].specificity = sp;
+        } else if (compare(computedStyle[declaration.property].specificity, sp) < 0) {
+          computedStyle[declaration.property].value = declaration.value;
+          computedStyle[declaration.property].specificity = sp;
+        }
       }
     }
   }

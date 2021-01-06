@@ -19,6 +19,7 @@ function getStyle(element) {
 }
 
 function layout(element) {
+  console.log(element);
   if (!element.computedStyle)
     return;
 
@@ -247,7 +248,7 @@ function layout(element) {
           itemStyle[mainStart] = currentMain;
           itemStyle[mainEnd] = itemStyle[mainStart] + mainSign * itemStyle[mainSize];
           currentMain = itemStyle[mainEnd] + step;
-          itemStyle[crossSize] = crossSign * (itemStyle[crossEnd] - itemStyle[crossStart]);
+          itemStyle[crossSize] = crossSign * (itemStyle[crossEnd] - itemStyle[cr])
         }
       }
     });

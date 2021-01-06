@@ -8,7 +8,7 @@ let currentToken = null;
 
 let currentAttribute = null;
 
-let stack = [{ type: 'docment', children: [] }];
+let stack = [{ type: 'document', children: [] }];
 let currentTextNode = null;
 
 let rules = [];
@@ -90,15 +90,15 @@ function computeCSS(element) {
       for (var declaration of rule.declarations) {
         if (!computedStyle[declaration.property])
           computedStyle[declaration.property] = {};
+        if (!computedStyle[declaration.property].specificity) {
+          computedStyle[declaration.property].value = declaration.value;
+          computedStyle[declaration.property].specificity = sp;
+        } else if (compare(computedStyle[declaration.property].specificity, sp) < 0) {
+          for (var k = 0; k < 4; k++)
+            computedStyle[declaration.property][declaration.value][k] += sp[k];
+        }
       }
-
-      if (!computedStyle[declaration.property].specificity) {
-        computedStyle[declaration.property].value = declaration.value;
-        computedStyle[declaration.property].specificity = sp;
-      } else if (compare(computedStyle[declaration.property].specificity, sp) < 0) {
-        computedStyle[declaration.property].value = declaration.value;
-        computedStyle[declaration.property].specificity = sp;
-      }
+      // console.log(element.computedStyle);
     }
   }
 }
@@ -123,8 +123,8 @@ function emit(token) {
         });
       }
     }
-
     computeCSS(element);
+    layout(element);
 
     top.children.push(element);
 
