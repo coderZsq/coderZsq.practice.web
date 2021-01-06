@@ -243,7 +243,7 @@ function layout(element) {
           }
           for (var i = 0; i < items.length; i++) {
             var item = items[i];
-            itemStyle[mainStart] = currentMain;
+            itemStyle[mainStart, currentMain];
             itemStyle[mainEnd] = itemStyle[mainStart] + mainSign * itemStyle[mainSize];
             currentMain = itemStyle[mainEnd] + step;
           }

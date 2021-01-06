@@ -19,7 +19,6 @@ function getStyle(element) {
 }
 
 function layout(element) {
-  console.log(element);
   if (!element.computedStyle)
     return;
 
@@ -152,10 +151,8 @@ function layout(element) {
       if (mainSpace < itemStyle[mainSize]) {
         flexLine.mainSpace = mainSpace;
         flexLine.crossSpace = crossSpace;
-
         flexLine = [item];
         flexLines.push(flexLine);
-
         mainSpace = style[mainSize];
         crossSpace = 0;
       } else {
@@ -338,7 +335,7 @@ function layout(element) {
     }
     crossBase += crossSign * (lineCrossSize + step);
   });
-  console.log(items);
+  // console.log(items);
 }
 
 module.exports = layout;
