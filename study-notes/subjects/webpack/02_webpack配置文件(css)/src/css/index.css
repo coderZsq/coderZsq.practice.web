@@ -1,3 +1,5 @@
-.content {
+@import './test.css';
+
+.demo {
   color: red;
 }

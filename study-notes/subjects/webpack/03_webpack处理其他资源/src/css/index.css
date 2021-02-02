@@ -1,0 +1,11 @@
+@import './test.css';
+
+.demo {
+  color: red;
+}
+
+.bg-image {
+  display: inline-block;
+  background-image: url('../img/rock.png');
+  background-size: contain;
+}
