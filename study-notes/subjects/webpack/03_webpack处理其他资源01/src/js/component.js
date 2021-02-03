@@ -2,7 +2,7 @@
 import '../css/index.css';
 import '../css/component.less';
 
-import treeImage from '../img/tree.png';
+import treeImage from '../img/zznh.png';
 
 function component() {
   const element = document.createElement('div');
