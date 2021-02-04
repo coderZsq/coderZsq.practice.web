@@ -6,6 +6,8 @@ const priceFormat = (price) => {
     return "100.00";
 }
 
+console.log(cba);
+
 module.exports = {
     dateFormat,
     priceFormat
