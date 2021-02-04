@@ -1,0 +1,29 @@
+{
+  "version": 3,
+  "sources": [
+    "webpack://01_learn_webpack/./src/index.js",
+    "webpack://01_learn_webpack/./src/js/format.js",
+    "webpack://01_learn_webpack/./src/js/math.js",
+    "webpack://01_learn_webpack/webpack/bootstrap",
+    "webpack://01_learn_webpack/webpack/runtime/compat get default export",
+    "webpack://01_learn_webpack/webpack/runtime/define property getters",
+    "webpack://01_learn_webpack/webpack/runtime/hasOwnProperty shorthand",
+    "webpack://01_learn_webpack/webpack/runtime/make namespace object",
+    "webpack://01_learn_webpack/webpack/startup"
+  ],
+  "names": [],
+  "mappings": ";;;;;;;;;;;;;AAAA;AACA,OAAO,WAAW,GAAG,mBAAO,CAAC,mCAAW;;AAExC;AACsD;;AAEtD;AACA;;AAEA,YAAY,sDAAU;AACtB,YAAY,uDAAW;;AAEvB,iB;;;;;;;;;;ACZA;AACA;AACA;;AAEA;AACA;AACA;;AAEA;;AAEA;AACA;AACA;AACA,C;;;;;;;;;;;;;;;;ACbO;AACP;AACA;;AAEO;AACP;AACA,C;;;;;;UCNA;UACA;;UAEA;UACA;UACA;UACA;UACA;UACA;UACA;UACA;UACA;UACA;UACA;UACA;;UAEA;UACA;;UAEA;UACA;UACA;;;;;WCrBA;WACA;WACA;WACA,cAAc,0BAA0B,EAAE;WAC1C,cAAc,eAAe;WAC7B,gCAAgC,YAAY;WAC5C;WACA,E;;;;;WCPA;WACA;WACA;WACA;WACA,wCAAwC,yCAAyC;WACjF;WACA;WACA,E;;;;;WCPA,6CAA6C,wDAAwD,E;;;;;WCArG;WACA;WACA;WACA,sDAAsD,kBAAkB;WACxE;WACA,+CAA+C,cAAc;WAC7D,E;;;;UCNA;UACA;UACA;UACA",
+  "file": "js/bundle.js",
+  "sourcesContent": [
+    "// es module导出内容, CommonJS导入内容\nconst { sum, mul } = require('./js/math');\n\n// CommonJS导出内容, es module导入内容\nimport { dateFormat, priceFormat } from './js/format';\n\nconsole.log(sum(20, 30));\nconsole.log(mul(20, 30));\n\nconsole.log(dateFormat('aaa'));\nconsole.log(priceFormat('bbb'));\n\nconsole.log(abc);",
+    "const dateFormat = (date) => {\n    return \"2020-12-12\";\n}\n\nconst priceFormat = (price) => {\n    return \"100.00\";\n}\n\nconsole.log(cba);\n\nmodule.exports = {\n    dateFormat,\n    priceFormat\n}",
+    "export const sum = (num1, num2) => {\n  return num1 + num2;\n}\n\nexport const mul = (num1, num2) => {\n  return num1 * num2;\n}",
+    "// The module cache\nvar __webpack_module_cache__ = {};\n\n// The require function\nfunction __webpack_require__(moduleId) {\n\t// Check if module is in cache\n\tif(__webpack_module_cache__[moduleId]) {\n\t\treturn __webpack_module_cache__[moduleId].exports;\n\t}\n\t// Create a new module (and put it into the cache)\n\tvar module = __webpack_module_cache__[moduleId] = {\n\t\t// no module.id needed\n\t\t// no module.loaded needed\n\t\texports: {}\n\t};\n\n\t// Execute the module function\n\t__webpack_modules__[moduleId](module, module.exports, __webpack_require__);\n\n\t// Return the exports of the module\n\treturn module.exports;\n}\n\n",
+    "// getDefaultExport function for compatibility with non-harmony modules\n__webpack_require__.n = function(module) {\n\tvar getter = module && module.__esModule ?\n\t\tfunction() { return module['default']; } :\n\t\tfunction() { return module; };\n\t__webpack_require__.d(getter, { a: getter });\n\treturn getter;\n};",
+    "// define getter functions for harmony exports\n__webpack_require__.d = function(exports, definition) {\n\tfor(var key in definition) {\n\t\tif(__webpack_require__.o(definition, key) && !__webpack_require__.o(exports, key)) {\n\t\t\tObject.defineProperty(exports, key, { enumerable: true, get: definition[key] });\n\t\t}\n\t}\n};",
+    "__webpack_require__.o = function(obj, prop) { return Object.prototype.hasOwnProperty.call(obj, prop); }",
+    "// define __esModule on exports\n__webpack_require__.r = function(exports) {\n\tif(typeof Symbol !== 'undefined' && Symbol.toStringTag) {\n\t\tObject.defineProperty(exports, Symbol.toStringTag, { value: 'Module' });\n\t}\n\tObject.defineProperty(exports, '__esModule', { value: true });\n};",
+    "// startup\n// Load entry module\n__webpack_require__(\"./src/index.js\");\n// This entry module used 'exports' so it can't be inlined\n"
+  ],
+  "sourceRoot": ""
+}

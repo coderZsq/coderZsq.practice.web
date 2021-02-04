@@ -1,0 +1,81 @@
+{
+  "type": "Program",
+  "body": [
+    {
+      "type": "VariableDeclaration",
+      "declarations": [
+        {
+          "type": "VariableDeclarator",
+          "id": {
+            "type": "Identifier",
+            "name": "foo"
+          },
+          "init": {
+            "type": "FunctionExpression",
+            "id": {
+              "type": "Identifier",
+              "name": "foo"
+            },
+            "params": [
+              {
+                "type": "Identifier",
+                "name": "name"
+              }
+            ],
+            "body": {
+              "type": "BlockStatement",
+              "body": [
+                {
+                  "type": "ReturnStatement",
+                  "argument": {
+                    "type": "CallExpression",
+                    "callee": {
+                      "type": "MemberExpression",
+                      "computed": false,
+                      "object": {
+                        "type": "Identifier",
+                        "name": "console"
+                      },
+                      "property": {
+                        "type": "Identifier",
+                        "name": "log"
+                      }
+                    },
+                    "arguments": [
+                      {
+                        "type": "Identifier",
+                        "name": "name"
+                      }
+                    ]
+                  }
+                }
+              ]
+            },
+            "generator": false,
+            "expression": false,
+            "async": false
+          }
+        }
+      ],
+      "kind": "var"
+    },
+    {
+      "type": "ExpressionStatement",
+      "expression": {
+        "type": "CallExpression",
+        "callee": {
+          "type": "Identifier",
+          "name": "foo"
+        },
+        "arguments": [
+          {
+            "type": "Literal",
+            "value": "coderwhy",
+            "raw": "\"coderwhy\""
+          }
+        ]
+      }
+    }
+  ],
+  "sourceType": "script"
+}
