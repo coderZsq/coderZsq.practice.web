@@ -2,10 +2,8 @@ const message = 'Hello TypeScript';
 
 const foo = (info) => {
   console.log(info);
-}
+};
 
-foo(message);
+foo('abc');
 
-const p = new Promise((resolve, reject) => { });
-
-export { }
+export {};

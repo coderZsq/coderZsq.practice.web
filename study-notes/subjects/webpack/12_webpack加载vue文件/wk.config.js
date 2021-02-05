@@ -1,12 +1,10 @@
 const path = require('path');
-const {
-  CleanWebpackPlugin,
-} = require('../12_webpack加载vue文件/node_modules/clean-webpack-plugin');
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
   mode: 'development',
-  entry: './src/index.js',
+  entry: './src/index.ts',
   devtool: 'source-map',
   output: {
     filename: 'js/bundle.js',
@@ -19,22 +17,35 @@ module.exports = {
       {
         test: /\.jsx?$/,
         exclude: /node_modules/,
-        use: ['babel-loader', 'eslint-loader'],
+        use: {
+          loader: 'babel-loader',
+          // options: {
+          //   presets: [
+          //     ['@babel/preset-env', {
+          //       // targets: ['chrome 88']
+          //     }]
+          //   ]
+          //   // plugins: [
+          //   //   '@babel/plugin-transform-arrow-functions',
+          //   //   '@babel/plugin-transform-block-scoping'
+          //   // ]
+          // }
+        }
       },
       {
         test: /\.ts$/,
         exclude: /node_modules/,
         // 本质上是依赖于typescript (typescript compiler)
         // use: 'ts-loader'
-        use: 'babel-loader',
-      },
-    ],
+        use: 'babel-loader'
+      }
+    ]
   },
   plugins: [
     new CleanWebpackPlugin(),
     new HtmlWebpackPlugin({
       title: 'coderZsq webpack',
-      template: './index.html',
-    }),
-  ],
-};
+      template: './index.html'
+    })
+  ]
+}
