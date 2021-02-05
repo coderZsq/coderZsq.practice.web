@@ -24,6 +24,7 @@
     "clean-webpack-plugin": "^3.0.0",
     "copy-webpack-plugin": "^7.0.0",
     "css-loader": "^5.0.1",
+    "eslint": "^7.19.0",
     "html-webpack-plugin": "^5.0.0-beta.6",
     "less": "^4.1.1",
     "less-loader": "^8.0.0",

@@ -1,6 +1,6 @@
-const message: string = 'Hello TypeScript';
+const message = 'Hello TypeScript';
 
-const foo = (info: string) => {
+const foo = (info) => {
   console.log(info);
 }
 
