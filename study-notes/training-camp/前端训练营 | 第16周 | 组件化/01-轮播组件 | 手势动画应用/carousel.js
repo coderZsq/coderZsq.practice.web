@@ -23,12 +23,24 @@ export class Carousel extends Component {
     let timeline = new Timeline();
     timeline.start();
 
+    let handler = null;
+
     let children = this.root.children;
 
     let position = 0;
 
+    let t = 0;
+    let ax = 0;
+
+    this.root.addEventListener("start", (event) => {
+      timeline.pause();
+      clearInterval(handler);
+      let progress = (Date.now() - t) / 1500;
+      ax = ease(progress) * 500 - 500;
+    });
+
     this.root.addEventListener("pan", (event) => {
-      let x = event.clientX - event.startX;
+      let x = event.clientX - event.startX - ax;
       let current = position - (x - (x % 500)) / 500;
       for (let offset of [-1, 0, 1]) {
         let pos = current + offset;
@@ -41,33 +53,16 @@ export class Carousel extends Component {
       }
     });
 
-    this.root.addEventListener("panend", (event) => {
-      let x = event.clientX - event.startX;
-      position = position - Math.round(x / 500);
+    this.root.addEventListener("panend", (event) => {});
 
-      for (let offset of [
-        0,
-        -Math.sign(Math.round(x / 500) - x + 250 * Math.sign(x)),
-      ]) {
-        let pos = position + offset;
-        pos = (pos + children.length) % children.length;
-
-        children[pos].style.transition = "";
-        children[pos].style.transform = `translateX(${
-          -pos * 500 + offset * 500
-        }px)`;
-      }
-    });
-
-    setInterval(() => {
+    let nextPicture = () => {
       let children = this.root.children;
       let nextIndex = (position + 1) % children.length;
 
       let current = children[position];
       let next = children[nextIndex];
 
-      next.style.transition = "none";
-      next.style.transform = `translateX(${500 - nextIndex * 500}px)`;
+      t = Date.now();
 
       timeline.add(
         new Animation(
@@ -75,7 +70,7 @@ export class Carousel extends Component {
           "transform",
           -position * 500,
           -500 - position * 500,
-          500,
+          1500,
           0,
           ease,
           (v) => `translateX(${v}px)`
@@ -87,7 +82,7 @@ export class Carousel extends Component {
           "transform",
           500 - nextIndex * 500,
           -nextIndex * 500,
-          500,
+          1500,
           0,
           ease,
           (v) => `translateX(${v}px)`
@@ -95,7 +90,9 @@ export class Carousel extends Component {
       );
 
       position = nextIndex;
-    }, 3000);
+    };
+
+    handler = setInterval(nextPicture, 3000);
 
     /*
     this.root.addEventListener("mousedown", (event) => {
