@@ -35,7 +35,7 @@ export class Carousel extends Component {
     this.root.addEventListener("start", (event) => {
       timeline.pause();
       clearInterval(handler);
-      let progress = (Date.now() - t) / 1500;
+      let progress = (Date.now() - t) / 500;
       ax = ease(progress) * 500 - 500;
     });
 
@@ -53,7 +53,47 @@ export class Carousel extends Component {
       }
     });
 
-    this.root.addEventListener("panend", (event) => {});
+    this.root.addEventListener("end", (event) => {
+      timeline.reset();
+      timeline.start();
+      handler = setInterval(nextPicture, 3000);
+
+      let x = event.clientX - event.startX - ax;
+      let current = position - (x - (x % 500)) / 500;
+
+      let direction = Math.round((x % 500) / 500);
+
+      if (event.isFlick) {
+        if (event.velocity < 0) {
+          direction = Math.ceil((x % 500) / 500);
+        } else {
+          direction = Math.floor((x % 500) / 500);
+        }
+      }
+
+      for (let offset of [-1, 0, 1]) {
+        let pos = current + offset;
+        pos = ((pos % children.length) + children.length) % children.length;
+
+        children[pos].style.transition = "none";
+        timeline.add(
+          new Animation(
+            children[pos].style,
+            "transform",
+            -pos * 500 + offset * 500 + (x % 500),
+            -pos * 500 + offset * 500 + direction * 500,
+            500,
+            0,
+            ease,
+            (v) => `translateX(${v}px)`
+          )
+        );
+
+        position = position - (x - (x % 500)) / 500 - direction;
+        position =
+          ((position % children.length) + children.length) % children.length;
+      }
+    });
 
     let nextPicture = () => {
       let children = this.root.children;
@@ -70,7 +110,7 @@ export class Carousel extends Component {
           "transform",
           -position * 500,
           -500 - position * 500,
-          1500,
+          500,
           0,
           ease,
           (v) => `translateX(${v}px)`
@@ -82,7 +122,7 @@ export class Carousel extends Component {
           "transform",
           500 - nextIndex * 500,
           -nextIndex * 500,
-          1500,
+          500,
           0,
           ease,
           (v) => `translateX(${v}px)`
