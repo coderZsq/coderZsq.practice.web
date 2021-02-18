@@ -5,7 +5,7 @@ const { program } = require("commander");
 require("colors");
 
 const cleaRemoveodules = () => {
-  const dir = program.dest || "/";
+  const dir = program.dest || process.cwd();
   console.log("Clear Path: ".cyan + dir);
   checkdir(dir);
   readdir(dir);
@@ -37,13 +37,8 @@ const readdir = (dir) => {
     if (err) throw err;
     for (let file of files) {
       if (file.isDirectory() && file.name.slice(0, 1) !== ".") {
-        if (file.name === "usr") continue;
-        if (file.name === "private") continue;
-        if (file.name === "dev") continue;
-        if (file.name === "Library") continue;
         if (file.name === "Applications") continue;
-        if (file.name === "Users") continue;
-        if (file.name === "System") continue;
+        if (file.name === "Library") continue;
         if (file.name === "npm-clear") continue;
         const _dir = path.resolve(dir, file.name);
         if (file.name === "node_modules") {
