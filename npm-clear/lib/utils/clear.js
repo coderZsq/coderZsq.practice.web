@@ -1,19 +1,19 @@
-const fs = require('fs');
-const path = require('path');
+const fs = require("fs");
+const path = require("path");
 
-const { program } = require('commander');
-require('colors');
+const { program } = require("commander");
+require("colors");
 
 const cleaRemoveodules = () => {
-  const dir = program.dest || path.resolve(__dirname, '../../../../');
-  console.log('Clear Path: '.cyan + dir);
+  const dir = program.dest || "/";
+  console.log("Clear Path: ".cyan + dir);
   checkdir(dir);
   readdir(dir);
-}
+};
 
 const checkdir = (dir) => {
   if (!fs.existsSync(dir)) {
-    throw 'The path does not exist, Please check again!';
+    throw "The path does not exist, Please check again!";
   }
 };
 
@@ -25,21 +25,28 @@ const rmdir = (dir) => {
       rmdir(_dir);
     } else {
       fs.unlinkSync(_dir);
-      console.log('Remove File: '.red + _dir);
+      console.log("Remove File: ".red + _dir);
     }
   }
   fs.rmdirSync(dir);
-  console.log('Remove Folder: '.magenta + dir);
+  console.log("Remove Folder: ".magenta + dir);
 };
 
 const readdir = (dir) => {
   fs.readdir(dir, { withFileTypes: true }, (err, files) => {
     if (err) throw err;
     for (let file of files) {
-      if (file.isDirectory() && file.name.slice(0, 1) !== '.') {
-        if (file.name === 'npm-clear') continue;
+      if (file.isDirectory() && file.name.slice(0, 1) !== ".") {
+        if (file.name === "usr") continue;
+        if (file.name === "private") continue;
+        if (file.name === "dev") continue;
+        if (file.name === "Library") continue;
+        if (file.name === "Applications") continue;
+        if (file.name === "Users") continue;
+        if (file.name === "System") continue;
+        if (file.name === "npm-clear") continue;
         const _dir = path.resolve(dir, file.name);
-        if (file.name === 'node_modules') {
+        if (file.name === "node_modules") {
           rmdir(_dir);
         } else {
           readdir(_dir);
