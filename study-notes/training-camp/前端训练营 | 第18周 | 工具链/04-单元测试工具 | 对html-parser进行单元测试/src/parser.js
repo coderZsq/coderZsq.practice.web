@@ -78,7 +78,11 @@ function tagOpen(c) {
     };
     return tagName(c);
   } else {
-    return;
+    emit({
+      type: "text",
+      content: c,
+    });
+    return data;
   }
 }
 
@@ -162,7 +166,7 @@ function singleQuotedAttributeValue(c) {
   } else if (c == EOF) {
   } else {
     currentAttribute.value += c;
-    return doubleQuotedAttributeValue;
+    return singleQuotedAttributeValue;
   }
 }
 
@@ -177,8 +181,7 @@ function afterQuotedAttributedValue(c) {
     return data;
   } else if (c == EOF) {
   } else {
-    currentAttribute.value += c;
-    return doubleQuotedAttributeValue;
+    throw new Error('unexpected charater "' + c + '"');
   }
 }
 
@@ -205,6 +208,7 @@ function UnquotedAttributeValue(c) {
 function selfClosingStartTag(c) {
   if (c == ">") {
     currentToken.isSelfClosing = true;
+    emit(currentToken);
     return data;
   } else if (c == "EOF") {
   } else {
