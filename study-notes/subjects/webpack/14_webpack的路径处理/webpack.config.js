@@ -38,6 +38,17 @@ module.exports = {
         changeOrigin: true,
       },
     },
+    // historyApiFallback: true,
+    historyApiFallback: {
+      rewrites: [{ from: /abc/, to: 'index.html' }],
+    },
+  },
+  resolve: {
+    extensions: ['.wasm', '.mjs', '.js', '.json', '.jsx', '.ts', '.vue'],
+    alias: {
+      '@': path.resolve(__dirname, './src'),
+      pages: path.resolve(__dirname, './src/pages'),
+    },
   },
   module: {
     rules: [
