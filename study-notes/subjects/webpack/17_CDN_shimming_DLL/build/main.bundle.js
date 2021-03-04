@@ -1,1 +1,0 @@
-(self.webpackChunkwebpack_devserver=self.webpackChunkwebpack_devserver||[]).push([[179],{879:(e,o,n)=>{"use strict";const s=_;var l=n.n(s);const a=dayjs;var c=n.n(a);console.log("Hello Main"),console.log(l().join(["Hello","Main"])),console.log(c()(),"Main")}},0,[[879,19]]]);
