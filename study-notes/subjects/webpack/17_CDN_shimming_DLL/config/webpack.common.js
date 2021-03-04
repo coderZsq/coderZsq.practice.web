@@ -74,7 +74,7 @@ const commonConfig = {
     // single
     // object: name
     runtimeChunk: {
-      name: function (entrypoint) {
+      name: function(entrypoint) {
         return `sq-${entrypoint.name}`;
       },
     },
@@ -103,7 +103,7 @@ const commonConfig = {
   ],
 };
 
-module.exports = function (env) {
+module.exports = function(env) {
   const isProduction = env.production;
   process.env.NODE_ENV = isProduction ? 'production' : 'development';
 
