@@ -1,1 +1,0 @@
-(self.webpackChunkwebpack_devserver=self.webpackChunkwebpack_devserver||[]).push([[376],{760:e=>{"use strict";function s(e){this.message=e}s.prototype.toString=function(){return"Cancel"+(this.message?": "+this.message:"")},s.prototype.__CANCEL__=!0,e.exports=s}}]);

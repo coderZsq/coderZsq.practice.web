@@ -1,1 +1,0 @@
-(self.webpackChunkwebpack_devserver=self.webpackChunkwebpack_devserver||[]).push([[29],{490:(e,p,r)=>{"use strict";var s=r(266);e.exports=function(e,p){s.forEach(e,(function(r,s){s!==p&&s.toUpperCase()===p.toUpperCase()&&(e[p]=r,delete e[s])}))}}}]);

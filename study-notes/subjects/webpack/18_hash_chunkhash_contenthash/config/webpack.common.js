@@ -22,9 +22,9 @@ const commonConfig = (isProduction) => {
       // shared: ['lodash', 'dayjs'],
     },
     output: {
-      filename: 'js/[name].bundle.js',
+      filename: 'js/[name].[chunkhash:6].bundle.js',
       path: resolveApp('./build'),
-      chunkFilename: 'js/[name].[hash:6].chunk.js',
+      chunkFilename: 'js/[name].[contenthash:6].chunk.js',
       // publicPath: 'https://coderZsq.com/cdn/',
     },
     resolve: {
@@ -77,11 +77,11 @@ const commonConfig = (isProduction) => {
       // true/multiple
       // single
       // object: name
-      runtimeChunk: {
-        name: function(entrypoint) {
-          return `sq-${entrypoint.name}`;
-        },
-      },
+      // runtimeChunk: {
+      //   name: function(entrypoint) {
+      //     return `sq-${entrypoint.name}`;
+      //   },
+      // },
     },
     module: {
       rules: [

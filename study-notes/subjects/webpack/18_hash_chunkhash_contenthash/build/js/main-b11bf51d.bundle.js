@@ -1,1 +1,0 @@
-(self.webpackChunkwebpack_devserver=self.webpackChunkwebpack_devserver||[]).push([[245],{406:e=>{"use strict";e.exports=function(e){return/^([a-z][a-z\d\+\-\.]*:)?\/\//i.test(e)}}}]);

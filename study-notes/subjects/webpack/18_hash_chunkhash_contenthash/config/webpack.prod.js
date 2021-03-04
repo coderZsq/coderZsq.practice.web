@@ -13,7 +13,7 @@ module.exports = {
     // 生产环境
     new CleanWebpackPlugin({}),
     new MiniCssExtractPlugin({
-      filename: 'css/[name].[hash:8].css',
+      filename: 'css/[name].[contenthash:6].css',
     }),
   ],
 };
