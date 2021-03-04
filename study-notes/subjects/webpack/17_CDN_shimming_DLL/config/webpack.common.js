@@ -22,6 +22,7 @@ const commonConfig = {
     filename: '[name].bundle.js',
     path: resolveApp('./build'),
     chunkFilename: '[name].[hash:6].chunk.js',
+    // publicPath: 'https://coderZsq.com/cdn/',
   },
   resolve: {
     extensions: ['.wasm', '.mjs', '.js', '.json', '.jsx', '.ts', '.vue'],
