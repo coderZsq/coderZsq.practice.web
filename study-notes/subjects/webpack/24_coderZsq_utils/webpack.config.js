@@ -11,6 +11,6 @@ module.exports = {
     // CommonJS2: Node实现的CommonJS, 这个里面是有modele对象, module.exports
     libraryTarget: 'umd',
     library: 'coderZsqUtils',
-    globalObject: 'this',
+    globalObject: 'self',
   },
 };
