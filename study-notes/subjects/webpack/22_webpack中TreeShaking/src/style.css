@@ -2,6 +2,16 @@ body {
   background-color: blue;
 }
 
+html {
+  font-size: 20px;
+}
+
 .title {
   color: red;
+  font-size: 30px;
+  font-weight: 700;
+}
+
+h2 {
+  color: green;
 }

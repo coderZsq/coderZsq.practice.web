@@ -90,6 +90,7 @@ const commonConfig = (isProduction) => {
             isProduction ? MiniCssExtractPlugin.loader : 'style-loader',
             'css-loader',
           ],
+          sideEffects: true, // react 脚手架中
         },
       ],
     },

@@ -2,7 +2,11 @@ const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
 const TerserPlugin = require('terser-webpack-plugin');
+const PurgeCssPlugin = require('purgecss-webpack-plugin');
 const webpack = require('webpack');
+const glob = require('glob');
+
+const resolveApp = require('./paths');
 
 const isProduction = true;
 
@@ -42,6 +46,14 @@ module.exports = {
       filename: 'css/[name].[contenthash:6].css',
     }),
     new CssMinimizerPlugin(),
-    // new webpack.optimize.ModuleConcatenationPlugin(),
+    new webpack.optimize.ModuleConcatenationPlugin(),
+    new PurgeCssPlugin({
+      paths: glob.sync(`${resolveApp('./src')}/**/*`, { nodir: true }),
+      safelist: function() {
+        return {
+          standard: ['body', 'html'],
+        };
+      },
+    }),
   ],
 };

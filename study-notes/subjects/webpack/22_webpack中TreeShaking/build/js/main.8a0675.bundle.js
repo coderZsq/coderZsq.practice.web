@@ -1,0 +1,2 @@
+(()=>{"use strict";console.log(function sum(e,n){return e+n}(20,30)),console.log(window.abc);var e=document.createElement("div");e.className="title",document.body.appendChild(e);var n=document.createElement("h2");document.body.appendChild(n)})();
+//# sourceMappingURL=main.8a0675.bundle.js.map
