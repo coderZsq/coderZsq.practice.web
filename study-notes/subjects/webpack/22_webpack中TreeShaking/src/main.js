@@ -1,7 +1,7 @@
 import { sum } from './math';
 
 import './format';
-import './abc';
+import('./abc').then((res) => {});
 import './style.css';
 
 console.log(sum(20, 30));

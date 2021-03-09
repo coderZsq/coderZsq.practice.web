@@ -1,0 +1,41 @@
+body {
+  background-color: blue;
+}
+
+html {
+  font-size: 20px;
+}
+
+.title {
+  color: red;
+  font-size: 30px;
+  font-weight: 700;
+}
+
+h2 {
+  color: green;
+}
+
+.aaa {
+  color: red;
+  font-size: 30px;
+  font-weight: 700;
+}
+
+.bbb {
+  color: red;
+  font-size: 30px;
+  font-weight: 700;
+}
+
+.ccc {
+  color: red;
+  font-size: 30px;
+  font-weight: 700;
+}
+
+.ddd {
+  color: red;
+  font-size: 30px;
+  font-weight: 700;
+}
