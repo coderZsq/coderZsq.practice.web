@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="" />
+
+    <style>
+      .title {
+        color: red;
+        font-size: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="app"></div>
+    <div id="root"></div>
+
+    <input type="text" id="" />
+
+    <!-- ejs中的if判断 -->
+    <% if (process.env.NODE_ENV === 'production') { %>
+    <script src="https://unpkg.com/dayjs@1.8.21/dayjs.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/lodash@4.17.21/lodash.min.js"></script>
+    <% } %>
+
+    <script>
+      const message = 'Hello World';
+      console.log(message);
+    </script>
+  </body>
+</html>

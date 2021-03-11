@@ -1,0 +1,1 @@
+{"version":3,"sources":["webpack://webpack_devserver/./src/abc.js"],"names":["abc"],"mappings":"oHAAO,SAASA,MACd,MAAO,M","file":"js/761.4029d1.chunk.js","sourcesContent":["export function abc() {\n  return 'abc';\n}\n"],"sourceRoot":""}
