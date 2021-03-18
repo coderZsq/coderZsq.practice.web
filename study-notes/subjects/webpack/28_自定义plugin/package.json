@@ -1,0 +1,17 @@
+{
+  "name": "custom_plugin",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "webpack"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "html-webpack-plugin": "^5.3.1",
+    "node-ssh": "^11.1.1",
+    "webpack": "^5.26.3",
+    "webpack-cli": "^4.5.0"
+  }
+}
