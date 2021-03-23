@@ -10,5 +10,12 @@
   "license": "ISC",
   "dependencies": {
     "gulp": "^4.0.2"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.13.10",
+    "@babel/preset-env": "^7.13.12",
+    "gulp-babel": "^8.0.0",
+    "gulp-terser": "^2.0.1",
+    "gulp-uglify": "^3.0.2"
   }
 }

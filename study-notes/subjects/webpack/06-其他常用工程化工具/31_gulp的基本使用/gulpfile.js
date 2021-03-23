@@ -1,33 +1,22 @@
-const { series, parallel } = require('gulp');
+const { src, dest, watch } = require('gulp');
 
-const task1 = (cb) => {
-  setTimeout(() => {
-    console.log('task1');
-    cb();
-  }, 2000);
+const babel = require('gulp-babel');
+const uglify = require('gulp-uglify');
+const terser = require('gulp-terser');
+
+const jsTask = () => {
+  // 从src中读取文件, 输出到dist文件夹中
+  return (
+    src('./src/**/*.js')
+      .pipe(babel({ presets: ['@babel/preset-env'] }))
+      // .pipe(uglify())
+      .pipe(terser({ mangle: { toplevel: true } }))
+      .pipe(dest('./dist'))
+  );
 };
 
-const task2 = (cb) => {
-  setTimeout(() => {
-    console.log('task2');
-    cb();
-  }, 2000);
-};
-
-const task3 = (cb) => {
-  setTimeout(() => {
-    console.log('task3');
-    cb();
-  }, 2000);
-};
-
-const seriesTask = series(task1, task2, task3);
-const parallelTask = parallel(task1, task2, task3);
-
-const composeTask = series(parallelTask, seriesTask);
+watch('./src/**/*.js', jsTask);
 
 module.exports = {
-  seriesTask,
-  parallelTask,
-  composeTask,
+  jsTask,
 };

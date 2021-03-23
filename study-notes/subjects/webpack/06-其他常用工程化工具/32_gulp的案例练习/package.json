@@ -1,0 +1,27 @@
+{
+  "name": "gulp_demo",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "serve": "gulp serveTask",
+    "build": "gulp buildTask"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/core": "^7.13.10",
+    "@babel/preset-env": "^7.13.12",
+    "browser-sync": "^2.26.14",
+    "del": "^6.0.0",
+    "gulp": "^4.0.2",
+    "gulp-babel": "^8.0.0",
+    "gulp-htmlmin": "^5.0.1",
+    "gulp-inject": "^5.0.5",
+    "gulp-less": "^4.0.1",
+    "gulp-postcss": "^9.0.0",
+    "gulp-terser": "^2.0.1",
+    "postcss": "^8.2.8",
+    "postcss-preset-env": "^6.7.0"
+  }
+}
