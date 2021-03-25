@@ -1,13 +1,26 @@
+import React, { memo, Suspense } from 'react';
+import { Provider } from 'react-redux';
+import { renderRoutes } from 'react-router-config';
+import { HashRouter } from 'react-router-dom';
+
+import routes from '@/router';
+import store from '@/store';
+
 import SQAppHeader from 'components/app-header';
-import SQHome from '@/pages/home';
 
 import { AppWrapper } from './App.style';
 
-export default function App() {
+export default memo(function App() {
   return (
-    <AppWrapper>
-      <SQAppHeader />
-      <SQHome />
-    </AppWrapper>
+    <Provider store={store}>
+      <HashRouter>
+        <AppWrapper>
+          <SQAppHeader />
+          <Suspense fallback={<div>page loading</div>}>
+            {renderRoutes(routes)}
+          </Suspense>
+        </AppWrapper>
+      </HashRouter>
+    </Provider>
   );
-}
+});

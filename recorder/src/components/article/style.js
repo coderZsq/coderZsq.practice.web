@@ -5,6 +5,10 @@ export const SQArticleWrapper = styled.div`
 
   .title {
     font-size: 24px;
+
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
 
   .info {

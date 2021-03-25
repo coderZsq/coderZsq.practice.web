@@ -1,0 +1,1 @@
+export const CHANGE_ARTICLES = 'home/CHANGE_ARTICLES';
