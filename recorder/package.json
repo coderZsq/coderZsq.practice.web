@@ -12,11 +12,12 @@
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-scripts": "4.0.3",
+    "styled-components": "^5.2.1",
     "web-vitals": "^1.1.1"
   },
   "scripts": {
-    "start": "craco start",
     "build": "craco build",
+    "serve": "craco start",
     "test": "craco test",
     "eject": "react-scripts eject"
   },
