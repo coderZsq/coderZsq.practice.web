@@ -5,6 +5,7 @@ import { getArticles } from '@/service/article';
 const changeArticlesAction = (res) => ({
   type: actionTypes.CHANGE_ARTICLES,
   articles: res.data,
+  count: res.count,
 });
 
 export const getArticlesAction = (page, type) => {
