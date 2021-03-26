@@ -1,5 +1,6 @@
 import React, { memo, useEffect } from 'react';
 import { useDispatch, useSelector, shallowEqual } from 'react-redux';
+import { Empty } from 'antd';
 import marked from 'marked';
 
 import { getArticleAction } from '@/pages/article/store/actionCreators';
@@ -26,6 +27,7 @@ export default memo(function SQArticlePage(props) {
     dispatch(getArticleAction(id));
   }, [dispatch, id]);
 
+  if (article === void 0) return <Empty />;
   return (
     <SQArticleWrapper>
       <div className="title">{article.title}</div>

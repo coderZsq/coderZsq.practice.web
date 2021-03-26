@@ -1,11 +1,13 @@
 import request from './request';
 
-export function getArticles(page, type) {
+export function getArticles(options) {
+  const { type, page, size } = options;
   return request({
     url: '/articles',
     params: {
       type,
       page,
+      size,
     },
   });
 }

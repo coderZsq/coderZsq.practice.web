@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 export const SQArticleWrapper = styled.div`
-  padding-bottom: 50px;
+  padding: 15px;
 
   h2 {
     margin-top: 15px;

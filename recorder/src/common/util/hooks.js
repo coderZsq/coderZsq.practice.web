@@ -4,7 +4,7 @@ export function useLoadMore(callback) {
   const [loading, setLoading] = useState(true);
 
   const onScroll = useCallback(() => {
-    const buffer = 1500;
+    const buffer = 800;
     if (
       loading &&
       window.scrollY + document.body.clientHeight >=

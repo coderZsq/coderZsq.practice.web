@@ -2,6 +2,7 @@ import React, { memo, Suspense } from 'react';
 import { Provider } from 'react-redux';
 import { renderRoutes } from 'react-router-config';
 import { HashRouter } from 'react-router-dom';
+import { Spin } from 'antd';
 
 import routes from '@/router';
 import store from '@/store';
@@ -16,7 +17,7 @@ export default memo(function App() {
       <HashRouter>
         <AppWrapper>
           <SQAppHeader />
-          <Suspense fallback={<div></div>}>{renderRoutes(routes)}</Suspense>
+          <Suspense fallback={<Spin />}>{renderRoutes(routes)}</Suspense>
         </AppWrapper>
       </HashRouter>
     </Provider>

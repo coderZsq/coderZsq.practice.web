@@ -5,6 +5,7 @@ import { List } from 'antd';
 import { getArticlesAction } from '@/pages/article/store/actionCreators';
 
 import { useLoadMore } from '@/common/util/hooks';
+import { HOME_ARTICLES_SIZE } from '@/common/constants';
 import SQArticle from 'components/article';
 
 export default memo(function SQHomePage() {
@@ -21,7 +22,13 @@ export default memo(function SQHomePage() {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    dispatch(getArticlesAction(page, 'stock'));
+    dispatch(
+      getArticlesAction({
+        type: 'stock',
+        page,
+        size: HOME_ARTICLES_SIZE,
+      })
+    );
   }, [dispatch, page]);
 
   useLoadMore(() => {

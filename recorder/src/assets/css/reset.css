@@ -67,3 +67,8 @@ img {
   border: none;
   vertical-align: middle;
 }
+
+::selection {
+  color: #333;
+  background-color: #ddd;
+}
