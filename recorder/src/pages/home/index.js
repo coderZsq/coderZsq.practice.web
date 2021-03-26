@@ -2,26 +2,21 @@ import React, { memo, useEffect, useState } from 'react';
 import { useDispatch, useSelector, shallowEqual } from 'react-redux';
 import { List } from 'antd';
 
-import { getArticlesAction } from '@/pages/home/store/actionCreators';
+import { getArticlesAction } from '@/pages/article/store/actionCreators';
 
 import { useLoadMore } from '@/common/util/hooks';
 import SQArticle from 'components/article';
 
-export default memo(function SQHome() {
+export default memo(function SQHomePage() {
   const [page, setPage] = useState(1);
 
-  const { articles, count } = useSelector(
+  const { articles, totalPage } = useSelector(
     (state) => ({
-      articles: state.getIn(['home', 'articles']),
-      count: state.getIn(['home', 'count']),
+      articles: state.getIn(['article', 'articles']),
+      totalPage: state.getIn(['article', 'totalPage']),
     }),
     shallowEqual
   );
-
-  const onScroll = useLoadMore(() => {
-    if (page >= count / 10) return;
-    setPage(page + 1);
-  });
 
   const dispatch = useDispatch();
 
@@ -29,12 +24,10 @@ export default memo(function SQHome() {
     dispatch(getArticlesAction(page, 'stock'));
   }, [dispatch, page]);
 
-  useEffect(() => {
-    document.addEventListener('scroll', onScroll);
-    return () => {
-      document.removeEventListener('scroll', onScroll);
-    };
-  }, [onScroll]);
+  useLoadMore(() => {
+    if (page >= totalPage) return;
+    setPage(page + 1);
+  });
 
   return (
     <div>
@@ -44,11 +37,12 @@ export default memo(function SQHome() {
           <List.Item>
             <SQArticle
               key={item.id}
+              id={item.id}
               title={item.title}
-              content={item.content}
               words={item.words}
               duration={item.duration}
               date={item.date}
+              content={item.content}
             />
           </List.Item>
         )}

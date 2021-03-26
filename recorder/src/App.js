@@ -16,9 +16,7 @@ export default memo(function App() {
       <HashRouter>
         <AppWrapper>
           <SQAppHeader />
-          <Suspense fallback={<div>page loading</div>}>
-            {renderRoutes(routes)}
-          </Suspense>
+          <Suspense fallback={<div></div>}>{renderRoutes(routes)}</Suspense>
         </AppWrapper>
       </HashRouter>
     </Provider>

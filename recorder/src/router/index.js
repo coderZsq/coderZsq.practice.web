@@ -1,7 +1,8 @@
 import React from 'react';
 import { Redirect } from 'react-router-dom';
 
-const SQHome = React.lazy(() => import('@/pages/home'));
+const SQHomePage = React.lazy(() => import('@/pages/home'));
+const SQArticlePage = React.lazy(() => import('@/pages/article'));
 
 const routes = [
   {
@@ -11,7 +12,11 @@ const routes = [
   },
   {
     path: '/home',
-    component: SQHome,
+    component: SQHomePage,
+  },
+  {
+    path: '/article/:id',
+    component: SQArticlePage,
   },
 ];
 

@@ -9,3 +9,12 @@ export function getArticles(page, type) {
     },
   });
 }
+
+export function getArticle(id) {
+  return request({
+    url: '/articles',
+    params: {
+      id,
+    },
+  });
+}

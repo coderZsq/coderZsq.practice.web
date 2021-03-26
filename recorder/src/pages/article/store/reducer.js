@@ -3,8 +3,9 @@ import { Map } from 'immutable';
 import * as actionTypes from './constants';
 
 const defaultState = Map({
+  article: {},
   articles: [],
-  count: 0,
+  totalPage: 0,
 });
 
 function reducer(state = defaultState, action) {
@@ -12,7 +13,9 @@ function reducer(state = defaultState, action) {
     case actionTypes.CHANGE_ARTICLES:
       return state
         .set('articles', state.get('articles').concat(action.articles))
-        .set('count', action.count);
+        .set('totalPage', action.count / 10);
+    case actionTypes.CHANGE_ARTICLE:
+      return state.set('article', action.article);
     default:
       return state;
   }
