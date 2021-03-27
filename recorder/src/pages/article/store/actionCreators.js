@@ -1,11 +1,11 @@
 import * as actionTypes from './constants';
 
 import { getArticles, getArticle } from '@/service/article';
+import { HOME_ARTICLES_SIZE } from '@/common/constants';
 
 const changeArticlesAction = (res) => ({
   type: actionTypes.CHANGE_ARTICLES,
   articles: res.data,
-  count: res.count,
 });
 
 const changeArticleAction = (res) => ({
@@ -13,11 +13,18 @@ const changeArticleAction = (res) => ({
   article: res.data[0],
 });
 
-export const getArticlesAction = (page, type) => {
+let curPage = -Infinity;
+let totalPage = Infinity;
+export const getArticlesAction = (options) => {
   return (dispatch) => {
-    getArticles(page, type).then((res) => {
-      dispatch(changeArticlesAction(res));
-    });
+    const { page } = options;
+    if (curPage < page && page <= totalPage) {
+      getArticles(options).then((res) => {
+        curPage = page;
+        totalPage = res.count / HOME_ARTICLES_SIZE;
+        dispatch(changeArticlesAction(res));
+      });
+    }
   };
 };
 

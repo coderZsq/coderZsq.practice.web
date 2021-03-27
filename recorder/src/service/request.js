@@ -1,6 +1,7 @@
 import axios from 'axios';
 
 import { BASE_URL, TIMEOUT } from './config';
+import { showLoading, hideLoading } from '@/common/util/loadings';
 
 const instance = axios.create({
   baseURL: BASE_URL,
@@ -10,6 +11,7 @@ const instance = axios.create({
 instance.interceptors.request.use(
   (config) => {
     // 1. 发送网络请求时, 在界面的中间位置显示Loading的组件
+    showLoading();
 
     // 2. 某一些请求要求用户必须携带token, 如果没有携带, 那么直接跳转到登录页面
 
@@ -21,10 +23,11 @@ instance.interceptors.request.use(
 
 instance.interceptors.response.use(
   (res) => {
+    hideLoading();
     return res.data;
   },
   (err) => {
-    console.log();
+    hideLoading();
     if (err instanceof Error) {
       console.log(err);
     } else if (err && err.response) {

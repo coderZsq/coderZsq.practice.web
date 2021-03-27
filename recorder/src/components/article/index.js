@@ -21,7 +21,9 @@ export default memo(function SQArticle(props) {
       </div>
       <div
         className={`content ${collapse ? 'collapse' : ''}`}
-        dangerouslySetInnerHTML={{ __html: marked(content) }}
+        dangerouslySetInnerHTML={{
+          __html: marked(collapse ? content.slice(0, 850) : content),
+        }}
       ></div>
       <div className="read-all" onClick={(e) => setCollapse(false)}>
         <span>{collapse ? '阅读全文 🔽' : ''}</span>

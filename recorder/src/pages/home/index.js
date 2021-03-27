@@ -11,10 +11,9 @@ import SQArticle from 'components/article';
 export default memo(function SQHomePage() {
   const [page, setPage] = useState(1);
 
-  const { articles, totalPage } = useSelector(
+  const { articles } = useSelector(
     (state) => ({
       articles: state.getIn(['article', 'articles']),
-      totalPage: state.getIn(['article', 'totalPage']),
     }),
     shallowEqual
   );
@@ -32,28 +31,25 @@ export default memo(function SQHomePage() {
   }, [dispatch, page]);
 
   useLoadMore(() => {
-    if (page >= totalPage) return;
     setPage(page + 1);
   });
 
   return (
-    <div>
-      <List
-        dataSource={articles}
-        renderItem={(item) => (
-          <List.Item>
-            <SQArticle
-              key={item.id}
-              id={item.id}
-              title={item.title}
-              words={item.words}
-              duration={item.duration}
-              date={item.date}
-              content={item.content}
-            />
-          </List.Item>
-        )}
-      />
-    </div>
+    <List
+      dataSource={articles}
+      renderItem={(item) => (
+        <List.Item>
+          <SQArticle
+            key={item.id}
+            id={item.id}
+            title={item.title}
+            words={item.words}
+            duration={item.duration}
+            date={item.date}
+            content={item.content}
+          />
+        </List.Item>
+      )}
+    />
   );
 });
