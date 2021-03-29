@@ -9,6 +9,7 @@ import { HOME_ARTICLES_SIZE } from '@/common/constants';
 import SQArticle from 'components/article';
 
 export default memo(function SQHomePage() {
+  console.log('SQHomePage 进行渲染');
   const [page, setPage] = useState(1);
 
   const { articles } = useSelector(
