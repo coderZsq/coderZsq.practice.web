@@ -14,7 +14,7 @@ export function useLoadMore(callback) {
       callback();
       setTimeout(() => {
         setLoading(true);
-      }, 100);
+      }, 0);
     }
   }, [loading, callback]);
 

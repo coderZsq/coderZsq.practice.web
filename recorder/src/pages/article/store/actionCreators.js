@@ -1,7 +1,6 @@
 import * as actionTypes from './constants';
 
 import { getArticles, getArticle } from '@/service/article';
-import { HOME_ARTICLES_SIZE } from '@/common/constants';
 
 const changeArticlesAction = (res) => ({
   type: actionTypes.CHANGE_ARTICLES,
@@ -17,11 +16,11 @@ let curPage = -Infinity;
 let totalPage = Infinity;
 export const getArticlesAction = (options) => {
   return (dispatch) => {
-    const { page } = options;
+    const { page, size } = options;
     if (curPage < page && page <= totalPage) {
       getArticles(options).then((res) => {
         curPage = page;
-        totalPage = res.count / HOME_ARTICLES_SIZE;
+        totalPage = res.count / size;
         dispatch(changeArticlesAction(res));
       });
     }
