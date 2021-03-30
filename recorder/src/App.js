@@ -6,18 +6,12 @@ import { HashRouter } from 'react-router-dom';
 import routes from '@/router';
 import store from '@/store';
 
-import SQAppHeader from 'components/app-header';
-import { AppWrapper } from './App.style';
-
 export default memo(function App() {
   return (
     <React.StrictMode>
       <Provider store={store}>
         <HashRouter>
-          <AppWrapper>
-            <SQAppHeader />
-            <Suspense fallback={''}>{renderRoutes(routes)}</Suspense>
-          </AppWrapper>
+          <Suspense fallback={''}>{renderRoutes(routes)}</Suspense>
         </HashRouter>
       </Provider>
     </React.StrictMode>

@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const HeaderWrapper = styled.div`
+export const SQHeaderWrapper = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -29,13 +29,30 @@ export const HeaderWrapper = styled.div`
   }
 
   .right {
-    text-align: center;
+    display: flex;
+    align-items: center;
 
-    width: 32px;
-    height: 32px;
-    line-height: 32px;
-    margin-right: 15px;
-    border-radius: 100%;
-    border: 1px solid #333;
+    .publish {
+      margin-right: 15px;
+      text-align: center;
+
+      width: 60px;
+      height: 30px;
+      line-height: 30px;
+      color: #fff;
+      background-color: #80c47e;
+      border-radius: 4px;
+    }
+
+    .profile {
+      text-align: center;
+
+      width: 32px;
+      height: 32px;
+      line-height: 32px;
+      margin-right: 15px;
+      border-radius: 100%;
+      border: 1px solid #333;
+    }
   }
 `;

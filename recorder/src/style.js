@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const AppWrapper = styled.div`
+export const SQMiddleLayoutWrapper = styled.div`
   margin: 0 auto;
   width: 100%;
   padding: 0 15px;

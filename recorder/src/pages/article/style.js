@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const SQArticleWrapper = styled.div`
+export const SQArticlePageWrapper = styled.div`
   padding: 15px;
 
   h2 {

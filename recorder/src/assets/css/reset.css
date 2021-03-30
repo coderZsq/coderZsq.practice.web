@@ -73,6 +73,14 @@ img {
   background-color: #ddd;
 }
 
+body {
+  background-color: #f8f8f8;
+}
+
+a {
+  text-decoration: none !important;
+}
+
 #loading {
   position: absolute;
   top: 0;
