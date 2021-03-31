@@ -8,9 +8,8 @@ export const SQEditPageWrapper = styled.div`
     display: flex;
     justify-content: space-evenly;
 
-    textarea {
-      width: 50%;
-      height: 90vh;
+    .item {
+      height: 85vh;
       resize: none;
       border: 1px solid #eee;
       font-size: 20px;
@@ -18,7 +17,13 @@ export const SQEditPageWrapper = styled.div`
     }
 
     .input {
+      width: 48%;
       border-right: none;
+    }
+
+    .preview {
+      width: 52%;
+      overflow: scroll;
     }
   }
 
@@ -27,7 +32,7 @@ export const SQEditPageWrapper = styled.div`
     display: flex;
 
     div {
-      padding-right: 10px;
+      padding-right: 15px;
     }
   }
 `;

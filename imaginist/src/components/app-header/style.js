@@ -19,12 +19,11 @@ export const SQHeaderWrapper = styled.div`
     }
 
     .greeting {
-      text-align: center;
-
+      padding-left: 15px;
       border-left: 1px solid #333;
       margin-top: 4px;
       font-size: 14px;
-      width: 120px;
+      width: 150px;
     }
   }
 

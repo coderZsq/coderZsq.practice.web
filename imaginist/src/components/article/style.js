@@ -43,7 +43,14 @@ export const SQArticleWrapper = styled.div`
   }
 
   .read-all {
+    display: flex;
+    align-items: center;
     margin-top: 10px;
     cursor: pointer;
+
+    .icon {
+      font-size: 18px;
+      color: #333;
+    }
   }
 `;

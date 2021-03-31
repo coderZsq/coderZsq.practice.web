@@ -1,20 +1,56 @@
-import React, { memo } from 'react';
+import React, { memo, useState } from 'react';
+
+import marked from 'marked';
+import { Input } from 'antd';
+import hljs from 'highlight.js';
 
 import SQAppHeader from 'components/app-header';
 import { SQEditPageWrapper } from './style';
+import { wordCount } from '@/common/util/strings';
+
+const { TextArea } = Input;
+
+marked.setOptions({
+  renderer: new marked.Renderer(),
+  gfm: true,
+  pedantic: false,
+  sanitize: false,
+  tables: true,
+  breaks: false,
+  smartLists: true,
+  smartypants: false,
+  highlight: function (code) {
+    return hljs.highlight(code).value;
+  },
+});
 
 export default memo(function SQEditPage() {
+  const [inputContent, setInputContent] = useState('');
+  const [previewContent, setPreviewContent] = useState('');
+
+  const onChange = (e) => {
+    setInputContent(e.target.value);
+    setPreviewContent(marked(e.target.value));
+  };
+
   return (
     <SQEditPageWrapper>
-      <SQAppHeader />
+      <SQAppHeader greeting="Record something..." />
       <div className="area">
-        <textarea className="input"></textarea>
-        <textarea className="preview" disabled></textarea>
+        <TextArea
+          className="item input"
+          onChange={onChange}
+          value={inputContent}
+        ></TextArea>
+        <div
+          className="item preview"
+          dangerouslySetInnerHTML={{ __html: previewContent }}
+        ></div>
       </div>
-      {/* <div className="info">
-        <div>阅读时长 10分钟</div>
-        <div>字数: 3567字</div>
-      </div> */}
+      <div className="info">
+        <div>阅读时长 {parseInt(wordCount(inputContent) / 350)} 分钟</div>
+        <div>字数: {wordCount(inputContent)} 字</div>
+      </div>
     </SQEditPageWrapper>
   );
 });

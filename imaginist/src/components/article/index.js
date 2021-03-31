@@ -2,12 +2,25 @@ import React, { memo, useState } from 'react';
 import marked from 'marked';
 import { NavLink } from 'react-router-dom';
 
+import { CaretDownOutlined } from '@ant-design/icons';
+
 import { formatDate } from '@/common/util/formats';
 import { SQArticleWrapper } from './style';
 
 export default memo(function SQArticle(props) {
   const { id, title, duration, words, date, content } = props;
   const [collapse, setCollapse] = useState(true);
+
+  const readAll = (collapse) => {
+    if (collapse) {
+      return (
+        <>
+          <span>阅读全文</span>
+          <CaretDownOutlined className="icon" />
+        </>
+      );
+    }
+  };
 
   return (
     <SQArticleWrapper>
@@ -26,7 +39,7 @@ export default memo(function SQArticle(props) {
         }}
       ></div>
       <div className="read-all" onClick={() => setCollapse(false)}>
-        <span>{collapse ? '阅读全文 🔽' : ''}</span>
+        {readAll(collapse)}
       </div>
     </SQArticleWrapper>
   );
