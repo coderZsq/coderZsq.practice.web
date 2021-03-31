@@ -2,27 +2,12 @@ import React, { memo, useState } from 'react';
 
 import marked from 'marked';
 import { Input } from 'antd';
-import hljs from 'highlight.js';
 
 import SQAppHeader from 'components/app-header';
 import { SQEditPageWrapper } from './style';
 import { wordCount } from '@/common/util/strings';
 
 const { TextArea } = Input;
-
-marked.setOptions({
-  renderer: new marked.Renderer(),
-  gfm: true,
-  pedantic: false,
-  sanitize: false,
-  tables: true,
-  breaks: false,
-  smartLists: true,
-  smartypants: false,
-  highlight: function (code) {
-    return hljs.highlight(code).value;
-  },
-});
 
 export default memo(function SQEditPage() {
   const [inputContent, setInputContent] = useState('');

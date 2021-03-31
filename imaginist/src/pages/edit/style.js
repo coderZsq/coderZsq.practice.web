@@ -12,12 +12,12 @@ export const SQEditPageWrapper = styled.div`
       height: 85vh;
       resize: none;
       border: 1px solid #eee;
-      font-size: 20px;
       padding: 5px 10px;
     }
 
     .input {
       width: 48%;
+      font-size: 17px;
       border-right: none;
     }
 

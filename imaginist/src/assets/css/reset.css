@@ -94,6 +94,10 @@ a {
   font-size: 20px;
 }
 
+.loading {
+  color: #666;
+}
+
 .hljs {
   display: block;
   overflow-x: auto;

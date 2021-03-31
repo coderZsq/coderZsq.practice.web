@@ -6,6 +6,7 @@ export const SQHeaderWrapper = styled.div`
   align-items: center;
 
   height: 65px;
+  width: 100%;
 
   .left {
     display: flex;

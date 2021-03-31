@@ -6,7 +6,24 @@ import { HashRouter } from 'react-router-dom';
 import routes from '@/router';
 import store from '@/store';
 
+import marked from 'marked';
+import hljs from 'highlight.js';
+
 export default memo(function App() {
+  marked.setOptions({
+    renderer: new marked.Renderer(),
+    gfm: true,
+    pedantic: false,
+    sanitize: false,
+    tables: true,
+    breaks: false,
+    smartLists: true,
+    smartypants: false,
+    highlight: function (code, lang) {
+      return hljs.highlightAuto(code).value;
+    },
+  });
+
   return (
     <React.StrictMode>
       <Provider store={store}>

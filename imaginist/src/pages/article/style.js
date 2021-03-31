@@ -2,6 +2,7 @@ import styled from 'styled-components';
 
 export const SQArticlePageWrapper = styled.div`
   padding: 15px;
+  width: 100%;
 
   h2 {
     margin-top: 15px;

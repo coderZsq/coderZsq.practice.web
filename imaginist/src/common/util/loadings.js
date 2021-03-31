@@ -15,6 +15,7 @@ export function showLoading() {
     document.body.appendChild(dom);
     ReactDOM.render(
       <Spin
+        className="loading"
         tip="加载中..."
         size="large"
         indicator={<LoadingOutlined spin />}
