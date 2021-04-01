@@ -1,5 +1,4 @@
 import React, { memo, useState } from 'react';
-import marked from 'marked';
 import { NavLink } from 'react-router-dom';
 
 import { CaretDownOutlined } from '@ant-design/icons';
@@ -8,7 +7,7 @@ import { formatDate } from '@/common/util/formats';
 import { SQArticleWrapper } from './style';
 
 export default memo(function SQArticle(props) {
-  const { id, title, duration, words, date, content } = props;
+  const { id, title, duration, words, date, preview } = props;
   const [collapse, setCollapse] = useState(true);
 
   const readAll = (collapse) => {
@@ -35,7 +34,7 @@ export default memo(function SQArticle(props) {
       <div
         className={`content ${collapse ? 'collapse' : ''}`}
         dangerouslySetInnerHTML={{
-          __html: marked(collapse ? content.slice(0, 850) : content),
+          __html: collapse ? preview.slice(0, 850) : preview,
         }}
       ></div>
       <div className="read-all" onClick={() => setCollapse(false)}>

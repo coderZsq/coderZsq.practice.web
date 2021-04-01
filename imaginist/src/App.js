@@ -19,7 +19,7 @@ export default memo(function App() {
     breaks: false,
     smartLists: true,
     smartypants: false,
-    highlight: function (code, lang) {
+    highlight: function (code) {
       return hljs.highlightAuto(code).value;
     },
   });

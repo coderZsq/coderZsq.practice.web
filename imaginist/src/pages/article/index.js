@@ -1,7 +1,6 @@
 import React, { memo, useEffect } from 'react';
 import { useDispatch, useSelector, shallowEqual } from 'react-redux';
 import { Empty } from 'antd';
-import marked from 'marked';
 
 import SQAppHeader from 'components/app-header';
 import { SQArticlePageWrapper } from './style';
@@ -44,7 +43,7 @@ export default memo(function SQArticlePage(props) {
         </div>
         <div
           className="content"
-          dangerouslySetInnerHTML={{ __html: marked(article.content || '') }}
+          dangerouslySetInnerHTML={{ __html: article.preview }}
         ></div>
       </SQArticlePageWrapper>
     </SQMiddleLayoutWrapper>

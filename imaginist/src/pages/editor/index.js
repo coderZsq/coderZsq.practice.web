@@ -7,13 +7,17 @@ import SQAppHeader from 'components/app-header';
 import { SQEditPageWrapper } from './style';
 import { wordCount } from '@/common/util/strings';
 import { getLocalStorage, setLocalStorage } from '@/common/util/storages';
+import {
+  EDITOR_EDIT_STORAGE,
+  EDITOR_PREVIEW_STORAGE,
+} from '@/common/constants';
 
 const { TextArea } = Input;
 
 export default memo(function SQEditorPage() {
   const [content, setContent] = useState({
-    edit: getLocalStorage('edit-storage') || '',
-    preview: getLocalStorage('preview-storage') || '',
+    edit: getLocalStorage(EDITOR_EDIT_STORAGE) || '',
+    preview: getLocalStorage(EDITOR_PREVIEW_STORAGE) || '',
   });
 
   const onChange = (e) => {
@@ -25,8 +29,8 @@ export default memo(function SQEditorPage() {
 
   useEffect(() => {
     return () => {
-      setLocalStorage('edit-storage', content.edit);
-      setLocalStorage('preview-storage', content.preview);
+      setLocalStorage(EDITOR_EDIT_STORAGE, content.edit);
+      setLocalStorage(EDITOR_PREVIEW_STORAGE, content.preview);
     };
   }, [content]);
 

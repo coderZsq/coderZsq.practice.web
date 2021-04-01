@@ -50,7 +50,7 @@ export default memo(function SQHomePage() {
               words={item.words}
               duration={item.duration}
               date={item.date}
-              content={item.content}
+              preview={item.preview}
             />
           </List.Item>
         )}
