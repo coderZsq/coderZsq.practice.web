@@ -4,7 +4,7 @@ import { NavLink } from 'react-router-dom';
 import { Button, Popconfirm } from 'antd';
 import { SQHeaderWrapper } from './style';
 export default memo(function SQAppHeader(props) {
-  const { greeting, editing } = props;
+  const { greeting, editing, onConfirm } = props;
 
   const publishButton = () => {
     if (!editing) {
@@ -20,8 +20,7 @@ export default memo(function SQAppHeader(props) {
         <Popconfirm
           placement="bottom"
           title={'确认发布文章?'}
-          onConfirm={() => console.log('发布成功')}
-          // okButtonProps={{ loading: true }}
+          onConfirm={onConfirm}
           okText="发布"
           cancelText="取消"
         >

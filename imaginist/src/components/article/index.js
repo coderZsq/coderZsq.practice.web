@@ -3,7 +3,7 @@ import { NavLink } from 'react-router-dom';
 
 import { CaretDownOutlined } from '@ant-design/icons';
 
-import { formatDate } from '@/common/util/formats';
+import moment from 'moment';
 import { SQArticleWrapper } from './style';
 
 export default memo(function SQArticle(props) {
@@ -27,7 +27,7 @@ export default memo(function SQArticle(props) {
         <div className="title">{title}</div>
       </NavLink>
       <div className="info">
-        <div className="item date">{formatDate(date, 'yyyy-MM-dd')}</div>
+        <div className="item date">{moment(date).format('YYYY-MM-DD')}</div>
         <div className="item duration">读完需要 {duration} 分钟</div>
         <div className="item words">共 {words} 字</div>
       </div>

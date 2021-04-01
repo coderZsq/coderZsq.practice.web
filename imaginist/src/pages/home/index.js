@@ -6,7 +6,7 @@ import SQAppHeader from 'components/app-header';
 import SQArticle from 'components/article';
 import { SQMiddleLayoutWrapper } from '@/style';
 
-import { getArticlesAction } from '@/pages/article/store/actionCreators';
+import { getArticlesAction } from '@/store/article/actionCreators';
 import { useLoadMore } from '@/common/util/hooks';
 import { HOME_ARTICLES_SIZE } from '@/common/constants';
 
@@ -25,7 +25,6 @@ export default memo(function SQHomePage() {
   useEffect(() => {
     dispatch(
       getArticlesAction({
-        type: 'stock',
         page,
         size: HOME_ARTICLES_SIZE,
       })

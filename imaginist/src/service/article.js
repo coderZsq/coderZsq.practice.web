@@ -20,3 +20,21 @@ export function getArticle(id) {
     },
   });
 }
+
+export function setArticle(options) {
+  const { id, title, type, content, preview, words, duration, date } = options;
+  return request({
+    url: '/articles/save',
+    data: {
+      id,
+      title,
+      type,
+      content,
+      preview,
+      words,
+      duration,
+      date,
+    },
+    method: 'post',
+  });
+}

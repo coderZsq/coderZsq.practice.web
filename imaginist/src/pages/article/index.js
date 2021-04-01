@@ -1,13 +1,13 @@
 import React, { memo, useEffect } from 'react';
 import { useDispatch, useSelector, shallowEqual } from 'react-redux';
 import { Empty } from 'antd';
+import moment from 'moment';
 
 import SQAppHeader from 'components/app-header';
 import { SQArticlePageWrapper } from './style';
 import { SQMiddleLayoutWrapper } from '@/style';
 
-import { getArticleAction } from '@/pages/article/store/actionCreators';
-import { formatDate } from '@/common/util/formats';
+import { getArticleAction } from '@/store/article/actionCreators';
 import { useBackTop } from '@/common/util/hooks';
 
 export default memo(function SQArticlePage(props) {
@@ -36,7 +36,7 @@ export default memo(function SQArticlePage(props) {
         <div className="title">{article.title}</div>
         <div className="info">
           <div className="item date">
-            {formatDate(article.date, 'yyyy-MM-dd')}
+            {moment(article.date).format('YYYY-MM-DD')}
           </div>
           <div className="item duration">读完需要 {article.duration} 分钟</div>
           <div className="item words">共 {article.words} 字</div>
