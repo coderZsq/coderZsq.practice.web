@@ -15,7 +15,7 @@ export const SQEditPageWrapper = styled.div`
       padding: 5px 10px;
     }
 
-    .input {
+    .edit {
       width: 48%;
       font-size: 17px;
       border-right: none;

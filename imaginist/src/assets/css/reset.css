@@ -98,6 +98,19 @@ a {
   color: #666;
 }
 
+.ant-btn:hover,
+.ant-btn:focus {
+  color: #fff;
+  border-color: #66a563;
+  background-color: #66a563;
+}
+
+.ant-btn-primary {
+  color: #fff;
+  border-color: #80c47e;
+  background-color: #80c47e;
+}
+
 .hljs {
   display: block;
   overflow-x: auto;

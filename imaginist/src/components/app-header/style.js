@@ -34,25 +34,13 @@ export const SQHeaderWrapper = styled.div`
 
     .publish {
       margin-right: 15px;
-      text-align: center;
-
-      width: 60px;
-      height: 30px;
-      line-height: 30px;
-      color: #fff;
-      background-color: #80c47e;
       border-radius: 4px;
     }
 
     .profile {
-      text-align: center;
-
-      width: 32px;
-      height: 32px;
-      line-height: 32px;
-      margin-right: 15px;
-      border-radius: 100%;
-      border: 1px solid #333;
+      color: #333;
+      border-color: #333;
+      background-color: #fff;
     }
   }
 `;

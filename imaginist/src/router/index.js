@@ -3,7 +3,7 @@ import { Redirect } from 'react-router-dom';
 
 const SQHomePage = React.lazy(() => import('@/pages/home'));
 const SQArticlePage = React.lazy(() => import('@/pages/article'));
-const SQEditPage = React.lazy(() => import('@/pages/edit'));
+const SQEditorPage = React.lazy(() => import('@/pages/edit'));
 
 const routes = [
   {
@@ -20,8 +20,8 @@ const routes = [
     component: SQArticlePage,
   },
   {
-    path: '/edit',
-    component: SQEditPage,
+    path: '/editor',
+    component: SQEditorPage,
   },
 ];
 
