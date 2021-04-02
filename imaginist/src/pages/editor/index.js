@@ -1,13 +1,16 @@
-import React, { useState, useEffect, useDispatch, memo } from 'react';
+import React, { useState, useEffect, memo } from 'react';
 import _ from 'lodash';
 import marked from 'marked';
 import { Input } from 'antd';
-import moment from 'moment';
 
 import SQAppHeader from 'components/app-header';
 import { SQEditPageWrapper } from './style';
 import { wordCount } from '@/common/util/strings';
-import { getLocalStorage, setLocalStorage } from '@/common/util/storages';
+import {
+  getLocalStorage,
+  setLocalStorage,
+  removeLocalStorage,
+} from '@/common/util/storages';
 import {
   EDITOR_EDIT_STORAGE,
   EDITOR_PREVIEW_STORAGE,
@@ -16,7 +19,7 @@ import { setArticle } from '@/service/article';
 
 const { TextArea } = Input;
 
-export default memo(function SQEditorPage() {
+export default memo(function SQEditorPage(props) {
   const [content, setContent] = useState({
     edit: getLocalStorage(EDITOR_EDIT_STORAGE) || '',
     preview: getLocalStorage(EDITOR_PREVIEW_STORAGE) || '',
@@ -37,17 +40,33 @@ export default memo(function SQEditorPage() {
   }, [content]);
 
   const publishArticle = () => {
+    if (content.edit.length === 0) {
+      return;
+    }
+    const edit = content.edit;
+    let split = 0;
+    for (let i = 0; i < edit.length; i++) {
+      if (edit.charAt(i) === '\n') {
+        split = i;
+        break;
+      }
+    }
     const option = {
-      title: '123',
+      title: /#{0,}(.*)/.exec(edit.slice(0, split))[1].trim(),
       type: 'doc',
       content: content.edit,
-      preview: content.preview,
+      preview: marked(edit.slice(split + 1)),
       words: wordCount(content.edit),
       duration: parseInt(wordCount(content.edit) / 350),
       date: new Date().getTime(),
     };
+
     setArticle(option).then((res) => {
-      console.log(res);
+      props.history.push(`/article/${res.data}`);
+      setTimeout(() => {
+        removeLocalStorage(EDITOR_EDIT_STORAGE);
+        removeLocalStorage(EDITOR_PREVIEW_STORAGE);
+      }, 1000);
     });
   };
 

@@ -38,7 +38,7 @@ export const SQArticleWrapper = styled.div`
   }
 
   .collapse {
-    height: 300px;
+    max-height: 300px;
     overflow: hidden;
   }
 

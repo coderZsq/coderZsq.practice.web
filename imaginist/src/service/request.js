@@ -1,4 +1,5 @@
 import axios from 'axios';
+import qs from 'qs';
 
 import { BASE_URL, TIMEOUT } from './config';
 import { showLoading, hideLoading } from '@/common/util/loadings';
@@ -6,6 +7,9 @@ import { showLoading, hideLoading } from '@/common/util/loadings';
 const instance = axios.create({
   baseURL: BASE_URL,
   timeout: TIMEOUT,
+  headers: {
+    'Content-Type': 'application/x-www-form-urlencoded',
+  },
 });
 
 instance.interceptors.request.use(
@@ -19,6 +23,14 @@ instance.interceptors.request.use(
     return config;
   },
   (err) => {}
+);
+
+instance.interceptors.request.use(
+  (config) => {
+    config.data = qs.stringify(config.data);
+    return config;
+  },
+  (error) => Promise.error(error)
 );
 
 instance.interceptors.response.use(
