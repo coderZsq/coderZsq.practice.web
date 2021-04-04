@@ -4,7 +4,7 @@ import { List } from 'antd';
 
 import SQAppHeader from 'components/app-header';
 import SQArticle from 'components/article';
-import { SQMiddleLayoutWrapper } from '@/style';
+import { SQMiddleLayoutWrapper } from '@/style/layout.style';
 
 import { getArticlesAction } from '@/store/article/actionCreators';
 import { useLoadMore } from '@/common/util/hooks';
@@ -38,9 +38,11 @@ export default memo(function SQHomePage() {
   }, [dispatch, page]);
 
   useLoadMore(() => {
-    if (page < totalPage.current) {
-      setPage(page + 1);
-    }
+    setTimeout(() => {
+      if (page < totalPage.current) {
+        setPage(page + 1);
+      }
+    }, 0);
   });
 
   return (

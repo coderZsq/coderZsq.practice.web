@@ -5,7 +5,8 @@ import moment from 'moment';
 
 import SQAppHeader from 'components/app-header';
 import { SQArticlePageWrapper } from './style';
-import { SQMiddleLayoutWrapper } from '@/style';
+import { SQMiddleLayoutWrapper } from '@/style/layout.style';
+import { SQMarkdownWrapper } from '@/style/markdown.style';
 
 import { getArticleAction } from '@/store/article/actionCreators';
 import { useBackTop } from '@/common/util/hooks';
@@ -45,10 +46,10 @@ export default memo(function SQArticlePage(props) {
             </div>
             <div className="item words">共 {article.words} 字</div>
           </div>
-          <div
+          <SQMarkdownWrapper
             className="content"
             dangerouslySetInnerHTML={{ __html: article.preview }}
-          ></div>
+          ></SQMarkdownWrapper>
         </SQArticlePageWrapper>
       )}
     </SQMiddleLayoutWrapper>

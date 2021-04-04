@@ -1,19 +1,19 @@
 const connection = require('./database.js');
 const marked = require('marked');
-const hljs = require('highlight.js');
 
 marked.setOptions({
   renderer: new marked.Renderer(),
-  gfm: true,
-  pedantic: false,
-  sanitize: false,
-  tables: true,
-  breaks: false,
-  smartLists: true,
-  smartypants: false,
   highlight: function (code) {
+    const hljs = require('highlight.js');
     return hljs.highlightAuto(code).value;
   },
+  pedantic: false,
+  gfm: true,
+  breaks: false,
+  sanitize: false,
+  smartLists: true,
+  smartypants: false,
+  xhtml: false,
 });
 
 (async function saveStockPreviewColumn() {

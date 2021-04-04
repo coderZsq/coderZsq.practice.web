@@ -5,6 +5,8 @@ import { Input, message } from 'antd';
 
 import SQAppHeader from 'components/app-header';
 import { SQEditPageWrapper } from './style';
+import { SQMarkdownWrapper } from '@/style/markdown.style';
+
 import { wordCount } from '@/common/util/strings';
 import {
   getLocalStorage,
@@ -94,7 +96,7 @@ export default memo(function SQEditorPage(props) {
           defaultValue={content.edit}
           placeholder={placeholder}
         ></TextArea>
-        <div
+        <SQMarkdownWrapper
           className="item preview"
           dangerouslySetInnerHTML={{
             __html:
@@ -102,7 +104,7 @@ export default memo(function SQEditorPage(props) {
                 ? marked(placeholder)
                 : content.preview,
           }}
-        ></div>
+        ></SQMarkdownWrapper>
       </div>
       <div className="info">
         <div>阅读时长 {parseInt(wordCount(content.edit) / 350)} 分钟</div>

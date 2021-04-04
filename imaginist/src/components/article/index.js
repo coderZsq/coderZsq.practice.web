@@ -5,6 +5,7 @@ import { CaretDownOutlined } from '@ant-design/icons';
 
 import moment from 'moment';
 import { SQArticleWrapper } from './style';
+import { SQMarkdownWrapper } from '@/style/markdown.style';
 
 export default memo(function SQArticle(props) {
   const { id, title, duration, words, date, preview } = props;
@@ -31,12 +32,12 @@ export default memo(function SQArticle(props) {
         <div className="item duration">读完需要 {duration} 分钟</div>
         <div className="item words">共 {words} 字</div>
       </div>
-      <div
+      <SQMarkdownWrapper
         className={`content ${collapse ? 'collapse' : ''}`}
         dangerouslySetInnerHTML={{
           __html: collapse ? preview.slice(0, 850) : preview,
         }}
-      ></div>
+      ></SQMarkdownWrapper>
       <div className="read-all" onClick={() => setCollapse(false)}>
         {readAll(collapse)}
       </div>

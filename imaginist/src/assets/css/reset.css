@@ -28,15 +28,15 @@ ins {
   margin: 0;
 }
 
-ul,
+/* ul,
 ol,
 li {
   list-style: none;
-}
+} */
 
 a {
   text-decoration: none;
-  color: #666;
+  color: #333;
 }
 
 a:hover {
@@ -74,12 +74,16 @@ img {
 }
 
 body {
+  font-family: 'Open Sans', 'Clear Sans', 'Helvetica Neue', Helvetica, Arial,
+    sans-serif;
   background-color: #f8f8f8;
 }
 
 a {
   text-decoration: none !important;
 }
+
+/* 全局样式 */
 
 #loading {
   position: absolute;
@@ -124,100 +128,4 @@ a {
   color: #fff;
   border-color: #80c47e;
   background-color: #80c47e;
-}
-
-.hljs {
-  display: block;
-  overflow-x: auto;
-  padding: 0.5em;
-  background: #fdf6e3;
-  color: #657b83;
-  -webkit-text-size-adjust: none;
-}
-.hljs-comment,
-.diff .hljs-header,
-.hljs-doctype,
-.hljs-pi,
-.lisp .hljs-string {
-  color: #93a1a1;
-}
-.hljs-keyword,
-.hljs-winutils,
-.method,
-.hljs-addition,
-.css .hljs-tag,
-.hljs-request,
-.hljs-status,
-.nginx .hljs-title {
-  color: #859900;
-}
-.hljs-number,
-.hljs-command,
-.hljs-string,
-.hljs-tag .hljs-value,
-.hljs-rule .hljs-value,
-.hljs-doctag,
-.tex .hljs-formula,
-.hljs-regexp,
-.hljs-hexcolor,
-.hljs-link_url {
-  color: #2aa198;
-}
-.hljs-title,
-.hljs-localvars,
-.hljs-chunk,
-.hljs-decorator,
-.hljs-built_in,
-.hljs-identifier,
-.vhdl .hljs-literal,
-.hljs-id,
-.css .hljs-function,
-.hljs-name {
-  color: #268bd2;
-}
-.hljs-attribute,
-.hljs-variable,
-.lisp .hljs-body,
-.smalltalk .hljs-number,
-.hljs-constant,
-.hljs-class .hljs-title,
-.hljs-parent,
-.hljs-type,
-.hljs-link_reference {
-  color: #b58900;
-}
-.hljs-preprocessor,
-.hljs-preprocessor .hljs-keyword,
-.hljs-pragma,
-.hljs-shebang,
-.hljs-symbol,
-.hljs-symbol .hljs-string,
-.diff .hljs-change,
-.hljs-special,
-.hljs-attr_selector,
-.hljs-subst,
-.hljs-cdata,
-.css .hljs-pseudo,
-.hljs-header {
-  color: #cb4b16;
-}
-.hljs-deletion,
-.hljs-important {
-  color: #dc322f;
-}
-.hljs-link_label {
-  color: #6c71c4;
-}
-.tex .hljs-formula {
-  background: #eee8d5;
-}
-
-pre {
-  display: block;
-  border-radius: 4px;
-  background: #333;
-  color: #cccccc;
-  font-family: Menlo, Monaco, Consolas, monospace;
-  line-height: 1.5;
-  padding: 10px;
 }

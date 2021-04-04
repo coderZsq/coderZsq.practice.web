@@ -7,21 +7,22 @@ import routes from '@/router';
 import store from '@/store';
 
 import marked from 'marked';
-import hljs from 'highlight.js';
 
 export default memo(function App() {
   marked.setOptions({
     renderer: new marked.Renderer(),
-    gfm: true,
+    highlight: function (code, language) {
+      const hljs = require('highlight.js');
+      const validLanguage = hljs.getLanguage(language) ? language : 'plaintext';
+      return hljs.highlight(validLanguage, code).value;
+    },
     pedantic: false,
-    sanitize: false,
-    tables: true,
+    gfm: true,
     breaks: false,
+    sanitize: false,
     smartLists: true,
     smartypants: false,
-    highlight: function (code) {
-      return hljs.highlightAuto(code).value;
-    },
+    xhtml: false,
   });
 
   return (
