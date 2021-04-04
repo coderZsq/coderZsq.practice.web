@@ -18,17 +18,17 @@ import {
   EDITOR_PREVIEW_STORAGE,
 } from '@/common/constants';
 import { setArticle } from '@/service/article';
+let { MARKDOWN_PLACEHOLDER } = require('@/common/constants');
 
 const { TextArea } = Input;
 
 export default memo(function SQEditorPage(props) {
-  const placeholder = ``;
-
   const [content, setContent] = useState({
     edit: getLocalStorage(EDITOR_EDIT_STORAGE) || '',
     preview: getLocalStorage(EDITOR_PREVIEW_STORAGE) || '',
   });
 
+  console.log(MARKDOWN_PLACEHOLDER);
   const onChange = (e) => {
     setContent({
       edit: e.target.value,
@@ -94,14 +94,14 @@ export default memo(function SQEditorPage(props) {
           className="item edit"
           onChange={_.debounce(onChange, 500)}
           defaultValue={content.edit}
-          placeholder={placeholder}
+          placeholder={MARKDOWN_PLACEHOLDER}
         ></TextArea>
         <SQMarkdownWrapper
           className="item preview"
           dangerouslySetInnerHTML={{
             __html:
               content.preview.length === 0
-                ? marked(placeholder)
+                ? marked(MARKDOWN_PLACEHOLDER)
                 : content.preview,
           }}
         ></SQMarkdownWrapper>
