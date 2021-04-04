@@ -28,24 +28,29 @@ export default memo(function SQArticlePage(props) {
     dispatch(getArticleAction(id));
   }, [dispatch, id]);
 
-  if (article === void 0) return <Empty />;
   return (
     <SQMiddleLayoutWrapper>
       <SQAppHeader />
-      <SQArticlePageWrapper>
-        <div className="title">{article.title}</div>
-        <div className="info">
-          <div className="item date">
-            {moment(article.date).format('YYYY-MM-DD')}
+      {article === void 0 ? (
+        <Empty image={Empty.PRESENTED_IMAGE_SIMPLE} />
+      ) : (
+        <SQArticlePageWrapper>
+          <div className="title">{article.title}</div>
+          <div className="info">
+            <div className="item date">
+              {moment(article.date).format('YYYY-MM-DD')}
+            </div>
+            <div className="item duration">
+              读完需要 {article.duration} 分钟
+            </div>
+            <div className="item words">共 {article.words} 字</div>
           </div>
-          <div className="item duration">读完需要 {article.duration} 分钟</div>
-          <div className="item words">共 {article.words} 字</div>
-        </div>
-        <div
-          className="content"
-          dangerouslySetInnerHTML={{ __html: article.preview }}
-        ></div>
-      </SQArticlePageWrapper>
+          <div
+            className="content"
+            dangerouslySetInnerHTML={{ __html: article.preview }}
+          ></div>
+        </SQArticlePageWrapper>
+      )}
     </SQMiddleLayoutWrapper>
   );
 });

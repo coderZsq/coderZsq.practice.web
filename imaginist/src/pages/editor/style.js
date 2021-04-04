@@ -3,6 +3,10 @@ import styled from 'styled-components';
 export const SQEditPageWrapper = styled.div`
   padding: 0 30px;
 
+  @media (max-width: 576px) {
+    padding: 0 15px;
+  }
+
   .area {
     margin-top: 10px;
     display: flex;
@@ -18,12 +22,12 @@ export const SQEditPageWrapper = styled.div`
     .edit {
       width: 48%;
       font-size: 17px;
-      border-right: none;
     }
 
     .preview {
       width: 52%;
       overflow: scroll;
+      border-left: none;
     }
   }
 

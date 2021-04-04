@@ -1,7 +1,7 @@
 import React, { useState, useEffect, memo } from 'react';
 import _ from 'lodash';
 import marked from 'marked';
-import { Input } from 'antd';
+import { Input, message } from 'antd';
 
 import SQAppHeader from 'components/app-header';
 import { SQEditPageWrapper } from './style';
@@ -20,6 +20,8 @@ import { setArticle } from '@/service/article';
 const { TextArea } = Input;
 
 export default memo(function SQEditorPage(props) {
+  const placeholder = ``;
+
   const [content, setContent] = useState({
     edit: getLocalStorage(EDITOR_EDIT_STORAGE) || '',
     preview: getLocalStorage(EDITOR_PREVIEW_STORAGE) || '',
@@ -41,6 +43,11 @@ export default memo(function SQEditorPage(props) {
 
   const publishArticle = () => {
     if (content.edit.length === 0) {
+      message.error('您还没有写任何文字呢~');
+      return;
+    }
+    if (content.edit.indexOf('\n') < 0) {
+      message.error('请您尝试再多写点文字吧~');
       return;
     }
     const edit = content.edit;
@@ -61,8 +68,10 @@ export default memo(function SQEditorPage(props) {
       date: new Date().getTime(),
     };
 
+    message.loading({ content: '发布文章中...', key: 'publish' });
     setArticle(option).then((res) => {
       props.history.push(`/article/${res.data}`);
+      message.success({ content: '发布完成~', key: 'publish', duration: 2 });
       setTimeout(() => {
         removeLocalStorage(EDITOR_EDIT_STORAGE);
         removeLocalStorage(EDITOR_PREVIEW_STORAGE);
@@ -83,10 +92,16 @@ export default memo(function SQEditorPage(props) {
           className="item edit"
           onChange={_.debounce(onChange, 500)}
           defaultValue={content.edit}
+          placeholder={placeholder}
         ></TextArea>
         <div
           className="item preview"
-          dangerouslySetInnerHTML={{ __html: content.preview }}
+          dangerouslySetInnerHTML={{
+            __html:
+              content.preview.length === 0
+                ? marked(placeholder)
+                : content.preview,
+          }}
         ></div>
       </div>
       <div className="info">

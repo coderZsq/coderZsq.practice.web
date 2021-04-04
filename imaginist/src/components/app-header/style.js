@@ -8,15 +8,19 @@ export const SQHeaderWrapper = styled.div`
   height: 65px;
   width: 100%;
 
+  @media (max-width: 576px) {
+    .greeting {
+      display: none;
+    }
+  }
+
   .left {
     display: flex;
     align-items: center;
 
     .brand {
-      text-align: center;
-
       font-size: 30px;
-      width: 120px;
+      width: 110px;
     }
 
     .greeting {
