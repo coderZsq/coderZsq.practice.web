@@ -1,4 +1,4 @@
-import React, { memo, useEffect, useState } from 'react';
+import React, { memo, useEffect, useState, useRef } from 'react';
 import { useDispatch, useSelector, shallowEqual } from 'react-redux';
 import { List } from 'antd';
 
@@ -20,19 +20,27 @@ export default memo(function SQHomePage() {
     shallowEqual
   );
 
+  let totalPage = useRef(-Infinity);
   const dispatch = useDispatch();
 
   useEffect(() => {
     dispatch(
-      getArticlesAction({
-        page,
-        size: HOME_ARTICLES_SIZE,
-      })
+      getArticlesAction(
+        {
+          page,
+          size: HOME_ARTICLES_SIZE,
+        },
+        (count) => {
+          totalPage.current = Math.floor((count - 1) / HOME_ARTICLES_SIZE) + 1;
+        }
+      )
     );
   }, [dispatch, page]);
 
   useLoadMore(() => {
-    setPage(page + 1);
+    if (page < totalPage.current) {
+      setPage(page + 1);
+    }
   });
 
   return (

@@ -12,18 +12,12 @@ const changeArticleAction = (res) => ({
   article: res.data[0],
 });
 
-let curPage = -Infinity;
-let totalPage = Infinity;
-export const getArticlesAction = (options) => {
+export const getArticlesAction = (options, callBack) => {
   return (dispatch) => {
-    const { page, size } = options;
-    if (curPage < page && page <= totalPage) {
-      getArticles(options).then((res) => {
-        curPage = page;
-        totalPage = res.count / size;
-        dispatch(changeArticlesAction(res));
-      });
-    }
+    getArticles(options).then((res) => {
+      dispatch(changeArticlesAction(res));
+      callBack(res.count);
+    });
   };
 };
 
