@@ -18,8 +18,7 @@ import {
   EDITOR_PREVIEW_STORAGE,
 } from '@/common/constants';
 import { setArticle } from '@/service/article';
-let { MARKDOWN_PLACEHOLDER } = require('@/common/constants');
-
+const { MARKDOWN_PLACEHOLDER } = require('@/common/constants');
 const { TextArea } = Input;
 
 export default memo(function SQEditorPage(props) {
@@ -28,7 +27,6 @@ export default memo(function SQEditorPage(props) {
     preview: getLocalStorage(EDITOR_PREVIEW_STORAGE) || '',
   });
 
-  console.log(MARKDOWN_PLACEHOLDER);
   const onChange = (e) => {
     setContent({
       edit: e.target.value,

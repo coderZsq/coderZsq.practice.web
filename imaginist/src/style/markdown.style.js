@@ -204,6 +204,10 @@ XCode style (c) Angel Garcia <angelgarcia.mail@gmail.com>
     margin: 0.8em 0;
   }
 
+  em {
+    font-style: italic;
+  }
+
   ul,
   ol,
   li {
