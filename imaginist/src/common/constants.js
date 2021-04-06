@@ -4,7 +4,7 @@ export const EDITOR_EDIT_STORAGE = 'edit-storage';
 export const EDITOR_PREVIEW_STORAGE = 'preview-storage';
 
 export const MARKDOWN_PLACEHOLDER =
-  '# 写在第一行, 并以#开头的默认会被识别成标题。\n' +
+  '# 以# 开头写在第一行, 会默认被识别成标题。\n' +
   '\n' +
   '> 以下用一段教程来引导您快速灵活掌握先进的 MarkDown 语法。\n' +
   '\n' +
@@ -12,12 +12,12 @@ export const MARKDOWN_PLACEHOLDER =
   '\n' +
   '### 1. Markdown*是什么*？\n' +
   '\n' +
-  '**Markdown**是一种轻量级**标记语言**，它以纯文本形式(_易读、易写、易更改_)编写文档，并最终以 HTML 格式发布。  \n' +
+  '**Markdown**是一种轻量级**标记语言**，它以纯文本形式( _易读、易写、易更改_ )编写文档，并最终以 HTML 格式发布。  \n' +
   '**Markdown**也可以理解为将以 MARKDOWN 语法编写的语言转换成 HTML 内容的工具。\n' +
   '\n' +
   '### 2. *谁*创造了它？\n' +
   '\n' +
-  '它由[**Aaron Swartz**](http://www.aaronsw.com/)和**John Gruber**共同设计，**Aaron Swartz**就是那位于去年（_2013 年 1 月 11 日_）自杀,有着**开挂**一般人生经历的程序员。维基百科对他的[介绍](http://zh.wikipedia.org/wiki/%E4%BA%9A%E4%BC%A6%C2%B7%E6%96%AF%E6%B2%83%E8%8C%A8)是：**软件工程师、作家、政治组织者、互联网活动家、维基百科人**。\n' +
+  '它由[**Aaron Swartz**](http://www.aaronsw.com/)和**John Gruber**共同设计，**Aaron Swartz**就是那位（ _2013 年 1 月 11 日_ ）自杀,有着**开挂**一般人生经历的程序员。维基百科对他的[介绍](http://zh.wikipedia.org/wiki/%E4%BA%9A%E4%BC%A6%C2%B7%E6%96%AF%E6%B2%83%E8%8C%A8)是：**软件工程师、作家、政治组织者、互联网活动家、维基百科人**。\n' +
   '\n' +
   '他有着足以让你跪拜的人生经历：\n' +
   '\n' +
