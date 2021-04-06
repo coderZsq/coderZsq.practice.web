@@ -38,3 +38,15 @@ export function setArticle(options) {
     method: 'post',
   });
 }
+
+export function uploadImg(options) {
+  const { img } = options;
+  let data = new FormData();
+  data.append('img', img);
+  return request({
+    headers: { 'Content-Type': 'multipart/form-data' },
+    url: '/articles/uploadImg',
+    data: data,
+    method: 'post',
+  });
+}

@@ -11,6 +11,7 @@ export const SQEditPageWrapper = styled.div`
     margin-top: 10px;
     display: flex;
     justify-content: space-evenly;
+    outline-style: none;
 
     .item {
       height: 85vh;

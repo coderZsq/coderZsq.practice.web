@@ -13,8 +13,9 @@ export default memo(function App() {
     renderer: new marked.Renderer(),
     highlight: function (code, language) {
       const hljs = require('highlight.js');
-      const validLanguage = hljs.getLanguage(language) ? language : 'plaintext';
-      return hljs.highlight(validLanguage, code).value;
+      return hljs.highlight(code, {
+        language: hljs.getLanguage(language) ? language : 'plaintext',
+      }).value;
     },
     pedantic: false,
     gfm: true,

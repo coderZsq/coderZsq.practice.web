@@ -9,6 +9,8 @@ export const SQMarkdownWrapper = styled.div`
     font-family: Menlo, Monaco, Consolas, monospace;
     line-height: 1.5;
     padding: 10px;
+    box-shadow: 3px 3px 3px #eee;
+    width: 99%;
   }
 
   /*
