@@ -1,4 +1,4 @@
-import React, { useState, useEffect, memo } from 'react';
+import React, { useState, useEffect, useRef, memo } from 'react';
 import _ from 'lodash';
 import marked from 'marked';
 import { Input, message } from 'antd';
@@ -18,28 +18,35 @@ import {
   EDITOR_EDIT_STORAGE,
   EDITOR_PREVIEW_STORAGE,
 } from '@/common/constants';
+import { getCursorPosition } from '@/common/util/cursors';
 import { setArticle, uploadImg } from '@/service/article';
+import { BASE_URL } from '@/service/config';
 const { MARKDOWN_PLACEHOLDER } = require('@/common/constants');
 const { TextArea } = Input;
 
 export default memo(function SQEditorPage(props) {
-  const [content, setContent] = useState({
-    edit: getLocalStorage(EDITOR_EDIT_STORAGE) || '',
-    preview: getLocalStorage(EDITOR_PREVIEW_STORAGE) || '',
-  });
+  const [editContent, setEditContent] = useState(
+    getLocalStorage(EDITOR_EDIT_STORAGE) || ''
+  );
+
+  const [previewContent, setPreviewContent] = useState(
+    getLocalStorage(EDITOR_PREVIEW_STORAGE) || ''
+  );
+
+  const editRef = useRef();
 
   useEffect(() => {
     return () => {
-      setLocalStorage(EDITOR_EDIT_STORAGE, content.edit);
-      setLocalStorage(EDITOR_PREVIEW_STORAGE, content.preview);
+      setLocalStorage(EDITOR_EDIT_STORAGE, editContent);
+      setLocalStorage(EDITOR_PREVIEW_STORAGE, previewContent);
     };
-  }, [content]);
+  }, [editContent, previewContent]);
 
   const onChange = (e) => {
-    setContent({
-      edit: e.target.value,
-      preview: marked(e.target.value),
-    });
+    setEditContent(e.target.value);
+    _.debounce(() => {
+      setPreviewContent(marked(e.target.value));
+    }, 500)();
   };
 
   const onDrop = (acceptedFiles) => {
@@ -48,21 +55,27 @@ export default memo(function SQEditorPage(props) {
       message.error('拖拽上传只支持图片呢~');
       return false;
     }
+
     uploadImg({ img }).then((res) => {
-      console.log(res);
+      let p = getCursorPosition(editRef.current.resizableTextArea.textArea);
+      const content = `${editContent.slice(0, p)}![](${BASE_URL}/${
+        res.data
+      })${editContent.slice(p)}`;
+      setEditContent(content);
+      setPreviewContent(marked(content));
     });
   };
 
   const publishArticle = () => {
-    if (content.edit.length === 0) {
+    if (editContent.length === 0) {
       message.error('您还没有写任何文字呢~');
       return;
     }
-    if (content.edit.indexOf('\n') < 0) {
+    if (editContent.indexOf('\n') < 0) {
       message.error('请您尝试再多写点文字吧~');
       return;
     }
-    const edit = content.edit;
+    const edit = editContent;
     let split = 0;
     for (let i = 0; i < edit.length; i++) {
       if (edit.charAt(i) === '\n') {
@@ -73,10 +86,10 @@ export default memo(function SQEditorPage(props) {
     const option = {
       title: /#{0,}(.*)/.exec(edit.slice(0, split))[1].trim(),
       type: 'doc',
-      content: content.edit,
+      content: editContent,
       preview: marked(edit.slice(split + 1)),
-      words: wordCount(content.edit),
-      duration: parseInt(wordCount(content.edit) / 350),
+      words: wordCount(editContent),
+      duration: parseInt(wordCount(editContent) / 350),
       date: new Date().getTime(),
     };
 
@@ -102,19 +115,20 @@ export default memo(function SQEditorPage(props) {
         {({ getRootProps }) => (
           <div className="area" {...getRootProps()}>
             <TextArea
+              ref={editRef}
               autoFocus={true}
               className="item edit"
-              onChange={_.debounce(onChange, 500)}
-              defaultValue={content.edit}
+              onChange={onChange}
+              value={editContent}
               placeholder={MARKDOWN_PLACEHOLDER}
             ></TextArea>
             <SQMarkdownWrapper
               className="item preview"
               dangerouslySetInnerHTML={{
                 __html:
-                  content.preview.length === 0
+                  previewContent.length === 0
                     ? marked(MARKDOWN_PLACEHOLDER)
-                    : content.preview,
+                    : previewContent,
               }}
             ></SQMarkdownWrapper>
           </div>
@@ -122,8 +136,8 @@ export default memo(function SQEditorPage(props) {
       </Dropzone>
 
       <div className="info">
-        <div>阅读时长 {parseInt(wordCount(content.edit) / 350)} 分钟</div>
-        <div>字数: {wordCount(content.edit)} 字</div>
+        <div>阅读时长 {parseInt(wordCount(editContent) / 350)} 分钟</div>
+        <div>字数: {wordCount(editContent)} 字</div>
       </div>
     </SQEditPageWrapper>
   );
