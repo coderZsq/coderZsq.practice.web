@@ -3,7 +3,7 @@ import styled from 'styled-components';
 export const SQMiddleLayoutWrapper = styled.div`
   margin: 0 auto;
   width: 100%;
-  padding: 0 15px;
+  padding: 0 10px;
   @media (min-width: 576px) {
     width: 90%;
   }

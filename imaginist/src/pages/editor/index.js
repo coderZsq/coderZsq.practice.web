@@ -1,14 +1,15 @@
 import React, { useState, useEffect, useRef, memo } from 'react';
-import _ from 'lodash';
-import marked from 'marked';
-import { Input, message, Button } from 'antd';
 import Dropzone from 'react-dropzone';
+import { Input, message, Switch } from 'antd';
+import marked from 'marked';
+import _ from 'lodash';
 
 import SQAppHeader from 'components/app-header';
 import { SQEditPageWrapper } from './style';
 import { SQMarkdownWrapper } from '@/style/markdown.style';
 
 import { wordCount } from '@/common/util/strings';
+import { getCursorPosition } from '@/common/util/cursors';
 import {
   getLocalStorage,
   setLocalStorage,
@@ -18,11 +19,9 @@ import {
   EDITOR_EDIT_STORAGE,
   EDITOR_PREVIEW_STORAGE,
 } from '@/common/constants';
-import { getCursorPosition } from '@/common/util/cursors';
+import { MARKDOWN_PLACEHOLDER } from '@/common/constants';
 import { setArticle, uploadImg } from '@/service/article';
 import { BASE_URL } from '@/service/config';
-const { MARKDOWN_PLACEHOLDER } = require('@/common/constants');
-const { TextArea } = Input;
 
 export default memo(function SQEditorPage(props) {
   const [editContent, setEditContent] = useState(
@@ -37,11 +36,23 @@ export default memo(function SQEditorPage(props) {
   const previewRef = useRef();
 
   useEffect(() => {
+    onScroll();
     return () => {
       setLocalStorage(EDITOR_EDIT_STORAGE, editContent);
       setLocalStorage(EDITOR_PREVIEW_STORAGE, previewContent);
     };
   }, [editContent, previewContent]);
+
+  const onScroll = () => {
+    const edit = editRef.current.resizableTextArea.textArea;
+    const preview = previewRef.current;
+    edit.addEventListener('scroll', () => {
+      const percentage =
+        edit.scrollTop / (edit.scrollHeight - edit.offsetHeight);
+      const height = percentage * (preview.scrollHeight - preview.offsetHeight);
+      preview.scrollTop = height;
+    });
+  };
 
   const onChange = (e) => {
     setEditContent(e.target.value);
@@ -67,7 +78,7 @@ export default memo(function SQEditorPage(props) {
     });
   };
 
-  const publishArticle = () => {
+  const onConfirm = () => {
     if (editContent.length === 0) {
       message.error('您还没有写任何文字呢~');
       return;
@@ -110,19 +121,19 @@ export default memo(function SQEditorPage(props) {
       <SQAppHeader
         greeting="Record something..."
         editing={true}
-        onConfirm={publishArticle}
+        onConfirm={onConfirm}
       />
       <Dropzone onDrop={onDrop}>
         {({ getRootProps }) => (
           <div className="area" {...getRootProps()}>
-            <TextArea
+            <Input.TextArea
               ref={editRef}
               autoFocus={true}
               className="item edit"
               onChange={onChange}
               value={editContent}
               placeholder={MARKDOWN_PLACEHOLDER}
-            ></TextArea>
+            ></Input.TextArea>
             <SQMarkdownWrapper
               ref={previewRef}
               className="item preview"
@@ -136,15 +147,16 @@ export default memo(function SQEditorPage(props) {
           </div>
         )}
       </Dropzone>
-
       <div className="info">
         <div className="left">
           <div>阅读时长 {parseInt(wordCount(editContent) / 350)} 分钟</div>
           <div>字数: {wordCount(editContent)} 字</div>
         </div>
         <div className="right">
-          <Button
-            onClick={() => {
+          <Switch
+            checkedChildren="预览模式"
+            unCheckedChildren="编辑模式"
+            onChange={() => {
               previewRef.current.style = `display: ${
                 !previewed ? 'inline-block' : 'none'
               }`;
@@ -153,9 +165,7 @@ export default memo(function SQEditorPage(props) {
               }`;
               setPreviewed(!previewed);
             }}
-          >
-            {previewed ? '编辑' : '预览'}
-          </Button>
+          ></Switch>
         </div>
       </div>
     </SQEditPageWrapper>

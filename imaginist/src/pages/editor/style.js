@@ -28,6 +28,7 @@ export const SQEditPageWrapper = styled.div`
     .edit {
       flex: 1;
       font-size: 17px;
+      color: #333;
     }
 
     .preview {
@@ -52,10 +53,7 @@ export const SQEditPageWrapper = styled.div`
       display: none;
     }
   }
-  .ant-btn:hover,
-  .ant-btn:focus {
-    color: #66a563;
-    border-color: #66a563;
-    background-color: #fff;
+  .ant-switch-checked {
+    background-color: #80c47e;
   }
 `;
