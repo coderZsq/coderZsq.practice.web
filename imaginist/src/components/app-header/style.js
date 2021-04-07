@@ -47,11 +47,4 @@ export const SQHeaderWrapper = styled.div`
       background-color: #fff;
     }
   }
-
-  .ant-btn:hover,
-  .ant-btn:focus {
-    color: #fff;
-    border-color: #66a563;
-    background-color: #66a563;
-  }
 `;
