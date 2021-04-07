@@ -41,7 +41,7 @@ export function setArticle(options) {
 
 export function uploadImg(options) {
   const { img } = options;
-  let data = new FormData();
+  const data = new FormData();
   data.append('img', img);
   return request({
     headers: { 'Content-Type': 'multipart/form-data' },

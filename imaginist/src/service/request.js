@@ -27,7 +27,11 @@ instance.interceptors.request.use(
 
 instance.interceptors.request.use(
   (config) => {
-    config.data = qs.stringify(config.data);
+    if (
+      config.headers['Content-Type'] === 'application/x-www-form-urlencoded'
+    ) {
+      config.data = qs.stringify(config.data);
+    }
     return config;
   },
   (error) => Promise.error(error)

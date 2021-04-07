@@ -48,10 +48,6 @@ export default memo(function SQEditorPage(props) {
       message.error('拖拽上传只支持图片呢~');
       return false;
     }
-    var reader = new FileReader();
-    reader.readAsDataURL(img);
-    console.log(reader);
-
     uploadImg({ img }).then((res) => {
       console.log(res);
     });
