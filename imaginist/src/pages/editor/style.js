@@ -4,11 +4,16 @@ export const SQEditPageWrapper = styled.div`
   padding: 0 30px;
 
   @media (max-width: 576px) {
-    padding: 0 15px;
+    padding: 0 10px;
+    .preview {
+      display: none;
+    }
+    .right {
+      display: inline-block !important;
+    }
   }
 
   .area {
-    margin-top: 10px;
     display: flex;
     justify-content: space-evenly;
     outline-style: none;
@@ -21,12 +26,12 @@ export const SQEditPageWrapper = styled.div`
     }
 
     .edit {
-      width: 48%;
+      flex: 1;
       font-size: 17px;
     }
 
     .preview {
-      width: 52%;
+      flex: 1;
       overflow: scroll;
       border-left: none;
     }
@@ -35,9 +40,22 @@ export const SQEditPageWrapper = styled.div`
   .info {
     margin-top: 10px;
     display: flex;
-
-    div {
-      padding-right: 15px;
+    justify-content: space-between;
+    align-items: center;
+    .left {
+      display: flex;
+      div {
+        padding-right: 15px;
+      }
     }
+    .right {
+      display: none;
+    }
+  }
+  .ant-btn:hover,
+  .ant-btn:focus {
+    color: #66a563;
+    border-color: #66a563;
+    background-color: #fff;
   }
 `;

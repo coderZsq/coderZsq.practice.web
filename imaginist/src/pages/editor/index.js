@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef, memo } from 'react';
 import _ from 'lodash';
 import marked from 'marked';
-import { Input, message } from 'antd';
+import { Input, message, Button } from 'antd';
 import Dropzone from 'react-dropzone';
 
 import SQAppHeader from 'components/app-header';
@@ -28,12 +28,13 @@ export default memo(function SQEditorPage(props) {
   const [editContent, setEditContent] = useState(
     getLocalStorage(EDITOR_EDIT_STORAGE) || ''
   );
-
   const [previewContent, setPreviewContent] = useState(
     getLocalStorage(EDITOR_PREVIEW_STORAGE) || ''
   );
+  const [previewed, setPreviewed] = useState(false);
 
   const editRef = useRef();
+  const previewRef = useRef();
 
   useEffect(() => {
     return () => {
@@ -46,7 +47,7 @@ export default memo(function SQEditorPage(props) {
     setEditContent(e.target.value);
     _.debounce(() => {
       setPreviewContent(marked(e.target.value));
-    }, 500)();
+    }, 0)();
   };
 
   const onDrop = (acceptedFiles) => {
@@ -123,6 +124,7 @@ export default memo(function SQEditorPage(props) {
               placeholder={MARKDOWN_PLACEHOLDER}
             ></TextArea>
             <SQMarkdownWrapper
+              ref={previewRef}
               className="item preview"
               dangerouslySetInnerHTML={{
                 __html:
@@ -136,8 +138,25 @@ export default memo(function SQEditorPage(props) {
       </Dropzone>
 
       <div className="info">
-        <div>阅读时长 {parseInt(wordCount(editContent) / 350)} 分钟</div>
-        <div>字数: {wordCount(editContent)} 字</div>
+        <div className="left">
+          <div>阅读时长 {parseInt(wordCount(editContent) / 350)} 分钟</div>
+          <div>字数: {wordCount(editContent)} 字</div>
+        </div>
+        <div className="right">
+          <Button
+            onClick={() => {
+              previewRef.current.style = `display: ${
+                !previewed ? 'inline-block' : 'none'
+              }`;
+              editRef.current.resizableTextArea.textArea.style = `display: ${
+                previewed ? 'inline-block' : 'none'
+              }`;
+              setPreviewed(!previewed);
+            }}
+          >
+            {previewed ? '编辑' : '预览'}
+          </Button>
+        </div>
       </div>
     </SQEditPageWrapper>
   );

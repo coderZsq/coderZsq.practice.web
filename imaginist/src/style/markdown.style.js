@@ -1,6 +1,12 @@
 import styled from 'styled-components';
 
 export const SQMarkdownWrapper = styled.div`
+  a,
+  p,
+  img {
+    max-width: 100%;
+  }
+
   pre {
     display: block;
     border-radius: 4px;

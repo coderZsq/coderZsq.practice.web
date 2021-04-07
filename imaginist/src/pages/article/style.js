@@ -2,6 +2,7 @@ import styled from 'styled-components';
 
 export const SQArticlePageWrapper = styled.div`
   width: 100%;
+  padding-bottom: 60px;
 
   .title {
     margin-top: 20px;
