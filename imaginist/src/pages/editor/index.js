@@ -138,10 +138,11 @@ export default memo(function SQEditorPage(props) {
         editing={true}
         onConfirm={onConfirm}
       />
-      <Dropzone onDrop={onDrop}>
-        {({ getRootProps }) => (
-          <div className="area" {...getRootProps()}>
+      <div className="area">
+        <Dropzone onDrop={onDrop}>
+          {({ getRootProps }) => (
             <Input.TextArea
+              {...getRootProps()}
               ref={editRef}
               autoFocus={true}
               className="item edit"
@@ -149,19 +150,19 @@ export default memo(function SQEditorPage(props) {
               value={editContent}
               placeholder={MARKDOWN_PLACEHOLDER}
             ></Input.TextArea>
-            <SQMarkdownWrapper
-              ref={previewRef}
-              className="item preview"
-              dangerouslySetInnerHTML={{
-                __html:
-                  previewContent.length === 0
-                    ? marked(MARKDOWN_PLACEHOLDER)
-                    : previewContent,
-              }}
-            ></SQMarkdownWrapper>
-          </div>
-        )}
-      </Dropzone>
+          )}
+        </Dropzone>
+        <SQMarkdownWrapper
+          ref={previewRef}
+          className="item preview"
+          dangerouslySetInnerHTML={{
+            __html:
+              previewContent.length === 0
+                ? marked(MARKDOWN_PLACEHOLDER)
+                : previewContent,
+          }}
+        ></SQMarkdownWrapper>
+      </div>
       <div className="info">
         <div className="left">
           <div>阅读时长 {parseInt(wordCount(editContent) / 350)} 分钟</div>
