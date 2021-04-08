@@ -9,12 +9,9 @@ import { SQMiddleLayoutWrapper } from '@/style/layout.style';
 import { SQMarkdownWrapper } from '@/style/markdown.style';
 
 import { getArticleAction } from '@/store/article/actionCreators';
-import { useBackTop } from '@/common/util/hooks';
 
 export default memo(function SQArticlePage(props) {
-  const id = props.match.params.id;
-
-  useBackTop();
+  const { id } = props.match.params;
 
   const { article } = useSelector(
     (state) => ({
@@ -26,6 +23,7 @@ export default memo(function SQArticlePage(props) {
   const dispatch = useDispatch();
 
   useEffect(() => {
+    document.documentElement.scrollTop = 0;
     dispatch(getArticleAction(id));
   }, [dispatch, id]);
 

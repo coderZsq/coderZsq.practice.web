@@ -31,6 +31,11 @@ export const SQEditPageWrapper = styled.div`
       color: #333;
     }
 
+    .dragover {
+      background-color: #fff;
+      color: #ccc;
+    }
+
     .preview {
       flex: 1;
       overflow: scroll;

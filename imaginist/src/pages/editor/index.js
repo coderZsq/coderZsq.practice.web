@@ -36,12 +36,28 @@ export default memo(function SQEditorPage(props) {
   const previewRef = useRef();
 
   useEffect(() => {
+    onDragOver();
     onScroll();
     return () => {
       setLocalStorage(EDITOR_EDIT_STORAGE, editContent);
       setLocalStorage(EDITOR_PREVIEW_STORAGE, previewContent);
     };
   }, [editContent, previewContent]);
+
+  const onDragOver = () => {
+    const edit = editRef.current.resizableTextArea.textArea;
+    const dragleaveCSS = edit.className;
+    const dragoverCSS = edit.className + ' dragover';
+    edit.addEventListener('dragover', () => {
+      edit.className = dragoverCSS;
+      edit.addEventListener('dragleave', () => {
+        edit.className = dragleaveCSS;
+      });
+      edit.addEventListener('drop', () => {
+        edit.className = dragleaveCSS;
+      });
+    });
+  };
 
   const onScroll = () => {
     const edit = editRef.current.resizableTextArea.textArea;
@@ -67,7 +83,6 @@ export default memo(function SQEditorPage(props) {
       message.error('拖拽上传只支持图片呢~');
       return false;
     }
-
     uploadImg({ img }).then((res) => {
       let p = getCursorPosition(editRef.current.resizableTextArea.textArea);
       const content = `${editContent.slice(0, p)}![](${BASE_URL}/${

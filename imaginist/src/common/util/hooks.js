@@ -24,9 +24,3 @@ export function useLoadMore(callback) {
     };
   }, [onScroll]);
 }
-
-export function useBackTop() {
-  useEffect(() => {
-    document.documentElement.scrollTop = 0;
-  }, []);
-}
