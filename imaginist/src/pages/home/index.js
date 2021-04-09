@@ -12,6 +12,7 @@ import { HOME_ARTICLES_SIZE } from '@/common/constants';
 
 export default memo(function SQHomePage() {
   const [page, setPage] = useState(1);
+  const renderedRef = useRef(false);
 
   const { articles } = useSelector(
     (state) => ({
@@ -24,6 +25,7 @@ export default memo(function SQHomePage() {
   const dispatch = useDispatch();
 
   useEffect(() => {
+    renderedRef.current = true;
     dispatch(
       getArticlesAction(
         {
@@ -38,11 +40,10 @@ export default memo(function SQHomePage() {
   }, [dispatch, page]);
 
   useLoadMore(() => {
-    setTimeout(() => {
-      if (page < totalPage.current) {
-        setPage(page + 1);
-      }
-    }, 0);
+    if (page < totalPage.current && renderedRef.current) {
+      renderedRef.current = false;
+      setPage(page + 1);
+    }
   });
 
   return (

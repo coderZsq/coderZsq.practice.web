@@ -1,18 +1,18 @@
-import { useEffect, useCallback } from 'react';
+import { useEffect, useCallback, useRef } from 'react';
 
 export function useLoadMore(callback) {
+  const loadingRef = useRef(true);
   const onScroll = useCallback(() => {
-    let loading = true;
     const buffer = 300;
     if (
-      loading &&
+      loadingRef.current &&
       window.scrollY + document.body.clientHeight >=
         document.body.scrollHeight - buffer
     ) {
-      loading = false;
+      loadingRef.current = false;
       callback();
       setTimeout(() => {
-        loading = true;
+        loadingRef.current = true;
       }, 0);
     }
   }, [callback]);
