@@ -2,7 +2,6 @@ import React, { useState, useEffect, useRef, memo } from 'react';
 import Dropzone from 'react-dropzone';
 import { Input, message, Switch } from 'antd';
 import marked from 'marked';
-import _ from 'lodash';
 
 import SQAppHeader from 'components/app-header';
 import { SQEditPageWrapper } from './style';
@@ -15,21 +14,16 @@ import {
   setLocalStorage,
   removeLocalStorage,
 } from '@/common/util/storages';
-import {
-  EDITOR_EDIT_STORAGE,
-  EDITOR_PREVIEW_STORAGE,
-} from '@/common/constants';
+import { EDITOR_STORAGE } from '@/common/constants';
 import { MARKDOWN_PLACEHOLDER } from '@/common/constants';
 import { setArticle, uploadImg } from '@/service/article';
 import { BASE_URL } from '@/service/config';
 
 export default memo(function SQEditorPage(props) {
-  const [editContent, setEditContent] = useState(
-    getLocalStorage(EDITOR_EDIT_STORAGE) || ''
-  );
-  const [previewContent, setPreviewContent] = useState(
-    getLocalStorage(EDITOR_PREVIEW_STORAGE) || ''
-  );
+  const [content, setContent] = useState({
+    edit: getLocalStorage(EDITOR_STORAGE).edit || '',
+    preview: getLocalStorage(EDITOR_STORAGE).preview || '',
+  });
   const [previewed, setPreviewed] = useState(false);
 
   const editRef = useRef();
@@ -39,10 +33,12 @@ export default memo(function SQEditorPage(props) {
     onDragOver();
     onScroll();
     return () => {
-      setLocalStorage(EDITOR_EDIT_STORAGE, editContent);
-      setLocalStorage(EDITOR_PREVIEW_STORAGE, previewContent);
+      setLocalStorage(EDITOR_STORAGE, {
+        edit: content.edit,
+        preview: content.preview,
+      });
     };
-  }, [editContent, previewContent]);
+  }, [content]);
 
   const onDragOver = () => {
     const edit = editRef.current.resizableTextArea.textArea;
@@ -71,10 +67,10 @@ export default memo(function SQEditorPage(props) {
   };
 
   const onChange = (e) => {
-    setEditContent(e.target.value);
-    _.debounce(() => {
-      setPreviewContent(marked(e.target.value));
-    }, 0)();
+    setContent({
+      edit: e.target.value,
+      preview: marked(e.target.value),
+    });
   };
 
   const onDrop = (acceptedFiles) => {
@@ -85,24 +81,26 @@ export default memo(function SQEditorPage(props) {
     }
     uploadImg({ img }).then((res) => {
       let p = getCursorPosition(editRef.current.resizableTextArea.textArea);
-      const content = `${editContent.slice(0, p)}![](${BASE_URL}/${
+      const edit = `${content.edit.slice(0, p)}![](${BASE_URL}/${
         res.data
-      })${editContent.slice(p)}`;
-      setEditContent(content);
-      setPreviewContent(marked(content));
+      })${content.edit.slice(p)}`;
+      setContent({
+        edit: edit,
+        preview: marked(edit),
+      });
     });
   };
 
   const onConfirm = () => {
-    if (editContent.length === 0) {
+    if (content.edit.length === 0) {
       message.error('您还没有写任何文字呢~');
       return;
     }
-    if (editContent.indexOf('\n') < 0) {
+    if (content.edit.indexOf('\n') < 0) {
       message.error('请您尝试再多写点文字吧~');
       return;
     }
-    const edit = editContent;
+    const edit = content.edit;
     let split = 0;
     for (let i = 0; i < edit.length; i++) {
       if (edit.charAt(i) === '\n') {
@@ -113,10 +111,10 @@ export default memo(function SQEditorPage(props) {
     const option = {
       title: /#{0,}(.*)/.exec(edit.slice(0, split))[1].trim(),
       type: 'doc',
-      content: editContent,
+      content: edit,
       preview: marked(edit.slice(split + 1)),
-      words: wordCount(editContent),
-      duration: parseInt(wordCount(editContent) / 350),
+      words: wordCount(edit),
+      duration: parseInt(wordCount(edit) / 350),
       date: new Date().getTime(),
     };
 
@@ -124,10 +122,7 @@ export default memo(function SQEditorPage(props) {
     setArticle(option).then((res) => {
       props.history.push(`/article/${res.data}`);
       message.success({ content: '发布完成~', key: 'publish', duration: 2 });
-      setTimeout(() => {
-        removeLocalStorage(EDITOR_EDIT_STORAGE);
-        removeLocalStorage(EDITOR_PREVIEW_STORAGE);
-      }, 1000);
+      removeLocalStorage(EDITOR_STORAGE);
     });
   };
 
@@ -147,7 +142,7 @@ export default memo(function SQEditorPage(props) {
               autoFocus={true}
               className="item edit"
               onChange={onChange}
-              value={editContent}
+              value={content.edit}
               placeholder={MARKDOWN_PLACEHOLDER}
             ></Input.TextArea>
           )}
@@ -157,16 +152,16 @@ export default memo(function SQEditorPage(props) {
           className="item preview"
           dangerouslySetInnerHTML={{
             __html:
-              previewContent.length === 0
+              content.preview.length === 0
                 ? marked(MARKDOWN_PLACEHOLDER)
-                : previewContent,
+                : content.preview,
           }}
         ></SQMarkdownWrapper>
       </div>
       <div className="info">
         <div className="left">
-          <div>阅读时长 {parseInt(wordCount(editContent) / 350)} 分钟</div>
-          <div>字数: {wordCount(editContent)} 字</div>
+          <div>阅读时长 {parseInt(wordCount(content.edit) / 350)} 分钟</div>
+          <div>字数: {wordCount(content.edit)} 字</div>
         </div>
         <div className="right">
           <Switch

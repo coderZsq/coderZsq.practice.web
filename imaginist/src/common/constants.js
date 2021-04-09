@@ -1,7 +1,7 @@
 export const HOME_ARTICLES_SIZE = 3;
 
-export const EDITOR_EDIT_STORAGE = 'edit-storage';
-export const EDITOR_PREVIEW_STORAGE = 'preview-storage';
+export const EDITOR_STORAGE = 'editor-storage';
+// export const EDITOR_PREVIEW_STORAGE = 'preview-storage';
 
 export const MARKDOWN_PLACEHOLDER =
   '# 以# 开头写在第一行, 会默认被识别成标题。\n' +
