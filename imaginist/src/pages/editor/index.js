@@ -87,7 +87,7 @@ export default memo(function SQEditorPage(props) {
       return;
     }
     if (/image\/\w+/.test(file.type)) {
-      uploadImg({ file }).then((res) => {
+      uploadImg({ img: file }).then((res) => {
         let p = getCursorPosition(editRef.current.resizableTextArea.textArea);
         const edit = `${content.edit.slice(0, p)}![](${BASE_URL}/${
           res.data
