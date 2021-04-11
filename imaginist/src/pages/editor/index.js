@@ -74,21 +74,31 @@ export default memo(function SQEditorPage(props) {
   };
 
   const onDrop = (acceptedFiles) => {
-    const img = acceptedFiles[0];
-    if (!/image\/\w+/.test(img.type)) {
-      message.error('拖拽上传只支持图片呢~');
-      return false;
+    const file = acceptedFiles[0];
+    if (/text\/markdown/.test(file.type)) {
+      const reader = new FileReader();
+      reader.onload = (e) => {
+        setContent({
+          edit: e.target.result,
+          preview: marked(e.target.result),
+        });
+      };
+      reader.readAsText(file);
+      return;
     }
-    uploadImg({ img }).then((res) => {
-      let p = getCursorPosition(editRef.current.resizableTextArea.textArea);
-      const edit = `${content.edit.slice(0, p)}![](${BASE_URL}/${
-        res.data
-      })${content.edit.slice(p)}`;
-      setContent({
-        edit: edit,
-        preview: marked(edit),
+    if (/image\/\w+/.test(file.type)) {
+      uploadImg({ file }).then((res) => {
+        let p = getCursorPosition(editRef.current.resizableTextArea.textArea);
+        const edit = `${content.edit.slice(0, p)}![](${BASE_URL}/${
+          res.data
+        })${content.edit.slice(p)}`;
+        setContent({
+          edit: edit,
+          preview: marked(edit),
+        });
       });
-    });
+      return;
+    }
   };
 
   const onConfirm = () => {
