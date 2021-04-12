@@ -1,0 +1,14 @@
+InputElement ::= WhiteSpace | LineTerminator | Comment | Token
+
+WhiteSpace ::= " " | " " 
+
+LineTerminator ::= "\n" | "\r"
+
+Comment ::= SingleLineComment | MultilineComment
+SingleLineComment ::= "/" "/" <any>*
+MultilineComment ::= "/" "*" ([^*] | "*" [^/])* "*" "/"
+
+Token ::= Literal | Keywords | Identifier | Punctuator
+Literal ::= NumberLiteral | BooleanLiteral | StringLiteral | NullLiteral 
+Keywords ::= "if" | "else" | "for" | "function" ......
+Punctuator ::= "+" | "-" | "*" | "/" | "{" | "}" | ......
