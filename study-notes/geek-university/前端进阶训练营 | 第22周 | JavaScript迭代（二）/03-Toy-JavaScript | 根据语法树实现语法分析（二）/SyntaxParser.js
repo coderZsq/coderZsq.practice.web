@@ -39,14 +39,14 @@ function closure(state) {
   hash[JSON.stringify(state)] = state;
   let queue = [];
   for (let symbol in state) {
-    if (symbol.match(/^$/)) {
+    if (symbol.match(/^\$/)) {
       return;
     }
     queue.push(symbol);
   }
   while (queue.length) {
     let symbol = queue.shift();
-    //console.log(symbol);
+
     if (syntax[symbol]) {
       for (let rule of syntax[symbol]) {
         if (!state[rule[0]]) queue.push(rule[0]);
@@ -57,14 +57,15 @@ function closure(state) {
           current = current[part];
         }
         current.$reduceType = symbol;
-        current.$reduceState = state;
+        current.$reduceLength = rule.length;
       }
     }
   }
   for (let symbol in state) {
-    if (symbol.match(/^$/)) {
+    if (symbol.match(/^\$/)) {
       return;
     }
+    console.log(symbol);
     if (hash[JSON.stringify(state[symbol])])
       state[symbol] = hash[JSON.stringify(state[symbol])];
     else closure(state[symbol]);
@@ -86,19 +87,36 @@ let source = `
 `;
 
 function parse(source) {
-  let state = start;
-  for (let symbol /*terminal symbols*/ of scan(source)) {
+  let stack = [start];
+  function reduce() {
+    let state = stack[stack.length - 1];
+
+    if (state.$reduceType) {
+      let children = [];
+      for (let i = 0; i < state.$reduceLength; i++) children.push(stack.pop());
+      //create a non-terminal symbol and shift it
+      shift({
+        type: state.$reduceType,
+        children: children.reverse(),
+      });
+    } else {
+      throw new Error('unexpected token');
+    }
+  }
+  function shift(symbol) {
+    let state = stack[stack.length - 1];
     if (symbol.type in state) {
-      console.log(state);
-      state = state[symbol.type];
+      stack.push(state[symbol.type]);
     } else {
       /*reduce to non-terminal symbols*/
-      if (state.$reduceType) {
-        state = state.$reduceState;
-      }
-      debugger;
+      reduce();
+      shift(symbol);
     }
-    console.log(symbol);
+  }
+
+  for (let symbol /*terminal symbols*/ of scan(source)) {
+    shift(symbol);
+    // console.log(symbol);
   }
 }
 

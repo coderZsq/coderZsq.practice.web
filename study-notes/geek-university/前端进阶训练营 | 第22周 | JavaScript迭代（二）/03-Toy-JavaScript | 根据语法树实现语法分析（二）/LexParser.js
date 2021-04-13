@@ -55,14 +55,14 @@ export function* scan(str) {
       Whitespace: / /,
       LineTerminator: /\n/,
       Comments: /\*(?:[^*]|\*[^\/])*\*\/|\/\/[^\n]*/,
-      Token: '<Literal>|<Keywords>|<Identifer>|<Punctuator>',
+      Token: '<Literal>|<Keywords>|<Identifier>|<Punctuator>',
       Literal:
         '<NumericLiteral>|<BooleanLiteral>|<StringLiteral>|<NullLiteral>',
       NumericLiteral: /(?:[1-9][0-9]*|0)(?:\.[0-9]*)?|\.[0-9]+/,
       BooleanLiteral: /true|false/,
       StringLiteral: /\"(?:[^"\n]|\\[\s\S])*\"|\'(?:[^'\n]|\\[\s\S])*\'/,
       NullLiteral: /null/,
-      Identifer: /[a-zA-Z_$][a-zA-Z0-9_$]*/,
+      Identifier: /[a-zA-Z_$][a-zA-Z0-9_$]*/,
       Keywords: /if|else|for|function|let|var/,
       Punctuator: /\+|\,|\?|\:|\{|\}|\.|\(|\=|\<|\+\+|\=\=|\=\>|\*|\)|\[|\]|;/,
     },
@@ -95,9 +95,9 @@ export function* scan(str) {
         type: 'NullLiteral',
         value: null,
       };
-    } else if (r.Identifer) {
+    } else if (r.Identifier) {
       yield {
-        type: 'Identifer',
+        type: 'Identifier',
         name: r[0],
       };
     } else if (r.Keywords) {
