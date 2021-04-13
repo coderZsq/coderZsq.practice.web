@@ -30,7 +30,13 @@ let syntax = {
     ['AdditiveExpression', '/', 'PrimaryExpression'],
   ],
   PrimaryExpression: [['(', 'Expression', ')'], ['Literal'], ['Identifier']],
-  Literal: [['Number']],
+  Literal: [
+    ['Number'],
+    ['String'],
+    ['Boolean'],
+    ['Null'],
+    ['RegularExpression'],
+  ],
 };
 
 let hash = {};
@@ -39,7 +45,7 @@ function closure(state) {
   hash[JSON.stringify(state)] = state;
   let queue = [];
   for (let symbol in state) {
-    if (symbol.match(/^$/)) {
+    if (symbol.match(/^\$/)) {
       return;
     }
     queue.push(symbol);
@@ -57,15 +63,15 @@ function closure(state) {
           current = current[part];
         }
         current.$reduceType = symbol;
-        current.$reduceState = state;
+        current.$reduceLength = rule.length;
       }
     }
   }
   for (let symbol in state) {
-    if (symbol.match(/^$/)) {
+    if (symbol.match(/^\$/)) {
       return;
     }
-    console.log(symbol);
+    // console.log(symbol);
     if (hash[JSON.stringify(state[symbol])])
       state[symbol] = hash[JSON.stringify(state[symbol])];
     else closure(state[symbol]);
@@ -82,25 +88,83 @@ let start = {
 
 closure(start);
 
-let source = `
-  var a;
-`;
-
 function parse(source) {
-  let state = start;
-  for (let symbol /*terminal symbols*/ of scan(source)) {
+  let stack = [start];
+  let symbolStack = [];
+  function reduce() {
+    let state = stack[stack.length - 1];
+
+    if (state.$reduceType) {
+      let children = [];
+      for (let i = 0; i < state.$reduceLength; i++) {
+        stack.pop();
+        children.push(symbolStack.pop());
+      }
+      //create a non-terminal symbol and shift it
+
+      return {
+        type: state.$reduceType,
+        children: children.reverse(),
+      };
+    } else {
+      throw new Error('unexpected token');
+    }
+  }
+  function shift(symbol) {
+    let state = stack[stack.length - 1];
     if (symbol.type in state) {
-      console.log(state);
-      state = state[symbol.type];
+      stack.push(state[symbol.type]);
+      symbolStack.push(symbol);
     } else {
       /*reduce to non-terminal symbols*/
-      if (state.$reduceType) {
-        state = state.$reduceState;
-      }
-      debugger;
+      shift(reduce());
+      shift(symbol);
     }
-    console.log(symbol);
+  }
+
+  for (let symbol /*terminal symbols*/ of scan(source)) {
+    shift(symbol);
+  }
+
+  return reduce();
+}
+
+let evaluator = {
+  Program(node) {
+    return evaluate(node.children[0]);
+  },
+  StatementList(node) {
+    if (node.children.length === 1) {
+      return evaluate(node.children[0]);
+    } else {
+      evaluate(node.children[0]);
+      return evaluate(node.children[1]);
+    }
+  },
+  Statement(node) {
+    return evaluate(node.children[0]);
+  },
+  VariableDeclaration(node) {
+    console.log('Declare variable', node.children[1].name);
+  },
+  EOF() {
+    return null;
+  },
+};
+
+function evaluate(node) {
+  if (evaluator[node.type]) {
+    return evaluator[node.type](node);
   }
 }
 
-parse(source);
+////////////////////////////////////////////
+
+let source = `
+  var a;
+  var b;
+`;
+
+let tree = parse(source);
+
+evaluate(tree);
