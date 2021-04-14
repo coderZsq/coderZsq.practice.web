@@ -1,0 +1,9 @@
+<script type="module" src="./SyntaxParser.js"></script>
+<textarea id="source">
+  a;
+</textarea>
+<button
+  onclick="console.log(js.evaluate(js.parse(document.getElementById('source').value)))"
+>
+  run
+</button>
