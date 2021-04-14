@@ -20,8 +20,8 @@ let syntax = {
   ],
   MultiplicativeExpression: [
     ['PrimaryExpression'],
-    ['AdditiveExpression', '*', 'PrimaryExpression'],
-    ['AdditiveExpression', '/', 'PrimaryExpression'],
+    ['MultiplicativeExpression', '*', 'PrimaryExpression'],
+    ['MultiplicativeExpression', '/', 'PrimaryExpression'],
   ],
   PrimaryExpression: [['(', 'Expression', ')'], ['Literal'], ['Identifier']],
   Literal: [['Number']],

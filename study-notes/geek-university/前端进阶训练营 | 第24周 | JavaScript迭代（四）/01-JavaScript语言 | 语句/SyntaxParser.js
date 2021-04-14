@@ -38,8 +38,8 @@ let syntax = {
   ],
   MultiplicativeExpression: [
     ['LeftHandSideExpression'],
-    ['AdditiveExpression', '*', 'LeftHandSideExpression'],
-    ['AdditiveExpression', '/', 'LeftHandSideExpression'],
+    ['MultiplicativeExpression', '*', 'LeftHandSideExpression'],
+    ['MultiplicativeExpression', '/', 'LeftHandSideExpression'],
   ],
   LeftHandSideExpression: [['CallExpression'], ['NewExpression']],
   CallExpression: [
