@@ -1,4 +1,15 @@
-import { ExecutionContext, Reference, Realm } from './runtime.js';
+import {
+  ExecutionContext,
+  Reference,
+  Realm,
+  JSObject,
+  JSNumber,
+  JSBoolean,
+  JSString,
+  JSUndefined,
+  JSNull,
+  JSSymbol,
+} from './runtime.js';
 
 export class Evaluator {
   constructor() {
@@ -17,7 +28,7 @@ export class Evaluator {
   IfStatement(node) {
     let condition = this.evaluate(node.children[2]);
     if (condition instanceof Reference) condition = condition.get();
-    if (condition) {
+    if (condition.toBoolean().value) {
       return this.evaluate(node.children[4]);
     }
   }
@@ -34,7 +45,7 @@ export class Evaluator {
   }
   VariableDeclaration(node) {
     let runningEC = this.ecs[this.ecs.length - 1];
-    runningEC.variableEnvironment[node.children[1].name];
+    runningEC.variableEnvironment[node.children[1].name] = new JSUndefined();
   }
   ExpressionStatement(node) {
     return this.evaluate(node.children[0]);
@@ -100,7 +111,7 @@ export class Evaluator {
 
     // console.log(value);
 
-    return Number(node.value);
+    return new JSNumber(node.value);
     // return this.evaluate(node.children[0]);
   }
   StringLiteral(node) {
@@ -133,16 +144,15 @@ export class Evaluator {
       }
     }
     // console.log(result);
-    return result.join('');
+    return new JSString(result);
   }
   ObjectLiteral(node) {
     if (node.children.length === 2) {
       return {};
     }
     if (node.children.length === 3) {
-      let object = new Map();
+      let object = new JSObject();
       this.PropertyList(node.children[1], object);
-      // object.prototype =
       return object;
     }
   }
@@ -167,6 +177,13 @@ export class Evaluator {
       enumerable: true,
       configable: true,
     });
+  }
+  BooleanLiteral(node) {
+    if (node.value === 'false') return new JSBoolean(false);
+    else return new JSBoolean(true);
+  }
+  null() {
+    return new JSNull();
   }
   AssignmentExpression(node) {
     if (node.children.length === 1) {
