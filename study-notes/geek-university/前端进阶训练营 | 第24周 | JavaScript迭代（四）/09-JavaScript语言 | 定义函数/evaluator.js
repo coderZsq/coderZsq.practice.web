@@ -30,6 +30,18 @@ export class Evaluator {
       ),
     ];
   }
+  evaluateModule(node) {
+    let globalEC = this.ecs[0];
+    let newEC = new ExecutionContext(
+      this.realm,
+      new EnvironmentRecord(globalEC.lexicalEnvironment),
+      new EnvironmentRecord(globalEC.lexicalEnvironment)
+    );
+    this.ecs.push(newEC);
+    let result = this.evaluate(node);
+    this.ecs.pop();
+    return result;
+  }
   evaluate(node) {
     if (this[node.type]) {
       return this[node.type](node);
@@ -299,7 +311,6 @@ export class Evaluator {
       return this.evaluate(node.children[0]);
     }
     if (node.children.length === 3) {
-      debugger;
       let obj = this.evaluate(node.children[0]).get();
       let prop = obj.get(node.children[2].name);
       if ('value' in prop) return prop.value;
@@ -339,5 +350,25 @@ export class Evaluator {
     let result = this.evaluate(node.children[1]);
     this.ecs.pop(newEC);
     return result;
+  }
+  FunctionDeclaration(node) {
+    let name = node.children[1].name;
+    let code = node.children[node.children.length - 2];
+    let func = new JSObject();
+    func.call = (args) => {
+      let newEC = new ExecutionContext(
+        this.realm,
+        new EnvironmentRecord(func.environment),
+        new EnvironmentRecord(func.environment)
+      );
+      this.ecs.push(newEC);
+      this.evaluate(code);
+      this.ecs.pop();
+    };
+    let runningEC = this.ecs[this.ecs.length - 1];
+    runningEC.lexicalEnvironment.add(name);
+    runningEC.lexicalEnvironment.set(name, func);
+    func.environment = runningEC.lexicalEnvironment;
+    return new CompletionRecord('normal');
   }
 }
