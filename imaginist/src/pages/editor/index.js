@@ -18,6 +18,7 @@ import { EDITOR_STORAGE } from '@/common/constants';
 import { MARKDOWN_PLACEHOLDER } from '@/common/constants';
 import { setArticle, uploadImg } from '@/service/article';
 import { BASE_URL } from '@/service/config';
+import { batch } from '@/service/request';
 
 export default memo(function SQEditorPage(props) {
   const [content, setContent] = useState({
@@ -74,30 +75,66 @@ export default memo(function SQEditorPage(props) {
   };
 
   const onDrop = (acceptedFiles) => {
-    const file = acceptedFiles[0];
-    if (/text\/markdown/.test(file.type)) {
-      const reader = new FileReader();
-      reader.onload = (e) => {
-        setContent({
-          edit: e.target.result,
-          preview: marked(e.target.result),
-        });
-      };
-      reader.readAsText(file);
-      return;
+    let mdFile = null;
+    let imgPaths = [];
+    let requests = [];
+    for (let file of acceptedFiles) {
+      if ('' === file.type) {
+        mdFile = file;
+      }
+      if (/image\/\w+/.test(file.type)) {
+        let co = file.path.split('/').reverse();
+        imgPaths.push(`${co[1]}/${co[0]}`);
+        requests.push(uploadImg({ img: file }));
+      }
     }
-    if (/image\/\w+/.test(file.type)) {
-      uploadImg({ img: file }).then((res) => {
-        let p = getCursorPosition(editRef.current.resizableTextArea.textArea);
-        const edit = `${content.edit.slice(0, p)}![](${BASE_URL}/${
-          res.data
-        })${content.edit.slice(p)}`;
-        setContent({
-          edit: edit,
-          preview: marked(edit),
+
+    const file = acceptedFiles[0];
+    if (imgPaths.length === 0) {
+      if (/text\/markdown/.test(file.type) || '' === file.type) {
+        const reader = new FileReader();
+        reader.onload = (e) => {
+          setContent({
+            edit: e.target.result,
+            preview: marked(e.target.result),
+          });
+        };
+        reader.readAsText(file);
+        return;
+      }
+    } else if (mdFile === null) {
+      if (/image\/\w+/.test(file.type)) {
+        uploadImg({ img: file }).then((res) => {
+          let p = getCursorPosition(editRef.current.resizableTextArea.textArea);
+          const edit = `${content.edit.slice(0, p)}![](${BASE_URL}/${
+            res.data
+          })${content.edit.slice(p)}`;
+          setContent({
+            edit: edit,
+            preview: marked(edit),
+          });
         });
+        return;
+      }
+    } else {
+      batch(requests, (...res) => {
+        const reader = new FileReader();
+        reader.readAsText(mdFile);
+        reader.onload = (e) => {
+          let edit = e.target.result;
+          for (let i = 0; i < imgPaths.length; i++) {
+            edit = edit.replace(
+              `./${imgPaths[i]}`,
+              `${BASE_URL}/${res[i].data}`
+            );
+            edit = edit.replace(`${imgPaths[i]}`, `${BASE_URL}/${res[i].data}`);
+          }
+          setContent({
+            edit: edit,
+            preview: marked(edit),
+          });
+        };
       });
-      return;
     }
   };
 

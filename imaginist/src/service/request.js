@@ -63,4 +63,9 @@ instance.interceptors.response.use(
     };
   }
 );
-export default instance;
+
+const batch = (requests, callback) => {
+  axios.all(requests).then(axios.spread(callback));
+};
+
+export { instance, batch };

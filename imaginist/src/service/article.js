@@ -1,4 +1,4 @@
-import request from './request';
+import { instance as request } from './request';
 
 export function getArticles(options) {
   const { type, page, size } = options;
