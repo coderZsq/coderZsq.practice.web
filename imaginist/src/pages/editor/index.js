@@ -4,6 +4,7 @@ import { Input, message, Switch } from 'antd';
 import marked from 'marked';
 
 import SQAppHeader from 'components/app-header';
+import SQGitHubBadge from '@/components/github-badge';
 import { SQEditPageWrapper } from './style';
 import { SQMarkdownWrapper } from '@/style/markdown.style';
 
@@ -175,6 +176,7 @@ export default memo(function SQEditorPage(props) {
 
   return (
     <SQEditPageWrapper>
+      <SQGitHubBadge />
       <SQAppHeader
         greeting="Record something..."
         editing={true}

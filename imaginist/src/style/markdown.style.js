@@ -7,6 +7,10 @@ export const SQMarkdownWrapper = styled.div`
     max-width: 100%;
   }
 
+  img {
+    display: block;
+  }
+
   pre {
     display: block;
     border-radius: 4px;
@@ -299,7 +303,7 @@ XCode style (c) Angel Garcia <angelgarcia.mail@gmail.com>
     border-radius: 3px;
     padding: 0;
     padding: 2px 4px 0px 4px;
-    font-size: 1em;
+    font-size: 1.06em;
   }
 
   code {

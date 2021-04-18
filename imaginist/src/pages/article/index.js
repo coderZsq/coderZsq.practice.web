@@ -4,6 +4,7 @@ import { Empty } from 'antd';
 import moment from 'moment';
 
 import SQAppHeader from 'components/app-header';
+import SQGitHubBadge from '@/components/github-badge';
 import { SQArticlePageWrapper } from './style';
 import { SQMiddleLayoutWrapper } from '@/style/layout.style';
 import { SQMarkdownWrapper } from '@/style/markdown.style';
@@ -29,6 +30,7 @@ export default memo(function SQArticlePage(props) {
 
   return (
     <SQMiddleLayoutWrapper>
+      <SQGitHubBadge />
       <SQAppHeader />
       {article === void 0 ? (
         <Empty image={Empty.PRESENTED_IMAGE_SIMPLE} />

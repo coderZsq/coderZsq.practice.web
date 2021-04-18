@@ -3,6 +3,7 @@ import { useDispatch, useSelector, shallowEqual } from 'react-redux';
 import { List } from 'antd';
 
 import SQAppHeader from 'components/app-header';
+import SQGitHubBadge from '@/components/github-badge';
 import SQArticle from 'components/article';
 import { SQMiddleLayoutWrapper } from '@/style/layout.style';
 
@@ -48,6 +49,7 @@ export default memo(function SQHomePage() {
 
   return (
     <SQMiddleLayoutWrapper>
+      <SQGitHubBadge />
       <SQAppHeader />
       <List
         dataSource={articles}

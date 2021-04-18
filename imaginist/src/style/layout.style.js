@@ -5,18 +5,18 @@ export const SQMiddleLayoutWrapper = styled.div`
   width: 100%;
   padding: 0 10px;
   @media (min-width: 576px) {
-    width: 90%;
+    width: 95%;
   }
   @media (min-width: 768px) {
-    width: 80%;
+    width: 85%;
   }
   @media (min-width: 992px) {
-    width: 70%;
+    width: 75%;
   }
   @media (min-width: 1200px) {
-    width: 60%;
+    width: 65%;
   }
   @media (min-width: 1600px) {
-    width: 50%;
+    width: 55%;
   }
 `;
