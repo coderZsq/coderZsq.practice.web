@@ -209,7 +209,7 @@ export default memo(function SQEditorPage(props) {
       </div>
       <div className="info">
         <div className="left">
-          <div>阅读时长 {parseInt(wordCount(content.edit) / 350)} 分钟</div>
+          <div>阅读时长 {Math.ceil(wordCount(content.edit) / 350)} 分钟</div>
           <div>字数: {wordCount(content.edit)} 字</div>
         </div>
         <div className="right">

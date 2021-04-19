@@ -2,9 +2,9 @@ import styled from 'styled-components';
 
 export const SQGitHubBadgeWrapper = styled.div`
   svg {
-    fill: #333;
+    fill: #35363a;
     color: #fff;
-    position: absolute;
+    position: fixed;
     top: 0;
     border: 0;
     right: 0;

@@ -8,6 +8,8 @@ export default memo(function SQGitHubBadge(props) {
         href="https://github.com/coderZsq"
         className="github-corner"
         aria-label="View source on GitHub"
+        target="_blank"
+        rel="noreferrer"
       >
         <svg width="45" height="45" viewBox="0 0 250 250" aria-hidden="true">
           <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path>
