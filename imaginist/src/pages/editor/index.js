@@ -16,12 +16,16 @@ import {
   removeLocalStorage,
 } from '@/common/util/storages';
 import { EDITOR_STORAGE } from '@/common/constants';
-import { MARKDOWN_PLACEHOLDER } from '@/common/constants';
+import {
+  MARKDOWN_PLACEHOLDER,
+  MARKDOWN_PLACEHOLDER_PREVIEW,
+} from '@/common/constants';
 import { setArticle, uploadImg } from '@/service/article';
 import { BASE_URL } from '@/service/config';
 import { batch } from '@/service/request';
 
 export default memo(function SQEditorPage(props) {
+  console.log(marked(MARKDOWN_PLACEHOLDER));
   const [content, setContent] = useState({
     edit: getLocalStorage(EDITOR_STORAGE).edit || '',
     preview: getLocalStorage(EDITOR_STORAGE).preview || '',
@@ -202,7 +206,7 @@ export default memo(function SQEditorPage(props) {
           dangerouslySetInnerHTML={{
             __html:
               content.preview.length === 0
-                ? marked(MARKDOWN_PLACEHOLDER)
+                ? MARKDOWN_PLACEHOLDER_PREVIEW
                 : content.preview,
           }}
         ></SQMarkdownWrapper>
