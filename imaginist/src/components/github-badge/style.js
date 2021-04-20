@@ -4,7 +4,7 @@ export const SQGitHubBadgeWrapper = styled.div`
   svg {
     fill: #35363a;
     color: #fff;
-    position: fixed;
+    position: absolute;
     top: 0;
     border: 0;
     right: 0;

@@ -10,10 +10,15 @@ const defaultState = Map({
 function reducer(state = defaultState, action) {
   switch (action.type) {
     case actionTypes.CHANGE_ARTICLES:
-      return state.set(
-        'articles',
-        state.get('articles').concat(action.articles)
-      );
+      let result = null;
+      const key = 'articles';
+      const value = action.articles;
+      if (action.reload) {
+        result = state.set(key, value);
+      } else {
+        result = state.set(key, state.get(key).concat(value));
+      }
+      return result;
     case actionTypes.CHANGE_ARTICLE:
       return state.set('article', action.article);
     default:

@@ -22,7 +22,7 @@ export default memo(function SQHomePage() {
     shallowEqual
   );
 
-  let totalPage = useRef(-Infinity);
+  const totalPageRef = useRef(-Infinity);
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -32,16 +32,18 @@ export default memo(function SQHomePage() {
         {
           page,
           size: HOME_ARTICLES_SIZE,
+          reload: page === 1,
         },
         (count) => {
-          totalPage.current = Math.floor((count - 1) / HOME_ARTICLES_SIZE) + 1;
+          totalPageRef.current =
+            Math.floor((count - 1) / HOME_ARTICLES_SIZE) + 1;
         }
       )
     );
   }, [dispatch, page]);
 
   useLoadMore(() => {
-    if (page < totalPage.current && renderedRef.current) {
+    if (page < totalPageRef.current && renderedRef.current) {
       renderedRef.current = false;
       setPage(page + 1);
     }

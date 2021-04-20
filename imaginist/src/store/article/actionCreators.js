@@ -2,9 +2,10 @@ import * as actionTypes from './constants';
 
 import { getArticles, getArticle } from '@/service/article';
 
-const changeArticlesAction = (res) => ({
+const changeArticlesAction = (res, reload) => ({
   type: actionTypes.CHANGE_ARTICLES,
   articles: res.data,
+  reload,
 });
 
 const changeArticleAction = (res) => ({
@@ -13,9 +14,10 @@ const changeArticleAction = (res) => ({
 });
 
 export const getArticlesAction = (options, callBack) => {
+  const { reload } = options;
   return (dispatch) => {
     getArticles(options).then((res) => {
-      dispatch(changeArticlesAction(res));
+      dispatch(changeArticlesAction(res, reload));
       callBack(res.count);
     });
   };

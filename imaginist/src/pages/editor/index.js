@@ -25,7 +25,6 @@ import { BASE_URL } from '@/service/config';
 import { batch } from '@/service/request';
 
 export default memo(function SQEditorPage(props) {
-  console.log(marked(MARKDOWN_PLACEHOLDER));
   const [content, setContent] = useState({
     edit: getLocalStorage(EDITOR_STORAGE).edit || '',
     preview: getLocalStorage(EDITOR_STORAGE).preview || '',
@@ -144,14 +143,6 @@ export default memo(function SQEditorPage(props) {
   };
 
   const onConfirm = () => {
-    if (content.edit.length === 0) {
-      message.error('您还没有写任何文字呢~');
-      return;
-    }
-    if (content.edit.indexOf('\n') < 0) {
-      message.error('请您尝试再多写点文字吧~');
-      return;
-    }
     const edit = content.edit;
     let split = 0;
     for (let i = 0; i < edit.length; i++) {
@@ -160,16 +151,24 @@ export default memo(function SQEditorPage(props) {
         break;
       }
     }
+    if (!split) {
+      message.error('标题还没有灵感吗~');
+      return;
+    }
+    const preview = marked(edit.slice(split + 1));
+    if (!preview) {
+      message.error('试试用金字塔原理构建文章~');
+      return;
+    }
     const option = {
       title: /#{0,}(.*)/.exec(edit.slice(0, split))[1].trim(),
       type: 'doc',
       content: edit,
-      preview: marked(edit.slice(split + 1)),
+      preview,
       words: wordCount(edit),
       duration: parseInt(wordCount(edit) / 350),
       date: new Date().getTime(),
     };
-
     message.loading({ content: '发布文章中...', key: 'publish' });
     setArticle(option).then((res) => {
       props.history.push(`/article/${res.data}`);
