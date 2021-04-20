@@ -9,6 +9,7 @@ export const SQMarkdownWrapper = styled.div`
 
   img {
     display: block;
+    margin: 0 auto;
   }
 
   pre {

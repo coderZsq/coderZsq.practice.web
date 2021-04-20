@@ -166,7 +166,7 @@ export default memo(function SQEditorPage(props) {
       content: edit,
       preview,
       words: wordCount(edit),
-      duration: parseInt(wordCount(edit) / 350),
+      duration: Math.ceil(wordCount(edit) / 350),
       date: new Date().getTime(),
     };
     message.loading({ content: '发布文章中...', key: 'publish' });
