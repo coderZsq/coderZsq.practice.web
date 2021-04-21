@@ -4,8 +4,7 @@ export const SQMarkdownWrapper = styled.div`
   a,
   p,
   img {
-    width: 100%;
-    max-width: 850px;
+    max-width: 100%;
   }
 
   img {
