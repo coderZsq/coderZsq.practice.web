@@ -71,7 +71,7 @@ export default memo(function SQEditorPage(props) {
     });
   };
 
-  const onChange = (e) => {
+  const onDropzoneChange = (e) => {
     setContent({
       edit: e.target.value,
       preview: marked(e.target.value),
@@ -177,6 +177,16 @@ export default memo(function SQEditorPage(props) {
     });
   };
 
+  const onSwitchChange = () => {
+    previewRef.current.style = `display: ${
+      !previewed ? 'inline-block' : 'none'
+    }`;
+    editRef.current.resizableTextArea.textArea.style = `display: ${
+      previewed ? 'inline-block' : 'none'
+    }`;
+    setPreviewed(!previewed);
+  };
+
   return (
     <SQEditPageWrapper>
       <SQGitHubBadge />
@@ -193,7 +203,7 @@ export default memo(function SQEditorPage(props) {
               ref={editRef}
               autoFocus={true}
               className="item edit"
-              onChange={onChange}
+              onChange={onDropzoneChange}
               value={content.edit}
               placeholder={MARKDOWN_PLACEHOLDER}
             ></Input.TextArea>
@@ -219,15 +229,7 @@ export default memo(function SQEditorPage(props) {
           <Switch
             checkedChildren="预览模式"
             unCheckedChildren="编辑模式"
-            onChange={() => {
-              previewRef.current.style = `display: ${
-                !previewed ? 'inline-block' : 'none'
-              }`;
-              editRef.current.resizableTextArea.textArea.style = `display: ${
-                previewed ? 'inline-block' : 'none'
-              }`;
-              setPreviewed(!previewed);
-            }}
+            onChange={onSwitchChange}
           ></Switch>
         </div>
       </div>
