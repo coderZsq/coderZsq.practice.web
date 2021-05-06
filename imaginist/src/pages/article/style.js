@@ -16,6 +16,11 @@ export const SQArticlePageWrapper = styled.div`
     justify-content: center;
     align-items: center;
 
+    .link {
+      color: #4183c4;
+      cursor: pointer;
+    }
+
     .item {
       margin: 0 10px 0 0;
     }

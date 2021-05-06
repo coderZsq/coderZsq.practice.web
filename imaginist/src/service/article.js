@@ -12,7 +12,8 @@ export function getArticles(options) {
   });
 }
 
-export function getArticle(id) {
+export function getArticle(options) {
+  const { id } = options;
   return request({
     url: '/articles',
     params: {
@@ -36,6 +37,16 @@ export function setArticle(options) {
       date,
     },
     method: 'post',
+  });
+}
+
+export function getEditArticle(options) {
+  const { id } = options;
+  return request({
+    url: '/articles/edit',
+    params: {
+      id,
+    },
   });
 }
 

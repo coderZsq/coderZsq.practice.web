@@ -10,6 +10,10 @@ import { SQMiddleLayoutWrapper } from '@/style/layout.style';
 import { SQMarkdownWrapper } from '@/style/markdown.style';
 
 import { getArticleAction } from '@/store/article/actionCreators';
+import { getEditArticle } from '@/service/article';
+
+import { EDITOR_STORAGE } from '@/common/constants';
+import { setLocalStorage } from '@/common/util/storages';
 
 export default memo(function SQArticlePage(props) {
   const { id } = props.match.params;
@@ -25,8 +29,18 @@ export default memo(function SQArticlePage(props) {
 
   useEffect(() => {
     document.documentElement.scrollTop = 0;
-    dispatch(getArticleAction(id));
+    dispatch(getArticleAction({ id }));
   }, [dispatch, id]);
+
+  const onClick = () => {
+    getEditArticle({ id }).then((res) => {
+      setLocalStorage(EDITOR_STORAGE, {
+        edit: res.data.content,
+        preview: `<h1>${res.data.title}</h1>\n${res.data.preview}`,
+      });
+      props.history.push(`/editor/${id}`);
+    });
+  };
 
   return (
     <SQMiddleLayoutWrapper>
@@ -45,6 +59,9 @@ export default memo(function SQArticlePage(props) {
               读完需要 {article.duration} 分钟
             </div>
             <div className="item words">共 {article.words} 字</div>
+            <div className="link" onClick={onClick}>
+              编辑
+            </div>
           </div>
           <SQMarkdownWrapper
             className="content"

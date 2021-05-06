@@ -20,6 +20,10 @@ const routes = [
     component: SQArticlePage,
   },
   {
+    path: '/editor/:id',
+    component: SQEditorPage,
+  },
+  {
     path: '/editor',
     component: SQEditorPage,
   },

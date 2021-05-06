@@ -24,7 +24,7 @@ export default memo(function SQArticle(props) {
 
   return (
     <SQArticleWrapper>
-      <NavLink to={'article/' + id}>
+      <NavLink to={'/article/' + id}>
         <div className="title">{title}</div>
       </NavLink>
       <div className="info">

@@ -23,9 +23,9 @@ export const getArticlesAction = (options, callBack) => {
   };
 };
 
-export const getArticleAction = (id) => {
+export const getArticleAction = (options) => {
   return (dispatch) => {
-    getArticle(id).then((res) => {
+    getArticle(options).then((res) => {
       dispatch(changeArticleAction(res));
     });
   };
