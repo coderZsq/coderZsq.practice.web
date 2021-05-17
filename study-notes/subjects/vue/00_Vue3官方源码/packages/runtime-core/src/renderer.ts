@@ -470,10 +470,11 @@ function baseCreateRenderer(
 
   // Note: functions inside this closure should use `const xxx = () => {}`
   // style in order to prevent being inlined by minifiers.
+  // createApp -> vnode -> element
   const patch: PatchFn = (
-    n1,
-    n2,
-    container,
+    n1, // n1 表示旧的vode, 当n1为null时就表示一次挂载(挂载还是更新是n1决定的)
+    n2, // n2 表示新的vode, 根据n2的type进行不同的处理
+    container, // 渲染后会将vnode渲染到container上
     anchor = null,
     parentComponent = null,
     parentSuspense = null,
@@ -482,6 +483,7 @@ function baseCreateRenderer(
     optimized = false
   ) => {
     // patching & not same type, unmount old tree
+    // 如果新的节点和旧的节点类型不同, 纳闷会销毁整个子节点树
     if (n1 && !isSameVNodeType(n1, n2)) {
       anchor = getNextHostNode(n1)
       unmount(n1, parentComponent, parentSuspense, true)

@@ -15,6 +15,7 @@
         <h2>{{counter}}</h2>
         <button @click="increment">+1</button>
         <button @click="decrement">-1</button>
+        <button @click="btnClick">按钮</button>
       </div>
     </template>
 
@@ -37,6 +38,18 @@
           decrement() {
             console.log('点击了-1');
             this.counter--;
+          },
+          btnClick: () => {
+            // this === window? 不可以
+            // 写成一个箭头函数时, 这个this就是window
+            // 在箭头函数中是不绑定this, 但是函数中如果使用了this
+            console.log(this);
+          },
+          btn2Click: function () {
+            // this === window? 不可以
+            // 写成一个箭头函数时, 这个this就是window
+            // 在箭头函数中是不绑定this, 但是函数中如果使用了this
+            console.log(this);
           },
         },
       }).mount('#app');

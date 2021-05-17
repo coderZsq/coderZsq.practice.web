@@ -719,9 +719,11 @@ function finishComponentSetup(
   }
 
   // support for 2.x options
+  // 为了支持vue2.x的options
   if (__FEATURE_OPTIONS_API__) {
     currentInstance = instance
     pauseTracking()
+    // 应用对应的options
     applyOptions(instance, Component)
     resetTracking()
     currentInstance = null
