@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="app"></div>
+
+    <template id="my-app">
+      <!-- :style="{cssPropertyName: cssPropertyValue}" -->
+      <div :style="{color: finalColor, 'font-size': '30px'}">哈哈哈哈</div>
+      <div :style="{color: finalColor, fontSize: '30px'}">哈哈哈哈</div>
+      <div :style="{color: finalColor, fontSize: finalFontSize + 'px'}">
+        哈哈哈哈
+      </div>
+
+      <!-- 绑定一个data钟的属性值, 并且是一个对象 -->
+      <div :style="finalStyleObj">呵呵呵呵</div>
+      <!-- 调用一个方法 -->
+      <div :style="getFinalStyleObj()">呵呵呵呵</div>
+    </template>
+
+    <script src="../js/vue.js"></script>
+    <script>
+      const App = {
+        template: '#my-app',
+        data() {
+          return {
+            message: 'Hello World',
+            finalColor: 'red',
+            finalFontSize: 50,
+            finalStyleObj: {
+              'font-size': '50px',
+              fontWeight: 700,
+              backgroundColor: 'red',
+            },
+          };
+        },
+        methods: {
+          getFinalStyleObj() {
+            return {
+              'font-size': '50px',
+              fontWeight: 700,
+              backgroundColor: 'red',
+            };
+          },
+        },
+      };
+
+      Vue.createApp(App).mount('#app');
+    </script>
+  </body>
+</html>
