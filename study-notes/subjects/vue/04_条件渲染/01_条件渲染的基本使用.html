@@ -10,10 +10,8 @@
     <div id="app"></div>
 
     <template id="my-app">
-      <!-- 默认传入event对象, 可以在方法中获取 -->
-      <button @click="btn1Click">按钮1</button>
-      <!-- $event可以获取到事件发生时的事件对象 -->
-      <button @click="btn2Click($event, 'coderZsq', 18)">按钮2</button>
+      <h2 v-if="isShow">哈哈哈哈</h2>
+      <button @click="toggle">切换</button>
     </template>
 
     <script src="../js/vue.js"></script>
@@ -23,19 +21,21 @@
         data() {
           return {
             message: 'Hello World',
+            isShow: true,
           };
         },
         methods: {
-          btn1Click(event) {
-            console.log(event);
-          },
-          btn2Click(event, name, age) {
-            console.log(name, age, event);
+          toggle() {
+            this.isShow = !this.isShow;
           },
         },
       };
 
       Vue.createApp(App).mount('#app');
+
+      // JavaScript条件判断
+      if (true) {
+      }
     </script>
   </body>
 </html>
