@@ -28,12 +28,19 @@
           };
         },
         watch: {
+          info(newValue, oldValue) {
+            console.log(newValue, oldValue);
+          },
           'info.name': function (newName, oldName) {
             console.log(newName, oldName);
           },
           'friends[0].name': function (newName, oldName) {
             console.log(newName, oldName);
           },
+          // friends: {
+          //   handler(newFriends, oldFriends) {},
+          //   deep: true,
+          // },
         },
         methods: {
           changeInfo() {

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script src="https://cdn.jsdeliver.net/npm/lodash@4.17.21/lodash.min.js"></script>
+
+    <!-- 1. 对象的引用赋值 -->
+    <script>
+      // 对象的引用类型
+      // const info = { name: 'sq', age: 18 };
+      // const obj = info;
+      // info.name = 'kobe';
+      // console.log(obj.name);
+    </script>
+
+    <!-- 2. 对象的浅拷贝 -->
+    <script>
+      // const info = { name: 'sq', age: 18, friend: { name: 'kobe' } };
+      // const obj = Object.assign({}, info);
+
+      // lodash
+      const obj = _.clone(info);
+
+      // info.name = 'kobe';
+      // console.log(obj.name);
+
+      // info.friend.name = 'james';
+      // console.log(obj.friend.name);
+    </script>
+
+    <!-- 3. 对象的深拷贝 -->
+    <script>
+      // _.cloneDeep(info)
+
+      // const info = { name: 'sq', age: 18, friend: { name: 'kobe' } };
+      // const obj = JSON.parse(JSON.stringify(info));
+      // info.friend.name = 'james';
+      // console.log(obj.friend.name);
+    </script>
+  </body>
+</html>
