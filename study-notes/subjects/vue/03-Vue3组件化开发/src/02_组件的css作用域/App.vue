@@ -1,9 +1,23 @@
 <template>
-  <h2>App</h2>
+  <h2 class="title">App</h2>
+  <hello-world></hello-world>
 </template>
 
 <script>
-export default {};
+import HelloWorld from './HelloWorld.vue';
+export default {
+  components: {
+    HelloWorld,
+  },
+};
 </script>
 
-<style scoped></style>
+<style scoped>
+h2 {
+  color: red;
+}
+
+.title {
+  color: blue;
+}
+</style>
