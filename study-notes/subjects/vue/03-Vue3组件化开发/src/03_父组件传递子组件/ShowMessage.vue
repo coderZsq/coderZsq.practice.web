@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h2>{{ title }}</h2>
+    <h2 v-bind="$attrs">{{ title }}</h2>
     <p>{{ content }}</p>
   </div>
 </template>
@@ -8,6 +8,7 @@
 <script>
 export default {
   // props: ['title', 'content'],
+  inheritAttrs: false,
   props: {
     title: String,
     content: {
