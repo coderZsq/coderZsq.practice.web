@@ -1,32 +1,34 @@
 <template>
   <div>
-    Home Page
-    <h2>{{ message }}</h2>
-    <h2>当前计数: {{ counter }}</h2>
-    <button @click="increment">+1</button>
+    <button @click="updateState">修改状态</button>
   </div>
 </template>
 
 <script>
-import { ref } from 'vue';
+import { reactive, ref, readonly } from 'vue';
 
 export default {
-  props: {
-    message: {
-      type: String,
-      required: true,
-    },
-  },
   setup() {
-    let counter = 100;
-    // 局部函数
-    const increment = () => {
-      counter++;
-      console.log(counter);
+    // 1. 普通对象
+    const info1 = { name: 'sq' };
+    const readonlyInfo1 = readonly(info1);
+
+    // 2. 响应式对象reactive
+    const info2 = reactive({
+      name: 'sq',
+    });
+    const readonlyInfo2 = readonly(info2);
+
+    // 3. 响应式对象ref
+    const info3 = ref('sq');
+    const readonlyInfo3 = readonly(info3);
+
+    const updateState = () => {
+      // readonlyInfo3.value = 'coderZsq';
+      info3.value = 'coderZsq';
     };
     return {
-      counter,
-      increment,
+      updateState,
     };
   },
 };
