@@ -1,5 +1,5 @@
 import { createApp } from 'vue';
-import App from './07_computed和watch/App.vue';
+import App from './10_compositionAPI练习/App.vue';
 import 'animate.css';
 
 const app = createApp(App);
