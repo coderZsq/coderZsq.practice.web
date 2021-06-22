@@ -5,6 +5,9 @@
     <button @click="increment">+1</button>
     <button @click="decrement">-1</button>
 
+    <h2>{{ data }}</h2>
+    <button @click="changeData">修改data</button>
+
     <p class="content"></p>
     <div class="scroll">
       <div class="scroll-x">scrollX: {{ scrollX }}</div>
@@ -19,10 +22,13 @@
 
 <script>
 import { ref, computed } from 'vue';
-import useCounter from './hooks/useCounter';
-import useTitle from './hooks/useTitle';
-import useScrollPosition from './hooks/useScrollPosition';
-import useMousePosition from './hooks/useMousePosition';
+import {
+  useCounter,
+  useLocalStorage,
+  useMousePosition,
+  useScrollPosition,
+  useTitle,
+} from './hooks';
 export default {
   setup() {
     const { counter, doubleCounter, increment, decrement } = useCounter();
@@ -39,6 +45,10 @@ export default {
     // 鼠标位置
     const { mouseX, mouseY } = useMousePosition();
 
+    // localStorage
+    const data = useLocalStorage('info', { name: 'coderZsq', age: 18 });
+    const changeData = () => (data.value = '哈哈哈哈');
+
     return {
       counter,
       doubleCounter,
@@ -48,6 +58,8 @@ export default {
       scrollY,
       mouseX,
       mouseY,
+      data,
+      changeData,
     };
   },
 };
