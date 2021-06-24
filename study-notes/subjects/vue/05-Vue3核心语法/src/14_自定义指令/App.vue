@@ -1,47 +1,14 @@
 <template>
-  <div>
-    <button v-if="counter < 2" v-sq @click="increment">
-      当前计数: {{ counter }}
-    </button>
-  </div>
+  <h2 v-format-time="'YYYY/MM/DD'">{{ timestamp }}</h2>
 </template>
 
 <script>
-import { ref } from 'vue';
-
 export default {
-  // 局部指令
-  directives: {
-    sq: {
-      created(el, bindings, vnode, preVnode) {
-        console.log('sq created', el, bindings, vnode, preVnode);
-      },
-      beforeMount() {
-        console.log('sq beforeMount');
-      },
-      mounted() {
-        console.log('sq mounted');
-      },
-      beforeUpdate() {
-        console.log('sq beforeUpdate');
-      },
-      updated() {
-        console.log('sq updated');
-      },
-      beforeUnmount() {
-        console.log('sq beforeUnmount');
-      },
-      unmounted() {
-        console.log('sq unmounted');
-      },
-    },
-  },
   setup() {
-    const counter = ref(0);
-    const increment = () => counter.value++;
+    const timestamp = 1624452193;
+
     return {
-      counter,
-      increment,
+      timestamp,
     };
   },
 };

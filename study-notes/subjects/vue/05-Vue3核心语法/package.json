@@ -9,6 +9,7 @@
   "dependencies": {
     "animate.css": "^4.1.1",
     "core-js": "^3.6.5",
+    "dayjs": "^1.10.5",
     "gsap": "^3.7.0",
     "lodash": "^4.17.21",
     "vue": "^3.0.0"
