@@ -11,13 +11,22 @@
     <script src="./renderer.js"></script>
     <script>
       // 1. 通过h函数来创建一个vnode
-      const vnode = h('div', { class: 'sq' }, [
+      const vnode = h('div', { class: 'sq', id: 'aaa' }, [
         h('h2', null, '当前计数: 100'),
         h('button', { onClick: function () {} }, '+1'),
       ]); // vdom
 
       // 2. 通过mount函数, 将vnode挂载到div#app上
       mount(vnode, document.querySelector('#app'));
+
+      // 3. 创建新的vnode
+      setTimeout(() => {
+        const vnode1 = h('div', { class: 'coderZsq', id: 'aaa' }, [
+          h('h2', null, '呵呵呵'),
+          h('button', { onClick: function () {} }, '-1'),
+        ]);
+        patch(vnode, vnode1);
+      }, 2000);
     </script>
   </body>
 </html>

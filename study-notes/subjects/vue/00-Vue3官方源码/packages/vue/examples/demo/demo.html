@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app"></div>
+
+    <template id="my-app">
+        <div>coderZsq</div>
+        <h2>coderZsq</h2>
+        <p>{{message}}</p>
+        <button @click="changeMessage">修改message</button>
+    </template>
+
+    <script src="../../dist/vue.global.js"></script>
+    <script>
+        // 1. 定义的根组件
+        const App = {
+            template: `#my-app`,
+            data() {
+                return {
+                    message: 'Hello World'
+                }
+            },
+            methods: {
+                changeMessage() {
+                    this.message = '你好啊, 李银河'
+                }
+            },
+        }
+
+        // 2. 将App组件交给Vue开始处理
+        // 2.1. createApp(App)函数
+        const app = Vue.createApp(App)
+        // 2.2. 调用app的mount函数
+        app.mount('#app')
+    </script>
+</body>
+</html>
