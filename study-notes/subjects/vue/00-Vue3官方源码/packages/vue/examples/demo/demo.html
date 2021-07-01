@@ -9,6 +9,7 @@
 <body>
     <div id="app"></div>
 
+    <!-- 在Vue中的数据更新是组件级别 -->
     <template id="my-app">
         <div>coderZsq</div>
         <h2>coderZsq</h2>
@@ -31,6 +32,37 @@
                     this.message = '你好啊, 李银河'
                 }
             },
+            setup() {
+                const message = Vue.ref('哈哈哈')
+
+                return {
+                    message
+                }
+            },
+            beforeCreate() {
+                
+            },
+            created() {
+                
+            },
+            beforeMount() {
+                
+            },
+            mounted() {
+                
+            },
+            beforeUpdate() {
+                
+            },
+            updated() {
+                
+            },
+            beforeUnmount() {
+                
+            },
+            unmounted() {
+                
+            }
         }
 
         // 2. 将App组件交给Vue开始处理
