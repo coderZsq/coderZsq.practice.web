@@ -1,26 +1,59 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <div id="app">
+    <router-link to="/home">首页</router-link>
+    <router-link to="/about">关于</router-link>
+    <router-link to="/user/kobe/id/111">用户</router-link>
+
+    <button @click="jumpToAbout">关于</button>
+    <button @click="forwardOneStep">前进一步</button>
+
+    <router-view />
+  </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import { useRouter } from 'vue-router';
 
 export default {
   name: 'App',
-  components: {
-    HelloWorld
-  }
-}
+  components: {},
+  methods: {
+    // jumpToAbout() {
+    //   // router
+    //   this.$router.push('/about');
+    // },
+  },
+  setup() {
+    const router = useRouter();
+
+    const jumpToAbout = () => {
+      // router.push('/about');
+      // router.push({
+      //   path: '/about',
+      //   query: {
+      //     name: 'sq',
+      //     age: 18,
+      //   },
+      // });
+      // router.replace('/about');
+    };
+
+    const forwardOneStep = () => {
+      router.go(1);
+      // router.go(-1);
+      // router.forward();
+      // router.back();
+    };
+
+    return {
+      jumpToAbout,
+    };
+  },
+};
 </script>
 
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+.sq-active {
+  color: red;
 }
 </style>
