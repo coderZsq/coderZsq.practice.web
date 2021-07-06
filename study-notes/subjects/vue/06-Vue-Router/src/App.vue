@@ -1,22 +1,41 @@
 <template>
   <div id="app">
-    <router-link to="/home">首页</router-link>
+    <!-- props: href 跳转的链接 -->
+    <!-- props: route对象 -->
+    <!-- props: navigate导航函数 -->
+    <!-- props: isActive 是否处于活跃的状态 -->
+    <!-- props: isExactActive 是否当前处于精确的活跃状态 -->
+    <router-link to="/home" v-slot="props" custom>
+      <button @click="props.navigate">{{ props.href }}</button>
+      <button @click="props.navigate">哈哈哈</button>
+      <span :class="{ active: props.isActive }">{{ props.isActive }}</span>
+      <span :class="{ active: props.isActive }">{{ props.isExactActive }}</span>
+      <!-- <p>{{ props.route }}</p> -->
+    </router-link>
     <router-link to="/about">关于</router-link>
     <router-link to="/user/kobe/id/111">用户</router-link>
+    <router-link to="/category">分类</router-link>
 
     <button @click="jumpToAbout">关于</button>
     <button @click="forwardOneStep">前进一步</button>
 
-    <router-view />
+    <router-view v-slot="props">
+      <!-- <transition name="sq"> -->
+      <keep-alive>
+        <component :is="props.Component"></component>
+      </keep-alive>
+      <!-- </transition> -->
+    </router-view>
   </div>
 </template>
 
 <script>
 import { useRouter } from 'vue-router';
+import NavBar from './components/NavBar.vue';
 
 export default {
   name: 'App',
-  components: {},
+  components: { NavBar },
   methods: {
     // jumpToAbout() {
     //   // router
@@ -55,5 +74,15 @@ export default {
 <style>
 .sq-active {
   color: red;
+}
+
+.sq-enter-from,
+.sq-leave-to {
+  opacity: 0;
+}
+
+.sq-enter-active,
+.sq-leave-active {
+  transition: opacity 1s ease;
 }
 </style>

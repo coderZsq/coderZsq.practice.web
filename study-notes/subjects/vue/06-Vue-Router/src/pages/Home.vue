@@ -11,6 +11,7 @@
 
     <router-link to="/home/message">消息</router-link>
     <router-link to="/home/shops">商品</router-link>
+    <router-link to="/home/moment">动态</router-link>
   </div>
 </template>
 
