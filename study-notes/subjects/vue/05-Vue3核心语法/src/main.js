@@ -1,5 +1,5 @@
 import { createApp } from 'vue';
-import App from './15_teleport内置组件/App.vue';
+import App from './14_自定义指令/App.vue';
 import 'animate.css';
 import registerDirectives from './directives';
 import pluginObject from './plugins/plugins_object';

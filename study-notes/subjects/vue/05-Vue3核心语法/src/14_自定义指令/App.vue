@@ -1,5 +1,11 @@
 <template>
   <h2 v-format-time="'YYYY/MM/DD'">{{ timestamp }}</h2>
+
+  <h2 v-format-time>{{ timestamp }}</h2>
+  <h2 v-format-time>{{ timestamp }}</h2>
+  <h2 v-format-time>{{ timestamp }}</h2>
+  <h2 v-format-time>{{ timestamp }}</h2>
+  <h2 v-format-time>{{ timestamp }}</h2>
 </template>
 
 <script>
