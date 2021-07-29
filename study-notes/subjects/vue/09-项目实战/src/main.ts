@@ -2,7 +2,8 @@ import { createApp } from 'vue'
 
 import { globalRegister } from './global'
 
-import './service/axios_demo'
+// import './service/axios_demo'
+import sqRequest from './service'
 
 // 全局引入
 // import ElementPlus from 'element-plus'
@@ -25,3 +26,37 @@ app.mount('#app')
 
 console.log(process.env.VUE_APP_BASE_URL)
 console.log(process.env.VUE_APP_BASE_NAME)
+
+// sqRequest.request({
+//   url: '/home/multidata',
+//   method: 'GET',
+//   interceptors: {
+//     requestInterceptor: (config) => {
+//       console.log('单独请求的config')
+//       return config
+//     },
+//     responseInterceptor: (res) => {
+//       console.log('单独相应的response')
+//       return res
+//     }
+//   }
+// })
+
+interface DataType {
+  data: any
+  returnCode: string
+  success: boolean
+}
+
+sqRequest
+  .get<DataType>({
+    url: '/home/multidata',
+    showLoading: false
+  })
+  .then((res) => {
+    console.log(res.data)
+    console.log(res.returnCode)
+    console.log(res.success)
+  })
+
+// sqRequest.get()
