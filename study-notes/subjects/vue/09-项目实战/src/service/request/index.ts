@@ -79,7 +79,7 @@ class SQRequest {
     )
   }
 
-  request<T>(config: SQRequestConfig): Promise<T> {
+  request<T>(config: SQRequestConfig<T>): Promise<T> {
     return new Promise((resolve, reject) => {
       // 1. 单个请求对请求config的处理
       if (config.interceptors?.requestInterceptor) {
@@ -113,19 +113,19 @@ class SQRequest {
     })
   }
 
-  get<T>(config: SQRequestConfig): Promise<T> {
+  get<T>(config: SQRequestConfig<T>): Promise<T> {
     return this.request<T>({ ...config, method: 'GET' })
   }
 
-  post<T>(config: SQRequestConfig): Promise<T> {
+  post<T>(config: SQRequestConfig<T>): Promise<T> {
     return this.request<T>({ ...config, method: 'POST' })
   }
 
-  delete<T>(config: SQRequestConfig): Promise<T> {
+  delete<T>(config: SQRequestConfig<T>): Promise<T> {
     return this.request<T>({ ...config, method: 'DELETE' })
   }
 
-  patch<T>(config: SQRequestConfig): Promise<T> {
+  patch<T>(config: SQRequestConfig<T>): Promise<T> {
     return this.request<T>({ ...config, method: 'PATCH' })
   }
 }

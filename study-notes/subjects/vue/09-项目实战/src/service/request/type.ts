@@ -1,13 +1,13 @@
 import type { AxiosRequestConfig, AxiosResponse } from 'axios'
 
-export interface SQRequestInterceptors {
+export interface SQRequestInterceptors<T = AxiosResponse> {
   requestInterceptor?: (config: AxiosRequestConfig) => AxiosRequestConfig
   requestInteceptorCatch?: (error: any) => any
-  responseInterceptor?: (res: any) => any
+  responseInterceptor?: (res: T) => T
   responseInterceptorCatch?: (error: any) => any
 }
 
-export interface SQRequestConfig extends AxiosRequestConfig {
-  interceptors?: SQRequestInterceptors
+export interface SQRequestConfig<T = AxiosResponse> extends AxiosRequestConfig {
+  interceptors?: SQRequestInterceptors<T>
   showLoading?: boolean
 }

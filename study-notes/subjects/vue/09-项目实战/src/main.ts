@@ -1,6 +1,7 @@
 import { createApp } from 'vue'
-
 import { globalRegister } from './global'
+import 'normalize.css'
+import './assets/css/index.less'
 
 // import './service/axios_demo'
 import sqRequest from './service'
