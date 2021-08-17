@@ -9,7 +9,12 @@
           <el-button icon="el-icon-refresh" @click="handleResetClick"
             >重置</el-button
           >
-          <el-button type="primary" icon="el-icon-search">搜索</el-button>
+          <el-button
+            type="primary"
+            icon="el-icon-search"
+            @click="handleQueryClick"
+            >搜索</el-button
+          >
         </div>
       </template>
     </sq-form>
@@ -30,7 +35,8 @@ export default defineComponent({
   components: {
     SqForm
   },
-  setup(props) {
+  emits: ['resetBtnClick', 'queryBtnClick'],
+  setup(props, { emit }) {
     // 双向绑定的属性应该是由配置文件的field来决定
     // 1. 优化一: formData中的属性应该动态来决定
     const formItems = props.searchFormConfig?.formItems ?? []
@@ -42,14 +48,22 @@ export default defineComponent({
 
     // 2. 优化二: 当用户点击重置
     const handleResetClick = () => {
-      for (const key in formOriginData) {
-        formData.value[`${key}`] = formOriginData[key]
-      }
+      // for (const key in formOriginData) {
+      //   formData.value[`${key}`] = formOriginData[key]
+      // }
+      formData.value = formOriginData
+      emit('resetBtnClick')
+    }
+
+    // 3. 优化三: 当用户点击搜搜
+    const handleQueryClick = () => {
+      emit('queryBtnClick', formData.value)
     }
 
     return {
       formData,
-      handleResetClick
+      handleResetClick,
+      handleQueryClick
     }
   }
 })
