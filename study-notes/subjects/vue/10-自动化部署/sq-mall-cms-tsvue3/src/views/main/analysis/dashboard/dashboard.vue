@@ -1,5 +1,15 @@
 <template>
   <div class="dashboard">
+    <!-- 1.顶部数据统计 -->
+    <el-row :gutter="10">
+      <template v-for="item in topPanelData" :key="item.title">
+        <el-col :md="12" :lg="6" :xl="6">
+          <statistical-panel :panelData="item" />
+        </el-col>
+      </template>
+    </el-row>
+
+    <!-- 2.中间图标 -->
     <el-row :gutter="10">
       <el-col :span="7">
         <hy-card title="分类商品数量(饼图)">
@@ -18,7 +28,8 @@
       </el-col>
     </el-row>
 
-    <el-row :gutter="10" class="content-row">
+    <!-- 3.底部图标 -->
+    <el-row :gutter="10" class="row">
       <el-col :span="12">
         <hy-card title="分类商品的销量">
           <line-echart v-bind="categoryGoodsSale"></line-echart>
@@ -26,7 +37,7 @@
       </el-col>
       <el-col :span="12">
         <hy-card title="分类商品的收藏">
-          <bar-echart v-bind="categoryGoodsFavor"></bar-echart>
+          <bar-echart v-bind="categoryGoodsSale"></bar-echart>
         </hy-card>
       </el-col>
     </el-row>
@@ -37,74 +48,71 @@
 import { defineComponent, computed } from 'vue'
 import { useStore } from '@/store'
 
+import StatisticalPanel from '@/components/statistical-panel'
 import HyCard from '@/base-ui/card'
-import {
-  PieEchart,
-  RoseEchart,
-  LineEchart,
-  BarEchart,
-  MapEchart
-} from '@/components/page-echarts'
+import { PieEchart, MapEchart, RoseEchart, LineEchart, BarEchart } from '@/components/page-charts'
 
 export default defineComponent({
   name: 'dashboard',
   components: {
     HyCard,
+    StatisticalPanel,
     PieEchart,
+    MapEchart,
     RoseEchart,
     LineEchart,
-    BarEchart,
-    MapEchart
+    BarEchart
   },
   setup() {
+    // 1.发起数据统计的网络请求
     const store = useStore()
-    // 请求数据
-    store.dispatch('dashboard/getDashboardDataAction')
+    store.dispatch('analysis/getAnalysisDataAction')
 
-    // 获取数据
+    // 2.获取顶部PanelData
+    const topPanelData = computed(() => store.state.analysis.topPanelDatas)
     const categoryGoodsCount = computed(() => {
-      return store.state.dashboard.categoryGoodsCount.map((item: any) => {
-        return { name: item.name, value: item.goodsCount }
+      return store.state.analysis.categoryGoodsCount.map((item: any) => {
+        return { value: item.goodsCount, name: item.name }
+      })
+    })
+    const goodsSaleTop10 = computed(() => {
+      return store.state.analysis.goodsSaleTop10.map((item: any) => {
+        return { value: item.saleCount, name: item.name }
       })
     })
     const categoryGoodsSale = computed(() => {
-      const xLabels: string[] = []
+      const goodsSale = store.state.analysis.categoryGoodsSale
+      const labels: string[] = []
       const values: any[] = []
-      const categoryGoodsSale = store.state.dashboard.categoryGoodsSale
-      for (const item of categoryGoodsSale) {
-        xLabels.push(item.name)
+      for (const item of goodsSale) {
+        labels.push(item.name)
         values.push(item.goodsCount)
       }
-      return { xLabels, values }
-    })
-    const categoryGoodsFavor = computed(() => {
-      const xLabels: string[] = []
-      const values: any[] = []
-      const categoryGoodsFavor = store.state.dashboard.categoryGoodsFavor
-      for (const item of categoryGoodsFavor) {
-        xLabels.push(item.name)
-        values.push(item.goodsFavor)
-      }
-      return { xLabels, values }
+      return { labels, values }
     })
     const addressGoodsSale = computed(() => {
-      return store.state.dashboard.addressGoodsSale.map((item: any) => {
+      return store.state.analysis.goodsAddressSale.map((item: any) => {
         return { name: item.address, value: item.count }
       })
     })
 
     return {
+      topPanelData,
       categoryGoodsCount,
+      goodsSaleTop10,
       categoryGoodsSale,
-      categoryGoodsFavor,
       addressGoodsSale
     }
   }
 })
 </script>
 
-<style scoped>
-.content-row {
-  margin-top: 20px;
+<style scoped lang="less">
+.dashboard {
+  background-color: #f5f5f5;
+
+  .row {
+    margin-top: 20px;
+  }
 }
 </style>

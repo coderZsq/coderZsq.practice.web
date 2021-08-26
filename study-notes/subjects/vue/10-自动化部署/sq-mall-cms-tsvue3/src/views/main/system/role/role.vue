@@ -1,30 +1,35 @@
 <template>
   <div class="role">
-    <page-search :searchFormConfig="searchFormConfig"></page-search>
+    <page-search
+      :searchConfig="searchFormConfig"
+      @queryBtnClick="handleQueryClick"
+      @resetBtnClick="handleResetClick"
+    />
     <page-content
-      :contentTableConfig="contentTableConfig"
+      ref="pageContentRef"
       pageName="role"
+      :contentConfig="contentTableConfig"
       @newBtnClick="handleNewData"
       @editBtnClick="handleEditData"
     ></page-content>
     <page-modal
       ref="pageModalRef"
-      :defaultInfo="defaultInfo"
-      :otherInfo="otherInfo"
       :modalConfig="modalConfig"
+      :defaultInfo="modalInfo"
       pageName="role"
+      :otherInfo="otherInfo"
     >
-      <div class="menu-tree">
-        <el-tree
-          ref="elTreeRef"
-          :data="menus"
-          show-checkbox
-          node-key="id"
-          :props="{ children: 'children', label: 'name' }"
-          @check="handleCheckChange"
-        >
-        </el-tree>
-      </div>
+      <el-tree
+        class="menu-tree"
+        :check-strictly="false"
+        ref="elTreeRef"
+        :data="roleMenus"
+        show-checkbox
+        node-key="id"
+        @check="handleMenuCheckChange"
+        :props="{ label: 'name', children: 'children' }"
+      >
+      </el-tree>
     </page-modal>
   </div>
 </template>
@@ -32,62 +37,75 @@
 <script lang="ts">
 import { defineComponent, computed, ref, nextTick } from 'vue'
 import { useStore } from '@/store'
-import { menuMapLeafKeys } from '@/utils/map-menus'
+
+import { getMenuChecks } from '@/utils/map-menu'
 
 import { ElTree } from 'element-plus'
 import PageSearch from '@/components/page-search'
 import PageContent from '@/components/page-content'
 import PageModal from '@/components/page-modal'
 
+import { usePageSearch } from '@/hooks/usePageSearch'
+import { usePageModal } from '@/hooks/usePageModal'
+
 import { searchFormConfig } from './config/search.config'
 import { contentTableConfig } from './config/content.config'
 import { modalConfig } from './config/modal.config'
 
-import { usePageModal } from '@/hooks/use-page-modal'
-
 export default defineComponent({
   name: 'role',
   components: {
-    PageContent,
     PageSearch,
+    PageContent,
     PageModal
   },
   setup() {
-    // 1.处理pageModal的hook
+    // pageSearch处理hook
+    const [pageContentRef, handleQueryClick, handleResetClick] = usePageSearch()
+
+    // ElTree的处理逻辑
     const elTreeRef = ref<InstanceType<typeof ElTree>>()
+    // 点击edit的回显回调
     const editCallback = (item: any) => {
-      const leafKeys = menuMapLeafKeys(item.menuList)
       nextTick(() => {
-        console.log(elTreeRef.value)
-        elTreeRef.value?.setCheckedKeys(leafKeys, false)
+        const checks = getMenuChecks(item.menuList)
+        elTreeRef.value?.setCheckedKeys(checks, true)
       })
     }
-    const [pageModalRef, defaultInfo, handleNewData, handleEditData] =
-      usePageModal(undefined, editCallback)
-
-    const store = useStore()
-    const menus = computed(() => store.state.entireMenu)
-
+    // pageModal的hook
+    const [modalInfo, pageModalRef, handleNewData, handleEditData] = usePageModal(
+      undefined,
+      editCallback
+    )
+    // pageModal的额外参数menuList
     const otherInfo = ref({})
-    const handleCheckChange = (data1: any, data2: any) => {
+    const handleMenuCheckChange = (data1: any, data2: any) => {
       const checkedKeys = data2.checkedKeys
       const halfCheckedKeys = data2.halfCheckedKeys
       const menuList = [...checkedKeys, ...halfCheckedKeys]
+      console.log(menuList)
       otherInfo.value = { menuList }
     }
+
+    // 角色选择菜单数据
+    const store = useStore()
+    const roleMenus = computed(() => store.state.entireMenus)
 
     return {
       searchFormConfig,
       contentTableConfig,
+      pageContentRef,
+      handleQueryClick,
+      handleResetClick,
       modalConfig,
+      modalInfo,
       pageModalRef,
-      defaultInfo,
       handleNewData,
       handleEditData,
-      menus,
-      otherInfo,
-      handleCheckChange,
-      elTreeRef
+      roleMenus,
+      elTreeRef,
+      handleMenuCheckChange,
+      otherInfo
     }
   }
 })

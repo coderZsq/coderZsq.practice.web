@@ -1,14 +1,16 @@
 import { App } from 'vue'
+import { utcToDateTimeFormat } from '@/utils/date-formt'
 
-import { formatUtcString } from '@/utils/date-format'
-
-export default function registerProperties(app: App) {
+function registerGlobalProperties(app: App) {
   app.config.globalProperties.$filters = {
-    foo() {
-      console.log('foo')
+    showStatus(enable: boolean) {
+      return enable ? '启用' : '禁用'
     },
     formatTime(value: string) {
-      return formatUtcString(value)
+      return utcToDateTimeFormat(value)
     }
   }
+  app.config.globalProperties.form
 }
+
+export default registerGlobalProperties

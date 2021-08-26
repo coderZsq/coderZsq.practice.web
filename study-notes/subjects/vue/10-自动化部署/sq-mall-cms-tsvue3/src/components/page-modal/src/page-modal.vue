@@ -1,7 +1,7 @@
 <template>
   <div class="page-modal">
     <el-dialog
-      title="新建用户"
+      :title="modalConfig.title"
       v-model="dialogVisible"
       width="30%"
       center
@@ -12,9 +12,7 @@
       <template #footer>
         <span class="dialog-footer">
           <el-button @click="dialogVisible = false">取 消</el-button>
-          <el-button type="primary" @click="handleConfirmClick">
-            确 定
-          </el-button>
+          <el-button type="primary" @click="handleConfirmClick">确 定</el-button>
         </span>
       </template>
     </el-dialog>
@@ -23,7 +21,8 @@
 
 <script lang="ts">
 import { defineComponent, ref, watch } from 'vue'
-import { useStore } from 'vuex'
+
+import { useStore } from '@/store'
 
 import HyForm from '@/base-ui/form'
 
@@ -46,12 +45,14 @@ export default defineComponent({
     },
     pageName: {
       type: String,
-      require: true
+      required: true
     }
   },
   setup(props) {
-    const dialogVisible = ref(false)
-    const formData = ref<any>({})
+    // 1.绑定属性
+    const store = useStore()
+    const originFormData: any = {}
+    const formData = ref({ ...originFormData })
 
     watch(
       () => props.defaultInfo,
@@ -62,31 +63,29 @@ export default defineComponent({
       }
     )
 
-    // 点击确定按钮的逻辑
-    const store = useStore()
+    // 2.内部处理
+    const dialogVisible = ref(false)
     const handleConfirmClick = () => {
       dialogVisible.value = false
       if (Object.keys(props.defaultInfo).length) {
         // 编辑
-        console.log('编辑用户')
         store.dispatch('system/editPageDataAction', {
           pageName: props.pageName,
-          editData: { ...formData.value, ...props.otherInfo },
+          queryInfo: { ...formData.value, ...props.otherInfo },
           id: props.defaultInfo.id
         })
       } else {
         // 新建
-        console.log('新建用户')
-        store.dispatch('system/createPageDataAction', {
+        store.dispatch('system/newPageDataAction', {
           pageName: props.pageName,
-          newData: { ...formData.value, ...props.otherInfo }
+          queryInfo: { ...formData.value, ...props.otherInfo }
         })
       }
     }
 
     return {
-      dialogVisible,
       formData,
+      dialogVisible,
       handleConfirmClick
     }
   }

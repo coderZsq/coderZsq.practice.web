@@ -1,67 +1,70 @@
 import { App } from 'vue'
-import 'element-plus/lib/theme-chalk/base.css'
 import {
-  ElAside,
-  ElAvatar,
   ElButton,
-  ElCheckbox,
-  ElContainer,
-  ElDatePicker,
-  ElDropdown,
-  ElDropdownItem,
-  ElDropdownMenu,
+  ElTabs,
+  ElTabPane,
   ElForm,
   ElFormItem,
-  ElHeader,
   ElInput,
+  ElCheckbox,
   ElLink,
-  ElMain,
   ElMenu,
   ElMenuItem,
-  ElMenuItemGroup,
-  ElOption,
-  ElRadio,
-  ElRow,
-  ElCol,
-  ElSelect,
   ElSubmenu,
-  ElTabPane,
-  ElTabs,
+  ElContainer,
+  ElAside,
+  ElHeader,
+  ElMain,
+  ElDropdown,
+  ElDropdownMenu,
+  ElDropdownItem,
+  ElAvatar,
+  ElButtonGroup,
+  ElCol,
+  ElRow,
+  ElSelect,
+  ElOption,
+  ElDatePicker,
   ElBreadcrumb,
   ElBreadcrumbItem,
   ElTable,
   ElTableColumn,
   ElPagination,
-  ElImage,
+  ElConfigProvider,
   ElDialog,
+  ElImage,
   ElTree,
-  ElCard
+  ElDescriptions,
+  ElDescriptionsItem,
+  ElTag,
+  ElCard,
+  ElTooltip
 } from 'element-plus'
+import 'element-plus/lib/theme-chalk/base.css'
 
 const components = [
   ElButton,
+  ElTabs,
+  ElTabPane,
   ElForm,
   ElFormItem,
   ElInput,
-  ElRadio,
-  ElTabs,
-  ElTabPane,
   ElCheckbox,
   ElLink,
+  ElMenu,
+  ElSubmenu,
+  ElMenuItem,
   ElContainer,
+  ElAside,
   ElHeader,
   ElMain,
-  ElAside,
-  ElMenu,
-  ElMenuItem,
-  ElMenuItemGroup,
-  ElSubmenu,
   ElDropdown,
   ElDropdownMenu,
   ElDropdownItem,
   ElAvatar,
-  ElCol,
+  ElButtonGroup,
   ElRow,
+  ElCol,
   ElSelect,
   ElOption,
   ElDatePicker,
@@ -70,14 +73,21 @@ const components = [
   ElTable,
   ElTableColumn,
   ElPagination,
-  ElImage,
+  ElConfigProvider,
   ElDialog,
+  ElImage,
   ElTree,
-  ElCard
+  ElDescriptions,
+  ElDescriptionsItem,
+  ElTag,
+  ElCard,
+  ElTooltip
 ]
 
-export default function (app: App): void {
-  for (const component of components) {
-    app.component(component.name, component)
+function registerElement(app: App): void {
+  for (const cpn of components) {
+    app.component(cpn.name, cpn)
   }
 }
+
+export default registerElement

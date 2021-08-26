@@ -1,31 +1,28 @@
 import hyRequest from '../index'
 
-import { IAccount, ILoginResult } from './type'
-import { IDataType } from '../types'
+import { Account, LoginInfo } from './types'
 
 enum LoginAPI {
   AccountLogin = '/login',
-  LoginUserInfo = '/users/', // 用法: /users/1
-  UserMenus = '/role/' // 用法: role/1/menu
+  UserInfo = '/users/',
+  UserMenus = '/role/'
 }
 
-export function accountLoginRequest(account: IAccount) {
-  return hyRequest.post<IDataType<ILoginResult>>({
+export function accountLoginRequest(account: Account) {
+  return hyRequest.post<LoginInfo>({
     url: LoginAPI.AccountLogin,
     data: account
   })
 }
 
-export function requestUserInfoById(id: number) {
-  return hyRequest.get<IDataType>({
-    url: LoginAPI.LoginUserInfo + id,
-    showLoading: false
+export function getUserById(id: number) {
+  return hyRequest.get({
+    url: LoginAPI.UserInfo + id
   })
 }
 
-export function requestUserMenusByRoleId(id: number) {
-  return hyRequest.get<IDataType>({
-    url: LoginAPI.UserMenus + id + '/menu',
-    showLoading: false
+export function getUserMenus(id: number) {
+  return hyRequest.get({
+    url: LoginAPI.UserMenus + id + '/menu'
   })
 }

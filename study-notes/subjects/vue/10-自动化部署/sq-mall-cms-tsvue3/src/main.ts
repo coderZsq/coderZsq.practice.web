@@ -1,21 +1,15 @@
 import { createApp } from 'vue'
-import { globalRegister } from './global'
-import 'normalize.css'
-import './assets/css/index.less'
-
 import App from './App.vue'
 
+import './assets/css/index.css'
+import 'normalize.css'
+
 import router from './router'
-import store from './store'
-import { setupStore } from './store'
+import store, { setupStore } from './store'
+
+import registerApp from './global'
 
 const app = createApp(App)
-
-// 注册element-plus/其他
-app.use(globalRegister)
-app.use(store)
+registerApp(app)
 setupStore()
-// path: /user => user
-app.use(router)
-
-app.mount('#app')
+app.use(router).use(store).mount('#app')

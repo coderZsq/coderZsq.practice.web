@@ -1,9 +1,6 @@
 <template>
   <div class="menu">
-    <page-content
-      :contentTableConfig="contentTableConfig"
-      pageName="menu"
-    ></page-content>
+    <page-content :contentConfig="contentTableConfig" pageName="menu"></page-content>
   </div>
 </template>
 
@@ -15,7 +12,7 @@ import PageContent from '@/components/page-content'
 import { contentTableConfig } from './config/content.config'
 
 export default defineComponent({
-  name: 'hy-menu',
+  name: 'hymenu',
   components: {
     PageContent
   },

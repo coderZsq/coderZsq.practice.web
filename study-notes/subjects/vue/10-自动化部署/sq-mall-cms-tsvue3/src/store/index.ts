@@ -1,71 +1,62 @@
 import { createStore, Store, useStore as useVuexStore } from 'vuex'
+import { IRootState } from './types'
+import type { IStore } from './types'
+
+import { getPageList } from '@/service/main/system/system'
 
 import login from './login/login'
 import system from './main/system/system'
-import dashboard from './main/analysis/dashboard'
-
-import { getPageListData } from '@/service/main/system/system'
-
-import { IRootState, IStoreType } from './types'
+import analysis from './main/analysis/analysis'
 
 const store = createStore<IRootState>({
   state() {
     return {
       name: 'coderwhy',
-      age: 18,
-      entireDepartment: [],
-      entireRole: [],
-      entireMenu: []
+      entireRoles: [],
+      entireDepartments: [],
+      entireMenus: []
     }
   },
   mutations: {
-    changeEntireDepartment(state, list) {
-      state.entireDepartment = list
+    changeEntireRoles(state, entireRoles) {
+      state.entireRoles = entireRoles
     },
-    changeEntireRole(state, list) {
-      state.entireRole = list
+    changeEntireDepartments(state, entireDepartments) {
+      state.entireDepartments = entireDepartments
     },
-    changeEntireMenu(state, list) {
-      state.entireMenu = list
+    changeEntireMenus(state, entireMenus) {
+      state.entireMenus = entireMenus
     }
   },
-  getters: {},
   actions: {
-    async getInitialDataAction({ commit }) {
-      // 1.请求部门和角色数据
-      const departmentResult = await getPageListData('/department/list', {
+    async getInitalDataAction({ commit }) {
+      const { list: entireRoles } = await getPageList('/role/list', { offset: 0, size: 100 })
+      const { list: entireDepartments } = await getPageList('/department/list', {
         offset: 0,
-        size: 1000
+        size: 100
       })
-      const { list: departmentList } = departmentResult.data
-      const roleResult = await getPageListData('/role/list', {
-        offset: 0,
-        size: 1000
-      })
-      const { list: roleList } = roleResult.data
-      const menuResult = await getPageListData('/menu/list', {})
-      const { list: menuList } = menuResult.data
-
-      // 2.保存数据
-      commit('changeEntireDepartment', departmentList)
-      commit('changeEntireRole', roleList)
-      commit('changeEntireMenu', menuList)
+      const { list: entireMenus } = await getPageList('/menu/list', {})
+      commit('changeEntireRoles', entireRoles)
+      commit('changeEntireDepartments', entireDepartments)
+      commit('changeEntireMenus', entireMenus)
     }
   },
   modules: {
     login,
     system,
-    dashboard
+    analysis
   }
 })
 
-export function setupStore() {
-  store.dispatch('login/loadLocalLogin')
-  // store.dispatch('getInitialDataAction')
+// store.state.login.token
+
+export function useStore(): Store<IStore> {
+  return useVuexStore()
 }
 
-export function useStore(): Store<IStoreType> {
-  return useVuexStore()
+export function setupStore() {
+  store.dispatch('login/loadLocalCache')
+  // store.dispatch('getInitalDataAction')
 }
 
 export default store

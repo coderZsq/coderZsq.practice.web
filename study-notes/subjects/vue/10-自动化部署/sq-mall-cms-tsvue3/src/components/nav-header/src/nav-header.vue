@@ -1,52 +1,51 @@
 <template>
   <div class="nav-header">
     <i
-      class="fold-menu"
+      class="menu-icon"
       :class="isFold ? 'el-icon-s-fold' : 'el-icon-s-unfold'"
       @click="handleFoldClick"
     ></i>
+
     <div class="content">
       <hy-breadcrumb :breadcrumbs="breadcrumbs" />
-      <user-info />
+      <nav-info />
     </div>
   </div>
 </template>
 
 <script lang="ts">
-import { defineComponent, ref, computed } from 'vue'
-import UserInfo from './user-info.vue'
-import HyBreadcrumb, { IBreadcrumb } from '@/base-ui/breadcrumb'
-
-import { useStore } from '@/store'
+import { defineComponent, computed } from 'vue'
 import { useRoute } from 'vue-router'
-import { pathMapBreadcrumbs } from '@/utils/map-menus'
+import { useStore } from '@/store'
+
+import { pathMapBreadcrumbs } from '@/utils/map-menu'
+
+import NavInfo from './nav-info.vue'
+import HyBreadcrumb from '@/base-ui/breadcrumb'
+
+import useMenuIcon from '../hooks/useMenuIconHook'
 
 export default defineComponent({
   components: {
-    UserInfo,
+    NavInfo,
     HyBreadcrumb
   },
   emits: ['foldChange'],
-  setup(props, { emit }) {
-    const isFold = ref(false)
-    const handleFoldClick = () => {
-      isFold.value = !isFold.value
-      emit('foldChange', isFold.value)
-    }
+  setup(props, ctx) {
+    // 1.菜单icon
+    const [isFold, handleFoldClick] = useMenuIcon({ emit: ctx.emit })
 
-    // 面包屑的数据: [{name: , path: }]
-    const store = useStore()
+    // 2.获取菜单列表
     const breadcrumbs = computed(() => {
-      const userMenus = store.state.login.userMenus
-      const route = useRoute()
-      const currentPath = route.path
-      return pathMapBreadcrumbs(userMenus, currentPath)
+      const path = useRoute().path
+      const userMenus = useStore().state.login.userMenus
+      return pathMapBreadcrumbs(userMenus, path)
     })
 
     return {
       isFold,
-      handleFoldClick,
-      breadcrumbs
+      breadcrumbs,
+      handleFoldClick
     }
   }
 })
@@ -55,10 +54,11 @@ export default defineComponent({
 <style scoped lang="less">
 .nav-header {
   display: flex;
-  width: 100%;
+  align-items: center;
+  flex: 1;
 
-  .fold-menu {
-    font-size: 30px;
+  .menu-icon {
+    font-size: 28px;
     cursor: pointer;
   }
 
@@ -67,7 +67,7 @@ export default defineComponent({
     justify-content: space-between;
     align-items: center;
     flex: 1;
-    padding: 0 20px;
+    padding: 0 18px;
   }
 }
 </style>

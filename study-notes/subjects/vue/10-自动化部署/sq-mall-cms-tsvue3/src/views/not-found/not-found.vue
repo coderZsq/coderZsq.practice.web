@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h2>Not Found</h2>
+    <h2>页面加载错误, 请联系管理员~</h2>
   </div>
 </template>
 

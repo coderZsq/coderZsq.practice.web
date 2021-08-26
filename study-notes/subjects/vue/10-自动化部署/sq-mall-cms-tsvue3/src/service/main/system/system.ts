@@ -1,31 +1,28 @@
 import hyRequest from '../../index'
 
-import { IDataType } from '../../types'
-
-export function getPageListData(url: string, queryInfo: any) {
-  return hyRequest.post<IDataType>({
-    url: url,
+export function getPageList(pageUrl: string, queryInfo: any) {
+  return hyRequest.post({
+    url: pageUrl,
     data: queryInfo
   })
 }
 
-// url: /users/id
-export function deletePageData(url: string) {
-  return hyRequest.delete<IDataType>({
-    url: url
+export function deletePageData(pageUrl: string) {
+  return hyRequest.delete({
+    url: pageUrl
   })
 }
 
-export function createPageData(url: string, newData: any) {
-  return hyRequest.post<IDataType>({
-    url: url,
+export function newPageData(pageUrl: string, newData: any) {
+  return hyRequest.post({
+    url: pageUrl,
     data: newData
   })
 }
 
-export function editPageData(url: string, editData: any) {
-  return hyRequest.patch<IDataType>({
-    url: url,
+export function editPageData(pageUrl: string, editData: any) {
+  return hyRequest.patch({
+    url: pageUrl,
     data: editData
   })
 }

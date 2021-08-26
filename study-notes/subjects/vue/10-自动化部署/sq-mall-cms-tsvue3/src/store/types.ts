@@ -1,19 +1,18 @@
 import { ILoginState } from './login/types'
 import { ISystemState } from './main/system/types'
-import { IDashboardState } from './main/analysis/types'
+import { IAnalysis } from './main/analysis/types'
 
 export interface IRootState {
   name: string
-  age: number
-  entireDepartment: any[]
-  entireRole: any[]
-  entireMenu: any[]
+  entireRoles: any[]
+  entireDepartments: any[]
+  entireMenus: any[]
 }
 
-export interface IRootWithModule {
+export interface IRootAndLogin {
   login: ILoginState
   system: ISystemState
-  dashboard: IDashboardState
+  analysis: IAnalysis
 }
 
-export type IStoreType = IRootState & IRootWithModule
+export type IStore = IRootState & IRootAndLogin

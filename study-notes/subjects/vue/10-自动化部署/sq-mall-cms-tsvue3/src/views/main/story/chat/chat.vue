@@ -1,16 +1,23 @@
 <template>
   <div class="chat">
-    <h2>chat</h2>
+    <hy-editor v-model:value="htmlString" />
   </div>
 </template>
 
 <script lang="ts">
-import { defineComponent } from 'vue'
+import { defineComponent, ref } from 'vue'
+import HyEditor from '@/base-ui/editor'
 
 export default defineComponent({
   name: 'chat',
+  components: {
+    HyEditor
+  },
   setup() {
-    return {}
+    const htmlString = ref<string>('coderwhy')
+    return {
+      htmlString
+    }
   }
 })
 </script>

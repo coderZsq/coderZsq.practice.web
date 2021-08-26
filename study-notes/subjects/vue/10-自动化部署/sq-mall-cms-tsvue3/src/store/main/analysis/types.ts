@@ -1,6 +1,8 @@
-export interface IDashboardState {
+export interface IAnalysis {
+  topPanelDatas: any[]
   categoryGoodsCount: any[]
   categoryGoodsSale: any[]
   categoryGoodsFavor: any[]
-  addressGoodsSale: any[]
+  goodsSaleTop10: any[]
+  goodsAddressSale: any[]
 }

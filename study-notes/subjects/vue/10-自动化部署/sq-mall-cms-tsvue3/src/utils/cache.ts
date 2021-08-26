@@ -4,7 +4,6 @@ class LocalCache {
   }
 
   getCache(key: string) {
-    // obj => string => obj
     const value = window.localStorage.getItem(key)
     if (value) {
       return JSON.parse(value)
@@ -15,7 +14,7 @@ class LocalCache {
     window.localStorage.removeItem(key)
   }
 
-  clearCache() {
+  clearLocal() {
     window.localStorage.clear()
   }
 }

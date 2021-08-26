@@ -5,48 +5,43 @@
     </div>
     <el-form :label-width="labelWidth">
       <el-row>
-        <template v-for="item in formItems" :key="item.label">
+        <template v-for="(item, index) in formItems" :key="index">
           <el-col v-bind="colLayout">
             <el-form-item
-              v-if="!item.isHidden"
               :label="item.label"
               :rules="item.rules"
+              class="form-item"
               :style="itemStyle"
+              v-if="!item.isHidden"
             >
-              <template
-                v-if="item.type === 'input' || item.type === 'password'"
-              >
+              <template v-if="item.type === 'input' || item.type === 'password'">
                 <el-input
-                  :placeholder="item.placeholder"
-                  v-bind="item.otherOptions"
+                  v-model="formData[`${item.field}`]"
+                  :placeholder="item.placeHolder"
                   :show-password="item.type === 'password'"
-                  :model-value="modelValue[`${item.field}`]"
-                  @update:modelValue="handleValueChange($event, item.field)"
                 />
               </template>
               <template v-else-if="item.type === 'select'">
                 <el-select
-                  :placeholder="item.placeholder"
-                  v-bind="item.otherOptions"
+                  v-model="formData[`${item.field}`]"
+                  :placeholder="item.placeHolder"
                   style="width: 100%"
-                  :model-value="modelValue[`${item.field}`]"
-                  @update:modelValue="handleValueChange($event, item.field)"
                 >
                   <el-option
                     v-for="option in item.options"
                     :key="option.value"
                     :value="option.value"
-                    >{{ option.title }}</el-option
+                    >{{ option.label }}</el-option
                   >
                 </el-select>
               </template>
               <template v-else-if="item.type === 'datepicker'">
                 <el-date-picker
+                  v-model="formData[`${item.field}`]"
+                  v-bind="item.otherOption"
                   style="width: 100%"
-                  v-bind="item.otherOptions"
-                  :model-value="modelValue[`${item.field}`]"
-                  @update:modelValue="handleValueChange($event, item.field)"
-                ></el-date-picker>
+                >
+                </el-date-picker>
               </template>
             </el-form-item>
           </el-col>
@@ -60,22 +55,21 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, PropType } from 'vue'
+import { defineComponent, PropType, ref, watch } from 'vue'
 import { IFormItem } from '../types'
 
 export default defineComponent({
   props: {
     modelValue: {
-      type: Object,
-      required: true
+      type: Object
+    },
+    labelWidth: {
+      type: String,
+      default: () => '80px'
     },
     formItems: {
       type: Array as PropType<IFormItem[]>,
       default: () => []
-    },
-    labelWidth: {
-      type: String,
-      default: '100px'
     },
     itemStyle: {
       type: Object,
@@ -84,35 +78,28 @@ export default defineComponent({
     colLayout: {
       type: Object,
       default: () => ({
-        xl: 6, // >1920px 4个
-        lg: 8,
-        md: 12,
-        sm: 24,
-        xs: 24
+        xl: 6, // ≥1920px
+        lg: 8, // ≥1200px
+        md: 12, // ≥992px
+        sm: 24, // ≥768px
+        xs: 24 // <768px
       })
     }
   },
-  emits: ['update:modelValue'],
+  emit: ['update:modelValue'],
   setup(props, { emit }) {
-    // const formData = ref({ ...props.modelValue })
+    const formData = ref({ ...props.modelValue })
 
-    // watch(
-    //   formData,
-    //   (newValue) => {
-    //     console.log(newValue)
-    //     emit('update:modelValue', newValue)
-    //   },
-    //   {
-    //     deep: true
-    //   }
-    // )
-
-    const handleValueChange = (value: any, field: string) => {
-      emit('update:modelValue', { ...props.modelValue, [field]: value })
-    }
+    watch(
+      formData,
+      (newValue) => {
+        emit('update:modelValue', newValue)
+      },
+      { deep: true }
+    )
 
     return {
-      handleValueChange
+      formData
     }
   }
 })
@@ -120,6 +107,6 @@ export default defineComponent({
 
 <style scoped lang="less">
 .hy-form {
-  padding-top: 22px;
+  padding: 20px 20px 0;
 }
 </style>
