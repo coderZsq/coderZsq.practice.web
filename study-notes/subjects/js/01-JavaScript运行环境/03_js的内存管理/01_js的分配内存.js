@@ -1,4 +1,6 @@
-var name = 'sq';
-var obj = { name: 'sq', age: 18 };
+var name = "why"
+var obj = {name: "why", age: 18}
 
-function foo() {}
+function foo() {
+  
+}

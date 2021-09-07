@@ -1,17 +1,18 @@
-// const name = 'sq';
-// console.log(name);
+// const name = "why"
+// console.log(name)
 
 // function foo() {
-//   console.log('foo');
+//   console.log("foo")
 // }
 
-// foo();
+// foo()
 
 // function outer() {
 //   function inner() {
-//     var inner = 'inner';
-//     console.log(inner);
+//     var inner = "inner"
+//     console.log(inner)
 //   }
 // }
 
-// outer();
+// outer()
+

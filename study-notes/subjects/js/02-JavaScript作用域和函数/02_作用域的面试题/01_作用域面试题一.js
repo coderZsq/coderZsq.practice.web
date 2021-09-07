@@ -1,9 +1,9 @@
-var n = 100;
+var n = 100
 
 function foo() {
-  n = 200;
+  n = 200
 }
 
-foo();
+foo()
 
-console.log(n);
+console.log(n)

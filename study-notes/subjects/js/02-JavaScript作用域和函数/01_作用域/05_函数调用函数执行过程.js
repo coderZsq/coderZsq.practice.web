@@ -1,12 +1,12 @@
-var message = 'Hello Global';
+var message = "Hello Global"
 
 function foo() {
-  console.log(message);
+  console.log(message)
 }
 
 function bar() {
-  var message = 'Hello Bar';
-  foo();
+  var message = "Hello Bar"
+  foo()
 }
 
-bar();
+bar()
