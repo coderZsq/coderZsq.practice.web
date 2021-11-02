@@ -1,5 +1,0 @@
-#!/usr/bin/env node
-let process = require('process');
-console.log('Hello, hooks!');
-
-process.exitCode = 1;
