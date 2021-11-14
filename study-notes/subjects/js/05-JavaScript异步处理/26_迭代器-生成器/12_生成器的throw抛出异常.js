@@ -20,8 +20,4 @@ function* foo() {
 const generator = foo()
 
 const result = generator.next()
-if (result.value !== 200) {
-  console.log(generator.throw("error message"))
-}
-
-
+generator.throw("error message")
