@@ -13,7 +13,7 @@
     "highlight.js": "^10.7.1",
     "immutable": "*",
     "lodash": "^4.17.21",
-    "marked": "^2.0.1",
+    "marked": "^4.0.10",
     "moment": "^2.29.1",
     "mysql2": "^2.2.5",
     "normalize.css": "^8.0.1",
